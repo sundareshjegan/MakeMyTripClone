@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -34,14 +35,15 @@ namespace MakeMyTripClone
             int nHeightEllipse // width of ellipse
         );
 
-        private void CreateCurves()
-        {
-            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
-            buttonsPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, buttonsPanel.Width, buttonsPanel.Height, 30, 30));
-            submitBtnPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, submitBtnPanel.Width, submitBtnPanel.Height, 30, 30));
-            carouselPB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, carouselPB.Width, carouselPB.Height, 30, 30));
-            tabControl.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tabControl.Width, tabControl.Height, 40, 40));
+        #region Button Events
 
+        private void OnSignUpBtnClicked(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = registerTabPage;
+        }
+        private void OnSignInBtnClicked(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = loginTabPage;
         }
 
         private void OnPasswordViewHideBtnClicked(object sender, EventArgs e)
@@ -57,6 +59,13 @@ namespace MakeMyTripClone
                                             Resources.viewPassword : Resources.hidePassword;
         }
 
+        private void OnRegConPwdViewHideBtnClicked(object sender, EventArgs e)
+        {
+            regConPasswordTB.UseSystemPasswordChar = !regConPasswordTB.UseSystemPasswordChar;
+            regConPwdViewHideBtn.BackgroundImage = regConPasswordTB.UseSystemPasswordChar ?
+                                            Resources.viewPassword : Resources.hidePassword;
+        }
+
         private void OnSubmitBtnMouseHover(object sender, EventArgs e)
         {
             //to move the submit button if Input is not valid
@@ -69,48 +78,61 @@ namespace MakeMyTripClone
             }
         }
 
+        
+        private void OnRegisterBtnClicked(object sender, EventArgs e)
+        {
+            //if (BackEnd.UserAlreadyExists(regEmailTB.Text))
+            //{
+            //regEmailWarningLabel.Text = "Email-Id already Exists";
+            //}
+            //else
+            //{
+
+            //}
+            Opacity = Opacity/2;
+            new ConfirmationForm(regEmailTB.Text,regNameTB.Text).ShowDialog();
+            Opacity = Opacity * 2;
+        }
+
+        #endregion
+
+        #region Form Events
+        private void OnLoginFormResized(object sender, EventArgs e)
+        {
+            CreateCurves();
+        }
+        #endregion
+
+        #region TextBoxEvents
         private void OnEmailTBTextChanged(object sender, EventArgs e)
         {
-            bool isValidEmail = Regex.IsMatch(emailTB.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+            bool isValidEmail = Regex.IsMatch(regEmailTB.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
             if (isValidEmail)
             {
-
+                regEmailValidPB.Image = Resources.validTick;
+            }
+            else
+            {
+                regEmailValidPB.Image = Resources.wrong;
             }
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void OnRegMobileTBTextChanged(object sender, EventArgs e)
         {
-
+            regMobileValidPB.Image = regMobileTB.Text.Length == 10 ? Resources.validTick : Resources.wrong;
         }
-
-        private void signUpBtn_Click(object sender, EventArgs e)
+        private void OnRegMobileTBKeyPressed(object sender, KeyPressEventArgs e)
         {
-            registerInputPanel.Visible = true;
-            loginInputPanel.Visible = false;
-            tabControl.SelectedTab = registerTabPage;
-        }
-
-        private void signInBtn_Click(object sender, EventArgs e)
-        {
-            loginInputPanel.Visible = true;
-            registerInputPanel.Visible = false;
-            tabControl.SelectedTab = loginTabPage;
-        }
-
-        private void LoginForm_Resize(object sender, EventArgs e)
-        {
-            CreateCurves();
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != '\b';
         }
 
         private void OnPasswordTBTextChanged(object sender, EventArgs e)
         {
             string password = regPasswordTB.Text;
-            string strength = GetPasswordStrength(password);
-
-            // Provide feedback to the user
+            string strength = GetPasswordStrength(password).ToString();
             switch (strength)
             {
-                case "Very Weak":
+                case "VeryWeak":
                     //passwordStrengthLabel.Text = "Very Weak Password";
                     passwordStrengthPanel.BackColor = passwordStrengthLabel.ForeColor = Color.OrangeRed;
                     passwordStrengthPanel.Width = 70;
@@ -128,19 +150,83 @@ namespace MakeMyTripClone
                 case "Strong":
                     //passwordStrengthLabel.Text = "Strong Password";
                     passwordStrengthPanel.BackColor = passwordStrengthLabel.ForeColor = Color.LightGreen;
-                    passwordStrengthPanel.Width = 280;
+                    passwordStrengthPanel.Width = emailUnderLinePanel.Width;
                     break;
             }
         }
-
-        private string GetPasswordStrength(string password)
+        private void OnRegConPasswordTBTextChanged(object sender, EventArgs e)
         {
-            return "";
+            if(regPasswordTB.Text != regConPasswordTB.Text && regPasswordTB.Text!="")
+            {
+                passwordCompareLabel.Text = "Passwords did not match..!";
+            }
+            else
+            {
+                passwordCompareLabel.Text = "";
+            }
+        }
+        #endregion
+
+        #region  Helper Functions
+        public enum PasswordStrength
+        {
+            VeryWeak,
+            Weak,
+            Medium,
+            Strong
+        }
+        private PasswordStrength GetPasswordStrength(string password)
+        {
+            int score = 0;
+
+            // Check length
+            if (password.Length < 6)
+                return PasswordStrength.VeryWeak;
+            else if (password.Length < 8)
+                score += 1;
+            else if (password.Length < 10)
+                score += 2;
+            else
+                score += 3;
+
+            // Check for uppercase letters
+            if (Regex.IsMatch(password, "[A-Z]"))
+                score += 1;
+
+            // Check for lowercase letters
+            if (Regex.IsMatch(password, "[a-z]"))
+                score += 1;
+
+            // Check for numbers
+            if (Regex.IsMatch(password, "[0-9]"))
+                score += 1;
+
+            // Check for special characters
+            if (Regex.IsMatch(password, "[^a-zA-Z0-9]"))
+                score += 1;
+
+            // Categorize the strength based on the score
+            if (score < 3)
+                return PasswordStrength.Weak;
+            else if (score < 5)
+                return PasswordStrength.Medium;
+            else
+                return PasswordStrength.Strong;
         }
 
-        private void regMobileTB_KeyPress(object sender, KeyPressEventArgs e)
+        private void CreateCurves()
         {
-            e.Handled = !char.IsDigit(e.KeyChar);
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
+            buttonsPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, buttonsPanel.Width, buttonsPanel.Height, 30, 30));
+            submitBtnPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, submitBtnPanel.Width, submitBtnPanel.Height, 30, 30));
+            registerBtnPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, registerBtnPanel.Width, registerBtnPanel.Height, 20, 20));
+            carouselPB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, carouselPB.Width, carouselPB.Height, 30, 30));
+            tabControl.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tabControl.Width, tabControl.Height, 40, 40));
+
+            typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty, 
+                null, buttonsPanel, new object[] { true });
         }
+
+        #endregion
     }
 }
