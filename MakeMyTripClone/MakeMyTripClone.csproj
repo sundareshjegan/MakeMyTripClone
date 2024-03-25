@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MakeMyTripClone</RootNamespace>
     <AssemblyName>MakeMyTripClone</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfirmationForm.cs">
+    <Compile Include="ConfirmForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConfirmationForm.Designer.cs">
-      <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    <Compile Include="ConfirmForm.Designer.cs">
+      <DependentUpon>ConfirmForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -66,8 +66,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ConfirmationForm.resx">
-      <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    <Compile Include="SuccessFailureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuccessFailureForm.Designer.cs">
+      <DependentUpon>SuccessFailureForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ConfirmForm.resx">
+      <DependentUpon>ConfirmForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -82,6 +88,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SuccessFailureForm.resx">
+      <DependentUpon>SuccessFailureForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -118,6 +127,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Makemytrip_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\successTick.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\failed.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loaderFailed.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

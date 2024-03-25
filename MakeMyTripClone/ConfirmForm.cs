@@ -10,20 +10,19 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace MakeMyTripClone
 {
-    public partial class ConfirmationForm : Form
+    public partial class ConfirmForm : Form
     {
-        public ConfirmationForm()
+        public ConfirmForm()
         {
             InitializeComponent();
-            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, 468, 462, 60, 60));
-            InitializeComponent();
-            timer.Interval = 1000;
-            timer.Tick += Timer_Tick;
-            timer.Start();
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 60, 60));
+            confirmBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, confirmBtn.Width, confirmBtn.Height, 10, 10));
+
+            validityTimer.Interval = 1000;
+            validityTimer.Tick += OnValidityTimerTicked;
         }
 
         #region DLL for round Region
@@ -39,55 +38,53 @@ namespace MakeMyTripClone
         );
         #endregion
 
-        private static readonly Random random = new Random();
-        private static int confirmationCode;
+        private Timer validityTimer = new Timer();
         private TimeSpan remainingTime = TimeSpan.FromMinutes(3);
-        readonly Timer timer = new Timer();
-        private void Timer_Tick(object sender, EventArgs e)
+
+        private static readonly Random random = new Random();
+
+        private int confirmationCode;
+
+        private void OnValidityTimerTicked(object sender, EventArgs e)
         {
-            remainingTime = remainingTime.Subtract(TimeSpan.FromSeconds(1)); // Subtract 1 second from remaining time
+            remainingTime = remainingTime.Subtract(TimeSpan.FromSeconds(1));
             if (remainingTime <= TimeSpan.Zero)
             {
-                timer.Stop();
-                confirmationCode = -1;
+                validityTimer.Stop();
+                confirmationCode = GenerateConfirmationCode();
                 remainingTime = TimeSpan.Zero;
                 MessageBox.Show("Time's up!");
             }
             timerLabel.Text = $"Code Expires in : {remainingTime:mm\\:ss}";
         }
-
-        private void OnConfirmationCodeTBTextChanged(object sender, EventArgs e)
+        private void OnConfirmBtnClicked(object sender, EventArgs e)
         {
-            if (confirmationCodeTB.Text.Length==6)
+            int codeByUser = int.Parse(confirmationCodeTB.Text.Replace(" ", ""));
+            if(confirmationCode == codeByUser)
             {
-                MessageBox.Show("6 digits");
+                Opacity /= 2;
+                SuccessFailureForm success = new SuccessFailureForm("success", "Email Verifed Successfully");
+                success.ShowDialog();
+                Opacity *= 2;
             }
-            //confirmBtn.Enabled = confirmationCodeTB.Text.Length == 6;
+            else
+            {
+                Opacity /= 2;
+                SuccessFailureForm success = new SuccessFailureForm("failed", "Email Verification Failed");
+                success.ShowDialog();
+                Opacity *= 2;
+            }
+            //MessageBox.Show(confirmationCodeTB.Text);
         }
         private void OnClosePBClicked(object sender, EventArgs e)
         {
             Dispose();
         }
 
-        private void OnConfirmBtnClicked(object sender, EventArgs e)
+        private void OnConfirmationCodeTBTextChanged(object sender, EventArgs e)
         {
-            int codeByUser;
-            string unmaskedText = confirmationCodeTB.Text.Replace(confirmationCodeTB.PromptChar.ToString(), "");
-
-
-            if (int.TryParse(confirmationCodeTB.Text.Replace(" ", ""), out codeByUser))
-            {
-                if (codeByUser == confirmationCode)
-                {
-                    MessageBox.Show("Email Validated Successfully");
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Confirmation Code");
-                }
-            }
+            confirmBtn.Enabled = confirmationCodeTB.Text.Length == 11;
         }
-
         #region Helper Functions
         private void ConvertMaskedEmail(string email)
         {
@@ -101,21 +98,21 @@ namespace MakeMyTripClone
                 string sub1 = arr[0].Substring(0, 3);
                 string sub2Stars = new string('*', arr[0].Length - 5);
                 string sub3 = arr[0].Substring(arr[0].Length - 2);
-
-                emailLabel.Text = sub1 + " " + sub2Stars + " " + sub3 + "@" + arr[1];
+                emailLabel.Text = sub1 + sub2Stars + sub3 + "@" + arr[1];
             }
         }
 
-        public bool SendEmail(string email,string name)
+        public bool SendEmail(string email, string name)
         {
             ConvertMaskedEmail(email);
             confirmationCode = GenerateConfirmationCode();
 
             MailAddress fromAddress = new MailAddress("whitehatsundar@gmail.com", "Make my Trip");
-            MailAddress toAddress = new MailAddress(email); 
+            MailAddress toAddress = new MailAddress(email);
             const string fromPassword = "xpre wkhu tgmh fsyj";
             string subject = "Email Confirmation - Make my Trip";
 
+            #region Email Body
             string body = @"
     <html>
     <head>
@@ -180,6 +177,7 @@ namespace MakeMyTripClone
         </div>
     </body>
     </html>";
+            #endregion
 
             try
             {
@@ -199,8 +197,9 @@ namespace MakeMyTripClone
                     IsBodyHtml = true
                 })
                 {
-                    smtp.Send(message);
+                    //smtp.Send(message);
                     MessageBox.Show("Sent Successfully..!");
+                    validityTimer.Start();
                     return true;
                 }
             }
@@ -216,13 +215,6 @@ namespace MakeMyTripClone
             return random.Next(123000, 999999);
         }
 
-
-
         #endregion
-
-        private void ConfirmationForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

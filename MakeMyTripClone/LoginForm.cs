@@ -89,26 +89,26 @@ namespace MakeMyTripClone
             //{
 
             //}
-            if(regNameTB.Text=="" || string.IsNullOrWhiteSpace(regNameTB.Text))
-            {
-                regNameWarningLabel.Text = "Name should not be empty";
-            }
-            if(regEmailTB.Text=="" || string.IsNullOrWhiteSpace(regEmailTB.Text))
-            {
-                regEmailWarningLabel.Text = "Email should not be empty";
-            }
-            if(regMobileTB.Text == "" || string.IsNullOrWhiteSpace(regMobileTB.Text))
-            {
-                regMobileWarningLabel.Text = "Mobile Number Should Not be Empty";
-            }
-            else
-            {
+            //if(regNameTB.Text=="" || string.IsNullOrWhiteSpace(regNameTB.Text))
+            //{
+            //    regNameWarningLabel.Text = "Name should not be empty";
+            //}
+            //if(regEmailTB.Text=="" || string.IsNullOrWhiteSpace(regEmailTB.Text))
+            //{
+            //    regEmailWarningLabel.Text = "Email should not be empty";
+            //}
+            //if(regMobileTB.Text == "" || string.IsNullOrWhiteSpace(regMobileTB.Text))
+            //{
+            //    regMobileWarningLabel.Text = "Mobile Number Should Not be Empty";
+            //}
+            //else
+            //{
                 Opacity = Opacity/2;
-                ConfirmationForm confirmationForm = new ConfirmationForm();
+                ConfirmForm confirmationForm = new ConfirmForm();
                 confirmationForm.SendEmail(regEmailTB.Text,regNameTB.Text);
                 confirmationForm.ShowDialog();
                 Opacity = Opacity * 2;
-            }
+            //}
         }
 
         #endregion
