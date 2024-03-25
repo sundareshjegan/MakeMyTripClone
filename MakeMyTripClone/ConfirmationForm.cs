@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace MakeMyTripClone
 {
@@ -18,17 +19,11 @@ namespace MakeMyTripClone
         public ConfirmationForm()
         {
             InitializeComponent();
-        }
-        public ConfirmationForm(string email,string name)
-        {
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, 468, 462, 60, 60));
             InitializeComponent();
             timer.Interval = 1000;
             timer.Tick += Timer_Tick;
             timer.Start();
-
-            ConvertMaskedEmail(email);
-            SendEmail(email, name);
         }
 
         #region DLL for round Region
@@ -45,30 +40,52 @@ namespace MakeMyTripClone
         #endregion
 
         private static readonly Random random = new Random();
-
+        private static int confirmationCode;
         private TimeSpan remainingTime = TimeSpan.FromMinutes(3);
-        Timer timer = new Timer();
+        readonly Timer timer = new Timer();
         private void Timer_Tick(object sender, EventArgs e)
         {
             remainingTime = remainingTime.Subtract(TimeSpan.FromSeconds(1)); // Subtract 1 second from remaining time
             if (remainingTime <= TimeSpan.Zero)
             {
                 timer.Stop();
+                confirmationCode = -1;
                 remainingTime = TimeSpan.Zero;
                 MessageBox.Show("Time's up!");
             }
             timerLabel.Text = $"Code Expires in : {remainingTime:mm\\:ss}";
         }
 
+        private void OnConfirmationCodeTBTextChanged(object sender, EventArgs e)
+        {
+            if (confirmationCodeTB.Text.Length==6)
+            {
+                MessageBox.Show("6 digits");
+            }
+            //confirmBtn.Enabled = confirmationCodeTB.Text.Length == 6;
+        }
         private void OnClosePBClicked(object sender, EventArgs e)
         {
-            string text = confirmationCodeTB.Text.Replace(" ","");
             Dispose();
         }
 
         private void OnConfirmBtnClicked(object sender, EventArgs e)
         {
+            int codeByUser;
+            string unmaskedText = confirmationCodeTB.Text.Replace(confirmationCodeTB.PromptChar.ToString(), "");
 
+
+            if (int.TryParse(confirmationCodeTB.Text.Replace(" ", ""), out codeByUser))
+            {
+                if (codeByUser == confirmationCode)
+                {
+                    MessageBox.Show("Email Validated Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Confirmation Code");
+                }
+            }
         }
 
         #region Helper Functions
@@ -89,24 +106,81 @@ namespace MakeMyTripClone
             }
         }
 
-        private void SendEmail(string email,string name)
+        public bool SendEmail(string email,string name)
         {
-            MailAddress fromAddress = new MailAddress("whitehatsundar@gmail.com", "Sundareshwaran J");
+            ConvertMaskedEmail(email);
+            confirmationCode = GenerateConfirmationCode();
+
+            MailAddress fromAddress = new MailAddress("whitehatsundar@gmail.com", "Make my Trip");
             MailAddress toAddress = new MailAddress(email); 
             const string fromPassword = "xpre wkhu tgmh fsyj";
             string subject = "Email Confirmation - Make my Trip";
-            string body1 = @"
-                <html>
-                <body>
-                <center>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Makemytrip_logo.svg/800px-Makemytrip_logo.svg.png' alt='Logo' width='200' height='100'>
-                    <p>Hi " + name + @",</p>
-                    <p>Thank you for Joining Make My Trip.</p>
-                    <p>Here is your confirmation code: <strong>" + GenerateConfirmationCode() + @"</strong></p>
-                </center>   
-                </body>
-                </html>";
-            string body = "Hi";
+
+            string body = @"
+    <html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .header {
+                text-align: center;
+                padding-bottom: 20px;
+            }
+            .header img {
+                width: 200px;
+                height: auto;
+            }
+            .content {
+                padding: 20px;
+                background-color: #f9f9f9;
+                border-radius: 8px;
+            }
+            .confirmation-code {
+                background-color: #42b983;
+                color: #ffffff;
+                padding: 10px;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Makemytrip_logo.svg/800px-Makemytrip_logo.svg.png' alt='Logo'>
+            </div>
+            <div class='content'>
+                <p>Hi " + name + @",</p>
+                <p>Welcome to Make My Trip! We're thrilled to have you onboard.</p>
+                <p>Make My Trip is your one-stop destination for all your travel needs. Whether you're planning a weekend getaway, a business trip, or a family vacation, we've got you covered.</p>
+                <p>Enter the following confirmation code to verify your email address..!</p>                
+                <p>Confirmation code: <span class='confirmation-code'>" + confirmationCode + @"</span></p>
+
+                <p>Here are a few things you can do next:</p>
+                <ul>
+                    <li>Complete your profile to receive personalized recommendations.</li>
+                    <li>Explore our app to discover exciting travel deals and destinations.</li>
+                    <li>Book your next trip hassle-free with our easy-to-use booking platform.</li>
+                </ul>
+                <p>If you have any questions or need assistance, feel free to contact us at support@makemytrip.com.</p>
+                <p>Don't forget to follow us on <a href='https://www.facebook.com'>Facebook</a> and <a href='https://twitter.com/sundaresh_jegan'>Instagram</a> for the latest updates and promotions!</p>
+                <p>Once again, thank you for choosing Make My Trip. We look forward to serving you!</p>
+            </div>
+        </div>
+    </body>
+    </html>";
+
             try
             {
                 var smtp = new SmtpClient
@@ -121,16 +195,19 @@ namespace MakeMyTripClone
                 using (var message = new MailMessage(fromAddress.ToString(), toAddress.ToString())
                 {
                     Subject = subject,
-                    Body = body
+                    Body = body,
+                    IsBodyHtml = true
                 })
                 {
                     smtp.Send(message);
                     MessageBox.Show("Sent Successfully..!");
+                    return true;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return false;
             }
         }
 
@@ -139,6 +216,13 @@ namespace MakeMyTripClone
             return random.Next(123000, 999999);
         }
 
+
+
         #endregion
+
+        private void ConfirmationForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

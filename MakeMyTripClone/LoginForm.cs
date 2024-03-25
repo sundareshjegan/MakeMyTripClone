@@ -89,9 +89,26 @@ namespace MakeMyTripClone
             //{
 
             //}
-            Opacity = Opacity/2;
-            new ConfirmationForm(regEmailTB.Text,regNameTB.Text).ShowDialog();
-            Opacity = Opacity * 2;
+            if(regNameTB.Text=="" || string.IsNullOrWhiteSpace(regNameTB.Text))
+            {
+                regNameWarningLabel.Text = "Name should not be empty";
+            }
+            if(regEmailTB.Text=="" || string.IsNullOrWhiteSpace(regEmailTB.Text))
+            {
+                regEmailWarningLabel.Text = "Email should not be empty";
+            }
+            if(regMobileTB.Text == "" || string.IsNullOrWhiteSpace(regMobileTB.Text))
+            {
+                regMobileWarningLabel.Text = "Mobile Number Should Not be Empty";
+            }
+            else
+            {
+                Opacity = Opacity/2;
+                ConfirmationForm confirmationForm = new ConfirmationForm();
+                confirmationForm.SendEmail(regEmailTB.Text,regNameTB.Text);
+                confirmationForm.ShowDialog();
+                Opacity = Opacity * 2;
+            }
         }
 
         #endregion
@@ -106,8 +123,7 @@ namespace MakeMyTripClone
         #region TextBoxEvents
         private void OnEmailTBTextChanged(object sender, EventArgs e)
         {
-            bool isValidEmail = Regex.IsMatch(regEmailTB.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
-            if (isValidEmail)
+            if (IsValidEmail(regEmailTB.Text))
             {
                 regEmailValidPB.Image = Resources.validTick;
             }
@@ -168,6 +184,10 @@ namespace MakeMyTripClone
         #endregion
 
         #region  Helper Functions
+        private bool IsValidEmail(string email)
+        {
+            return Regex.IsMatch(email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+        }
         public enum PasswordStrength
         {
             VeryWeak,
