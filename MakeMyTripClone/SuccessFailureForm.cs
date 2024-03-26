@@ -12,11 +12,12 @@ namespace MakeMyTripClone
         public SuccessFailureForm(string status, string message)
         {
             InitializeComponent();
-
+            this.message = message;
             if (status.ToLower() == "success")
             {
                 gifImage = Resources.successTick;
                 msgLabel.ForeColor = Color.DodgerBlue;
+                msgLabel.Text = message;
             }
             else
             {
@@ -39,13 +40,14 @@ namespace MakeMyTripClone
             animationTimer.Start();
             #endregion
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
-            msgLabel.Text = message;
         }
         #region animation varialbles and events
         private Image gifImage;
         private Timer animationTimer;
         private int currentFrame;
         private int totalFrames;
+
+        private string message;
 
         private void SuccessAnimationTimer(object sender, EventArgs e)
         {
@@ -65,6 +67,7 @@ namespace MakeMyTripClone
             if (currentFrame >= totalFrames - 40)//to pause after x is displayed
             {
                 animationTimer.Stop(); // Stop the timer when all frames have been displayed
+                msgLabel.Text = message;
             }
             else
             {

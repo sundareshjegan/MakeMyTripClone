@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.confirmationCodeTB = new System.Windows.Forms.MaskedTextBox();
-            this.confirmBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.emailLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,6 +36,7 @@
             this.closePB = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.confirmBtn = new MakeMyTripClone.RippleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closePB)).BeginInit();
             this.panel1.SuspendLayout();
@@ -55,23 +55,6 @@
             this.confirmationCodeTB.TabIndex = 0;
             this.confirmationCodeTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.confirmationCodeTB.TextChanged += new System.EventHandler(this.OnConfirmationCodeTBTextChanged);
-            // 
-            // confirmBtn
-            // 
-            this.confirmBtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.confirmBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.confirmBtn.Enabled = false;
-            this.confirmBtn.FlatAppearance.BorderSize = 0;
-            this.confirmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.confirmBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmBtn.ForeColor = System.Drawing.Color.White;
-            this.confirmBtn.Location = new System.Drawing.Point(27, 329);
-            this.confirmBtn.Name = "confirmBtn";
-            this.confirmBtn.Size = new System.Drawing.Size(406, 41);
-            this.confirmBtn.TabIndex = 1;
-            this.confirmBtn.Text = "CONFIRM";
-            this.confirmBtn.UseVisualStyleBackColor = false;
-            this.confirmBtn.Click += new System.EventHandler(this.OnConfirmBtnClicked);
             // 
             // pictureBox1
             // 
@@ -149,6 +132,21 @@
             this.panel1.Size = new System.Drawing.Size(405, 60);
             this.panel1.TabIndex = 7;
             // 
+            // confirmBtn
+            // 
+            this.confirmBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.confirmBtn.Enabled = false;
+            this.confirmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirmBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmBtn.ForeColor = System.Drawing.Color.White;
+            this.confirmBtn.Location = new System.Drawing.Point(27, 329);
+            this.confirmBtn.Name = "confirmBtn";
+            this.confirmBtn.Size = new System.Drawing.Size(405, 41);
+            this.confirmBtn.TabIndex = 8;
+            this.confirmBtn.Text = "CONFIRM";
+            this.confirmBtn.UseVisualStyleBackColor = false;
+            this.confirmBtn.Click += new System.EventHandler(this.OnConfirmBtnClicked);
+            // 
             // ConfirmForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,13 +154,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(459, 414);
             this.ControlBox = false;
+            this.Controls.Add(this.confirmBtn);
             this.Controls.Add(this.closePB);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.confirmBtn);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ConfirmForm";
@@ -179,7 +177,6 @@
         #endregion
 
         private System.Windows.Forms.MaskedTextBox confirmationCodeTB;
-        private System.Windows.Forms.Button confirmBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label label1;
@@ -187,5 +184,6 @@
         private System.Windows.Forms.PictureBox closePB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        private RippleButton confirmBtn;
     }
 }

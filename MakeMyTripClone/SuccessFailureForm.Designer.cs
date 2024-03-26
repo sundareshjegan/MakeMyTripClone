@@ -43,20 +43,19 @@
             this.msgLabel.AutoSize = true;
             this.msgLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msgLabel.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.msgLabel.Location = new System.Drawing.Point(134, 13);
+            this.msgLabel.Location = new System.Drawing.Point(182, 13);
             this.msgLabel.Name = "msgLabel";
-            this.msgLabel.Size = new System.Drawing.Size(96, 30);
+            this.msgLabel.Size = new System.Drawing.Size(0, 30);
             this.msgLabel.TabIndex = 0;
-            this.msgLabel.Text = "Message";
             this.msgLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // closePB
             // 
             this.closePB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closePB.Image = global::MakeMyTripClone.Properties.Resources.close;
-            this.closePB.Location = new System.Drawing.Point(328, 12);
+            this.closePB.Location = new System.Drawing.Point(333, 12);
             this.closePB.Name = "closePB";
-            this.closePB.Size = new System.Drawing.Size(25, 25);
+            this.closePB.Size = new System.Drawing.Size(20, 20);
             this.closePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.closePB.TabIndex = 1;
             this.closePB.TabStop = false;
@@ -67,7 +66,7 @@
             this.pictureBox2.Image = global::MakeMyTripClone.Properties.Resources.logo;
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(106, 32);
+            this.pictureBox2.Size = new System.Drawing.Size(94, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;

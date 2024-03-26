@@ -23,7 +23,9 @@ namespace MakeMyTripClone
         }
 
         private Random random = new Random();
-
+        private int previousX = 0;
+        private int previousY = 0;
+        #region DLL to Create rounded Regions
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -34,17 +36,26 @@ namespace MakeMyTripClone
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
+        #endregion
 
-        #region Button Events
-
-        private void OnSignUpBtnClicked(object sender, EventArgs e)
+        #region Label Events
+        private void OnDontHaveAccountLabelClick(object sender, EventArgs e)
         {
             tabControl.SelectedTab = registerTabPage;
         }
-        private void OnSignInBtnClicked(object sender, EventArgs e)
+
+        private void alreadyHaveAccountLabel_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = loginTabPage;
         }
+        #endregion
+
+        private void OnClosePBClicked(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        #region Button Events
 
         private void OnPasswordViewHideBtnClicked(object sender, EventArgs e)
         {
@@ -68,13 +79,23 @@ namespace MakeMyTripClone
 
         private void OnSubmitBtnMouseHover(object sender, EventArgs e)
         {
-            //to move the submit button if Input is not valid
-            if (true)
+            // Move the submit button if Input is not valid
+            if (emailTB.Text == "" || passwordTB.Text == "") // Change this condition based on your validation logic
             {
-                // Move the button to a random position within the panel
-                int newX = random.Next(signInRandomPanel.Width - submitBtnPanel.Width);
-                int newY = random.Next(signInRandomPanel.Height - submitBtnPanel.Height);
-                submitBtnPanel.Location = new Point(newX, newY);
+                int newX, newY;
+                do
+                {
+                    // Generate new random position
+                    newX = random.Next(signInRandomPanel.Width - submitBtn.Width);
+                    newY = random.Next(signInRandomPanel.Height - submitBtn.Height);
+                } while (newX == previousX && newY == previousY); // Repeat until new position is different
+
+                // Update previous position
+                previousX = newX;
+                previousY = newY;
+
+                // Move the button to the new position
+                submitBtn.Location = new Point(newX, newY);
             }
         }
 
@@ -83,32 +104,25 @@ namespace MakeMyTripClone
         {
             //if (BackEnd.UserAlreadyExists(regEmailTB.Text))
             //{
-            //regEmailWarningLabel.Text = "Email-Id already Exists";
+            //    regEmailWarningLabel.Text = "Email-Id already Exists";
             //}
             //else
             //{
 
             //}
-            //if(regNameTB.Text=="" || string.IsNullOrWhiteSpace(regNameTB.Text))
-            //{
-            //    regNameWarningLabel.Text = "Name should not be empty";
-            //}
-            //if(regEmailTB.Text=="" || string.IsNullOrWhiteSpace(regEmailTB.Text))
-            //{
-            //    regEmailWarningLabel.Text = "Email should not be empty";
-            //}
-            //if(regMobileTB.Text == "" || string.IsNullOrWhiteSpace(regMobileTB.Text))
-            //{
-            //    regMobileWarningLabel.Text = "Mobile Number Should Not be Empty";
-            //}
-            //else
-            //{
-                Opacity = Opacity/2;
+
+            if (ValidateInputs())
+            {
+                Opacity = Opacity / 2;
                 ConfirmForm confirmationForm = new ConfirmForm();
-                confirmationForm.SendEmail(regEmailTB.Text,regNameTB.Text);
+                confirmationForm.SendEmail(regEmailTB.Text, regNameTB.Text);
                 confirmationForm.ShowDialog();
                 Opacity = Opacity * 2;
-            //}
+            }
+            else
+            {
+                
+            }
         }
 
         #endregion
@@ -121,8 +135,14 @@ namespace MakeMyTripClone
         #endregion
 
         #region TextBoxEvents
+
+        private void OnNameTBTextChanged(object sender, EventArgs e)
+        {
+            regNameWarningLabel.Text = regNameTB.Text == "" ? "Name is required..!" : "";
+        }
         private void OnEmailTBTextChanged(object sender, EventArgs e)
         {
+            regEmailWarningLabel.Text = regEmailTB.Text == "" ? "Email is required..!" : "";
             if (IsValidEmail(regEmailTB.Text))
             {
                 regEmailValidPB.Image = Resources.validTick;
@@ -135,6 +155,7 @@ namespace MakeMyTripClone
 
         private void OnRegMobileTBTextChanged(object sender, EventArgs e)
         {
+            regMobileWarningLabel.Text = regMobileTB.Text == "" ? "Mobile Number is required..!" : "";
             regMobileValidPB.Image = regMobileTB.Text.Length == 10 ? Resources.validTick : Resources.wrong;
         }
         private void OnRegMobileTBKeyPressed(object sender, KeyPressEventArgs e)
@@ -237,16 +258,41 @@ namespace MakeMyTripClone
         private void CreateCurves()
         {
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
-            buttonsPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, buttonsPanel.Width, buttonsPanel.Height, 30, 30));
-            submitBtnPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, submitBtnPanel.Width, submitBtnPanel.Height, 30, 30));
+            //submitBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, submitBtn.Width, submitBtn.Height, 15, 15));
             registerBtnPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, registerBtnPanel.Width, registerBtnPanel.Height, 20, 20));
             carouselPB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, carouselPB.Width, carouselPB.Height, 30, 30));
-            tabControl.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tabControl.Width, tabControl.Height, 40, 40));
+            //tabControl.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tabControl.Width, tabControl.Height, 40, 40));
 
-            typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty, 
-                null, buttonsPanel, new object[] { true });
+            //typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty, 
+                //null, buttonsPanel, new object[] { true });
         }
-
+        private void ValidateLabels()
+        {
+            regNameWarningLabel.Text = regNameTB.Text == "" ? "Name is required..!" : "";
+            regMobileWarningLabel.Text = regMobileTB.Text == "" ? "Mobile Number is required..!" : "";
+            regEmailWarningLabel.Text = regEmailTB.Text == "" ? "Email is required..!" : "";
+        }
+        private bool ValidateInputs()
+        {
+            if (regNameTB.Text == "" || string.IsNullOrWhiteSpace(regNameTB.Text))
+            {
+                regNameWarningLabel.Text = "Name should not be empty";
+                return false;
+            }
+            if (regEmailTB.Text == "" || string.IsNullOrWhiteSpace(regEmailTB.Text))
+            {
+                regEmailWarningLabel.Text = "Email should not be empty";
+                return false;
+            }
+            if (regMobileTB.Text == "" || string.IsNullOrWhiteSpace(regMobileTB.Text))
+            {
+                regMobileWarningLabel.Text = "Mobile Number Should Not be Empty";
+                return false;
+            }
+            return true;
+        }
         #endregion
+
+        
     }
 }

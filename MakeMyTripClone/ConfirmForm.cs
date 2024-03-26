@@ -74,7 +74,6 @@ namespace MakeMyTripClone
                 success.ShowDialog();
                 Opacity *= 2;
             }
-            //MessageBox.Show(confirmationCodeTB.Text);
         }
         private void OnClosePBClicked(object sender, EventArgs e)
         {
@@ -122,6 +121,7 @@ namespace MakeMyTripClone
                 background-color: #f4f4f4;
                 margin: 0;
                 padding: 0;
+                font-size : 20px;
             }
             .container {
                 max-width: 600px;
@@ -197,7 +197,7 @@ namespace MakeMyTripClone
                     IsBodyHtml = true
                 })
                 {
-                    //smtp.Send(message);
+                    smtp.Send(message);
                     MessageBox.Show("Sent Successfully..!");
                     validityTimer.Start();
                     return true;
