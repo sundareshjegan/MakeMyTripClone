@@ -39,7 +39,6 @@
             this.loginInputPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.signInRandomPanel = new System.Windows.Forms.Panel();
-            this.submitBtn = new MakeMyTripClone.RippleButton();
             this.dontHaveAccountLabel = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,7 +50,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.alreadyHaveAccountLabel = new System.Windows.Forms.Label();
             this.registerBtnPanel = new System.Windows.Forms.Panel();
-            this.registerBtn = new System.Windows.Forms.Button();
             this.regEmailValidPB = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.regMobileValidPB = new System.Windows.Forms.PictureBox();
@@ -85,6 +83,8 @@
             this.imagePanel = new System.Windows.Forms.Panel();
             this.closePB = new System.Windows.Forms.PictureBox();
             this.carouselPB = new System.Windows.Forms.PictureBox();
+            this.submitBtn = new MakeMyTripClone.RippleButton();
+            this.rippleButton1 = new MakeMyTripClone.RippleButton();
             this.inputPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.loginTabPage.SuspendLayout();
@@ -230,22 +230,6 @@
             this.signInRandomPanel.Size = new System.Drawing.Size(420, 166);
             this.signInRandomPanel.TabIndex = 7;
             // 
-            // submitBtn
-            // 
-            this.submitBtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submitBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitBtn.ForeColor = System.Drawing.Color.White;
-            this.submitBtn.Location = new System.Drawing.Point(156, 3);
-            this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(113, 34);
-            this.submitBtn.TabIndex = 2;
-            this.submitBtn.Text = "Submit";
-            this.submitBtn.UseVisualStyleBackColor = false;
-            this.submitBtn.MouseEnter += new System.EventHandler(this.OnSubmitBtnMouseHover);
-            this.submitBtn.MouseHover += new System.EventHandler(this.OnSubmitBtnMouseHover);
-            // 
             // dontHaveAccountLabel
             // 
             this.dontHaveAccountLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -376,6 +360,7 @@
             this.tableLayoutPanel1.Controls.Add(this.alreadyHaveAccountLabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.registerBtnPanel, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.ForeColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 490);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -403,26 +388,11 @@
             // 
             this.registerBtnPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerBtnPanel.BackColor = System.Drawing.Color.DodgerBlue;
-            this.registerBtnPanel.Controls.Add(this.registerBtn);
-            this.registerBtnPanel.Location = new System.Drawing.Point(140, 21);
+            this.registerBtnPanel.Controls.Add(this.rippleButton1);
+            this.registerBtnPanel.Location = new System.Drawing.Point(37, 11);
             this.registerBtnPanel.Name = "registerBtnPanel";
-            this.registerBtnPanel.Size = new System.Drawing.Size(124, 34);
+            this.registerBtnPanel.Size = new System.Drawing.Size(330, 55);
             this.registerBtnPanel.TabIndex = 1;
-            // 
-            // registerBtn
-            // 
-            this.registerBtn.FlatAppearance.BorderSize = 0;
-            this.registerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.registerBtn.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerBtn.ForeColor = System.Drawing.Color.White;
-            this.registerBtn.Location = new System.Drawing.Point(0, 0);
-            this.registerBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.registerBtn.Name = "registerBtn";
-            this.registerBtn.Size = new System.Drawing.Size(124, 34);
-            this.registerBtn.TabIndex = 0;
-            this.registerBtn.Text = "Register";
-            this.registerBtn.UseVisualStyleBackColor = true;
-            this.registerBtn.Click += new System.EventHandler(this.OnRegisterBtnClicked);
             // 
             // regEmailValidPB
             // 
@@ -802,6 +772,36 @@
             this.carouselPB.TabIndex = 0;
             this.carouselPB.TabStop = false;
             // 
+            // submitBtn
+            // 
+            this.submitBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.submitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submitBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitBtn.ForeColor = System.Drawing.Color.White;
+            this.submitBtn.Location = new System.Drawing.Point(156, 3);
+            this.submitBtn.Name = "submitBtn";
+            this.submitBtn.Size = new System.Drawing.Size(113, 34);
+            this.submitBtn.TabIndex = 2;
+            this.submitBtn.Text = "Submit";
+            this.submitBtn.UseVisualStyleBackColor = false;
+            this.submitBtn.MouseEnter += new System.EventHandler(this.OnSubmitBtnMouseHover);
+            this.submitBtn.MouseHover += new System.EventHandler(this.OnSubmitBtnMouseHover);
+            // 
+            // rippleButton1
+            // 
+            this.rippleButton1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.rippleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rippleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rippleButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rippleButton1.Location = new System.Drawing.Point(0, 0);
+            this.rippleButton1.Name = "rippleButton1";
+            this.rippleButton1.Size = new System.Drawing.Size(330, 55);
+            this.rippleButton1.TabIndex = 11;
+            this.rippleButton1.Text = "REGISTER";
+            this.rippleButton1.UseVisualStyleBackColor = false;
+            this.rippleButton1.Click += new System.EventHandler(this.OnRegisterBtnClicked);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -879,7 +879,6 @@
         private System.Windows.Forms.TabPage loginTabPage;
         private System.Windows.Forms.TabPage registerTabPage;
         private System.Windows.Forms.Panel registerBtnPanel;
-        private System.Windows.Forms.Button registerBtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox regNameTB;
         private System.Windows.Forms.Panel panel2;
@@ -901,5 +900,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox closePB;
         private System.Windows.Forms.RadioButton radioButton1;
+        private RippleButton rippleButton1;
     }
 }

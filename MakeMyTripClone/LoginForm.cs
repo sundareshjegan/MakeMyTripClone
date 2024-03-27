@@ -263,7 +263,7 @@ namespace MakeMyTripClone
         {
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
             //submitBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, submitBtn.Width, submitBtn.Height, 15, 15));
-            registerBtnPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, registerBtnPanel.Width, registerBtnPanel.Height, 20, 20));
+            //registerBtnPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, registerBtnPanel.Width, registerBtnPanel.Height, 20, 20));
             //carouselPB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, carouselPB.Width, carouselPB.Height, 30, 30));
             //tabControl.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tabControl.Width, tabControl.Height, 40, 40));
 

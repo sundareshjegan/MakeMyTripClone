@@ -113,70 +113,102 @@ namespace MakeMyTripClone
 
             #region Email Body
             string body = @"
-    <html>
-    <head>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                margin: 0;
-                padding: 0;
-                font-size : 20px;
-            }
-            .container {
-                max-width: 600px;
-                margin: 0 auto;
-                padding: 20px;
-                background-color: #ffffff;
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-            .header {
-                text-align: center;
-                padding-bottom: 20px;
-            }
-            .header img {
-                width: 200px;
-                height: auto;
-            }
-            .content {
-                padding: 20px;
-                background-color: #f9f9f9;
-                border-radius: 8px;
-            }
-            .confirmation-code {
-                background-color: #42b983;
-                color: #ffffff;
-                padding: 10px;
-                border-radius: 5px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class='container'>
-            <div class='header'>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Makemytrip_logo.svg/800px-Makemytrip_logo.svg.png' alt='Logo'>
-            </div>
-            <div class='content'>
-                <p>Hi " + name + @",</p>
-                <p>Welcome to Make My Trip! We're thrilled to have you onboard.</p>
-                <p>Make My Trip is your one-stop destination for all your travel needs. Whether you're planning a weekend getaway, a business trip, or a family vacation, we've got you covered.</p>
-                <p>Enter the following confirmation code to verify your email address..!</p>                
-                <p>Confirmation code: <span class='confirmation-code'>" + confirmationCode + @"</span></p>
+            <html>
+            <head>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        background-color: #f7f7f7; /* Light gray background */
+                        margin: 0;
+                        padding: 0;
+                        font-size: 30px;
+                    }
+                    .container {
+                        max-width: 600px;
+                        margin: 20px auto; /* Added margin for centering */
+                        padding: 20px;
+                        background-color: #ffffff; /* White container background */
+                        border-radius: 10px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+                    .header {
+                        text-align: center;
+                        padding-bottom: 20px;
+                    }
+                    .header img {
+                        width: 300px;
+                        height: auto;
+                    }
+                    .content {
+                        padding: 20px;
+                        background-color: #f9f9f9; /* Light gray content background */
+                        border-radius: 8px;
+                    }
+                    .confirmation-code {
+                        background-color: #42b983;
+                        color: #ffffff;
+                        padding: 10px;
+                        border-radius: 5px;
+                        font-weight: bold;
+                    }
+                    /* Increased the spacing between list items */
+                    .content ul {
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        padding-left: 20px; /* Added left padding for list items */
+                    }
+                    .content ul li {
+                        margin-bottom: 10px;
+                    }
+                    /* Styled the links */
+                    a {
+                        color: #007bff;
+                        text-decoration: none;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                    /* Added some border radius to links */
+                    a.btn {
+                        display: inline-block;
+                        padding: 10px 20px;
+                        background-color: #007bff;
+                        color: #ffffff;
+                        border-radius: 5px;
+                        text-decoration: none;
+                        transition: background-color 0.3s;
+                    }
+                    a.btn:hover {
+                        background-color: #0056b3;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class='container'>
+                    <div class='header'>
+                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Makemytrip_logo.svg/800px-Makemytrip_logo.svg.png' alt='Logo'>
+                    </div>
+                    <div class='content'>
+                        <p>Hi " + name + @",</p>
+                        <p>Welcome to Make My Trip! We're thrilled to have you onboard.</p>
+                        <p>Make My Trip is your one-stop destination for all your travel needs. Whether you're planning a weekend getaway, a business trip, or a family vacation, we've got you covered.</p>
+                        <p>Enter the following confirmation code to verify your email address:</p>
+                        <p>Confirmation code: <span class='confirmation-code'>" + confirmationCode + @"</span></p>
 
-                <p>Here are a few things you can do next:</p>
-                <ul>
-                    <li>Complete your profile to receive personalized recommendations.</li>
-                    <li>Explore our app to discover exciting travel deals and destinations.</li>
-                    <li>Book your next trip hassle-free with our easy-to-use booking platform.</li>
-                </ul>
-                <p>If you have any questions or need assistance, feel free to contact us at support@makemytrip.com.</p>
-                <p>Don't forget to follow us on <a href='https://www.facebook.com'>Facebook</a> and <a href='https://twitter.com/sundaresh_jegan'>Instagram</a> for the latest updates and promotions!</p>
-                <p>Once again, thank you for choosing Make My Trip. We look forward to serving you!</p>
-            </div>
-        </div>
-    </body>
-    </html>";
+                        <p>Here are a few things you can do next:</p>
+                        <ul>
+                            <li>Complete your profile to receive personalized recommendations.</li>
+                            <li>Explore our app to discover exciting travel deals and destinations.</li>
+                            <li>Book your next trip hassle-free with our easy-to-use booking platform.</li>
+                        </ul>
+                        <p>If you have any questions or need assistance, feel free to contact us at <a href='mailto:support@makemytrip.com'>support@makemytrip.com</a>.</p>
+                        <p>Don't forget to follow us on <a href='https://instagram.com/sundaresh_jegan' class='btn'>Instagram</a> for the latest updates and promotions!</p>
+                        <p>Once again, thank you for choosing Make My Trip. We look forward to serving you!</p>
+                    </div>
+                </div>
+            </body>
+            </html>";
+
             #endregion
 
             try
