@@ -302,7 +302,7 @@
             // 
             // emailUnderLinePanel
             // 
-            this.emailUnderLinePanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.emailUnderLinePanel.BackColor = System.Drawing.Color.DodgerBlue;
             this.emailUnderLinePanel.Location = new System.Drawing.Point(66, 242);
             this.emailUnderLinePanel.Margin = new System.Windows.Forms.Padding(2);
             this.emailUnderLinePanel.Name = "emailUnderLinePanel";
@@ -311,7 +311,7 @@
             // 
             // passwordUnderLinePanel
             // 
-            this.passwordUnderLinePanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.passwordUnderLinePanel.BackColor = System.Drawing.Color.DodgerBlue;
             this.passwordUnderLinePanel.Location = new System.Drawing.Point(66, 337);
             this.passwordUnderLinePanel.Margin = new System.Windows.Forms.Padding(2);
             this.passwordUnderLinePanel.Name = "passwordUnderLinePanel";
@@ -806,15 +806,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(907, 625);
             this.ControlBox = false;
             this.Controls.Add(this.inputPanel);
             this.Controls.Add(this.imagePanel);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.TransparencyKey = System.Drawing.Color.White;
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.Resize += new System.EventHandler(this.OnLoginFormResized);
             this.inputPanel.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);

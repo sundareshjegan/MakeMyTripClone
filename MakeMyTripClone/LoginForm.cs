@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -20,6 +21,9 @@ namespace MakeMyTripClone
         {
             InitializeComponent();
             CreateCurves();
+            Invalidate();
+            BackColor = Color.AliceBlue;
+            TransparencyKey = Color.AliceBlue;
         }
 
         private Random random = new Random();
@@ -260,7 +264,7 @@ namespace MakeMyTripClone
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
             //submitBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, submitBtn.Width, submitBtn.Height, 15, 15));
             registerBtnPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, registerBtnPanel.Width, registerBtnPanel.Height, 20, 20));
-            carouselPB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, carouselPB.Width, carouselPB.Height, 30, 30));
+            //carouselPB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, carouselPB.Width, carouselPB.Height, 30, 30));
             //tabControl.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tabControl.Width, tabControl.Height, 40, 40));
 
             //typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty, 
@@ -293,6 +297,10 @@ namespace MakeMyTripClone
         }
         #endregion
 
-        
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            Invalidate();
+        }
     }
 }
