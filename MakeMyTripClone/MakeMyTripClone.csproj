@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MakeMyTripClone</RootNamespace>
     <AssemblyName>MakeMyTripClone</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -33,8 +33,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DatabaseLibrary">
+      <HintPath>..\..\..\C_Sharp_Projects\Database_DLL FIles\DatabaseLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="GoLibrary">
+      <HintPath>..\..\..\C_Sharp_Projects\Database_DLL FIles\GoLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\C_Sharp_Projects\Database_DLL FIles\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlBackup">
+      <HintPath>..\..\..\C_Sharp_Projects\Database_DLL FIles\MySqlBackup.dll</HintPath>
+    </Reference>
+    <Reference Include="MySQLDatabase">
+      <HintPath>..\..\..\C_Sharp_Projects\Database_DLL FIles\MySQLDatabase.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\C_Sharp_Projects\Database_DLL FIles\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,10 +64,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfirmForm.cs">
+    <Compile Include="Backend\Customer.cs" />
+    <Compile Include="Backend\CustomerDetails.cs" />
+    <Compile Include="Backend\DBManager.cs" />
+    <Compile Include="Login\ConfirmForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConfirmForm.Designer.cs">
+    <Compile Include="Login\ConfirmForm.Designer.cs">
       <DependentUpon>ConfirmForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -58,31 +79,43 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Notification\CloseButton.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Payment\CompleteBookingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\CompleteBookingForm.Designer.cs">
+      <DependentUpon>CompleteBookingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RippleButton.cs">
+    <Compile Include="UserControls\RippleButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SuccessFailureForm.cs">
+    <Compile Include="Login\SuccessFailureForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SuccessFailureForm.Designer.cs">
+    <Compile Include="Login\SuccessFailureForm.Designer.cs">
       <DependentUpon>SuccessFailureForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ConfirmForm.resx">
+    <Compile Include="UserControls\TravellerDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TravellerDetails.Designer.cs">
+      <DependentUpon>TravellerDetails.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Login\ConfirmForm.resx">
       <DependentUpon>ConfirmForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\CompleteBookingForm.resx">
+      <DependentUpon>CompleteBookingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,8 +127,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SuccessFailureForm.resx">
+    <EmbeddedResource Include="Login\SuccessFailureForm.resx">
       <DependentUpon>SuccessFailureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TravellerDetails.resx">
+      <DependentUpon>TravellerDetails.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -148,6 +184,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loaderFailed.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\myLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoWhite.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
