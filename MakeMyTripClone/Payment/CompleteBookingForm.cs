@@ -16,5 +16,17 @@ namespace MakeMyTripClone.Payment
         {
             InitializeComponent();
         }
+
+        private void OnTextBoxActive(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            emailTBPanel.BackColor = (textBox.Name == "emailTB") ? Color.DodgerBlue : Color.White;
+            mobileTBPanel.BackColor = (textBox.Name == "mobileTB") ? Color.DodgerBlue : Color.White;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
