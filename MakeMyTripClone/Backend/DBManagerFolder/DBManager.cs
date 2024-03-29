@@ -121,10 +121,8 @@ namespace MakeMyTrip
             return list;
 
         }
+          
 
-
-        public static 
-        
-
+    
     }
 }
