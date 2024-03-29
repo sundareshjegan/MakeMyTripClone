@@ -49,7 +49,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 38);
+            this.label1.Location = new System.Drawing.Point(8, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 25);
             this.label1.TabIndex = 0;
@@ -70,10 +70,10 @@
             this.nameTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nameTB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nameTB.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTB.Location = new System.Drawing.Point(2, 2);
+            this.nameTB.Location = new System.Drawing.Point(1, 1);
             this.nameTB.Name = "nameTB";
-            this.nameTB.Size = new System.Drawing.Size(228, 30);
-            this.nameTB.TabIndex = 1;
+            this.nameTB.Size = new System.Drawing.Size(230, 30);
+            this.nameTB.TabIndex = 0;
             this.nameTB.TextChanged += new System.EventHandler(this.OnNameTBTextChanged);
             this.nameTB.Enter += new System.EventHandler(this.OnTextBoxActive);
             // 
@@ -104,11 +104,12 @@
             this.femaleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.femaleBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.femaleBtn.Image = global::MakeMyTripClone.Properties.Resources.female;
-            this.femaleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.femaleBtn.Location = new System.Drawing.Point(558, 37);
+            this.femaleBtn.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.femaleBtn.Location = new System.Drawing.Point(558, 36);
             this.femaleBtn.Name = "femaleBtn";
-            this.femaleBtn.Size = new System.Drawing.Size(100, 33);
+            this.femaleBtn.Size = new System.Drawing.Size(100, 30);
             this.femaleBtn.TabIndex = 2;
+            this.femaleBtn.TabStop = false;
             this.femaleBtn.Text = "      Female";
             this.femaleBtn.UseVisualStyleBackColor = true;
             this.femaleBtn.Click += new System.EventHandler(this.OnGenderBtnClicked);
@@ -121,11 +122,12 @@
             this.maleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.maleBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maleBtn.Image = ((System.Drawing.Image)(resources.GetObject("maleBtn.Image")));
-            this.maleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.maleBtn.Location = new System.Drawing.Point(464, 37);
+            this.maleBtn.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.maleBtn.Location = new System.Drawing.Point(464, 36);
             this.maleBtn.Name = "maleBtn";
-            this.maleBtn.Size = new System.Drawing.Size(95, 33);
+            this.maleBtn.Size = new System.Drawing.Size(95, 30);
             this.maleBtn.TabIndex = 2;
+            this.maleBtn.TabStop = false;
             this.maleBtn.Text = "    Male";
             this.maleBtn.UseVisualStyleBackColor = false;
             this.maleBtn.Click += new System.EventHandler(this.OnGenderBtnClicked);
@@ -157,8 +159,8 @@
             this.namePanel.Controls.Add(this.nameTB);
             this.namePanel.Location = new System.Drawing.Point(91, 34);
             this.namePanel.Name = "namePanel";
-            this.namePanel.Padding = new System.Windows.Forms.Padding(2);
-            this.namePanel.Size = new System.Drawing.Size(232, 34);
+            this.namePanel.Padding = new System.Windows.Forms.Padding(1);
+            this.namePanel.Size = new System.Drawing.Size(232, 32);
             this.namePanel.TabIndex = 3;
             this.namePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -169,8 +171,8 @@
             this.agePanel.Controls.Add(this.ageTB);
             this.agePanel.Location = new System.Drawing.Point(329, 34);
             this.agePanel.Name = "agePanel";
-            this.agePanel.Padding = new System.Windows.Forms.Padding(2);
-            this.agePanel.Size = new System.Drawing.Size(118, 34);
+            this.agePanel.Padding = new System.Windows.Forms.Padding(1);
+            this.agePanel.Size = new System.Drawing.Size(118, 32);
             this.agePanel.TabIndex = 3;
             this.agePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -179,9 +181,9 @@
             this.ageTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ageTB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ageTB.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ageTB.Location = new System.Drawing.Point(2, 2);
+            this.ageTB.Location = new System.Drawing.Point(1, 1);
             this.ageTB.Name = "ageTB";
-            this.ageTB.Size = new System.Drawing.Size(114, 30);
+            this.ageTB.Size = new System.Drawing.Size(116, 30);
             this.ageTB.TabIndex = 1;
             this.ageTB.TextChanged += new System.EventHandler(this.OnAgeTBTextChanged);
             this.ageTB.Enter += new System.EventHandler(this.OnTextBoxActive);
@@ -202,7 +204,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Traveller_Details";
-            this.Size = new System.Drawing.Size(669, 101);
+            this.Size = new System.Drawing.Size(669, 98);
             this.Click += new System.EventHandler(this.OnTextBoxActive);
             this.Enter += new System.EventHandler(this.OnTextBoxActive);
             this.namePanel.ResumeLayout(false);

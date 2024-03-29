@@ -20,6 +20,28 @@ namespace MakeMyTripClone.UserControls
             //panel1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 20, 20));
         }
         
+        public string TravellerName
+        {
+            get
+            {
+                return nameTB.Text;
+            }
+            set
+            {
+                nameWarningLabel.Text = nameTB.Text == "" ?  value : "";
+            }
+        }
+        public string TravellerAge
+        {
+            get
+            {
+                return ageTB.Text;
+            }
+            set
+            {
+                ageWarningLabel.Text = ageTB.Text == "" ? value : "";
+            }
+        }
 
         private void OnNameTBTextChanged(object sender, EventArgs e)
         {
