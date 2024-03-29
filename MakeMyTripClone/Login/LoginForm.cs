@@ -1,4 +1,6 @@
-﻿using MakeMyTripClone.Properties;
+﻿using MakeMyTrip;
+using MakeMyTripClone.Properties;
+using MakeMyTripClone.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +26,7 @@ namespace MakeMyTripClone
             Invalidate();
             BackColor = Color.AliceBlue;
             TransparencyKey = Color.AliceBlue;
+            DBManager.GetConnection();
         }
 
         private Random random = new Random();
@@ -301,6 +304,12 @@ namespace MakeMyTripClone
         private void LoginForm_Load(object sender, EventArgs e)
         {
             Invalidate();
+        }
+
+        private void submitBtn_Click(object sender, EventArgs e)
+        {
+           resLabel.Text =  DBManager.Verify(emailTB.Text, passwordTB.Text);
+           
         }
     }
 }

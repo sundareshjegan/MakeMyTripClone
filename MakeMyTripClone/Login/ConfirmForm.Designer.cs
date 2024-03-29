@@ -36,7 +36,7 @@
             this.closePB = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.confirmBtn = new MakeMyTripClone.RippleButton();
+            this.confirmBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closePB)).BeginInit();
             this.panel1.SuspendLayout();
@@ -134,18 +134,12 @@
             // 
             // confirmBtn
             // 
-            this.confirmBtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.confirmBtn.Enabled = false;
-            this.confirmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.confirmBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmBtn.ForeColor = System.Drawing.Color.White;
-            this.confirmBtn.Location = new System.Drawing.Point(27, 329);
+            this.confirmBtn.Location = new System.Drawing.Point(186, 339);
             this.confirmBtn.Name = "confirmBtn";
-            this.confirmBtn.Size = new System.Drawing.Size(405, 41);
+            this.confirmBtn.Size = new System.Drawing.Size(75, 23);
             this.confirmBtn.TabIndex = 8;
-            this.confirmBtn.Text = "CONFIRM";
-            this.confirmBtn.UseVisualStyleBackColor = false;
-            this.confirmBtn.Click += new System.EventHandler(this.OnConfirmBtnClicked);
+            this.confirmBtn.Text = "button1";
+            this.confirmBtn.UseVisualStyleBackColor = true;
             // 
             // ConfirmForm
             // 
@@ -184,6 +178,7 @@
         private System.Windows.Forms.PictureBox closePB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private RippleButton confirmBtn;
+        private System.Windows.Forms.Button confirmBtn;
+        //   private RippleButton confirmBtn;
     }
 }

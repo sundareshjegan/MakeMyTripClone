@@ -83,8 +83,8 @@
             this.imagePanel = new System.Windows.Forms.Panel();
             this.closePB = new System.Windows.Forms.PictureBox();
             this.carouselPB = new System.Windows.Forms.PictureBox();
-            this.submitBtn = new MakeMyTripClone.RippleButton();
-            this.rippleButton1 = new MakeMyTripClone.RippleButton();
+            this.submitBtn = new System.Windows.Forms.Button();
+            this.resLabel = new System.Windows.Forms.Label();
             this.inputPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.loginTabPage.SuspendLayout();
@@ -95,7 +95,6 @@
             this.registerTabPage.SuspendLayout();
             this.registerInputPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.registerBtnPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.regEmailValidPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regMobileValidPB)).BeginInit();
@@ -189,6 +188,7 @@
             // loginInputPanel
             // 
             this.loginInputPanel.BackColor = System.Drawing.Color.White;
+            this.loginInputPanel.Controls.Add(this.resLabel);
             this.loginInputPanel.Controls.Add(this.tableLayoutPanel2);
             this.loginInputPanel.Controls.Add(this.pictureBox2);
             this.loginInputPanel.Controls.Add(this.label1);
@@ -388,7 +388,6 @@
             // 
             this.registerBtnPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerBtnPanel.BackColor = System.Drawing.Color.DodgerBlue;
-            this.registerBtnPanel.Controls.Add(this.rippleButton1);
             this.registerBtnPanel.Location = new System.Drawing.Point(37, 11);
             this.registerBtnPanel.Name = "registerBtnPanel";
             this.registerBtnPanel.Size = new System.Drawing.Size(330, 55);
@@ -774,33 +773,23 @@
             // 
             // submitBtn
             // 
-            this.submitBtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submitBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitBtn.ForeColor = System.Drawing.Color.White;
-            this.submitBtn.Location = new System.Drawing.Point(156, 3);
+            this.submitBtn.Location = new System.Drawing.Point(123, 26);
             this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(113, 34);
-            this.submitBtn.TabIndex = 2;
-            this.submitBtn.Text = "Submit";
-            this.submitBtn.UseVisualStyleBackColor = false;
-            this.submitBtn.MouseEnter += new System.EventHandler(this.OnSubmitBtnMouseHover);
-            this.submitBtn.MouseHover += new System.EventHandler(this.OnSubmitBtnMouseHover);
+            this.submitBtn.Size = new System.Drawing.Size(123, 37);
+            this.submitBtn.TabIndex = 0;
+            this.submitBtn.Text = "button1";
+            this.submitBtn.UseVisualStyleBackColor = true;
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
-            // rippleButton1
+            // resLabel
             // 
-            this.rippleButton1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.rippleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rippleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rippleButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rippleButton1.Location = new System.Drawing.Point(0, 0);
-            this.rippleButton1.Name = "rippleButton1";
-            this.rippleButton1.Size = new System.Drawing.Size(330, 55);
-            this.rippleButton1.TabIndex = 11;
-            this.rippleButton1.Text = "REGISTER";
-            this.rippleButton1.UseVisualStyleBackColor = false;
-            this.rippleButton1.Click += new System.EventHandler(this.OnRegisterBtnClicked);
+            this.resLabel.AutoSize = true;
+            this.resLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resLabel.ForeColor = System.Drawing.Color.Red;
+            this.resLabel.Location = new System.Drawing.Point(147, 379);
+            this.resLabel.Name = "resLabel";
+            this.resLabel.Size = new System.Drawing.Size(0, 24);
+            this.resLabel.TabIndex = 10;
             // 
             // LoginForm
             // 
@@ -832,7 +821,6 @@
             this.registerInputPanel.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.registerBtnPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.regEmailValidPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regMobileValidPB)).EndInit();
@@ -892,7 +880,7 @@
         private System.Windows.Forms.Label regEmailWarningLabel;
         private System.Windows.Forms.Label regNameWarningLabel;
         private System.Windows.Forms.Label regMobileWarningLabel;
-        private RippleButton submitBtn;
+        //private RippleButton submitBtn;
         private System.Windows.Forms.Label dontHaveAccountLabel;
         private System.Windows.Forms.Label alreadyHaveAccountLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -900,6 +888,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox closePB;
         private System.Windows.Forms.RadioButton radioButton1;
-        private RippleButton rippleButton1;
+        private System.Windows.Forms.Button submitBtn;
+        private System.Windows.Forms.Label resLabel;
+        //private RippleButton rippleButton1;
     }
 }
