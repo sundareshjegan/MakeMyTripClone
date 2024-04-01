@@ -108,11 +108,14 @@ namespace MakeMyTripClone
         }
         private void OnSubmitBtnClicked(object sender, EventArgs e)
         {
-            if (DBManager.Verify(emailTB.Text, passwordTB.Text) == "")
+            if(emailTB.Text != "" && passwordTB.Text != "")
             {
-                //open busselection Form
+                if (DBManager.Verify(emailTB.Text, passwordTB.Text) == "")
+                {
+                    //open busselection Form
+                }
+                resLabel.Text = DBManager.Verify(emailTB.Text, passwordTB.Text);
             }
-            resLabel.Text = DBManager.Verify(emailTB.Text, passwordTB.Text);
         }
         private void OnRegisterBtnClicked(object sender, EventArgs e)
         {
