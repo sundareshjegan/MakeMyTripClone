@@ -104,6 +104,9 @@
     <Compile Include="Login\SuccessFailureForm.Designer.cs">
       <DependentUpon>SuccessFailureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\RippleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\TravellerDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -167,9 +170,6 @@
     <None Include="Resources\makemytrip-logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\backArrow.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\close.png" />
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\wallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1711023801388.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

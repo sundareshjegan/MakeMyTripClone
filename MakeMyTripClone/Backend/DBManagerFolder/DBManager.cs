@@ -13,8 +13,6 @@ namespace MakeMyTrip
 {
     static class DBManager
     {
-
-
         private static readonly string server = "localhost";
         private static readonly string database = "makemytrip";
         private static readonly string user = "root";
@@ -40,21 +38,14 @@ namespace MakeMyTrip
         public static Boolean IsUserExisted(String email)
         {
             // Customer -  class contains table name and column names
-
             var res = manager.FetchData(Customer.TableName, $"{Customer.Email}= '{email}' ", -1,-1,"",Customer.Email).Value;
-
-
             return res.Count == 0;
 
         }
-
-
         public static void AddUser(CustomerDetails cd)
         {
-
-            if (manager.IsConnected) ;
+            if (manager.IsConnected) 
                manager.InsertData(Customer.TableName, cd.Name, cd.Email, cd.Phone, cd.Password, cd.Gender);
-
         }
 
         #endregion
@@ -117,12 +108,7 @@ namespace MakeMyTrip
                 list.Add(rd);
                 
             }
-
             return list;
-
-        }
-          
-
-    
+        }    
     }
 }

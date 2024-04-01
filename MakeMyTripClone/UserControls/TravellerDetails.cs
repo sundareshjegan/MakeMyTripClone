@@ -43,6 +43,13 @@ namespace MakeMyTripClone.UserControls
             }
         }
 
+        public string Gender
+        {
+            get => selectedGender;
+        }
+
+        private string selectedGender;
+
         private void OnNameTBTextChanged(object sender, EventArgs e)
         {
             if (nameTB.Text == "")
@@ -57,11 +64,6 @@ namespace MakeMyTripClone.UserControls
             {
                 ageWarningLabel.Text = "Age Required..!";
             }
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
         #region DLL to Create rounded Regions
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -83,6 +85,7 @@ namespace MakeMyTripClone.UserControls
             button.FlatAppearance.BorderColor = Color.DodgerBlue;
             button.ForeColor = Color.DodgerBlue;
             button.BackColor = Color.FromArgb(200, 230, 255);
+            selectedGender = button.Text;
         }
         private void ResetButtonColors()
         {

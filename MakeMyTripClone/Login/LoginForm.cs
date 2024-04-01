@@ -1,18 +1,9 @@
 ﻿using MakeMyTrip;
 using MakeMyTripClone.Properties;
-using MakeMyTripClone.UserControls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MakeMyTripClone
@@ -26,12 +17,14 @@ namespace MakeMyTripClone
             Invalidate();
             BackColor = Color.AliceBlue;
             TransparencyKey = Color.AliceBlue;
-            DBManager.GetConnection();
+            //DBManager.GetConnection();
         }
 
         private Random random = new Random();
         private int previousX = 0;
         private int previousY = 0;
+        private char selectedGender;
+
         #region DLL to Create rounded Regions
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -106,29 +99,46 @@ namespace MakeMyTripClone
             }
         }
 
-        
+        private void OnGenderRBCheckChanged(object sender, EventArgs e)
+        {
+            if (sender is RadioButton rb)
+            {
+                selectedGender = rb.Text.ToUpper()[0];
+            }
+        }
+        private void OnSubmitBtnClicked(object sender, EventArgs e)
+        {
+            if (DBManager.Verify(emailTB.Text, passwordTB.Text) == "")
+            {
+                //open busselection Form
+            }
+            resLabel.Text = DBManager.Verify(emailTB.Text, passwordTB.Text);
+        }
         private void OnRegisterBtnClicked(object sender, EventArgs e)
         {
-            //if (BackEnd.UserAlreadyExists(regEmailTB.Text))
-            //{
-            //    regEmailWarningLabel.Text = "Email-Id already Exists";
-            //}
-            //else
-            //{
-
-            //}
-
+            if (DBManager.IsUserExisted(regEmailTB.Text))
+            {
+                regEmailWarningLabel.Text = "Email-Id already Exists";
+                return;
+            }
             if (ValidateInputs())
             {
                 Opacity = Opacity / 2;
                 ConfirmForm confirmationForm = new ConfirmForm();
                 confirmationForm.SendEmail(regEmailTB.Text, regNameTB.Text);
                 confirmationForm.ShowDialog();
+                if (confirmationForm.IsVerified)
+                {
+                    CustomerDetails customer = new CustomerDetails()
+                    {
+                        Name = regNameTB.Text,
+                        Email = regEmailTB.Text,
+                        Phone = long.Parse(regMobileTB.Text),
+                        Password = regPasswordTB.Text,
+                        Gender = selectedGender
+                    };
+                }
                 Opacity = Opacity * 2;
-            }
-            else
-            {
-                
             }
         }
 
@@ -178,22 +188,22 @@ namespace MakeMyTripClone
             {
                 case "VeryWeak":
                     //passwordStrengthLabel.Text = "Very Weak Password";
-                    passwordStrengthPanel.BackColor = passwordStrengthLabel.ForeColor = Color.OrangeRed;
+                    passwordStrengthPanel.BackColor = regPasswordWarningLabel.ForeColor = Color.OrangeRed;
                     passwordStrengthPanel.Width = 70;
                     break;
                 case "Weak":
                     //passwordStrengthLabel.Text = "Weak Password";
-                    passwordStrengthPanel.BackColor = passwordStrengthLabel.ForeColor = Color.Orange;
+                    passwordStrengthPanel.BackColor = regPasswordWarningLabel.ForeColor = Color.Orange;
                     passwordStrengthPanel.Width = 140;
                     break;
                 case "Medium":
                     //passwordStrengthLabel.Text = "Medium Password";
-                    passwordStrengthPanel.BackColor = passwordStrengthLabel.ForeColor = Color.LightBlue;
+                    passwordStrengthPanel.BackColor = regPasswordWarningLabel.ForeColor = Color.LightBlue;
                     passwordStrengthPanel.Width = 210;
                     break;
                 case "Strong":
                     //passwordStrengthLabel.Text = "Strong Password";
-                    passwordStrengthPanel.BackColor = passwordStrengthLabel.ForeColor = Color.LightGreen;
+                    passwordStrengthPanel.BackColor = regPasswordWarningLabel.ForeColor = Color.LightGreen;
                     passwordStrengthPanel.Width = emailUnderLinePanel.Width;
                     break;
             }
@@ -273,12 +283,7 @@ namespace MakeMyTripClone
             //typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty, 
                 //null, buttonsPanel, new object[] { true });
         }
-        private void ValidateLabels()
-        {
-            regNameWarningLabel.Text = regNameTB.Text == "" ? "Name is required..!" : "";
-            regMobileWarningLabel.Text = regMobileTB.Text == "" ? "Mobile Number is required..!" : "";
-            regEmailWarningLabel.Text = regEmailTB.Text == "" ? "Email is required..!" : "";
-        }
+
         private bool ValidateInputs()
         {
             if (regNameTB.Text == "" || string.IsNullOrWhiteSpace(regNameTB.Text))
@@ -291,25 +296,38 @@ namespace MakeMyTripClone
                 regEmailWarningLabel.Text = "Email should not be empty";
                 return false;
             }
+            if (!IsValidEmail(regEmailTB.Text))
+            {
+                regEmailWarningLabel.Text = "Invalid Email-Id";
+                return false;
+            }
             if (regMobileTB.Text == "" || string.IsNullOrWhiteSpace(regMobileTB.Text))
             {
                 regMobileWarningLabel.Text = "Mobile Number Should Not be Empty";
                 return false;
             }
+            if (regMobileTB.Text.Length != 10)
+            {
+                regMobileWarningLabel.Text = "Invalid Mobile Number";
+                return false;
+            }
+            if(regPasswordTB.Text == "")
+            {
+                regPasswordWarningLabel.Text = "Password Should not be empty";
+                return false;
+            }
+            if(regPasswordTB.Text != regConPasswordTB.Text)
+            {
+                passwordCompareLabel.Text = "Passwords did not match..!";
+                return false;
+            }
+            if(!maleRB.Checked && !femaleRB.Checked && !othersRB.Checked)
+            {
+                genderWarningLabel.Text = "Select your Gender..!";
+                return false;
+            }
             return true;
         }
         #endregion
-
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-            Invalidate();
-        }
-
-        private void submitBtn_Click(object sender, EventArgs e)
-        {
-           resLabel.Text =  DBManager.Verify(emailTB.Text, passwordTB.Text);
-           
-        }
     }
 }

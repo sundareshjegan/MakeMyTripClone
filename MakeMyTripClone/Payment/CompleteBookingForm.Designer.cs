@@ -64,13 +64,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.seatNoLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.busTypeLabel = new System.Windows.Forms.Label();
+            this.busNameLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.walletPB = new System.Windows.Forms.PictureBox();
@@ -127,7 +127,7 @@
             this.CompleteBookingLabel.AutoSize = true;
             this.CompleteBookingLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompleteBookingLabel.ForeColor = System.Drawing.Color.White;
-            this.CompleteBookingLabel.Location = new System.Drawing.Point(295, 14);
+            this.CompleteBookingLabel.Location = new System.Drawing.Point(290, 14);
             this.CompleteBookingLabel.Name = "CompleteBookingLabel";
             this.CompleteBookingLabel.Size = new System.Drawing.Size(286, 32);
             this.CompleteBookingLabel.TabIndex = 1;
@@ -139,7 +139,7 @@
             this.headerDateTimeLabel.AutoSize = true;
             this.headerDateTimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerDateTimeLabel.ForeColor = System.Drawing.Color.White;
-            this.headerDateTimeLabel.Location = new System.Drawing.Point(902, 17);
+            this.headerDateTimeLabel.Location = new System.Drawing.Point(894, 17);
             this.headerDateTimeLabel.Name = "headerDateTimeLabel";
             this.headerDateTimeLabel.Size = new System.Drawing.Size(305, 25);
             this.headerDateTimeLabel.TabIndex = 1;
@@ -152,7 +152,7 @@
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.10944F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.89056F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 649F));
-            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.headerPanel.Controls.Add(this.headerDateTimeLabel, 2, 0);
             this.headerPanel.Controls.Add(this.logoPB, 0, 0);
             this.headerPanel.Controls.Add(this.CompleteBookingLabel, 1, 0);
@@ -171,7 +171,7 @@
             this.logoPB.Image = global::MakeMyTripClone.Properties.Resources.logoWhite;
             this.logoPB.Location = new System.Drawing.Point(3, 7);
             this.logoPB.Name = "logoPB";
-            this.logoPB.Size = new System.Drawing.Size(141, 45);
+            this.logoPB.Size = new System.Drawing.Size(139, 45);
             this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPB.TabIndex = 1;
             this.logoPB.TabStop = false;
@@ -181,7 +181,7 @@
             this.closePB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.closePB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closePB.Image = global::MakeMyTripClone.Properties.Resources.close;
-            this.closePB.Location = new System.Drawing.Point(1402, 17);
+            this.closePB.Location = new System.Drawing.Point(1398, 17);
             this.closePB.Name = "closePB";
             this.closePB.Size = new System.Drawing.Size(25, 25);
             this.closePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -201,6 +201,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.panel14);
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.panel6);
@@ -364,7 +365,7 @@
             // 
             // emailTBPanel
             // 
-            this.emailTBPanel.BackColor = System.Drawing.Color.White;
+            this.emailTBPanel.BackColor = System.Drawing.Color.Transparent;
             this.emailTBPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.emailTBPanel.Controls.Add(this.emailTB);
             this.emailTBPanel.Location = new System.Drawing.Point(20, 72);
@@ -472,7 +473,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label11);
@@ -480,13 +481,13 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.seatNoLabel);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.busTypeLabel);
+            this.panel4.Controls.Add(this.busNameLabel);
             this.panel4.Location = new System.Drawing.Point(14, 14);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(722, 262);
@@ -575,15 +576,15 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Delhi";
             // 
-            // label3
+            // seatNoLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(589, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Seat No: 2G";
+            this.seatNoLabel.AutoSize = true;
+            this.seatNoLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.seatNoLabel.Location = new System.Drawing.Point(593, 14);
+            this.seatNoLabel.Name = "seatNoLabel";
+            this.seatNoLabel.Size = new System.Drawing.Size(89, 20);
+            this.seatNoLabel.TabIndex = 0;
+            this.seatNoLabel.Text = "Seat No: 2G";
             // 
             // label7
             // 
@@ -626,25 +627,25 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "22:15";
             // 
-            // label2
+            // busTypeLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(263, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Bharat Benz A/C Seater /Sleeper (2+1)";
+            this.busTypeLabel.AutoSize = true;
+            this.busTypeLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.busTypeLabel.Location = new System.Drawing.Point(15, 38);
+            this.busTypeLabel.Name = "busTypeLabel";
+            this.busTypeLabel.Size = new System.Drawing.Size(263, 20);
+            this.busTypeLabel.TabIndex = 0;
+            this.busTypeLabel.Text = "Bharat Benz A/C Seater /Sleeper (2+1)";
             // 
-            // label1
+            // busNameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "IntrCity Smart Bus";
+            this.busNameLabel.AutoSize = true;
+            this.busNameLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.busNameLabel.Location = new System.Drawing.Point(15, 13);
+            this.busNameLabel.Name = "busNameLabel";
+            this.busNameLabel.Size = new System.Drawing.Size(175, 25);
+            this.busNameLabel.TabIndex = 0;
+            this.busNameLabel.Text = "IntrCity Smart Bus";
             // 
             // panel3
             // 
@@ -780,7 +781,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(19, 67);
+            this.label29.Location = new System.Drawing.Point(22, 67);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(56, 17);
             this.label29.TabIndex = 0;
@@ -1000,9 +1001,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label busTypeLabel;
+        private System.Windows.Forms.Label busNameLabel;
+        private System.Windows.Forms.Label seatNoLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label6;

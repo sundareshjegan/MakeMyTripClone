@@ -63,16 +63,6 @@ namespace MakeMyTripClone.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap backArrow {
-            get {
-                object obj = ResourceManager.GetObject("backArrow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
@@ -156,6 +146,16 @@ namespace MakeMyTripClone.Properties {
         internal static System.Drawing.Bitmap logoWhite {
             get {
                 object obj = ResourceManager.GetObject("logoWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Makemytrip_logo {
+            get {
+                object obj = ResourceManager.GetObject("Makemytrip_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

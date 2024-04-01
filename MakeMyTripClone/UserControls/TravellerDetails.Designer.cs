@@ -162,7 +162,6 @@
             this.namePanel.Padding = new System.Windows.Forms.Padding(1);
             this.namePanel.Size = new System.Drawing.Size(232, 32);
             this.namePanel.TabIndex = 3;
-            this.namePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // agePanel
             // 
@@ -174,7 +173,6 @@
             this.agePanel.Padding = new System.Windows.Forms.Padding(1);
             this.agePanel.Size = new System.Drawing.Size(118, 32);
             this.agePanel.TabIndex = 3;
-            this.agePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // ageTB
             // 
