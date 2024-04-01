@@ -92,7 +92,7 @@ namespace MakeMyTripClone
 
             DateTime D = DateTime.Now;
 
-            dateTimePicker1.MinDate = D.Date ;
+            dateTimePicker.MinDate = D.Date ;
 
             toComboBox.Text = "Mumbai, Maharashtra";
 
@@ -122,11 +122,11 @@ namespace MakeMyTripClone
 
         private void DateTimeValueChange(object sender, EventArgs e)
         {
-            dateLabel.Text = dateTimePicker1.Value.Day.ToString();
+            dateLabel.Text = dateTimePicker.Value.Day.ToString();
 
-            int month = dateTimePicker1.Value.Month;
+            int month = dateTimePicker.Value.Month;
 
-            int year = dateTimePicker1.Value.Year;
+            int year = dateTimePicker.Value.Year;
 
             string m = "";
 
@@ -232,29 +232,29 @@ namespace MakeMyTripClone
 
         private void DateClick(object sender, EventArgs e)
         {
-            Int32 x = dateTimePicker1.Width - 10;
+            Int32 x = dateTimePicker.Width - 10;
 
-            Int32 y = dateTimePicker1.Height / 2;
+            Int32 y = dateTimePicker.Height / 2;
 
             Int32 lParam = x + y * 0x00010000;
 
-            PostMessage(dateTimePicker1.Handle, WM_LBUTTONDOWN, 1, lParam);
+            PostMessage(dateTimePicker.Handle, WM_LBUTTONDOWN, 1, lParam);
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
             if (warningLabel.Visible == false)
             {
-                //Proceed to Next Form
+                BookingPageForm page = new BookingPageForm();
 
-                //ComboBoxForm Obj = new ComboBoxForm();
 
-                //Obj.ShowDialog();
-
+                String[] boarding = fromcomboBox.Text.Split(',');
+                String[] destination = toComboBox.Text.Split(',');
+                page.SetData(boarding[0], destination[0], dateTimePicker.Value.ToString("yyyy-MM-dd"));
+                page.ShowDialog();
             }
         }
 
-        // Nav Bar Button Click
 
         private void FlightOnClick(object sender, EventArgs e)
         {

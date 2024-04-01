@@ -81,7 +81,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.warningLabel = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.monthyearLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
@@ -797,7 +797,7 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.dateTimePicker1);
+            this.panel14.Controls.Add(this.dateTimePicker);
             this.panel14.Controls.Add(this.label16);
             this.panel14.Controls.Add(this.monthyearLabel);
             this.panel14.Controls.Add(this.dateLabel);
@@ -809,20 +809,20 @@
             this.panel14.Size = new System.Drawing.Size(165, 100);
             this.panel14.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.Black;
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Black;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.Black;
-            this.dateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker1.Location = new System.Drawing.Point(94, 7);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 7, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(14, 20);
-            this.dateTimePicker1.TabIndex = 8;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 3, 22, 0, 0, 0, 0);
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimeValueChange);
+            this.dateTimePicker.CalendarForeColor = System.Drawing.Color.Black;
+            this.dateTimePicker.CalendarMonthBackground = System.Drawing.Color.Black;
+            this.dateTimePicker.CalendarTitleForeColor = System.Drawing.Color.Black;
+            this.dateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dateTimePicker.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimePicker.Location = new System.Drawing.Point(94, 7);
+            this.dateTimePicker.MaxDate = new System.DateTime(2024, 7, 31, 0, 0, 0, 0);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(14, 20);
+            this.dateTimePicker.TabIndex = 8;
+            this.dateTimePicker.Value = new System.DateTime(2024, 3, 22, 0, 0, 0, 0);
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.DateTimeValueChange);
             // 
             // label16
             // 
@@ -1203,7 +1203,7 @@
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.ComboBox fromcomboBox;
         private System.Windows.Forms.ComboBox toComboBox;
         private System.Windows.Forms.Label label8;

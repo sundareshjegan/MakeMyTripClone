@@ -15,6 +15,7 @@ namespace MakeMyTripClone.HomePage
         public HomePageForm()
         {
             InitializeComponent();
+            DBManager.GetConnection();
         }
     }
 }

@@ -9,14 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace MakeMyTrip
+namespace MakeMyTripClone
 {
     static class DBManager
     {
-        private static readonly string server = "localhost";
+        private static readonly string server = "192.168.3.63";
         private static readonly string database = "makemytrip";
-        private static readonly string user = "root";
-        private static readonly string password = "databaseB7&";
+        private static readonly string user = "team7";
+        private static readonly string password = "team7team7";
 
         private static readonly string connectionString = $"server={server};user={user};password={password};database={database}";
 
@@ -54,9 +54,7 @@ namespace MakeMyTrip
 
         public static String Verify(String email, String password)
         {
-
-
-            GetBuses("", "", new DateTime());
+           // GetBuses("", "", new DateTime());
 
             if (IsUserExisted(email))
                 return "You dont have an account";
@@ -77,13 +75,14 @@ namespace MakeMyTrip
 
 
 
-        public static List<RouteDetails> GetBuses(String boarding , String destination , DateTime date1)
+        public static List<RouteDetails> GetBuses(String boarding , String destination , String date)
         {
-            boarding = "Coimbatore";
-            destination = "Chennai";
+             boarding = "Coimbatore";
+            //destination = "Chennai";
 
-            String date  = new DateTime(2024, 3, 27).ToString("yyyy-MM-dd");
-
+            //  String date  = new DateTime(2024, 3, 27).ToString("yyyy-MM-dd");
+            date = "2024-03-27";
+           
             var res = manager.FetchData(Route.TableName, $"{Route.Source} = '{boarding}' and {Route.Destination} = '{destination}' and {Route.StartDate} = '{date}'").Value;
 
             List<RouteDetails> list = new List<RouteDetails>();

@@ -34,24 +34,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DatabaseLibrary">
-      <HintPath>..\..\DatabaseDLLFiles\DatabaseLibrary.dll</HintPath>
+      <HintPath>..\..\Database_DLL FIles\DatabaseLibrary.dll</HintPath>
     </Reference>
     <Reference Include="GoLibrary">
-      <HintPath>..\..\DatabaseDLLFiles\GoLibrary.dll</HintPath>
+      <HintPath>..\..\Database_DLL FIles\GoLibrary.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\DatabaseDLLFiles\MySql.Data.dll</HintPath>
+      <HintPath>..\..\Database_DLL FIles\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySqlBackup">
-      <HintPath>..\..\DatabaseDLLFiles\MySqlBackup.dll</HintPath>
+      <HintPath>..\..\Database_DLL FIles\MySqlBackup.dll</HintPath>
     </Reference>
     <Reference Include="MySQLDatabase">
-      <HintPath>..\..\DatabaseDLLFiles\MySQLDatabase.dll</HintPath>
+      <HintPath>..\..\Database_DLL FIles\MySQLDatabase.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite">
-      <HintPath>..\..\DatabaseDLLFiles\System.Data.SQLite.dll</HintPath>
+      <HintPath>..\..\Database_DLL FIles\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -70,6 +70,36 @@
     <Compile Include="Backend\Tables\Customer.cs" />
     <Compile Include="Backend\Tables\Route.cs" />
     <Compile Include="Backend\Tables\Seat.cs" />
+    <Compile Include="Booking\Buses.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\Buses.designer.cs">
+      <DependentUpon>Buses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\BookingPageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking\BookingPageForm.designer.cs">
+      <DependentUpon>BookingPageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Seaterseats.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\Seaterseats.designer.cs">
+      <DependentUpon>Seaterseats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Semiseaters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\Semiseaters.designer.cs">
+      <DependentUpon>Semiseaters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Sleeper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\Sleeper.designer.cs">
+      <DependentUpon>Sleeper.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomePage\HomePageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,12 +117,6 @@
     </Compile>
     <Compile Include="Login\ConfirmForm.Designer.cs">
       <DependentUpon>ConfirmForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\LoginForm.cs">
       <SubType>Form</SubType>
@@ -125,6 +149,21 @@
     <Compile Include="UserControls\TravellerDetails.Designer.cs">
       <DependentUpon>TravellerDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Booking\Buses.resx">
+      <DependentUpon>Buses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\BookingPageForm.resx">
+      <DependentUpon>BookingPageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\Seaterseats.resx">
+      <DependentUpon>Seaterseats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\Semiseaters.resx">
+      <DependentUpon>Semiseaters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\Sleeper.resx">
+      <DependentUpon>Sleeper.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomePage\HomePageForm.resx">
       <DependentUpon>HomePageForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +360,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\homeBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blueseater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bluesleeper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rupee %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sunset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-seat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no results.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sunny-day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slleeping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-snow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snowflake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sunrise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SLEEPER.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
