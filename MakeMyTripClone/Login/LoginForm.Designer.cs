@@ -87,6 +87,7 @@
             this.imagePanel = new System.Windows.Forms.Panel();
             this.closePB = new System.Windows.Forms.PictureBox();
             this.carouselPB = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.inputPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.loginTabPage.SuspendLayout();
@@ -794,6 +795,7 @@
             this.imagePanel.BackColor = System.Drawing.Color.White;
             this.imagePanel.BackgroundImage = global::MakeMyTripClone.Properties.Resources.LoginPageCarousel1;
             this.imagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagePanel.Controls.Add(this.label10);
             this.imagePanel.Controls.Add(this.closePB);
             this.imagePanel.Controls.Add(this.carouselPB);
             this.imagePanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -829,6 +831,19 @@
             this.carouselPB.TabIndex = 0;
             this.carouselPB.TabStop = false;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(15, 605);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(427, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "By proceeding, you agree to MakeMyTrip\'s  Privacy Policy, User Agreement and T&Cs" +
+    "";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -863,6 +878,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regMobileValidPB)).EndInit();
             this.imagePanel.ResumeLayout(false);
+            this.imagePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closePB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carouselPB)).EndInit();
             this.ResumeLayout(false);
@@ -930,6 +946,7 @@
         private System.Windows.Forms.Label resLabel;
         private RippleButton registerBtn;
         private System.Windows.Forms.Label genderWarningLabel;
+        private System.Windows.Forms.Label label10;
         //private RippleButton rippleButton1;
     }
 }

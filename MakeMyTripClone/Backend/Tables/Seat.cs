@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MakeMyTrip.Table
+namespace MakeMyTripClone
 {
     class Seat
     {

@@ -322,5 +322,26 @@
   <ItemGroup>
     <None Include="Resources\homeBackground.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\liveTracking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\liveTracking1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rating.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ackoLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baggage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hospitalization.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personalAccident.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

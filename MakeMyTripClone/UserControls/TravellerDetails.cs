@@ -11,9 +11,9 @@ using System.Runtime.InteropServices;
 
 namespace MakeMyTripClone.UserControls
 {
-    public partial class Traveller_Details : UserControl
+    public partial class TravellerDetails : UserControl
     {
-        public Traveller_Details()
+        public TravellerDetails()
         {
             InitializeComponent();
             //maleBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, maleBtn.Width, maleBtn.Height, 10, 10));
@@ -42,29 +42,24 @@ namespace MakeMyTripClone.UserControls
                 ageWarningLabel.Text = ageTB.Text == "" ? value : "";
             }
         }
-
+        public string SeatNumber
+        {
+            get
+            {
+                return seatNoLabel.Text;
+            }
+            set
+            {
+                seatNoLabel.Text = value;
+            }
+        }
         public string Gender
         {
             get => selectedGender;
         }
 
-        private string selectedGender;
+        private string selectedGender="";
 
-        private void OnNameTBTextChanged(object sender, EventArgs e)
-        {
-            if (nameTB.Text == "")
-            {
-                nameWarningLabel.Text = "Name Required..!";
-            }
-        }
-
-        private void OnAgeTBTextChanged(object sender, EventArgs e)
-        {
-            if (ageTB.Text == "")
-            {
-                ageWarningLabel.Text = "Age Required..!";
-            }
-        }
         #region DLL to Create rounded Regions
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -77,6 +72,54 @@ namespace MakeMyTripClone.UserControls
             int nHeightEllipse // width of ellipse
         );
         #endregion
+
+        private void OnNameTBTextChanged(object sender, EventArgs e)
+        {
+            if (nameTB.Text == "")
+            {
+                namePanel.BackColor = Color.Red;
+                nameWarningLabel.Text = "Name Required..!";
+                return;
+            }
+            nameWarningLabel.Text = "";
+            namePanel.BackColor = Color.Transparent;
+        }
+
+        private void OnAgeTBTextChanged(object sender, EventArgs e)
+        {
+            if (ageTB.Text == "")
+            {
+                agePanel.BackColor = Color.Red;
+                ageWarningLabel.Text = "Age Required..!"; return;
+            }
+            if (int.Parse(ageTB.Text) > 200)
+            {
+                agePanel.BackColor = Color.Red;
+                ageWarningLabel.Text = "Invalid Age..!"; return;
+            }
+            ageWarningLabel.Text = "";
+            agePanel.BackColor = Color.Transparent;
+        }
+        private void OnAgeTBKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != '\b';
+        }
+
+        private void OnTextBoxActive(object sender, EventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                namePanel.BackColor = (textBox.Name == "nameTB") ? Color.DodgerBlue : Color.White;
+                //namePanel.BackColor = (textBox.Text == "" && textBox.Name == "nameTB") ? Color.Red : Color.White;
+
+                agePanel.BackColor = (textBox.Name == "ageTB") ? Color.DodgerBlue : Color.White;
+                //agePanel.BackColor = (textBox.Text == "" && textBox.Name == "ageTB") ? Color.Red : Color.White;
+            }
+            else
+            {
+                agePanel.BackColor = namePanel.BackColor = Color.White;
+            }
+        }
 
         private void OnGenderBtnClicked(object sender, EventArgs e)
         {
@@ -92,19 +135,6 @@ namespace MakeMyTripClone.UserControls
             femaleBtn.FlatAppearance.BorderColor = maleBtn.FlatAppearance.BorderColor = Color.Black;
             femaleBtn.ForeColor = maleBtn.ForeColor = Color.Black;
             femaleBtn.BackColor = maleBtn.BackColor = Parent.BackColor;
-        }
-
-        private void OnTextBoxActive(object sender, EventArgs e)
-        {
-            if(sender is TextBox textBox)
-            {
-                namePanel.BackColor = (textBox.Name == "nameTB") ? Color.DodgerBlue : Color.White;
-                agePanel.BackColor = (textBox.Name == "ageTB") ? Color.DodgerBlue : Color.White;
-            }
-            else
-            {
-                agePanel.BackColor = namePanel.BackColor = Color.White;
-            }
         }
     }
 }
