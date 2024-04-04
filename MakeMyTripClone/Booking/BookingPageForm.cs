@@ -1,4 +1,5 @@
-﻿using MakeMyTripClone.Properties;
+﻿using MakeMyTripClone.Booking;
+using MakeMyTripClone.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,44 +20,64 @@ namespace MakeMyTripClone
         {
             InitializeComponent();
         }
-        [DllImport("user32.dll")]
-        public static extern bool PostMessage(
-            IntPtr hWnd, 
-            Int32 msg,
-            Int32 wParam, 
-            Int32 lParam 
-            );
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+         (
+             int nLeftRect,    
+             int nTopRect,      
+             int nRightRect,    
+             int nBottomRect,   
+             int nWidthEllipse,
+             int nHeightEllipse 
+         );
+
         private Color colour = SystemColors.GradientInactiveCaption;
         private Color gray = Color.DimGray;
         private Color highglight = SystemColors.Highlight;
         private Color white = Color.White;
-        const Int32 WM_LBUTTONDOWN = 0x0201;
-        private bool isfalse,isTime,isTravel,isDrop,isDtime;
-        private Buses bus = new Buses()
-        {
-        };
-        private bool ispickup;
-        private bool isTravelclr;
-        private bool isDp;
-        private int no = 0;
+        private bool isfalse,isTime,isDtime,isDp, isTravelclr, ispickup;
+        public static int no = 0;
 
-        private  void Locations(ref bool b,ComboBox comboBox,Panel p,PictureBox pict)
+        private  void Locations(ref bool b,Panel p,PictureBox pict,List<object> li,ref bool bb)
         {
             if (!b)
             {
                 pict.Image = Resources.arrow_up;
                 b = true;
-                Int32 x = comboBox.Width - 10;
-                Int32 y = comboBox.Height / 2;
-                Int32 lParam = x + y * 0x00010000;
-                PostMessage(comboBox.Handle, WM_LBUTTONDOWN, 1, lParam);
                 p.Visible = true;
+                if (!bb)
+                {
+                    for (int i = 0; i < li.Count; i++)
+                    {
+                        checkBoxes = new CustomCheckbox();
+                        p.Controls.Add(checkBoxes);
+                        checkBoxes.Dock = DockStyle.Top;
+                        string[] ss = li[i].ToString().Split('&');
+                        if(ss.Length==1)
+                        {
+                            checkBoxes.SetValuesCheckbox(ss[0]);
+                        }
+                        else checkBoxes.SetValuesCheckbox(ss[1]);
+                        checkBoxes.checks += CheckBoxes_checks;
+                    }
+                    bb = true;
+                }
             }
             else
             {
                 pict.Image = Resources.down;
                 p.Visible = false;
                 b = false;
+            }
+        }
+
+        private void CheckBoxes_checks(object sender, int n)
+        {
+            no = no + n;
+            if(no>0)
+            {
+                clearpickuppointbutton.ForeColor = highglight;
+                clearalllbutton.ForeColor = highglight;
             }
         }
 
@@ -75,28 +96,51 @@ namespace MakeMyTripClone
                 b = false;
             }
         }
-        private static List<RouteDetails> busesList = new List<RouteDetails>();
+        private Buses bus;
+        public static List<RouteDetails> busesList = new List<RouteDetails>();
+        public static List<object> droppoints = new List<object>();
+        public static List<object> boardingpoints = new List<object>();
+        public static List<string> traveloperatorpoints = new List<string>();
+        public static List<CustomCheckbox> dropchecks = new List<CustomCheckbox>();
+        private CustomCheckbox checkBoxes;
+        private bool isNUll;
+        private bool isTravel;
+        private bool isDrop;
+        private bool isADD;
+        private bool isNot;
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            pupointcomboBox.Items.Add("a");
-            pupointcomboBox.Items.Add("b");
-            travelcomboBox.Items.Add("a");
-            travelcomboBox.Items.Add("b");
-            dpcomboBox.Items.Add("Chengalpattu");
-            dpcomboBox.Items.Add("SRM universitry");
-            adducpanel.Controls.Add(bus);
-            bus.Dock = DockStyle.Top;
-            bus.Setdata();
-            Buses b = new Buses();
-            adducpanel.Controls.Add(b);
-            b.Dock = DockStyle.Top;
-           
+            srchbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, srchbutton.Width, srchbutton.Height, 30, 30));
+            LoginButton.Region= Region.FromHrgn(CreateRoundRectRgn(0, 0, LoginButton.Width, LoginButton.Height, 30, 30));
+            for (int i = 0; i < busesList.Count; i++)
+            {
+                bus = new Buses();
+                adducpanel.Controls.Add(bus);
+                bus.Dock = DockStyle.Top;
+                bus.Setdata(i);
+            }
+            busesfoundlabel.Text = busesList.Count + " Buses found";
+            
         }
-      
-        public void SetData(string boarding , string destination , string date)
+        public void SetData(string boarding , string destination , string date,ComboBox from,ComboBox to,DateTimePicker dateTime)
         {
             busesList = DBManager.GetBuses(boarding, destination, date);
+            fromcomboBox.Text = boarding;
+            tocomboBox.Text = destination;
+            departdateTimePicker.Text = date;
+            foreach (var items in from.Items)
+            {
+                fromcomboBox.Items.Add(items);
+            }
+            foreach (var items in to.Items)
+            {
+                tocomboBox.Items.Add(items);
+            }
+            departdateTimePicker.MinDate = DateTime.Now;
+            boardingpoints = DBManager.GetBoardingPoints(boarding, destination, date);
+            droppoints = DBManager.GetDropPoints(boarding, destination, date);
+            traveloperatorpoints = DBManager.GetTravel(boarding, destination, date);
         }
         private void PanelsClick(object sender, EventArgs e)
         {
@@ -205,21 +249,19 @@ namespace MakeMyTripClone
             PanelsClick(pictureBox.Parent, EventArgs.Empty);
         }
 
-        private void PupointcomboBoxTextChanged(object sender, EventArgs e)
-        {
-            clearpickuppointbutton.ForeColor = SystemColors.Highlight;
-            clearallbutton.ForeColor = highglight;
-            if (!ispickup) no++;
-        }
 
         private void ClearallbuttonClick(object sender, EventArgs e)
         {
             if (clearallbutton.ForeColor == highglight)
             {
                 no = 0;
-                pupointcomboBox.Text = null;
-                travelcomboBox.Text = null;
-                dpcomboBox.Text = null;
+                foreach(var box in dropchecks)
+                {
+                    box.SetCheckedState(false);
+                }
+                //pupointcomboBox.Text = null;
+                //travelcomboBox.Text = null;
+                //dpcomboBox.Text = null;
                 acpanel.BackColor = white;
                 nonacpanel.BackColor = white;
                 sleeperpanel.BackColor = white;
@@ -243,18 +285,14 @@ namespace MakeMyTripClone
         }
         private void ClearpickuppointbuttonClick(object sender, EventArgs e)
         {
-            ispickup = true;
-            pupointcomboBox.Text = null;
             clearpickuppointbutton.ForeColor = gray;
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
-            if (ispickup) ispickup = false;
         }
 
         private void TravelclrbuttonClick(object sender, EventArgs e)
         {
             isTravelclr = true;
-            travelcomboBox.Text = null;
             travelclrbutton.ForeColor = gray;
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
@@ -271,16 +309,8 @@ namespace MakeMyTripClone
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
-
-        private void DpclrbuttonClick(object sender, EventArgs e)
-        {
-            isDp = true;
-            dpcomboBox.Text = null;
-            dpclrbutton.ForeColor = gray;
-            no--;
-            if (no <= 0) clearallbutton.ForeColor = gray;
-            if (isDp) isDp = false;
-        }
+        
+       
 
         private void DdtimeclrbuttonClick(object sender, EventArgs e)
         {
@@ -291,20 +321,6 @@ namespace MakeMyTripClone
             ddtimeclrbutton.ForeColor = gray;
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
-        }
-
-        private void TravelcomboBoxTextChanged(object sender, EventArgs e)
-        {
-            travelclrbutton.ForeColor = highglight;
-            clearallbutton.ForeColor = highglight;
-            if (!isTravelclr) no++;
-        }
-
-        private void DpcomboBoxTextChanged(object sender, EventArgs e)
-        {
-            dpclrbutton.ForeColor = highglight;
-            clearallbutton.ForeColor = highglight;
-            if (!isDp) no++;
         }
 
         private void SeatersleepercheckBoxCheckedChanged(object sender, EventArgs e)
@@ -322,7 +338,7 @@ namespace MakeMyTripClone
                 puvaluepanel.Visible = false;
                 pupointpictureBox.Image = Resources.down;
             }
-            else Locations(ref isfalse, pupointcomboBox, puvaluepanel, pupointpictureBox);
+            else Locations(ref isfalse, puvaluepanel, pupointpictureBox,droppoints,ref isNot);
         }
 
         private void RlvbuttonClick(object sender, EventArgs e)
@@ -355,6 +371,19 @@ namespace MakeMyTripClone
             dprbutton.BackColor = white;
         }
 
+        private void LoginButtonClick(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.ShowDialog();
+        }
+
+        private void SwappictureBoxClick(object sender, EventArgs e)
+        {
+            string s = fromcomboBox.Text;
+            fromcomboBox.Text = tocomboBox.Text;
+            tocomboBox.Text = s;
+        }
+
         private void RtbuttonClick(object sender, EventArgs e)
         {
             rlvbutton.BackColor = white;
@@ -375,6 +404,11 @@ namespace MakeMyTripClone
             dprbutton.BackColor = white;
         }
 
+        private void srchbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void DprbuttonClick(object sender, EventArgs e)
         {
             rlvbutton.BackColor = white;
@@ -387,12 +421,13 @@ namespace MakeMyTripClone
 
         private void TPictureBoxClick(object sender, EventArgs e)
         {
+            List<object> listOfObjects = traveloperatorpoints.Select(s => (object)s).ToList();
             if (travelvaluepanel.Visible == true)
             {
                 travelvaluepanel.Visible = false;
                 travelpictureBox.Image = Resources.down;
             }
-            else Locations(ref isTravel, travelcomboBox, travelvaluepanel, travelpictureBox);
+            else Locations(ref isTravel, travelvaluepanel, travelpictureBox,listOfObjects,ref isADD);
         }
         private void DropPointClick(object sender, EventArgs e)
         {
@@ -401,7 +436,7 @@ namespace MakeMyTripClone
                 dpvaluepanel.Visible = false;
                 dppictureBox.Image = Resources.down;
             }
-            else Locations(ref isDrop, dpcomboBox, dpvaluepanel, dppictureBox);
+             Locations(ref isDrop, dpvaluepanel, dppictureBox,droppoints,ref isNUll);
         }
         private void DtimeClick(object sender, EventArgs e)
         {
@@ -421,5 +456,6 @@ namespace MakeMyTripClone
             }
             else Time(ref isDtime, ddtimevaluepanel, ddtimepictureBox);
         }
+
     }
 }

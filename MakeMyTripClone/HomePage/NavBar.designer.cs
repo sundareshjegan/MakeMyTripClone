@@ -740,7 +740,7 @@
             // LoginButton
             // 
             this.LoginButton.BackColor = System.Drawing.Color.DodgerBlue;
-            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.LoginButton.FlatAppearance.BorderSize = 0;
             this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -924,7 +924,8 @@
             "Hyderabad, Telangana",
             "Kolkata, West Bengal",
             "Chennai, Tamil Nadu",
-            "Goa, Goa"});
+            "Goa, Goa",
+            "Coimbatore, Tamil Nadu"});
             this.toComboBox.Location = new System.Drawing.Point(17, 27);
             this.toComboBox.Name = "toComboBox";
             this.toComboBox.Size = new System.Drawing.Size(340, 33);
@@ -1004,8 +1005,9 @@
             "Pune, Maharashtra",
             "Hyderabad, Telangana",
             "Kolkata, West Bengal",
-            "Chennai, Tamil Nadu",
-            "Goa, Goa"});
+            "Coimbatore,Tamil Nadu",
+            "Goa, Goa",
+            "Chennai,Tamil Nadu"});
             this.fromcomboBox.Location = new System.Drawing.Point(3, 28);
             this.fromcomboBox.Name = "fromcomboBox";
             this.fromcomboBox.Size = new System.Drawing.Size(338, 33);
@@ -1104,6 +1106,7 @@
             this.Controls.Add(this.panel16);
             this.Name = "NavBar";
             this.Size = new System.Drawing.Size(1838, 441);
+            this.Load += new System.EventHandler(this.NavBar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

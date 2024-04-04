@@ -86,13 +86,13 @@ namespace MakeMyTripClone
 
             SearchButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SearchButton.Width, SearchButton.Height, 30, 30)); // Search
 
-            LoginButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LoginButton.Width, LoginButton.Height, 30, 30));
+            //LoginButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LoginButton.Width, LoginButton.Height, 30, 30));
 
             comboBox1.Text = "IND | ENG | INR";
 
-            DateTime D = DateTime.Now;
+           // DateTime D = DateTime.Now;
 
-            dateTimePicker.MinDate = D.Date ;
+           // dateTimePicker.MinDate = D.Date ;
 
             toComboBox.Text = "Mumbai, Maharashtra";
 
@@ -191,6 +191,11 @@ namespace MakeMyTripClone
             login.ShowDialog();
         }
 
+        private void NavBar_Load(object sender, EventArgs e)
+        {
+            BusOnClick(this,EventArgs.Empty);
+        }
+
         private void FromComboBoxTextChange(object sender, EventArgs e)
         {
             label8.Text = fromcomboBox.Text;
@@ -246,11 +251,9 @@ namespace MakeMyTripClone
             if (warningLabel.Visible == false)
             {
                 BookingPageForm page = new BookingPageForm();
-
-
                 String[] boarding = fromcomboBox.Text.Split(',');
                 String[] destination = toComboBox.Text.Split(',');
-                page.SetData(boarding[0], destination[0], dateTimePicker.Value.ToString("yyyy-MM-dd"));
+                page.SetData(boarding[0], destination[0], dateTimePicker.Value.ToString("yyyy-MM-dd"), fromcomboBox, toComboBox, dateTimePicker);
                 page.ShowDialog();
             }
         }

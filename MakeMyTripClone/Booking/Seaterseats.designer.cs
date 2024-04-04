@@ -114,7 +114,7 @@
             // 
             this.pictureBox39.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox39.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox39.Location = new System.Drawing.Point(208, 483);
+            this.pictureBox39.Location = new System.Drawing.Point(230, 483);
             this.pictureBox39.Name = "pictureBox39";
             this.pictureBox39.Size = new System.Drawing.Size(40, 45);
             this.pictureBox39.TabIndex = 39;
@@ -125,7 +125,7 @@
             // 
             this.pictureBox40.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox40.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox40.Location = new System.Drawing.Point(265, 483);
+            this.pictureBox40.Location = new System.Drawing.Point(292, 483);
             this.pictureBox40.Name = "pictureBox40";
             this.pictureBox40.Size = new System.Drawing.Size(40, 45);
             this.pictureBox40.TabIndex = 38;
@@ -136,7 +136,7 @@
             // 
             this.pictureBox37.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox37.Location = new System.Drawing.Point(15, 483);
+            this.pictureBox37.Location = new System.Drawing.Point(37, 483);
             this.pictureBox37.Name = "pictureBox37";
             this.pictureBox37.Size = new System.Drawing.Size(40, 45);
             this.pictureBox37.TabIndex = 37;
@@ -147,7 +147,7 @@
             // 
             this.pictureBox38.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox38.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox38.Location = new System.Drawing.Point(68, 483);
+            this.pictureBox38.Location = new System.Drawing.Point(99, 483);
             this.pictureBox38.Name = "pictureBox38";
             this.pictureBox38.Size = new System.Drawing.Size(40, 45);
             this.pictureBox38.TabIndex = 36;
@@ -158,7 +158,7 @@
             // 
             this.pictureBox35.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox35.Location = new System.Drawing.Point(208, 432);
+            this.pictureBox35.Location = new System.Drawing.Point(230, 432);
             this.pictureBox35.Name = "pictureBox35";
             this.pictureBox35.Size = new System.Drawing.Size(40, 45);
             this.pictureBox35.TabIndex = 35;
@@ -169,7 +169,7 @@
             // 
             this.pictureBox36.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox36.Location = new System.Drawing.Point(265, 432);
+            this.pictureBox36.Location = new System.Drawing.Point(292, 432);
             this.pictureBox36.Name = "pictureBox36";
             this.pictureBox36.Size = new System.Drawing.Size(40, 45);
             this.pictureBox36.TabIndex = 34;
@@ -180,7 +180,7 @@
             // 
             this.pictureBox33.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox33.Location = new System.Drawing.Point(15, 432);
+            this.pictureBox33.Location = new System.Drawing.Point(37, 432);
             this.pictureBox33.Name = "pictureBox33";
             this.pictureBox33.Size = new System.Drawing.Size(40, 45);
             this.pictureBox33.TabIndex = 33;
@@ -191,7 +191,7 @@
             // 
             this.pictureBox34.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox34.Location = new System.Drawing.Point(68, 432);
+            this.pictureBox34.Location = new System.Drawing.Point(99, 432);
             this.pictureBox34.Name = "pictureBox34";
             this.pictureBox34.Size = new System.Drawing.Size(40, 45);
             this.pictureBox34.TabIndex = 32;
@@ -202,7 +202,7 @@
             // 
             this.pictureBox31.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox31.Location = new System.Drawing.Point(208, 381);
+            this.pictureBox31.Location = new System.Drawing.Point(230, 381);
             this.pictureBox31.Name = "pictureBox31";
             this.pictureBox31.Size = new System.Drawing.Size(40, 45);
             this.pictureBox31.TabIndex = 31;
@@ -213,7 +213,7 @@
             // 
             this.pictureBox32.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox32.Location = new System.Drawing.Point(265, 381);
+            this.pictureBox32.Location = new System.Drawing.Point(292, 381);
             this.pictureBox32.Name = "pictureBox32";
             this.pictureBox32.Size = new System.Drawing.Size(40, 45);
             this.pictureBox32.TabIndex = 30;
@@ -224,7 +224,7 @@
             // 
             this.pictureBox29.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox29.Location = new System.Drawing.Point(15, 381);
+            this.pictureBox29.Location = new System.Drawing.Point(37, 381);
             this.pictureBox29.Name = "pictureBox29";
             this.pictureBox29.Size = new System.Drawing.Size(40, 45);
             this.pictureBox29.TabIndex = 29;
@@ -235,7 +235,7 @@
             // 
             this.pictureBox30.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox30.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox30.Location = new System.Drawing.Point(68, 381);
+            this.pictureBox30.Location = new System.Drawing.Point(99, 381);
             this.pictureBox30.Name = "pictureBox30";
             this.pictureBox30.Size = new System.Drawing.Size(40, 45);
             this.pictureBox30.TabIndex = 28;
@@ -246,7 +246,7 @@
             // 
             this.pictureBox27.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox27.Location = new System.Drawing.Point(208, 330);
+            this.pictureBox27.Location = new System.Drawing.Point(230, 330);
             this.pictureBox27.Name = "pictureBox27";
             this.pictureBox27.Size = new System.Drawing.Size(40, 45);
             this.pictureBox27.TabIndex = 27;
@@ -257,7 +257,7 @@
             // 
             this.pictureBox28.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox28.Location = new System.Drawing.Point(265, 330);
+            this.pictureBox28.Location = new System.Drawing.Point(292, 330);
             this.pictureBox28.Name = "pictureBox28";
             this.pictureBox28.Size = new System.Drawing.Size(40, 45);
             this.pictureBox28.TabIndex = 26;
@@ -268,7 +268,7 @@
             // 
             this.pictureBox25.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox25.Location = new System.Drawing.Point(15, 330);
+            this.pictureBox25.Location = new System.Drawing.Point(37, 330);
             this.pictureBox25.Name = "pictureBox25";
             this.pictureBox25.Size = new System.Drawing.Size(40, 45);
             this.pictureBox25.TabIndex = 25;
@@ -279,7 +279,7 @@
             // 
             this.pictureBox26.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox26.Location = new System.Drawing.Point(68, 330);
+            this.pictureBox26.Location = new System.Drawing.Point(99, 330);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(40, 45);
             this.pictureBox26.TabIndex = 24;
@@ -290,7 +290,7 @@
             // 
             this.pictureBox23.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox23.Location = new System.Drawing.Point(208, 279);
+            this.pictureBox23.Location = new System.Drawing.Point(230, 279);
             this.pictureBox23.Name = "pictureBox23";
             this.pictureBox23.Size = new System.Drawing.Size(40, 45);
             this.pictureBox23.TabIndex = 23;
@@ -301,7 +301,7 @@
             // 
             this.pictureBox24.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox24.Location = new System.Drawing.Point(265, 279);
+            this.pictureBox24.Location = new System.Drawing.Point(292, 279);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(40, 45);
             this.pictureBox24.TabIndex = 22;
@@ -312,7 +312,7 @@
             // 
             this.pictureBox21.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox21.Location = new System.Drawing.Point(15, 279);
+            this.pictureBox21.Location = new System.Drawing.Point(37, 279);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(40, 45);
             this.pictureBox21.TabIndex = 21;
@@ -323,7 +323,7 @@
             // 
             this.pictureBox22.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox22.Location = new System.Drawing.Point(68, 279);
+            this.pictureBox22.Location = new System.Drawing.Point(99, 279);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(40, 45);
             this.pictureBox22.TabIndex = 20;
@@ -334,7 +334,7 @@
             // 
             this.pictureBox19.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox19.Location = new System.Drawing.Point(208, 228);
+            this.pictureBox19.Location = new System.Drawing.Point(230, 228);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(40, 45);
             this.pictureBox19.TabIndex = 19;
@@ -345,7 +345,7 @@
             // 
             this.pictureBox20.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox20.Location = new System.Drawing.Point(265, 228);
+            this.pictureBox20.Location = new System.Drawing.Point(292, 228);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(40, 45);
             this.pictureBox20.TabIndex = 18;
@@ -356,7 +356,7 @@
             // 
             this.pictureBox17.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox17.Location = new System.Drawing.Point(15, 228);
+            this.pictureBox17.Location = new System.Drawing.Point(37, 228);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(40, 45);
             this.pictureBox17.TabIndex = 17;
@@ -367,7 +367,7 @@
             // 
             this.pictureBox18.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox18.Location = new System.Drawing.Point(68, 228);
+            this.pictureBox18.Location = new System.Drawing.Point(99, 228);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(40, 45);
             this.pictureBox18.TabIndex = 16;
@@ -378,7 +378,7 @@
             // 
             this.pictureBox13.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox13.Location = new System.Drawing.Point(15, 171);
+            this.pictureBox13.Location = new System.Drawing.Point(37, 171);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(40, 45);
             this.pictureBox13.TabIndex = 15;
@@ -389,7 +389,7 @@
             // 
             this.pictureBox14.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox14.Location = new System.Drawing.Point(68, 171);
+            this.pictureBox14.Location = new System.Drawing.Point(99, 171);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(40, 45);
             this.pictureBox14.TabIndex = 14;
@@ -400,7 +400,7 @@
             // 
             this.pictureBox15.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox15.Location = new System.Drawing.Point(208, 171);
+            this.pictureBox15.Location = new System.Drawing.Point(230, 171);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(40, 45);
             this.pictureBox15.TabIndex = 13;
@@ -411,7 +411,7 @@
             // 
             this.pictureBox16.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox16.Location = new System.Drawing.Point(261, 171);
+            this.pictureBox16.Location = new System.Drawing.Point(288, 171);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(40, 45);
             this.pictureBox16.TabIndex = 12;
@@ -422,7 +422,7 @@
             // 
             this.pictureBox12.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox12.Location = new System.Drawing.Point(261, 120);
+            this.pictureBox12.Location = new System.Drawing.Point(288, 120);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(40, 45);
             this.pictureBox12.TabIndex = 11;
@@ -433,7 +433,7 @@
             // 
             this.pictureBox11.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox11.Location = new System.Drawing.Point(208, 120);
+            this.pictureBox11.Location = new System.Drawing.Point(230, 120);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(40, 45);
             this.pictureBox11.TabIndex = 10;
@@ -444,7 +444,7 @@
             // 
             this.pictureBox10.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox10.Location = new System.Drawing.Point(68, 120);
+            this.pictureBox10.Location = new System.Drawing.Point(99, 120);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(40, 45);
             this.pictureBox10.TabIndex = 9;
@@ -455,7 +455,7 @@
             // 
             this.pictureBox9.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox9.Location = new System.Drawing.Point(15, 120);
+            this.pictureBox9.Location = new System.Drawing.Point(37, 120);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(40, 45);
             this.pictureBox9.TabIndex = 8;
@@ -466,7 +466,7 @@
             // 
             this.pictureBox8.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Location = new System.Drawing.Point(261, 69);
+            this.pictureBox8.Location = new System.Drawing.Point(288, 69);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(40, 45);
             this.pictureBox8.TabIndex = 7;
@@ -477,7 +477,7 @@
             // 
             this.pictureBox7.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Location = new System.Drawing.Point(208, 69);
+            this.pictureBox7.Location = new System.Drawing.Point(230, 69);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(40, 45);
             this.pictureBox7.TabIndex = 6;
@@ -488,7 +488,7 @@
             // 
             this.pictureBox6.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(68, 69);
+            this.pictureBox6.Location = new System.Drawing.Point(99, 69);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(40, 45);
             this.pictureBox6.TabIndex = 5;
@@ -499,7 +499,7 @@
             // 
             this.pictureBox5.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(15, 69);
+            this.pictureBox5.Location = new System.Drawing.Point(37, 69);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 45);
             this.pictureBox5.TabIndex = 4;
@@ -510,7 +510,7 @@
             // 
             this.pictureBox3.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(208, 15);
+            this.pictureBox3.Location = new System.Drawing.Point(230, 15);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 45);
             this.pictureBox3.TabIndex = 3;
@@ -521,7 +521,7 @@
             // 
             this.pictureBox4.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(261, 18);
+            this.pictureBox4.Location = new System.Drawing.Point(288, 18);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(40, 45);
             this.pictureBox4.TabIndex = 2;
@@ -532,7 +532,7 @@
             // 
             this.pictureBox2.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(68, 15);
+            this.pictureBox2.Location = new System.Drawing.Point(99, 15);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 45);
             this.pictureBox2.TabIndex = 1;
@@ -543,7 +543,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::MakeMyTripClone.Properties.Resources.Seater;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(37, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 45);
             this.pictureBox1.TabIndex = 0;
@@ -595,7 +595,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Seaterseats";
-            this.Size = new System.Drawing.Size(324, 544);
+            this.Size = new System.Drawing.Size(375, 544);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).EndInit();

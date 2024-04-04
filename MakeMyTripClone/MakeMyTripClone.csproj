@@ -48,6 +48,9 @@
     <Reference Include="MySQLDatabase">
       <HintPath>..\..\Database_DLL FIles\MySQLDatabase.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite">
@@ -70,6 +73,12 @@
     <Compile Include="Backend\Tables\Customer.cs" />
     <Compile Include="Backend\Tables\Route.cs" />
     <Compile Include="Backend\Tables\Seat.cs" />
+    <Compile Include="Booking\Address.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\Address.Designer.cs">
+      <DependentUpon>Address.cs</DependentUpon>
+    </Compile>
     <Compile Include="Booking\Buses.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +90,12 @@
     </Compile>
     <Compile Include="Booking\BookingPageForm.designer.cs">
       <DependentUpon>BookingPageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Checkbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\Checkbox.Designer.cs">
+      <DependentUpon>Checkbox.cs</DependentUpon>
     </Compile>
     <Compile Include="Booking\Seaterseats.cs">
       <SubType>UserControl</SubType>
@@ -149,11 +164,17 @@
     <Compile Include="UserControls\TravellerDetails.Designer.cs">
       <DependentUpon>TravellerDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Booking\Address.resx">
+      <DependentUpon>Address.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Booking\Buses.resx">
       <DependentUpon>Buses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Booking\BookingPageForm.resx">
       <DependentUpon>BookingPageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\Checkbox.resx">
+      <DependentUpon>Checkbox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Booking\Seaterseats.resx">
       <DependentUpon>Seaterseats.cs</DependentUpon>
@@ -195,6 +216,7 @@
     <EmbeddedResource Include="UserControls\TravellerDetails.resx">
       <DependentUpon>TravellerDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -408,6 +430,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SLEEPER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mmtlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

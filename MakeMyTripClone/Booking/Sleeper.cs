@@ -13,13 +13,13 @@ namespace MakeMyTripClone
 {
     public partial class Sleeper : UserControl
     {
+      
         public Sleeper()
         {
             InitializeComponent();
         }
-        public event EventHandler<bool> Coloured;
-        private int count = 0;
-        
+        public delegate void DatasHandler(bool b, string s);
+        public event DatasHandler colours;
         private void PictureBoxClick(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -27,18 +27,18 @@ namespace MakeMyTripClone
             {
                 pictureBox.BackgroundImage = Resources.SLEEPER;
                 pictureBox.BorderStyle = BorderStyle.None;
-                count -= 1;
+                colours?.Invoke(false, pictureBox.Name.Remove(0, 10));
             }
             else
             {
                 pictureBox.BackgroundImage = Resources.Bluesleeper;
                 pictureBox.BorderStyle = BorderStyle.FixedSingle;
-                count += 1;
+                colours?.Invoke(true, pictureBox.Name.Remove(0, 10));
             }
-            if(count>0)
-            {
-                Coloured?.Invoke(null,true);
-            }
+           
         }
+
+       
+
     }
 }

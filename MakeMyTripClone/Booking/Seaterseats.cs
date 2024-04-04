@@ -17,7 +17,8 @@ namespace MakeMyTripClone
         {
             InitializeComponent();
         }
-
+        public delegate void DatasHandler(bool b, string s);
+        public event DatasHandler seatscolours;
         private void PictureBoxClick(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -25,11 +26,13 @@ namespace MakeMyTripClone
             {
                 pictureBox.BackgroundImage = Resources.Seater;
                 pictureBox.BorderStyle = BorderStyle.None;
+                seatscolours?.Invoke(false,pictureBox.Name.Remove(0,10));
             }
             else
             {
                 pictureBox.BackgroundImage = Resources.Blueseater;
                 pictureBox.BorderStyle = BorderStyle.FixedSingle;
+                seatscolours?.Invoke(true, pictureBox.Name.Remove(0, 10));
             }
         }
     }

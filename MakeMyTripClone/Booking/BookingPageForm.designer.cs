@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookingPageForm));
             this.filters = new System.Windows.Forms.Panel();
             this.ddtimevaluepanel = new System.Windows.Forms.Panel();
             this.ddngtpanel = new System.Windows.Forms.Panel();
@@ -47,13 +48,11 @@
             this.ddtimelabel = new System.Windows.Forms.Label();
             this.ddtimeclrbutton = new System.Windows.Forms.Button();
             this.dpvaluepanel = new System.Windows.Forms.Panel();
-            this.dpcomboBox = new System.Windows.Forms.ComboBox();
             this.dppanel = new System.Windows.Forms.Panel();
             this.dppictureBox = new System.Windows.Forms.PictureBox();
             this.dplabel = new System.Windows.Forms.Label();
             this.dpclrbutton = new System.Windows.Forms.Button();
             this.travelvaluepanel = new System.Windows.Forms.Panel();
-            this.travelcomboBox = new System.Windows.Forms.ComboBox();
             this.travelpanel = new System.Windows.Forms.Panel();
             this.travelpictureBox = new System.Windows.Forms.PictureBox();
             this.travellabel = new System.Windows.Forms.Label();
@@ -76,7 +75,6 @@
             this.putimelabel = new System.Windows.Forms.Label();
             this.putimeclearbutton = new System.Windows.Forms.Button();
             this.puvaluepanel = new System.Windows.Forms.Panel();
-            this.pupointcomboBox = new System.Windows.Forms.ComboBox();
             this.pickupointpanel = new System.Windows.Forms.Panel();
             this.pickuppointlabel = new System.Windows.Forms.Label();
             this.pupointpictureBox = new System.Windows.Forms.PictureBox();
@@ -117,9 +115,61 @@
             this.endofbuslabel = new System.Windows.Forms.Label();
             this.nobuspanel = new System.Windows.Forms.Panel();
             this.nofindlabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.clearalllbutton = new System.Windows.Forms.Button();
             this.nobuslabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.noresultpictureBox = new System.Windows.Forms.PictureBox();
+            this.toppage = new System.Windows.Forms.Panel();
+            this.LoginButton = new System.Windows.Forms.Button();
+            this.makemytriplogo = new System.Windows.Forms.PictureBox();
+            this.imagespanel = new System.Windows.Forms.Panel();
+            this.forexpanel = new System.Windows.Forms.Panel();
+            this.ForexLabel = new System.Windows.Forms.Label();
+            this.ForexCurrencyUnderLine = new System.Windows.Forms.Label();
+            this.ForexButton = new System.Windows.Forms.Button();
+            this.trainpanel = new System.Windows.Forms.Panel();
+            this.TrainLabel = new System.Windows.Forms.Label();
+            this.TrainUnderLine = new System.Windows.Forms.Label();
+            this.TrainButton = new System.Windows.Forms.Button();
+            this.cabpanel = new System.Windows.Forms.Panel();
+            this.CabLabel = new System.Windows.Forms.Label();
+            this.CabUnderLine = new System.Windows.Forms.Label();
+            this.CabButton = new System.Windows.Forms.Button();
+            this.hotelpanel = new System.Windows.Forms.Panel();
+            this.HotelLabel = new System.Windows.Forms.Label();
+            this.HotelUnderLine = new System.Windows.Forms.Label();
+            this.HotelButton = new System.Windows.Forms.Button();
+            this.insurancepanel = new System.Windows.Forms.Panel();
+            this.InsuranceLabel = new System.Windows.Forms.Label();
+            this.InsuranceUnderLine = new System.Windows.Forms.Label();
+            this.InsuranceButton = new System.Windows.Forms.Button();
+            this.resortpanel = new System.Windows.Forms.Panel();
+            this.HomeLabel = new System.Windows.Forms.Label();
+            this.HomeUnderLine = new System.Windows.Forms.Label();
+            this.HomeButton = new System.Windows.Forms.Button();
+            this.buspanel = new System.Windows.Forms.Panel();
+            this.BusLabel = new System.Windows.Forms.Label();
+            this.BusUnderLine = new System.Windows.Forms.Label();
+            this.BusButton = new System.Windows.Forms.Button();
+            this.holidaypanel = new System.Windows.Forms.Panel();
+            this.HolidaysLabel = new System.Windows.Forms.Label();
+            this.HolidaysUnderLine = new System.Windows.Forms.Label();
+            this.HolidaysButton = new System.Windows.Forms.Button();
+            this.flightpanel1 = new System.Windows.Forms.Panel();
+            this.FlightLabel = new System.Windows.Forms.Label();
+            this.FlightUnderLine = new System.Windows.Forms.Label();
+            this.FlightButton = new System.Windows.Forms.Button();
+            this.searchpanel = new System.Windows.Forms.Panel();
+            this.srchbutton = new System.Windows.Forms.Button();
+            this.departpanel = new System.Windows.Forms.Panel();
+            this.departdateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.departlabel = new System.Windows.Forms.Label();
+            this.swappictureBox = new System.Windows.Forms.PictureBox();
+            this.topanel = new System.Windows.Forms.Panel();
+            this.tocomboBox = new System.Windows.Forms.ComboBox();
+            this.tolabel = new System.Windows.Forms.Label();
+            this.frompanel = new System.Windows.Forms.Panel();
+            this.fromcomboBox = new System.Windows.Forms.ComboBox();
+            this.fromlabel = new System.Windows.Forms.Label();
             this.filters.SuspendLayout();
             this.ddtimevaluepanel.SuspendLayout();
             this.ddngtpanel.SuspendLayout();
@@ -132,10 +182,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ddevepictureBox)).BeginInit();
             this.ddtimepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ddtimepictureBox)).BeginInit();
-            this.dpvaluepanel.SuspendLayout();
             this.dppanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dppictureBox)).BeginInit();
-            this.travelvaluepanel.SuspendLayout();
             this.travelpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.travelpictureBox)).BeginInit();
             this.putimevaluepanel.SuspendLayout();
@@ -149,7 +197,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.putimesspictureBox)).BeginInit();
             this.putimepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.putimepictureBox)).BeginInit();
-            this.puvaluepanel.SuspendLayout();
             this.pickupointpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pupointpictureBox)).BeginInit();
             this.singleseatersleeperpanel.SuspendLayout();
@@ -167,7 +214,24 @@
             this.tabpanel.SuspendLayout();
             this.adducpanel.SuspendLayout();
             this.nobuspanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noresultpictureBox)).BeginInit();
+            this.toppage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.makemytriplogo)).BeginInit();
+            this.imagespanel.SuspendLayout();
+            this.forexpanel.SuspendLayout();
+            this.trainpanel.SuspendLayout();
+            this.cabpanel.SuspendLayout();
+            this.hotelpanel.SuspendLayout();
+            this.insurancepanel.SuspendLayout();
+            this.resortpanel.SuspendLayout();
+            this.buspanel.SuspendLayout();
+            this.holidaypanel.SuspendLayout();
+            this.flightpanel1.SuspendLayout();
+            this.searchpanel.SuspendLayout();
+            this.departpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.swappictureBox)).BeginInit();
+            this.topanel.SuspendLayout();
+            this.frompanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // filters
@@ -189,10 +253,10 @@
             this.filters.Controls.Add(this.acfilterpanels);
             this.filters.Controls.Add(this.clearallpanel);
             this.filters.Dock = System.Windows.Forms.DockStyle.Left;
-            this.filters.Location = new System.Drawing.Point(0, 0);
+            this.filters.Location = new System.Drawing.Point(0, 158);
             this.filters.Margin = new System.Windows.Forms.Padding(4);
             this.filters.Name = "filters";
-            this.filters.Size = new System.Drawing.Size(446, 792);
+            this.filters.Size = new System.Drawing.Size(446, 660);
             this.filters.TabIndex = 0;
             // 
             // ddtimevaluepanel
@@ -204,7 +268,7 @@
             this.ddtimevaluepanel.Controls.Add(this.ddsspanel);
             this.ddtimevaluepanel.Controls.Add(this.ddevepanel);
             this.ddtimevaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ddtimevaluepanel.Location = new System.Drawing.Point(0, 1584);
+            this.ddtimevaluepanel.Location = new System.Drawing.Point(0, 1717);
             this.ddtimevaluepanel.Margin = new System.Windows.Forms.Padding(4);
             this.ddtimevaluepanel.Name = "ddtimevaluepanel";
             this.ddtimevaluepanel.Size = new System.Drawing.Size(429, 250);
@@ -367,7 +431,7 @@
             this.ddtimepanel.Controls.Add(this.ddtimelabel);
             this.ddtimepanel.Controls.Add(this.ddtimeclrbutton);
             this.ddtimepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ddtimepanel.Location = new System.Drawing.Point(0, 1510);
+            this.ddtimepanel.Location = new System.Drawing.Point(0, 1643);
             this.ddtimepanel.Margin = new System.Windows.Forms.Padding(4);
             this.ddtimepanel.Name = "ddtimepanel";
             this.ddtimepanel.Size = new System.Drawing.Size(429, 74);
@@ -417,26 +481,13 @@
             // dpvaluepanel
             // 
             this.dpvaluepanel.BackColor = System.Drawing.Color.White;
-            this.dpvaluepanel.Controls.Add(this.dpcomboBox);
             this.dpvaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dpvaluepanel.Location = new System.Drawing.Point(0, 1310);
+            this.dpvaluepanel.Location = new System.Drawing.Point(0, 1393);
             this.dpvaluepanel.Margin = new System.Windows.Forms.Padding(4);
             this.dpvaluepanel.Name = "dpvaluepanel";
-            this.dpvaluepanel.Size = new System.Drawing.Size(429, 200);
+            this.dpvaluepanel.Size = new System.Drawing.Size(429, 250);
             this.dpvaluepanel.TabIndex = 9;
             this.dpvaluepanel.Visible = false;
-            // 
-            // dpcomboBox
-            // 
-            this.dpcomboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dpcomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dpcomboBox.FormattingEnabled = true;
-            this.dpcomboBox.Location = new System.Drawing.Point(0, 0);
-            this.dpcomboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.dpcomboBox.Name = "dpcomboBox";
-            this.dpcomboBox.Size = new System.Drawing.Size(429, 33);
-            this.dpcomboBox.TabIndex = 0;
-            this.dpcomboBox.TextChanged += new System.EventHandler(this.DpcomboBoxTextChanged);
             // 
             // dppanel
             // 
@@ -446,7 +497,7 @@
             this.dppanel.Controls.Add(this.dplabel);
             this.dppanel.Controls.Add(this.dpclrbutton);
             this.dppanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dppanel.Location = new System.Drawing.Point(0, 1243);
+            this.dppanel.Location = new System.Drawing.Point(0, 1326);
             this.dppanel.Margin = new System.Windows.Forms.Padding(4);
             this.dppanel.Name = "dppanel";
             this.dppanel.Size = new System.Drawing.Size(429, 67);
@@ -491,30 +542,18 @@
             this.dpclrbutton.TabIndex = 2;
             this.dpclrbutton.Text = "CLEAR";
             this.dpclrbutton.UseVisualStyleBackColor = false;
-            this.dpclrbutton.Click += new System.EventHandler(this.DpclrbuttonClick);
             // 
             // travelvaluepanel
             // 
+            this.travelvaluepanel.AutoScroll = true;
             this.travelvaluepanel.BackColor = System.Drawing.Color.White;
-            this.travelvaluepanel.Controls.Add(this.travelcomboBox);
             this.travelvaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.travelvaluepanel.Location = new System.Drawing.Point(0, 1043);
+            this.travelvaluepanel.Location = new System.Drawing.Point(0, 1076);
             this.travelvaluepanel.Margin = new System.Windows.Forms.Padding(4);
             this.travelvaluepanel.Name = "travelvaluepanel";
-            this.travelvaluepanel.Size = new System.Drawing.Size(429, 200);
+            this.travelvaluepanel.Size = new System.Drawing.Size(429, 250);
             this.travelvaluepanel.TabIndex = 7;
             this.travelvaluepanel.Visible = false;
-            // 
-            // travelcomboBox
-            // 
-            this.travelcomboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.travelcomboBox.FormattingEnabled = true;
-            this.travelcomboBox.Location = new System.Drawing.Point(0, 0);
-            this.travelcomboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.travelcomboBox.Name = "travelcomboBox";
-            this.travelcomboBox.Size = new System.Drawing.Size(429, 25);
-            this.travelcomboBox.TabIndex = 0;
-            this.travelcomboBox.TextChanged += new System.EventHandler(this.TravelcomboBoxTextChanged);
             // 
             // travelpanel
             // 
@@ -524,7 +563,7 @@
             this.travelpanel.Controls.Add(this.travellabel);
             this.travelpanel.Controls.Add(this.travelclrbutton);
             this.travelpanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.travelpanel.Location = new System.Drawing.Point(0, 981);
+            this.travelpanel.Location = new System.Drawing.Point(0, 1014);
             this.travelpanel.Margin = new System.Windows.Forms.Padding(4);
             this.travelpanel.Name = "travelpanel";
             this.travelpanel.Size = new System.Drawing.Size(429, 62);
@@ -580,7 +619,7 @@
             this.putimevaluepanel.Controls.Add(this.putimeevepanel);
             this.putimevaluepanel.Controls.Add(this.putimesspanel);
             this.putimevaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.putimevaluepanel.Location = new System.Drawing.Point(0, 731);
+            this.putimevaluepanel.Location = new System.Drawing.Point(0, 764);
             this.putimevaluepanel.Margin = new System.Windows.Forms.Padding(4);
             this.putimevaluepanel.Name = "putimevaluepanel";
             this.putimevaluepanel.Size = new System.Drawing.Size(429, 250);
@@ -743,7 +782,7 @@
             this.putimepanel.Controls.Add(this.putimelabel);
             this.putimepanel.Controls.Add(this.putimeclearbutton);
             this.putimepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.putimepanel.Location = new System.Drawing.Point(0, 657);
+            this.putimepanel.Location = new System.Drawing.Point(0, 690);
             this.putimepanel.Margin = new System.Windows.Forms.Padding(4);
             this.putimepanel.Name = "putimepanel";
             this.putimepanel.Size = new System.Drawing.Size(429, 74);
@@ -793,27 +832,15 @@
             // 
             // puvaluepanel
             // 
+            this.puvaluepanel.AutoScroll = true;
             this.puvaluepanel.BackColor = System.Drawing.Color.White;
-            this.puvaluepanel.Controls.Add(this.pupointcomboBox);
             this.puvaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.puvaluepanel.Location = new System.Drawing.Point(0, 457);
+            this.puvaluepanel.Location = new System.Drawing.Point(0, 440);
             this.puvaluepanel.Margin = new System.Windows.Forms.Padding(4);
             this.puvaluepanel.Name = "puvaluepanel";
-            this.puvaluepanel.Size = new System.Drawing.Size(429, 200);
+            this.puvaluepanel.Size = new System.Drawing.Size(429, 250);
             this.puvaluepanel.TabIndex = 3;
             this.puvaluepanel.Visible = false;
-            // 
-            // pupointcomboBox
-            // 
-            this.pupointcomboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pupointcomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pupointcomboBox.FormattingEnabled = true;
-            this.pupointcomboBox.Location = new System.Drawing.Point(0, 0);
-            this.pupointcomboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.pupointcomboBox.Name = "pupointcomboBox";
-            this.pupointcomboBox.Size = new System.Drawing.Size(429, 29);
-            this.pupointcomboBox.TabIndex = 0;
-            this.pupointcomboBox.TextChanged += new System.EventHandler(this.PupointcomboBoxTextChanged);
             // 
             // pickupointpanel
             // 
@@ -823,7 +850,7 @@
             this.pickupointpanel.Controls.Add(this.pupointpictureBox);
             this.pickupointpanel.Controls.Add(this.clearpickuppointbutton);
             this.pickupointpanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pickupointpanel.Location = new System.Drawing.Point(0, 401);
+            this.pickupointpanel.Location = new System.Drawing.Point(0, 384);
             this.pickupointpanel.Margin = new System.Windows.Forms.Padding(4);
             this.pickupointpanel.Name = "pickupointpanel";
             this.pickupointpanel.Size = new System.Drawing.Size(429, 56);
@@ -882,18 +909,18 @@
             this.singleseatersleeperpanel.Location = new System.Drawing.Point(0, 277);
             this.singleseatersleeperpanel.Margin = new System.Windows.Forms.Padding(4);
             this.singleseatersleeperpanel.Name = "singleseatersleeperpanel";
-            this.singleseatersleeperpanel.Size = new System.Drawing.Size(429, 124);
+            this.singleseatersleeperpanel.Size = new System.Drawing.Size(429, 107);
             this.singleseatersleeperpanel.TabIndex = 3;
             // 
             // seatersleepercheckBox
             // 
             this.seatersleepercheckBox.AutoSize = true;
             this.seatersleepercheckBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seatersleepercheckBox.Location = new System.Drawing.Point(39, 52);
+            this.seatersleepercheckBox.Location = new System.Drawing.Point(45, 61);
             this.seatersleepercheckBox.Name = "seatersleepercheckBox";
-            this.seatersleepercheckBox.Size = new System.Drawing.Size(280, 54);
+            this.seatersleepercheckBox.Size = new System.Drawing.Size(131, 29);
             this.seatersleepercheckBox.TabIndex = 2;
-            this.seatersleepercheckBox.Text = "Single\r\nSeparate single window seats\r\n";
+            this.seatersleepercheckBox.Text = "seater seats";
             this.seatersleepercheckBox.UseVisualStyleBackColor = true;
             this.seatersleepercheckBox.CheckedChanged += new System.EventHandler(this.SeatersleepercheckBoxCheckedChanged);
             // 
@@ -1171,9 +1198,9 @@
             this.tabpanel.Controls.Add(this.dprbutton);
             this.tabpanel.Controls.Add(this.busesfoundlabel);
             this.tabpanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabpanel.Location = new System.Drawing.Point(446, 0);
+            this.tabpanel.Location = new System.Drawing.Point(446, 158);
             this.tabpanel.Name = "tabpanel";
-            this.tabpanel.Size = new System.Drawing.Size(1150, 41);
+            this.tabpanel.Size = new System.Drawing.Size(1385, 41);
             this.tabpanel.TabIndex = 2;
             // 
             // srtbylabel
@@ -1181,7 +1208,7 @@
             this.srtbylabel.AutoSize = true;
             this.srtbylabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.srtbylabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.srtbylabel.Location = new System.Drawing.Point(436, 0);
+            this.srtbylabel.Location = new System.Drawing.Point(671, 0);
             this.srtbylabel.Name = "srtbylabel";
             this.srtbylabel.Size = new System.Drawing.Size(112, 32);
             this.srtbylabel.TabIndex = 0;
@@ -1195,7 +1222,7 @@
             this.rlvbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rlvbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rlvbutton.ForeColor = System.Drawing.Color.Black;
-            this.rlvbutton.Location = new System.Drawing.Point(548, 0);
+            this.rlvbutton.Location = new System.Drawing.Point(783, 0);
             this.rlvbutton.Margin = new System.Windows.Forms.Padding(4);
             this.rlvbutton.Name = "rlvbutton";
             this.rlvbutton.Size = new System.Drawing.Size(100, 39);
@@ -1212,7 +1239,7 @@
             this.fstbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fstbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fstbutton.ForeColor = System.Drawing.Color.Black;
-            this.fstbutton.Location = new System.Drawing.Point(648, 0);
+            this.fstbutton.Location = new System.Drawing.Point(883, 0);
             this.fstbutton.Margin = new System.Windows.Forms.Padding(4);
             this.fstbutton.Name = "fstbutton";
             this.fstbutton.Size = new System.Drawing.Size(100, 39);
@@ -1229,7 +1256,7 @@
             this.chpbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chpbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chpbutton.ForeColor = System.Drawing.Color.Black;
-            this.chpbutton.Location = new System.Drawing.Point(748, 0);
+            this.chpbutton.Location = new System.Drawing.Point(983, 0);
             this.chpbutton.Margin = new System.Windows.Forms.Padding(4);
             this.chpbutton.Name = "chpbutton";
             this.chpbutton.Size = new System.Drawing.Size(100, 39);
@@ -1246,7 +1273,7 @@
             this.rtbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rtbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbutton.ForeColor = System.Drawing.Color.Black;
-            this.rtbutton.Location = new System.Drawing.Point(848, 0);
+            this.rtbutton.Location = new System.Drawing.Point(1083, 0);
             this.rtbutton.Margin = new System.Windows.Forms.Padding(4);
             this.rtbutton.Name = "rtbutton";
             this.rtbutton.Size = new System.Drawing.Size(100, 39);
@@ -1263,7 +1290,7 @@
             this.arbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.arbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.arbutton.ForeColor = System.Drawing.Color.Black;
-            this.arbutton.Location = new System.Drawing.Point(948, 0);
+            this.arbutton.Location = new System.Drawing.Point(1183, 0);
             this.arbutton.Margin = new System.Windows.Forms.Padding(4);
             this.arbutton.Name = "arbutton";
             this.arbutton.Size = new System.Drawing.Size(100, 39);
@@ -1280,7 +1307,7 @@
             this.dprbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dprbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dprbutton.ForeColor = System.Drawing.Color.Black;
-            this.dprbutton.Location = new System.Drawing.Point(1048, 0);
+            this.dprbutton.Location = new System.Drawing.Point(1283, 0);
             this.dprbutton.Margin = new System.Windows.Forms.Padding(4);
             this.dprbutton.Name = "dprbutton";
             this.dprbutton.Size = new System.Drawing.Size(100, 39);
@@ -1308,33 +1335,34 @@
             this.adducpanel.Controls.Add(this.endofbuslabel);
             this.adducpanel.Controls.Add(this.nobuspanel);
             this.adducpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adducpanel.Location = new System.Drawing.Point(446, 41);
+            this.adducpanel.Location = new System.Drawing.Point(446, 199);
             this.adducpanel.Name = "adducpanel";
-            this.adducpanel.Size = new System.Drawing.Size(1150, 751);
+            this.adducpanel.Size = new System.Drawing.Size(1385, 619);
             this.adducpanel.TabIndex = 3;
             // 
             // endofbuslabel
             // 
             this.endofbuslabel.AutoSize = true;
             this.endofbuslabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endofbuslabel.Location = new System.Drawing.Point(6, 442);
+            this.endofbuslabel.Location = new System.Drawing.Point(38, 442);
             this.endofbuslabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.endofbuslabel.Name = "endofbuslabel";
-            this.endofbuslabel.Size = new System.Drawing.Size(1133, 50);
+            this.endofbuslabel.Size = new System.Drawing.Size(1293, 50);
             this.endofbuslabel.TabIndex = 1;
-            this.endofbuslabel.Text = "---------------------------------------------------------------End of buses------" +
-    "---------------------------------------------------------\r\n\r\n";
+            this.endofbuslabel.Text = "-------------------------------------------------------------------------End of b" +
+    "uses-------------------------------------------------------------------------\r\n\r" +
+    "\n";
             this.endofbuslabel.Visible = false;
             // 
             // nobuspanel
             // 
             this.nobuspanel.Controls.Add(this.nofindlabel);
-            this.nobuspanel.Controls.Add(this.button1);
+            this.nobuspanel.Controls.Add(this.clearalllbutton);
             this.nobuspanel.Controls.Add(this.nobuslabel);
-            this.nobuspanel.Controls.Add(this.pictureBox1);
+            this.nobuspanel.Controls.Add(this.noresultpictureBox);
             this.nobuspanel.Location = new System.Drawing.Point(16, 12);
             this.nobuspanel.Name = "nobuspanel";
-            this.nobuspanel.Size = new System.Drawing.Size(1102, 366);
+            this.nobuspanel.Size = new System.Drawing.Size(1345, 384);
             this.nobuspanel.TabIndex = 0;
             this.nobuspanel.Visible = false;
             // 
@@ -1342,7 +1370,7 @@
             // 
             this.nofindlabel.AutoSize = true;
             this.nofindlabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nofindlabel.Location = new System.Drawing.Point(228, 250);
+            this.nofindlabel.Location = new System.Drawing.Point(321, 250);
             this.nofindlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nofindlabel.Name = "nofindlabel";
             this.nofindlabel.Size = new System.Drawing.Size(859, 25);
@@ -1350,60 +1378,704 @@
             this.nofindlabel.Text = "We couldn\'t find any buses to match your filters. Please clear a few filters or t" +
     "ry a different date.\r\n";
             // 
-            // button1
+            // clearalllbutton
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Location = new System.Drawing.Point(514, 289);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 41);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "CLEAR ALL";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.ClearallbuttonClick);
+            this.clearalllbutton.BackColor = System.Drawing.Color.Transparent;
+            this.clearalllbutton.FlatAppearance.BorderSize = 0;
+            this.clearalllbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearalllbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearalllbutton.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.clearalllbutton.Location = new System.Drawing.Point(607, 289);
+            this.clearalllbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.clearalllbutton.Name = "clearalllbutton";
+            this.clearalllbutton.Size = new System.Drawing.Size(133, 41);
+            this.clearalllbutton.TabIndex = 2;
+            this.clearalllbutton.Text = "CLEAR ALL";
+            this.clearalllbutton.UseVisualStyleBackColor = false;
+            this.clearalllbutton.Click += new System.EventHandler(this.ClearallbuttonClick);
             // 
             // nobuslabel
             // 
             this.nobuslabel.AutoSize = true;
             this.nobuslabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nobuslabel.Location = new System.Drawing.Point(467, 11);
+            this.nobuslabel.Location = new System.Drawing.Point(560, 11);
             this.nobuslabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nobuslabel.Name = "nobuslabel";
             this.nobuslabel.Size = new System.Drawing.Size(200, 32);
             this.nobuslabel.TabIndex = 1;
             this.nobuslabel.Text = "No Buses Found";
             // 
-            // pictureBox1
+            // noresultpictureBox
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::MakeMyTripClone.Properties.Resources.no_results;
-            this.pictureBox1.Location = new System.Drawing.Point(491, 63);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 160);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureboxesClick);
+            this.noresultpictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.noresultpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.noresultpictureBox.Image = global::MakeMyTripClone.Properties.Resources.no_results;
+            this.noresultpictureBox.Location = new System.Drawing.Point(584, 63);
+            this.noresultpictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.noresultpictureBox.Name = "noresultpictureBox";
+            this.noresultpictureBox.Size = new System.Drawing.Size(165, 160);
+            this.noresultpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.noresultpictureBox.TabIndex = 3;
+            this.noresultpictureBox.TabStop = false;
+            this.noresultpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
+            // 
+            // toppage
+            // 
+            this.toppage.BackColor = System.Drawing.Color.White;
+            this.toppage.Controls.Add(this.LoginButton);
+            this.toppage.Controls.Add(this.makemytriplogo);
+            this.toppage.Controls.Add(this.imagespanel);
+            this.toppage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.toppage.Location = new System.Drawing.Point(0, 0);
+            this.toppage.Name = "toppage";
+            this.toppage.Size = new System.Drawing.Size(1831, 73);
+            this.toppage.TabIndex = 4;
+            // 
+            // LoginButton
+            // 
+            this.LoginButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoginButton.FlatAppearance.BorderSize = 0;
+            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoginButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginButton.ForeColor = System.Drawing.Color.White;
+            this.LoginButton.Location = new System.Drawing.Point(1610, 12);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(179, 44);
+            this.LoginButton.TabIndex = 20;
+            this.LoginButton.Text = "Login or Create Account";
+            this.LoginButton.UseVisualStyleBackColor = false;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButtonClick);
+            // 
+            // makemytriplogo
+            // 
+            this.makemytriplogo.Image = global::MakeMyTripClone.Properties.Resources.mmtlogo;
+            this.makemytriplogo.Location = new System.Drawing.Point(365, 13);
+            this.makemytriplogo.Name = "makemytriplogo";
+            this.makemytriplogo.Size = new System.Drawing.Size(193, 49);
+            this.makemytriplogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.makemytriplogo.TabIndex = 19;
+            this.makemytriplogo.TabStop = false;
+            // 
+            // imagespanel
+            // 
+            this.imagespanel.Controls.Add(this.forexpanel);
+            this.imagespanel.Controls.Add(this.trainpanel);
+            this.imagespanel.Controls.Add(this.cabpanel);
+            this.imagespanel.Controls.Add(this.hotelpanel);
+            this.imagespanel.Controls.Add(this.insurancepanel);
+            this.imagespanel.Controls.Add(this.resortpanel);
+            this.imagespanel.Controls.Add(this.buspanel);
+            this.imagespanel.Controls.Add(this.holidaypanel);
+            this.imagespanel.Controls.Add(this.flightpanel1);
+            this.imagespanel.Location = new System.Drawing.Point(577, -5);
+            this.imagespanel.Name = "imagespanel";
+            this.imagespanel.Size = new System.Drawing.Size(742, 72);
+            this.imagespanel.TabIndex = 18;
+            // 
+            // forexpanel
+            // 
+            this.forexpanel.Controls.Add(this.ForexLabel);
+            this.forexpanel.Controls.Add(this.ForexCurrencyUnderLine);
+            this.forexpanel.Controls.Add(this.ForexButton);
+            this.forexpanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.forexpanel.Location = new System.Drawing.Point(577, 2);
+            this.forexpanel.Name = "forexpanel";
+            this.forexpanel.Size = new System.Drawing.Size(81, 72);
+            this.forexpanel.TabIndex = 2;
+            // 
+            // ForexLabel
+            // 
+            this.ForexLabel.AutoSize = true;
+            this.ForexLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.ForexLabel.Location = new System.Drawing.Point(7, 72);
+            this.ForexLabel.Name = "ForexLabel";
+            this.ForexLabel.Size = new System.Drawing.Size(72, 17);
+            this.ForexLabel.TabIndex = 1;
+            this.ForexLabel.Text = "Forex Card";
+            // 
+            // ForexCurrencyUnderLine
+            // 
+            this.ForexCurrencyUnderLine.AutoSize = true;
+            this.ForexCurrencyUnderLine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ForexCurrencyUnderLine.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForexCurrencyUnderLine.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.ForexCurrencyUnderLine.Location = new System.Drawing.Point(-18, 79);
+            this.ForexCurrencyUnderLine.Name = "ForexCurrencyUnderLine";
+            this.ForexCurrencyUnderLine.Size = new System.Drawing.Size(148, 34);
+            this.ForexCurrencyUnderLine.TabIndex = 4;
+            this.ForexCurrencyUnderLine.Text = "-------------------";
+            this.ForexCurrencyUnderLine.Visible = false;
+            // 
+            // ForexButton
+            // 
+            this.ForexButton.BackColor = System.Drawing.Color.White;
+            this.ForexButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.moneywhite;
+            this.ForexButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ForexButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ForexButton.FlatAppearance.BorderSize = 0;
+            this.ForexButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ForexButton.Location = new System.Drawing.Point(12, 15);
+            this.ForexButton.Name = "ForexButton";
+            this.ForexButton.Size = new System.Drawing.Size(55, 59);
+            this.ForexButton.TabIndex = 0;
+            this.ForexButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ForexButton.UseVisualStyleBackColor = false;
+            // 
+            // trainpanel
+            // 
+            this.trainpanel.Controls.Add(this.TrainLabel);
+            this.trainpanel.Controls.Add(this.TrainUnderLine);
+            this.trainpanel.Controls.Add(this.TrainButton);
+            this.trainpanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.trainpanel.Location = new System.Drawing.Point(331, 3);
+            this.trainpanel.Name = "trainpanel";
+            this.trainpanel.Size = new System.Drawing.Size(81, 71);
+            this.trainpanel.TabIndex = 1;
+            // 
+            // TrainLabel
+            // 
+            this.TrainLabel.AutoSize = true;
+            this.TrainLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.TrainLabel.Location = new System.Drawing.Point(20, 71);
+            this.TrainLabel.Name = "TrainLabel";
+            this.TrainLabel.Size = new System.Drawing.Size(42, 17);
+            this.TrainLabel.TabIndex = 1;
+            this.TrainLabel.Text = "Trains";
+            // 
+            // TrainUnderLine
+            // 
+            this.TrainUnderLine.AutoSize = true;
+            this.TrainUnderLine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TrainUnderLine.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrainUnderLine.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.TrainUnderLine.Location = new System.Drawing.Point(-58, 78);
+            this.TrainUnderLine.Name = "TrainUnderLine";
+            this.TrainUnderLine.Size = new System.Drawing.Size(148, 34);
+            this.TrainUnderLine.TabIndex = 4;
+            this.TrainUnderLine.Text = "-------------------";
+            this.TrainUnderLine.Visible = false;
+            // 
+            // TrainButton
+            // 
+            this.TrainButton.BackColor = System.Drawing.Color.White;
+            this.TrainButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.trainwhite;
+            this.TrainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TrainButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.TrainButton.FlatAppearance.BorderSize = 0;
+            this.TrainButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TrainButton.Location = new System.Drawing.Point(12, 8);
+            this.TrainButton.Name = "TrainButton";
+            this.TrainButton.Size = new System.Drawing.Size(55, 59);
+            this.TrainButton.TabIndex = 0;
+            this.TrainButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TrainButton.UseVisualStyleBackColor = false;
+            // 
+            // cabpanel
+            // 
+            this.cabpanel.Controls.Add(this.CabLabel);
+            this.cabpanel.Controls.Add(this.CabUnderLine);
+            this.cabpanel.Controls.Add(this.CabButton);
+            this.cabpanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cabpanel.Location = new System.Drawing.Point(495, 2);
+            this.cabpanel.Name = "cabpanel";
+            this.cabpanel.Size = new System.Drawing.Size(81, 72);
+            this.cabpanel.TabIndex = 2;
+            // 
+            // CabLabel
+            // 
+            this.CabLabel.AutoSize = true;
+            this.CabLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.CabLabel.Location = new System.Drawing.Point(21, 72);
+            this.CabLabel.Name = "CabLabel";
+            this.CabLabel.Size = new System.Drawing.Size(37, 17);
+            this.CabLabel.TabIndex = 1;
+            this.CabLabel.Text = "Cabs";
+            // 
+            // CabUnderLine
+            // 
+            this.CabUnderLine.AutoSize = true;
+            this.CabUnderLine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CabUnderLine.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CabUnderLine.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.CabUnderLine.Location = new System.Drawing.Point(-15, 79);
+            this.CabUnderLine.Name = "CabUnderLine";
+            this.CabUnderLine.Size = new System.Drawing.Size(148, 34);
+            this.CabUnderLine.TabIndex = 5;
+            this.CabUnderLine.Text = "-------------------";
+            this.CabUnderLine.Visible = false;
+            // 
+            // CabButton
+            // 
+            this.CabButton.BackColor = System.Drawing.Color.White;
+            this.CabButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.cabwhite;
+            this.CabButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CabButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.CabButton.FlatAppearance.BorderSize = 0;
+            this.CabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CabButton.Location = new System.Drawing.Point(12, 13);
+            this.CabButton.Name = "CabButton";
+            this.CabButton.Size = new System.Drawing.Size(55, 59);
+            this.CabButton.TabIndex = 0;
+            this.CabButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.CabButton.UseVisualStyleBackColor = false;
+            // 
+            // hotelpanel
+            // 
+            this.hotelpanel.Controls.Add(this.HotelLabel);
+            this.hotelpanel.Controls.Add(this.HotelUnderLine);
+            this.hotelpanel.Controls.Add(this.HotelButton);
+            this.hotelpanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hotelpanel.Location = new System.Drawing.Point(85, 3);
+            this.hotelpanel.Name = "hotelpanel";
+            this.hotelpanel.Size = new System.Drawing.Size(81, 67);
+            this.hotelpanel.TabIndex = 2;
+            // 
+            // HotelLabel
+            // 
+            this.HotelLabel.AutoSize = true;
+            this.HotelLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HotelLabel.Location = new System.Drawing.Point(17, 71);
+            this.HotelLabel.Name = "HotelLabel";
+            this.HotelLabel.Size = new System.Drawing.Size(45, 17);
+            this.HotelLabel.TabIndex = 1;
+            this.HotelLabel.Text = "Hotels";
+            // 
+            // HotelUnderLine
+            // 
+            this.HotelUnderLine.AutoSize = true;
+            this.HotelUnderLine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HotelUnderLine.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HotelUnderLine.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.HotelUnderLine.Location = new System.Drawing.Point(-29, 78);
+            this.HotelUnderLine.Name = "HotelUnderLine";
+            this.HotelUnderLine.Size = new System.Drawing.Size(148, 34);
+            this.HotelUnderLine.TabIndex = 4;
+            this.HotelUnderLine.Text = "-------------------";
+            this.HotelUnderLine.Visible = false;
+            // 
+            // HotelButton
+            // 
+            this.HotelButton.BackColor = System.Drawing.Color.White;
+            this.HotelButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.hotels;
+            this.HotelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HotelButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HotelButton.FlatAppearance.BorderSize = 0;
+            this.HotelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HotelButton.Location = new System.Drawing.Point(12, 9);
+            this.HotelButton.Name = "HotelButton";
+            this.HotelButton.Size = new System.Drawing.Size(55, 59);
+            this.HotelButton.TabIndex = 0;
+            this.HotelButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HotelButton.UseVisualStyleBackColor = false;
+            // 
+            // insurancepanel
+            // 
+            this.insurancepanel.Controls.Add(this.InsuranceLabel);
+            this.insurancepanel.Controls.Add(this.InsuranceUnderLine);
+            this.insurancepanel.Controls.Add(this.InsuranceButton);
+            this.insurancepanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.insurancepanel.Location = new System.Drawing.Point(659, 2);
+            this.insurancepanel.Name = "insurancepanel";
+            this.insurancepanel.Size = new System.Drawing.Size(81, 70);
+            this.insurancepanel.TabIndex = 3;
+            // 
+            // InsuranceLabel
+            // 
+            this.InsuranceLabel.AutoSize = true;
+            this.InsuranceLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.InsuranceLabel.Location = new System.Drawing.Point(12, 72);
+            this.InsuranceLabel.Name = "InsuranceLabel";
+            this.InsuranceLabel.Size = new System.Drawing.Size(63, 17);
+            this.InsuranceLabel.TabIndex = 1;
+            this.InsuranceLabel.Text = "Insurance";
+            // 
+            // InsuranceUnderLine
+            // 
+            this.InsuranceUnderLine.AutoSize = true;
+            this.InsuranceUnderLine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.InsuranceUnderLine.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InsuranceUnderLine.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.InsuranceUnderLine.Location = new System.Drawing.Point(-1, 79);
+            this.InsuranceUnderLine.Name = "InsuranceUnderLine";
+            this.InsuranceUnderLine.Size = new System.Drawing.Size(148, 34);
+            this.InsuranceUnderLine.TabIndex = 3;
+            this.InsuranceUnderLine.Text = "-------------------";
+            this.InsuranceUnderLine.Visible = false;
+            // 
+            // InsuranceButton
+            // 
+            this.InsuranceButton.BackColor = System.Drawing.Color.White;
+            this.InsuranceButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.insurancewhite;
+            this.InsuranceButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.InsuranceButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.InsuranceButton.FlatAppearance.BorderSize = 0;
+            this.InsuranceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InsuranceButton.Location = new System.Drawing.Point(12, 12);
+            this.InsuranceButton.Name = "InsuranceButton";
+            this.InsuranceButton.Size = new System.Drawing.Size(55, 59);
+            this.InsuranceButton.TabIndex = 0;
+            this.InsuranceButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.InsuranceButton.UseVisualStyleBackColor = false;
+            // 
+            // resortpanel
+            // 
+            this.resortpanel.Controls.Add(this.HomeLabel);
+            this.resortpanel.Controls.Add(this.HomeUnderLine);
+            this.resortpanel.Controls.Add(this.HomeButton);
+            this.resortpanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resortpanel.Location = new System.Drawing.Point(167, 3);
+            this.resortpanel.Name = "resortpanel";
+            this.resortpanel.Size = new System.Drawing.Size(81, 67);
+            this.resortpanel.TabIndex = 2;
+            // 
+            // HomeLabel
+            // 
+            this.HomeLabel.AutoSize = true;
+            this.HomeLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.HomeLabel.Location = new System.Drawing.Point(6, 71);
+            this.HomeLabel.Name = "HomeLabel";
+            this.HomeLabel.Size = new System.Drawing.Size(73, 17);
+            this.HomeLabel.TabIndex = 1;
+            this.HomeLabel.Text = "HomeStays";
+            // 
+            // HomeUnderLine
+            // 
+            this.HomeUnderLine.AutoSize = true;
+            this.HomeUnderLine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HomeUnderLine.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HomeUnderLine.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.HomeUnderLine.Location = new System.Drawing.Point(-16, 78);
+            this.HomeUnderLine.Name = "HomeUnderLine";
+            this.HomeUnderLine.Size = new System.Drawing.Size(148, 34);
+            this.HomeUnderLine.TabIndex = 3;
+            this.HomeUnderLine.Text = "-------------------";
+            this.HomeUnderLine.Visible = false;
+            // 
+            // HomeButton
+            // 
+            this.HomeButton.BackColor = System.Drawing.Color.White;
+            this.HomeButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.homewhite;
+            this.HomeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HomeButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HomeButton.FlatAppearance.BorderSize = 0;
+            this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HomeButton.Location = new System.Drawing.Point(12, 9);
+            this.HomeButton.Name = "HomeButton";
+            this.HomeButton.Size = new System.Drawing.Size(55, 59);
+            this.HomeButton.TabIndex = 0;
+            this.HomeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HomeButton.UseVisualStyleBackColor = false;
+            // 
+            // buspanel
+            // 
+            this.buspanel.Controls.Add(this.BusLabel);
+            this.buspanel.Controls.Add(this.BusUnderLine);
+            this.buspanel.Controls.Add(this.BusButton);
+            this.buspanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buspanel.Location = new System.Drawing.Point(413, 3);
+            this.buspanel.Name = "buspanel";
+            this.buspanel.Size = new System.Drawing.Size(81, 73);
+            this.buspanel.TabIndex = 2;
+            // 
+            // BusLabel
+            // 
+            this.BusLabel.AutoSize = true;
+            this.BusLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.BusLabel.Location = new System.Drawing.Point(20, 71);
+            this.BusLabel.Name = "BusLabel";
+            this.BusLabel.Size = new System.Drawing.Size(41, 17);
+            this.BusLabel.TabIndex = 1;
+            this.BusLabel.Text = "Buses";
+            // 
+            // BusUnderLine
+            // 
+            this.BusUnderLine.AutoSize = true;
+            this.BusUnderLine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BusUnderLine.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BusUnderLine.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.BusUnderLine.Location = new System.Drawing.Point(-26, 78);
+            this.BusUnderLine.Name = "BusUnderLine";
+            this.BusUnderLine.Size = new System.Drawing.Size(148, 34);
+            this.BusUnderLine.TabIndex = 3;
+            this.BusUnderLine.Text = "-------------------";
+            this.BusUnderLine.Visible = false;
+            // 
+            // BusButton
+            // 
+            this.BusButton.BackColor = System.Drawing.Color.White;
+            this.BusButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.buswhite;
+            this.BusButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BusButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BusButton.FlatAppearance.BorderSize = 0;
+            this.BusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BusButton.Location = new System.Drawing.Point(12, 9);
+            this.BusButton.Name = "BusButton";
+            this.BusButton.Size = new System.Drawing.Size(55, 59);
+            this.BusButton.TabIndex = 0;
+            this.BusButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BusButton.UseVisualStyleBackColor = false;
+            // 
+            // holidaypanel
+            // 
+            this.holidaypanel.Controls.Add(this.HolidaysLabel);
+            this.holidaypanel.Controls.Add(this.HolidaysUnderLine);
+            this.holidaypanel.Controls.Add(this.HolidaysButton);
+            this.holidaypanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.holidaypanel.Location = new System.Drawing.Point(249, 3);
+            this.holidaypanel.Name = "holidaypanel";
+            this.holidaypanel.Size = new System.Drawing.Size(81, 70);
+            this.holidaypanel.TabIndex = 2;
+            // 
+            // HolidaysLabel
+            // 
+            this.HolidaysLabel.AutoSize = true;
+            this.HolidaysLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.HolidaysLabel.Location = new System.Drawing.Point(12, 71);
+            this.HolidaysLabel.Name = "HolidaysLabel";
+            this.HolidaysLabel.Size = new System.Drawing.Size(58, 17);
+            this.HolidaysLabel.TabIndex = 1;
+            this.HolidaysLabel.Text = "Holidays";
+            // 
+            // HolidaysUnderLine
+            // 
+            this.HolidaysUnderLine.AutoSize = true;
+            this.HolidaysUnderLine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HolidaysUnderLine.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HolidaysUnderLine.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.HolidaysUnderLine.Location = new System.Drawing.Point(-26, 78);
+            this.HolidaysUnderLine.Name = "HolidaysUnderLine";
+            this.HolidaysUnderLine.Size = new System.Drawing.Size(148, 34);
+            this.HolidaysUnderLine.TabIndex = 5;
+            this.HolidaysUnderLine.Text = "-------------------";
+            this.HolidaysUnderLine.Visible = false;
+            // 
+            // HolidaysButton
+            // 
+            this.HolidaysButton.BackColor = System.Drawing.Color.White;
+            this.HolidaysButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.holidayswhite;
+            this.HolidaysButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HolidaysButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HolidaysButton.FlatAppearance.BorderSize = 0;
+            this.HolidaysButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HolidaysButton.Location = new System.Drawing.Point(12, 9);
+            this.HolidaysButton.Name = "HolidaysButton";
+            this.HolidaysButton.Size = new System.Drawing.Size(55, 59);
+            this.HolidaysButton.TabIndex = 0;
+            this.HolidaysButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HolidaysButton.UseVisualStyleBackColor = false;
+            // 
+            // flightpanel1
+            // 
+            this.flightpanel1.Controls.Add(this.FlightLabel);
+            this.flightpanel1.Controls.Add(this.FlightUnderLine);
+            this.flightpanel1.Controls.Add(this.FlightButton);
+            this.flightpanel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.flightpanel1.Location = new System.Drawing.Point(3, 3);
+            this.flightpanel1.Name = "flightpanel1";
+            this.flightpanel1.Size = new System.Drawing.Size(81, 67);
+            this.flightpanel1.TabIndex = 0;
+            // 
+            // FlightLabel
+            // 
+            this.FlightLabel.AutoSize = true;
+            this.FlightLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FlightLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FlightLabel.Location = new System.Drawing.Point(17, 71);
+            this.FlightLabel.Name = "FlightLabel";
+            this.FlightLabel.Size = new System.Drawing.Size(45, 17);
+            this.FlightLabel.TabIndex = 1;
+            this.FlightLabel.Text = "Flights";
+            // 
+            // FlightUnderLine
+            // 
+            this.FlightUnderLine.AutoSize = true;
+            this.FlightUnderLine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FlightUnderLine.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FlightUnderLine.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.FlightUnderLine.Location = new System.Drawing.Point(-37, 78);
+            this.FlightUnderLine.Name = "FlightUnderLine";
+            this.FlightUnderLine.Size = new System.Drawing.Size(148, 34);
+            this.FlightUnderLine.TabIndex = 2;
+            this.FlightUnderLine.Text = "-------------------";
+            this.FlightUnderLine.Visible = false;
+            // 
+            // FlightButton
+            // 
+            this.FlightButton.BackColor = System.Drawing.Color.White;
+            this.FlightButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FlightButton.BackgroundImage")));
+            this.FlightButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FlightButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FlightButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.FlightButton.FlatAppearance.BorderSize = 0;
+            this.FlightButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FlightButton.Location = new System.Drawing.Point(9, 8);
+            this.FlightButton.Name = "FlightButton";
+            this.FlightButton.Size = new System.Drawing.Size(62, 59);
+            this.FlightButton.TabIndex = 0;
+            this.FlightButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.FlightButton.UseVisualStyleBackColor = false;
+            // 
+            // searchpanel
+            // 
+            this.searchpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(34)))), ((int)(((byte)(59)))));
+            this.searchpanel.Controls.Add(this.srchbutton);
+            this.searchpanel.Controls.Add(this.departpanel);
+            this.searchpanel.Controls.Add(this.swappictureBox);
+            this.searchpanel.Controls.Add(this.topanel);
+            this.searchpanel.Controls.Add(this.frompanel);
+            this.searchpanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchpanel.Location = new System.Drawing.Point(0, 73);
+            this.searchpanel.Name = "searchpanel";
+            this.searchpanel.Size = new System.Drawing.Size(1831, 85);
+            this.searchpanel.TabIndex = 5;
+            // 
+            // srchbutton
+            // 
+            this.srchbutton.BackColor = System.Drawing.SystemColors.Highlight;
+            this.srchbutton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.srchbutton.FlatAppearance.BorderSize = 0;
+            this.srchbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.srchbutton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.srchbutton.ForeColor = System.Drawing.Color.White;
+            this.srchbutton.Location = new System.Drawing.Point(711, 19);
+            this.srchbutton.Name = "srchbutton";
+            this.srchbutton.Size = new System.Drawing.Size(137, 44);
+            this.srchbutton.TabIndex = 20;
+            this.srchbutton.Text = "SEARCH";
+            this.srchbutton.UseVisualStyleBackColor = false;
+            this.srchbutton.Click += new System.EventHandler(this.srchbutton_Click);
+            // 
+            // departpanel
+            // 
+            this.departpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(54)))), ((int)(((byte)(112)))));
+            this.departpanel.Controls.Add(this.departdateTimePicker);
+            this.departpanel.Controls.Add(this.departlabel);
+            this.departpanel.Location = new System.Drawing.Point(506, 9);
+            this.departpanel.Name = "departpanel";
+            this.departpanel.Size = new System.Drawing.Size(172, 69);
+            this.departpanel.TabIndex = 3;
+            // 
+            // departdateTimePicker
+            // 
+            this.departdateTimePicker.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.departdateTimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departdateTimePicker.Location = new System.Drawing.Point(0, 40);
+            this.departdateTimePicker.Name = "departdateTimePicker";
+            this.departdateTimePicker.Size = new System.Drawing.Size(172, 29);
+            this.departdateTimePicker.TabIndex = 2;
+            // 
+            // departlabel
+            // 
+            this.departlabel.AutoSize = true;
+            this.departlabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.departlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departlabel.ForeColor = System.Drawing.Color.White;
+            this.departlabel.Location = new System.Drawing.Point(0, 0);
+            this.departlabel.Name = "departlabel";
+            this.departlabel.Size = new System.Drawing.Size(72, 25);
+            this.departlabel.TabIndex = 1;
+            this.departlabel.Text = "Depart";
+            // 
+            // swappictureBox
+            // 
+            this.swappictureBox.Image = global::MakeMyTripClone.Properties.Resources._2arrow;
+            this.swappictureBox.Location = new System.Drawing.Point(237, 29);
+            this.swappictureBox.Name = "swappictureBox";
+            this.swappictureBox.Size = new System.Drawing.Size(43, 34);
+            this.swappictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.swappictureBox.TabIndex = 2;
+            this.swappictureBox.TabStop = false;
+            this.swappictureBox.Click += new System.EventHandler(this.SwappictureBoxClick);
+            // 
+            // topanel
+            // 
+            this.topanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(54)))), ((int)(((byte)(112)))));
+            this.topanel.Controls.Add(this.tocomboBox);
+            this.topanel.Controls.Add(this.tolabel);
+            this.topanel.Location = new System.Drawing.Point(297, 9);
+            this.topanel.Name = "topanel";
+            this.topanel.Size = new System.Drawing.Size(172, 69);
+            this.topanel.TabIndex = 1;
+            // 
+            // tocomboBox
+            // 
+            this.tocomboBox.BackColor = System.Drawing.Color.White;
+            this.tocomboBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tocomboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tocomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.tocomboBox.ForeColor = System.Drawing.Color.Black;
+            this.tocomboBox.FormattingEnabled = true;
+            this.tocomboBox.Location = new System.Drawing.Point(0, 36);
+            this.tocomboBox.Name = "tocomboBox";
+            this.tocomboBox.Size = new System.Drawing.Size(172, 33);
+            this.tocomboBox.TabIndex = 2;
+            // 
+            // tolabel
+            // 
+            this.tolabel.AutoSize = true;
+            this.tolabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tolabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tolabel.ForeColor = System.Drawing.Color.White;
+            this.tolabel.Location = new System.Drawing.Point(0, 0);
+            this.tolabel.Name = "tolabel";
+            this.tolabel.Size = new System.Drawing.Size(31, 25);
+            this.tolabel.TabIndex = 1;
+            this.tolabel.Text = "To";
+            // 
+            // frompanel
+            // 
+            this.frompanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(54)))), ((int)(((byte)(112)))));
+            this.frompanel.Controls.Add(this.fromcomboBox);
+            this.frompanel.Controls.Add(this.fromlabel);
+            this.frompanel.Location = new System.Drawing.Point(50, 9);
+            this.frompanel.Name = "frompanel";
+            this.frompanel.Size = new System.Drawing.Size(172, 69);
+            this.frompanel.TabIndex = 0;
+            // 
+            // fromcomboBox
+            // 
+            this.fromcomboBox.BackColor = System.Drawing.Color.White;
+            this.fromcomboBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.fromcomboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fromcomboBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromcomboBox.ForeColor = System.Drawing.Color.Black;
+            this.fromcomboBox.FormattingEnabled = true;
+            this.fromcomboBox.Location = new System.Drawing.Point(0, 36);
+            this.fromcomboBox.Name = "fromcomboBox";
+            this.fromcomboBox.Size = new System.Drawing.Size(172, 33);
+            this.fromcomboBox.TabIndex = 2;
+            // 
+            // fromlabel
+            // 
+            this.fromlabel.AutoSize = true;
+            this.fromlabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fromlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromlabel.ForeColor = System.Drawing.Color.White;
+            this.fromlabel.Location = new System.Drawing.Point(0, 0);
+            this.fromlabel.Name = "fromlabel";
+            this.fromlabel.Size = new System.Drawing.Size(57, 25);
+            this.fromlabel.TabIndex = 1;
+            this.fromlabel.Text = "From";
             // 
             // BookingPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1596, 792);
+            this.ClientSize = new System.Drawing.Size(1831, 818);
             this.Controls.Add(this.adducpanel);
             this.Controls.Add(this.tabpanel);
             this.Controls.Add(this.filters);
+            this.Controls.Add(this.searchpanel);
+            this.Controls.Add(this.toppage);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "BookingPageForm";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.filters.ResumeLayout(false);
             this.ddtimevaluepanel.ResumeLayout(false);
@@ -1422,11 +2094,9 @@
             this.ddtimepanel.ResumeLayout(false);
             this.ddtimepanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ddtimepictureBox)).EndInit();
-            this.dpvaluepanel.ResumeLayout(false);
             this.dppanel.ResumeLayout(false);
             this.dppanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dppictureBox)).EndInit();
-            this.travelvaluepanel.ResumeLayout(false);
             this.travelpanel.ResumeLayout(false);
             this.travelpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.travelpictureBox)).EndInit();
@@ -1446,7 +2116,6 @@
             this.putimepanel.ResumeLayout(false);
             this.putimepanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.putimepictureBox)).EndInit();
-            this.puvaluepanel.ResumeLayout(false);
             this.pickupointpanel.ResumeLayout(false);
             this.pickupointpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pupointpictureBox)).EndInit();
@@ -1476,7 +2145,36 @@
             this.adducpanel.PerformLayout();
             this.nobuspanel.ResumeLayout(false);
             this.nobuspanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noresultpictureBox)).EndInit();
+            this.toppage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.makemytriplogo)).EndInit();
+            this.imagespanel.ResumeLayout(false);
+            this.forexpanel.ResumeLayout(false);
+            this.forexpanel.PerformLayout();
+            this.trainpanel.ResumeLayout(false);
+            this.trainpanel.PerformLayout();
+            this.cabpanel.ResumeLayout(false);
+            this.cabpanel.PerformLayout();
+            this.hotelpanel.ResumeLayout(false);
+            this.hotelpanel.PerformLayout();
+            this.insurancepanel.ResumeLayout(false);
+            this.insurancepanel.PerformLayout();
+            this.resortpanel.ResumeLayout(false);
+            this.resortpanel.PerformLayout();
+            this.buspanel.ResumeLayout(false);
+            this.buspanel.PerformLayout();
+            this.holidaypanel.ResumeLayout(false);
+            this.holidaypanel.PerformLayout();
+            this.flightpanel1.ResumeLayout(false);
+            this.flightpanel1.PerformLayout();
+            this.searchpanel.ResumeLayout(false);
+            this.departpanel.ResumeLayout(false);
+            this.departpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.swappictureBox)).EndInit();
+            this.topanel.ResumeLayout(false);
+            this.topanel.PerformLayout();
+            this.frompanel.ResumeLayout(false);
+            this.frompanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1498,7 +2196,6 @@
         private System.Windows.Forms.Button clearpickuppointbutton;
         private System.Windows.Forms.Panel clearallpanel;
         private System.Windows.Forms.Panel puvaluepanel;
-        private System.Windows.Forms.ComboBox pupointcomboBox;
         private System.Windows.Forms.PictureBox seaterpictureBox;
         private System.Windows.Forms.PictureBox nonacpictureBox;
         private System.Windows.Forms.PictureBox sleeperpictureBox;
@@ -1509,12 +2206,10 @@
         private System.Windows.Forms.Panel putimevaluepanel;
         private System.Windows.Forms.PictureBox ddsrpictureBox;
         private System.Windows.Forms.Panel travelvaluepanel;
-        private System.Windows.Forms.ComboBox travelcomboBox;
         private System.Windows.Forms.Panel travelpanel;
         private System.Windows.Forms.Label travellabel;
         private System.Windows.Forms.Button travelclrbutton;
         private System.Windows.Forms.Panel dpvaluepanel;
-        private System.Windows.Forms.ComboBox dpcomboBox;
         private System.Windows.Forms.Panel dppanel;
         private System.Windows.Forms.Label dplabel;
         private System.Windows.Forms.Button dpclrbutton;
@@ -1571,10 +2266,62 @@
         private System.Windows.Forms.PictureBox putimesspictureBox;
         private System.Windows.Forms.Panel nobuspanel;
         private System.Windows.Forms.Label nobuslabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox noresultpictureBox;
         private System.Windows.Forms.Label nofindlabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button clearalllbutton;
         private System.Windows.Forms.Label endofbuslabel;
+        private System.Windows.Forms.Panel toppage;
+        private System.Windows.Forms.Button LoginButton;
+        private System.Windows.Forms.PictureBox makemytriplogo;
+        private System.Windows.Forms.Panel imagespanel;
+        private System.Windows.Forms.Panel forexpanel;
+        private System.Windows.Forms.Label ForexLabel;
+        private System.Windows.Forms.Label ForexCurrencyUnderLine;
+        private System.Windows.Forms.Button ForexButton;
+        private System.Windows.Forms.Panel trainpanel;
+        private System.Windows.Forms.Label TrainLabel;
+        private System.Windows.Forms.Label TrainUnderLine;
+        private System.Windows.Forms.Button TrainButton;
+        private System.Windows.Forms.Panel cabpanel;
+        private System.Windows.Forms.Label CabLabel;
+        private System.Windows.Forms.Label CabUnderLine;
+        private System.Windows.Forms.Button CabButton;
+        private System.Windows.Forms.Panel hotelpanel;
+        private System.Windows.Forms.Label HotelLabel;
+        private System.Windows.Forms.Label HotelUnderLine;
+        private System.Windows.Forms.Button HotelButton;
+        private System.Windows.Forms.Panel insurancepanel;
+        private System.Windows.Forms.Label InsuranceLabel;
+        private System.Windows.Forms.Label InsuranceUnderLine;
+        private System.Windows.Forms.Button InsuranceButton;
+        private System.Windows.Forms.Panel resortpanel;
+        private System.Windows.Forms.Label HomeLabel;
+        private System.Windows.Forms.Label HomeUnderLine;
+        private System.Windows.Forms.Button HomeButton;
+        private System.Windows.Forms.Panel buspanel;
+        private System.Windows.Forms.Label BusLabel;
+        private System.Windows.Forms.Label BusUnderLine;
+        private System.Windows.Forms.Button BusButton;
+        private System.Windows.Forms.Panel holidaypanel;
+        private System.Windows.Forms.Label HolidaysLabel;
+        private System.Windows.Forms.Label HolidaysUnderLine;
+        private System.Windows.Forms.Button HolidaysButton;
+        private System.Windows.Forms.Panel flightpanel1;
+        private System.Windows.Forms.Label FlightLabel;
+        private System.Windows.Forms.Label FlightUnderLine;
+        private System.Windows.Forms.Button FlightButton;
+        private System.Windows.Forms.Panel searchpanel;
+        private System.Windows.Forms.Panel frompanel;
+        private System.Windows.Forms.ComboBox fromcomboBox;
+        private System.Windows.Forms.Label fromlabel;
+        private System.Windows.Forms.PictureBox swappictureBox;
+        private System.Windows.Forms.Panel topanel;
+        private System.Windows.Forms.ComboBox tocomboBox;
+        private System.Windows.Forms.Label tolabel;
+        private System.Windows.Forms.Button srchbutton;
+        private System.Windows.Forms.Panel departpanel;
+        private System.Windows.Forms.Label departlabel;
+        private System.Windows.Forms.DateTimePicker departdateTimePicker;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MakeMyTripClone
 {
-    class RouteDetails
+    public class RouteDetails
     {
 
       
