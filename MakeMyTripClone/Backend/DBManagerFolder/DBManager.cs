@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using GoLibrary;
 using DatabaseLibrary;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +15,6 @@ namespace MakeMyTrip
 {
     static class DBManager
     {
-
-
         private static readonly string server = "localhost";
         private static readonly string database = "makemytrip";
         private static readonly string user = "root";
@@ -25,6 +25,7 @@ namespace MakeMyTrip
         public static MySqlConnection Connection = null;
         public static DatabaseManager manager = new MySqlHandler(server, user, password, database);
 
+        private static int busId ;
 
         public static void GetConnection()
         {
@@ -40,21 +41,14 @@ namespace MakeMyTrip
         public static Boolean IsUserExisted(String email)
         {
             // Customer -  class contains table name and column names
-
             var res = manager.FetchData(Customer.TableName, $"{Customer.Email}= '{email}' ", -1,-1,"",Customer.Email).Value;
-
-
             return res.Count == 0;
 
         }
-
-
         public static void AddUser(CustomerDetails cd)
         {
-
-            if (manager.IsConnected) ;
+            if (manager.IsConnected) 
                manager.InsertData(Customer.TableName, cd.Name, cd.Email, cd.Phone, cd.Password, cd.Gender);
-
         }
 
         #endregion
@@ -65,7 +59,7 @@ namespace MakeMyTrip
         {
 
 
-            GetBuses("", "", new DateTime());
+            GetBoardingPoints("", "", "");
 
             if (IsUserExisted(email))
                 return "You dont have an account";
@@ -93,7 +87,7 @@ namespace MakeMyTrip
 
             String date  = new DateTime(2024, 3, 27).ToString("yyyy-MM-dd");
 
-            var res = manager.FetchData(Route.TableName, $"{Route.Source} = '{boarding}' and {Route.Destination} = '{destination}' and {Route.StartDate} = '{date}'").Value;
+            var res = manager.FetchData(Route.TableName, $"{Route.Boarding} = '{boarding}' and {Route.Destination} = '{destination}' and {Route.StartDate} = '{date}'").Value;
 
             List<RouteDetails> list = new List<RouteDetails>();
             int size = res["r_id"].Count;
@@ -109,11 +103,11 @@ namespace MakeMyTrip
                 rd.StartDate = res[Route.StartDate][i].ToString();
                 rd.EndTime = res[Route.EndTime][i].ToString();
                 rd.EndDate = res[Route.EndDate][i].ToString();
-                rd.Source = res[Route.Source][i].ToString();
+                rd.Boarding = res[Route.Boarding][i].ToString();
                 rd.Destination = res[Route.Destination][i].ToString();
                 rd.Price = manager.FetchColumn(Bus.TableName, Bus.Prices, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
                 rd.NoOfSeats = manager.FetchColumn(Bus.TableName, Bus.NoOfSeats, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
-
+        
                 list.Add(rd);
                 
             }
