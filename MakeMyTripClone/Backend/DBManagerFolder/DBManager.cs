@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using GoLibrary;
 using DatabaseLibrary;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +27,7 @@ namespace MakeMyTrip
         public static MySqlConnection Connection = null;
         public static DatabaseManager manager = new MySqlHandler(server, user, password, database);
 
+        private static int busId ;
 
         public static void GetConnection()
         {
@@ -65,7 +68,7 @@ namespace MakeMyTrip
         {
 
 
-            GetBuses("", "", new DateTime());
+            GetBoardingPoints("", "", "");
 
             if (IsUserExisted(email))
                 return "You dont have an account";
@@ -93,7 +96,7 @@ namespace MakeMyTrip
 
             String date  = new DateTime(2024, 3, 27).ToString("yyyy-MM-dd");
 
-            var res = manager.FetchData(Route.TableName, $"{Route.Source} = '{boarding}' and {Route.Destination} = '{destination}' and {Route.StartDate} = '{date}'").Value;
+            var res = manager.FetchData(Route.TableName, $"{Route.Boarding} = '{boarding}' and {Route.Destination} = '{destination}' and {Route.StartDate} = '{date}'").Value;
 
             List<RouteDetails> list = new List<RouteDetails>();
             int size = res["r_id"].Count;
@@ -109,20 +112,92 @@ namespace MakeMyTrip
                 rd.StartDate = res[Route.StartDate][i].ToString();
                 rd.EndTime = res[Route.EndTime][i].ToString();
                 rd.EndDate = res[Route.EndDate][i].ToString();
-                rd.Source = res[Route.Source][i].ToString();
+                rd.Boarding = res[Route.Boarding][i].ToString();
                 rd.Destination = res[Route.Destination][i].ToString();
                 rd.Price = manager.FetchColumn(Bus.TableName, Bus.Prices, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
                 rd.NoOfSeats = manager.FetchColumn(Bus.TableName, Bus.NoOfSeats, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
-
+        
                 list.Add(rd);
                 
             }
 
+            GetTravel(boarding, destination, date);
             return list;
 
         }
           
+        public static List<object> GetBoardingPoints(String boarding, String destination, String date)
+        {
+            busId = 1;
+            boarding = "Chennai";
+            destination = "Coimbatore";
+            date = "28-03-2024";
+            var res = manager.FetchColumn(Route.TableName ,Route.BoardingPoints, $"{Route.BusId} = {busId} and {Route.Boarding} = '{boarding}'").Value;
 
-    
+
+            dynamic jsonObject = JsonConvert.DeserializeObject(res[0].ToString());
+
+            // Extracting only values
+            List<object> boardingPoints = new List<object>();
+            ExtractValues(jsonObject, boardingPoints);
+
+
+            return boardingPoints;
+
+
+        }
+
+        public static List<object> GetDropPoints(String boarding, String destination, String date)
+        {
+            boarding = "Chennai";
+            destination = "Coimbatore";
+            date = "28-03-2024";
+
+            busId = 1;
+            var res = manager.FetchColumn(Route.TableName, Route.DropPoints, $"{Route.BusId} = {busId} and {Route.Boarding} = '{boarding}'").Value;
+
+
+            dynamic jsonObject = JsonConvert.DeserializeObject(res[0].ToString());
+
+            // Extracting only values
+            List<object> dropPoints = new List<object>();
+            ExtractValues(jsonObject, dropPoints);
+
+            return dropPoints;
+
+        }
+
+        public static List<String> GetTravel(String boarding, String destination, String date)
+        {
+            var res = manager.FetchColumn(Route.TableName,Route.BusId ,$"{Route.Boarding} = '{boarding}' and {Route.Destination} = '{destination}' and {Route.StartDate} = '{date}'").Value;
+
+            List<String> travels = new List<String>();
+
+            for(int i = 0; i < res.Count; i++)
+            {
+                travels.Add(manager.FetchColumn(Bus.TableName, Bus.Name, $"{Bus.Id} = {res[i]} ").Value[0].ToString());
+            }
+
+            return travels;
+        } 
+
+        public static void ExtractValues(dynamic obj, List<object> valuesList)
+        {
+            foreach (var property in obj)
+            {
+                if (property.Value is Newtonsoft.Json.Linq.JObject)
+                {
+                    ExtractValues(property.Value, valuesList);
+                }
+                else
+                {
+                    valuesList.Add(property.Value);
+                }
+            }
+        }
+
+
+
+                                                                                                                                                                                                                                                                                  
     }
 }
