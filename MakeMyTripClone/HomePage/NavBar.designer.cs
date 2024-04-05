@@ -904,9 +904,9 @@
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(19, 30);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(257, 32);
+            this.label11.Size = new System.Drawing.Size(233, 32);
             this.label11.TabIndex = 6;
-            this.label11.Text = "Mumbai, Maharashtra";
+            this.label11.Text = "Chennai,Tamil Nadu";
             this.label11.Click += new System.EventHandler(this.ToComboBoxClick);
             // 
             // toComboBox
@@ -986,9 +986,9 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(10, 30);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(140, 32);
+            this.label8.Size = new System.Drawing.Size(272, 32);
             this.label8.TabIndex = 5;
-            this.label8.Text = "Delhi, Delhi";
+            this.label8.Text = "Coimbatore,Tamil Nadu\r\n";
             this.label8.Click += new System.EventHandler(this.FromComboBoxClick);
             // 
             // fromcomboBox
@@ -1063,7 +1063,7 @@
             this.SearchButton.Text = "SEARCH";
             this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Visible = false;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            this.SearchButton.Click += new System.EventHandler(this.SearchButtonClick);
             // 
             // panel15
             // 

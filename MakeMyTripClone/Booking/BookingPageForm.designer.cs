@@ -104,10 +104,7 @@
             this.clearallbutton = new System.Windows.Forms.Button();
             this.tabpanel = new System.Windows.Forms.Panel();
             this.srtbylabel = new System.Windows.Forms.Label();
-            this.rlvbutton = new System.Windows.Forms.Button();
             this.fstbutton = new System.Windows.Forms.Button();
-            this.chpbutton = new System.Windows.Forms.Button();
-            this.rtbutton = new System.Windows.Forms.Button();
             this.arbutton = new System.Windows.Forms.Button();
             this.dprbutton = new System.Windows.Forms.Button();
             this.busesfoundlabel = new System.Windows.Forms.Label();
@@ -1190,10 +1187,7 @@
             this.tabpanel.BackColor = System.Drawing.Color.White;
             this.tabpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabpanel.Controls.Add(this.srtbylabel);
-            this.tabpanel.Controls.Add(this.rlvbutton);
             this.tabpanel.Controls.Add(this.fstbutton);
-            this.tabpanel.Controls.Add(this.chpbutton);
-            this.tabpanel.Controls.Add(this.rtbutton);
             this.tabpanel.Controls.Add(this.arbutton);
             this.tabpanel.Controls.Add(this.dprbutton);
             this.tabpanel.Controls.Add(this.busesfoundlabel);
@@ -1208,28 +1202,11 @@
             this.srtbylabel.AutoSize = true;
             this.srtbylabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.srtbylabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.srtbylabel.Location = new System.Drawing.Point(671, 0);
+            this.srtbylabel.Location = new System.Drawing.Point(971, 0);
             this.srtbylabel.Name = "srtbylabel";
             this.srtbylabel.Size = new System.Drawing.Size(112, 32);
             this.srtbylabel.TabIndex = 0;
             this.srtbylabel.Text = "SORT BY";
-            // 
-            // rlvbutton
-            // 
-            this.rlvbutton.BackColor = System.Drawing.Color.Transparent;
-            this.rlvbutton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rlvbutton.FlatAppearance.BorderSize = 0;
-            this.rlvbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rlvbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rlvbutton.ForeColor = System.Drawing.Color.Black;
-            this.rlvbutton.Location = new System.Drawing.Point(783, 0);
-            this.rlvbutton.Margin = new System.Windows.Forms.Padding(4);
-            this.rlvbutton.Name = "rlvbutton";
-            this.rlvbutton.Size = new System.Drawing.Size(100, 39);
-            this.rlvbutton.TabIndex = 2;
-            this.rlvbutton.Text = "Relevance";
-            this.rlvbutton.UseVisualStyleBackColor = false;
-            this.rlvbutton.Click += new System.EventHandler(this.RlvbuttonClick);
             // 
             // fstbutton
             // 
@@ -1239,7 +1216,7 @@
             this.fstbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fstbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fstbutton.ForeColor = System.Drawing.Color.Black;
-            this.fstbutton.Location = new System.Drawing.Point(883, 0);
+            this.fstbutton.Location = new System.Drawing.Point(1083, 0);
             this.fstbutton.Margin = new System.Windows.Forms.Padding(4);
             this.fstbutton.Name = "fstbutton";
             this.fstbutton.Size = new System.Drawing.Size(100, 39);
@@ -1247,40 +1224,6 @@
             this.fstbutton.Text = "Fastest";
             this.fstbutton.UseVisualStyleBackColor = false;
             this.fstbutton.Click += new System.EventHandler(this.FstbuttonClick);
-            // 
-            // chpbutton
-            // 
-            this.chpbutton.BackColor = System.Drawing.Color.White;
-            this.chpbutton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.chpbutton.FlatAppearance.BorderSize = 0;
-            this.chpbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chpbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chpbutton.ForeColor = System.Drawing.Color.Black;
-            this.chpbutton.Location = new System.Drawing.Point(983, 0);
-            this.chpbutton.Margin = new System.Windows.Forms.Padding(4);
-            this.chpbutton.Name = "chpbutton";
-            this.chpbutton.Size = new System.Drawing.Size(100, 39);
-            this.chpbutton.TabIndex = 4;
-            this.chpbutton.Text = "Cheapest";
-            this.chpbutton.UseVisualStyleBackColor = false;
-            this.chpbutton.Click += new System.EventHandler(this.ChpbuttonClick);
-            // 
-            // rtbutton
-            // 
-            this.rtbutton.BackColor = System.Drawing.Color.White;
-            this.rtbutton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rtbutton.FlatAppearance.BorderSize = 0;
-            this.rtbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rtbutton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbutton.ForeColor = System.Drawing.Color.Black;
-            this.rtbutton.Location = new System.Drawing.Point(1083, 0);
-            this.rtbutton.Margin = new System.Windows.Forms.Padding(4);
-            this.rtbutton.Name = "rtbutton";
-            this.rtbutton.Size = new System.Drawing.Size(100, 39);
-            this.rtbutton.TabIndex = 5;
-            this.rtbutton.Text = "Ratings";
-            this.rtbutton.UseVisualStyleBackColor = false;
-            this.rtbutton.Click += new System.EventHandler(this.RtbuttonClick);
             // 
             // arbutton
             // 
@@ -1944,7 +1887,7 @@
             this.srchbutton.TabIndex = 20;
             this.srchbutton.Text = "SEARCH";
             this.srchbutton.UseVisualStyleBackColor = false;
-            this.srchbutton.Click += new System.EventHandler(this.srchbutton_Click);
+            this.srchbutton.Click += new System.EventHandler(this.SrchbuttonClick);
             // 
             // departpanel
             // 
@@ -2220,11 +2163,8 @@
         private System.Windows.Forms.Panel tabpanel;
         private System.Windows.Forms.Button dprbutton;
         private System.Windows.Forms.Button arbutton;
-        private System.Windows.Forms.Button rtbutton;
-        private System.Windows.Forms.Button chpbutton;
         private System.Windows.Forms.Button fstbutton;
         private System.Windows.Forms.Label srtbylabel;
-        private System.Windows.Forms.Button rlvbutton;
         private System.Windows.Forms.Label busesfoundlabel;
         private System.Windows.Forms.Panel adducpanel;
         private System.Windows.Forms.CheckBox seatersleepercheckBox;

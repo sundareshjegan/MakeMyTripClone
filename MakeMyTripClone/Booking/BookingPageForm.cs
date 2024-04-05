@@ -101,14 +101,16 @@ namespace MakeMyTripClone
         public static List<object> droppoints = new List<object>();
         public static List<object> boardingpoints = new List<object>();
         public static List<string> traveloperatorpoints = new List<string>();
-        public static List<CustomCheckbox> dropchecks = new List<CustomCheckbox>();
-        private CustomCheckbox checkBoxes;
+        public static List<CustomCheckbox> dropchecks = new List<CustomCheckbox>(); //
+        private CustomCheckbox checkBoxes; //
         private bool isNUll;
         private bool isTravel;
         private bool isDrop;
         private bool isADD;
         private bool isNot;
-
+        private List<Buses> buses = new List<Buses>();
+        private List<Buses> Filterlist = new List<Buses>();
+        private string[] arr = new string[5];
         private void Form1_Load(object sender, EventArgs e)
         {
             srchbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, srchbutton.Width, srchbutton.Height, 30, 30));
@@ -118,9 +120,13 @@ namespace MakeMyTripClone
                 bus = new Buses();
                 adducpanel.Controls.Add(bus);
                 bus.Dock = DockStyle.Top;
-                bus.Setdata(i);
+                buses.Add(bus);
+               // Filterlist.Add(bus);
+                bus.Setdata(i,fromcomboBox.Text,tocomboBox.Text);
             }
             busesfoundlabel.Text = busesList.Count + " Buses found";
+          
+            
             
         }
         public void SetData(string boarding , string destination , string date,ComboBox from,ComboBox to,DateTimePicker dateTime)
@@ -156,11 +162,58 @@ namespace MakeMyTripClone
                 }
                 putimeclearbutton.ForeColor = gray;
                 ddtimeclrbutton.ForeColor = gray;
+                
+
             }
             else
             {
                 clearallbutton.ForeColor = SystemColors.Highlight;
                 no++;
+                if(panel.Name=="acpnael")
+                {
+                    arr[0] = "AC";
+                }
+                if(panel.Name=="nonacpanel")
+                {
+                    arr[0] = "NON-AC";
+                }
+                if(panel.Name== "sleeperpanel")
+                {
+                    arr[1] = "SL"; 
+                }
+                if (panel.Name == "seaterpanel")
+                {
+                    arr[1] = "ST"; 
+                }
+                
+                //if (panel.Name == "acpanel")
+                //{
+                //    for (int i = 0; i < busesList.Count; i++)
+                //    {
+                //        if (busesList[i].BusType == "AC-SL" || busesList[i].BusType == "AC-ST" || busesList[i].BusType == "AC-SL/ST")
+                //        {
+                //            buses[i].Visible = true;
+                //        }
+                //        else
+                //        {
+                //            buses[i].Visible = false;
+                //        }
+                //    }
+                //}
+                //if (panel.Name == "nonacpanel")
+                //{
+                //    for (int i = 0; i < busesList.Count; i++)
+                //    {
+                //        if (busesList[i].BusType == "AC-SL" || busesList[i].BusType == "AC-ST" || busesList[i].BusType == "AC-SL/ST")
+                //        {
+                //            buses[i].Visible = false;
+                //        }
+                //        else
+                //        {
+                //            buses[i].Visible = true;
+                //        }
+                //    }
+                //}
                 if (panel.Name == "acpanel" && nonacpanel.BackColor == colour)
                 {
                     nonacpanel.BackColor = Color.White;
@@ -169,6 +222,34 @@ namespace MakeMyTripClone
                 {
                     acpanel.BackColor = Color.White;
                 }
+                //if(panel.Name== "sleeperpanel")
+                //{
+                //    for (int i = 0; i < busesList.Count; i++)
+                //    {
+                //        if (busesList[i].BusType == "AC-SL" || busesList[i].BusType == "NON-AC-SL")
+                //        {
+                //            buses[i].Visible = true;
+                //        }
+                //        else
+                //        {
+                //            buses[i].Visible = false ;
+                //        }
+                //    }
+                //}
+                //if (panel.Name == "seaterpanel")
+                //{
+                //    for (int i = 0; i < busesList.Count; i++)
+                //    {
+                //        if (busesList[i].BusType == "NON-AC-ST" || busesList[i].BusType == "AC-ST")
+                //        {
+                //            buses[i].Visible = true;
+                //        }
+                //        else
+                //        {
+                //            buses[i].Visible = false;
+                //        }
+                //    }
+                //}
                 if (panel.Name == "sleeperpanel" && seaterpanel.BackColor == colour)
                 {
                     seaterpanel.BackColor = Color.White;
@@ -243,6 +324,14 @@ namespace MakeMyTripClone
             PanelsClick(label.Parent, EventArgs.Empty);
         }
 
+        private void Reset()
+        {
+            foreach(var bus in buses)
+            {
+                bus.Visible = true;
+            }
+        }
+
         private void PictureboxesClick(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
@@ -254,6 +343,7 @@ namespace MakeMyTripClone
         {
             if (clearallbutton.ForeColor == highglight)
             {
+                Reset();
                 no = 0;
                 foreach(var box in dropchecks)
                 {
@@ -329,6 +419,18 @@ namespace MakeMyTripClone
             else no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
             else clearallbutton.ForeColor = highglight;
+            foreach(var datas in buses)
+            {
+                if(datas.bustype== "AC-ST" || datas.bustype== "NON-AC-ST")
+                {
+                    datas.Visible = true;
+                }
+                else
+                {
+                    datas.Visible = false;
+                }
+            }
+            
         }
 
         private void DropClick(object sender, EventArgs e)
@@ -338,39 +440,18 @@ namespace MakeMyTripClone
                 puvaluepanel.Visible = false;
                 pupointpictureBox.Image = Resources.down;
             }
-            else Locations(ref isfalse, puvaluepanel, pupointpictureBox,droppoints,ref isNot);
+            else Locations(ref isfalse, puvaluepanel, pupointpictureBox,boardingpoints,ref isNot);
         }
 
-        private void RlvbuttonClick(object sender, EventArgs e)
-        {
-            rlvbutton.BackColor = colour;
-            fstbutton.BackColor = white;
-            chpbutton.BackColor = white;
-            rtbutton.BackColor = white;
-            arbutton.BackColor = white;
-            dprbutton.BackColor = white;
-        }
 
         private void FstbuttonClick(object sender, EventArgs e)
         {
-            rlvbutton.BackColor = white;
             fstbutton.BackColor = colour;
-            chpbutton.BackColor = white;
-            rtbutton.BackColor = white;
             arbutton.BackColor = white;
             dprbutton.BackColor = white;
         }
 
-        private void ChpbuttonClick(object sender, EventArgs e)
-        {
-            rlvbutton.BackColor = white;
-            fstbutton.BackColor = white;
-            chpbutton.BackColor = colour;
-            rtbutton.BackColor = white;
-            arbutton.BackColor = white;
-            dprbutton.BackColor = white;
-        }
-
+        
         private void LoginButtonClick(object sender, EventArgs e)
         {
             LoginForm login = new LoginForm();
@@ -384,39 +465,62 @@ namespace MakeMyTripClone
             tocomboBox.Text = s;
         }
 
-        private void RtbuttonClick(object sender, EventArgs e)
-        {
-            rlvbutton.BackColor = white;
-            fstbutton.BackColor = white;
-            chpbutton.BackColor = white;
-            rtbutton.BackColor = colour;
-            arbutton.BackColor = white;
-            dprbutton.BackColor = white;
-        }
-
         private void ArbuttonClick(object sender, EventArgs e)
         {
-            rlvbutton.BackColor = white;
-            fstbutton.BackColor = white;
-            chpbutton.BackColor = white;
-            rtbutton.BackColor = white;
-            arbutton.BackColor = colour;
-            dprbutton.BackColor = white;
+            List<RouteDetails> arrival = busesList;
+           
+            DateTime targetTime = DateTime.Now;
+            
+                fstbutton.BackColor = white;
+                arbutton.BackColor = colour;
+                dprbutton.BackColor = white;
+                arrival = arrival.OrderBy(bus =>
+                {
+                    TimeSpan duration = Convert.ToDateTime(bus.StartTime) - targetTime;
+                    return duration.TotalMinutes;
+                }).ThenBy(bus => bus.StartTime).ToList();
+                foreach (var bus in buses)
+                {
+                    bus.Dock = DockStyle.None;
+                }
+                foreach (var bus in buses)
+                {
+                    bus.Dock = DockStyle.Top;
+                    bus.BringToFront();
+                }
+            
         }
 
-        private void srchbutton_Click(object sender, EventArgs e)
+        private void SrchbuttonClick(object sender, EventArgs e)
         {
-
+            String[] boarding = fromcomboBox.Text.Split(',');
+            String[] destination = tocomboBox.Text.Split(',');
+            SetData(boarding[0], destination[0], departdateTimePicker.Value.ToString("yyyy-MM-dd"), fromcomboBox, tocomboBox, departdateTimePicker);
         }
+
 
         private void DprbuttonClick(object sender, EventArgs e)
         {
-            rlvbutton.BackColor = white;
             fstbutton.BackColor = white;
-            chpbutton.BackColor = white;
-            rtbutton.BackColor = white;
             arbutton.BackColor = white;
             dprbutton.BackColor = colour;
+            List<RouteDetails> departure = busesList;
+
+            DateTime targetTime = DateTime.Now;
+            departure = departure.OrderBy(bus =>
+            {
+                TimeSpan duration = Convert.ToDateTime(bus.EndTime) - targetTime;
+                return duration.TotalMinutes;
+            }).ThenBy(bus => bus.EndTime).ToList();
+            foreach (var bus in buses)
+            {
+                bus.Dock = DockStyle.None;
+            }
+            foreach (var bus in buses)
+            {
+                bus.Dock = DockStyle.Top;
+                bus.BringToFront();
+            }
         }
 
         private void TPictureBoxClick(object sender, EventArgs e)

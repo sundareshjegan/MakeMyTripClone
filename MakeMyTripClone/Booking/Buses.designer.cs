@@ -72,8 +72,8 @@
             this.plwlabel = new System.Windows.Forms.Label();
             this.cctvpictureBox = new System.Windows.Forms.PictureBox();
             this.cctvlabel = new System.Windows.Forms.Label();
-            this.usbpictureBox = new System.Windows.Forms.PictureBox();
-            this.usblabel = new System.Windows.Forms.Label();
+            this.snkpictureBox = new System.Windows.Forms.PictureBox();
+            this.snklabel = new System.Windows.Forms.Label();
             this.rlpictureBox = new System.Windows.Forms.PictureBox();
             this.rllabel = new System.Windows.Forms.Label();
             this.cppictureBox = new System.Windows.Forms.PictureBox();
@@ -100,7 +100,7 @@
             this.amentiespanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plwpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cctvpictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usbpictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.snkpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cppictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blkpictureBox)).BeginInit();
@@ -498,11 +498,11 @@
             // 
             // photospanel
             // 
-            this.photospanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.photospanel.BackColor = System.Drawing.Color.White;
             this.photospanel.Controls.Add(this.Bus3pictureBox);
             this.photospanel.Controls.Add(this.Bus2pictureBox);
             this.photospanel.Controls.Add(this.Bus1pictureBox);
-            this.photospanel.Location = new System.Drawing.Point(1, 149);
+            this.photospanel.Location = new System.Drawing.Point(1, 150);
             this.photospanel.Name = "photospanel";
             this.photospanel.Size = new System.Drawing.Size(1275, 123);
             this.photospanel.TabIndex = 39;
@@ -511,39 +511,45 @@
             // Bus3pictureBox
             // 
             this.Bus3pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.Bus3pictureBox.Image = global::MakeMyTripClone.Properties.Resources.b3;
             this.Bus3pictureBox.Location = new System.Drawing.Point(426, 18);
             this.Bus3pictureBox.Name = "Bus3pictureBox";
             this.Bus3pictureBox.Size = new System.Drawing.Size(135, 88);
+            this.Bus3pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Bus3pictureBox.TabIndex = 0;
             this.Bus3pictureBox.TabStop = false;
             // 
             // Bus2pictureBox
             // 
             this.Bus2pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.Bus2pictureBox.Image = global::MakeMyTripClone.Properties.Resources.b2;
             this.Bus2pictureBox.Location = new System.Drawing.Point(234, 18);
             this.Bus2pictureBox.Name = "Bus2pictureBox";
             this.Bus2pictureBox.Size = new System.Drawing.Size(135, 88);
+            this.Bus2pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Bus2pictureBox.TabIndex = 0;
             this.Bus2pictureBox.TabStop = false;
             // 
             // Bus1pictureBox
             // 
             this.Bus1pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.Bus1pictureBox.Image = global::MakeMyTripClone.Properties.Resources.bus1;
             this.Bus1pictureBox.Location = new System.Drawing.Point(28, 18);
             this.Bus1pictureBox.Name = "Bus1pictureBox";
             this.Bus1pictureBox.Size = new System.Drawing.Size(135, 88);
+            this.Bus1pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Bus1pictureBox.TabIndex = 0;
             this.Bus1pictureBox.TabStop = false;
             // 
             // amentiespanel
             // 
-            this.amentiespanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.amentiespanel.BackColor = System.Drawing.Color.White;
             this.amentiespanel.Controls.Add(this.plwpictureBox);
             this.amentiespanel.Controls.Add(this.plwlabel);
             this.amentiespanel.Controls.Add(this.cctvpictureBox);
             this.amentiespanel.Controls.Add(this.cctvlabel);
-            this.amentiespanel.Controls.Add(this.usbpictureBox);
-            this.amentiespanel.Controls.Add(this.usblabel);
+            this.amentiespanel.Controls.Add(this.snkpictureBox);
+            this.amentiespanel.Controls.Add(this.snklabel);
             this.amentiespanel.Controls.Add(this.rlpictureBox);
             this.amentiespanel.Controls.Add(this.rllabel);
             this.amentiespanel.Controls.Add(this.cppictureBox);
@@ -555,7 +561,7 @@
             this.amentiespanel.Controls.Add(this.wblabel);
             this.amentiespanel.Controls.Add(this.ecnpictureBox);
             this.amentiespanel.Controls.Add(this.busamentitlabel);
-            this.amentiespanel.Location = new System.Drawing.Point(2, 164);
+            this.amentiespanel.Location = new System.Drawing.Point(2, 155);
             this.amentiespanel.Name = "amentiespanel";
             this.amentiespanel.Size = new System.Drawing.Size(1274, 168);
             this.amentiespanel.TabIndex = 39;
@@ -563,9 +569,11 @@
             // 
             // plwpictureBox
             // 
+            this.plwpictureBox.Image = global::MakeMyTripClone.Properties.Resources.pillow;
             this.plwpictureBox.Location = new System.Drawing.Point(573, 114);
             this.plwpictureBox.Name = "plwpictureBox";
             this.plwpictureBox.Size = new System.Drawing.Size(30, 30);
+            this.plwpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.plwpictureBox.TabIndex = 13;
             this.plwpictureBox.TabStop = false;
             // 
@@ -581,9 +589,11 @@
             // 
             // cctvpictureBox
             // 
+            this.cctvpictureBox.Image = global::MakeMyTripClone.Properties.Resources.security_camera;
             this.cctvpictureBox.Location = new System.Drawing.Point(333, 114);
             this.cctvpictureBox.Name = "cctvpictureBox";
             this.cctvpictureBox.Size = new System.Drawing.Size(30, 30);
+            this.cctvpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.cctvpictureBox.TabIndex = 13;
             this.cctvpictureBox.TabStop = false;
             // 
@@ -597,29 +607,33 @@
             this.cctvlabel.TabIndex = 12;
             this.cctvlabel.Text = "CCTV";
             // 
-            // usbpictureBox
+            // snkpictureBox
             // 
-            this.usbpictureBox.Location = new System.Drawing.Point(31, 114);
-            this.usbpictureBox.Name = "usbpictureBox";
-            this.usbpictureBox.Size = new System.Drawing.Size(30, 30);
-            this.usbpictureBox.TabIndex = 11;
-            this.usbpictureBox.TabStop = false;
+            this.snkpictureBox.Image = global::MakeMyTripClone.Properties.Resources.snack;
+            this.snkpictureBox.Location = new System.Drawing.Point(31, 114);
+            this.snkpictureBox.Name = "snkpictureBox";
+            this.snkpictureBox.Size = new System.Drawing.Size(30, 30);
+            this.snkpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.snkpictureBox.TabIndex = 11;
+            this.snkpictureBox.TabStop = false;
             // 
-            // usblabel
+            // snklabel
             // 
-            this.usblabel.AutoSize = true;
-            this.usblabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usblabel.Location = new System.Drawing.Point(67, 124);
-            this.usblabel.Name = "usblabel";
-            this.usblabel.Size = new System.Drawing.Size(151, 20);
-            this.usblabel.TabIndex = 10;
-            this.usblabel.Text = "USB port for charger";
+            this.snklabel.AutoSize = true;
+            this.snklabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.snklabel.Location = new System.Drawing.Point(67, 124);
+            this.snklabel.Name = "snklabel";
+            this.snklabel.Size = new System.Drawing.Size(55, 20);
+            this.snklabel.TabIndex = 10;
+            this.snklabel.Text = "Snacks";
             // 
             // rlpictureBox
             // 
+            this.rlpictureBox.Image = global::MakeMyTripClone.Properties.Resources.lamp;
             this.rlpictureBox.Location = new System.Drawing.Point(1043, 51);
             this.rlpictureBox.Name = "rlpictureBox";
             this.rlpictureBox.Size = new System.Drawing.Size(30, 30);
+            this.rlpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rlpictureBox.TabIndex = 9;
             this.rlpictureBox.TabStop = false;
             // 
@@ -635,9 +649,11 @@
             // 
             // cppictureBox
             // 
+            this.cppictureBox.Image = global::MakeMyTripClone.Properties.Resources.usb_connector;
             this.cppictureBox.Location = new System.Drawing.Point(798, 51);
             this.cppictureBox.Name = "cppictureBox";
             this.cppictureBox.Size = new System.Drawing.Size(30, 30);
+            this.cppictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.cppictureBox.TabIndex = 7;
             this.cppictureBox.TabStop = false;
             // 
@@ -653,9 +669,11 @@
             // 
             // blkpictureBox
             // 
+            this.blkpictureBox.Image = global::MakeMyTripClone.Properties.Resources.bed_sheets;
             this.blkpictureBox.Location = new System.Drawing.Point(573, 51);
             this.blkpictureBox.Name = "blkpictureBox";
             this.blkpictureBox.Size = new System.Drawing.Size(30, 30);
+            this.blkpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blkpictureBox.TabIndex = 5;
             this.blkpictureBox.TabStop = false;
             // 
@@ -671,9 +689,11 @@
             // 
             // wbpictureBox
             // 
+            this.wbpictureBox.Image = global::MakeMyTripClone.Properties.Resources.water_bottle;
             this.wbpictureBox.Location = new System.Drawing.Point(333, 51);
             this.wbpictureBox.Name = "wbpictureBox";
             this.wbpictureBox.Size = new System.Drawing.Size(30, 30);
+            this.wbpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.wbpictureBox.TabIndex = 3;
             this.wbpictureBox.TabStop = false;
             // 
@@ -699,9 +719,11 @@
             // 
             // ecnpictureBox
             // 
+            this.ecnpictureBox.Image = global::MakeMyTripClone.Properties.Resources.emergency_call;
             this.ecnpictureBox.Location = new System.Drawing.Point(31, 51);
             this.ecnpictureBox.Name = "ecnpictureBox";
             this.ecnpictureBox.Size = new System.Drawing.Size(30, 30);
+            this.ecnpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ecnpictureBox.TabIndex = 1;
             this.ecnpictureBox.TabStop = false;
             // 
@@ -748,7 +770,7 @@
             this.amentiespanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plwpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cctvpictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usbpictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.snkpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rlpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cppictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blkpictureBox)).EndInit();
@@ -801,8 +823,8 @@
         private System.Windows.Forms.Label plwlabel;
         private System.Windows.Forms.PictureBox cctvpictureBox;
         private System.Windows.Forms.Label cctvlabel;
-        private System.Windows.Forms.PictureBox usbpictureBox;
-        private System.Windows.Forms.Label usblabel;
+        private System.Windows.Forms.PictureBox snkpictureBox;
+        private System.Windows.Forms.Label snklabel;
         private System.Windows.Forms.PictureBox rlpictureBox;
         private System.Windows.Forms.Label rllabel;
         private System.Windows.Forms.PictureBox cppictureBox;

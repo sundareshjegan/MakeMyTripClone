@@ -79,6 +79,7 @@
     <Compile Include="Booking\Address.Designer.cs">
       <DependentUpon>Address.cs</DependentUpon>
     </Compile>
+    <Compile Include="Booking\BookingDetails.cs" />
     <Compile Include="Booking\Buses.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -436,6 +437,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\2arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emergency-call.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\water-bottle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bed-sheets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usb-connector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lamp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\security-camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pillow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,16 +19,21 @@ namespace MakeMyTripClone
             
         }
 
-        private string[] ruppees;
+        public string[] ruppees;
         private Color colour = SystemColors.GradientInactiveCaption, white = Color.White, highlight = SystemColors.Highlight;
         private bool isPhotos;
         private bool isAmenties;
         private Address address;
+        public string pickuplocation, droplocation,name,bustype;
 
-        public  void Setdata(int i)
+        public  void Setdata(int i,string pickup,string drop)
         {
+            pickuplocation = pickup;
+            droplocation = drop;
             busnamelabel.Text=BookingPageForm.busesList[i].BusName;
+            name = busnamelabel.Text;
             busltypeabel.Text = BookingPageForm.busesList[i].BusType;
+            bustype = busltypeabel.Text;
             rulabel.Text = BookingPageForm.busesList[i].Price;
             ruppees= rulabel.Text.Split('/');
             DateTime from =Convert.ToDateTime( BookingPageForm.busesList[i].StartDate);
@@ -85,7 +90,61 @@ namespace MakeMyTripClone
                 address.AddAddress(ss[0],ss[1], ss[2]);
                 droppointpanel.Controls.Add(address);
                 address.Dock = DockStyle.Top;
+                address.drops += Address_drops;
             }
+            foreach(var n in BookingPageForm.boardingpoints)
+            {
+                address = new Address();
+                string[] ss = n.ToString().Split('&');
+                address.AddAddress(ss[0], ss[1], ss[2]);
+                pickuppointpanel.Controls.Add(address);
+                address.Dock = DockStyle.Top;
+                address.drops2 += Address_drops2; ;
+            }
+        }
+
+        private void Address_drops2(object sender, EventArgs e)
+        {
+            if (prev2 != null)
+            {
+                prev2.IsClicked = false;
+            }
+                (sender as Address).IsClicked2 = true;
+            prev2 = sender as Address;
+            foreach (Address controls in pickuppointpanel.Controls)
+            {
+                if (controls.BackColor == SystemColors.GradientInactiveCaption)
+                {
+                    dropvalue = controls;
+                    string[] s = address.Getdetails(dropvalue);
+                    droppoint = s;
+                    // MessageBox.Show($"mm : {s[0]},ss : {s[1]}");
+                }
+            }
+        }
+
+        private Address prev = null,dropvalue=null,prev2=null;
+        private string[] boardingpoint, droppoint;
+        private void Address_drops(object sender, EventArgs e)
+        {
+            
+            if (prev != null)
+            {
+                prev.IsClicked = false;
+            }
+                (sender as Address).IsClicked = true;
+            prev = sender as Address;
+            foreach(Address controls in droppointpanel.Controls)
+            {
+                if(controls.BackColor==SystemColors.GradientInactiveCaption)
+                {
+                    dropvalue = controls;
+                    string[] s = address.Getdetails(dropvalue);
+                    boardingpoint = s;
+                   // MessageBox.Show($"mm : {s[0]},ss : {s[1]}");
+                }
+            }
+            
         }
 
         private string MonthName(int i)
@@ -222,14 +281,27 @@ namespace MakeMyTripClone
                 Height = 200;
             }
         }
-
+        private BookingDetails details = new BookingDetails();
         private void ContinuebutClick(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(totalamtlabel.Text)>0)
+            if (Convert.ToInt32(totalamtlabel.Text) > 0 && boardingpoint != null && droppoint != null)
             {
-
+                details.BusName = busnamelabel.Text;
+                details.Bustype = busltypeabel.Text;
+                details.Bookedseatnumber = noofseatlabel.Text.Remove(noofseatlabel.Text.Length-3);
+                string[] ss = details.Bookedseatnumber.Split(',');
+                details.Nooftravellers = ss.Length;
+                details.Pickuptime = fromlabel.Text;
+                details.Droptime = tolabel.Text;
+                details.Pickuplocation = pickuplocation;
+                details.Droplolocation = droplocation;
+                details.Boardingpoint = boardingpoint;
+                details.Droppoint = droppoint;
+                //details.dura
+                details.Totalamount = Convert.ToInt32(totalamtlabel.Text);
             }
         }
+
 
         private void PtsbuttonClick(object sender, EventArgs e)
         {

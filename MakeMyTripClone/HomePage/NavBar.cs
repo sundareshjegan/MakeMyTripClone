@@ -94,9 +94,10 @@ namespace MakeMyTripClone
 
            // dateTimePicker.MinDate = D.Date ;
 
-            toComboBox.Text = "Mumbai, Maharashtra";
+            toComboBox.Text = "Chennai,Tamil Nadu";
 
-            fromcomboBox.Text = "Delhi, Delhi";
+            fromcomboBox.Text = "Coimbatore,Tamil Nadu";
+
 
         }
 
@@ -246,7 +247,7 @@ namespace MakeMyTripClone
             PostMessage(dateTimePicker.Handle, WM_LBUTTONDOWN, 1, lParam);
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
+        public void SearchButtonClick(object sender, EventArgs e)
         {
             if (warningLabel.Visible == false)
             {
