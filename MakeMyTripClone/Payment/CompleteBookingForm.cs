@@ -11,22 +11,26 @@ using MakeMyTripClone.UserControls;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
-namespace MakeMyTripClone.Payment
+namespace MakeMyTripClone
 {
     public partial class CompleteBookingForm : Form
     {
         public CompleteBookingForm()
         {
             InitializeComponent();
+            int noOfRatings = random.Next(53, 150);
+            noOfRatingsLabel.Text = noOfRatings + " Ratings";
+            double randomRating = Math.Round(random.NextDouble() * (4.9 - 3.5) + 3.5, 1);
+            ratingLabel.Text = randomRating.ToString();
             //CreateCurves();
             //SetData();
             travellerDetailsPanel.Height = 0;
             List<TravellerDetails> travellersList = new List<TravellerDetails>();
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 2; i++)
             {
                 TravellerDetails traveller = new TravellerDetails();
                 traveller.Dock = DockStyle.Top;
-                travellerDetailsPanel.Height += traveller.Height;
+                travellerDetailsPanel.Height += traveller.Height+10;
 
                 travellerDetailsPanel.Controls.Add(traveller);
                 travellersList.Add(traveller);
@@ -50,6 +54,8 @@ namespace MakeMyTripClone.Payment
             int nHeightEllipse // width of ellipse
         );
         #endregion
+
+        Random random = new Random();
 
         private void OnClosePBClicked(object sender, EventArgs e)
         {
@@ -85,21 +91,23 @@ namespace MakeMyTripClone.Payment
         private void OnSecureTipCheckPBClicked(object sender, EventArgs e)
         {
             secureTipCheckPB.Image = secureTipCheckPB.Image == null ? Properties.Resources.validTick : null ;
+            insurancePanel.Visible = secureTipCheckPB.Image != null;
+            totalAmountLabel.Text = insurancePanel.Visible ? int.Parse(totalAmountLabel.Text) - 30 + "" : int.Parse(totalAmountLabel.Text) + 30+"";
         }
 
-        private void SetData(RouteDetails route)
+        private void SetData(RouteDetails route, int totalBaseFare)
         {
             int noOfTravellers = 2;
             #region Adding Traveller Controls
-            travellerDetailsPanel.Height = 0;
+            seperatorPanel2.Height = 0;
             List<TravellerDetails> travellersList = new List<TravellerDetails>();
             for (int i = 0; i < noOfTravellers; i++)
             {
                 TravellerDetails traveller = new TravellerDetails();
                 traveller.Dock = DockStyle.Top;
-                travellerDetailsPanel.Height += traveller.Height;
+                seperatorPanel2.Height += traveller.Height;
 
-                travellerDetailsPanel.Controls.Add(traveller);
+                seperatorPanel2.Controls.Add(traveller);
                 travellersList.Add(traveller);
             }
             foreach (TravellerDetails traveller in travellersList)
@@ -115,7 +123,7 @@ namespace MakeMyTripClone.Payment
             destinationCityLabel.Text = route.Destination;
             sourceTimeLabel.Text = route.StartTime;
             destinationTimeLabel.Text = route.EndTime;
-
+            baseFareLabel.Text = totalBaseFare.ToString();
         }
         #region Helper Functions
         private bool IsValidEmail(string email)
@@ -126,7 +134,7 @@ namespace MakeMyTripClone.Payment
         {
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
             ratingPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ratingPanel.Width, ratingPanel.Height, 7, 7));
-            //walletPB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, walletPB.Width, walletPB.Height, 50, 50));
+            loginNowPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, loginNowPanel.Width, loginNowPanel.Height, 50, 50));
         }
         #endregion
     }

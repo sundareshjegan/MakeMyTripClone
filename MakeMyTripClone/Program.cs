@@ -1,5 +1,4 @@
-﻿using MakeMyTripClone.Payment;
-using MakeMyTripClone.HomePage;
+﻿using MakeMyTripClone.HomePage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +17,7 @@ namespace MakeMyTripClone
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CompleteBookingForm());
+            Application.Run(new PaymentForm());
         }
     }
 }

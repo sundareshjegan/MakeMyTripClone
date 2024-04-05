@@ -132,7 +132,7 @@ namespace MakeMyTripClone.UserControls
         }
         private void ResetButtonColors()
         {
-            femaleBtn.FlatAppearance.BorderColor = maleBtn.FlatAppearance.BorderColor = Color.Black;
+            femaleBtn.FlatAppearance.BorderColor = maleBtn.FlatAppearance.BorderColor = Color.DarkGray;
             femaleBtn.ForeColor = maleBtn.ForeColor = Color.Black;
             femaleBtn.BackColor = maleBtn.BackColor = Parent.BackColor;
         }

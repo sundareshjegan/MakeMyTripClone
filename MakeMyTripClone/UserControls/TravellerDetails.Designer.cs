@@ -159,7 +159,7 @@
             // femaleBtn
             // 
             this.femaleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.femaleBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.femaleBtn.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.femaleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.femaleBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.femaleBtn.Image = global::MakeMyTripClone.Properties.Resources.female;
@@ -177,7 +177,7 @@
             // 
             this.maleBtn.BackColor = System.Drawing.Color.White;
             this.maleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.maleBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.maleBtn.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.maleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.maleBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maleBtn.Image = ((System.Drawing.Image)(resources.GetObject("maleBtn.Image")));
