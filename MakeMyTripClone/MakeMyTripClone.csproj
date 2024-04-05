@@ -34,24 +34,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DatabaseLibrary">
-      <HintPath>..\..\DatabaseDLLFiles\DatabaseLibrary.dll</HintPath>
+      <HintPath>..\..\C_Sharp_Projects\Database_DLL FIles\DatabaseLibrary.dll</HintPath>
     </Reference>
     <Reference Include="GoLibrary">
-      <HintPath>..\..\DatabaseDLLFiles\GoLibrary.dll</HintPath>
+      <HintPath>..\..\C_Sharp_Projects\Database_DLL FIles\GoLibrary.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\DatabaseDLLFiles\MySql.Data.dll</HintPath>
+      <HintPath>..\..\C_Sharp_Projects\Database_DLL FIles\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySqlBackup">
-      <HintPath>..\..\DatabaseDLLFiles\MySqlBackup.dll</HintPath>
+      <HintPath>..\..\C_Sharp_Projects\Database_DLL FIles\MySqlBackup.dll</HintPath>
     </Reference>
     <Reference Include="MySQLDatabase">
-      <HintPath>..\..\DatabaseDLLFiles\MySQLDatabase.dll</HintPath>
+      <HintPath>..\..\C_Sharp_Projects\Database_DLL FIles\MySQLDatabase.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite">
-      <HintPath>..\..\DatabaseDLLFiles\System.Data.SQLite.dll</HintPath>
+      <HintPath>..\..\C_Sharp_Projects\Database_DLL FIles\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />

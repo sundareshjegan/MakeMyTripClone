@@ -31,32 +31,40 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentForm));
             this.gateWaySelectionPanel = new System.Windows.Forms.Panel();
             this.giftCardPanel = new System.Windows.Forms.Panel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.creditCardPanel = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.googlePayPanel = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.netBankingPanel = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.upiPanel = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.bookNowPanel = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -66,29 +74,21 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.customPanel1 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.button2 = new System.Windows.Forms.Button();
             this.customPanel6 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.customPanel5 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.customPanel4 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.customPanel3 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.customPanel2 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.headerPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -103,33 +103,33 @@
             this.label4 = new System.Windows.Forms.Label();
             this.gateWaySelectionPanel.SuspendLayout();
             this.giftCardPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.creditCardPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.googlePayPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.netBankingPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.upiPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.bookNowPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.customPanel1.SuspendLayout();
-            this.customPanel6.SuspendLayout();
-            this.customPanel5.SuspendLayout();
-            this.customPanel4.SuspendLayout();
-            this.customPanel3.SuspendLayout();
-            this.customPanel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            this.customPanel1.SuspendLayout();
+            this.customPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            this.customPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            this.customPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.customPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            this.customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel3.SuspendLayout();
             this.headerPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -169,6 +169,18 @@
             this.giftCardPanel.Size = new System.Drawing.Size(292, 59);
             this.giftCardPanel.TabIndex = 1;
             this.giftCardPanel.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox9.Image = global::MakeMyTripClone.Properties.Resources.GiftCard;
+            this.pictureBox9.Location = new System.Drawing.Point(24, 9);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 3;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
             // 
             // label17
             // 
@@ -221,6 +233,18 @@
             this.creditCardPanel.TabIndex = 1;
             this.creditCardPanel.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox8.Image = global::MakeMyTripClone.Properties.Resources.creditCard;
+            this.pictureBox8.Location = new System.Drawing.Point(24, 9);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 3;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -271,6 +295,18 @@
             this.googlePayPanel.Size = new System.Drawing.Size(292, 59);
             this.googlePayPanel.TabIndex = 1;
             this.googlePayPanel.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = global::MakeMyTripClone.Properties.Resources.googlePay;
+            this.pictureBox7.Location = new System.Drawing.Point(24, 9);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 3;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
             // 
             // label13
             // 
@@ -323,6 +359,18 @@
             this.netBankingPanel.TabIndex = 1;
             this.netBankingPanel.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = global::MakeMyTripClone.Properties.Resources.netbanking;
+            this.pictureBox6.Location = new System.Drawing.Point(24, 9);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 3;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -374,6 +422,18 @@
             this.upiPanel.TabIndex = 1;
             this.upiPanel.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::MakeMyTripClone.Properties.Resources.upi;
+            this.pictureBox5.Location = new System.Drawing.Point(24, 9);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 3;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -424,6 +484,18 @@
             this.bookNowPanel.Size = new System.Drawing.Size(292, 77);
             this.bookNowPanel.TabIndex = 1;
             this.bookNowPanel.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::MakeMyTripClone.Properties.Resources.myLogo;
+            this.pictureBox4.Location = new System.Drawing.Point(24, 14);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
             // 
             // label8
             // 
@@ -503,6 +575,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = global::MakeMyTripClone.Properties.Resources.noPaperWork;
+            this.pictureBox16.Location = new System.Drawing.Point(73, 141);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox16.TabIndex = 5;
+            this.pictureBox16.TabStop = false;
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Image = global::MakeMyTripClone.Properties.Resources.credit_period;
+            this.pictureBox15.Location = new System.Drawing.Point(327, 71);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox15.TabIndex = 5;
+            this.pictureBox15.TabStop = false;
             // 
             // label27
             // 
@@ -609,6 +701,19 @@
             this.customPanel1.Size = new System.Drawing.Size(451, 157);
             this.customPanel1.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(307, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(123, 36);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "PROCEED";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // customPanel6
             // 
             this.customPanel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -620,6 +725,17 @@
             this.customPanel6.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.customPanel6.Size = new System.Drawing.Size(64, 48);
             this.customPanel6.TabIndex = 2;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox14.Image = global::MakeMyTripClone.Properties.Resources.hdfc;
+            this.pictureBox14.Location = new System.Drawing.Point(10, 5);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox14.TabIndex = 3;
+            this.pictureBox14.TabStop = false;
             // 
             // customPanel5
             // 
@@ -633,6 +749,17 @@
             this.customPanel5.Size = new System.Drawing.Size(64, 48);
             this.customPanel5.TabIndex = 2;
             // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox13.Image = global::MakeMyTripClone.Properties.Resources.olamoney;
+            this.pictureBox13.Location = new System.Drawing.Point(10, 5);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox13.TabIndex = 3;
+            this.pictureBox13.TabStop = false;
+            // 
             // customPanel4
             // 
             this.customPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -644,6 +771,17 @@
             this.customPanel4.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.customPanel4.Size = new System.Drawing.Size(64, 48);
             this.customPanel4.TabIndex = 2;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox12.Image = global::MakeMyTripClone.Properties.Resources.icicipaylater;
+            this.pictureBox12.Location = new System.Drawing.Point(10, 5);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox12.TabIndex = 3;
+            this.pictureBox12.TabStop = false;
             // 
             // customPanel3
             // 
@@ -657,6 +795,17 @@
             this.customPanel3.Size = new System.Drawing.Size(64, 48);
             this.customPanel3.TabIndex = 2;
             // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox11.Image = global::MakeMyTripClone.Properties.Resources.simpl;
+            this.pictureBox11.Location = new System.Drawing.Point(10, 5);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 3;
+            this.pictureBox11.TabStop = false;
+            // 
             // customPanel2
             // 
             this.customPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -668,6 +817,17 @@
             this.customPanel2.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.customPanel2.Size = new System.Drawing.Size(64, 48);
             this.customPanel2.TabIndex = 2;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox10.Image = global::MakeMyTripClone.Properties.Resources.lazypay;
+            this.pictureBox10.Location = new System.Drawing.Point(10, 5);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 3;
+            this.pictureBox10.TabStop = false;
             // 
             // label30
             // 
@@ -709,166 +869,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(890, 456);
             this.panel3.TabIndex = 3;
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Image = global::MakeMyTripClone.Properties.Resources.noPaperWork;
-            this.pictureBox16.Location = new System.Drawing.Point(73, 141);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox16.TabIndex = 5;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Image = global::MakeMyTripClone.Properties.Resources.credit_period;
-            this.pictureBox15.Location = new System.Drawing.Point(327, 71);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox15.TabIndex = 5;
-            this.pictureBox15.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(307, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 36);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "PROCEED";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox14.Image = global::MakeMyTripClone.Properties.Resources.hdfc;
-            this.pictureBox14.Location = new System.Drawing.Point(10, 5);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(44, 38);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 3;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox13.Image = global::MakeMyTripClone.Properties.Resources.olamoney;
-            this.pictureBox13.Location = new System.Drawing.Point(10, 5);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(44, 38);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 3;
-            this.pictureBox13.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox12.Image = global::MakeMyTripClone.Properties.Resources.icicipaylater;
-            this.pictureBox12.Location = new System.Drawing.Point(10, 5);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(44, 38);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox12.TabIndex = 3;
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox11.Image = global::MakeMyTripClone.Properties.Resources.simpl;
-            this.pictureBox11.Location = new System.Drawing.Point(10, 5);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(44, 38);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 3;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox10.Image = global::MakeMyTripClone.Properties.Resources.lazypay;
-            this.pictureBox10.Location = new System.Drawing.Point(10, 5);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(44, 38);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 3;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox9.Image = global::MakeMyTripClone.Properties.Resources.GiftCard;
-            this.pictureBox9.Location = new System.Drawing.Point(24, 9);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 3;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox8.Image = global::MakeMyTripClone.Properties.Resources.creditCard;
-            this.pictureBox8.Location = new System.Drawing.Point(24, 9);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 3;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox7.Image = global::MakeMyTripClone.Properties.Resources.googlePay;
-            this.pictureBox7.Location = new System.Drawing.Point(24, 9);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 3;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Image = global::MakeMyTripClone.Properties.Resources.netbanking;
-            this.pictureBox6.Location = new System.Drawing.Point(24, 9);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 3;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = global::MakeMyTripClone.Properties.Resources.upi;
-            this.pictureBox5.Location = new System.Drawing.Point(24, 9);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::MakeMyTripClone.Properties.Resources.myLogo;
-            this.pictureBox4.Location = new System.Drawing.Point(24, 14);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
             // 
             // headerPanel
             // 
@@ -1021,40 +1021,40 @@
             this.gateWaySelectionPanel.PerformLayout();
             this.giftCardPanel.ResumeLayout(false);
             this.giftCardPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.creditCardPanel.ResumeLayout(false);
             this.creditCardPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.googlePayPanel.ResumeLayout(false);
             this.googlePayPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.netBankingPanel.ResumeLayout(false);
             this.netBankingPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.upiPanel.ResumeLayout(false);
             this.upiPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.bookNowPanel.ResumeLayout(false);
             this.bookNowPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.customPanel6.ResumeLayout(false);
-            this.customPanel5.ResumeLayout(false);
-            this.customPanel4.ResumeLayout(false);
-            this.customPanel3.ResumeLayout(false);
-            this.customPanel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            this.customPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            this.customPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.customPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            this.customPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.headerPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
