@@ -81,7 +81,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.warningLabel = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.monthyearLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
@@ -740,7 +740,7 @@
             // LoginButton
             // 
             this.LoginButton.BackColor = System.Drawing.Color.DodgerBlue;
-            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.LoginButton.FlatAppearance.BorderSize = 0;
             this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -797,7 +797,7 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.dateTimePicker1);
+            this.panel14.Controls.Add(this.dateTimePicker);
             this.panel14.Controls.Add(this.label16);
             this.panel14.Controls.Add(this.monthyearLabel);
             this.panel14.Controls.Add(this.dateLabel);
@@ -809,20 +809,20 @@
             this.panel14.Size = new System.Drawing.Size(165, 100);
             this.panel14.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.Black;
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Black;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.Black;
-            this.dateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker1.Location = new System.Drawing.Point(94, 7);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 7, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(14, 20);
-            this.dateTimePicker1.TabIndex = 8;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 3, 22, 0, 0, 0, 0);
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimeValueChange);
+            this.dateTimePicker.CalendarForeColor = System.Drawing.Color.Black;
+            this.dateTimePicker.CalendarMonthBackground = System.Drawing.Color.Black;
+            this.dateTimePicker.CalendarTitleForeColor = System.Drawing.Color.Black;
+            this.dateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dateTimePicker.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimePicker.Location = new System.Drawing.Point(94, 7);
+            this.dateTimePicker.MaxDate = new System.DateTime(2024, 7, 31, 0, 0, 0, 0);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(14, 20);
+            this.dateTimePicker.TabIndex = 8;
+            this.dateTimePicker.Value = new System.DateTime(2024, 3, 22, 0, 0, 0, 0);
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.DateTimeValueChange);
             // 
             // label16
             // 
@@ -904,9 +904,9 @@
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(19, 30);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(257, 32);
+            this.label11.Size = new System.Drawing.Size(233, 32);
             this.label11.TabIndex = 6;
-            this.label11.Text = "Mumbai, Maharashtra";
+            this.label11.Text = "Chennai,Tamil Nadu";
             this.label11.Click += new System.EventHandler(this.ToComboBoxClick);
             // 
             // toComboBox
@@ -924,7 +924,8 @@
             "Hyderabad, Telangana",
             "Kolkata, West Bengal",
             "Chennai, Tamil Nadu",
-            "Goa, Goa"});
+            "Goa, Goa",
+            "Coimbatore, Tamil Nadu"});
             this.toComboBox.Location = new System.Drawing.Point(17, 27);
             this.toComboBox.Name = "toComboBox";
             this.toComboBox.Size = new System.Drawing.Size(340, 33);
@@ -985,9 +986,9 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(10, 30);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(140, 32);
+            this.label8.Size = new System.Drawing.Size(272, 32);
             this.label8.TabIndex = 5;
-            this.label8.Text = "Delhi, Delhi";
+            this.label8.Text = "Coimbatore,Tamil Nadu\r\n";
             this.label8.Click += new System.EventHandler(this.FromComboBoxClick);
             // 
             // fromcomboBox
@@ -1004,8 +1005,9 @@
             "Pune, Maharashtra",
             "Hyderabad, Telangana",
             "Kolkata, West Bengal",
-            "Chennai, Tamil Nadu",
-            "Goa, Goa"});
+            "Coimbatore,Tamil Nadu",
+            "Goa, Goa",
+            "Chennai,Tamil Nadu"});
             this.fromcomboBox.Location = new System.Drawing.Point(3, 28);
             this.fromcomboBox.Name = "fromcomboBox";
             this.fromcomboBox.Size = new System.Drawing.Size(338, 33);
@@ -1061,7 +1063,7 @@
             this.SearchButton.Text = "SEARCH";
             this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Visible = false;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            this.SearchButton.Click += new System.EventHandler(this.SearchButtonClick);
             // 
             // panel15
             // 
@@ -1104,6 +1106,7 @@
             this.Controls.Add(this.panel16);
             this.Name = "NavBar";
             this.Size = new System.Drawing.Size(1838, 441);
+            this.Load += new System.EventHandler(this.NavBar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1203,7 +1206,7 @@
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.ComboBox fromcomboBox;
         private System.Windows.Forms.ComboBox toComboBox;
         private System.Windows.Forms.Label label8;

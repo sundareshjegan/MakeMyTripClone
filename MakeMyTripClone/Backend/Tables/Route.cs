@@ -19,7 +19,7 @@ namespace MakeMyTripClone
 
         public static String EndDate { get; } = "end_date";
 
-        public static String Source { get; } = "source";
+        public static String Boarding { get; } = "source";
 
         public static String Destination { get; } = "destination";
 
@@ -27,7 +27,7 @@ namespace MakeMyTripClone
 
         public static String EndTime { get; } = "end_time";
 
-        public static String BoardingPoints { get; } = "boarding_poiints";
+        public static String BoardingPoints { get; } = "boarding_points";
 
         public static String DropPoints { get; } = "drop_points";
 
