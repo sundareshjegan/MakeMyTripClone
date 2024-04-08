@@ -100,6 +100,7 @@
             this.acpictureBox = new System.Windows.Forms.PictureBox();
             this.actoplabel = new System.Windows.Forms.Label();
             this.clearallpanel = new System.Windows.Forms.Panel();
+            this.warningLabel = new System.Windows.Forms.Label();
             this.filterlabel = new System.Windows.Forms.Label();
             this.clearallbutton = new System.Windows.Forms.Button();
             this.tabpanel = new System.Windows.Forms.Panel();
@@ -539,6 +540,7 @@
             this.dpclrbutton.TabIndex = 2;
             this.dpclrbutton.Text = "CLEAR";
             this.dpclrbutton.UseVisualStyleBackColor = false;
+            this.dpclrbutton.Click += new System.EventHandler(this.DpclrbuttonClick);
             // 
             // travelvaluepanel
             // 
@@ -1146,6 +1148,7 @@
             // 
             this.clearallpanel.BackColor = System.Drawing.Color.White;
             this.clearallpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clearallpanel.Controls.Add(this.warningLabel);
             this.clearallpanel.Controls.Add(this.filterlabel);
             this.clearallpanel.Controls.Add(this.clearallbutton);
             this.clearallpanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1154,6 +1157,19 @@
             this.clearallpanel.Name = "clearallpanel";
             this.clearallpanel.Size = new System.Drawing.Size(429, 54);
             this.clearallpanel.TabIndex = 3;
+            // 
+            // warningLabel
+            // 
+            this.warningLabel.AutoSize = true;
+            this.warningLabel.BackColor = System.Drawing.Color.LightPink;
+            this.warningLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.warningLabel.ForeColor = System.Drawing.Color.Red;
+            this.warningLabel.Location = new System.Drawing.Point(51, -1);
+            this.warningLabel.Name = "warningLabel";
+            this.warningLabel.Size = new System.Drawing.Size(361, 17);
+            this.warningLabel.TabIndex = 21;
+            this.warningLabel.Text = "⚠ The Depature City and Destination City Cannot Be Same !";
+            this.warningLabel.Visible = false;
             // 
             // filterlabel
             // 
@@ -1953,6 +1969,7 @@
             this.tocomboBox.Name = "tocomboBox";
             this.tocomboBox.Size = new System.Drawing.Size(172, 33);
             this.tocomboBox.TabIndex = 2;
+            this.tocomboBox.TextChanged += new System.EventHandler(this.ComboBoxTextChanged);
             // 
             // tolabel
             // 
@@ -1988,6 +2005,7 @@
             this.fromcomboBox.Name = "fromcomboBox";
             this.fromcomboBox.Size = new System.Drawing.Size(172, 33);
             this.fromcomboBox.TabIndex = 2;
+            this.fromcomboBox.TextChanged += new System.EventHandler(this.ComboBoxTextChanged);
             // 
             // fromlabel
             // 
@@ -2019,7 +2037,6 @@
             this.Name = "BookingPageForm";
             this.ShowIcon = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.filters.ResumeLayout(false);
             this.ddtimevaluepanel.ResumeLayout(false);
             this.ddngtpanel.ResumeLayout(false);
@@ -2262,6 +2279,7 @@
         private System.Windows.Forms.Panel departpanel;
         private System.Windows.Forms.Label departlabel;
         private System.Windows.Forms.DateTimePicker departdateTimePicker;
+        private System.Windows.Forms.Label warningLabel;
     }
 }
 

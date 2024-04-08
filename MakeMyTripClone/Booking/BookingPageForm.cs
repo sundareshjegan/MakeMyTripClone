@@ -35,8 +35,9 @@ namespace MakeMyTripClone
         private Color gray = Color.DimGray;
         private Color highglight = SystemColors.Highlight;
         private Color white = Color.White;
-        private bool isfalse,isTime,isDtime,isDp, isTravelclr, ispickup;
-        public static int no = 0;
+        private bool isfalse, isTime, isDtime;
+        private int no = 0;
+        private string selected; 
 
         private  void Locations(ref bool b,Panel p,PictureBox pict,List<object> li,ref bool bb)
         {
@@ -49,7 +50,7 @@ namespace MakeMyTripClone
                 {
                     for (int i = 0; i < li.Count; i++)
                     {
-                        checkBoxes = new CustomCheckbox();
+                        CustomCheckbox checkBoxes = new CustomCheckbox();
                         p.Controls.Add(checkBoxes);
                         checkBoxes.Dock = DockStyle.Top;
                         string[] ss = li[i].ToString().Split('&');
@@ -58,7 +59,7 @@ namespace MakeMyTripClone
                             checkBoxes.SetValuesCheckbox(ss[0]);
                         }
                         else checkBoxes.SetValuesCheckbox(ss[1]);
-                        checkBoxes.checks += CheckBoxes_checks;
+                        checkBoxes.checks += CheckBoxeschecks;
                     }
                     bb = true;
                 }
@@ -70,15 +71,31 @@ namespace MakeMyTripClone
                 b = false;
             }
         }
-
-        private void CheckBoxes_checks(object sender, int n)
+        private void CheckBoxeschecks(object sender, EventArgs e)
         {
-            no = no + n;
-            if(no>0)
+            foreach (CustomCheckbox c in puvaluepanel.Controls)
             {
-                clearpickuppointbutton.ForeColor = highglight;
-                clearalllbutton.ForeColor = highglight;
+                if (c.BackColor == colour)
+                {
+                    clearpickuppointbutton.ForeColor = highglight;
+                }
             }
+            foreach (CustomCheckbox c in travelvaluepanel.Controls)
+            {
+                if (c.BackColor == colour)
+                {
+                    travelclrbutton.ForeColor = highglight;
+                }
+            }
+            foreach (CustomCheckbox c in dpvaluepanel.Controls)
+            {
+                if (c.BackColor == colour)
+                {
+                    dpclrbutton.ForeColor = highglight;
+                }
+            }         
+            clearallbutton.ForeColor = highglight;
+            no++;
         }
 
         private void Time(ref bool b,Panel p,PictureBox picture)
@@ -101,53 +118,68 @@ namespace MakeMyTripClone
         public static List<object> droppoints = new List<object>();
         public static List<object> boardingpoints = new List<object>();
         public static List<string> traveloperatorpoints = new List<string>();
-        public static List<CustomCheckbox> dropchecks = new List<CustomCheckbox>(); //
-        private CustomCheckbox checkBoxes; //
         private bool isNUll;
         private bool isTravel;
         private bool isDrop;
         private bool isADD;
         private bool isNot;
         private List<Buses> buses = new List<Buses>();
-        private List<Buses> Filterlist = new List<Buses>();
-        private string[] arr = new string[5];
-        private void Form1_Load(object sender, EventArgs e)
+        private List<RouteDetails> filterlist = new List<RouteDetails>();
+       // private List<BusDetails> availableBuses = new List<BusDetails>();
+       // private List<BusDetails> filterBuses = new List<BusDetails>();
+
+        private void SrchbuttonClick(object sender, EventArgs e)
         {
-            srchbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, srchbutton.Width, srchbutton.Height, 30, 30));
-            LoginButton.Region= Region.FromHrgn(CreateRoundRectRgn(0, 0, LoginButton.Width, LoginButton.Height, 30, 30));
-            for (int i = 0; i < busesList.Count; i++)
-            {
-                bus = new Buses();
-                adducpanel.Controls.Add(bus);
-                bus.Dock = DockStyle.Top;
-                buses.Add(bus);
-               // Filterlist.Add(bus);
-                bus.Setdata(i,fromcomboBox.Text,tocomboBox.Text);
-            }
-            busesfoundlabel.Text = busesList.Count + " Buses found";
-          
-            
-            
+            String[] boarding = fromcomboBox.Text.Split(',');
+            String[] destination = tocomboBox.Text.Split(',');
+            busesList.Clear();
+            droppoints.Clear();
+            boardingpoints.Clear();
+            traveloperatorpoints.Clear();
+            adducpanel.Controls.Clear();
+            SetData(boarding[0], destination[0], departdateTimePicker.Value.ToString("yyyy-MM-dd"), null, null, null);
         }
+
         public void SetData(string boarding , string destination , string date,ComboBox from,ComboBox to,DateTimePicker dateTime)
         {
             busesList = DBManager.GetBuses(boarding, destination, date);
             fromcomboBox.Text = boarding;
             tocomboBox.Text = destination;
             departdateTimePicker.Text = date;
-            foreach (var items in from.Items)
+            if (from != null && to != null)
             {
-                fromcomboBox.Items.Add(items);
+                foreach (var items in from.Items)
+                {
+                    fromcomboBox.Items.Add(items);
+                }
+                foreach (var items in to.Items)
+                {
+                    tocomboBox.Items.Add(items);
+                }
             }
-            foreach (var items in to.Items)
-            {
-                tocomboBox.Items.Add(items);
-            }
-            departdateTimePicker.MinDate = DateTime.Now;
+           // departdateTimePicker.MinDate = DateTime.Now;
             boardingpoints = DBManager.GetBoardingPoints(boarding, destination, date);
             droppoints = DBManager.GetDropPoints(boarding, destination, date);
             traveloperatorpoints = DBManager.GetTravel(boarding, destination, date);
+            BusButton.BackgroundImage = Resources.busblue;
+            AddDatas();
         }
+
+        private void AddDatas()
+        {
+            srchbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, srchbutton.Width, srchbutton.Height, 30, 30));
+            LoginButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LoginButton.Width, LoginButton.Height, 30, 30));
+            for (int i = 0; i < busesList.Count; i++)
+            {
+                bus = new Buses();
+                adducpanel.Controls.Add(bus);
+                bus.Dock = DockStyle.Top;
+                buses.Add(bus);
+                bus.Setdata(i, fromcomboBox.Text, tocomboBox.Text);
+            }
+            busesfoundlabel.Text = busesList.Count + " Buses found";
+        }
+
         private void PanelsClick(object sender, EventArgs e)
         {
             Panel panel = sender as Panel;
@@ -169,21 +201,22 @@ namespace MakeMyTripClone
             {
                 clearallbutton.ForeColor = SystemColors.Highlight;
                 no++;
-                if(panel.Name=="acpnael")
+                if(panel.Name=="acpanel")
                 {
-                    arr[0] = "AC";
+                    //arr[0] = "AC";
+                    selected = "AC";
                 }
                 if(panel.Name=="nonacpanel")
                 {
-                    arr[0] = "NON-AC";
+                  //  arr[0] = "NON-AC";
                 }
                 if(panel.Name== "sleeperpanel")
                 {
-                    arr[1] = "SL"; 
+                    //arr[1] = "SL"; 
                 }
                 if (panel.Name == "seaterpanel")
                 {
-                    arr[1] = "ST"; 
+                    //arr[1] = "ST"; 
                 }
                 
                 //if (panel.Name == "acpanel")
@@ -315,6 +348,22 @@ namespace MakeMyTripClone
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
                 }
                 panel.BackColor = colour;
+                Filter(panel);
+            }
+        }
+
+        private void Filter(Panel panel)
+        {
+            List<Buses> filbus = new List<Buses>();
+            if(panel.Name=="acpanel")
+            {
+                foreach(var item in buses)
+                {
+                    if(item.BusType.Contains("AC") && !item.BusType.Contains("NON-AC"))
+                    {
+                        filbus.Add(item);
+                    }
+                }
             }
         }
 
@@ -345,13 +394,6 @@ namespace MakeMyTripClone
             {
                 Reset();
                 no = 0;
-                foreach(var box in dropchecks)
-                {
-                    box.SetCheckedState(false);
-                }
-                //pupointcomboBox.Text = null;
-                //travelcomboBox.Text = null;
-                //dpcomboBox.Text = null;
                 acpanel.BackColor = white;
                 nonacpanel.BackColor = white;
                 sleeperpanel.BackColor = white;
@@ -371,22 +413,46 @@ namespace MakeMyTripClone
                 ddtimeclrbutton.ForeColor = gray;
                 seatersleepercheckBox.Checked = false;
                 clearallbutton.ForeColor = gray;
+                foreach (CustomCheckbox c in puvaluepanel.Controls)
+                {
+                    if (c.BackColor == colour) c.SetCheckedState();
+                }
+                foreach (CustomCheckbox c in travelvaluepanel.Controls)
+                {
+                    if (c.BackColor == colour) c.SetCheckedState();
+                }
+                foreach (CustomCheckbox c in dpvaluepanel.Controls)
+                {
+                    if (c.BackColor == colour) c.SetCheckedState();
+                }
             }
         }
         private void ClearpickuppointbuttonClick(object sender, EventArgs e)
         {
             clearpickuppointbutton.ForeColor = gray;
-            no--;
+            foreach(CustomCheckbox c in puvaluepanel.Controls)
+            {
+                if (c.BackColor == colour)
+                {
+                    c.SetCheckedState();
+                    no--;
+                }
+            }
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
 
         private void TravelclrbuttonClick(object sender, EventArgs e)
         {
-            isTravelclr = true;
             travelclrbutton.ForeColor = gray;
-            no--;
+            foreach (CustomCheckbox c in travelvaluepanel.Controls)
+            {
+                if (c.BackColor == colour)
+                {
+                    c.SetCheckedState();
+                    no--;
+                }
+            }
             if (no <= 0) clearallbutton.ForeColor = gray;
-            if (isTravelclr) isTravelclr = false;
         }
 
         private void PutimeclearbuttonClick(object sender, EventArgs e)
@@ -400,8 +466,6 @@ namespace MakeMyTripClone
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
         
-       
-
         private void DdtimeclrbuttonClick(object sender, EventArgs e)
         {
             ddsrpanel.BackColor = white;
@@ -419,17 +483,11 @@ namespace MakeMyTripClone
             else no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
             else clearallbutton.ForeColor = highglight;
-            foreach(var datas in buses)
-            {
-                if(datas.bustype== "AC-ST" || datas.bustype== "NON-AC-ST")
-                {
-                    datas.Visible = true;
-                }
-                else
-                {
-                    datas.Visible = false;
-                }
-            }
+            //foreach(var datas in buses)
+            //{
+            //    if(datas.bustype== "AC-ST" || datas.bustype== "NON-AC-ST") datas.Visible = true;
+            //    else datas.Visible = false;
+            //}
             
         }
 
@@ -449,6 +507,18 @@ namespace MakeMyTripClone
             fstbutton.BackColor = colour;
             arbutton.BackColor = white;
             dprbutton.BackColor = white;
+
+            var fastest = buses.OrderBy(item => TimeSpan.Parse(item.Duration)).ToList();
+
+            foreach (var bus in fastest)
+            {
+                bus.Dock = DockStyle.None;
+            }
+            foreach (var bus in fastest)
+            {
+                bus.Dock = DockStyle.Top;
+                bus.BringToFront();
+            }
         }
 
         
@@ -467,23 +537,22 @@ namespace MakeMyTripClone
 
         private void ArbuttonClick(object sender, EventArgs e)
         {
-            List<RouteDetails> arrival = busesList;
-           
-            DateTime targetTime = DateTime.Now;
+         
+                DateTime targetTime = DateTime.Now;
             
                 fstbutton.BackColor = white;
                 arbutton.BackColor = colour;
                 dprbutton.BackColor = white;
-                arrival = arrival.OrderBy(bus =>
+                var arrival = buses.OrderBy(bus =>
                 {
                     TimeSpan duration = Convert.ToDateTime(bus.StartTime) - targetTime;
                     return duration.TotalMinutes;
                 }).ThenBy(bus => bus.StartTime).ToList();
-                foreach (var bus in buses)
+                foreach (var bus in arrival)
                 {
                     bus.Dock = DockStyle.None;
                 }
-                foreach (var bus in buses)
+                foreach (var bus in arrival)
                 {
                     bus.Dock = DockStyle.Top;
                     bus.BringToFront();
@@ -491,32 +560,53 @@ namespace MakeMyTripClone
             
         }
 
-        private void SrchbuttonClick(object sender, EventArgs e)
+        private void DpclrbuttonClick(object sender, EventArgs e)
         {
-            String[] boarding = fromcomboBox.Text.Split(',');
-            String[] destination = tocomboBox.Text.Split(',');
-            SetData(boarding[0], destination[0], departdateTimePicker.Value.ToString("yyyy-MM-dd"), fromcomboBox, tocomboBox, departdateTimePicker);
+            dpclrbutton.ForeColor = gray;
+            foreach (CustomCheckbox c in dpvaluepanel.Controls)
+            {
+                if (c.BackColor == colour)
+                {
+                    c.SetCheckedState();
+                    no--;
+                }
+            }
+            if (no <= 0) clearallbutton.ForeColor = gray;
         }
 
+        private void ComboBoxTextChanged(object sender, EventArgs e)
+        {
+            string[] ss = fromcomboBox.Text.Split(',');
+            fromcomboBox.Text = ss[0];
+            string[] s = tocomboBox.Text.Split(',');
+            tocomboBox.Text = s[0];
+            if(fromcomboBox.Text==tocomboBox.Text)
+            {
+                warningLabel.Visible = true;
+            }
+            else
+            {
+                warningLabel.Visible = false;
+            }
+        }
 
         private void DprbuttonClick(object sender, EventArgs e)
         {
             fstbutton.BackColor = white;
             arbutton.BackColor = white;
             dprbutton.BackColor = colour;
-            List<RouteDetails> departure = busesList;
 
             DateTime targetTime = DateTime.Now;
-            departure = departure.OrderBy(bus =>
+            var departure = buses.OrderBy(bus =>
             {
                 TimeSpan duration = Convert.ToDateTime(bus.EndTime) - targetTime;
                 return duration.TotalMinutes;
             }).ThenBy(bus => bus.EndTime).ToList();
-            foreach (var bus in buses)
+            foreach (var bus in departure)
             {
                 bus.Dock = DockStyle.None;
             }
-            foreach (var bus in buses)
+            foreach (var bus in departure)
             {
                 bus.Dock = DockStyle.Top;
                 bus.BringToFront();

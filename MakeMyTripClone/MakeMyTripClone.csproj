@@ -67,12 +67,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backend\Clasees\BusDetails.cs" />
     <Compile Include="Backend\DBManagerFolder\DBManager.cs" />
-    <Compile Include="Backend\ParametClasees\CustomerDetails.cs" />
-    <Compile Include="Backend\Tables\Bus.cs" />
-    <Compile Include="Backend\Tables\Customer.cs" />
-    <Compile Include="Backend\Tables\Route.cs" />
-    <Compile Include="Backend\Tables\Seat.cs" />
+    <Compile Include="Backend\Clasees\CustomerDetails.cs" />
+    <Compile Include="Backend\Enums\SeatType.cs" />
+    <Compile Include="Backend\Enums\TimePeriod.cs" />
+    <Compile Include="Backend\TableConstants\Bus.cs" />
+    <Compile Include="Backend\TableConstants\Customer.cs" />
+    <Compile Include="Backend\TableConstants\Route.cs" />
+    <Compile Include="Backend\TableConstants\Seat.cs" />
     <Compile Include="Booking\Address.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,6 +100,12 @@
     </Compile>
     <Compile Include="Booking\Checkbox.Designer.cs">
       <DependentUpon>Checkbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Booking\Seaterseats.cs">
       <SubType>UserControl</SubType>
@@ -148,8 +157,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Backend\ParametClasees\RouteDetails.cs" />
-    <Compile Include="Backend\ParametClasees\SeatDeatils.cs" />
+    <Compile Include="Backend\Clasees\RouteDetails.cs" />
+    <Compile Include="Backend\Clasees\SeatDeatils.cs" />
     <Compile Include="Login\SuccessFailureForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Booking\Checkbox.resx">
       <DependentUpon>Checkbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Booking\Seaterseats.resx">
       <DependentUpon>Seaterseats.cs</DependentUpon>
@@ -471,5 +483,6 @@
   <ItemGroup>
     <None Include="Resources\pillow.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

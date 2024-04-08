@@ -16,8 +16,7 @@ namespace MakeMyTripClone.Booking
         {
             InitializeComponent();
         }
-       // public delegate void Datas(bool b, int n);
-        public event EventHandler<int> checks;
+        public event EventHandler checks;
         public void SetValuesCheckbox(string s)
         {
             checkBoxs.Text =s;
@@ -26,27 +25,45 @@ namespace MakeMyTripClone.Booking
        
         private void CustomCheckboxClick(object sender, EventArgs e)
         {
-            int n = 0;
-            CheckBox c = sender as CheckBox;
-            if (!bo)
+            try
             {
-                c.Checked = true;
-                bo = true;
-                n++;
-                
+                CheckBox c = sender as CheckBox;
+                if (!bo)
+                {
+                    c.Checked = true;
+                    bo = true;
+                    BackColor = SystemColors.GradientInactiveCaption;
+                }
+                else
+                {
+                    c.Checked = false;
+                    bo = false;
+                    BackColor = Color.White;
+                }
             }
-            else
+            catch
             {
-                c.Checked = false;
-                bo = false;
-                n--;
-               
+                if (!bo)
+                {
+                    checkBoxs.Checked = true;
+                    bo = true;
+                    BackColor = SystemColors.GradientInactiveCaption;
+                }
+                else
+                {
+                    checkBoxs.Checked = false;
+                    bo = false;
+                    BackColor = Color.White;
+                }
             }
-            checks?.Invoke(this, n);
+            checks?.Invoke(this, EventArgs.Empty);
         }
-        public void SetCheckedState(bool isChecked)
+        public void SetCheckedState()
         {
-            checkBoxs.Checked = isChecked;
+            BackColor = Color.White;
+            checkBoxs.Checked = false;
         }
+
+
     }
 }

@@ -24,7 +24,28 @@ namespace MakeMyTripClone
         private bool isPhotos;
         private bool isAmenties;
         private Address address;
-        public string pickuplocation, droplocation,name,bustype;
+        private string pickuplocation, droplocation,name,bustype,duration,starttime,endtime,acnonac;
+
+        public string BusType
+        {
+            get { return acnonac; }
+        }
+
+        public string Duration
+        {
+            get { return duration; }
+        }
+        
+        public string StartTime
+        {
+            get { return starttime; }
+        }
+
+        public string EndTime
+        {
+            get { return endtime; }
+        }
+       
 
         public  void Setdata(int i,string pickup,string drop)
         {
@@ -33,14 +54,19 @@ namespace MakeMyTripClone
             busnamelabel.Text=BookingPageForm.busesList[i].BusName;
             name = busnamelabel.Text;
             busltypeabel.Text = BookingPageForm.busesList[i].BusType;
+            string[] s = busltypeabel.Text.Split('-');
+            acnonac = s[0];
             bustype = busltypeabel.Text;
             rulabel.Text = BookingPageForm.busesList[i].Price;
             ruppees= rulabel.Text.Split('/');
             DateTime from =Convert.ToDateTime( BookingPageForm.busesList[i].StartDate);
             fromlabel.Text = BookingPageForm.busesList[i].StartTime +" "+ from.Day+" "+MonthName(from.Month);
-            DateTime to=Convert.ToDateTime(BookingPageForm.busesList[i].EndDate);
-            // durationlabel.Text=BookingPageForm.busesList[i].
+            starttime = BookingPageForm.busesList[i].StartTime;
+            durationlabel.Text = BookingPageForm.busesList[i].Duration;
+            duration = durationlabel.Text;
+            DateTime to = Convert.ToDateTime(BookingPageForm.busesList[i].EndDate);
             tolabel.Text = BookingPageForm.busesList[i].EndTime + " " + to.Day + " " + MonthName(to.Month);
+            endtime = BookingPageForm.busesList[i].EndTime;
             noofseatlabel.Text = "";
             if (busltypeabel.Text =="AC-SL" || busltypeabel.Text=="NON-AC-SL")
             {
@@ -65,6 +91,7 @@ namespace MakeMyTripClone
                 ubpanel.Visible = true;
                 seaterpanel.Visible = false;
                 Semiseaters lbs = new Semiseaters();
+                //lbs.Tag = "route_id";
                 lbpanel.Controls.Add(lbs);
                 lbs.coloured += Lbscoloured1;
                 lbs.notcoloured += Lbsnotcoloured;
@@ -99,7 +126,7 @@ namespace MakeMyTripClone
                 address.AddAddress(ss[0], ss[1], ss[2]);
                 pickuppointpanel.Controls.Add(address);
                 address.Dock = DockStyle.Top;
-                address.drops2 += Address_drops2; ;
+                address.drops2 += Address_drops2; 
             }
         }
 
@@ -263,6 +290,7 @@ namespace MakeMyTripClone
         {
             if (!isAmenties)
             {
+                photospanel.Visible = false;
                 ptsbutton.BackColor = white;
                 amentbutton.BackColor = colour;
                 combinationpanel.Visible = false;
@@ -272,9 +300,11 @@ namespace MakeMyTripClone
                 ssbutton.Text = "Select seats";
                 ssbutton.BackColor = highlight;
                 ssbutton.ForeColor = white;
+                isPhotos = false;
             }
             else
             {
+                amentbutton.BackColor = white;
                 ptsbutton.BackColor = white;
                 amentiespanel.Visible = false;
                 isAmenties = false;
@@ -294,10 +324,10 @@ namespace MakeMyTripClone
                 details.Pickuptime = fromlabel.Text;
                 details.Droptime = tolabel.Text;
                 details.Pickuplocation = pickuplocation;
-                details.Droplolocation = droplocation;
+                details.Droplocation = droplocation;
                 details.Boardingpoint = boardingpoint;
                 details.Droppoint = droppoint;
-                //details.dura
+                details.Durations = durationlabel.Text;
                 details.Totalamount = Convert.ToInt32(totalamtlabel.Text);
             }
         }
@@ -307,6 +337,7 @@ namespace MakeMyTripClone
         {
             if (!isPhotos)
             {
+                amentiespanel.Visible = false;
                 ptsbutton.BackColor = colour;
                 amentbutton.BackColor = white;              
                 photospanel.Visible = true;
@@ -316,10 +347,12 @@ namespace MakeMyTripClone
                 ssbutton.Text = "Select seats";
                 ssbutton.BackColor = highlight;
                 ssbutton.ForeColor = white;
+                isAmenties = false;
             }
             else
             {
                 ptsbutton.BackColor = white;
+                amentbutton.BackColor = white;
                 photospanel.Visible = false;
                 isPhotos = false;
                 Height = 200;
@@ -338,6 +371,8 @@ namespace MakeMyTripClone
                 toppanel.BackColor =colour ;
                 photospanel.Visible = false;
                 amentiespanel.Visible = false;
+                amentbutton.BackColor = white;
+                ptsbutton.BackColor = white;
             }
             else
             {

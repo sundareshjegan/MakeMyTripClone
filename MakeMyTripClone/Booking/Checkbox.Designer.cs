@@ -59,6 +59,6 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBoxs;
+        public System.Windows.Forms.CheckBox checkBoxs;
     }
 }

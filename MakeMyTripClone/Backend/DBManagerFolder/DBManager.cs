@@ -24,7 +24,6 @@ namespace MakeMyTripClone
         public static MySqlConnection Connection = null;
         public static DatabaseManager manager = new MySqlHandler(server, user, password, database);
 
-        public static int busId;
 
         public static void GetConnection()
         {
@@ -79,11 +78,6 @@ namespace MakeMyTripClone
 
         public static List<RouteDetails> GetBuses(String boarding , String destination , String date)
         {
-            // boarding = "Coimbatore";
-            //destination = "Chennai";
-
-            //  String date  = new DateTime(2024, 3, 27).ToString("yyyy-MM-dd");
-            //date = "2024-03-28";
            
             var res = manager.FetchData(Route.TableName, $"{Route.Boarding} = '{boarding}' and {Route.Destination} = '{destination}' and {Route.StartDate} = '{date}'").Value;
 
@@ -105,8 +99,14 @@ namespace MakeMyTripClone
                 rd.Destination = res[Route.Destination][i].ToString();
                 rd.Price = manager.FetchColumn(Bus.TableName, Bus.Prices, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
                 rd.NoOfSeats = manager.FetchColumn(Bus.TableName, Bus.NoOfSeats, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
+                rd.Duration = res[Route.Duration][i].ToString();
 
-                list.Add(rd);
+                DateTime now = DateTime.Now;
+                DateTime bustime = Convert.ToDateTime(rd.StartTime);
+                //if (bustime > now)
+                //{
+                    list.Add(rd);
+                //}
                 
             }
             return list;
@@ -114,12 +114,8 @@ namespace MakeMyTripClone
 
         public static List<object> GetBoardingPoints(String boarding, String destination, String date)
         {
-            busId = 1;
-            boarding = "Chennai";
-            destination = "Coimbatore";
-            date = "28-03-2024";
-            var res = manager.FetchColumn(Route.TableName, Route.BoardingPoints, $"{Route.BusId} = {busId} and {Route.Boarding} = '{boarding}'").Value;
-
+           
+            var res = manager.FetchColumn(Route.TableName, Route.BoardingPoints, $"{Route.Destination} = '{destination}' and {Route.Boarding} = '{boarding}' and {Route.StartDate} = '{date}'").Value;
 
             dynamic jsonObject = JsonConvert.DeserializeObject(res[0].ToString());
 
@@ -137,13 +133,10 @@ namespace MakeMyTripClone
 
         public static List<object> GetDropPoints(String boarding, String destination, String date)
         {
-            busId = 1;
-            var res = manager.FetchColumn(Route.TableName, Route.DropPoints, $"{Route.BusId} = {busId} and {Route.Boarding} = '{boarding}'").Value;
+            var res = manager.FetchColumn(Route.TableName, Route.DropPoints, $"{Route.Destination} = '{destination}' and {Route.Boarding} = '{boarding}' and {Route.StartDate} = '{date}'").Value;
 
 
             dynamic jsonObject = JsonConvert.DeserializeObject(res[0].ToString());
-
-            // Extracting only values
             List<object> dropPoints = new List<object>();
             ExtractValues(jsonObject, dropPoints);
 
@@ -151,17 +144,17 @@ namespace MakeMyTripClone
 
         }
 
-        public static List<String> GetTravel(String boarding, String destination, String date)
+        public static BooleanMsg<List<String>> GetTravel(String boarding, String destination, String date)
         {
-            var res = manager.FetchColumn(Route.TableName, Route.BusId, $"{Route.Boarding} = '{boarding}' and {Route.Destination} = '{destination}' and {Route.StartDate} = '{date}'").Value;
-
+            var res = manager.FetchColumn(Route.TableName, Route.BusId, $"{Route.Boarding} = '{boarding}' and {Route.Destination} = '{destination}' and {Route.StartDate} = '{date}'");
             List<String> travels = new List<String>();
-
-            for (int i = 0; i < res.Count; i++)
+            if (res && res.Value.Count != 0)
             {
-                travels.Add(manager.FetchColumn(Bus.TableName, Bus.Name, $"{Bus.Id} = {res[i]} ").Value[0].ToString());
+                for (int i = 0; i < res.Value.Count; i++)
+                {
+                    travels.Add(manager.FetchColumn(Bus.TableName, Bus.Name, $"{Bus.Id} = {res.Value[i]} ").Value[0].ToString());
+                }
             }
-
             return travels;
         }
 
@@ -180,6 +173,6 @@ namespace MakeMyTripClone
             }
         }
 
-       // public static List<>
+
     }
 }

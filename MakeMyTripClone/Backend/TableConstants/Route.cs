@@ -31,6 +31,6 @@ namespace MakeMyTripClone
 
         public static String DropPoints { get; } = "drop_points";
 
-
+        public static String Duration { get; } = "duration";
     }
 }

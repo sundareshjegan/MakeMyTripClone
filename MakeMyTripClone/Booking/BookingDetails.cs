@@ -15,7 +15,7 @@ namespace MakeMyTripClone
         public string Pickuptime { get; set; }
         public string Droptime { get; set; }
         public string Pickuplocation { get; set; }
-        public string Droplolocation { get; set; }
+        public string Droplocation { get; set; }
         public string[] Boardingpoint { get; set; }
         public string[] Droppoint { get; set; }
         public string Durations { get; set; }
