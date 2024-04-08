@@ -299,7 +299,6 @@
             // 
             this.ddngtpictureBox.BackColor = System.Drawing.Color.Transparent;
             this.ddngtpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ddngtpictureBox.Image = global::MakeMyTripClone.Properties.Resources.moon;
             this.ddngtpictureBox.Location = new System.Drawing.Point(64, 4);
             this.ddngtpictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.ddngtpictureBox.Name = "ddngtpictureBox";

@@ -299,6 +299,10 @@ namespace MakeMyTripClone
                 details.Droppoint = droppoint;
                 //details.dura
                 details.Totalamount = Convert.ToInt32(totalamtlabel.Text);
+
+                CompleteBookingForm completeBooking = new CompleteBookingForm();
+                completeBooking.SetData(details);
+                completeBooking.ShowDialog();
             }
         }
 

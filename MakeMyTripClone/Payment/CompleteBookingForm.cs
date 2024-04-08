@@ -23,23 +23,22 @@ namespace MakeMyTripClone
             double randomRating = Math.Round(random.NextDouble() * (4.9 - 3.5) + 3.5, 1);
             ratingLabel.Text = randomRating.ToString();
             //CreateCurves();
-            //SetData();
-            travellerDetailsPanel.Height = 0;
-            List<TravellerDetails> travellersList = new List<TravellerDetails>();
-            for (int i = 0; i < 2; i++)
-            {
-                TravellerDetails traveller = new TravellerDetails();
-                traveller.Dock = DockStyle.Top;
-                travellerDetailsPanel.Height += traveller.Height+10;
+            //travellerDetailsPanel.Height = 0;
+            //List<TravellerDetails> travellersList = new List<TravellerDetails>();
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    TravellerDetails traveller = new TravellerDetails();
+            //    traveller.Dock = DockStyle.Top;
+            //    travellerDetailsPanel.Height += traveller.Height+10;
 
-                travellerDetailsPanel.Controls.Add(traveller);
-                travellersList.Add(traveller);
-            }
-            foreach (TravellerDetails traveller in travellersList)
-            {
-                traveller.BringToFront();
-            }
-            leftPanel.AutoScroll = true;
+            //    travellerDetailsPanel.Controls.Add(traveller);
+            //    travellersList.Add(traveller);
+            //}
+            //foreach (TravellerDetails traveller in travellersList)
+            //{
+            //    traveller.BringToFront();
+            //}
+            //leftPanel.AutoScroll = true;
         }
 
         #region DLL to Create rounded Regions
@@ -87,27 +86,32 @@ namespace MakeMyTripClone
             emailWarningLabel.Text = valid ? "" :"Invalid Email Id..!";
         }
         #endregion
-
+        private void OnBaseFareLabelTextChanged(object sender, EventArgs e)
+        {
+            totalAmountLabel.Text = int.Parse(baseFareLabel.Text) - int.Parse(myDealAmountLabel.Text) + "";
+        }
         private void OnSecureTipCheckPBClicked(object sender, EventArgs e)
         {
             secureTipCheckPB.Image = secureTipCheckPB.Image == null ? Properties.Resources.validTick : null ;
             insurancePanel.Visible = secureTipCheckPB.Image != null;
-            totalAmountLabel.Text = insurancePanel.Visible ? int.Parse(totalAmountLabel.Text) - 30 + "" : int.Parse(totalAmountLabel.Text) + 30+"";
+            totalAmountLabel.Text = insurancePanel.Visible ? int.Parse(totalAmountLabel.Text) + 30 + "" : int.Parse(totalAmountLabel.Text) - 30+"";
         }
 
-        private void SetData(RouteDetails route, int totalBaseFare)
+        public void SetData(BookingDetails busDetails)
         {
-            int noOfTravellers = 2;
+            int noOfTravellers = busDetails.Nooftravellers;
             #region Adding Traveller Controls
-            seperatorPanel2.Height = 0;
+            travellerDetailsPanel.Height = 0;
             List<TravellerDetails> travellersList = new List<TravellerDetails>();
+            string[] seatNumbers = busDetails.Bookedseatnumber.Split(',');
             for (int i = 0; i < noOfTravellers; i++)
             {
                 TravellerDetails traveller = new TravellerDetails();
+                traveller.SeatNumber = seatNumbers[i];
                 traveller.Dock = DockStyle.Top;
-                seperatorPanel2.Height += traveller.Height;
+                travellerDetailsPanel.Height += traveller.Height+10;
 
-                seperatorPanel2.Controls.Add(traveller);
+                travellerDetailsPanel.Controls.Add(traveller);
                 travellersList.Add(traveller);
             }
             foreach (TravellerDetails traveller in travellersList)
@@ -116,14 +120,30 @@ namespace MakeMyTripClone
             }
             leftPanel.AutoScroll = true;
             #endregion
+            seatNoLabel.Text = "Seat No : "+busDetails.Bookedseatnumber;
+            busNameLabel.Text = busDetails.BusName;
+            busTypeLabel.Text = "Bharat Benz/" + busDetails.Bustype;
 
-            busNameLabel.Text = route.BusName;
-            busTypeLabel.Text = route.BusType;
-            sourceCityLabel.Text = route.Source;
-            destinationCityLabel.Text = route.Destination;
-            sourceTimeLabel.Text = route.StartTime;
-            destinationTimeLabel.Text = route.EndTime;
-            baseFareLabel.Text = totalBaseFare.ToString();
+            string[] timeAndDate = busDetails.Pickuptime.Split(' ');
+            string pickUpTime = timeAndDate[0].Substring(0,5);
+            string pickUpDate = timeAndDate[1] + " " + timeAndDate[2].Substring(0, 3);
+            sourceTimeLabel.Text = pickUpTime;
+            sourceDateLabel.Text = pickUpDate;
+
+            timeAndDate = busDetails.Droptime.Split(' ');
+            string dropTime = timeAndDate[0].Substring(0, 5);
+            string dropDate = timeAndDate[1] + " " + timeAndDate[2].Substring(0, 3);
+            destinationTimeLabel.Text = dropTime;
+            destinationDateLabel.Text = pickUpDate;
+
+            sourceCityLabel.Text = busDetails.Pickuplocation;
+            destinationCityLabel.Text = busDetails.Droplolocation;
+            durationLabel.Text = busDetails.Durations;
+
+            //sourceBoardingLabel.Text = busDetails.Boardingpoint[1]+"\n"+busDetails.Boardingpoint[2]+"\n("+busDetails.Pickuplocation+")";
+            destinationDepatureLabel.Text = busDetails.Droppoint[1] + "\n" + busDetails.Droppoint[2] + "\n(" + busDetails.Droplolocation + ")";
+
+            baseFareLabel.Text = busDetails.Totalamount.ToString();
         }
         #region Helper Functions
         private bool IsValidEmail(string email)

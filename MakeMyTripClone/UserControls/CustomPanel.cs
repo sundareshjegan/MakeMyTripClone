@@ -22,6 +22,12 @@ namespace MakeMyTripClone.UserControls
             set { cornerRadius = value; Invalidate(); }
         }
 
+        //public int BorderWidth
+        //{
+        //    get { return borderWidth; }
+        //    set { borderWidth = value; Invalidate(); }
+        //}
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
