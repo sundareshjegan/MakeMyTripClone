@@ -79,6 +79,7 @@
             this.nameTB.TabStop = false;
             this.nameTB.TextChanged += new System.EventHandler(this.OnNameTBTextChanged);
             this.nameTB.Enter += new System.EventHandler(this.OnTextBoxActive);
+            this.nameTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnNameTBKeyPress);
             // 
             // label3
             // 

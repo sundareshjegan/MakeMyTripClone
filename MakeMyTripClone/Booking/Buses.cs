@@ -198,13 +198,13 @@ namespace MakeMyTripClone
         {           
             if (!e)
             {
-                totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) - Convert.ToInt32(rulabel.Text) + "";
+                totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) - Convert.ToInt32(ruppees[0]) + "";
                 s = s + " , ";
                 noofseatlabel.Text=noofseatlabel.Text.Replace(s, "");
             }
             else
             {
-                totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) + Convert.ToInt32(rulabel.Text) + "";
+                totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) + Convert.ToInt32(ruppees[0]) + "";
                 noofseatlabel.Text += s+" , ";
             }
         }

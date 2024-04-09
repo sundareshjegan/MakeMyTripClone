@@ -55,10 +55,15 @@ namespace MakeMyTripClone
         #endregion
 
         Random random = new Random();
+        List<TravellerDetails> travellersList;
 
         private void OnClosePBClicked(object sender, EventArgs e)
         {
             Dispose();
+        }
+        private void OnAdClosePBClicked(object sender, EventArgs e)
+        {
+            closeAdLabel.Visible = adPB.Visible = adClosePB.Visible = false;
         }
 
         #region TextBox Events
@@ -100,9 +105,10 @@ namespace MakeMyTripClone
         public void SetData(BookingDetails busDetails)
         {
             int noOfTravellers = busDetails.Nooftravellers;
+            travellersList = new List<TravellerDetails>();
+
             #region Adding Traveller Controls
             travellerDetailsPanel.Height = 0;
-            List<TravellerDetails> travellersList = new List<TravellerDetails>();
             string[] seatNumbers = busDetails.Bookedseatnumber.Split(',');
             for (int i = 0; i < noOfTravellers; i++)
             {
@@ -137,13 +143,22 @@ namespace MakeMyTripClone
             destinationDateLabel.Text = pickUpDate;
 
             sourceCityLabel.Text = busDetails.Pickuplocation;
-            destinationCityLabel.Text = busDetails.Droplolocation;
+            destinationCityLabel.Text = busDetails.Droplocation;
             durationLabel.Text = busDetails.Durations;
 
-            //sourceBoardingLabel.Text = busDetails.Boardingpoint[1]+"\n"+busDetails.Boardingpoint[2]+"\n("+busDetails.Pickuplocation+")";
-            destinationDepatureLabel.Text = busDetails.Droppoint[1] + "\n" + busDetails.Droppoint[2] + "\n(" + busDetails.Droplolocation + ")";
+            sourceBoardingLabel.Text = busDetails.Boardingpoint[1]+"\n"+busDetails.Boardingpoint[2]+"\n("+busDetails.Pickuplocation+")";
+            destinationDepatureLabel.Text = busDetails.Droppoint[1] + "\n" + busDetails.Droppoint[2] + "\n(" + busDetails.Droplocation + ")";
 
             baseFareLabel.Text = busDetails.Totalamount.ToString();
+        }
+
+        private void OnContinueBtnClicked(object sender, EventArgs e)
+        {
+            if (IsAllDataEnteredAndValid())
+            {
+                PaymentForm paymentForm = new PaymentForm();
+                paymentForm.ShowDialog();
+            }
         }
         #region Helper Functions
         private bool IsValidEmail(string email)
@@ -156,6 +171,29 @@ namespace MakeMyTripClone
             ratingPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ratingPanel.Width, ratingPanel.Height, 7, 7));
             loginNowPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, loginNowPanel.Width, loginNowPanel.Height, 50, 50));
         }
+        private bool IsAllDataEnteredAndValid()
+        {
+            foreach (TravellerDetails traveller in travellersList)
+            {
+                traveller.TravellerName = traveller.TravellerName == "" || string.IsNullOrWhiteSpace(traveller.TravellerName) ? "*Name required" : "";
+                traveller.TravellerAge = traveller.TravellerAge == "" ? "*Age Required!" : "";
+                traveller.genderWarningLabel.Text = traveller.Gender == "" ? "Select Gender!" : "";
+                emailWarningLabel.Text = emailTB.Text == "" ? "Email Id Required" : "";
+                mobileWarningLabel.Text = mobileTB.Text == "" ? "Mobile No Required" : "";
+
+                if (traveller.TravellerName == "") return false;
+                if (traveller.TravellerAge == "") return false;
+                if (traveller.Gender == "") return false;
+            }
+            stateWarningLabel.Text = stateCB.Text == "" ? "Select State" : "";
+            if (stateCB.Text == "") return false;
+            if (emailTB.Text == "") return false;
+            if (!IsValidEmail(emailTB.Text)) return false;
+            if (mobileTB.Text.Length != 10) return false;
+            return true;
+        }
         #endregion
+
+        
     }
 }

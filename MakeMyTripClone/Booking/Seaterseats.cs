@@ -17,10 +17,10 @@ namespace MakeMyTripClone
         {
             InitializeComponent();
             //List<SeatDeatils> seats = DBManager.GetSeatDetails(Tag);
-            for(int i = 0;i< seats.Count; i++)
-            {
+            //for(int i = 0;i< seats.Count; i++)
+           // {
 
-            }
+            //}
         }
         public delegate void DatasHandler(bool b, string s);
         public event DatasHandler seatscolours;

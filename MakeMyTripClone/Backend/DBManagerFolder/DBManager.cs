@@ -30,7 +30,6 @@ namespace MakeMyTripClone
             Connection = new MySqlConnection(connectionString);
             Connection.Open();
             manager.Connect();
-
         }
 
 

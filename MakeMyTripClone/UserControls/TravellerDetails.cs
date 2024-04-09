@@ -104,7 +104,10 @@ namespace MakeMyTripClone.UserControls
         {
             e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != '\b';
         }
-
+        private void OnNameTBKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && e.KeyChar != '\b';
+        }
         private void OnTextBoxActive(object sender, EventArgs e)
         {
             if (sender is TextBox textBox)
@@ -129,6 +132,7 @@ namespace MakeMyTripClone.UserControls
             button.ForeColor = Color.DodgerBlue;
             button.BackColor = Color.FromArgb(200, 230, 255);
             selectedGender = button.Text;
+            genderWarningLabel.Text = "";
         }
         private void ResetButtonColors()
         {

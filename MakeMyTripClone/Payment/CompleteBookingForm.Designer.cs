@@ -101,6 +101,10 @@
             this.sourceBoardingLabel = new System.Windows.Forms.Label();
             this.sourceCityLabel = new System.Windows.Forms.Label();
             this.rightPanel = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.adClosePB = new System.Windows.Forms.PictureBox();
+            this.adPB = new System.Windows.Forms.PictureBox();
             this.customPanel1 = new MakeMyTripClone.UserControls.CustomPanel();
             this.label33 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -139,6 +143,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.closeAdLabel = new System.Windows.Forms.Label();
+            this.stateWarningLabel = new System.Windows.Forms.Label();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closePB)).BeginInit();
@@ -165,6 +171,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.rightPanel.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adClosePB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adPB)).BeginInit();
             this.customPanel1.SuspendLayout();
             this.amountPanel.SuspendLayout();
             this.insurancePanel.SuspendLayout();
@@ -184,7 +194,7 @@
             this.CompleteBookingLabel.AutoSize = true;
             this.CompleteBookingLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompleteBookingLabel.ForeColor = System.Drawing.Color.White;
-            this.CompleteBookingLabel.Location = new System.Drawing.Point(338, 14);
+            this.CompleteBookingLabel.Location = new System.Drawing.Point(334, 14);
             this.CompleteBookingLabel.Name = "CompleteBookingLabel";
             this.CompleteBookingLabel.Size = new System.Drawing.Size(286, 32);
             this.CompleteBookingLabel.TabIndex = 1;
@@ -196,7 +206,7 @@
             this.headerDateTimeLabel.AutoSize = true;
             this.headerDateTimeLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerDateTimeLabel.ForeColor = System.Drawing.Color.White;
-            this.headerDateTimeLabel.Location = new System.Drawing.Point(931, 17);
+            this.headerDateTimeLabel.Location = new System.Drawing.Point(924, 17);
             this.headerDateTimeLabel.Name = "headerDateTimeLabel";
             this.headerDateTimeLabel.Size = new System.Drawing.Size(297, 25);
             this.headerDateTimeLabel.TabIndex = 1;
@@ -209,7 +219,7 @@
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.51773F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.48227F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 649F));
-            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
+            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.headerPanel.Controls.Add(this.headerDateTimeLabel, 2, 0);
             this.headerPanel.Controls.Add(this.logoPB, 0, 0);
             this.headerPanel.Controls.Add(this.CompleteBookingLabel, 1, 0);
@@ -226,7 +236,7 @@
             // 
             this.logoPB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logoPB.Image = global::MakeMyTripClone.Properties.Resources.logoWhite;
-            this.logoPB.Location = new System.Drawing.Point(36, 7);
+            this.logoPB.Location = new System.Drawing.Point(35, 7);
             this.logoPB.Name = "logoPB";
             this.logoPB.Size = new System.Drawing.Size(136, 45);
             this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -238,7 +248,7 @@
             this.closePB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.closePB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closePB.Image = global::MakeMyTripClone.Properties.Resources.close;
-            this.closePB.Location = new System.Drawing.Point(1453, 17);
+            this.closePB.Location = new System.Drawing.Point(1450, 17);
             this.closePB.Name = "closePB";
             this.closePB.Size = new System.Drawing.Size(25, 25);
             this.closePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -253,7 +263,7 @@
             this.overAllPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.overAllPanel.Location = new System.Drawing.Point(0, 60);
             this.overAllPanel.Name = "overAllPanel";
-            this.overAllPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.overAllPanel.Padding = new System.Windows.Forms.Padding(150, 3, 150, 3);
             this.overAllPanel.Size = new System.Drawing.Size(1528, 882);
             this.overAllPanel.TabIndex = 2;
             // 
@@ -271,7 +281,7 @@
             this.leftPanel.Controls.Add(this.seperatorPanel2);
             this.leftPanel.Controls.Add(this.busDetailsPanel);
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.leftPanel.Location = new System.Drawing.Point(3, 3);
+            this.leftPanel.Location = new System.Drawing.Point(150, 3);
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Padding = new System.Windows.Forms.Padding(5, 5, 20, 5);
             this.leftPanel.Size = new System.Drawing.Size(776, 876);
@@ -585,11 +595,11 @@
             // emailWarningLabel
             // 
             this.emailWarningLabel.AutoSize = true;
-            this.emailWarningLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailWarningLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.emailWarningLabel.Location = new System.Drawing.Point(17, 98);
+            this.emailWarningLabel.Location = new System.Drawing.Point(31, 112);
             this.emailWarningLabel.Name = "emailWarningLabel";
-            this.emailWarningLabel.Size = new System.Drawing.Size(0, 17);
+            this.emailWarningLabel.Size = new System.Drawing.Size(0, 13);
             this.emailWarningLabel.TabIndex = 0;
             // 
             // label18
@@ -606,11 +616,11 @@
             // mobileWarningLabel
             // 
             this.mobileWarningLabel.AutoSize = true;
-            this.mobileWarningLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mobileWarningLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mobileWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.mobileWarningLabel.Location = new System.Drawing.Point(358, 98);
+            this.mobileWarningLabel.Location = new System.Drawing.Point(372, 111);
             this.mobileWarningLabel.Name = "mobileWarningLabel";
-            this.mobileWarningLabel.Size = new System.Drawing.Size(0, 17);
+            this.mobileWarningLabel.Size = new System.Drawing.Size(0, 13);
             this.mobileWarningLabel.TabIndex = 0;
             // 
             // seperatorPanel4
@@ -624,6 +634,7 @@
             // customPanel5
             // 
             this.customPanel5.BorderColor = System.Drawing.Color.LightGray;
+            this.customPanel5.Controls.Add(this.stateWarningLabel);
             this.customPanel5.Controls.Add(this.saveBillingCheckBox);
             this.customPanel5.Controls.Add(this.label38);
             this.customPanel5.Controls.Add(this.panel16);
@@ -1026,6 +1037,7 @@
             // rightPanel
             // 
             this.rightPanel.BackColor = System.Drawing.Color.White;
+            this.rightPanel.Controls.Add(this.panel3);
             this.rightPanel.Controls.Add(this.customPanel1);
             this.rightPanel.Controls.Add(this.panel12);
             this.rightPanel.Controls.Add(this.loginNowPanel);
@@ -1034,10 +1046,54 @@
             this.rightPanel.Controls.Add(this.panel2);
             this.rightPanel.Controls.Add(this.panel8);
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rightPanel.Location = new System.Drawing.Point(1113, 3);
+            this.rightPanel.Location = new System.Drawing.Point(966, 3);
             this.rightPanel.Name = "rightPanel";
             this.rightPanel.Size = new System.Drawing.Size(412, 876);
             this.rightPanel.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.adPB);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 600);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(50, 50, 50, 20);
+            this.panel3.Size = new System.Drawing.Size(412, 276);
+            this.panel3.TabIndex = 7;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.adClosePB);
+            this.panel4.Controls.Add(this.closeAdLabel);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(50, 50);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(312, 24);
+            this.panel4.TabIndex = 3;
+            // 
+            // adClosePB
+            // 
+            this.adClosePB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adClosePB.Image = ((System.Drawing.Image)(resources.GetObject("adClosePB.Image")));
+            this.adClosePB.Location = new System.Drawing.Point(293, 3);
+            this.adClosePB.Name = "adClosePB";
+            this.adClosePB.Size = new System.Drawing.Size(15, 15);
+            this.adClosePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.adClosePB.TabIndex = 2;
+            this.adClosePB.TabStop = false;
+            this.adClosePB.Click += new System.EventHandler(this.OnAdClosePBClicked);
+            // 
+            // adPB
+            // 
+            this.adPB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.adPB.Image = ((System.Drawing.Image)(resources.GetObject("adPB.Image")));
+            this.adPB.Location = new System.Drawing.Point(50, 74);
+            this.adPB.Name = "adPB";
+            this.adPB.Size = new System.Drawing.Size(312, 182);
+            this.adPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.adPB.TabIndex = 2;
+            this.adPB.TabStop = false;
             // 
             // customPanel1
             // 
@@ -1085,6 +1141,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "CONTINUE";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.OnContinueBtnClicked);
             // 
             // label28
             // 
@@ -1474,6 +1531,26 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "My Deal";
             // 
+            // closeAdLabel
+            // 
+            this.closeAdLabel.AutoSize = true;
+            this.closeAdLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeAdLabel.Location = new System.Drawing.Point(219, 1);
+            this.closeAdLabel.Name = "closeAdLabel";
+            this.closeAdLabel.Size = new System.Drawing.Size(68, 20);
+            this.closeAdLabel.TabIndex = 0;
+            this.closeAdLabel.Text = "Close Ad";
+            // 
+            // stateWarningLabel
+            // 
+            this.stateWarningLabel.AutoSize = true;
+            this.stateWarningLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stateWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.stateWarningLabel.Location = new System.Drawing.Point(25, 144);
+            this.stateWarningLabel.Name = "stateWarningLabel";
+            this.stateWarningLabel.Size = new System.Drawing.Size(0, 13);
+            this.stateWarningLabel.TabIndex = 6;
+            // 
             // CompleteBookingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1527,6 +1604,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.rightPanel.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adClosePB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adPB)).EndInit();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.amountPanel.ResumeLayout(false);
@@ -1662,5 +1744,11 @@
         private System.Windows.Forms.Panel panel1;
         private UserControls.CustomPanel customPanel6;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox adPB;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox adClosePB;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label closeAdLabel;
+        private System.Windows.Forms.Label stateWarningLabel;
     }
 }
