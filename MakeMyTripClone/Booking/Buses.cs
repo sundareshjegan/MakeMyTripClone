@@ -24,12 +24,17 @@ namespace MakeMyTripClone
         private bool isPhotos;
         private bool isAmenties;
         private Address address;
-        private string pickuplocation, droplocation,name,bustype,duration,starttime,endtime,acnonac;
+        private string pickuplocation, droplocation,name,bustype,duration,starttime,endtime,acnonac,seat;
 
         public string BusType
         {
             get { return acnonac; }
         }
+        public string SeatType
+        {
+            get { return seat; }
+        }
+
 
         public string Duration
         {
@@ -56,6 +61,7 @@ namespace MakeMyTripClone
             busltypeabel.Text = BookingPageForm.busesList[i].BusType;
             string[] s = busltypeabel.Text.Split('-');
             acnonac = s[0];
+            seat = s[s.Length - 1];
             bustype = busltypeabel.Text;
             rulabel.Text = BookingPageForm.busesList[i].Price;
             ruppees= rulabel.Text.Split('/');
@@ -144,7 +150,7 @@ namespace MakeMyTripClone
                 {
                     dropvalue = controls;
                     string[] s = address.Getdetails(dropvalue);
-                    droppoint = s;
+                    boardingpoint = s;
                     // MessageBox.Show($"mm : {s[0]},ss : {s[1]}");
                 }
             }
@@ -167,7 +173,7 @@ namespace MakeMyTripClone
                 {
                     dropvalue = controls;
                     string[] s = address.Getdetails(dropvalue);
-                    boardingpoint = s;
+                    droppoint = s;
                    // MessageBox.Show($"mm : {s[0]},ss : {s[1]}");
                 }
             }

@@ -644,6 +644,7 @@
             this.putimengtlabel.Name = "putimengtlabel";
             this.putimengtlabel.Size = new System.Drawing.Size(112, 21);
             this.putimengtlabel.TabIndex = 5;
+            this.putimengtlabel.Tag = "23:00:00 6:00:00";
             this.putimengtlabel.Text = "11PM to 6AM";
             this.putimengtlabel.Click += new System.EventHandler(this.LabelsClick);
             // 
@@ -681,6 +682,7 @@
             this.putimesrlabel.Name = "putimesrlabel";
             this.putimesrlabel.Size = new System.Drawing.Size(113, 21);
             this.putimesrlabel.TabIndex = 5;
+            this.putimesrlabel.Tag = "6:00:00 11:00:00";
             this.putimesrlabel.Text = "6AM to 11AM";
             this.putimesrlabel.Click += new System.EventHandler(this.LabelsClick);
             // 
@@ -718,6 +720,7 @@
             this.putimeevelabel.Name = "putimeevelabel";
             this.putimeevelabel.Size = new System.Drawing.Size(112, 21);
             this.putimeevelabel.TabIndex = 5;
+            this.putimeevelabel.Tag = "11:00:00 18:00:00";
             this.putimeevelabel.Text = "11AM to 6PM";
             this.putimeevelabel.Click += new System.EventHandler(this.LabelsClick);
             // 
@@ -755,6 +758,7 @@
             this.putimesslabel.Name = "putimesslabel";
             this.putimesslabel.Size = new System.Drawing.Size(111, 21);
             this.putimesslabel.TabIndex = 5;
+            this.putimesslabel.Tag = "18:00:00 23:00:00";
             this.putimesslabel.Text = "6PM to 11PM";
             this.putimesslabel.Click += new System.EventHandler(this.LabelsClick);
             // 

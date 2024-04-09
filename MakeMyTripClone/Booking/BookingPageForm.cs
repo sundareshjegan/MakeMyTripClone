@@ -37,7 +37,6 @@ namespace MakeMyTripClone
         private Color white = Color.White;
         private bool isfalse, isTime, isDtime;
         private int no = 0;
-        private string selected; 
 
         private  void Locations(ref bool b,Panel p,PictureBox pict,List<object> li,ref bool bb)
         {
@@ -119,12 +118,12 @@ namespace MakeMyTripClone
         public static List<object> boardingpoints = new List<object>();
         public static List<string> traveloperatorpoints = new List<string>();
         private bool isNUll;
-        private bool isTravel;
+        private bool isTravel,isPick;
         private bool isDrop;
         private bool isADD;
         private bool isNot;
         private List<Buses> buses = new List<Buses>();
-        private List<RouteDetails> filterlist = new List<RouteDetails>();
+        private List<Buses> filterlist = new List<Buses>();
        // private List<BusDetails> availableBuses = new List<BusDetails>();
        // private List<BusDetails> filterBuses = new List<BusDetails>();
 
@@ -179,7 +178,7 @@ namespace MakeMyTripClone
             }
             busesfoundlabel.Text = busesList.Count + " Buses found";
         }
-
+        private string isAc = null,seatType = null,picktime=null;
         private void PanelsClick(object sender, EventArgs e)
         {
             Panel panel = sender as Panel;
@@ -194,109 +193,78 @@ namespace MakeMyTripClone
                 }
                 putimeclearbutton.ForeColor = gray;
                 ddtimeclrbutton.ForeColor = gray;
-                
-
+                if (panel.Name == "acpanel" || panel.Name == "nonacpanel") isAc =null;
+                if (panel.Name == "sleeperpanel" || panel.Name == "seaterpanel") seatType = null;
+                if (panel.Name == "putimesrpanel" || panel.Name == "putimengtpanel" || panel.Name == "putimesspanel" || panel.Name == "putimeevepanel")
+                {
+                    picktime = null;
+                    isPick = false;
+                }
+                FTrue(isAc, seatType,picktime);
+                Filter(isAc, seatType,picktime);
             }
             else
             {
                 clearallbutton.ForeColor = SystemColors.Highlight;
                 no++;
-                if(panel.Name=="acpanel")
-                {
-                    //arr[0] = "AC";
-                    selected = "AC";
-                }
-                if(panel.Name=="nonacpanel")
-                {
-                  //  arr[0] = "NON-AC";
-                }
-                if(panel.Name== "sleeperpanel")
-                {
-                    //arr[1] = "SL"; 
-                }
-                if (panel.Name == "seaterpanel")
-                {
-                    //arr[1] = "ST"; 
-                }
-                
-                //if (panel.Name == "acpanel")
-                //{
-                //    for (int i = 0; i < busesList.Count; i++)
-                //    {
-                //        if (busesList[i].BusType == "AC-SL" || busesList[i].BusType == "AC-ST" || busesList[i].BusType == "AC-SL/ST")
-                //        {
-                //            buses[i].Visible = true;
-                //        }
-                //        else
-                //        {
-                //            buses[i].Visible = false;
-                //        }
-                //    }
-                //}
-                //if (panel.Name == "nonacpanel")
-                //{
-                //    for (int i = 0; i < busesList.Count; i++)
-                //    {
-                //        if (busesList[i].BusType == "AC-SL" || busesList[i].BusType == "AC-ST" || busesList[i].BusType == "AC-SL/ST")
-                //        {
-                //            buses[i].Visible = false;
-                //        }
-                //        else
-                //        {
-                //            buses[i].Visible = true;
-                //        }
-                //    }
-                //}
                 if (panel.Name == "acpanel" && nonacpanel.BackColor == colour)
                 {
                     nonacpanel.BackColor = Color.White;
+                    isAc = "AC";
+                    FTrue(isAc, seatType, picktime);
+                    isAc = "NON";
+
                 }
                 else if (panel.Name == "nonacpanel" && acpanel.BackColor == colour)
                 {
                     acpanel.BackColor = Color.White;
+                    isAc = "NON";
+                    FTrue(isAc, seatType, picktime);
+                    isAc = "AC";
+
                 }
-                //if(panel.Name== "sleeperpanel")
-                //{
-                //    for (int i = 0; i < busesList.Count; i++)
-                //    {
-                //        if (busesList[i].BusType == "AC-SL" || busesList[i].BusType == "NON-AC-SL")
-                //        {
-                //            buses[i].Visible = true;
-                //        }
-                //        else
-                //        {
-                //            buses[i].Visible = false ;
-                //        }
-                //    }
-                //}
-                //if (panel.Name == "seaterpanel")
-                //{
-                //    for (int i = 0; i < busesList.Count; i++)
-                //    {
-                //        if (busesList[i].BusType == "NON-AC-ST" || busesList[i].BusType == "AC-ST")
-                //        {
-                //            buses[i].Visible = true;
-                //        }
-                //        else
-                //        {
-                //            buses[i].Visible = false;
-                //        }
-                //    }
-                //}
                 if (panel.Name == "sleeperpanel" && seaterpanel.BackColor == colour)
                 {
                     seaterpanel.BackColor = Color.White;
+                    seatType = "SL";
+                    FTrue(isAc, seatType, picktime);
+                    seatType = "ST";
                 }
                 else if (panel.Name == "seaterpanel" && sleeperpanel.BackColor == colour)
                 {
                     sleeperpanel.BackColor = Color.White;
+                    seatType = "ST";
+                    FTrue(isAc, seatType, picktime);
+                    seatType = "SL";
                 }
+                if (panel.Name=="acpanel")
+                {
+                    isAc = "AC";
+                }
+                if(panel.Name=="nonacpanel")
+                {
+                    isAc = "NON";
+                }
+                if(panel.Name== "sleeperpanel")
+                {
+                    seatType = "SL";
+                }
+                if (panel.Name == "seaterpanel")
+                {
+                    seatType = "ST";
+                }
+                
+               
+               
                 if (panel.Name == "putimesrpanel")
                 {
                     putimeevepanel.BackColor = Color.White;
                     putimesspanel.BackColor = Color.White;
                     putimengtpanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
+                    picktime = putimesrlabel.Tag+"";
+                    if(isPick) FTrue(isAc, seatType, picktime);
+                    isPick = true;
                 }
                 else if (panel.Name == "putimeevepanel")
                 {
@@ -304,6 +272,9 @@ namespace MakeMyTripClone
                     putimesspanel.BackColor = Color.White;
                     putimengtpanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
+                    picktime = putimeevelabel.Tag + "";
+                    if (isPick) FTrue(isAc, seatType, picktime);
+                    isPick = true;
                 }
                 else if (panel.Name == "putimesspanel")
                 {
@@ -311,6 +282,9 @@ namespace MakeMyTripClone
                     putimeevepanel.BackColor = Color.White;
                     putimengtpanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
+                    picktime = putimesslabel.Tag + "";
+                    if (isPick) FTrue(isAc, seatType, picktime);
+                    isPick = true;
                 }
                 else if (panel.Name == "putimengtpanel")
                 {
@@ -318,6 +292,9 @@ namespace MakeMyTripClone
                     putimeevepanel.BackColor = Color.White;
                     putimesspanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
+                    picktime = putimengtlabel.Tag + "";
+                    if (isPick) FTrue(isAc, seatType, picktime);
+                    isPick = true;
                 }
                 if (panel.Name == "ddsrpanel")
                 {
@@ -347,25 +324,116 @@ namespace MakeMyTripClone
                     ddsrpanel.BackColor = Color.White;
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
                 }
-                panel.BackColor = colour;
-                Filter(panel);
+                panel.BackColor = colour;                
+                Filter(isAc,seatType,picktime);
             }
         }
 
-        private void Filter(Panel panel)
+        private void ChangeFilter(string isAc, string seatType, string picktime)
         {
-            List<Buses> filbus = new List<Buses>();
-            if(panel.Name=="acpanel")
+
+        }
+
+        private void FTrue(string isAc, string seatType,string picktime)
+        {
+            if(isAc==null)
             {
-                foreach(var item in buses)
+                foreach (var bus in buses)
                 {
-                    if(item.BusType.Contains("AC") && !item.BusType.Contains("NON-AC"))
+                    if (bus.SeatType == seatType)
                     {
-                        filbus.Add(item);
+                        bus.Visible = true;
+                    }
+                }
+            }
+            if(seatType==null)
+            {
+                foreach (var bus in buses)
+                {
+                    if (bus.BusType == isAc)
+                    {
+                        bus.Visible = true;
+                    }
+                }
+            }
+            if(picktime==null)
+            {
+                foreach (var bus in buses)
+                {
+                    if (bus.BusType == isAc && bus.SeatType == seatType)
+                    {
+                        bus.Visible = true;
+                    }
+                }
+            }
+            if(picktime!=null)
+            {
+                foreach (var bus in buses)
+                {
+                    bus.Visible = true;
+                }
+            }
+        }
+
+        private void Filter(string isAc,string seatType,string Picktime)
+        {
+            if (clearallbutton.ForeColor == gray)
+            {
+                foreach (var bus in buses)
+                {
+                    bus.Visible = true;
+                }
+            }
+            if (isAc!=null )
+            {
+                foreach(var bus in buses)
+                {
+                    if(bus.BusType==isAc && bus.Visible)
+                    {
+                        bus.Visible = true;
+                    }
+                    else
+                    {
+                        bus.Visible = false;
+                    }
+                }
+            }
+            if(seatType!=null)
+            {
+                foreach (var bus in buses)
+                {
+                    if (bus.SeatType == seatType && bus.Visible)
+                    {
+                        bus.Visible = true;
+                    }
+                    else
+                    {
+                        bus.Visible = false;
+                    }
+                }
+            }
+            if(Picktime!=null)
+            {
+                string[] time = Picktime.Split(' ');
+                foreach(var bus in buses)
+                {
+                    if (Convert.ToDateTime(time[1]) < Convert.ToDateTime(time[0]) && (Convert.ToDateTime(bus.StartTime) >= Convert.ToDateTime(time[0]) || Convert.ToDateTime(bus.StartTime) < Convert.ToDateTime(time[1])) && bus.Visible==true)
+                    {
+                        bus.Visible = true;
+                    }
+                    else if (Convert.ToDateTime(bus.StartTime)>=Convert.ToDateTime(time[0]) && Convert.ToDateTime(bus.StartTime) < Convert.ToDateTime(time[1]) && bus.Visible == true)
+                    {
+                        bus.Visible = true;
+                    }
+                    else
+                    {
+                        bus.Visible = false;
                     }
                 }
             }
         }
+
+      
 
         private void LabelsClick(object sender, EventArgs e)
         {
@@ -394,6 +462,7 @@ namespace MakeMyTripClone
             {
                 Reset();
                 no = 0;
+                picktime = null;
                 acpanel.BackColor = white;
                 nonacpanel.BackColor = white;
                 sleeperpanel.BackColor = white;
@@ -462,6 +531,8 @@ namespace MakeMyTripClone
             putimesspanel.BackColor = white;
             putimengtpanel.BackColor = white;
             putimeclearbutton.ForeColor = gray;
+            picktime = null;
+            isPick = false;
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
@@ -479,16 +550,20 @@ namespace MakeMyTripClone
 
         private void SeatersleepercheckBoxCheckedChanged(object sender, EventArgs e)
         {
-            if (seatersleepercheckBox.Checked) no++;
-            else no--;
+            if (seatersleepercheckBox.Checked)
+            {
+                seatType = "ST";
+                no++;
+            }
+            else
+            {
+                seatType = null;
+                no--;
+                FTrue(isAc, seatType,null);
+            }
             if (no <= 0) clearallbutton.ForeColor = gray;
             else clearallbutton.ForeColor = highglight;
-            //foreach(var datas in buses)
-            //{
-            //    if(datas.bustype== "AC-ST" || datas.bustype== "NON-AC-ST") datas.Visible = true;
-            //    else datas.Visible = false;
-            //}
-            
+            Filter(isAc, seatType,picktime);
         }
 
         private void DropClick(object sender, EventArgs e)

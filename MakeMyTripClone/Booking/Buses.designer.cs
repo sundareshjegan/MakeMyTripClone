@@ -50,7 +50,6 @@
             this.toppanel = new System.Windows.Forms.Panel();
             this.ruppanel = new System.Windows.Forms.Panel();
             this.rulabel = new System.Windows.Forms.Label();
-            this.rupeespictureBox = new System.Windows.Forms.PictureBox();
             this.tabmenupanel = new System.Windows.Forms.Panel();
             this.amentbutton = new System.Windows.Forms.Button();
             this.ptsbutton = new System.Windows.Forms.Button();
@@ -64,40 +63,40 @@
             this.busltypeabel = new System.Windows.Forms.Label();
             this.busnamelabel = new System.Windows.Forms.Label();
             this.photospanel = new System.Windows.Forms.Panel();
+            this.amentiespanel = new System.Windows.Forms.Panel();
+            this.plwlabel = new System.Windows.Forms.Label();
+            this.cctvlabel = new System.Windows.Forms.Label();
+            this.snklabel = new System.Windows.Forms.Label();
+            this.rllabel = new System.Windows.Forms.Label();
+            this.cplabel = new System.Windows.Forms.Label();
+            this.blklabel = new System.Windows.Forms.Label();
+            this.ecnlabel = new System.Windows.Forms.Label();
+            this.wblabel = new System.Windows.Forms.Label();
+            this.busamentitlabel = new System.Windows.Forms.Label();
             this.Bus3pictureBox = new System.Windows.Forms.PictureBox();
             this.Bus2pictureBox = new System.Windows.Forms.PictureBox();
             this.Bus1pictureBox = new System.Windows.Forms.PictureBox();
-            this.amentiespanel = new System.Windows.Forms.Panel();
             this.plwpictureBox = new System.Windows.Forms.PictureBox();
-            this.plwlabel = new System.Windows.Forms.Label();
             this.cctvpictureBox = new System.Windows.Forms.PictureBox();
-            this.cctvlabel = new System.Windows.Forms.Label();
             this.snkpictureBox = new System.Windows.Forms.PictureBox();
-            this.snklabel = new System.Windows.Forms.Label();
             this.rlpictureBox = new System.Windows.Forms.PictureBox();
-            this.rllabel = new System.Windows.Forms.Label();
             this.cppictureBox = new System.Windows.Forms.PictureBox();
-            this.cplabel = new System.Windows.Forms.Label();
             this.blkpictureBox = new System.Windows.Forms.PictureBox();
-            this.blklabel = new System.Windows.Forms.Label();
             this.wbpictureBox = new System.Windows.Forms.PictureBox();
-            this.ecnlabel = new System.Windows.Forms.Label();
-            this.wblabel = new System.Windows.Forms.Label();
             this.ecnpictureBox = new System.Windows.Forms.PictureBox();
-            this.busamentitlabel = new System.Windows.Forms.Label();
+            this.rupeespictureBox = new System.Windows.Forms.PictureBox();
             this.combinationpanel.SuspendLayout();
             this.sltpdpanel.SuspendLayout();
             this.nxtpanel.SuspendLayout();
             this.sltseatspanel.SuspendLayout();
             this.toppanel.SuspendLayout();
             this.ruppanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rupeespictureBox)).BeginInit();
             this.tabmenupanel.SuspendLayout();
             this.photospanel.SuspendLayout();
+            this.amentiespanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bus3pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bus2pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bus1pictureBox)).BeginInit();
-            this.amentiespanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plwpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cctvpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.snkpictureBox)).BeginInit();
@@ -106,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.blkpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wbpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ecnpictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rupeespictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // combinationpanel
@@ -349,18 +349,6 @@
             this.rulabel.TabIndex = 39;
             this.rulabel.Text = "800";
             // 
-            // rupeespictureBox
-            // 
-            this.rupeespictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rupeespictureBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rupeespictureBox.Image = global::MakeMyTripClone.Properties.Resources.rupee;
-            this.rupeespictureBox.Location = new System.Drawing.Point(0, 0);
-            this.rupeespictureBox.Name = "rupeespictureBox";
-            this.rupeespictureBox.Size = new System.Drawing.Size(20, 23);
-            this.rupeespictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rupeespictureBox.TabIndex = 36;
-            this.rupeespictureBox.TabStop = false;
-            // 
             // tabmenupanel
             // 
             this.tabmenupanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -508,6 +496,122 @@
             this.photospanel.TabIndex = 39;
             this.photospanel.Visible = false;
             // 
+            // amentiespanel
+            // 
+            this.amentiespanel.BackColor = System.Drawing.Color.White;
+            this.amentiespanel.Controls.Add(this.plwpictureBox);
+            this.amentiespanel.Controls.Add(this.plwlabel);
+            this.amentiespanel.Controls.Add(this.cctvpictureBox);
+            this.amentiespanel.Controls.Add(this.cctvlabel);
+            this.amentiespanel.Controls.Add(this.snkpictureBox);
+            this.amentiespanel.Controls.Add(this.snklabel);
+            this.amentiespanel.Controls.Add(this.rlpictureBox);
+            this.amentiespanel.Controls.Add(this.rllabel);
+            this.amentiespanel.Controls.Add(this.cppictureBox);
+            this.amentiespanel.Controls.Add(this.cplabel);
+            this.amentiespanel.Controls.Add(this.blkpictureBox);
+            this.amentiespanel.Controls.Add(this.blklabel);
+            this.amentiespanel.Controls.Add(this.wbpictureBox);
+            this.amentiespanel.Controls.Add(this.ecnlabel);
+            this.amentiespanel.Controls.Add(this.wblabel);
+            this.amentiespanel.Controls.Add(this.ecnpictureBox);
+            this.amentiespanel.Controls.Add(this.busamentitlabel);
+            this.amentiespanel.Location = new System.Drawing.Point(2, 155);
+            this.amentiespanel.Name = "amentiespanel";
+            this.amentiespanel.Size = new System.Drawing.Size(1274, 168);
+            this.amentiespanel.TabIndex = 39;
+            this.amentiespanel.Visible = false;
+            // 
+            // plwlabel
+            // 
+            this.plwlabel.AutoSize = true;
+            this.plwlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.plwlabel.Location = new System.Drawing.Point(609, 124);
+            this.plwlabel.Name = "plwlabel";
+            this.plwlabel.Size = new System.Drawing.Size(50, 20);
+            this.plwlabel.TabIndex = 12;
+            this.plwlabel.Text = "Pillow";
+            // 
+            // cctvlabel
+            // 
+            this.cctvlabel.AutoSize = true;
+            this.cctvlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cctvlabel.Location = new System.Drawing.Point(369, 124);
+            this.cctvlabel.Name = "cctvlabel";
+            this.cctvlabel.Size = new System.Drawing.Size(45, 20);
+            this.cctvlabel.TabIndex = 12;
+            this.cctvlabel.Text = "CCTV";
+            // 
+            // snklabel
+            // 
+            this.snklabel.AutoSize = true;
+            this.snklabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.snklabel.Location = new System.Drawing.Point(67, 124);
+            this.snklabel.Name = "snklabel";
+            this.snklabel.Size = new System.Drawing.Size(55, 20);
+            this.snklabel.TabIndex = 10;
+            this.snklabel.Text = "Snacks";
+            // 
+            // rllabel
+            // 
+            this.rllabel.AutoSize = true;
+            this.rllabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rllabel.Location = new System.Drawing.Point(1079, 61);
+            this.rllabel.Name = "rllabel";
+            this.rllabel.Size = new System.Drawing.Size(103, 20);
+            this.rllabel.TabIndex = 8;
+            this.rllabel.Text = "Reading Light";
+            // 
+            // cplabel
+            // 
+            this.cplabel.AutoSize = true;
+            this.cplabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cplabel.Location = new System.Drawing.Point(834, 61);
+            this.cplabel.Name = "cplabel";
+            this.cplabel.Size = new System.Drawing.Size(111, 20);
+            this.cplabel.TabIndex = 6;
+            this.cplabel.Text = "Charging Point";
+            // 
+            // blklabel
+            // 
+            this.blklabel.AutoSize = true;
+            this.blklabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.blklabel.Location = new System.Drawing.Point(609, 61);
+            this.blklabel.Name = "blklabel";
+            this.blklabel.Size = new System.Drawing.Size(66, 20);
+            this.blklabel.TabIndex = 4;
+            this.blklabel.Text = "Blankets";
+            // 
+            // ecnlabel
+            // 
+            this.ecnlabel.AutoSize = true;
+            this.ecnlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ecnlabel.Location = new System.Drawing.Point(83, 61);
+            this.ecnlabel.Name = "ecnlabel";
+            this.ecnlabel.Size = new System.Drawing.Size(202, 20);
+            this.ecnlabel.TabIndex = 2;
+            this.ecnlabel.Text = "Emergency Contact Number";
+            // 
+            // wblabel
+            // 
+            this.wblabel.AutoSize = true;
+            this.wblabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wblabel.Location = new System.Drawing.Point(369, 61);
+            this.wblabel.Name = "wblabel";
+            this.wblabel.Size = new System.Drawing.Size(93, 20);
+            this.wblabel.TabIndex = 2;
+            this.wblabel.Text = "Water Bottle";
+            // 
+            // busamentitlabel
+            // 
+            this.busamentitlabel.AutoSize = true;
+            this.busamentitlabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.busamentitlabel.Location = new System.Drawing.Point(17, 12);
+            this.busamentitlabel.Name = "busamentitlabel";
+            this.busamentitlabel.Size = new System.Drawing.Size(146, 30);
+            this.busamentitlabel.TabIndex = 0;
+            this.busamentitlabel.Text = "Bus Amenties";
+            // 
             // Bus3pictureBox
             // 
             this.Bus3pictureBox.BackColor = System.Drawing.Color.Transparent;
@@ -541,32 +645,6 @@
             this.Bus1pictureBox.TabIndex = 0;
             this.Bus1pictureBox.TabStop = false;
             // 
-            // amentiespanel
-            // 
-            this.amentiespanel.BackColor = System.Drawing.Color.White;
-            this.amentiespanel.Controls.Add(this.plwpictureBox);
-            this.amentiespanel.Controls.Add(this.plwlabel);
-            this.amentiespanel.Controls.Add(this.cctvpictureBox);
-            this.amentiespanel.Controls.Add(this.cctvlabel);
-            this.amentiespanel.Controls.Add(this.snkpictureBox);
-            this.amentiespanel.Controls.Add(this.snklabel);
-            this.amentiespanel.Controls.Add(this.rlpictureBox);
-            this.amentiespanel.Controls.Add(this.rllabel);
-            this.amentiespanel.Controls.Add(this.cppictureBox);
-            this.amentiespanel.Controls.Add(this.cplabel);
-            this.amentiespanel.Controls.Add(this.blkpictureBox);
-            this.amentiespanel.Controls.Add(this.blklabel);
-            this.amentiespanel.Controls.Add(this.wbpictureBox);
-            this.amentiespanel.Controls.Add(this.ecnlabel);
-            this.amentiespanel.Controls.Add(this.wblabel);
-            this.amentiespanel.Controls.Add(this.ecnpictureBox);
-            this.amentiespanel.Controls.Add(this.busamentitlabel);
-            this.amentiespanel.Location = new System.Drawing.Point(2, 155);
-            this.amentiespanel.Name = "amentiespanel";
-            this.amentiespanel.Size = new System.Drawing.Size(1274, 168);
-            this.amentiespanel.TabIndex = 39;
-            this.amentiespanel.Visible = false;
-            // 
             // plwpictureBox
             // 
             this.plwpictureBox.Image = global::MakeMyTripClone.Properties.Resources.pillow;
@@ -576,16 +654,6 @@
             this.plwpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.plwpictureBox.TabIndex = 13;
             this.plwpictureBox.TabStop = false;
-            // 
-            // plwlabel
-            // 
-            this.plwlabel.AutoSize = true;
-            this.plwlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.plwlabel.Location = new System.Drawing.Point(609, 124);
-            this.plwlabel.Name = "plwlabel";
-            this.plwlabel.Size = new System.Drawing.Size(50, 20);
-            this.plwlabel.TabIndex = 12;
-            this.plwlabel.Text = "Pillow";
             // 
             // cctvpictureBox
             // 
@@ -597,16 +665,6 @@
             this.cctvpictureBox.TabIndex = 13;
             this.cctvpictureBox.TabStop = false;
             // 
-            // cctvlabel
-            // 
-            this.cctvlabel.AutoSize = true;
-            this.cctvlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cctvlabel.Location = new System.Drawing.Point(369, 124);
-            this.cctvlabel.Name = "cctvlabel";
-            this.cctvlabel.Size = new System.Drawing.Size(45, 20);
-            this.cctvlabel.TabIndex = 12;
-            this.cctvlabel.Text = "CCTV";
-            // 
             // snkpictureBox
             // 
             this.snkpictureBox.Image = global::MakeMyTripClone.Properties.Resources.snack;
@@ -616,16 +674,6 @@
             this.snkpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.snkpictureBox.TabIndex = 11;
             this.snkpictureBox.TabStop = false;
-            // 
-            // snklabel
-            // 
-            this.snklabel.AutoSize = true;
-            this.snklabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.snklabel.Location = new System.Drawing.Point(67, 124);
-            this.snklabel.Name = "snklabel";
-            this.snklabel.Size = new System.Drawing.Size(55, 20);
-            this.snklabel.TabIndex = 10;
-            this.snklabel.Text = "Snacks";
             // 
             // rlpictureBox
             // 
@@ -637,16 +685,6 @@
             this.rlpictureBox.TabIndex = 9;
             this.rlpictureBox.TabStop = false;
             // 
-            // rllabel
-            // 
-            this.rllabel.AutoSize = true;
-            this.rllabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rllabel.Location = new System.Drawing.Point(1079, 61);
-            this.rllabel.Name = "rllabel";
-            this.rllabel.Size = new System.Drawing.Size(103, 20);
-            this.rllabel.TabIndex = 8;
-            this.rllabel.Text = "Reading Light";
-            // 
             // cppictureBox
             // 
             this.cppictureBox.Image = global::MakeMyTripClone.Properties.Resources.usb_connector;
@@ -656,16 +694,6 @@
             this.cppictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.cppictureBox.TabIndex = 7;
             this.cppictureBox.TabStop = false;
-            // 
-            // cplabel
-            // 
-            this.cplabel.AutoSize = true;
-            this.cplabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cplabel.Location = new System.Drawing.Point(834, 61);
-            this.cplabel.Name = "cplabel";
-            this.cplabel.Size = new System.Drawing.Size(111, 20);
-            this.cplabel.TabIndex = 6;
-            this.cplabel.Text = "Charging Point";
             // 
             // blkpictureBox
             // 
@@ -677,16 +705,6 @@
             this.blkpictureBox.TabIndex = 5;
             this.blkpictureBox.TabStop = false;
             // 
-            // blklabel
-            // 
-            this.blklabel.AutoSize = true;
-            this.blklabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blklabel.Location = new System.Drawing.Point(609, 61);
-            this.blklabel.Name = "blklabel";
-            this.blklabel.Size = new System.Drawing.Size(66, 20);
-            this.blklabel.TabIndex = 4;
-            this.blklabel.Text = "Blankets";
-            // 
             // wbpictureBox
             // 
             this.wbpictureBox.Image = global::MakeMyTripClone.Properties.Resources.water_bottle;
@@ -696,26 +714,6 @@
             this.wbpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.wbpictureBox.TabIndex = 3;
             this.wbpictureBox.TabStop = false;
-            // 
-            // ecnlabel
-            // 
-            this.ecnlabel.AutoSize = true;
-            this.ecnlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ecnlabel.Location = new System.Drawing.Point(83, 61);
-            this.ecnlabel.Name = "ecnlabel";
-            this.ecnlabel.Size = new System.Drawing.Size(202, 20);
-            this.ecnlabel.TabIndex = 2;
-            this.ecnlabel.Text = "Emergency Contact Number";
-            // 
-            // wblabel
-            // 
-            this.wblabel.AutoSize = true;
-            this.wblabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wblabel.Location = new System.Drawing.Point(369, 61);
-            this.wblabel.Name = "wblabel";
-            this.wblabel.Size = new System.Drawing.Size(93, 20);
-            this.wblabel.TabIndex = 2;
-            this.wblabel.Text = "Water Bottle";
             // 
             // ecnpictureBox
             // 
@@ -727,15 +725,17 @@
             this.ecnpictureBox.TabIndex = 1;
             this.ecnpictureBox.TabStop = false;
             // 
-            // busamentitlabel
+            // rupeespictureBox
             // 
-            this.busamentitlabel.AutoSize = true;
-            this.busamentitlabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.busamentitlabel.Location = new System.Drawing.Point(17, 12);
-            this.busamentitlabel.Name = "busamentitlabel";
-            this.busamentitlabel.Size = new System.Drawing.Size(146, 30);
-            this.busamentitlabel.TabIndex = 0;
-            this.busamentitlabel.Text = "Bus Amenties";
+            this.rupeespictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rupeespictureBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rupeespictureBox.Image = global::MakeMyTripClone.Properties.Resources.rupee;
+            this.rupeespictureBox.Location = new System.Drawing.Point(0, 0);
+            this.rupeespictureBox.Name = "rupeespictureBox";
+            this.rupeespictureBox.Size = new System.Drawing.Size(20, 23);
+            this.rupeespictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rupeespictureBox.TabIndex = 36;
+            this.rupeespictureBox.TabStop = false;
             // 
             // Buses
             // 
@@ -748,7 +748,7 @@
             this.Controls.Add(this.combinationpanel);
             this.Controls.Add(this.toppanel);
             this.Name = "Buses";
-            this.Size = new System.Drawing.Size(1278, 765);
+            this.Size = new System.Drawing.Size(1278, 151);
             this.combinationpanel.ResumeLayout(false);
             this.sltpdpanel.ResumeLayout(false);
             this.sltpdpanel.PerformLayout();
@@ -760,14 +760,13 @@
             this.toppanel.PerformLayout();
             this.ruppanel.ResumeLayout(false);
             this.ruppanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rupeespictureBox)).EndInit();
             this.tabmenupanel.ResumeLayout(false);
             this.photospanel.ResumeLayout(false);
+            this.amentiespanel.ResumeLayout(false);
+            this.amentiespanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bus3pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bus2pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bus1pictureBox)).EndInit();
-            this.amentiespanel.ResumeLayout(false);
-            this.amentiespanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plwpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cctvpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.snkpictureBox)).EndInit();
@@ -776,6 +775,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.blkpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wbpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ecnpictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rupeespictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
