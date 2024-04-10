@@ -123,11 +123,18 @@ namespace MakeMyTripClone
             seatDetailsLabel.Text = string.Join(", ", seatStrings);
             seatDetailsPanel.Height = seatDetailsLabel.Height+10;
             
-            for(int i = 0; i < seatNumbers.Length; i++)
+            foreach(TravellerDetails traveller in travellers)
+            {
+                travellerDetailsLabel.Text += $"{traveller.TravellerName} ({traveller.Gender} , {traveller.TravellerAge})\n";
+            }
+            travellersPanel.Height = travellerDetailsLabel.Height + 10;
+
+            for (int i = 0; i < seatNumbers.Length; i++)
             {
                 SeatDeatils seat = new SeatDeatils();
                 seat.RouteId = bookingDetails.RootId;
                 seat.SeatType = GetSeatType(seatNumbers[i], bookingDetails.Bustype);
+                seat.SeatNumber = seatNumbers[i];
                 seat.IsBooked = true;
                 if (bookingDetails.Bustype.Contains("SL/ST"))
                 {
@@ -154,6 +161,10 @@ namespace MakeMyTripClone
             if (busType.Contains("SL/ST"))
             {
                 if (seatNumber == "1" || seatNumber == "6" || seatNumber == "11" || seatNumber == "16" || seatNumber == "21")
+                {
+                    return "SL";
+                }
+                else if(seatNumber.ToLower().Contains("u"))
                 {
                     return "SL";
                 }

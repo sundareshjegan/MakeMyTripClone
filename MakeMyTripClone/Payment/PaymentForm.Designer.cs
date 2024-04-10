@@ -170,7 +170,7 @@
             this.label58 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
-            this.panel24 = new System.Windows.Forms.Panel();
+            this.travellersPanel = new System.Windows.Forms.Panel();
             this.travellerDetailsLabel = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
             this.label54 = new System.Windows.Forms.Label();
@@ -270,7 +270,7 @@
             this.amountPanel.SuspendLayout();
             this.insurancePanel.SuspendLayout();
             this.busFarePanel.SuspendLayout();
-            this.panel24.SuspendLayout();
+            this.travellersPanel.SuspendLayout();
             this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
             this.seatDetailsPanel.SuspendLayout();
@@ -1762,7 +1762,7 @@
             this.yourBookingPanel.Controls.Add(this.panel6);
             this.yourBookingPanel.Controls.Add(this.customPanel9);
             this.yourBookingPanel.Controls.Add(this.panel25);
-            this.yourBookingPanel.Controls.Add(this.panel24);
+            this.yourBookingPanel.Controls.Add(this.travellersPanel);
             this.yourBookingPanel.Controls.Add(this.panel23);
             this.yourBookingPanel.Controls.Add(this.panel21);
             this.yourBookingPanel.Controls.Add(this.seatDetailsPanel);
@@ -2000,14 +2000,14 @@
             this.panel25.Size = new System.Drawing.Size(367, 26);
             this.panel25.TabIndex = 7;
             // 
-            // panel24
+            // travellersPanel
             // 
-            this.panel24.Controls.Add(this.travellerDetailsLabel);
-            this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel24.Location = new System.Drawing.Point(0, 404);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(367, 35);
-            this.panel24.TabIndex = 8;
+            this.travellersPanel.Controls.Add(this.travellerDetailsLabel);
+            this.travellersPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.travellersPanel.Location = new System.Drawing.Point(0, 404);
+            this.travellersPanel.Name = "travellersPanel";
+            this.travellersPanel.Size = new System.Drawing.Size(367, 35);
+            this.travellersPanel.TabIndex = 8;
             // 
             // travellerDetailsLabel
             // 
@@ -2490,8 +2490,8 @@
             this.insurancePanel.PerformLayout();
             this.busFarePanel.ResumeLayout(false);
             this.busFarePanel.PerformLayout();
-            this.panel24.ResumeLayout(false);
-            this.panel24.PerformLayout();
+            this.travellersPanel.ResumeLayout(false);
+            this.travellersPanel.PerformLayout();
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
@@ -2611,7 +2611,7 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TabPage gPayTab;
         private System.Windows.Forms.Panel yourBookingPanel;
-        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Panel travellersPanel;
         private System.Windows.Forms.Label travellerDetailsLabel;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Label label54;

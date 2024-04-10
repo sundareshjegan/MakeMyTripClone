@@ -23,5 +23,7 @@ namespace MakeMyTripClone
         public static String Price { get; } = "price";
 
         public static String CustomerId { get; } = "c_id";
+
+        public static string SeatNumber { get; } = "seat_number";
     }
 }

@@ -202,10 +202,16 @@ namespace MakeMyTripClone
         public static BooleanMsg ChangeSeatBookingState(SeatDeatils seat)
         {
             int isBooked = seat.IsBooked ? 1 : 0;
-            var res = manager.InsertData(Seat.TableName, 0, seat.RouteId, seat.SeatType, isBooked, seat.Price, seat.CId);
+            var res = manager.InsertData(Seat.TableName, 0, seat.RouteId, seat.SeatType, isBooked, seat.Price, seat.CId,seat.SeatNumber.Trim());
             return res;
         }
 
+        public static bool IsSeatBooked(int routeId, string seatNumber)
+        {
+            var res = manager.FetchData(Seat.TableName, $"{Route.Id}= '{routeId}' and {Seat.SeatNumber}= '{seatNumber}' ", -1, -1, "", Seat.IsBooked).Value;
+            int seatStatus = Convert.ToInt32(res[Seat.IsBooked][0]);
+            return seatStatus == 1;
+        }
 
     }
 }
