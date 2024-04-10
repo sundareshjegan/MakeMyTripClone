@@ -104,7 +104,7 @@ namespace MakeMyTripClone
             }
         }
         
-        private string pickPoint=null,travel=null,dropPoint=null;
+        
         private void CheckBoxeschecks(object sender, EventArgs e)
         {
             foreach (CustomCheckbox c in puvaluepanel.Controls)
@@ -176,8 +176,9 @@ namespace MakeMyTripClone
         private bool isNot;
         private List<Buses> buses = new List<Buses>();
         private List<Buses> filterlist = new List<Buses>();
-       // private List<BusDetails> availableBuses = new List<BusDetails>();
-       // private List<BusDetails> filterBuses = new List<BusDetails>();
+        private string pickPoint = null, travel = null, dropPoint = null;
+        // private List<BusDetails> availableBuses = new List<BusDetails>();
+        // private List<BusDetails> filterBuses = new List<BusDetails>();
 
         private void SrchbuttonClick(object sender, EventArgs e)
         {
