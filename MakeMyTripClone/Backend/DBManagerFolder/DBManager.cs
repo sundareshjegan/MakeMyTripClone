@@ -82,13 +82,14 @@ namespace MakeMyTripClone
             var res = manager.FetchData(Route.TableName, $"{Route.Boarding} = '{boarding}' and {Route.Destination} = '{destination}' and {Route.StartDate} = '{date}'").Value;
 
             List<RouteDetails> list = new List<RouteDetails>();
-            int size = res["r_id"].Count;
+            int size = res[Route.Id].Count;
 
         
             for(int i = 0; i < size; i++)
             {
                 RouteDetails rd = new RouteDetails();
-
+                rd.BusId = Convert.ToInt32(manager.FetchColumn(Bus.TableName, Bus.Id, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0]);
+                rd.RouteId = int.Parse(res[Route.Id][i].ToString());
                 rd.BusName = manager.FetchColumn(Bus.TableName, Bus.Name, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
                 rd.BusType = manager.FetchColumn(Bus.TableName, Bus.Type, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
                 rd.StartTime = res[Route.StartTime][i].ToString();

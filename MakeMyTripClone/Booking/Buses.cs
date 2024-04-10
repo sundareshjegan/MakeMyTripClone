@@ -24,7 +24,7 @@ namespace MakeMyTripClone
         private bool isPhotos;
         private bool isAmenties;
         private Address address;
-        private string pickuplocation, droplocation,name,bustype,duration,starttime,endtime,acnonac,seat;
+        private string pickuplocation, droplocation,bustype,duration,starttime,endtime,acnonac,seat,busname;
 
         public string BusType
         {
@@ -34,7 +34,10 @@ namespace MakeMyTripClone
         {
             get { return seat; }
         }
-
+        public string BusName
+        {
+            get { return busname; }
+        }
 
         public string Duration
         {
@@ -50,14 +53,16 @@ namespace MakeMyTripClone
         {
             get { return endtime; }
         }
-       
 
+        int rid, bid;
         public  void Setdata(int i,string pickup,string drop)
         {
+            rid = BookingPageForm.busesList[i].RouteId;
+            bid = BookingPageForm.busesList[i].BusId;
             pickuplocation = pickup;
             droplocation = drop;
             busnamelabel.Text=BookingPageForm.busesList[i].BusName;
-            name = busnamelabel.Text;
+            busname = busnamelabel.Text;
             busltypeabel.Text = BookingPageForm.busesList[i].BusType;
             string[] s = busltypeabel.Text.Split('-');
             acnonac = s[0];
@@ -151,7 +156,6 @@ namespace MakeMyTripClone
                     dropvalue = controls;
                     string[] s = address.Getdetails(dropvalue);
                     boardingpoint = s;
-                    // MessageBox.Show($"mm : {s[0]},ss : {s[1]}");
                 }
             }
         }
@@ -174,7 +178,6 @@ namespace MakeMyTripClone
                     dropvalue = controls;
                     string[] s = address.Getdetails(dropvalue);
                     droppoint = s;
-                   // MessageBox.Show($"mm : {s[0]},ss : {s[1]}");
                 }
             }
             
@@ -322,6 +325,8 @@ namespace MakeMyTripClone
         {
             if (Convert.ToInt32(totalamtlabel.Text) > 0 && boardingpoint != null && droppoint != null)
             {
+                details.RootId = rid;
+                details.BusId = bid;
                 details.BusName = busnamelabel.Text;
                 details.Bustype = busltypeabel.Text;
                 details.Bookedseatnumber = noofseatlabel.Text.Remove(noofseatlabel.Text.Length-3);

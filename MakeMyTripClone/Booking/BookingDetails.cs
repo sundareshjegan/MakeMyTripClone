@@ -8,6 +8,8 @@ namespace MakeMyTripClone
 {
     public class BookingDetails
     {
+        public int BusId { get; set; }
+        public int RootId { get; set; }
         public string BusName { get; set; }
         public string Bustype { get; set; }
         public string Bookedseatnumber { get; set; }
