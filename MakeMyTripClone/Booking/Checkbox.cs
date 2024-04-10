@@ -21,49 +21,42 @@ namespace MakeMyTripClone.Booking
         {
             checkBoxs.Text =s;
         }
-        private bool bo;
        
         private void CustomCheckboxClick(object sender, EventArgs e)
         {
-            try
+            foreach (CustomCheckbox c in Parent.Controls.OfType<CustomCheckbox>())
             {
-                CheckBox c = sender as CheckBox;
-                if (!bo)
+                if (c != this)
                 {
-                    c.Checked = true;
-                    bo = true;
-                    BackColor = SystemColors.GradientInactiveCaption;
-                }
-                else
-                {
-                    c.Checked = false;
-                    bo = false;
-                    BackColor = Color.White;
+                    c.checkBoxs.Checked = false;
+                    c.BackColor = Color.White;
                 }
             }
-            catch
-            {
-                if (!bo)
-                {
-                    checkBoxs.Checked = true;
-                    bo = true;
-                    BackColor = SystemColors.GradientInactiveCaption;
-                }
-                else
-                {
-                    checkBoxs.Checked = false;
-                    bo = false;
-                    BackColor = Color.White;
-                }
-            }
+
+            checkBoxs.Checked = true;
+            BackColor = SystemColors.GradientInactiveCaption;
+
             checks?.Invoke(this, EventArgs.Empty);
         }
         public void SetCheckedState()
         {
-            BackColor = Color.White;
-            checkBoxs.Checked = false;
+            if (checkBoxs.Checked)
+            {
+                foreach (CustomCheckbox c in Parent.Controls.OfType<CustomCheckbox>())
+                {
+                    if (c != this)
+                    {
+                        c.checkBoxs.Checked = false;
+                        c.BackColor = Color.White;
+                    }
+                }
+            }
+            else
+            {
+                BackColor = Color.White;
+            }
         }
-        
+
 
 
     }
