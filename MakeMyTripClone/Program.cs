@@ -17,7 +17,7 @@ namespace MakeMyTripClone
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CompleteBookingForm());
+            Application.Run(new HomePageForm());
         }
     }
 }
