@@ -567,6 +567,11 @@
   <ItemGroup>
     <None Include="Resources\Seater.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Fillseater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FillSLEEPER.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

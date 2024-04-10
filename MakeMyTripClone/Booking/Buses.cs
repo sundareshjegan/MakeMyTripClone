@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace MakeMyTripClone
 {
@@ -49,9 +50,14 @@ namespace MakeMyTripClone
             get { return starttime; }
         }
 
-        public List<object> Boarding
+        public List<string> Boarding
         {
-            get { return boarding; }
+            get { return  boarding.Select(obj => obj.ToString()).ToList(); ; }
+        }
+
+        public List<string> Droping
+        {
+            get { return destination.Select(obj => obj.ToString()).ToList(); ; }
         }
 
         public string EndTime
@@ -93,10 +99,28 @@ namespace MakeMyTripClone
                 ubpanel.Visible = true;
                 seaterpanel.Visible = false;
                 Sleeper lbs = new Sleeper();
+                foreach(PictureBox seatPb in lbs.Controls)
+                {
+                    string ss = seatPb.Name.Remove(0, 10);
+                    if (DBManager.IsSeatBooked(rid, ss))
+                    {
+                        seatPb.Enabled = false;
+                        seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
+                    }
+                }
                 lbpanel.Controls.Add(lbs);
                 lbs.colours += Lbscolours;
                 Sleeper ubs = new Sleeper();
                 ubpanel.Controls.Add(ubs);
+                foreach (PictureBox seatPb in ubs.Controls)
+                {
+                    string sss = "u"+seatPb.Name.Remove(0, 10);
+                    if (DBManager.IsSeatBooked(rid,sss))
+                    {
+                        seatPb.Enabled = false;
+                        seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
+                    }
+                }
                 ubs.colours += Ubscolours; 
             }
             if (busltypeabel.Text == "AC-SL/ST" || busltypeabel.Text == "NON-AC-SL/ST")
@@ -107,13 +131,31 @@ namespace MakeMyTripClone
                 lbpanel.Visible = true;
                 ubpanel.Visible = true;
                 seaterpanel.Visible = false;
-                Semiseaters lbs = new Semiseaters();
-                //lbs.Tag = "route_id";
+                Semiseaters lbs = new Semiseaters();               
                 lbpanel.Controls.Add(lbs);
+                foreach (PictureBox seatPb in lbs.Controls)
+                {
+                    string ss = seatPb.Name.Remove(0, 10);
+                    if (DBManager.IsSeatBooked(rid, ss))
+                    {
+                        seatPb.Enabled = false;
+                        if(ss=="1" || ss=="6" || ss=="11" || ss=="16" || ss=="21") seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
+                        else seatPb.BackgroundImage = Properties.Resources.bookedSeater;
+                    }
+                }
                 lbs.coloured += Lbscoloured1;
                 lbs.notcoloured += Lbsnotcoloured;
                 Sleeper ubs = new Sleeper();
                 ubpanel.Controls.Add(ubs);
+                foreach (PictureBox seatPb in ubs.Controls)
+                {
+                    string sss = "u" + seatPb.Name.Remove(0, 10);
+                    if (DBManager.IsSeatBooked(rid, sss))
+                    {
+                        seatPb.Enabled = false;
+                        seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
+                    }
+                }
                 ubs.colours += Ubscolourss;
             }
             if (busltypeabel.Text == "AC-ST" || busltypeabel.Text == "NON-AC-ST")
@@ -125,6 +167,15 @@ namespace MakeMyTripClone
                 seaterpanel.Visible = true;
                 Seaterseats seats = new Seaterseats();
                 seaterpanel.Controls.Add(seats);
+                foreach (PictureBox seatPb in seats.Controls)
+                {
+                    string ss = seatPb.Name.Remove(0, 10);
+                    if (DBManager.IsSeatBooked(rid, ss))
+                    {
+                        seatPb.Enabled = false;
+                        seatPb.BackgroundImage = Properties.Resources.bookedSeater;
+                    }
+                }
                 seats.seatscolours += Seatsseatscolours;
             }
             boarding = DBManager.GetBoarding(pickup, drop, date, rid);
@@ -230,10 +281,16 @@ namespace MakeMyTripClone
         {
             if (!e)
             {
-                totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) - Convert.ToInt32(rulabel.Text) + "";
+                totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) - Convert.ToInt32(rulabel.Text) + ""; //
                 s = s + " , ";
-                noofseatlabel.Text = noofseatlabel.Text.Replace(s, "");
+               if(s==noofseatlabel.Text)
+                {
+
+                }
+                noofseatlabel.Text = Regex.Replace(noofseatlabel.Text, @"\b" + s + @"\b", "");
+
             }
+
             else
             {
                 totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) + Convert.ToInt32(rulabel.Text) + "";
@@ -246,8 +303,9 @@ namespace MakeMyTripClone
             {
                 totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) - Convert.ToInt32(rulabel.Text) + "";
                 s = "u" + s + " , ";
-                noofseatlabel.Text = noofseatlabel.Text.Replace(s, "");
+                noofseatlabel.Text = noofseatlabel.Text.Replace(s, ""); 
             }
+
             else
             {
                 totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) + Convert.ToInt32(rulabel.Text) + "";
@@ -279,7 +337,7 @@ namespace MakeMyTripClone
             {
                 totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) - Convert.ToInt32(ruppees[0])+ "";
                 s = s + " , ";
-                noofseatlabel.Text = noofseatlabel.Text.Replace(s, "");
+                noofseatlabel.Text = Regex.Replace(noofseatlabel.Text, @"\b" + s + @"\b", "");
             }
             else
             {

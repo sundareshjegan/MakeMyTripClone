@@ -209,7 +209,11 @@ namespace MakeMyTripClone
         public static bool IsSeatBooked(int routeId, string seatNumber)
         {
             var res = manager.FetchData(Seat.TableName, $"{Route.Id}= '{routeId}' and {Seat.SeatNumber}= '{seatNumber}' ", -1, -1, "", Seat.IsBooked).Value;
-            int seatStatus = Convert.ToInt32(res[Seat.IsBooked][0]);
+            int seatStatus = 0;
+            if (res.Count > 0 && res.ContainsKey(Seat.IsBooked))
+            {
+                seatStatus = (Convert.ToInt32(res[Seat.IsBooked][0]));
+            }
             return seatStatus == 1;
         }
 

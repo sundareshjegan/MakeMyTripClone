@@ -456,8 +456,73 @@ namespace MakeMyTripClone
                     
                 }
             }
-            
-            if(picktime==null)
+            if(pickpoint==null)
+            {
+                foreach (var bus in buses)
+                {
+                    if (isAc != null && seatType != null)
+                    {
+                        if (bus.BusType == isAc && bus.BusType == seatType)
+                        {
+                            bus.Visible = true;
+                        }
+                        else
+                        {
+                            bus.Visible = false;
+                        }
+                    }
+                    else if(isAc != null || seatType != null)
+                    {
+                        if (bus.BusType == isAc || bus.BusType == seatType)
+                        {
+                            bus.Visible = true;
+                        }
+                        else
+                        {
+                            bus.Visible = false;
+                        }
+                    }
+                    else
+                    {
+                        Reset();
+                    }
+
+                }
+            }
+            if (droppoint == null)
+            {
+                foreach (var bus in buses)
+                {
+                    if (isAc != null && seatType != null)
+                    {
+                        if (bus.BusType == isAc && bus.BusType == seatType)
+                        {
+                            bus.Visible = true;
+                        }
+                        else
+                        {
+                            bus.Visible = false;
+                        }
+                    }
+                    else if (isAc != null || seatType != null)
+                    {
+                        if (bus.BusType == isAc || bus.BusType == seatType)
+                        {
+                            bus.Visible = true;
+                        }
+                        else
+                        {
+                            bus.Visible = false;
+                        }
+                    }
+                    else
+                    {
+                        Reset();
+                    }
+
+                }
+            }
+            if (picktime==null)
             {
                 foreach (var bus in buses)
                 {
@@ -565,14 +630,46 @@ namespace MakeMyTripClone
             {
                 foreach (var bus in buses)
                 {
-                    if(bus.Boarding.Contains(pickpoint) && bus.Visible)
+                    int c = 0;
+                    foreach (var point in bus.Boarding)
                     {
-                        bus.Visible = true;
+                        if (point.Contains(pickpoint) && bus.Visible)
+                        {
+                            bus.Visible = true;
+                        }
+                        else
+                        {
+                            c++;
+                        }
                     }
-                    else
+                    if(c==bus.Boarding.Count)
                     {
                         bus.Visible = false;
                     }
+                    
+                }
+            }
+            if(droppoint!=null)
+            {
+                foreach (var bus in buses)
+                {
+                    int c = 0;
+                    foreach (var point in bus.Droping)
+                    {
+                        if (point.Contains(droppoint) && bus.Visible)
+                        {
+                            bus.Visible = true;
+                        }
+                        else
+                        {
+                            c++;
+                        }
+                    }
+                    if (c == bus.Droping.Count)
+                    {
+                        bus.Visible = false;
+                    }
+
                 }
             }
             if(travel!=null)
@@ -642,6 +739,8 @@ namespace MakeMyTripClone
                 dropTime = null;
                 isDrop = false;
                 isPick = false;
+                pickPoint = null;
+                dropPoint = null;
                 travel = null;
                 acpanel.BackColor = white;
                 nonacpanel.BackColor = white;
@@ -664,7 +763,7 @@ namespace MakeMyTripClone
                 clearallbutton.ForeColor = gray;
                 foreach (CustomCheckbox c in puvaluepanel.Controls)
                 {
-                    if (c.BackColor == colour) c.BackColor = white;
+                    if (c.BackColor == colour) c.Colourchange();
                 }
                 foreach (CustomCheckbox c in travelvaluepanel.Controls)
                 {
@@ -672,29 +771,49 @@ namespace MakeMyTripClone
                 }
                 foreach (CustomCheckbox c in dpvaluepanel.Controls)
                 {
-                    if (c.BackColor == colour) c.BackColor = white;
+                    if (c.BackColor == colour) c.Colourchange();
                 }
             }
         }
+
+        private void DpclrbuttonClick(object sender, EventArgs e)
+        {
+
+            dpclrbutton.ForeColor = gray;
+            foreach (CustomCheckbox c in dpvaluepanel.Controls)
+            {
+                if (c.BackColor == colour)
+                {
+                    c.Colourchange();
+                    no--;
+                }
+            }
+            dropPoint = null;
+            FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travel, dropPoint);
+            if (no <= 0) clearallbutton.ForeColor = gray;
+            nobuspanel.Visible = false;
+        }
+
         private void ClearpickuppointbuttonClick(object sender, EventArgs e)
         {
-            nobuspanel.Visible = false;
             clearpickuppointbutton.ForeColor = gray;
             foreach(CustomCheckbox c in puvaluepanel.Controls)
             {
                 if (c.BackColor == colour)
                 {
-                    c.SetCheckedState();
+                    c.Colourchange();
                     no--;
                 }
             }
             pickPoint = null;
+            FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travel, dropPoint);
             if (no <= 0) clearallbutton.ForeColor = gray;
+            nobuspanel.Visible = false;
         }
 
         private void TravelclrbuttonClick(object sender, EventArgs e)
         {
-            nobuspanel.Visible = false;
+            
             travelclrbutton.ForeColor = gray;
             foreach (CustomCheckbox c in travelvaluepanel.Controls)
             {
@@ -707,11 +826,12 @@ namespace MakeMyTripClone
             travel = null;
             FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travel, dropPoint);
             if (no <= 0) clearallbutton.ForeColor = gray;
+            nobuspanel.Visible = false;
         }
 
         private void PutimeclearbuttonClick(object sender, EventArgs e)
         {
-            nobuspanel.Visible = false;
+           
             putimesrpanel.BackColor = white;
             putimeevepanel.BackColor = white;
             putimesspanel.BackColor = white;
@@ -722,11 +842,15 @@ namespace MakeMyTripClone
             FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travel, dropPoint);
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
+            nobuspanel.Visible = false;
         }
+
         
+
+
         private void DdtimeclrbuttonClick(object sender, EventArgs e)
         {
-            nobuspanel.Visible = false;
+          
             ddsrpanel.BackColor = white;
             ddevepanel.BackColor = white;
             ddsspanel.BackColor = white;
@@ -737,6 +861,7 @@ namespace MakeMyTripClone
             FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travel, dropPoint);
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
+            nobuspanel.Visible = false;
         }
 
         private void SeatersleepercheckBoxCheckedChanged(object sender, EventArgs e)
@@ -826,21 +951,7 @@ namespace MakeMyTripClone
             
         }
 
-        private void DpclrbuttonClick(object sender, EventArgs e)
-        {
-            nobuspanel.Visible = false;
-            dpclrbutton.ForeColor = gray;
-            foreach (CustomCheckbox c in dpvaluepanel.Controls)
-            {
-                if (c.BackColor == colour)
-                {
-                    c.SetCheckedState();
-                    no--;
-                }
-            }
-            if (no <= 0) clearallbutton.ForeColor = gray;
-        }
-
+       
         private void ComboBoxTextChanged(object sender, EventArgs e)
         {
             string[] ss = fromcomboBox.Text.Split(',');
