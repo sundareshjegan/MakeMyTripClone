@@ -92,7 +92,7 @@ namespace MakeMyTripClone
             Opacity += 0.1;
         }
 
-        public void SetData(BookingDetails bookingDetails, List<TravellerDetails> travellers)
+        public void SetData(BookingDetails bookingDetails, List<TravellerDetails> travellers, int finalAmount)
         {
             busNameLabel.Text = bookingDetails.BusName;
             busTypeLabel.Text = bookingDetails.Bustype;
@@ -117,6 +117,10 @@ namespace MakeMyTripClone
             dropLocationLabel.Text = bookingDetails.Droppoint[1] + "\n" + bookingDetails.Droppoint[2];
 
             baseFareLabel.Text = bookingDetails.Totalamount.ToString();
+            othersAmountLabel.Text = Math.Abs(finalAmount - bookingDetails.Totalamount).ToString();
+            totalAmountLabel.Text = finalAmount.ToString();
+            totalAmountDueLabel.Text = finalAmount.ToString();
+
 
             string[] seatNumbers = bookingDetails.Bookedseatnumber.Split(',');
             string[] seatStrings = seatNumbers.Select((number, index) => $"Seat {index + 1} - {number}\n").ToArray();

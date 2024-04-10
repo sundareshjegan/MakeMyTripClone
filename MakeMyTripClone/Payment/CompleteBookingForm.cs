@@ -95,7 +95,7 @@ namespace MakeMyTripClone
             emailWarningLabel.Text = valid ? "" :"Invalid Email Id..!";
         }
         #endregion
-        private void OnBaseFareLabelTextChanged(object sender, EventArgs e)
+        private void OnBaseFareAndCouponLabelTextChanged(object sender, EventArgs e)
         {
             totalAmountLabel.Text = int.Parse(baseFareLabel.Text) - int.Parse(myDealAmountLabel.Text) + "";
         }
@@ -103,7 +103,7 @@ namespace MakeMyTripClone
         {
             secureTipCheckPB.Image = secureTipCheckPB.Image == null ? Properties.Resources.validTick : null ;
             insurancePanel.Visible = secureTipCheckPB.Image != null;
-            totalAmountLabel.Text = insurancePanel.Visible ? int.Parse(totalAmountLabel.Text) + 30 + "" : int.Parse(totalAmountLabel.Text) - 30+"";
+            totalAmountLabel.Text = insurancePanel.Visible ? int.Parse(totalAmountLabel.Text) + 15 + "" : int.Parse(totalAmountLabel.Text) - 15+"";
         }
 
         public void SetData(BookingDetails busDetails)
@@ -162,7 +162,7 @@ namespace MakeMyTripClone
             if (IsAllDataEnteredAndValid())
             {
                 PaymentForm paymentForm = new PaymentForm();
-                paymentForm.SetData(busDetails, travellersList);
+                paymentForm.SetData(busDetails, travellersList, int.Parse(totalAmountLabel.Text));
                 paymentForm.ShowDialog();
             }
         }

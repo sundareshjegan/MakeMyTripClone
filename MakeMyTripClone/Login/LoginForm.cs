@@ -335,8 +335,6 @@ namespace MakeMyTripClone
             }
             return true;
         }
-        #endregion
-
-        
+        #endregion 
     }
 }
