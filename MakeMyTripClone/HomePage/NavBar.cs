@@ -197,10 +197,6 @@ namespace MakeMyTripClone
             BusOnClick(this,EventArgs.Empty);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void FromComboBoxTextChange(object sender, EventArgs e)
         {

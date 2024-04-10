@@ -131,7 +131,6 @@
             this.panel1.Size = new System.Drawing.Size(81, 100);
             this.panel1.TabIndex = 0;
             this.panel1.Click += new System.EventHandler(this.FlightOnClick);
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // FlightLabel
             // 
