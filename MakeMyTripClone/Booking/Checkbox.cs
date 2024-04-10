@@ -56,7 +56,11 @@ namespace MakeMyTripClone.Booking
                 BackColor = Color.White;
             }
         }
-
+        public void Colourchange()
+        {
+            checkBoxs.Checked = false;
+            BackColor = Color.White;
+        }
 
 
     }

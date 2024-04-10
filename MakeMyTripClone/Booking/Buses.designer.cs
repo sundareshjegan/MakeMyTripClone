@@ -748,7 +748,7 @@
             this.Controls.Add(this.combinationpanel);
             this.Controls.Add(this.toppanel);
             this.Name = "Buses";
-            this.Size = new System.Drawing.Size(1278, 639);
+            this.Size = new System.Drawing.Size(1278, 152);
             this.combinationpanel.ResumeLayout(false);
             this.sltpdpanel.ResumeLayout(false);
             this.sltpdpanel.PerformLayout();

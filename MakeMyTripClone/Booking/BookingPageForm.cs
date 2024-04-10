@@ -430,12 +430,32 @@ namespace MakeMyTripClone
             {
                 foreach (var bus in buses)
                 {
-                    if (bus.BusType == isAc)
+                    if (isAc != null && seatType != null)
                     {
-                        bus.Visible = true;
+                        if (bus.BusType == isAc && bus.BusType == seatType)
+                        {
+                            bus.Visible = true;
+                        }
+                        else
+                        {
+                            bus.Visible = false;
+                        }
                     }
+                    else
+                    {
+                        if (bus.BusType == isAc || bus.BusType == seatType)
+                        {
+                            bus.Visible = true;
+                        }
+                        else
+                        {
+                            bus.Visible = false;
+                        }
+                    }
+                    
                 }
             }
+            
             if(picktime==null)
             {
                 foreach (var bus in buses)
@@ -594,6 +614,7 @@ namespace MakeMyTripClone
 
         private void Reset()
         {
+            nobuspanel.Visible = false;
             foreach(var bus in buses)
             {
                 bus.Visible = true;
@@ -620,6 +641,7 @@ namespace MakeMyTripClone
                 dropTime = null;
                 isDrop = false;
                 isPick = false;
+                travel = null;
                 acpanel.BackColor = white;
                 nonacpanel.BackColor = white;
                 sleeperpanel.BackColor = white;
@@ -645,7 +667,7 @@ namespace MakeMyTripClone
                 }
                 foreach (CustomCheckbox c in travelvaluepanel.Controls)
                 {
-                    if (c.BackColor == colour) c.BackColor = white;
+                    if (c.BackColor == colour) c.Colourchange();
                 }
                 foreach (CustomCheckbox c in dpvaluepanel.Controls)
                 {
@@ -655,6 +677,7 @@ namespace MakeMyTripClone
         }
         private void ClearpickuppointbuttonClick(object sender, EventArgs e)
         {
+            nobuspanel.Visible = false;
             clearpickuppointbutton.ForeColor = gray;
             foreach(CustomCheckbox c in puvaluepanel.Controls)
             {
@@ -670,22 +693,24 @@ namespace MakeMyTripClone
 
         private void TravelclrbuttonClick(object sender, EventArgs e)
         {
+            nobuspanel.Visible = false;
             travelclrbutton.ForeColor = gray;
             foreach (CustomCheckbox c in travelvaluepanel.Controls)
             {
                 if (c.BackColor == colour)
                 {
-                    c.SetCheckedState();
+                    c.Colourchange();
                     no--;
                 }
             }
             travel = null;
-
+            FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travel, dropPoint);
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
 
         private void PutimeclearbuttonClick(object sender, EventArgs e)
         {
+            nobuspanel.Visible = false;
             putimesrpanel.BackColor = white;
             putimeevepanel.BackColor = white;
             putimesspanel.BackColor = white;
@@ -700,6 +725,7 @@ namespace MakeMyTripClone
         
         private void DdtimeclrbuttonClick(object sender, EventArgs e)
         {
+            nobuspanel.Visible = false;
             ddsrpanel.BackColor = white;
             ddevepanel.BackColor = white;
             ddsspanel.BackColor = white;
@@ -801,6 +827,7 @@ namespace MakeMyTripClone
 
         private void DpclrbuttonClick(object sender, EventArgs e)
         {
+            nobuspanel.Visible = false;
             dpclrbutton.ForeColor = gray;
             foreach (CustomCheckbox c in dpvaluepanel.Controls)
             {
