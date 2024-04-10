@@ -27,8 +27,8 @@ namespace MakeMyTripClone
 
         public static void GetConnection()
         {
-            Connection = new MySqlConnection(connectionString);
-            Connection.Open();
+            //Connection = new MySqlConnection(connectionString);
+            //Connection.Open();
             manager.Connect();
 
         }

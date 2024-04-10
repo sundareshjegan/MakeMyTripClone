@@ -49,6 +49,11 @@ namespace MakeMyTripClone
             get { return starttime; }
         }
 
+        public List<object> Boarding
+        {
+            get { return boarding; }
+        }
+
         public string EndTime
         {
             get { return endtime; }
