@@ -293,6 +293,7 @@
             this.ddngtlabel.Name = "ddngtlabel";
             this.ddngtlabel.Size = new System.Drawing.Size(112, 21);
             this.ddngtlabel.TabIndex = 5;
+            this.ddngtlabel.Tag = "23:00:00 6:00:00";
             this.ddngtlabel.Text = "11PM to 6AM";
             this.ddngtlabel.Click += new System.EventHandler(this.LabelsClick);
             // 
@@ -329,6 +330,7 @@
             this.ddsrlabel.Name = "ddsrlabel";
             this.ddsrlabel.Size = new System.Drawing.Size(113, 21);
             this.ddsrlabel.TabIndex = 5;
+            this.ddsrlabel.Tag = "6:00:00 11:00:00";
             this.ddsrlabel.Text = "6AM to 11AM";
             this.ddsrlabel.Click += new System.EventHandler(this.LabelsClick);
             // 
@@ -366,6 +368,7 @@
             this.ddsslabel.Name = "ddsslabel";
             this.ddsslabel.Size = new System.Drawing.Size(111, 21);
             this.ddsslabel.TabIndex = 5;
+            this.ddsslabel.Tag = "18:00:00 23:00";
             this.ddsslabel.Text = "6PM to 11PM";
             this.ddsslabel.Click += new System.EventHandler(this.LabelsClick);
             // 
@@ -403,6 +406,7 @@
             this.ddevelabel.Name = "ddevelabel";
             this.ddevelabel.Size = new System.Drawing.Size(112, 21);
             this.ddevelabel.TabIndex = 5;
+            this.ddevelabel.Tag = "11:00:00 18:00:00";
             this.ddevelabel.Text = "11AM to 6PM";
             this.ddevelabel.Click += new System.EventHandler(this.LabelsClick);
             // 
@@ -1305,15 +1309,14 @@
             // endofbuslabel
             // 
             this.endofbuslabel.AutoSize = true;
-            this.endofbuslabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endofbuslabel.Location = new System.Drawing.Point(38, 442);
+            this.endofbuslabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endofbuslabel.Location = new System.Drawing.Point(16, 442);
             this.endofbuslabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.endofbuslabel.Name = "endofbuslabel";
-            this.endofbuslabel.Size = new System.Drawing.Size(1293, 50);
+            this.endofbuslabel.Size = new System.Drawing.Size(1475, 74);
             this.endofbuslabel.TabIndex = 1;
-            this.endofbuslabel.Text = "-------------------------------------------------------------------------End of b" +
-    "uses-------------------------------------------------------------------------\r\n\r" +
-    "\n";
+            this.endofbuslabel.Text = "--------------------------------------------------------------End of buses-------" +
+    "-------------------------------------------------\r\n\r\n";
             this.endofbuslabel.Visible = false;
             // 
             // nobuspanel

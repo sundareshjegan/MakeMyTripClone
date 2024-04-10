@@ -70,6 +70,7 @@ namespace MakeMyTripClone
                 b = false;
             }
         }
+        private List<string> travels = new List<string>();
         private void CheckBoxeschecks(object sender, EventArgs e)
         {
             foreach (CustomCheckbox c in puvaluepanel.Controls)
@@ -77,6 +78,7 @@ namespace MakeMyTripClone
                 if (c.BackColor == colour)
                 {
                     clearpickuppointbutton.ForeColor = highglight;
+                    
                 }
             }
             foreach (CustomCheckbox c in travelvaluepanel.Controls)
@@ -84,6 +86,12 @@ namespace MakeMyTripClone
                 if (c.BackColor == colour)
                 {
                     travelclrbutton.ForeColor = highglight;
+                    travels.Add(c.checkBoxs.Text);
+                    Filter(isAc, seatType, pickTime, dropTime, travels);
+                }
+                else
+                {
+                    travels.Remove(c.checkBoxs.Text);
                 }
             }
             foreach (CustomCheckbox c in dpvaluepanel.Controls)
@@ -118,8 +126,8 @@ namespace MakeMyTripClone
         public static List<object> boardingpoints = new List<object>();
         public static List<string> traveloperatorpoints = new List<string>();
         private bool isNUll;
-        private bool isTravel,isPick;
-        private bool isDrop;
+        private bool isTravel,isPick,isDrop;
+        private bool isDrops;
         private bool isADD;
         private bool isNot;
         private List<Buses> buses = new List<Buses>();
@@ -156,11 +164,13 @@ namespace MakeMyTripClone
                     tocomboBox.Items.Add(items);
                 }
             }
-           // departdateTimePicker.MinDate = DateTime.Now;
             boardingpoints = DBManager.GetBoardingPoints(boarding, destination, date);
             droppoints = DBManager.GetDropPoints(boarding, destination, date);
             traveloperatorpoints = DBManager.GetTravel(boarding, destination, date);
             BusButton.BackgroundImage = Resources.busblue;
+           // endofbuslabel.Dock = DockStyle.Bottom;
+          //  endofbuslabel.BringToFront();
+           // adducpanel.Controls.Add(endofbuslabel);
             AddDatas();
         }
 
@@ -175,10 +185,10 @@ namespace MakeMyTripClone
                 bus.Dock = DockStyle.Top;
                 buses.Add(bus);
                 bus.Setdata(i, fromcomboBox.Text, tocomboBox.Text);
-            }
+            }           
             busesfoundlabel.Text = busesList.Count + " Buses found";
         }
-        private string isAc = null,seatType = null,picktime=null;
+        private string isAc = null,seatType = null,pickTime=null,dropTime=null;
         private void PanelsClick(object sender, EventArgs e)
         {
             Panel panel = sender as Panel;
@@ -197,11 +207,16 @@ namespace MakeMyTripClone
                 if (panel.Name == "sleeperpanel" || panel.Name == "seaterpanel") seatType = null;
                 if (panel.Name == "putimesrpanel" || panel.Name == "putimengtpanel" || panel.Name == "putimesspanel" || panel.Name == "putimeevepanel")
                 {
-                    picktime = null;
+                    pickTime = null;
                     isPick = false;
                 }
-                FTrue(isAc, seatType,picktime);
-                Filter(isAc, seatType,picktime);
+                if(panel.Name== "ddsrpanel" || panel.Name== "ddsspanel" || panel.Name== "ddngtpanel" || panel.Name== "ddevepanel")
+                {
+                    dropTime = null;
+                    isDrop = false;
+                }
+                FTrue(isAc, seatType,pickTime,dropTime);
+                Filter(isAc, seatType,pickTime,dropTime,travels);
             }
             else
             {
@@ -211,7 +226,7 @@ namespace MakeMyTripClone
                 {
                     nonacpanel.BackColor = Color.White;
                     isAc = "AC";
-                    FTrue(isAc, seatType, picktime);
+                    FTrue(isAc, seatType, pickTime,dropTime);
                     isAc = "NON";
 
                 }
@@ -219,7 +234,7 @@ namespace MakeMyTripClone
                 {
                     acpanel.BackColor = Color.White;
                     isAc = "NON";
-                    FTrue(isAc, seatType, picktime);
+                    FTrue(isAc, seatType, pickTime,dropTime);
                     isAc = "AC";
 
                 }
@@ -227,14 +242,14 @@ namespace MakeMyTripClone
                 {
                     seaterpanel.BackColor = Color.White;
                     seatType = "SL";
-                    FTrue(isAc, seatType, picktime);
+                    FTrue(isAc, seatType, pickTime,dropTime);
                     seatType = "ST";
                 }
                 else if (panel.Name == "seaterpanel" && sleeperpanel.BackColor == colour)
                 {
                     sleeperpanel.BackColor = Color.White;
                     seatType = "ST";
-                    FTrue(isAc, seatType, picktime);
+                    FTrue(isAc, seatType, pickTime,dropTime);
                     seatType = "SL";
                 }
                 if (panel.Name=="acpanel")
@@ -262,8 +277,8 @@ namespace MakeMyTripClone
                     putimesspanel.BackColor = Color.White;
                     putimengtpanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
-                    picktime = putimesrlabel.Tag+"";
-                    if(isPick) FTrue(isAc, seatType, picktime);
+                    pickTime = putimesrlabel.Tag+"";
+                    if(isPick) FTrue(isAc, seatType, pickTime,dropTime);
                     isPick = true;
                 }
                 else if (panel.Name == "putimeevepanel")
@@ -272,8 +287,8 @@ namespace MakeMyTripClone
                     putimesspanel.BackColor = Color.White;
                     putimengtpanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
-                    picktime = putimeevelabel.Tag + "";
-                    if (isPick) FTrue(isAc, seatType, picktime);
+                    pickTime = putimeevelabel.Tag + "";
+                    if (isPick) FTrue(isAc, seatType, pickTime,dropTime);
                     isPick = true;
                 }
                 else if (panel.Name == "putimesspanel")
@@ -282,8 +297,8 @@ namespace MakeMyTripClone
                     putimeevepanel.BackColor = Color.White;
                     putimengtpanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
-                    picktime = putimesslabel.Tag + "";
-                    if (isPick) FTrue(isAc, seatType, picktime);
+                    pickTime = putimesslabel.Tag + "";
+                    if (isPick) FTrue(isAc, seatType, pickTime,dropTime);
                     isPick = true;
                 }
                 else if (panel.Name == "putimengtpanel")
@@ -292,8 +307,8 @@ namespace MakeMyTripClone
                     putimeevepanel.BackColor = Color.White;
                     putimesspanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
-                    picktime = putimengtlabel.Tag + "";
-                    if (isPick) FTrue(isAc, seatType, picktime);
+                    pickTime = putimengtlabel.Tag + "";
+                    if (isPick) FTrue(isAc, seatType, pickTime,dropTime);
                     isPick = true;
                 }
                 if (panel.Name == "ddsrpanel")
@@ -302,6 +317,9 @@ namespace MakeMyTripClone
                     ddsspanel.BackColor = Color.White;
                     ddngtpanel.BackColor = Color.White;
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
+                    dropTime = ddsrlabel.Tag + "";
+                    if (isDrop) FTrue(isAc, seatType, pickTime,dropTime);
+                    isDrop = true;
                 }
                 else if (panel.Name == "ddevepanel")
                 {
@@ -309,6 +327,9 @@ namespace MakeMyTripClone
                     ddsspanel.BackColor = Color.White;
                     ddngtpanel.BackColor = Color.White;
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
+                    dropTime = ddevelabel.Tag + "";
+                    if (isDrop) FTrue(isAc, seatType, pickTime, dropTime);
+                    isDrop = true;
                 }
                 else if (panel.Name == "ddsspanel")
                 {
@@ -316,6 +337,9 @@ namespace MakeMyTripClone
                     ddsrpanel.BackColor = Color.White;
                     ddngtpanel.BackColor = Color.White;
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
+                    dropTime = ddsslabel.Tag + "";
+                    if (isDrop) FTrue(isAc, seatType, pickTime, dropTime);
+                    isDrop = true;
                 }
                 else if (panel.Name == "ddngtpanel")
                 {
@@ -323,20 +347,21 @@ namespace MakeMyTripClone
                     ddsspanel.BackColor = Color.White;
                     ddsrpanel.BackColor = Color.White;
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
+                    dropTime = ddngtlabel.Tag + "";
+                    if (isDrop) FTrue(isAc, seatType, pickTime, dropTime);
+                    isDrop = true;
                 }
                 panel.BackColor = colour;                
-                Filter(isAc,seatType,picktime);
+                Filter(isAc,seatType,pickTime,dropTime,travels);
             }
         }
 
-        private void ChangeFilter(string isAc, string seatType, string picktime)
-        {
+        
 
-        }
-
-        private void FTrue(string isAc, string seatType,string picktime)
+        private void FTrue(string isAc, string seatType,string picktime,string droptime)
         {
-            if(isAc==null)
+            nobuspanel.Visible = true;
+            if (isAc==null)
             {
                 foreach (var bus in buses)
                 {
@@ -366,23 +391,33 @@ namespace MakeMyTripClone
                     }
                 }
             }
-            if(picktime!=null)
+            else
+            {
+                Reset();
+            }
+            if (droptime == null)
             {
                 foreach (var bus in buses)
                 {
-                    bus.Visible = true;
+                    if (bus.BusType == isAc && bus.SeatType == seatType)
+                    {
+                        bus.Visible = true;
+                    }
                 }
             }
+            else
+            {
+                Reset();
+            }
+            Checkbuses();
         }
 
-        private void Filter(string isAc,string seatType,string Picktime)
+        private void Filter(string isAc,string seatType,string picktime,string droptime,List<string> travel)
         {
+            nobuspanel.Visible = false;
             if (clearallbutton.ForeColor == gray)
             {
-                foreach (var bus in buses)
-                {
-                    bus.Visible = true;
-                }
+                Reset();
             }
             if (isAc!=null )
             {
@@ -412,9 +447,9 @@ namespace MakeMyTripClone
                     }
                 }
             }
-            if(Picktime!=null)
+            if(picktime!=null)
             {
-                string[] time = Picktime.Split(' ');
+                string[] time = picktime.Split(' ');
                 foreach(var bus in buses)
                 {
                     if (Convert.ToDateTime(time[1]) < Convert.ToDateTime(time[0]) && (Convert.ToDateTime(bus.StartTime) >= Convert.ToDateTime(time[0]) || Convert.ToDateTime(bus.StartTime) < Convert.ToDateTime(time[1])) && bus.Visible==true)
@@ -431,8 +466,55 @@ namespace MakeMyTripClone
                     }
                 }
             }
+            if (droptime != null)
+            {
+                string[] time = droptime.Split(' ');
+                foreach (var bus in buses)
+                {
+                    if (Convert.ToDateTime(time[1]) < Convert.ToDateTime(time[0]) && (Convert.ToDateTime(bus.EndTime) >= Convert.ToDateTime(time[0]) || Convert.ToDateTime(bus.EndTime) < Convert.ToDateTime(time[1])) && bus.Visible == true)
+                    {
+                        bus.Visible = true;
+                    }
+                    else if (Convert.ToDateTime(bus.EndTime) >= Convert.ToDateTime(time[0]) && Convert.ToDateTime(bus.EndTime) < Convert.ToDateTime(time[1]) && bus.Visible == true)
+                    {
+                        bus.Visible = true;
+                    }
+                    else
+                    {
+                        bus.Visible = false;
+                    }
+                }
+            }
+            if(travel.Count!=0)
+            {               
+                    foreach(var bus in buses)
+                    {
+                        if(travel.Contains(bus.BusName) && bus.Visible==true )
+                        {
+                            bus.Visible = true;
+                        }
+                        else
+                        {
+                            bus.Visible = false;
+                        }
+                    }
+            }
+            Checkbuses();
         }
 
+        private void Checkbuses()
+        {
+            bool allControlsNotVisible = true;
+            foreach (Control control in adducpanel.Controls)
+            {
+                if (control.Visible)
+                {
+                    allControlsNotVisible = false;
+                    break;
+                }
+            }
+            if (allControlsNotVisible) nobuspanel.Visible = true;
+        }
       
 
         private void LabelsClick(object sender, EventArgs e)
@@ -460,9 +542,15 @@ namespace MakeMyTripClone
         {
             if (clearallbutton.ForeColor == highglight)
             {
+                nobuspanel.Visible = false;
+                isAc = null;
+                seatType = null;
                 Reset();
                 no = 0;
-                picktime = null;
+                pickTime = null;
+                dropTime = null;
+                isDrop = false;
+                isPick = false;
                 acpanel.BackColor = white;
                 nonacpanel.BackColor = white;
                 sleeperpanel.BackColor = white;
@@ -531,8 +619,9 @@ namespace MakeMyTripClone
             putimesspanel.BackColor = white;
             putimengtpanel.BackColor = white;
             putimeclearbutton.ForeColor = gray;
-            picktime = null;
+            pickTime = null;
             isPick = false;
+            FTrue(isAc, seatType, pickTime,dropTime);
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
@@ -544,6 +633,9 @@ namespace MakeMyTripClone
             ddsspanel.BackColor = white;
             ddngtpanel.BackColor = white;
             ddtimeclrbutton.ForeColor = gray;
+            dropTime = null;
+            isDrop = false;
+            FTrue(isAc, seatType, pickTime, dropTime);
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
@@ -559,11 +651,11 @@ namespace MakeMyTripClone
             {
                 seatType = null;
                 no--;
-                FTrue(isAc, seatType,null);
+                FTrue(isAc, seatType, null, null);
             }
             if (no <= 0) clearallbutton.ForeColor = gray;
             else clearallbutton.ForeColor = highglight;
-            Filter(isAc, seatType,picktime);
+            Filter(isAc, seatType,pickTime,dropTime,travels);
         }
 
         private void DropClick(object sender, EventArgs e)
@@ -705,7 +797,7 @@ namespace MakeMyTripClone
                 dpvaluepanel.Visible = false;
                 dppictureBox.Image = Resources.down;
             }
-             Locations(ref isDrop, dpvaluepanel, dppictureBox,droppoints,ref isNUll);
+             Locations(ref isDrops, dpvaluepanel, dppictureBox,droppoints,ref isNUll);
         }
         private void DtimeClick(object sender, EventArgs e)
         {
