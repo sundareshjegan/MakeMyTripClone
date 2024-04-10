@@ -172,10 +172,10 @@ namespace MakeMyTripClone
                 }
             }
         }
-        public static BooleanMsg ChangeSeatBookingState(SeatDeatils seatDetails)
+        public static BooleanMsg ChangeSeatBookingState(SeatDeatils seat)
         {
-            int isBooked = seatDetails.IsBooked ? 1 : 0;
-            var res = manager.InsertData(Seat.TableName, 0, seatDetails.RouteId, seatDetails.SeatType, isBooked, seatDetails.Price, seatDetails.CId);
+            int isBooked = seat.IsBooked ? 1 : 0;
+            var res = manager.InsertData(Seat.TableName, 0, seat.RouteId, seat.SeatType, isBooked, seat.Price, seat.CId);
             return res;
         }
 

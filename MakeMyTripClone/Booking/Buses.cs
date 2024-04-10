@@ -207,13 +207,13 @@ namespace MakeMyTripClone
         {           
             if (!e)
             {
-                totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) - Convert.ToInt32(ruppees[0]) + "";
+                totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) - Convert.ToInt32(rulabel.Text) + "";
                 s = s + " , ";
                 noofseatlabel.Text=noofseatlabel.Text.Replace(s, "");
             }
             else
             {
-                totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) + Convert.ToInt32(ruppees[0]) + "";
+                totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) + Convert.ToInt32(rulabel.Text) + "";
                 noofseatlabel.Text += s+" , ";
             }
         }

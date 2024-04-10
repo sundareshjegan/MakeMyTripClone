@@ -82,10 +82,14 @@ namespace MakeMyTripClone
 
         private void OnPayButtonClicked(object sender, EventArgs e)
         {
-            Opacity /= 5;
+            Opacity -= 0.1;
+            foreach(SeatDeatils seat in seatDetails)
+            {
+                DBManager.ChangeSeatBookingState(seat);
+            }
             SuccessFailureForm success = new SuccessFailureForm("success", "Payment Successful!");
             success.ShowDialog();
-            Opacity *= 5;
+            Opacity += 0.1;
         }
 
         public void SetData(BookingDetails bookingDetails, List<TravellerDetails> travellers)
@@ -125,7 +129,15 @@ namespace MakeMyTripClone
                 seat.RouteId = bookingDetails.RootId;
                 seat.SeatType = GetSeatType(seatNumbers[i], bookingDetails.Bustype);
                 seat.IsBooked = true;
-                //seat.Price = 400;
+                if (bookingDetails.Bustype.Contains("SL/ST"))
+                {
+                    int[] seatPrices = Array.ConvertAll(bookingDetails.seatAmount.Split('/'), int.Parse);
+                    seat.Price = GetSeatType(seatNumbers[i], bookingDetails.Bustype) == "ST" ? seatPrices[0] : seatPrices[1];
+                }
+                else
+                {
+                    seat.Price = int.Parse(bookingDetails.seatAmount);
+                }
                 //seat.CId = DBManager.LoggedInUserID;
                 seatDetails.Add(seat);
             }
