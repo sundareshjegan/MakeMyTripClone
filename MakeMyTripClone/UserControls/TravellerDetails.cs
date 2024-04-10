@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace MakeMyTripClone.UserControls
+namespace MakeMyTripClone
 {
     public partial class TravellerDetails : UserControl
     {

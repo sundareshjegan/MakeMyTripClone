@@ -1,4 +1,4 @@
-﻿namespace MakeMyTripClone.UserControls
+﻿namespace MakeMyTripClone
 {
     partial class TravellerDetails
     {

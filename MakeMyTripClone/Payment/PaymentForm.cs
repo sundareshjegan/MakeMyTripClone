@@ -79,7 +79,7 @@ namespace MakeMyTripClone
             previousPanel = currentPanel;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void OnPayButtonClicked(object sender, EventArgs e)
         {
             Opacity /= 5;
             SuccessFailureForm success = new SuccessFailureForm("success", "Payment Successful!");
@@ -87,11 +87,42 @@ namespace MakeMyTripClone
             Opacity *= 5;
         }
 
+        public void SetData(BookingDetails bookingDetails, List<TravellerDetails> travellers)
+        {
+            busNameLabel.Text = bookingDetails.BusName;
+            busTypeLabel.Text = bookingDetails.Bustype;
+
+            string[] timeAndDate = bookingDetails.Pickuptime.Split(' ');
+            string pickUpTime = timeAndDate[0].Substring(0, 5);
+            string pickUpDate = timeAndDate[1] + " " + timeAndDate[2].Substring(0, 3);
+            sourceTimeLabel.Text = pickUpTime;
+            sourceDateLabel.Text = pickUpDate;
+
+            timeAndDate = bookingDetails.Droptime.Split(' ');
+            string dropTime = timeAndDate[0].Substring(0, 5);
+            string dropDate = timeAndDate[1] + " " + timeAndDate[2].Substring(0, 3);
+            destinationTimeLabel.Text = dropTime;
+            destinationDateLabel.Text = pickUpDate;
+
+            sourceCityLabel.Text = bookingDetails.Pickuplocation;
+            destinationCityLabel.Text = bookingDetails.Droplocation;
+            durationLabel.Text = bookingDetails.Durations;
+
+            pickUpLocationLabel.Text = bookingDetails.Boardingpoint[1] + "\n" + bookingDetails.Boardingpoint[2];
+            dropLocationLabel.Text = bookingDetails.Droppoint[1] + "\n" + bookingDetails.Droppoint[2];
+
+            baseFareLabel.Text = bookingDetails.Totalamount.ToString();
+
+            string[] seatNumbers = bookingDetails.Bookedseatnumber.Split(',');
+            string[] seatStrings = seatNumbers.Select((number, index) => $"Seat {index + 1} - {number}\n").ToArray();
+            seatDetailsLabel.Text = string.Join(", ", seatStrings);
+            seatDetailsPanel.Height = seatDetailsLabel.Height+10;
+        }
         #region Helper Functions
         private void CreateCurves()
         {
             getAdditionalDiscountPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, getAdditionalDiscountPanel.Width, getAdditionalDiscountPanel.Height, 15, 15));
-            rightPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, rightPanel.Width, rightPanel.Height, 15, 15));
+            yourBookingPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, yourBookingPanel.Width, yourBookingPanel.Height, 15, 15));
             //customPanel10.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, customPanel10.Width, customPanel10.Height, 14, 14));
         }
         #endregion

@@ -36,6 +36,7 @@
             this.closePB = new System.Windows.Forms.PictureBox();
             this.overAllPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.travellerEditPB = new System.Windows.Forms.PictureBox();
             this.secureTipPanel = new MakeMyTripClone.UserControls.CustomPanel();
             this.customPanel4 = new MakeMyTripClone.UserControls.CustomPanel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -68,6 +69,7 @@
             this.mobileWarningLabel = new System.Windows.Forms.Label();
             this.seperatorPanel4 = new System.Windows.Forms.Panel();
             this.customPanel5 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.stateWarningLabel = new System.Windows.Forms.Label();
             this.saveBillingCheckBox = new System.Windows.Forms.CheckBox();
             this.label38 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
@@ -102,9 +104,10 @@
             this.sourceCityLabel = new System.Windows.Forms.Label();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.adPB = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.adClosePB = new System.Windows.Forms.PictureBox();
-            this.adPB = new System.Windows.Forms.PictureBox();
+            this.closeAdLabel = new System.Windows.Forms.Label();
             this.customPanel1 = new MakeMyTripClone.UserControls.CustomPanel();
             this.label33 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -143,13 +146,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.closeAdLabel = new System.Windows.Forms.Label();
-            this.stateWarningLabel = new System.Windows.Forms.Label();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closePB)).BeginInit();
             this.overAllPanel.SuspendLayout();
             this.leftPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.travellerEditPB)).BeginInit();
             this.secureTipPanel.SuspendLayout();
             this.customPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -172,9 +174,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.rightPanel.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adPB)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adClosePB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adPB)).BeginInit();
             this.customPanel1.SuspendLayout();
             this.amountPanel.SuspendLayout();
             this.insurancePanel.SuspendLayout();
@@ -194,7 +196,7 @@
             this.CompleteBookingLabel.AutoSize = true;
             this.CompleteBookingLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompleteBookingLabel.ForeColor = System.Drawing.Color.White;
-            this.CompleteBookingLabel.Location = new System.Drawing.Point(334, 14);
+            this.CompleteBookingLabel.Location = new System.Drawing.Point(331, 14);
             this.CompleteBookingLabel.Name = "CompleteBookingLabel";
             this.CompleteBookingLabel.Size = new System.Drawing.Size(286, 32);
             this.CompleteBookingLabel.TabIndex = 1;
@@ -206,7 +208,7 @@
             this.headerDateTimeLabel.AutoSize = true;
             this.headerDateTimeLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerDateTimeLabel.ForeColor = System.Drawing.Color.White;
-            this.headerDateTimeLabel.Location = new System.Drawing.Point(924, 17);
+            this.headerDateTimeLabel.Location = new System.Drawing.Point(920, 17);
             this.headerDateTimeLabel.Name = "headerDateTimeLabel";
             this.headerDateTimeLabel.Size = new System.Drawing.Size(297, 25);
             this.headerDateTimeLabel.TabIndex = 1;
@@ -219,7 +221,7 @@
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.51773F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.48227F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 649F));
-            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
             this.headerPanel.Controls.Add(this.headerDateTimeLabel, 2, 0);
             this.headerPanel.Controls.Add(this.logoPB, 0, 0);
             this.headerPanel.Controls.Add(this.CompleteBookingLabel, 1, 0);
@@ -236,7 +238,7 @@
             // 
             this.logoPB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logoPB.Image = global::MakeMyTripClone.Properties.Resources.logoWhite;
-            this.logoPB.Location = new System.Drawing.Point(35, 7);
+            this.logoPB.Location = new System.Drawing.Point(34, 7);
             this.logoPB.Name = "logoPB";
             this.logoPB.Size = new System.Drawing.Size(136, 45);
             this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -248,7 +250,7 @@
             this.closePB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.closePB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closePB.Image = global::MakeMyTripClone.Properties.Resources.close;
-            this.closePB.Location = new System.Drawing.Point(1450, 17);
+            this.closePB.Location = new System.Drawing.Point(1448, 17);
             this.closePB.Name = "closePB";
             this.closePB.Size = new System.Drawing.Size(25, 25);
             this.closePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -270,6 +272,7 @@
             // leftPanel
             // 
             this.leftPanel.BackColor = System.Drawing.Color.White;
+            this.leftPanel.Controls.Add(this.travellerEditPB);
             this.leftPanel.Controls.Add(this.secureTipPanel);
             this.leftPanel.Controls.Add(this.seperatorPanel5);
             this.leftPanel.Controls.Add(this.contactDetailsPanel);
@@ -286,6 +289,18 @@
             this.leftPanel.Padding = new System.Windows.Forms.Padding(5, 5, 20, 5);
             this.leftPanel.Size = new System.Drawing.Size(776, 876);
             this.leftPanel.TabIndex = 0;
+            // 
+            // travellerEditPB
+            // 
+            this.travellerEditPB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.travellerEditPB.Image = ((System.Drawing.Image)(resources.GetObject("travellerEditPB.Image")));
+            this.travellerEditPB.Location = new System.Drawing.Point(170, 298);
+            this.travellerEditPB.Name = "travellerEditPB";
+            this.travellerEditPB.Size = new System.Drawing.Size(15, 15);
+            this.travellerEditPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.travellerEditPB.TabIndex = 2;
+            this.travellerEditPB.TabStop = false;
+            this.travellerEditPB.Click += new System.EventHandler(this.OnTravellerEditPBClicked);
             // 
             // secureTipPanel
             // 
@@ -647,6 +662,16 @@
             this.customPanel5.Size = new System.Drawing.Size(751, 164);
             this.customPanel5.TabIndex = 6;
             // 
+            // stateWarningLabel
+            // 
+            this.stateWarningLabel.AutoSize = true;
+            this.stateWarningLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stateWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.stateWarningLabel.Location = new System.Drawing.Point(25, 144);
+            this.stateWarningLabel.Name = "stateWarningLabel";
+            this.stateWarningLabel.Size = new System.Drawing.Size(0, 13);
+            this.stateWarningLabel.TabIndex = 6;
+            // 
             // saveBillingCheckBox
             // 
             this.saveBillingCheckBox.AutoSize = true;
@@ -870,7 +895,7 @@
             // 
             this.destinationDateLabel.AutoSize = true;
             this.destinationDateLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.destinationDateLabel.Location = new System.Drawing.Point(552, 112);
+            this.destinationDateLabel.Location = new System.Drawing.Point(556, 110);
             this.destinationDateLabel.Name = "destinationDateLabel";
             this.destinationDateLabel.Size = new System.Drawing.Size(115, 21);
             this.destinationDateLabel.TabIndex = 3;
@@ -987,7 +1012,7 @@
             // 
             this.sourceDateLabel.AutoSize = true;
             this.sourceDateLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sourceDateLabel.Location = new System.Drawing.Point(69, 113);
+            this.sourceDateLabel.Location = new System.Drawing.Point(74, 112);
             this.sourceDateLabel.Name = "sourceDateLabel";
             this.sourceDateLabel.Size = new System.Drawing.Size(119, 21);
             this.sourceDateLabel.TabIndex = 0;
@@ -1062,6 +1087,17 @@
             this.panel3.Size = new System.Drawing.Size(412, 276);
             this.panel3.TabIndex = 7;
             // 
+            // adPB
+            // 
+            this.adPB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.adPB.Image = ((System.Drawing.Image)(resources.GetObject("adPB.Image")));
+            this.adPB.Location = new System.Drawing.Point(50, 74);
+            this.adPB.Name = "adPB";
+            this.adPB.Size = new System.Drawing.Size(312, 182);
+            this.adPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.adPB.TabIndex = 2;
+            this.adPB.TabStop = false;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.adClosePB);
@@ -1084,16 +1120,15 @@
             this.adClosePB.TabStop = false;
             this.adClosePB.Click += new System.EventHandler(this.OnAdClosePBClicked);
             // 
-            // adPB
+            // closeAdLabel
             // 
-            this.adPB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adPB.Image = ((System.Drawing.Image)(resources.GetObject("adPB.Image")));
-            this.adPB.Location = new System.Drawing.Point(50, 74);
-            this.adPB.Name = "adPB";
-            this.adPB.Size = new System.Drawing.Size(312, 182);
-            this.adPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.adPB.TabIndex = 2;
-            this.adPB.TabStop = false;
+            this.closeAdLabel.AutoSize = true;
+            this.closeAdLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeAdLabel.Location = new System.Drawing.Point(219, 1);
+            this.closeAdLabel.Name = "closeAdLabel";
+            this.closeAdLabel.Size = new System.Drawing.Size(68, 20);
+            this.closeAdLabel.TabIndex = 0;
+            this.closeAdLabel.Text = "Close Ad";
             // 
             // customPanel1
             // 
@@ -1531,26 +1566,6 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "My Deal";
             // 
-            // closeAdLabel
-            // 
-            this.closeAdLabel.AutoSize = true;
-            this.closeAdLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeAdLabel.Location = new System.Drawing.Point(219, 1);
-            this.closeAdLabel.Name = "closeAdLabel";
-            this.closeAdLabel.Size = new System.Drawing.Size(68, 20);
-            this.closeAdLabel.TabIndex = 0;
-            this.closeAdLabel.Text = "Close Ad";
-            // 
-            // stateWarningLabel
-            // 
-            this.stateWarningLabel.AutoSize = true;
-            this.stateWarningLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stateWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.stateWarningLabel.Location = new System.Drawing.Point(25, 144);
-            this.stateWarningLabel.Name = "stateWarningLabel";
-            this.stateWarningLabel.Size = new System.Drawing.Size(0, 13);
-            this.stateWarningLabel.TabIndex = 6;
-            // 
             // CompleteBookingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1571,6 +1586,7 @@
             this.overAllPanel.ResumeLayout(false);
             this.leftPanel.ResumeLayout(false);
             this.leftPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.travellerEditPB)).EndInit();
             this.secureTipPanel.ResumeLayout(false);
             this.secureTipPanel.PerformLayout();
             this.customPanel4.ResumeLayout(false);
@@ -1605,10 +1621,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.rightPanel.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.adPB)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adClosePB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adPB)).EndInit();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.amountPanel.ResumeLayout(false);
@@ -1750,5 +1766,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label closeAdLabel;
         private System.Windows.Forms.Label stateWarningLabel;
+        private System.Windows.Forms.PictureBox travellerEditPB;
     }
 }

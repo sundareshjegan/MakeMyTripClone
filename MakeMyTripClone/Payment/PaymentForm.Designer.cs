@@ -135,7 +135,7 @@
             this.amountDisplayPanel = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label36 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
+            this.totalAmountDueLabel = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.headerPanel = new System.Windows.Forms.Panel();
@@ -151,42 +151,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.yourBookingPanel = new System.Windows.Forms.Panel();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.label56 = new System.Windows.Forms.Label();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.label54 = new System.Windows.Forms.Label();
-            this.pictureBox29 = new System.Windows.Forms.PictureBox();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.label55 = new System.Windows.Forms.Label();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.label53 = new System.Windows.Forms.Label();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.GreyLinePanel3 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label49 = new System.Windows.Forms.Label();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.label42 = new System.Windows.Forms.Label();
-            this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.rightPanel = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.label65 = new System.Windows.Forms.Label();
             this.customPanel9 = new MakeMyTripClone.UserControls.CustomPanel();
             this.amountPanel = new System.Windows.Forms.Panel();
@@ -197,7 +162,7 @@
             this.insurancePanel = new System.Windows.Forms.Panel();
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
-            this.insuranceLabel = new System.Windows.Forms.Label();
+            this.othersAmountLabel = new System.Windows.Forms.Label();
             this.busFarePanel = new System.Windows.Forms.Panel();
             this.label73 = new System.Windows.Forms.Label();
             this.label74 = new System.Windows.Forms.Label();
@@ -205,6 +170,41 @@
             this.label58 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.travellerDetailsLabel = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.label54 = new System.Windows.Forms.Label();
+            this.pictureBox29 = new System.Windows.Forms.PictureBox();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.seatDetailsPanel = new System.Windows.Forms.Panel();
+            this.seatDetailsLabel = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.label53 = new System.Windows.Forms.Label();
+            this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.GreyLinePanel3 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.dropLocationLabel = new System.Windows.Forms.Label();
+            this.pickUpLocationLabel = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.busNameLabel = new System.Windows.Forms.Label();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
+            this.sourceTimeLabel = new System.Windows.Forms.Label();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.busTypeLabel = new System.Windows.Forms.Label();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.destinationTimeLabel = new System.Windows.Forms.Label();
+            this.sourceCityLabel = new System.Windows.Forms.Label();
+            this.destinationDateLabel = new System.Windows.Forms.Label();
+            this.durationLabel = new System.Windows.Forms.Label();
+            this.destinationCityLabel = new System.Windows.Forms.Label();
+            this.sourceDateLabel = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
             this.gateWaySelectionPanel.SuspendLayout();
             this.giftCardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -265,10 +265,15 @@
             this.getAdditionalDiscountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.yourBookingPanel.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.customPanel9.SuspendLayout();
+            this.amountPanel.SuspendLayout();
+            this.insurancePanel.SuspendLayout();
+            this.busFarePanel.SuspendLayout();
             this.panel24.SuspendLayout();
             this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
-            this.panel20.SuspendLayout();
+            this.seatDetailsPanel.SuspendLayout();
             this.panel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             this.panel18.SuspendLayout();
@@ -276,11 +281,6 @@
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
-            this.rightPanel.SuspendLayout();
-            this.customPanel9.SuspendLayout();
-            this.amountPanel.SuspendLayout();
-            this.insurancePanel.SuspendLayout();
-            this.busFarePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // gateWaySelectionPanel
@@ -838,7 +838,7 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "VERIFY && PAY";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.OnPayButtonClicked);
             // 
             // customPanel8
             // 
@@ -1560,7 +1560,7 @@
             // panel8
             // 
             this.panel8.Controls.Add(this.label36);
-            this.panel8.Controls.Add(this.label34);
+            this.panel8.Controls.Add(this.totalAmountDueLabel);
             this.panel8.Controls.Add(this.label35);
             this.panel8.Location = new System.Drawing.Point(56, 6);
             this.panel8.Name = "panel8";
@@ -1581,18 +1581,18 @@
             this.label36.TabIndex = 1;
             this.label36.Text = "Due Now";
             // 
-            // label34
+            // totalAmountDueLabel
             // 
-            this.label34.AutoSize = true;
-            this.label34.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label34.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.Black;
-            this.label34.Location = new System.Drawing.Point(39, 10);
-            this.label34.Name = "label34";
-            this.label34.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label34.Size = new System.Drawing.Size(72, 30);
-            this.label34.TabIndex = 1;
-            this.label34.Text = "943.95";
+            this.totalAmountDueLabel.AutoSize = true;
+            this.totalAmountDueLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.totalAmountDueLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalAmountDueLabel.ForeColor = System.Drawing.Color.Black;
+            this.totalAmountDueLabel.Location = new System.Drawing.Point(39, 10);
+            this.totalAmountDueLabel.Name = "totalAmountDueLabel";
+            this.totalAmountDueLabel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.totalAmountDueLabel.Size = new System.Drawing.Size(72, 30);
+            this.totalAmountDueLabel.TabIndex = 1;
+            this.totalAmountDueLabel.Text = "943.95";
             // 
             // label35
             // 
@@ -1626,7 +1626,7 @@
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(1665, 234);
+            this.headerPanel.Size = new System.Drawing.Size(1665, 238);
             this.headerPanel.TabIndex = 0;
             // 
             // panel1
@@ -1759,10 +1759,13 @@
             // yourBookingPanel
             // 
             this.yourBookingPanel.BackColor = System.Drawing.Color.White;
+            this.yourBookingPanel.Controls.Add(this.panel6);
+            this.yourBookingPanel.Controls.Add(this.customPanel9);
+            this.yourBookingPanel.Controls.Add(this.panel25);
             this.yourBookingPanel.Controls.Add(this.panel24);
             this.yourBookingPanel.Controls.Add(this.panel23);
             this.yourBookingPanel.Controls.Add(this.panel21);
-            this.yourBookingPanel.Controls.Add(this.panel20);
+            this.yourBookingPanel.Controls.Add(this.seatDetailsPanel);
             this.yourBookingPanel.Controls.Add(this.panel19);
             this.yourBookingPanel.Controls.Add(this.GreyLinePanel3);
             this.yourBookingPanel.Controls.Add(this.panel18);
@@ -1771,407 +1774,20 @@
             this.yourBookingPanel.Controls.Add(this.panel17);
             this.yourBookingPanel.Controls.Add(this.label40);
             this.yourBookingPanel.Controls.Add(this.label50);
-            this.yourBookingPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.yourBookingPanel.Location = new System.Drawing.Point(0, 0);
+            this.yourBookingPanel.Location = new System.Drawing.Point(1179, 86);
             this.yourBookingPanel.Name = "yourBookingPanel";
-            this.yourBookingPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.yourBookingPanel.Size = new System.Drawing.Size(367, 445);
+            this.yourBookingPanel.Size = new System.Drawing.Size(367, 773);
             this.yourBookingPanel.TabIndex = 5;
             // 
-            // panel24
-            // 
-            this.panel24.Controls.Add(this.label56);
-            this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel24.Location = new System.Drawing.Point(5, 405);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(357, 28);
-            this.panel24.TabIndex = 8;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label56.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.ForeColor = System.Drawing.Color.DimGray;
-            this.label56.Location = new System.Drawing.Point(0, 0);
-            this.label56.Name = "label56";
-            this.label56.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.label56.Size = new System.Drawing.Size(240, 30);
-            this.label56.TabIndex = 1;
-            this.label56.Text = "Sundar ( M, 23)\r\nsundar@mail.com | 8608791886";
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.label54);
-            this.panel23.Controls.Add(this.pictureBox29);
-            this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel23.Location = new System.Drawing.Point(5, 364);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(357, 41);
-            this.panel23.TabIndex = 8;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.ForeColor = System.Drawing.Color.Black;
-            this.label54.Location = new System.Drawing.Point(51, 13);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(81, 17);
-            this.label54.TabIndex = 1;
-            this.label54.Text = "Traveller (s)";
-            // 
-            // pictureBox29
-            // 
-            this.pictureBox29.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox29.Image")));
-            this.pictureBox29.Location = new System.Drawing.Point(22, 11);
-            this.pictureBox29.Name = "pictureBox29";
-            this.pictureBox29.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox29.TabIndex = 5;
-            this.pictureBox29.TabStop = false;
-            // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.Color.Silver;
-            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(5, 363);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(357, 1);
-            this.panel21.TabIndex = 4;
-            // 
-            // panel20
-            // 
-            this.panel20.Controls.Add(this.label55);
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(5, 331);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(357, 32);
-            this.panel20.TabIndex = 8;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label55.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.ForeColor = System.Drawing.Color.DimGray;
-            this.label55.Location = new System.Drawing.Point(0, 0);
-            this.label55.Name = "label55";
-            this.label55.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.label55.Size = new System.Drawing.Size(124, 15);
-            this.label55.TabIndex = 1;
-            this.label55.Text = "Seat 1 - U8";
-            // 
-            // panel19
-            // 
-            this.panel19.Controls.Add(this.label53);
-            this.panel19.Controls.Add(this.pictureBox28);
-            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel19.Location = new System.Drawing.Point(5, 290);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(357, 41);
-            this.panel19.TabIndex = 8;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.ForeColor = System.Drawing.Color.Black;
-            this.label53.Location = new System.Drawing.Point(51, 13);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(40, 17);
-            this.label53.TabIndex = 1;
-            this.label53.Text = "Seats";
-            // 
-            // pictureBox28
-            // 
-            this.pictureBox28.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox28.Image")));
-            this.pictureBox28.Location = new System.Drawing.Point(22, 11);
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox28.TabIndex = 5;
-            this.pictureBox28.TabStop = false;
-            // 
-            // GreyLinePanel3
-            // 
-            this.GreyLinePanel3.BackColor = System.Drawing.Color.Silver;
-            this.GreyLinePanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GreyLinePanel3.Location = new System.Drawing.Point(5, 289);
-            this.GreyLinePanel3.Name = "GreyLinePanel3";
-            this.GreyLinePanel3.Size = new System.Drawing.Size(357, 1);
-            this.GreyLinePanel3.TabIndex = 4;
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.pictureBox27);
-            this.panel18.Controls.Add(this.label52);
-            this.panel18.Controls.Add(this.label38);
-            this.panel18.Controls.Add(this.label51);
-            this.panel18.Controls.Add(this.label39);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel18.Location = new System.Drawing.Point(5, 180);
-            this.panel18.Name = "panel18";
-            this.panel18.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.panel18.Size = new System.Drawing.Size(357, 109);
-            this.panel18.TabIndex = 7;
-            // 
-            // pictureBox27
-            // 
-            this.pictureBox27.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox27.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox27.Image")));
-            this.pictureBox27.Location = new System.Drawing.Point(20, 0);
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.pictureBox27.Size = new System.Drawing.Size(30, 109);
-            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox27.TabIndex = 0;
-            this.pictureBox27.TabStop = false;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.ForeColor = System.Drawing.Color.Black;
-            this.label52.Location = new System.Drawing.Point(56, 64);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(60, 17);
-            this.label52.TabIndex = 1;
-            this.label52.Text = "Drop Off";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.Black;
-            this.label38.Location = new System.Drawing.Point(56, 13);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(53, 17);
-            this.label38.TabIndex = 1;
-            this.label38.Text = "Pick Up";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.ForeColor = System.Drawing.Color.DimGray;
-            this.label51.Location = new System.Drawing.Point(56, 82);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(88, 15);
-            this.label51.TabIndex = 1;
-            this.label51.Text = "Vellore ByePass";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.ForeColor = System.Drawing.Color.DimGray;
-            this.label39.Location = new System.Drawing.Point(56, 31);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(90, 15);
-            this.label39.TabIndex = 1;
-            this.label39.Text = "Saravanampatti";
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.Silver;
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(5, 179);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(357, 1);
-            this.panel12.TabIndex = 4;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.label49);
-            this.panel10.Controls.Add(this.pictureBox26);
-            this.panel10.Controls.Add(this.label41);
-            this.panel10.Controls.Add(this.panel16);
-            this.panel10.Controls.Add(this.label42);
-            this.panel10.Controls.Add(this.pictureBox25);
-            this.panel10.Controls.Add(this.label45);
-            this.panel10.Controls.Add(this.label44);
-            this.panel10.Controls.Add(this.label47);
-            this.panel10.Controls.Add(this.label48);
-            this.panel10.Controls.Add(this.label46);
-            this.panel10.Controls.Add(this.label43);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(5, 41);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(357, 138);
-            this.panel10.TabIndex = 6;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.ForeColor = System.Drawing.Color.Black;
-            this.label49.Location = new System.Drawing.Point(57, 13);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(163, 21);
-            this.label49.TabIndex = 1;
-            this.label49.Text = "SURYA TRANSPORTS";
-            // 
-            // pictureBox26
-            // 
-            this.pictureBox26.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox26.Image")));
-            this.pictureBox26.Location = new System.Drawing.Point(25, 76);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox26.TabIndex = 5;
-            this.pictureBox26.TabStop = false;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.ForeColor = System.Drawing.Color.Black;
-            this.label41.Location = new System.Drawing.Point(56, 87);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(69, 21);
-            this.label41.TabIndex = 1;
-            this.label41.Text = "8:30 PM";
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.Silver;
-            this.panel16.Location = new System.Drawing.Point(154, 110);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(80, 1);
-            this.panel16.TabIndex = 4;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.ForeColor = System.Drawing.Color.Gray;
-            this.label42.Location = new System.Drawing.Point(61, 34);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(100, 15);
-            this.label42.TabIndex = 1;
-            this.label42.Text = "A/C Sleeper (2+1)";
-            // 
-            // pictureBox25
-            // 
-            this.pictureBox25.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox25.Image")));
-            this.pictureBox25.Location = new System.Drawing.Point(21, 14);
-            this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox25.TabIndex = 5;
-            this.pictureBox25.TabStop = false;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.ForeColor = System.Drawing.Color.Black;
-            this.label45.Location = new System.Drawing.Point(266, 90);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(69, 21);
-            this.label45.TabIndex = 1;
-            this.label45.Text = "8:30 PM";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.Color.Gray;
-            this.label44.Location = new System.Drawing.Point(57, 108);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(68, 13);
-            this.label44.TabIndex = 1;
-            this.label44.Text = "Coimbatore";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.Black;
-            this.label47.Location = new System.Drawing.Point(268, 73);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(41, 17);
-            this.label47.TabIndex = 1;
-            this.label47.Text = "5 Apr";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.ForeColor = System.Drawing.Color.Gray;
-            this.label48.Location = new System.Drawing.Point(171, 87);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(53, 17);
-            this.label48.TabIndex = 1;
-            this.label48.Text = "7h 25m";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.Color.Gray;
-            this.label46.Location = new System.Drawing.Point(267, 110);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(68, 13);
-            this.label46.TabIndex = 1;
-            this.label46.Text = "Coimbatore";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.ForeColor = System.Drawing.Color.Black;
-            this.label43.Location = new System.Drawing.Point(60, 71);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(41, 17);
-            this.label43.TabIndex = 1;
-            this.label43.Text = "5 Apr";
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.Silver;
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel17.Location = new System.Drawing.Point(5, 40);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(357, 1);
-            this.panel17.TabIndex = 2;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label40.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.ForeColor = System.Drawing.Color.Black;
-            this.label40.Location = new System.Drawing.Point(5, 5);
-            this.label40.Name = "label40";
-            this.label40.Padding = new System.Windows.Forms.Padding(5);
-            this.label40.Size = new System.Drawing.Size(135, 35);
-            this.label40.TabIndex = 1;
-            this.label40.Text = "Your Booking";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.ForeColor = System.Drawing.Color.Gray;
-            this.label50.Location = new System.Drawing.Point(283, 17);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(68, 17);
-            this.label50.TabIndex = 1;
-            this.label50.Text = "ONE WAY";
-            // 
-            // rightPanel
-            // 
-            this.rightPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rightPanel.Controls.Add(this.label65);
-            this.rightPanel.Controls.Add(this.customPanel9);
-            this.rightPanel.Controls.Add(this.panel25);
-            this.rightPanel.Controls.Add(this.yourBookingPanel);
-            this.rightPanel.Location = new System.Drawing.Point(1179, 86);
-            this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(367, 673);
-            this.rightPanel.TabIndex = 6;
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel6.Controls.Add(this.label65);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 619);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(367, 154);
+            this.panel6.TabIndex = 9;
             // 
             // label65
             // 
@@ -2179,10 +1795,10 @@
             this.label65.Dock = System.Windows.Forms.DockStyle.Top;
             this.label65.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label65.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(155)))), ((int)(((byte)(149)))));
-            this.label65.Location = new System.Drawing.Point(0, 625);
+            this.label65.Location = new System.Drawing.Point(0, 0);
             this.label65.Name = "label65";
-            this.label65.Padding = new System.Windows.Forms.Padding(20, 15, 0, 0);
-            this.label65.Size = new System.Drawing.Size(359, 35);
+            this.label65.Padding = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.label65.Size = new System.Drawing.Size(354, 35);
             this.label65.TabIndex = 3;
             this.label65.Text = "Over 53 million satisfied MakeMyTrip customers.";
             // 
@@ -2198,7 +1814,7 @@
             this.customPanel9.Controls.Add(this.label75);
             this.customPanel9.CornerRadius = 10;
             this.customPanel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.customPanel9.Location = new System.Drawing.Point(0, 471);
+            this.customPanel9.Location = new System.Drawing.Point(0, 465);
             this.customPanel9.Name = "customPanel9";
             this.customPanel9.Padding = new System.Windows.Forms.Padding(5);
             this.customPanel9.Size = new System.Drawing.Size(367, 154);
@@ -2213,7 +1829,7 @@
             this.amountPanel.Location = new System.Drawing.Point(5, 107);
             this.amountPanel.Name = "amountPanel";
             this.amountPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.amountPanel.Size = new System.Drawing.Size(357, 30);
+            this.amountPanel.Size = new System.Drawing.Size(357, 44);
             this.amountPanel.TabIndex = 9;
             // 
             // label67
@@ -2263,7 +1879,7 @@
             // 
             this.insurancePanel.Controls.Add(this.label69);
             this.insurancePanel.Controls.Add(this.label70);
-            this.insurancePanel.Controls.Add(this.insuranceLabel);
+            this.insurancePanel.Controls.Add(this.othersAmountLabel);
             this.insurancePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.insurancePanel.Location = new System.Drawing.Point(5, 76);
             this.insurancePanel.Name = "insurancePanel";
@@ -2294,16 +1910,16 @@
             this.label70.TabIndex = 0;
             this.label70.Text = "₹";
             // 
-            // insuranceLabel
+            // othersAmountLabel
             // 
-            this.insuranceLabel.AutoSize = true;
-            this.insuranceLabel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.insuranceLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insuranceLabel.Location = new System.Drawing.Point(313, 5);
-            this.insuranceLabel.Name = "insuranceLabel";
-            this.insuranceLabel.Size = new System.Drawing.Size(39, 17);
-            this.insuranceLabel.TabIndex = 0;
-            this.insuranceLabel.Text = "44.95";
+            this.othersAmountLabel.AutoSize = true;
+            this.othersAmountLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.othersAmountLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.othersAmountLabel.Location = new System.Drawing.Point(313, 5);
+            this.othersAmountLabel.Name = "othersAmountLabel";
+            this.othersAmountLabel.Size = new System.Drawing.Size(39, 17);
+            this.othersAmountLabel.TabIndex = 0;
+            this.othersAmountLabel.Text = "44.95";
             // 
             // busFarePanel
             // 
@@ -2379,10 +1995,393 @@
             // 
             this.panel25.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel25.Location = new System.Drawing.Point(0, 445);
+            this.panel25.Location = new System.Drawing.Point(0, 439);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(367, 26);
             this.panel25.TabIndex = 7;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.travellerDetailsLabel);
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel24.Location = new System.Drawing.Point(0, 404);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(367, 35);
+            this.panel24.TabIndex = 8;
+            // 
+            // travellerDetailsLabel
+            // 
+            this.travellerDetailsLabel.AutoSize = true;
+            this.travellerDetailsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.travellerDetailsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.travellerDetailsLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.travellerDetailsLabel.Location = new System.Drawing.Point(0, 0);
+            this.travellerDetailsLabel.Name = "travellerDetailsLabel";
+            this.travellerDetailsLabel.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            this.travellerDetailsLabel.Size = new System.Drawing.Size(240, 30);
+            this.travellerDetailsLabel.TabIndex = 1;
+            this.travellerDetailsLabel.Text = "Sundar ( M, 23)\r\nsundar@mail.com | 8608791886";
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.label54);
+            this.panel23.Controls.Add(this.pictureBox29);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel23.Location = new System.Drawing.Point(0, 363);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(367, 41);
+            this.panel23.TabIndex = 8;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.ForeColor = System.Drawing.Color.Black;
+            this.label54.Location = new System.Drawing.Point(51, 13);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(81, 17);
+            this.label54.TabIndex = 1;
+            this.label54.Text = "Traveller (s)";
+            // 
+            // pictureBox29
+            // 
+            this.pictureBox29.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox29.Image")));
+            this.pictureBox29.Location = new System.Drawing.Point(22, 11);
+            this.pictureBox29.Name = "pictureBox29";
+            this.pictureBox29.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox29.TabIndex = 5;
+            this.pictureBox29.TabStop = false;
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.Silver;
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel21.Location = new System.Drawing.Point(0, 362);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(367, 1);
+            this.panel21.TabIndex = 4;
+            // 
+            // seatDetailsPanel
+            // 
+            this.seatDetailsPanel.Controls.Add(this.seatDetailsLabel);
+            this.seatDetailsPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.seatDetailsPanel.Location = new System.Drawing.Point(0, 337);
+            this.seatDetailsPanel.Name = "seatDetailsPanel";
+            this.seatDetailsPanel.Size = new System.Drawing.Size(367, 25);
+            this.seatDetailsPanel.TabIndex = 8;
+            // 
+            // seatDetailsLabel
+            // 
+            this.seatDetailsLabel.AutoSize = true;
+            this.seatDetailsLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.seatDetailsLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.seatDetailsLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.seatDetailsLabel.Location = new System.Drawing.Point(0, 0);
+            this.seatDetailsLabel.Name = "seatDetailsLabel";
+            this.seatDetailsLabel.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            this.seatDetailsLabel.Size = new System.Drawing.Size(124, 15);
+            this.seatDetailsLabel.TabIndex = 1;
+            this.seatDetailsLabel.Text = "Seat 1 - U8";
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.label53);
+            this.panel19.Controls.Add(this.pictureBox28);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel19.Location = new System.Drawing.Point(0, 296);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(367, 41);
+            this.panel19.TabIndex = 8;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.ForeColor = System.Drawing.Color.Black;
+            this.label53.Location = new System.Drawing.Point(51, 13);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(40, 17);
+            this.label53.TabIndex = 1;
+            this.label53.Text = "Seats";
+            // 
+            // pictureBox28
+            // 
+            this.pictureBox28.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox28.Image")));
+            this.pictureBox28.Location = new System.Drawing.Point(22, 11);
+            this.pictureBox28.Name = "pictureBox28";
+            this.pictureBox28.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox28.TabIndex = 5;
+            this.pictureBox28.TabStop = false;
+            // 
+            // GreyLinePanel3
+            // 
+            this.GreyLinePanel3.BackColor = System.Drawing.Color.Silver;
+            this.GreyLinePanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GreyLinePanel3.Location = new System.Drawing.Point(0, 295);
+            this.GreyLinePanel3.Name = "GreyLinePanel3";
+            this.GreyLinePanel3.Size = new System.Drawing.Size(367, 1);
+            this.GreyLinePanel3.TabIndex = 4;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.pictureBox27);
+            this.panel18.Controls.Add(this.label52);
+            this.panel18.Controls.Add(this.label38);
+            this.panel18.Controls.Add(this.dropLocationLabel);
+            this.panel18.Controls.Add(this.pickUpLocationLabel);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel18.Location = new System.Drawing.Point(0, 175);
+            this.panel18.Name = "panel18";
+            this.panel18.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.panel18.Size = new System.Drawing.Size(367, 120);
+            this.panel18.TabIndex = 7;
+            // 
+            // pictureBox27
+            // 
+            this.pictureBox27.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox27.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox27.Image")));
+            this.pictureBox27.Location = new System.Drawing.Point(20, 0);
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.pictureBox27.Size = new System.Drawing.Size(30, 120);
+            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox27.TabIndex = 0;
+            this.pictureBox27.TabStop = false;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.ForeColor = System.Drawing.Color.Black;
+            this.label52.Location = new System.Drawing.Point(56, 67);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(60, 17);
+            this.label52.TabIndex = 1;
+            this.label52.Text = "Drop Off";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.Black;
+            this.label38.Location = new System.Drawing.Point(56, 13);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(53, 17);
+            this.label38.TabIndex = 1;
+            this.label38.Text = "Pick Up";
+            // 
+            // dropLocationLabel
+            // 
+            this.dropLocationLabel.AutoSize = true;
+            this.dropLocationLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dropLocationLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.dropLocationLabel.Location = new System.Drawing.Point(56, 85);
+            this.dropLocationLabel.Name = "dropLocationLabel";
+            this.dropLocationLabel.Size = new System.Drawing.Size(88, 15);
+            this.dropLocationLabel.TabIndex = 1;
+            this.dropLocationLabel.Text = "Vellore ByePass";
+            // 
+            // pickUpLocationLabel
+            // 
+            this.pickUpLocationLabel.AutoSize = true;
+            this.pickUpLocationLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pickUpLocationLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.pickUpLocationLabel.Location = new System.Drawing.Point(56, 31);
+            this.pickUpLocationLabel.Name = "pickUpLocationLabel";
+            this.pickUpLocationLabel.Size = new System.Drawing.Size(90, 15);
+            this.pickUpLocationLabel.TabIndex = 1;
+            this.pickUpLocationLabel.Text = "Saravanampatti";
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Silver;
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel12.Location = new System.Drawing.Point(0, 174);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(367, 1);
+            this.panel12.TabIndex = 4;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.busNameLabel);
+            this.panel10.Controls.Add(this.pictureBox26);
+            this.panel10.Controls.Add(this.sourceTimeLabel);
+            this.panel10.Controls.Add(this.panel16);
+            this.panel10.Controls.Add(this.busTypeLabel);
+            this.panel10.Controls.Add(this.pictureBox25);
+            this.panel10.Controls.Add(this.destinationTimeLabel);
+            this.panel10.Controls.Add(this.sourceCityLabel);
+            this.panel10.Controls.Add(this.destinationDateLabel);
+            this.panel10.Controls.Add(this.durationLabel);
+            this.panel10.Controls.Add(this.destinationCityLabel);
+            this.panel10.Controls.Add(this.sourceDateLabel);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(0, 36);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(367, 138);
+            this.panel10.TabIndex = 6;
+            // 
+            // busNameLabel
+            // 
+            this.busNameLabel.AutoSize = true;
+            this.busNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.busNameLabel.ForeColor = System.Drawing.Color.Black;
+            this.busNameLabel.Location = new System.Drawing.Point(57, 13);
+            this.busNameLabel.Name = "busNameLabel";
+            this.busNameLabel.Size = new System.Drawing.Size(163, 21);
+            this.busNameLabel.TabIndex = 1;
+            this.busNameLabel.Text = "SURYA TRANSPORTS";
+            // 
+            // pictureBox26
+            // 
+            this.pictureBox26.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox26.Image")));
+            this.pictureBox26.Location = new System.Drawing.Point(25, 76);
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox26.TabIndex = 5;
+            this.pictureBox26.TabStop = false;
+            // 
+            // sourceTimeLabel
+            // 
+            this.sourceTimeLabel.AutoSize = true;
+            this.sourceTimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sourceTimeLabel.ForeColor = System.Drawing.Color.Black;
+            this.sourceTimeLabel.Location = new System.Drawing.Point(56, 87);
+            this.sourceTimeLabel.Name = "sourceTimeLabel";
+            this.sourceTimeLabel.Size = new System.Drawing.Size(69, 21);
+            this.sourceTimeLabel.TabIndex = 1;
+            this.sourceTimeLabel.Text = "8:30 PM";
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.Silver;
+            this.panel16.Location = new System.Drawing.Point(154, 110);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(80, 1);
+            this.panel16.TabIndex = 4;
+            // 
+            // busTypeLabel
+            // 
+            this.busTypeLabel.AutoSize = true;
+            this.busTypeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.busTypeLabel.ForeColor = System.Drawing.Color.Gray;
+            this.busTypeLabel.Location = new System.Drawing.Point(61, 34);
+            this.busTypeLabel.Name = "busTypeLabel";
+            this.busTypeLabel.Size = new System.Drawing.Size(100, 15);
+            this.busTypeLabel.TabIndex = 1;
+            this.busTypeLabel.Text = "A/C Sleeper (2+1)";
+            // 
+            // pictureBox25
+            // 
+            this.pictureBox25.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox25.Image")));
+            this.pictureBox25.Location = new System.Drawing.Point(21, 14);
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox25.TabIndex = 5;
+            this.pictureBox25.TabStop = false;
+            // 
+            // destinationTimeLabel
+            // 
+            this.destinationTimeLabel.AutoSize = true;
+            this.destinationTimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.destinationTimeLabel.ForeColor = System.Drawing.Color.Black;
+            this.destinationTimeLabel.Location = new System.Drawing.Point(266, 90);
+            this.destinationTimeLabel.Name = "destinationTimeLabel";
+            this.destinationTimeLabel.Size = new System.Drawing.Size(69, 21);
+            this.destinationTimeLabel.TabIndex = 1;
+            this.destinationTimeLabel.Text = "8:30 PM";
+            // 
+            // sourceCityLabel
+            // 
+            this.sourceCityLabel.AutoSize = true;
+            this.sourceCityLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sourceCityLabel.ForeColor = System.Drawing.Color.Gray;
+            this.sourceCityLabel.Location = new System.Drawing.Point(57, 108);
+            this.sourceCityLabel.Name = "sourceCityLabel";
+            this.sourceCityLabel.Size = new System.Drawing.Size(68, 13);
+            this.sourceCityLabel.TabIndex = 1;
+            this.sourceCityLabel.Text = "Coimbatore";
+            // 
+            // destinationDateLabel
+            // 
+            this.destinationDateLabel.AutoSize = true;
+            this.destinationDateLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.destinationDateLabel.ForeColor = System.Drawing.Color.Black;
+            this.destinationDateLabel.Location = new System.Drawing.Point(268, 73);
+            this.destinationDateLabel.Name = "destinationDateLabel";
+            this.destinationDateLabel.Size = new System.Drawing.Size(41, 17);
+            this.destinationDateLabel.TabIndex = 1;
+            this.destinationDateLabel.Text = "5 Apr";
+            // 
+            // durationLabel
+            // 
+            this.durationLabel.AutoSize = true;
+            this.durationLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.durationLabel.ForeColor = System.Drawing.Color.Gray;
+            this.durationLabel.Location = new System.Drawing.Point(171, 87);
+            this.durationLabel.Name = "durationLabel";
+            this.durationLabel.Size = new System.Drawing.Size(53, 17);
+            this.durationLabel.TabIndex = 1;
+            this.durationLabel.Text = "7h 25m";
+            // 
+            // destinationCityLabel
+            // 
+            this.destinationCityLabel.AutoSize = true;
+            this.destinationCityLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.destinationCityLabel.ForeColor = System.Drawing.Color.Gray;
+            this.destinationCityLabel.Location = new System.Drawing.Point(267, 110);
+            this.destinationCityLabel.Name = "destinationCityLabel";
+            this.destinationCityLabel.Size = new System.Drawing.Size(68, 13);
+            this.destinationCityLabel.TabIndex = 1;
+            this.destinationCityLabel.Text = "Coimbatore";
+            // 
+            // sourceDateLabel
+            // 
+            this.sourceDateLabel.AutoSize = true;
+            this.sourceDateLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sourceDateLabel.ForeColor = System.Drawing.Color.Black;
+            this.sourceDateLabel.Location = new System.Drawing.Point(60, 71);
+            this.sourceDateLabel.Name = "sourceDateLabel";
+            this.sourceDateLabel.Size = new System.Drawing.Size(41, 17);
+            this.sourceDateLabel.TabIndex = 1;
+            this.sourceDateLabel.Text = "5 Apr";
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.Silver;
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(0, 35);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(367, 1);
+            this.panel17.TabIndex = 2;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label40.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.Black;
+            this.label40.Location = new System.Drawing.Point(0, 0);
+            this.label40.Name = "label40";
+            this.label40.Padding = new System.Windows.Forms.Padding(5);
+            this.label40.Size = new System.Drawing.Size(135, 35);
+            this.label40.TabIndex = 1;
+            this.label40.Text = "Your Booking";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.Color.Gray;
+            this.label50.Location = new System.Drawing.Point(278, 12);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(68, 17);
+            this.label50.TabIndex = 1;
+            this.label50.Text = "ONE WAY";
             // 
             // PaymentForm
             // 
@@ -2390,7 +2389,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1665, 871);
-            this.Controls.Add(this.rightPanel);
+            this.Controls.Add(this.yourBookingPanel);
             this.Controls.Add(this.getAdditionalDiscountPanel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.headerPanel);
@@ -2481,13 +2480,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.yourBookingPanel.ResumeLayout(false);
             this.yourBookingPanel.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.customPanel9.ResumeLayout(false);
+            this.customPanel9.PerformLayout();
+            this.amountPanel.ResumeLayout(false);
+            this.amountPanel.PerformLayout();
+            this.insurancePanel.ResumeLayout(false);
+            this.insurancePanel.PerformLayout();
+            this.busFarePanel.ResumeLayout(false);
+            this.busFarePanel.PerformLayout();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
-            this.panel20.ResumeLayout(false);
-            this.panel20.PerformLayout();
+            this.seatDetailsPanel.ResumeLayout(false);
+            this.seatDetailsPanel.PerformLayout();
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
@@ -2498,16 +2507,6 @@
             this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
-            this.rightPanel.ResumeLayout(false);
-            this.rightPanel.PerformLayout();
-            this.customPanel9.ResumeLayout(false);
-            this.customPanel9.PerformLayout();
-            this.amountPanel.ResumeLayout(false);
-            this.amountPanel.PerformLayout();
-            this.insurancePanel.ResumeLayout(false);
-            this.insurancePanel.PerformLayout();
-            this.busFarePanel.ResumeLayout(false);
-            this.busFarePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2607,19 +2606,19 @@
         private System.Windows.Forms.Panel amountDisplayPanel;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label totalAmountDueLabel;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TabPage gPayTab;
         private System.Windows.Forms.Panel yourBookingPanel;
         private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label travellerDetailsLabel;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.PictureBox pictureBox29;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Panel seatDetailsPanel;
+        private System.Windows.Forms.Label seatDetailsLabel;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.PictureBox pictureBox28;
@@ -2628,26 +2627,25 @@
         private System.Windows.Forms.PictureBox pictureBox27;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label dropLocationLabel;
+        private System.Windows.Forms.Label pickUpLocationLabel;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label busNameLabel;
         private System.Windows.Forms.PictureBox pictureBox26;
-        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label sourceTimeLabel;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label busTypeLabel;
         private System.Windows.Forms.PictureBox pictureBox25;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label destinationTimeLabel;
+        private System.Windows.Forms.Label sourceCityLabel;
+        private System.Windows.Forms.Label destinationDateLabel;
+        private System.Windows.Forms.Label durationLabel;
+        private System.Windows.Forms.Label destinationCityLabel;
+        private System.Windows.Forms.Label sourceDateLabel;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Panel rightPanel;
         private System.Windows.Forms.Panel panel25;
         private UserControls.CustomPanel customPanel9;
         private System.Windows.Forms.Label label58;
@@ -2660,7 +2658,7 @@
         private System.Windows.Forms.Panel insurancePanel;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Label insuranceLabel;
+        private System.Windows.Forms.Label othersAmountLabel;
         private System.Windows.Forms.Panel busFarePanel;
         private System.Windows.Forms.Label label73;
         private System.Windows.Forms.Label label74;
@@ -2690,5 +2688,6 @@
         private System.Windows.Forms.TabPage netBankingTab;
         private System.Windows.Forms.PictureBox pictureBox30;
         private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Panel panel6;
     }
 }

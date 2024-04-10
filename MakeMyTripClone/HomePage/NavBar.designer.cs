@@ -125,11 +125,13 @@
             this.panel1.Controls.Add(this.FlightUnderLine);
             this.panel1.Controls.Add(this.FlightButton);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel1.Enabled = false;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(81, 100);
             this.panel1.TabIndex = 0;
             this.panel1.Click += new System.EventHandler(this.FlightOnClick);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // FlightLabel
             // 
@@ -179,6 +181,7 @@
             this.panel2.Controls.Add(this.TrainUnderLine);
             this.panel2.Controls.Add(this.TrainButton);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel2.Enabled = false;
             this.panel2.Location = new System.Drawing.Point(331, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(81, 100);
@@ -283,6 +286,7 @@
             this.panel4.Controls.Add(this.HolidaysUnderLine);
             this.panel4.Controls.Add(this.HolidaysButton);
             this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel4.Enabled = false;
             this.panel4.Location = new System.Drawing.Point(249, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(81, 100);
@@ -335,6 +339,7 @@
             this.panel5.Controls.Add(this.HomeUnderLine);
             this.panel5.Controls.Add(this.HomeButton);
             this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel5.Enabled = false;
             this.panel5.Location = new System.Drawing.Point(167, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(81, 100);
@@ -387,6 +392,7 @@
             this.panel6.Controls.Add(this.HotelUnderLine);
             this.panel6.Controls.Add(this.HotelButton);
             this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel6.Enabled = false;
             this.panel6.Location = new System.Drawing.Point(85, 3);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(81, 100);
@@ -439,6 +445,7 @@
             this.panel7.Controls.Add(this.InsuranceUnderLine);
             this.panel7.Controls.Add(this.InsuranceButton);
             this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel7.Enabled = false;
             this.panel7.Location = new System.Drawing.Point(659, 2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(81, 100);
@@ -491,6 +498,7 @@
             this.panel8.Controls.Add(this.ForexCurrencyUnderLine);
             this.panel8.Controls.Add(this.ForexButton);
             this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel8.Enabled = false;
             this.panel8.Location = new System.Drawing.Point(577, 2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(81, 100);
@@ -543,6 +551,7 @@
             this.panel9.Controls.Add(this.CabUnderLine);
             this.panel9.Controls.Add(this.CabButton);
             this.panel9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel9.Enabled = false;
             this.panel9.Location = new System.Drawing.Point(495, 2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(81, 100);

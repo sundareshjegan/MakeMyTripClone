@@ -56,6 +56,7 @@ namespace MakeMyTripClone
 
         Random random = new Random();
         List<TravellerDetails> travellersList;
+        BookingDetails busDetails;
 
         private void OnClosePBClicked(object sender, EventArgs e)
         {
@@ -65,7 +66,10 @@ namespace MakeMyTripClone
         {
             closeAdLabel.Visible = adPB.Visible = adClosePB.Visible = false;
         }
-
+        private void OnTravellerEditPBClicked(object sender, EventArgs e)
+        {
+            Dispose();
+        }
         #region TextBox Events
         private void OnTextBoxActive(object sender, EventArgs e)
         {
@@ -104,6 +108,7 @@ namespace MakeMyTripClone
 
         public void SetData(BookingDetails busDetails)
         {
+            this.busDetails = busDetails;
             int noOfTravellers = busDetails.Nooftravellers;
             travellersList = new List<TravellerDetails>();
 
@@ -157,6 +162,7 @@ namespace MakeMyTripClone
             if (IsAllDataEnteredAndValid())
             {
                 PaymentForm paymentForm = new PaymentForm();
+                paymentForm.SetData(busDetails, travellersList);
                 paymentForm.ShowDialog();
             }
         }
@@ -193,7 +199,5 @@ namespace MakeMyTripClone
             return true;
         }
         #endregion
-
-        
     }
 }

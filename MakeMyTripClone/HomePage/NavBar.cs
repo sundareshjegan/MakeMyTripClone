@@ -94,7 +94,7 @@ namespace MakeMyTripClone
 
            // dateTimePicker.MinDate = D.Date ;
 
-            toComboBox.Text = "Chennai,Tamil Nadu";
+            toComboBox.Text = "Chennai, Tamil Nadu";
 
             fromcomboBox.Text = "Coimbatore,Tamil Nadu";
 
@@ -195,6 +195,11 @@ namespace MakeMyTripClone
         private void NavBar_Load(object sender, EventArgs e)
         {
             BusOnClick(this,EventArgs.Empty);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void FromComboBoxTextChange(object sender, EventArgs e)
@@ -344,9 +349,6 @@ namespace MakeMyTripClone
             Underline.Visible = true;
 
             ClickedTitle = label.Text;
-
-        
-
         }
 
         private void WhiteColourChange(Label label,Button Button, Image Image,Label Underline)
