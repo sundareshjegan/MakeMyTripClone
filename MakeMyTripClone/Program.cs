@@ -1,5 +1,4 @@
-﻿using MakeMyTripClone.Payment;
-using MakeMyTripClone.HomePage;
+﻿using MakeMyTripClone.HomePage;
 using System;
 using System.Collections.Generic;
 using System.Linq;

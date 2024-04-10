@@ -75,7 +75,17 @@ namespace MakeMyTripClone.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _2arrow {
             get {
-                object obj = ResourceManager.GetObject("2arrow", resourceCulture);
+                object obj = ResourceManager.GetObject("_2arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ackoLogo {
+            get {
+                object obj = ResourceManager.GetObject("ackoLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +133,29 @@ namespace MakeMyTripClone.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baggage {
+            get {
+                object obj = ResourceManager.GetObject("baggage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bed_sheets {
             get {
-                object obj = ResourceManager.GetObject("bed-sheets", resourceCulture);
+                object obj = ResourceManager.GetObject("bed_sheets", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blueGradient {
+            get {
+                object obj = ResourceManager.GetObject("blueGradient", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +253,26 @@ namespace MakeMyTripClone.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap credit_period {
+            get {
+                object obj = ResourceManager.GetObject("credit_period", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap creditCard {
+            get {
+                object obj = ResourceManager.GetObject("creditCard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap discount {
             get {
                 object obj = ResourceManager.GetObject("discount", resourceCulture);
@@ -245,7 +295,7 @@ namespace MakeMyTripClone.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap emergency_call {
             get {
-                object obj = ResourceManager.GetObject("emergency-call", resourceCulture);
+                object obj = ResourceManager.GetObject("emergency_call", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,6 +373,36 @@ namespace MakeMyTripClone.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GiftCard {
+            get {
+                object obj = ResourceManager.GetObject("GiftCard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap googlePay {
+            get {
+                object obj = ResourceManager.GetObject("googlePay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hdfc {
+            get {
+                object obj = ResourceManager.GetObject("hdfc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hidePassword {
             get {
                 object obj = ResourceManager.GetObject("hidePassword", resourceCulture);
@@ -383,6 +463,16 @@ namespace MakeMyTripClone.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Hospitalization {
+            get {
+                object obj = ResourceManager.GetObject("Hospitalization", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hotels {
             get {
                 object obj = ResourceManager.GetObject("hotels", resourceCulture);
@@ -406,6 +496,16 @@ namespace MakeMyTripClone.Properties {
         internal static System.Drawing.Bitmap house {
             get {
                 object obj = ResourceManager.GetObject("house", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icicipaylater {
+            get {
+                object obj = ResourceManager.GetObject("icicipaylater", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -456,6 +556,36 @@ namespace MakeMyTripClone.Properties {
         internal static System.Drawing.Bitmap lamp {
             get {
                 object obj = ResourceManager.GetObject("lamp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lazypay {
+            get {
+                object obj = ResourceManager.GetObject("lazypay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap liveTracking {
+            get {
+                object obj = ResourceManager.GetObject("liveTracking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap liveTracking1 {
+            get {
+                object obj = ResourceManager.GetObject("liveTracking1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -603,6 +733,16 @@ namespace MakeMyTripClone.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap netbanking {
+            get {
+                object obj = ResourceManager.GetObject("netbanking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap no_results {
             get {
                 object obj = ResourceManager.GetObject("no_results", resourceCulture);
@@ -623,9 +763,49 @@ namespace MakeMyTripClone.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap noPaperWork {
+            get {
+                object obj = ResourceManager.GetObject("noPaperWork", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap olamoney {
+            get {
+                object obj = ResourceManager.GetObject("olamoney", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap personalAccident {
+            get {
+                object obj = ResourceManager.GetObject("personalAccident", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pillow {
             get {
                 object obj = ResourceManager.GetObject("pillow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rating {
+            get {
+                object obj = ResourceManager.GetObject("rating", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -655,7 +835,7 @@ namespace MakeMyTripClone.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap security_camera {
             get {
-                object obj = ResourceManager.GetObject("security-camera", resourceCulture);
+                object obj = ResourceManager.GetObject("security_camera", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -666,6 +846,16 @@ namespace MakeMyTripClone.Properties {
         internal static System.Drawing.Bitmap seller {
             get {
                 object obj = ResourceManager.GetObject("seller", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simpl {
+            get {
+                object obj = ResourceManager.GetObject("simpl", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -793,9 +983,19 @@ namespace MakeMyTripClone.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap upi {
+            get {
+                object obj = ResourceManager.GetObject("upi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap usb_connector {
             get {
-                object obj = ResourceManager.GetObject("usb-connector", resourceCulture);
+                object obj = ResourceManager.GetObject("usb_connector", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -835,7 +1035,7 @@ namespace MakeMyTripClone.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap water_bottle {
             get {
-                object obj = ResourceManager.GetObject("water-bottle", resourceCulture);
+                object obj = ResourceManager.GetObject("water_bottle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

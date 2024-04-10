@@ -222,6 +222,10 @@ namespace MakeMyTripClone
                 passwordCompareLabel.Text = "";
             }
         }
+        private void OnEmailTBClicked(object sender, EventArgs e)
+        {
+            submitBtn.Location = new Point(140, 3);
+        }
         #endregion
 
         #region  Helper Functions
@@ -332,5 +336,7 @@ namespace MakeMyTripClone
             return true;
         }
         #endregion
+
+        
     }
 }

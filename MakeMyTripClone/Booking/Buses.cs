@@ -349,6 +349,10 @@ namespace MakeMyTripClone
                 details.Durations = durationlabel.Text;
                 details.Totalamount = Convert.ToInt32(totalamtlabel.Text);
                 details.seatAmount = rulabel.Text;
+
+                CompleteBookingForm completeBooking = new CompleteBookingForm();
+                completeBooking.SetData(details);
+                completeBooking.ShowDialog();
             }
         }
 

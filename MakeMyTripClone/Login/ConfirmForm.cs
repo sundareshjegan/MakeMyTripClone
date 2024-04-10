@@ -190,7 +190,8 @@ namespace MakeMyTripClone
             <body>
                 <div class='container'>
                     <div class='header'>
-                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Makemytrip_logo.svg/800px-Makemytrip_logo.svg.png' alt='Logo'>
+                        <iframe src='https://giphy.com/embed/LNjsnKKe83ZiriWcAs' width='480' height='180' frameBorder='0' class='giphy-embed' allowFullScreen></iframe>
+<a href='https://giphy.com/stickers/mmt-makemytrip-myindia-LNjsnKKe83ZiriWcAs'></a>
                     </div>
                     <div class='content'>
                         <p>Hi " + name + @",</p>

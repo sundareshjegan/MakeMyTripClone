@@ -85,6 +85,7 @@
             this.passwordStrengthPanel = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.imagePanel = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.closePB = new System.Windows.Forms.PictureBox();
             this.carouselPB = new System.Windows.Forms.PictureBox();
             this.inputPanel.SuspendLayout();
@@ -117,6 +118,8 @@
             this.emailTB.Name = "emailTB";
             this.emailTB.Size = new System.Drawing.Size(295, 22);
             this.emailTB.TabIndex = 2;
+            this.emailTB.Click += new System.EventHandler(this.OnEmailTBClicked);
+            this.emailTB.Enter += new System.EventHandler(this.OnEmailTBClicked);
             // 
             // label1
             // 
@@ -152,6 +155,8 @@
             this.passwordTB.Size = new System.Drawing.Size(295, 22);
             this.passwordTB.TabIndex = 4;
             this.passwordTB.UseSystemPasswordChar = true;
+            this.passwordTB.Click += new System.EventHandler(this.OnEmailTBClicked);
+            this.passwordTB.Enter += new System.EventHandler(this.OnEmailTBClicked);
             // 
             // inputPanel
             // 
@@ -252,7 +257,7 @@
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.Size = new System.Drawing.Size(123, 37);
             this.submitBtn.TabIndex = 0;
-            this.submitBtn.Text = "CONTINUE";
+            this.submitBtn.Text = "Login";
             this.submitBtn.UseVisualStyleBackColor = false;
             this.submitBtn.Click += new System.EventHandler(this.OnSubmitBtnClicked);
             this.submitBtn.MouseEnter += new System.EventHandler(this.OnSubmitBtnMouseHover);
@@ -794,6 +799,7 @@
             this.imagePanel.BackColor = System.Drawing.Color.White;
             this.imagePanel.BackgroundImage = global::MakeMyTripClone.Properties.Resources.LoginPageCarousel1;
             this.imagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagePanel.Controls.Add(this.label10);
             this.imagePanel.Controls.Add(this.closePB);
             this.imagePanel.Controls.Add(this.carouselPB);
             this.imagePanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -803,6 +809,19 @@
             this.imagePanel.Padding = new System.Windows.Forms.Padding(5);
             this.imagePanel.Size = new System.Drawing.Size(469, 625);
             this.imagePanel.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(15, 605);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(427, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "By proceeding, you agree to MakeMyTrip\'s  Privacy Policy, User Agreement and T&Cs" +
+    "";
             // 
             // closePB
             // 
@@ -863,6 +882,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regMobileValidPB)).EndInit();
             this.imagePanel.ResumeLayout(false);
+            this.imagePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closePB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carouselPB)).EndInit();
             this.ResumeLayout(false);
@@ -930,6 +950,7 @@
         private System.Windows.Forms.Label resLabel;
         private RippleButton registerBtn;
         private System.Windows.Forms.Label genderWarningLabel;
+        private System.Windows.Forms.Label label10;
         //private RippleButton rippleButton1;
     }
 }

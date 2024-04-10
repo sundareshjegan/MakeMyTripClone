@@ -18,7 +18,7 @@ namespace MakeMyTripClone
             InitializeComponent();
             //List<SeatDeatils> seats = DBManager.GetSeatDetails(Tag);
             //for(int i = 0;i< seats.Count; i++)
-            //{
+           // {
 
             //}
         }

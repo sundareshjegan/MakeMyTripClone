@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MakeMyTripClone.Table
+namespace MakeMyTripClone
 {
     class Seat
     {
+        public static string TableName = "seat";
 
         public static String Id { get; } = "seat_id";
 
@@ -22,5 +23,7 @@ namespace MakeMyTripClone.Table
         public static String Price { get; } = "price";
 
         public static String CustomerId { get; } = "c_id";
+
+        public static string SeatNumber { get; } = "seat_number";
     }
 }
