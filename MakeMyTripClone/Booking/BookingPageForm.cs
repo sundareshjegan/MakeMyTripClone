@@ -225,7 +225,7 @@ namespace MakeMyTripClone
                 adducpanel.Controls.Add(bus);
                 bus.Dock = DockStyle.Top;
                 buses.Add(bus);
-                bus.Setdata(i, fromcomboBox.Text, tocomboBox.Text);
+                bus.Setdata(i, fromcomboBox.Text, tocomboBox.Text, departdateTimePicker.Value.ToString("yyyy-MM-dd"));
             }           
             busesfoundlabel.Text = busesList.Count + " Buses found";
         }

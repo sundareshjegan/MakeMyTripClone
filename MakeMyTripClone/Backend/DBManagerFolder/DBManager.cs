@@ -129,6 +129,33 @@ namespace MakeMyTripClone
 
         }
 
+        public static List<object> GetBoarding(String boarding, String destination, String date,int rootid)
+        {
+
+            var res = manager.FetchColumn(Route.TableName, Route.BoardingPoints, $"{Route.Destination} = '{destination}' and {Route.Boarding} = '{boarding}' and {Route.StartDate} = '{date}' and {Route.Id}='{rootid}'").Value;
+
+            dynamic jsonObject = JsonConvert.DeserializeObject(res[0].ToString());
+
+            // Extracting only values
+            List<object> boardingPoints = new List<object>();
+            ExtractValues(jsonObject, boardingPoints);
+
+
+            return boardingPoints;
+        }
+
+        public static List<object> GetDrop(String boarding, String destination, String date,int rootid)
+        {
+            var res = manager.FetchColumn(Route.TableName, Route.DropPoints, $"{Route.Destination} = '{destination}' and {Route.Boarding} = '{boarding}' and {Route.StartDate} = '{date}' and {Route.Id}='{rootid}'").Value;
+
+
+            dynamic jsonObject = JsonConvert.DeserializeObject(res[0].ToString());
+            List<object> dropPoints = new List<object>();
+            ExtractValues(jsonObject, dropPoints);
+
+            return dropPoints;
+        }
+
 
 
         public static List<object> GetDropPoints(String boarding, String destination, String date)

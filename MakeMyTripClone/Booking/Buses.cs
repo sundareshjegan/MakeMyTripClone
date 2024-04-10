@@ -53,9 +53,10 @@ namespace MakeMyTripClone
         {
             get { return endtime; }
         }
-
+        private List<object> boarding = new List<object>();
+        private List<object> destination = new List<object>();
         int rid, bid;
-        public  void Setdata(int i,string pickup,string drop)
+        public  void Setdata(int i,string pickup,string drop,string date)
         {
             rid = BookingPageForm.busesList[i].RouteId;
             bid = BookingPageForm.busesList[i].BusId;
@@ -121,7 +122,9 @@ namespace MakeMyTripClone
                 seaterpanel.Controls.Add(seats);
                 seats.seatscolours += Seatsseatscolours;
             }
-            foreach(var n in BookingPageForm.droppoints)
+            boarding = DBManager.GetBoarding(pickup, drop, date, rid);
+            destination = DBManager.GetDrop(pickup, drop, date, rid);
+            foreach(var n in destination)
             {
                 address = new Address();
                 string[] ss = n.ToString().Split('&');
@@ -130,7 +133,7 @@ namespace MakeMyTripClone
                 address.Dock = DockStyle.Top;
                 address.drops += Address_drops;
             }
-            foreach(var n in BookingPageForm.boardingpoints)
+            foreach(var n in boarding)
             {
                 address = new Address();
                 string[] ss = n.ToString().Split('&');
