@@ -340,6 +340,7 @@ namespace MakeMyTripClone
                 details.Droppoint = droppoint;
                 details.Durations = durationlabel.Text;
                 details.Totalamount = Convert.ToInt32(totalamtlabel.Text);
+                details.seatAmount = rulabel.Text;
             }
         }
 
