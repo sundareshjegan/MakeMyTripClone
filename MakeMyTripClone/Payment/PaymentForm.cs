@@ -21,6 +21,7 @@ namespace MakeMyTripClone
 
         private Panel previousPanel = null;
         private Panel previousBlueBar = null;
+        private List<SeatDeatils> seatDetails = new List<SeatDeatils>();
 
         #region DLL to Create rounded Regions
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -117,6 +118,17 @@ namespace MakeMyTripClone
             string[] seatStrings = seatNumbers.Select((number, index) => $"Seat {index + 1} - {number}\n").ToArray();
             seatDetailsLabel.Text = string.Join(", ", seatStrings);
             seatDetailsPanel.Height = seatDetailsLabel.Height+10;
+            
+            for(int i = 0; i < seatNumbers.Length; i++)
+            {
+                SeatDeatils seat = new SeatDeatils();
+                seat.RouteId = bookingDetails.RootId;
+                seat.SeatType = GetSeatType(seatNumbers[i], bookingDetails.Bustype);
+                seat.IsBooked = true;
+                //seat.Price = 400;
+                //seat.CId = DBManager.LoggedInUserID;
+                seatDetails.Add(seat);
+            }
         }
         #region Helper Functions
         private void CreateCurves()
@@ -124,6 +136,25 @@ namespace MakeMyTripClone
             getAdditionalDiscountPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, getAdditionalDiscountPanel.Width, getAdditionalDiscountPanel.Height, 15, 15));
             yourBookingPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, yourBookingPanel.Width, yourBookingPanel.Height, 15, 15));
             //customPanel10.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, customPanel10.Width, customPanel10.Height, 14, 14));
+        }
+        private string GetSeatType(string seatNumber,string busType)
+        {
+            if (busType.Contains("SL/ST"))
+            {
+                if (seatNumber == "1" || seatNumber == "6" || seatNumber == "11" || seatNumber == "16" || seatNumber == "21")
+                {
+                    return "SL";
+                }
+                else
+                {
+                    return "ST";
+                }
+            }
+            else if(busType.Contains("SL") && !busType.Contains("SL/"))
+            {
+                return "SL";
+            }
+            return "ST";
         }
         #endregion
     }

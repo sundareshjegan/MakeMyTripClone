@@ -8,6 +8,7 @@ namespace MakeMyTripClone
 {
     class Seat
     {
+        public static string TableName = "seat";
 
         public static String Id { get; } = "seat_id";
 

@@ -13,7 +13,7 @@ namespace MakeMyTripClone
         public int RouteId { get; set; }
         public string SeatType { get; set; }
         public Boolean IsBooked { get; set; }
-        public Boolean IsWindow { get; set; }
+        //public Boolean IsWindow { get; set; }
         public int Price { get; set; }
         public int CId { get; set; }
 

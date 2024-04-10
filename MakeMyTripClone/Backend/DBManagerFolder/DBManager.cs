@@ -172,6 +172,12 @@ namespace MakeMyTripClone
                 }
             }
         }
+        public static BooleanMsg ChangeSeatBookingState(SeatDeatils seatDetails)
+        {
+            int isBooked = seatDetails.IsBooked ? 1 : 0;
+            var res = manager.InsertData(Seat.TableName, 0, seatDetails.RouteId, seatDetails.SeatType, isBooked, seatDetails.Price, seatDetails.CId);
+            return res;
+        }
 
 
     }
