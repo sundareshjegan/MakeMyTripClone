@@ -52,7 +52,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.alreadyHaveAccountLabel = new System.Windows.Forms.Label();
             this.registerBtnPanel = new System.Windows.Forms.Panel();
-            this.registerBtn = new MakeMyTripClone.RippleButton();
             this.regEmailValidPB = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.regMobileValidPB = new System.Windows.Forms.PictureBox();
@@ -88,6 +87,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.closePB = new System.Windows.Forms.PictureBox();
             this.carouselPB = new System.Windows.Forms.PictureBox();
+            this.registerBtn = new MakeMyTripClone.RippleButton();
             this.inputPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.loginTabPage.SuspendLayout();
@@ -427,21 +427,6 @@
             this.registerBtnPanel.Name = "registerBtnPanel";
             this.registerBtnPanel.Size = new System.Drawing.Size(330, 55);
             this.registerBtnPanel.TabIndex = 1;
-            // 
-            // registerBtn
-            // 
-            this.registerBtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.registerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.registerBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.registerBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerBtn.ForeColor = System.Drawing.Color.White;
-            this.registerBtn.Location = new System.Drawing.Point(0, 0);
-            this.registerBtn.Name = "registerBtn";
-            this.registerBtn.Size = new System.Drawing.Size(330, 55);
-            this.registerBtn.TabIndex = 0;
-            this.registerBtn.Text = "REGISTER";
-            this.registerBtn.UseVisualStyleBackColor = false;
-            this.registerBtn.Click += new System.EventHandler(this.OnRegisterBtnClicked);
             // 
             // regEmailValidPB
             // 
@@ -847,6 +832,21 @@
             this.carouselPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.carouselPB.TabIndex = 0;
             this.carouselPB.TabStop = false;
+            // 
+            // registerBtn
+            // 
+            this.registerBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.registerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.registerBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.registerBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerBtn.ForeColor = System.Drawing.Color.White;
+            this.registerBtn.Location = new System.Drawing.Point(0, 0);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(330, 55);
+            this.registerBtn.TabIndex = 0;
+            this.registerBtn.Text = "REGISTER";
+            this.registerBtn.UseVisualStyleBackColor = false;
+            this.registerBtn.Click += new System.EventHandler(this.OnRegisterBtnClicked);
             // 
             // LoginForm
             // 

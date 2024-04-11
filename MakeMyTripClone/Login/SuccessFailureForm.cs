@@ -56,6 +56,7 @@ namespace MakeMyTripClone
             if (currentFrame >= totalFrames)
             {
                 animationTimer.Stop(); // Stop the timer when all frames have been displayed
+                Dispose();
             }
             else
             {

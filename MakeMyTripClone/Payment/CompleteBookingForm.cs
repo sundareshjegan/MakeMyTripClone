@@ -58,6 +58,11 @@ namespace MakeMyTripClone
         List<TravellerDetails> travellersList;
         BookingDetails busDetails;
 
+        #region Click events
+        private void OnCompleteBookingFormLoad(object sender, EventArgs e)
+        {
+            panel10.Visible = loginNowPanel.Visible = !DBManager.IsUserLoggedIn;
+        }
         private void OnClosePBClicked(object sender, EventArgs e)
         {
             Dispose();
@@ -70,6 +75,12 @@ namespace MakeMyTripClone
         {
             Dispose();
         }
+        private void OnloginLabelClick(object sender, EventArgs e)
+        {
+            new LoginForm().ShowDialog();
+        }
+        #endregion
+
         #region TextBox Events
         private void OnTextBoxActive(object sender, EventArgs e)
         {
@@ -95,6 +106,7 @@ namespace MakeMyTripClone
             emailWarningLabel.Text = valid ? "" :"Invalid Email Id..!";
         }
         #endregion
+
         private void OnBaseFareAndCouponLabelTextChanged(object sender, EventArgs e)
         {
             totalAmountLabel.Text = int.Parse(baseFareLabel.Text) - int.Parse(myDealAmountLabel.Text) + "";
@@ -199,5 +211,6 @@ namespace MakeMyTripClone
             return true;
         }
         #endregion
+
     }
 }

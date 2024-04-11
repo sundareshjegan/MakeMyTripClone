@@ -1,4 +1,5 @@
-﻿using MakeMyTripClone;
+﻿using GoLibrary;
+using MakeMyTripClone;
 using MakeMyTripClone.Properties;
 using System;
 using System.Drawing;
@@ -63,6 +64,7 @@ namespace MakeMyTripClone
             viewHideBtn.BackgroundImage = passwordTB.UseSystemPasswordChar ?
                                             Resources.viewPassword : Resources.hidePassword;
         }
+
         private void OnRegPwdViewHideBtnClicked(object sender, EventArgs e)
         {
             regPasswordTB.UseSystemPasswordChar = !regPasswordTB.UseSystemPasswordChar;
@@ -106,6 +108,7 @@ namespace MakeMyTripClone
                 selectedGender = rb.Text.ToUpper()[0];
             }
         }
+
         private void OnSubmitBtnClicked(object sender, EventArgs e)
         {
             if(emailTB.Text != "" && passwordTB.Text != "")
@@ -113,6 +116,10 @@ namespace MakeMyTripClone
                 if (DBManager.Verify(emailTB.Text, passwordTB.Text) == "")
                 {
                     //open busselection Form
+                    DBManager.IsUserLoggedIn = true;
+                    DBManager.SetCurrentUser(emailTB.Text);
+                    new SuccessFailureForm("success", "Login Success").ShowDialog();
+                    Dispose();
                 }
                 resLabel.Text = DBManager.Verify(emailTB.Text, passwordTB.Text);
             }
@@ -140,6 +147,7 @@ namespace MakeMyTripClone
                         Password = regPasswordTB.Text,
                         Gender = selectedGender
                     };
+                    BooleanMsg result = DBManager.AddUser(customer);
                 }
                 Opacity = Opacity * 2;
             }

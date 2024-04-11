@@ -183,8 +183,20 @@
     <Compile Include="UserControls\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UserControls\LogInTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LogInTab.Designer.cs">
+      <DependentUpon>LogInTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\RippleButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\TextBoxU.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TextBoxU.designer.cs">
+      <DependentUpon>TextBoxU.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\TravellerDetails.cs">
       <SubType>UserControl</SubType>
@@ -249,6 +261,12 @@
     </Compile>
     <EmbeddedResource Include="Login\SuccessFailureForm.resx">
       <DependentUpon>SuccessFailureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LogInTab.resx">
+      <DependentUpon>LogInTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TextBoxU.resx">
+      <DependentUpon>TextBoxU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TravellerDetails.resx">
       <DependentUpon>TravellerDetails.cs</DependentUpon>
@@ -572,6 +590,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FillSLEEPER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

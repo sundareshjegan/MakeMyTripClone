@@ -69,6 +69,7 @@ namespace MakeMyTripClone
                 success.ShowDialog();
                 IsVerified = true;
                 Opacity *= 2;
+                Dispose();
             }
             else
             {

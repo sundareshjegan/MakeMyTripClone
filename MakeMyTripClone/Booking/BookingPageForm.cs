@@ -19,7 +19,16 @@ namespace MakeMyTripClone
         public BookingPageForm()
         {
             InitializeComponent();
+            DBManager.OnUserLoggedIn += DBManagerOnUserLoggedIn;
+            if (DBManager.IsUserLoggedIn)
+            {
+                logInTab1.IsLoggedIn = DBManager.IsUserLoggedIn;
+                logInTab1.UserName = DBManager.CurrentUser.Name;
+                logInTab1.UserEmail = DBManager.CurrentUser.Email;
+            }
         }
+
+        #region DLL to create Curves
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
          (
@@ -30,6 +39,9 @@ namespace MakeMyTripClone
              int nWidthEllipse,
              int nHeightEllipse 
          );
+        #endregion
+
+        
 
         private Color colour = SystemColors.GradientInactiveCaption;
         private Color gray = Color.DimGray;
@@ -37,6 +49,16 @@ namespace MakeMyTripClone
         private Color white = Color.White;
         private bool isfalse, isTime, isDtime;
         private int no = 0;
+
+        private void DBManagerOnUserLoggedIn(object sender, bool isLoggedIn)
+        {
+            logInTab1.IsLoggedIn = DBManager.IsUserLoggedIn;
+            if (sender is CustomerDetails currentUser)
+            {
+                logInTab1.UserName = currentUser.Name;
+                logInTab1.UserEmail = currentUser.Email;
+            }
+        }
 
         private void AddLocations(ref bool b, Panel p, PictureBox pict, List<List<object>> li, ref bool bb)
         {
@@ -103,8 +125,7 @@ namespace MakeMyTripClone
                 b = false;
             }
         }
-        
-        
+          
         private void CheckBoxeschecks(object sender, EventArgs e)
         {
             foreach (CustomCheckbox c in puvaluepanel.Controls)
@@ -164,6 +185,7 @@ namespace MakeMyTripClone
                 b = false;
             }
         }
+
         private Buses bus;
         public static List<RouteDetails> busesList = new List<RouteDetails>();
         public static List<object> droppoints = new List<object>();
@@ -185,7 +207,7 @@ namespace MakeMyTripClone
             String[] boarding = fromcomboBox.Text.Split(',');
             String[] destination = tocomboBox.Text.Split(',');
             busesList.Clear();
-            droppoints.Clear();
+            if(droppoints.Count > 0)droppoints.Clear();
             boardingpoints.Clear();
             traveloperatorpoints.Clear();
             adducpanel.Controls.Clear();
@@ -217,13 +239,22 @@ namespace MakeMyTripClone
            // endofbuslabel.Dock = DockStyle.Bottom;
           //  endofbuslabel.BringToFront();
            // adducpanel.Controls.Add(endofbuslabel);
-            AddDatas();
+           if(busesList.Count > 0)
+            {
+                AddDatas();
+                nobuspanel.Visible = false;
+            }
+            else
+            {
+                nobuspanel.Visible = true;
+            }
+            
         }
 
         private void AddDatas()
         {
             srchbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, srchbutton.Width, srchbutton.Height, 30, 30));
-            LoginButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LoginButton.Width, LoginButton.Height, 30, 30));
+            //LoginButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LoginButton.Width, LoginButton.Height, 30, 30));
             for (int i = 0; i < busesList.Count; i++)
             {
                 bus = new Buses();
@@ -910,13 +941,6 @@ namespace MakeMyTripClone
                 bus.Dock = DockStyle.Top;
                 bus.BringToFront();
             }
-        }
-
-        
-        private void LoginButtonClick(object sender, EventArgs e)
-        {
-            LoginForm login = new LoginForm();
-            login.ShowDialog();
         }
 
         private void SwappictureBoxClick(object sender, EventArgs e)
