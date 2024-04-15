@@ -117,7 +117,7 @@
             this.nobuslabel = new System.Windows.Forms.Label();
             this.noresultpictureBox = new System.Windows.Forms.PictureBox();
             this.toppage = new System.Windows.Forms.Panel();
-            this.logInTab1 = new MakeMyTripClone.LogInTab();
+            this.LoginButton = new System.Windows.Forms.Button();
             this.makemytriplogo = new System.Windows.Forms.PictureBox();
             this.imagespanel = new System.Windows.Forms.Panel();
             this.forexpanel = new System.Windows.Forms.Panel();
@@ -1290,9 +1290,9 @@
             this.busesfoundlabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.busesfoundlabel.Location = new System.Drawing.Point(0, 0);
             this.busesfoundlabel.Name = "busesfoundlabel";
-            this.busesfoundlabel.Size = new System.Drawing.Size(191, 32);
+            this.busesfoundlabel.Size = new System.Drawing.Size(177, 32);
             this.busesfoundlabel.TabIndex = 0;
-            this.busesfoundlabel.Text = "98 buses found";
+            this.busesfoundlabel.Text = "0 buses found";
             // 
             // adducpanel
             // 
@@ -1388,7 +1388,7 @@
             // toppage
             // 
             this.toppage.BackColor = System.Drawing.Color.White;
-            this.toppage.Controls.Add(this.logInTab1);
+            this.toppage.Controls.Add(this.LoginButton);
             this.toppage.Controls.Add(this.makemytriplogo);
             this.toppage.Controls.Add(this.imagespanel);
             this.toppage.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1397,16 +1397,21 @@
             this.toppage.Size = new System.Drawing.Size(1831, 73);
             this.toppage.TabIndex = 4;
             // 
-            // logInTab1
+            // LoginButton
             // 
-            this.logInTab1.IsLoggedIn = false;
-            this.logInTab1.Location = new System.Drawing.Point(1530, 5);
-            this.logInTab1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.logInTab1.Name = "logInTab1";
-            this.logInTab1.Size = new System.Drawing.Size(246, 64);
-            this.logInTab1.TabIndex = 21;
-            this.logInTab1.UserEmail = null;
-            this.logInTab1.UserName = null;
+            this.LoginButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoginButton.FlatAppearance.BorderSize = 0;
+            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoginButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginButton.ForeColor = System.Drawing.Color.White;
+            this.LoginButton.Location = new System.Drawing.Point(1610, 12);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(179, 44);
+            this.LoginButton.TabIndex = 20;
+            this.LoginButton.Text = "Login or Create Account";
+            this.LoginButton.UseVisualStyleBackColor = false;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButtonClick);
             // 
             // makemytriplogo
             // 
@@ -2230,6 +2235,7 @@
         private System.Windows.Forms.Button clearalllbutton;
         private System.Windows.Forms.Label endofbuslabel;
         private System.Windows.Forms.Panel toppage;
+        private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.PictureBox makemytriplogo;
         private System.Windows.Forms.Panel imagespanel;
         private System.Windows.Forms.Panel forexpanel;
@@ -2281,7 +2287,6 @@
         private System.Windows.Forms.Label departlabel;
         private System.Windows.Forms.DateTimePicker departdateTimePicker;
         private System.Windows.Forms.Label warningLabel;
-        private LogInTab logInTab1;
     }
 }
 
