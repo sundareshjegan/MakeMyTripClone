@@ -20,12 +20,15 @@ namespace MakeMyTripClone
             
         }
 
-        public string[] ruppees;
         private Color colour = SystemColors.GradientInactiveCaption, white = Color.White, highlight = SystemColors.Highlight;
-        private bool isPhotos;
-        private bool isAmenties;
-        private Address address;
+        private bool isPhotos, isAmenties;
         private string pickuplocation, droplocation,bustype,duration,starttime,endtime,acnonac,seat,busname;
+        private List<object> boarding = new List<object>();
+        private List<object> destination = new List<object>();
+        private int rid, bid;
+        private Address address,prev = null, dropvalue = null, prev2 = null;
+        private string[] boardingpoint, droppoint, ruppees;
+        private BookingDetails details = new BookingDetails();
 
         public string BusType
         {
@@ -64,9 +67,7 @@ namespace MakeMyTripClone
         {
             get { return endtime; }
         }
-        private List<object> boarding = new List<object>();
-        private List<object> destination = new List<object>();
-        int rid, bid;
+
         public  void Setdata(int i,string pickup,string drop,string date)
         {
             rid = BookingPageForm.busesList[i].RouteId;
@@ -187,7 +188,7 @@ namespace MakeMyTripClone
                 address.AddAddress(ss[0],ss[1], ss[2]);
                 droppointpanel.Controls.Add(address);
                 address.Dock = DockStyle.Top;
-                address.drops += Address_drops;
+                address.drops += Addressdrops;
             }
             foreach(var n in boarding)
             {
@@ -196,11 +197,11 @@ namespace MakeMyTripClone
                 address.AddAddress(ss[0], ss[1], ss[2]);
                 pickuppointpanel.Controls.Add(address);
                 address.Dock = DockStyle.Top;
-                address.drops2 += Address_drops2; 
+                address.drops2 += Addressdropss; 
             }
         }
 
-        private void Address_drops2(object sender, EventArgs e)
+        private void Addressdropss(object sender, EventArgs e)
         {
             if (prev2 != null)
             {
@@ -219,9 +220,7 @@ namespace MakeMyTripClone
             }
         }
 
-        private Address prev = null,dropvalue=null,prev2=null;
-        private string[] boardingpoint, droppoint;
-        private void Address_drops(object sender, EventArgs e)
+        private void Addressdrops(object sender, EventArgs e)
         {
             
             if (prev != null)
@@ -277,18 +276,26 @@ namespace MakeMyTripClone
             }
         }
 
+        public void Srch()
+        {
+            ssbutton.Text = "Select seats";
+            ssbutton.BackColor = highlight;
+            ssbutton.ForeColor = white;
+            Height = 200;
+            toppanel.BackColor = white;
+        }
+
         private void Lbscolours(bool e,string s)
         {
             if (!e)
             {
-                totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) - Convert.ToInt32(rulabel.Text) + ""; //
-                s = s + " , ";
+               totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) - Convert.ToInt32(rulabel.Text) + ""; //
+               s = s + " , ";
                if(s==noofseatlabel.Text)
-                {
+               {
 
-                }
-                noofseatlabel.Text = Regex.Replace(noofseatlabel.Text, @"\b" + s + @"\b", "");
-
+               }
+               noofseatlabel.Text = Regex.Replace(noofseatlabel.Text, @"\b" + s + @"\b", "");
             }
 
             else
@@ -386,7 +393,7 @@ namespace MakeMyTripClone
                 Height = 200;
             }
         }
-        private BookingDetails details = new BookingDetails();
+
         private void ContinuebutClick(object sender, EventArgs e)
         {
             if (Convert.ToInt32(totalamtlabel.Text) > 0 && boardingpoint != null && droppoint != null)
@@ -407,7 +414,6 @@ namespace MakeMyTripClone
                 details.Durations = durationlabel.Text;
                 details.Totalamount = Convert.ToInt32(totalamtlabel.Text);
                 details.seatAmount = rulabel.Text;
-
                 CompleteBookingForm completeBooking = new CompleteBookingForm();
                 completeBooking.SetData(details);
                 completeBooking.ShowDialog();
@@ -442,7 +448,7 @@ namespace MakeMyTripClone
         }
 
         private void SelectClick(object sender, EventArgs e)
-        {
+        { 
             if(ssbutton.Text== "Select seats")
             {
                 ssbutton.Text = "Hide seats";

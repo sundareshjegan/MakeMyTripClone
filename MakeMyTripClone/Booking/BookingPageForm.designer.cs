@@ -33,38 +33,51 @@
             this.ddtimevaluepanel = new System.Windows.Forms.Panel();
             this.ddngtpanel = new System.Windows.Forms.Panel();
             this.ddngtlabel = new System.Windows.Forms.Label();
+            this.ddngtpictureBox = new System.Windows.Forms.PictureBox();
             this.ddsrpanel = new System.Windows.Forms.Panel();
             this.ddsrlabel = new System.Windows.Forms.Label();
+            this.ddsrpictureBox = new System.Windows.Forms.PictureBox();
             this.ddsspanel = new System.Windows.Forms.Panel();
             this.ddsslabel = new System.Windows.Forms.Label();
+            this.ddsspictureBox = new System.Windows.Forms.PictureBox();
             this.ddevepanel = new System.Windows.Forms.Panel();
             this.ddevelabel = new System.Windows.Forms.Label();
+            this.ddevepictureBox = new System.Windows.Forms.PictureBox();
             this.ddtimepanel = new System.Windows.Forms.Panel();
+            this.ddtimepictureBox = new System.Windows.Forms.PictureBox();
             this.ddtimelabel = new System.Windows.Forms.Label();
             this.ddtimeclrbutton = new System.Windows.Forms.Button();
             this.dpvaluepanel = new System.Windows.Forms.Panel();
             this.dppanel = new System.Windows.Forms.Panel();
+            this.dppictureBox = new System.Windows.Forms.PictureBox();
             this.dplabel = new System.Windows.Forms.Label();
             this.dpclrbutton = new System.Windows.Forms.Button();
             this.travelvaluepanel = new System.Windows.Forms.Panel();
             this.travelpanel = new System.Windows.Forms.Panel();
+            this.travelpictureBox = new System.Windows.Forms.PictureBox();
             this.travellabel = new System.Windows.Forms.Label();
             this.travelclrbutton = new System.Windows.Forms.Button();
             this.putimevaluepanel = new System.Windows.Forms.Panel();
             this.putimengtpanel = new System.Windows.Forms.Panel();
             this.putimengtlabel = new System.Windows.Forms.Label();
+            this.putimengtpictureBox = new System.Windows.Forms.PictureBox();
             this.putimesrpanel = new System.Windows.Forms.Panel();
             this.putimesrlabel = new System.Windows.Forms.Label();
+            this.putimesrpictureBox = new System.Windows.Forms.PictureBox();
             this.putimeevepanel = new System.Windows.Forms.Panel();
             this.putimeevelabel = new System.Windows.Forms.Label();
+            this.putimeevepictureBox = new System.Windows.Forms.PictureBox();
             this.putimesspanel = new System.Windows.Forms.Panel();
             this.putimesslabel = new System.Windows.Forms.Label();
+            this.putimesspictureBox = new System.Windows.Forms.PictureBox();
             this.putimepanel = new System.Windows.Forms.Panel();
+            this.putimepictureBox = new System.Windows.Forms.PictureBox();
             this.putimelabel = new System.Windows.Forms.Label();
             this.putimeclearbutton = new System.Windows.Forms.Button();
             this.puvaluepanel = new System.Windows.Forms.Panel();
             this.pickupointpanel = new System.Windows.Forms.Panel();
             this.pickuppointlabel = new System.Windows.Forms.Label();
+            this.pupointpictureBox = new System.Windows.Forms.PictureBox();
             this.clearpickuppointbutton = new System.Windows.Forms.Button();
             this.singleseatersleeperpanel = new System.Windows.Forms.Panel();
             this.seatersleepercheckBox = new System.Windows.Forms.CheckBox();
@@ -73,14 +86,18 @@
             this.seattypepanel = new System.Windows.Forms.Panel();
             this.seaterpanel = new System.Windows.Forms.Panel();
             this.seaterlabel = new System.Windows.Forms.Label();
+            this.seaterpictureBox = new System.Windows.Forms.PictureBox();
             this.sleeperpanel = new System.Windows.Forms.Panel();
+            this.sleeperpictureBox = new System.Windows.Forms.PictureBox();
             this.sleeperlabel = new System.Windows.Forms.Label();
             this.seattypelabel = new System.Windows.Forms.Label();
             this.acfilterpanels = new System.Windows.Forms.Panel();
             this.nonacpanel = new System.Windows.Forms.Panel();
+            this.nonacpictureBox = new System.Windows.Forms.PictureBox();
             this.nonaclabel = new System.Windows.Forms.Label();
             this.acpanel = new System.Windows.Forms.Panel();
             this.aclabel = new System.Windows.Forms.Label();
+            this.acpictureBox = new System.Windows.Forms.PictureBox();
             this.actoplabel = new System.Windows.Forms.Label();
             this.clearallpanel = new System.Windows.Forms.Panel();
             this.warningLabel = new System.Windows.Forms.Label();
@@ -98,104 +115,106 @@
             this.nofindlabel = new System.Windows.Forms.Label();
             this.clearalllbutton = new System.Windows.Forms.Button();
             this.nobuslabel = new System.Windows.Forms.Label();
+            this.noresultpictureBox = new System.Windows.Forms.PictureBox();
             this.toppage = new System.Windows.Forms.Panel();
             this.LoginButton = new System.Windows.Forms.Button();
+            this.makemytriplogo = new System.Windows.Forms.PictureBox();
             this.imagespanel = new System.Windows.Forms.Panel();
             this.forexpanel = new System.Windows.Forms.Panel();
             this.ForexLabel = new System.Windows.Forms.Label();
             this.ForexCurrencyUnderLine = new System.Windows.Forms.Label();
+            this.ForexButton = new System.Windows.Forms.Button();
             this.trainpanel = new System.Windows.Forms.Panel();
             this.TrainLabel = new System.Windows.Forms.Label();
             this.TrainUnderLine = new System.Windows.Forms.Label();
+            this.TrainButton = new System.Windows.Forms.Button();
             this.cabpanel = new System.Windows.Forms.Panel();
             this.CabLabel = new System.Windows.Forms.Label();
             this.CabUnderLine = new System.Windows.Forms.Label();
+            this.CabButton = new System.Windows.Forms.Button();
             this.hotelpanel = new System.Windows.Forms.Panel();
             this.HotelLabel = new System.Windows.Forms.Label();
             this.HotelUnderLine = new System.Windows.Forms.Label();
+            this.HotelButton = new System.Windows.Forms.Button();
             this.insurancepanel = new System.Windows.Forms.Panel();
             this.InsuranceLabel = new System.Windows.Forms.Label();
             this.InsuranceUnderLine = new System.Windows.Forms.Label();
+            this.InsuranceButton = new System.Windows.Forms.Button();
             this.resortpanel = new System.Windows.Forms.Panel();
             this.HomeLabel = new System.Windows.Forms.Label();
             this.HomeUnderLine = new System.Windows.Forms.Label();
+            this.HomeButton = new System.Windows.Forms.Button();
             this.buspanel = new System.Windows.Forms.Panel();
             this.BusLabel = new System.Windows.Forms.Label();
             this.BusUnderLine = new System.Windows.Forms.Label();
+            this.BusButton = new System.Windows.Forms.Button();
             this.holidaypanel = new System.Windows.Forms.Panel();
             this.HolidaysLabel = new System.Windows.Forms.Label();
             this.HolidaysUnderLine = new System.Windows.Forms.Label();
+            this.HolidaysButton = new System.Windows.Forms.Button();
             this.flightpanel1 = new System.Windows.Forms.Panel();
             this.FlightLabel = new System.Windows.Forms.Label();
             this.FlightUnderLine = new System.Windows.Forms.Label();
+            this.FlightButton = new System.Windows.Forms.Button();
             this.searchpanel = new System.Windows.Forms.Panel();
             this.srchbutton = new System.Windows.Forms.Button();
             this.departpanel = new System.Windows.Forms.Panel();
             this.departdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.departlabel = new System.Windows.Forms.Label();
+            this.swappictureBox = new System.Windows.Forms.PictureBox();
             this.topanel = new System.Windows.Forms.Panel();
             this.tocomboBox = new System.Windows.Forms.ComboBox();
             this.tolabel = new System.Windows.Forms.Label();
             this.frompanel = new System.Windows.Forms.Panel();
             this.fromcomboBox = new System.Windows.Forms.ComboBox();
             this.fromlabel = new System.Windows.Forms.Label();
-            this.noresultpictureBox = new System.Windows.Forms.PictureBox();
-            this.ddngtpictureBox = new System.Windows.Forms.PictureBox();
-            this.ddsrpictureBox = new System.Windows.Forms.PictureBox();
-            this.ddsspictureBox = new System.Windows.Forms.PictureBox();
-            this.ddevepictureBox = new System.Windows.Forms.PictureBox();
-            this.ddtimepictureBox = new System.Windows.Forms.PictureBox();
-            this.dppictureBox = new System.Windows.Forms.PictureBox();
-            this.travelpictureBox = new System.Windows.Forms.PictureBox();
-            this.putimengtpictureBox = new System.Windows.Forms.PictureBox();
-            this.putimesrpictureBox = new System.Windows.Forms.PictureBox();
-            this.putimeevepictureBox = new System.Windows.Forms.PictureBox();
-            this.putimesspictureBox = new System.Windows.Forms.PictureBox();
-            this.putimepictureBox = new System.Windows.Forms.PictureBox();
-            this.pupointpictureBox = new System.Windows.Forms.PictureBox();
-            this.seaterpictureBox = new System.Windows.Forms.PictureBox();
-            this.sleeperpictureBox = new System.Windows.Forms.PictureBox();
-            this.nonacpictureBox = new System.Windows.Forms.PictureBox();
-            this.acpictureBox = new System.Windows.Forms.PictureBox();
-            this.swappictureBox = new System.Windows.Forms.PictureBox();
-            this.makemytriplogo = new System.Windows.Forms.PictureBox();
-            this.ForexButton = new System.Windows.Forms.Button();
-            this.TrainButton = new System.Windows.Forms.Button();
-            this.CabButton = new System.Windows.Forms.Button();
-            this.HotelButton = new System.Windows.Forms.Button();
-            this.InsuranceButton = new System.Windows.Forms.Button();
-            this.HomeButton = new System.Windows.Forms.Button();
-            this.BusButton = new System.Windows.Forms.Button();
-            this.HolidaysButton = new System.Windows.Forms.Button();
-            this.FlightButton = new System.Windows.Forms.Button();
             this.filters.SuspendLayout();
             this.ddtimevaluepanel.SuspendLayout();
             this.ddngtpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddngtpictureBox)).BeginInit();
             this.ddsrpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddsrpictureBox)).BeginInit();
             this.ddsspanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddsspictureBox)).BeginInit();
             this.ddevepanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddevepictureBox)).BeginInit();
             this.ddtimepanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddtimepictureBox)).BeginInit();
             this.dppanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dppictureBox)).BeginInit();
             this.travelpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.travelpictureBox)).BeginInit();
             this.putimevaluepanel.SuspendLayout();
             this.putimengtpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.putimengtpictureBox)).BeginInit();
             this.putimesrpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.putimesrpictureBox)).BeginInit();
             this.putimeevepanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.putimeevepictureBox)).BeginInit();
             this.putimesspanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.putimesspictureBox)).BeginInit();
             this.putimepanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.putimepictureBox)).BeginInit();
             this.pickupointpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pupointpictureBox)).BeginInit();
             this.singleseatersleeperpanel.SuspendLayout();
             this.seattypepanel.SuspendLayout();
             this.seaterpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.seaterpictureBox)).BeginInit();
             this.sleeperpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sleeperpictureBox)).BeginInit();
             this.acfilterpanels.SuspendLayout();
             this.nonacpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nonacpictureBox)).BeginInit();
             this.acpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.acpictureBox)).BeginInit();
             this.clearallpanel.SuspendLayout();
             this.tabpanel.SuspendLayout();
             this.adducpanel.SuspendLayout();
             this.nobuspanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.noresultpictureBox)).BeginInit();
             this.toppage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.makemytriplogo)).BeginInit();
             this.imagespanel.SuspendLayout();
             this.forexpanel.SuspendLayout();
             this.trainpanel.SuspendLayout();
@@ -208,28 +227,9 @@
             this.flightpanel1.SuspendLayout();
             this.searchpanel.SuspendLayout();
             this.departpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.swappictureBox)).BeginInit();
             this.topanel.SuspendLayout();
             this.frompanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.noresultpictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddngtpictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddsrpictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddsspictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddevepictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddtimepictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dppictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelpictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putimengtpictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putimesrpictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putimeevepictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putimesspictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putimepictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pupointpictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seaterpictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sleeperpictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nonacpictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.acpictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.swappictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.makemytriplogo)).BeginInit();
             this.SuspendLayout();
             // 
             // filters
@@ -297,6 +297,20 @@
             this.ddngtlabel.Text = "11PM to 6AM";
             this.ddngtlabel.Click += new System.EventHandler(this.LabelsClick);
             // 
+            // ddngtpictureBox
+            // 
+            this.ddngtpictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.ddngtpictureBox.BackgroundImage = global::MakeMyTripClone.Properties.Resources.moon;
+            this.ddngtpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ddngtpictureBox.Location = new System.Drawing.Point(64, 4);
+            this.ddngtpictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ddngtpictureBox.Name = "ddngtpictureBox";
+            this.ddngtpictureBox.Size = new System.Drawing.Size(42, 38);
+            this.ddngtpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ddngtpictureBox.TabIndex = 3;
+            this.ddngtpictureBox.TabStop = false;
+            this.ddngtpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
+            // 
             // ddsrpanel
             // 
             this.ddsrpanel.BackColor = System.Drawing.Color.White;
@@ -320,6 +334,20 @@
             this.ddsrlabel.Tag = "6:00:00 11:00:00";
             this.ddsrlabel.Text = "6AM to 11AM";
             this.ddsrlabel.Click += new System.EventHandler(this.LabelsClick);
+            // 
+            // ddsrpictureBox
+            // 
+            this.ddsrpictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.ddsrpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ddsrpictureBox.Image = global::MakeMyTripClone.Properties.Resources.sunrise;
+            this.ddsrpictureBox.Location = new System.Drawing.Point(64, 4);
+            this.ddsrpictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ddsrpictureBox.Name = "ddsrpictureBox";
+            this.ddsrpictureBox.Size = new System.Drawing.Size(42, 38);
+            this.ddsrpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ddsrpictureBox.TabIndex = 3;
+            this.ddsrpictureBox.TabStop = false;
+            this.ddsrpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
             // 
             // ddsspanel
             // 
@@ -345,6 +373,20 @@
             this.ddsslabel.Text = "6PM to 11PM";
             this.ddsslabel.Click += new System.EventHandler(this.LabelsClick);
             // 
+            // ddsspictureBox
+            // 
+            this.ddsspictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.ddsspictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ddsspictureBox.Image = global::MakeMyTripClone.Properties.Resources.sunset;
+            this.ddsspictureBox.Location = new System.Drawing.Point(64, 4);
+            this.ddsspictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ddsspictureBox.Name = "ddsspictureBox";
+            this.ddsspictureBox.Size = new System.Drawing.Size(42, 38);
+            this.ddsspictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ddsspictureBox.TabIndex = 3;
+            this.ddsspictureBox.TabStop = false;
+            this.ddsspictureBox.Click += new System.EventHandler(this.PictureboxesClick);
+            // 
             // ddevepanel
             // 
             this.ddevepanel.BackColor = System.Drawing.Color.White;
@@ -369,6 +411,20 @@
             this.ddevelabel.Text = "11AM to 6PM";
             this.ddevelabel.Click += new System.EventHandler(this.LabelsClick);
             // 
+            // ddevepictureBox
+            // 
+            this.ddevepictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.ddevepictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ddevepictureBox.Image = global::MakeMyTripClone.Properties.Resources.sunny_day;
+            this.ddevepictureBox.Location = new System.Drawing.Point(64, 4);
+            this.ddevepictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ddevepictureBox.Name = "ddevepictureBox";
+            this.ddevepictureBox.Size = new System.Drawing.Size(42, 38);
+            this.ddevepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ddevepictureBox.TabIndex = 3;
+            this.ddevepictureBox.TabStop = false;
+            this.ddevepictureBox.Click += new System.EventHandler(this.PictureboxesClick);
+            // 
             // ddtimepanel
             // 
             this.ddtimepanel.BackColor = System.Drawing.Color.White;
@@ -382,6 +438,20 @@
             this.ddtimepanel.Name = "ddtimepanel";
             this.ddtimepanel.Size = new System.Drawing.Size(429, 74);
             this.ddtimepanel.TabIndex = 10;
+            // 
+            // ddtimepictureBox
+            // 
+            this.ddtimepictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.ddtimepictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ddtimepictureBox.Image = global::MakeMyTripClone.Properties.Resources.down;
+            this.ddtimepictureBox.Location = new System.Drawing.Point(374, 18);
+            this.ddtimepictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ddtimepictureBox.Name = "ddtimepictureBox";
+            this.ddtimepictureBox.Size = new System.Drawing.Size(42, 38);
+            this.ddtimepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ddtimepictureBox.TabIndex = 4;
+            this.ddtimepictureBox.TabStop = false;
+            this.ddtimepictureBox.Click += new System.EventHandler(this.DTime);
             // 
             // ddtimelabel
             // 
@@ -435,6 +505,20 @@
             this.dppanel.Size = new System.Drawing.Size(429, 67);
             this.dppanel.TabIndex = 8;
             // 
+            // dppictureBox
+            // 
+            this.dppictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.dppictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dppictureBox.Image = global::MakeMyTripClone.Properties.Resources.down;
+            this.dppictureBox.Location = new System.Drawing.Point(374, 18);
+            this.dppictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.dppictureBox.Name = "dppictureBox";
+            this.dppictureBox.Size = new System.Drawing.Size(42, 38);
+            this.dppictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dppictureBox.TabIndex = 4;
+            this.dppictureBox.TabStop = false;
+            this.dppictureBox.Click += new System.EventHandler(this.DropPointClick);
+            // 
             // dplabel
             // 
             this.dplabel.AutoSize = true;
@@ -487,6 +571,20 @@
             this.travelpanel.Name = "travelpanel";
             this.travelpanel.Size = new System.Drawing.Size(429, 62);
             this.travelpanel.TabIndex = 6;
+            // 
+            // travelpictureBox
+            // 
+            this.travelpictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.travelpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.travelpictureBox.Image = global::MakeMyTripClone.Properties.Resources.down;
+            this.travelpictureBox.Location = new System.Drawing.Point(374, 15);
+            this.travelpictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.travelpictureBox.Name = "travelpictureBox";
+            this.travelpictureBox.Size = new System.Drawing.Size(42, 38);
+            this.travelpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.travelpictureBox.TabIndex = 4;
+            this.travelpictureBox.TabStop = false;
+            this.travelpictureBox.Click += new System.EventHandler(this.TPictureBoxClick);
             // 
             // travellabel
             // 
@@ -555,6 +653,20 @@
             this.putimengtlabel.Text = "11PM to 6AM";
             this.putimengtlabel.Click += new System.EventHandler(this.LabelsClick);
             // 
+            // putimengtpictureBox
+            // 
+            this.putimengtpictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.putimengtpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.putimengtpictureBox.Image = global::MakeMyTripClone.Properties.Resources.moon;
+            this.putimengtpictureBox.Location = new System.Drawing.Point(64, 4);
+            this.putimengtpictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.putimengtpictureBox.Name = "putimengtpictureBox";
+            this.putimengtpictureBox.Size = new System.Drawing.Size(42, 38);
+            this.putimengtpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.putimengtpictureBox.TabIndex = 3;
+            this.putimengtpictureBox.TabStop = false;
+            this.putimengtpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
+            // 
             // putimesrpanel
             // 
             this.putimesrpanel.BackColor = System.Drawing.Color.White;
@@ -578,6 +690,20 @@
             this.putimesrlabel.Tag = "6:00:00 11:00:00";
             this.putimesrlabel.Text = "6AM to 11AM";
             this.putimesrlabel.Click += new System.EventHandler(this.LabelsClick);
+            // 
+            // putimesrpictureBox
+            // 
+            this.putimesrpictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.putimesrpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.putimesrpictureBox.Image = global::MakeMyTripClone.Properties.Resources.sunrise;
+            this.putimesrpictureBox.Location = new System.Drawing.Point(64, 4);
+            this.putimesrpictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.putimesrpictureBox.Name = "putimesrpictureBox";
+            this.putimesrpictureBox.Size = new System.Drawing.Size(42, 38);
+            this.putimesrpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.putimesrpictureBox.TabIndex = 3;
+            this.putimesrpictureBox.TabStop = false;
+            this.putimesrpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
             // 
             // putimeevepanel
             // 
@@ -603,6 +729,20 @@
             this.putimeevelabel.Text = "11AM to 6PM";
             this.putimeevelabel.Click += new System.EventHandler(this.LabelsClick);
             // 
+            // putimeevepictureBox
+            // 
+            this.putimeevepictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.putimeevepictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.putimeevepictureBox.Image = global::MakeMyTripClone.Properties.Resources.sunny_day;
+            this.putimeevepictureBox.Location = new System.Drawing.Point(64, 4);
+            this.putimeevepictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.putimeevepictureBox.Name = "putimeevepictureBox";
+            this.putimeevepictureBox.Size = new System.Drawing.Size(42, 38);
+            this.putimeevepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.putimeevepictureBox.TabIndex = 3;
+            this.putimeevepictureBox.TabStop = false;
+            this.putimeevepictureBox.Click += new System.EventHandler(this.PictureboxesClick);
+            // 
             // putimesspanel
             // 
             this.putimesspanel.BackColor = System.Drawing.Color.White;
@@ -627,6 +767,20 @@
             this.putimesslabel.Text = "6PM to 11PM";
             this.putimesslabel.Click += new System.EventHandler(this.LabelsClick);
             // 
+            // putimesspictureBox
+            // 
+            this.putimesspictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.putimesspictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.putimesspictureBox.Image = global::MakeMyTripClone.Properties.Resources.sunset;
+            this.putimesspictureBox.Location = new System.Drawing.Point(64, 4);
+            this.putimesspictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.putimesspictureBox.Name = "putimesspictureBox";
+            this.putimesspictureBox.Size = new System.Drawing.Size(42, 38);
+            this.putimesspictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.putimesspictureBox.TabIndex = 3;
+            this.putimesspictureBox.TabStop = false;
+            this.putimesspictureBox.Click += new System.EventHandler(this.PictureboxesClick);
+            // 
             // putimepanel
             // 
             this.putimepanel.BackColor = System.Drawing.Color.White;
@@ -640,6 +794,20 @@
             this.putimepanel.Name = "putimepanel";
             this.putimepanel.Size = new System.Drawing.Size(429, 74);
             this.putimepanel.TabIndex = 4;
+            // 
+            // putimepictureBox
+            // 
+            this.putimepictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.putimepictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.putimepictureBox.Image = global::MakeMyTripClone.Properties.Resources.down;
+            this.putimepictureBox.Location = new System.Drawing.Point(374, 21);
+            this.putimepictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.putimepictureBox.Name = "putimepictureBox";
+            this.putimepictureBox.Size = new System.Drawing.Size(42, 38);
+            this.putimepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.putimepictureBox.TabIndex = 4;
+            this.putimepictureBox.TabStop = false;
+            this.putimepictureBox.Click += new System.EventHandler(this.DtimeClick);
             // 
             // putimelabel
             // 
@@ -706,6 +874,20 @@
             this.pickuppointlabel.TabIndex = 1;
             this.pickuppointlabel.Text = "Pick up point - Coimbatore";
             this.pickuppointlabel.Click += new System.EventHandler(this.DropClick);
+            // 
+            // pupointpictureBox
+            // 
+            this.pupointpictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.pupointpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pupointpictureBox.Image = global::MakeMyTripClone.Properties.Resources.down;
+            this.pupointpictureBox.Location = new System.Drawing.Point(374, 9);
+            this.pupointpictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.pupointpictureBox.Name = "pupointpictureBox";
+            this.pupointpictureBox.Size = new System.Drawing.Size(42, 38);
+            this.pupointpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pupointpictureBox.TabIndex = 3;
+            this.pupointpictureBox.TabStop = false;
+            this.pupointpictureBox.Click += new System.EventHandler(this.DropClick);
             // 
             // clearpickuppointbutton
             // 
@@ -809,6 +991,20 @@
             this.seaterlabel.Text = "Seater";
             this.seaterlabel.Click += new System.EventHandler(this.LabelsClick);
             // 
+            // seaterpictureBox
+            // 
+            this.seaterpictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.seaterpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.seaterpictureBox.Image = global::MakeMyTripClone.Properties.Resources.car_seat;
+            this.seaterpictureBox.Location = new System.Drawing.Point(134, 3);
+            this.seaterpictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.seaterpictureBox.Name = "seaterpictureBox";
+            this.seaterpictureBox.Size = new System.Drawing.Size(30, 32);
+            this.seaterpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.seaterpictureBox.TabIndex = 3;
+            this.seaterpictureBox.TabStop = false;
+            this.seaterpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
+            // 
             // sleeperpanel
             // 
             this.sleeperpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -819,6 +1015,20 @@
             this.sleeperpanel.Size = new System.Drawing.Size(186, 41);
             this.sleeperpanel.TabIndex = 6;
             this.sleeperpanel.Click += new System.EventHandler(this.PanelsClick);
+            // 
+            // sleeperpictureBox
+            // 
+            this.sleeperpictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.sleeperpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.sleeperpictureBox.Image = global::MakeMyTripClone.Properties.Resources.slleeping;
+            this.sleeperpictureBox.Location = new System.Drawing.Point(123, 4);
+            this.sleeperpictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.sleeperpictureBox.Name = "sleeperpictureBox";
+            this.sleeperpictureBox.Size = new System.Drawing.Size(49, 30);
+            this.sleeperpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sleeperpictureBox.TabIndex = 3;
+            this.sleeperpictureBox.TabStop = false;
+            this.sleeperpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
             // 
             // sleeperlabel
             // 
@@ -868,6 +1078,20 @@
             this.nonacpanel.TabIndex = 5;
             this.nonacpanel.Click += new System.EventHandler(this.PanelsClick);
             // 
+            // nonacpictureBox
+            // 
+            this.nonacpictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.nonacpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.nonacpictureBox.Image = global::MakeMyTripClone.Properties.Resources.no_snow;
+            this.nonacpictureBox.Location = new System.Drawing.Point(134, 4);
+            this.nonacpictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nonacpictureBox.Name = "nonacpictureBox";
+            this.nonacpictureBox.Size = new System.Drawing.Size(30, 30);
+            this.nonacpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.nonacpictureBox.TabIndex = 3;
+            this.nonacpictureBox.TabStop = false;
+            this.nonacpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
+            // 
             // nonaclabel
             // 
             this.nonaclabel.AutoSize = true;
@@ -902,6 +1126,20 @@
             this.aclabel.TabIndex = 1;
             this.aclabel.Text = "AC";
             this.aclabel.Click += new System.EventHandler(this.LabelsClick);
+            // 
+            // acpictureBox
+            // 
+            this.acpictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.acpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.acpictureBox.Image = global::MakeMyTripClone.Properties.Resources.snowflake;
+            this.acpictureBox.Location = new System.Drawing.Point(123, 4);
+            this.acpictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.acpictureBox.Name = "acpictureBox";
+            this.acpictureBox.Size = new System.Drawing.Size(30, 30);
+            this.acpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.acpictureBox.TabIndex = 3;
+            this.acpictureBox.TabStop = false;
+            this.acpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
             // 
             // actoplabel
             // 
@@ -1052,9 +1290,9 @@
             this.busesfoundlabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.busesfoundlabel.Location = new System.Drawing.Point(0, 0);
             this.busesfoundlabel.Name = "busesfoundlabel";
-            this.busesfoundlabel.Size = new System.Drawing.Size(191, 32);
+            this.busesfoundlabel.Size = new System.Drawing.Size(177, 32);
             this.busesfoundlabel.TabIndex = 0;
-            this.busesfoundlabel.Text = "98 buses found";
+            this.busesfoundlabel.Text = "0 buses found";
             // 
             // adducpanel
             // 
@@ -1133,6 +1371,20 @@
             this.nobuslabel.TabIndex = 1;
             this.nobuslabel.Text = "No Buses Found";
             // 
+            // noresultpictureBox
+            // 
+            this.noresultpictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.noresultpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.noresultpictureBox.Image = global::MakeMyTripClone.Properties.Resources.no_results;
+            this.noresultpictureBox.Location = new System.Drawing.Point(584, 63);
+            this.noresultpictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.noresultpictureBox.Name = "noresultpictureBox";
+            this.noresultpictureBox.Size = new System.Drawing.Size(165, 160);
+            this.noresultpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.noresultpictureBox.TabIndex = 3;
+            this.noresultpictureBox.TabStop = false;
+            this.noresultpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
+            // 
             // toppage
             // 
             this.toppage.BackColor = System.Drawing.Color.White;
@@ -1160,6 +1412,16 @@
             this.LoginButton.Text = "Login or Create Account";
             this.LoginButton.UseVisualStyleBackColor = false;
             this.LoginButton.Click += new System.EventHandler(this.LoginButtonClick);
+            // 
+            // makemytriplogo
+            // 
+            this.makemytriplogo.Image = global::MakeMyTripClone.Properties.Resources.mmtlogo;
+            this.makemytriplogo.Location = new System.Drawing.Point(365, 13);
+            this.makemytriplogo.Name = "makemytriplogo";
+            this.makemytriplogo.Size = new System.Drawing.Size(193, 49);
+            this.makemytriplogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.makemytriplogo.TabIndex = 19;
+            this.makemytriplogo.TabStop = false;
             // 
             // imagespanel
             // 
@@ -1211,6 +1473,21 @@
             this.ForexCurrencyUnderLine.Text = "-------------------";
             this.ForexCurrencyUnderLine.Visible = false;
             // 
+            // ForexButton
+            // 
+            this.ForexButton.BackColor = System.Drawing.Color.White;
+            this.ForexButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.moneywhite;
+            this.ForexButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ForexButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.ForexButton.FlatAppearance.BorderSize = 0;
+            this.ForexButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ForexButton.Location = new System.Drawing.Point(12, 15);
+            this.ForexButton.Name = "ForexButton";
+            this.ForexButton.Size = new System.Drawing.Size(55, 59);
+            this.ForexButton.TabIndex = 0;
+            this.ForexButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ForexButton.UseVisualStyleBackColor = false;
+            // 
             // trainpanel
             // 
             this.trainpanel.Controls.Add(this.TrainLabel);
@@ -1244,6 +1521,21 @@
             this.TrainUnderLine.TabIndex = 4;
             this.TrainUnderLine.Text = "-------------------";
             this.TrainUnderLine.Visible = false;
+            // 
+            // TrainButton
+            // 
+            this.TrainButton.BackColor = System.Drawing.Color.White;
+            this.TrainButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.trainwhite;
+            this.TrainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TrainButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.TrainButton.FlatAppearance.BorderSize = 0;
+            this.TrainButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TrainButton.Location = new System.Drawing.Point(12, 8);
+            this.TrainButton.Name = "TrainButton";
+            this.TrainButton.Size = new System.Drawing.Size(55, 59);
+            this.TrainButton.TabIndex = 0;
+            this.TrainButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TrainButton.UseVisualStyleBackColor = false;
             // 
             // cabpanel
             // 
@@ -1279,6 +1571,21 @@
             this.CabUnderLine.Text = "-------------------";
             this.CabUnderLine.Visible = false;
             // 
+            // CabButton
+            // 
+            this.CabButton.BackColor = System.Drawing.Color.White;
+            this.CabButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.cabwhite;
+            this.CabButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CabButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.CabButton.FlatAppearance.BorderSize = 0;
+            this.CabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CabButton.Location = new System.Drawing.Point(12, 13);
+            this.CabButton.Name = "CabButton";
+            this.CabButton.Size = new System.Drawing.Size(55, 59);
+            this.CabButton.TabIndex = 0;
+            this.CabButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.CabButton.UseVisualStyleBackColor = false;
+            // 
             // hotelpanel
             // 
             this.hotelpanel.Controls.Add(this.HotelLabel);
@@ -1312,6 +1619,21 @@
             this.HotelUnderLine.TabIndex = 4;
             this.HotelUnderLine.Text = "-------------------";
             this.HotelUnderLine.Visible = false;
+            // 
+            // HotelButton
+            // 
+            this.HotelButton.BackColor = System.Drawing.Color.White;
+            this.HotelButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.hotels;
+            this.HotelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HotelButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HotelButton.FlatAppearance.BorderSize = 0;
+            this.HotelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HotelButton.Location = new System.Drawing.Point(12, 9);
+            this.HotelButton.Name = "HotelButton";
+            this.HotelButton.Size = new System.Drawing.Size(55, 59);
+            this.HotelButton.TabIndex = 0;
+            this.HotelButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HotelButton.UseVisualStyleBackColor = false;
             // 
             // insurancepanel
             // 
@@ -1347,6 +1669,21 @@
             this.InsuranceUnderLine.Text = "-------------------";
             this.InsuranceUnderLine.Visible = false;
             // 
+            // InsuranceButton
+            // 
+            this.InsuranceButton.BackColor = System.Drawing.Color.White;
+            this.InsuranceButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.insurancewhite;
+            this.InsuranceButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.InsuranceButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.InsuranceButton.FlatAppearance.BorderSize = 0;
+            this.InsuranceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InsuranceButton.Location = new System.Drawing.Point(12, 12);
+            this.InsuranceButton.Name = "InsuranceButton";
+            this.InsuranceButton.Size = new System.Drawing.Size(55, 59);
+            this.InsuranceButton.TabIndex = 0;
+            this.InsuranceButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.InsuranceButton.UseVisualStyleBackColor = false;
+            // 
             // resortpanel
             // 
             this.resortpanel.Controls.Add(this.HomeLabel);
@@ -1380,6 +1717,21 @@
             this.HomeUnderLine.TabIndex = 3;
             this.HomeUnderLine.Text = "-------------------";
             this.HomeUnderLine.Visible = false;
+            // 
+            // HomeButton
+            // 
+            this.HomeButton.BackColor = System.Drawing.Color.White;
+            this.HomeButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.homewhite;
+            this.HomeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HomeButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HomeButton.FlatAppearance.BorderSize = 0;
+            this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HomeButton.Location = new System.Drawing.Point(12, 9);
+            this.HomeButton.Name = "HomeButton";
+            this.HomeButton.Size = new System.Drawing.Size(55, 59);
+            this.HomeButton.TabIndex = 0;
+            this.HomeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HomeButton.UseVisualStyleBackColor = false;
             // 
             // buspanel
             // 
@@ -1415,6 +1767,21 @@
             this.BusUnderLine.Text = "-------------------";
             this.BusUnderLine.Visible = false;
             // 
+            // BusButton
+            // 
+            this.BusButton.BackColor = System.Drawing.Color.White;
+            this.BusButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.buswhite;
+            this.BusButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BusButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BusButton.FlatAppearance.BorderSize = 0;
+            this.BusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BusButton.Location = new System.Drawing.Point(12, 9);
+            this.BusButton.Name = "BusButton";
+            this.BusButton.Size = new System.Drawing.Size(55, 59);
+            this.BusButton.TabIndex = 0;
+            this.BusButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BusButton.UseVisualStyleBackColor = false;
+            // 
             // holidaypanel
             // 
             this.holidaypanel.Controls.Add(this.HolidaysLabel);
@@ -1448,6 +1815,21 @@
             this.HolidaysUnderLine.TabIndex = 5;
             this.HolidaysUnderLine.Text = "-------------------";
             this.HolidaysUnderLine.Visible = false;
+            // 
+            // HolidaysButton
+            // 
+            this.HolidaysButton.BackColor = System.Drawing.Color.White;
+            this.HolidaysButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.holidayswhite;
+            this.HolidaysButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HolidaysButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HolidaysButton.FlatAppearance.BorderSize = 0;
+            this.HolidaysButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HolidaysButton.Location = new System.Drawing.Point(12, 9);
+            this.HolidaysButton.Name = "HolidaysButton";
+            this.HolidaysButton.Size = new System.Drawing.Size(55, 59);
+            this.HolidaysButton.TabIndex = 0;
+            this.HolidaysButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.HolidaysButton.UseVisualStyleBackColor = false;
             // 
             // flightpanel1
             // 
@@ -1483,6 +1865,22 @@
             this.FlightUnderLine.TabIndex = 2;
             this.FlightUnderLine.Text = "-------------------";
             this.FlightUnderLine.Visible = false;
+            // 
+            // FlightButton
+            // 
+            this.FlightButton.BackColor = System.Drawing.Color.White;
+            this.FlightButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FlightButton.BackgroundImage")));
+            this.FlightButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FlightButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FlightButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.FlightButton.FlatAppearance.BorderSize = 0;
+            this.FlightButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FlightButton.Location = new System.Drawing.Point(9, 8);
+            this.FlightButton.Name = "FlightButton";
+            this.FlightButton.Size = new System.Drawing.Size(62, 59);
+            this.FlightButton.TabIndex = 0;
+            this.FlightButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.FlightButton.UseVisualStyleBackColor = false;
             // 
             // searchpanel
             // 
@@ -1544,6 +1942,17 @@
             this.departlabel.Size = new System.Drawing.Size(72, 25);
             this.departlabel.TabIndex = 1;
             this.departlabel.Text = "Depart";
+            // 
+            // swappictureBox
+            // 
+            this.swappictureBox.Image = global::MakeMyTripClone.Properties.Resources._2arrow;
+            this.swappictureBox.Location = new System.Drawing.Point(237, 29);
+            this.swappictureBox.Name = "swappictureBox";
+            this.swappictureBox.Size = new System.Drawing.Size(43, 34);
+            this.swappictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.swappictureBox.TabIndex = 2;
+            this.swappictureBox.TabStop = false;
+            this.swappictureBox.Click += new System.EventHandler(this.SwappictureBoxClick);
             // 
             // topanel
             // 
@@ -1617,415 +2026,6 @@
             this.fromlabel.TabIndex = 1;
             this.fromlabel.Text = "From";
             // 
-            // noresultpictureBox
-            // 
-            this.noresultpictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.noresultpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.noresultpictureBox.Image = global::MakeMyTripClone.Properties.Resources.no_results;
-            this.noresultpictureBox.Location = new System.Drawing.Point(584, 63);
-            this.noresultpictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.noresultpictureBox.Name = "noresultpictureBox";
-            this.noresultpictureBox.Size = new System.Drawing.Size(165, 160);
-            this.noresultpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.noresultpictureBox.TabIndex = 3;
-            this.noresultpictureBox.TabStop = false;
-            this.noresultpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
-            // 
-            // ddngtpictureBox
-            // 
-            this.ddngtpictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.ddngtpictureBox.BackgroundImage = global::MakeMyTripClone.Properties.Resources.moon;
-            this.ddngtpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ddngtpictureBox.Location = new System.Drawing.Point(64, 4);
-            this.ddngtpictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ddngtpictureBox.Name = "ddngtpictureBox";
-            this.ddngtpictureBox.Size = new System.Drawing.Size(42, 38);
-            this.ddngtpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ddngtpictureBox.TabIndex = 3;
-            this.ddngtpictureBox.TabStop = false;
-            this.ddngtpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
-            // 
-            // ddsrpictureBox
-            // 
-            this.ddsrpictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.ddsrpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ddsrpictureBox.Image = global::MakeMyTripClone.Properties.Resources.sunrise;
-            this.ddsrpictureBox.Location = new System.Drawing.Point(64, 4);
-            this.ddsrpictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ddsrpictureBox.Name = "ddsrpictureBox";
-            this.ddsrpictureBox.Size = new System.Drawing.Size(42, 38);
-            this.ddsrpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ddsrpictureBox.TabIndex = 3;
-            this.ddsrpictureBox.TabStop = false;
-            this.ddsrpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
-            // 
-            // ddsspictureBox
-            // 
-            this.ddsspictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.ddsspictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ddsspictureBox.Image = global::MakeMyTripClone.Properties.Resources.sunset;
-            this.ddsspictureBox.Location = new System.Drawing.Point(64, 4);
-            this.ddsspictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ddsspictureBox.Name = "ddsspictureBox";
-            this.ddsspictureBox.Size = new System.Drawing.Size(42, 38);
-            this.ddsspictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ddsspictureBox.TabIndex = 3;
-            this.ddsspictureBox.TabStop = false;
-            this.ddsspictureBox.Click += new System.EventHandler(this.PictureboxesClick);
-            // 
-            // ddevepictureBox
-            // 
-            this.ddevepictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.ddevepictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ddevepictureBox.Image = global::MakeMyTripClone.Properties.Resources.sunny_day;
-            this.ddevepictureBox.Location = new System.Drawing.Point(64, 4);
-            this.ddevepictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ddevepictureBox.Name = "ddevepictureBox";
-            this.ddevepictureBox.Size = new System.Drawing.Size(42, 38);
-            this.ddevepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ddevepictureBox.TabIndex = 3;
-            this.ddevepictureBox.TabStop = false;
-            this.ddevepictureBox.Click += new System.EventHandler(this.PictureboxesClick);
-            // 
-            // ddtimepictureBox
-            // 
-            this.ddtimepictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.ddtimepictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ddtimepictureBox.Image = global::MakeMyTripClone.Properties.Resources.down;
-            this.ddtimepictureBox.Location = new System.Drawing.Point(374, 18);
-            this.ddtimepictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ddtimepictureBox.Name = "ddtimepictureBox";
-            this.ddtimepictureBox.Size = new System.Drawing.Size(42, 38);
-            this.ddtimepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ddtimepictureBox.TabIndex = 4;
-            this.ddtimepictureBox.TabStop = false;
-            this.ddtimepictureBox.Click += new System.EventHandler(this.DTime);
-            // 
-            // dppictureBox
-            // 
-            this.dppictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.dppictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.dppictureBox.Image = global::MakeMyTripClone.Properties.Resources.down;
-            this.dppictureBox.Location = new System.Drawing.Point(374, 18);
-            this.dppictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.dppictureBox.Name = "dppictureBox";
-            this.dppictureBox.Size = new System.Drawing.Size(42, 38);
-            this.dppictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dppictureBox.TabIndex = 4;
-            this.dppictureBox.TabStop = false;
-            this.dppictureBox.Click += new System.EventHandler(this.DropPointClick);
-            // 
-            // travelpictureBox
-            // 
-            this.travelpictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.travelpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.travelpictureBox.Image = global::MakeMyTripClone.Properties.Resources.down;
-            this.travelpictureBox.Location = new System.Drawing.Point(374, 15);
-            this.travelpictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.travelpictureBox.Name = "travelpictureBox";
-            this.travelpictureBox.Size = new System.Drawing.Size(42, 38);
-            this.travelpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.travelpictureBox.TabIndex = 4;
-            this.travelpictureBox.TabStop = false;
-            this.travelpictureBox.Click += new System.EventHandler(this.TPictureBoxClick);
-            // 
-            // putimengtpictureBox
-            // 
-            this.putimengtpictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.putimengtpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.putimengtpictureBox.Image = global::MakeMyTripClone.Properties.Resources.moon;
-            this.putimengtpictureBox.Location = new System.Drawing.Point(64, 4);
-            this.putimengtpictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.putimengtpictureBox.Name = "putimengtpictureBox";
-            this.putimengtpictureBox.Size = new System.Drawing.Size(42, 38);
-            this.putimengtpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.putimengtpictureBox.TabIndex = 3;
-            this.putimengtpictureBox.TabStop = false;
-            this.putimengtpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
-            // 
-            // putimesrpictureBox
-            // 
-            this.putimesrpictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.putimesrpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.putimesrpictureBox.Image = global::MakeMyTripClone.Properties.Resources.sunrise;
-            this.putimesrpictureBox.Location = new System.Drawing.Point(64, 4);
-            this.putimesrpictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.putimesrpictureBox.Name = "putimesrpictureBox";
-            this.putimesrpictureBox.Size = new System.Drawing.Size(42, 38);
-            this.putimesrpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.putimesrpictureBox.TabIndex = 3;
-            this.putimesrpictureBox.TabStop = false;
-            this.putimesrpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
-            // 
-            // putimeevepictureBox
-            // 
-            this.putimeevepictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.putimeevepictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.putimeevepictureBox.Image = global::MakeMyTripClone.Properties.Resources.sunny_day;
-            this.putimeevepictureBox.Location = new System.Drawing.Point(64, 4);
-            this.putimeevepictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.putimeevepictureBox.Name = "putimeevepictureBox";
-            this.putimeevepictureBox.Size = new System.Drawing.Size(42, 38);
-            this.putimeevepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.putimeevepictureBox.TabIndex = 3;
-            this.putimeevepictureBox.TabStop = false;
-            this.putimeevepictureBox.Click += new System.EventHandler(this.PictureboxesClick);
-            // 
-            // putimesspictureBox
-            // 
-            this.putimesspictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.putimesspictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.putimesspictureBox.Image = global::MakeMyTripClone.Properties.Resources.sunset;
-            this.putimesspictureBox.Location = new System.Drawing.Point(64, 4);
-            this.putimesspictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.putimesspictureBox.Name = "putimesspictureBox";
-            this.putimesspictureBox.Size = new System.Drawing.Size(42, 38);
-            this.putimesspictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.putimesspictureBox.TabIndex = 3;
-            this.putimesspictureBox.TabStop = false;
-            this.putimesspictureBox.Click += new System.EventHandler(this.PictureboxesClick);
-            // 
-            // putimepictureBox
-            // 
-            this.putimepictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.putimepictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.putimepictureBox.Image = global::MakeMyTripClone.Properties.Resources.down;
-            this.putimepictureBox.Location = new System.Drawing.Point(374, 21);
-            this.putimepictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.putimepictureBox.Name = "putimepictureBox";
-            this.putimepictureBox.Size = new System.Drawing.Size(42, 38);
-            this.putimepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.putimepictureBox.TabIndex = 4;
-            this.putimepictureBox.TabStop = false;
-            this.putimepictureBox.Click += new System.EventHandler(this.DtimeClick);
-            // 
-            // pupointpictureBox
-            // 
-            this.pupointpictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.pupointpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pupointpictureBox.Image = global::MakeMyTripClone.Properties.Resources.down;
-            this.pupointpictureBox.Location = new System.Drawing.Point(374, 9);
-            this.pupointpictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.pupointpictureBox.Name = "pupointpictureBox";
-            this.pupointpictureBox.Size = new System.Drawing.Size(42, 38);
-            this.pupointpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pupointpictureBox.TabIndex = 3;
-            this.pupointpictureBox.TabStop = false;
-            this.pupointpictureBox.Click += new System.EventHandler(this.DropClick);
-            // 
-            // seaterpictureBox
-            // 
-            this.seaterpictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.seaterpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.seaterpictureBox.Image = global::MakeMyTripClone.Properties.Resources.car_seat;
-            this.seaterpictureBox.Location = new System.Drawing.Point(134, 3);
-            this.seaterpictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.seaterpictureBox.Name = "seaterpictureBox";
-            this.seaterpictureBox.Size = new System.Drawing.Size(30, 32);
-            this.seaterpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.seaterpictureBox.TabIndex = 3;
-            this.seaterpictureBox.TabStop = false;
-            this.seaterpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
-            // 
-            // sleeperpictureBox
-            // 
-            this.sleeperpictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.sleeperpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.sleeperpictureBox.Image = global::MakeMyTripClone.Properties.Resources.slleeping;
-            this.sleeperpictureBox.Location = new System.Drawing.Point(123, 4);
-            this.sleeperpictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.sleeperpictureBox.Name = "sleeperpictureBox";
-            this.sleeperpictureBox.Size = new System.Drawing.Size(49, 30);
-            this.sleeperpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.sleeperpictureBox.TabIndex = 3;
-            this.sleeperpictureBox.TabStop = false;
-            this.sleeperpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
-            // 
-            // nonacpictureBox
-            // 
-            this.nonacpictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.nonacpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.nonacpictureBox.Image = global::MakeMyTripClone.Properties.Resources.no_snow;
-            this.nonacpictureBox.Location = new System.Drawing.Point(134, 4);
-            this.nonacpictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.nonacpictureBox.Name = "nonacpictureBox";
-            this.nonacpictureBox.Size = new System.Drawing.Size(30, 30);
-            this.nonacpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.nonacpictureBox.TabIndex = 3;
-            this.nonacpictureBox.TabStop = false;
-            this.nonacpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
-            // 
-            // acpictureBox
-            // 
-            this.acpictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.acpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.acpictureBox.Image = global::MakeMyTripClone.Properties.Resources.snowflake;
-            this.acpictureBox.Location = new System.Drawing.Point(123, 4);
-            this.acpictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.acpictureBox.Name = "acpictureBox";
-            this.acpictureBox.Size = new System.Drawing.Size(30, 30);
-            this.acpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.acpictureBox.TabIndex = 3;
-            this.acpictureBox.TabStop = false;
-            this.acpictureBox.Click += new System.EventHandler(this.PictureboxesClick);
-            // 
-            // swappictureBox
-            // 
-            this.swappictureBox.Image = global::MakeMyTripClone.Properties.Resources._2arrow;
-            this.swappictureBox.Location = new System.Drawing.Point(237, 29);
-            this.swappictureBox.Name = "swappictureBox";
-            this.swappictureBox.Size = new System.Drawing.Size(43, 34);
-            this.swappictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.swappictureBox.TabIndex = 2;
-            this.swappictureBox.TabStop = false;
-            this.swappictureBox.Click += new System.EventHandler(this.SwappictureBoxClick);
-            // 
-            // makemytriplogo
-            // 
-            this.makemytriplogo.Image = global::MakeMyTripClone.Properties.Resources.mmtlogo;
-            this.makemytriplogo.Location = new System.Drawing.Point(365, 13);
-            this.makemytriplogo.Name = "makemytriplogo";
-            this.makemytriplogo.Size = new System.Drawing.Size(193, 49);
-            this.makemytriplogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.makemytriplogo.TabIndex = 19;
-            this.makemytriplogo.TabStop = false;
-            // 
-            // ForexButton
-            // 
-            this.ForexButton.BackColor = System.Drawing.Color.White;
-            this.ForexButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.moneywhite;
-            this.ForexButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ForexButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.ForexButton.FlatAppearance.BorderSize = 0;
-            this.ForexButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ForexButton.Location = new System.Drawing.Point(12, 15);
-            this.ForexButton.Name = "ForexButton";
-            this.ForexButton.Size = new System.Drawing.Size(55, 59);
-            this.ForexButton.TabIndex = 0;
-            this.ForexButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ForexButton.UseVisualStyleBackColor = false;
-            // 
-            // TrainButton
-            // 
-            this.TrainButton.BackColor = System.Drawing.Color.White;
-            this.TrainButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.trainwhite;
-            this.TrainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TrainButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.TrainButton.FlatAppearance.BorderSize = 0;
-            this.TrainButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TrainButton.Location = new System.Drawing.Point(12, 8);
-            this.TrainButton.Name = "TrainButton";
-            this.TrainButton.Size = new System.Drawing.Size(55, 59);
-            this.TrainButton.TabIndex = 0;
-            this.TrainButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.TrainButton.UseVisualStyleBackColor = false;
-            // 
-            // CabButton
-            // 
-            this.CabButton.BackColor = System.Drawing.Color.White;
-            this.CabButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.cabwhite;
-            this.CabButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CabButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.CabButton.FlatAppearance.BorderSize = 0;
-            this.CabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CabButton.Location = new System.Drawing.Point(12, 13);
-            this.CabButton.Name = "CabButton";
-            this.CabButton.Size = new System.Drawing.Size(55, 59);
-            this.CabButton.TabIndex = 0;
-            this.CabButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.CabButton.UseVisualStyleBackColor = false;
-            // 
-            // HotelButton
-            // 
-            this.HotelButton.BackColor = System.Drawing.Color.White;
-            this.HotelButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.hotels;
-            this.HotelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.HotelButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.HotelButton.FlatAppearance.BorderSize = 0;
-            this.HotelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HotelButton.Location = new System.Drawing.Point(12, 9);
-            this.HotelButton.Name = "HotelButton";
-            this.HotelButton.Size = new System.Drawing.Size(55, 59);
-            this.HotelButton.TabIndex = 0;
-            this.HotelButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.HotelButton.UseVisualStyleBackColor = false;
-            // 
-            // InsuranceButton
-            // 
-            this.InsuranceButton.BackColor = System.Drawing.Color.White;
-            this.InsuranceButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.insurancewhite;
-            this.InsuranceButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.InsuranceButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.InsuranceButton.FlatAppearance.BorderSize = 0;
-            this.InsuranceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.InsuranceButton.Location = new System.Drawing.Point(12, 12);
-            this.InsuranceButton.Name = "InsuranceButton";
-            this.InsuranceButton.Size = new System.Drawing.Size(55, 59);
-            this.InsuranceButton.TabIndex = 0;
-            this.InsuranceButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.InsuranceButton.UseVisualStyleBackColor = false;
-            // 
-            // HomeButton
-            // 
-            this.HomeButton.BackColor = System.Drawing.Color.White;
-            this.HomeButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.homewhite;
-            this.HomeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.HomeButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.HomeButton.FlatAppearance.BorderSize = 0;
-            this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HomeButton.Location = new System.Drawing.Point(12, 9);
-            this.HomeButton.Name = "HomeButton";
-            this.HomeButton.Size = new System.Drawing.Size(55, 59);
-            this.HomeButton.TabIndex = 0;
-            this.HomeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.HomeButton.UseVisualStyleBackColor = false;
-            // 
-            // BusButton
-            // 
-            this.BusButton.BackColor = System.Drawing.Color.White;
-            this.BusButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.buswhite;
-            this.BusButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BusButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BusButton.FlatAppearance.BorderSize = 0;
-            this.BusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BusButton.Location = new System.Drawing.Point(12, 9);
-            this.BusButton.Name = "BusButton";
-            this.BusButton.Size = new System.Drawing.Size(55, 59);
-            this.BusButton.TabIndex = 0;
-            this.BusButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BusButton.UseVisualStyleBackColor = false;
-            // 
-            // HolidaysButton
-            // 
-            this.HolidaysButton.BackColor = System.Drawing.Color.White;
-            this.HolidaysButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.holidayswhite;
-            this.HolidaysButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.HolidaysButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.HolidaysButton.FlatAppearance.BorderSize = 0;
-            this.HolidaysButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HolidaysButton.Location = new System.Drawing.Point(12, 9);
-            this.HolidaysButton.Name = "HolidaysButton";
-            this.HolidaysButton.Size = new System.Drawing.Size(55, 59);
-            this.HolidaysButton.TabIndex = 0;
-            this.HolidaysButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.HolidaysButton.UseVisualStyleBackColor = false;
-            // 
-            // FlightButton
-            // 
-            this.FlightButton.BackColor = System.Drawing.Color.White;
-            this.FlightButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FlightButton.BackgroundImage")));
-            this.FlightButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FlightButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FlightButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.FlightButton.FlatAppearance.BorderSize = 0;
-            this.FlightButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FlightButton.Location = new System.Drawing.Point(9, 8);
-            this.FlightButton.Name = "FlightButton";
-            this.FlightButton.Size = new System.Drawing.Size(62, 59);
-            this.FlightButton.TabIndex = 0;
-            this.FlightButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.FlightButton.UseVisualStyleBackColor = false;
-            // 
             // BookingPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -2048,45 +2048,62 @@
             this.ddtimevaluepanel.ResumeLayout(false);
             this.ddngtpanel.ResumeLayout(false);
             this.ddngtpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddngtpictureBox)).EndInit();
             this.ddsrpanel.ResumeLayout(false);
             this.ddsrpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddsrpictureBox)).EndInit();
             this.ddsspanel.ResumeLayout(false);
             this.ddsspanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddsspictureBox)).EndInit();
             this.ddevepanel.ResumeLayout(false);
             this.ddevepanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddevepictureBox)).EndInit();
             this.ddtimepanel.ResumeLayout(false);
             this.ddtimepanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddtimepictureBox)).EndInit();
             this.dppanel.ResumeLayout(false);
             this.dppanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dppictureBox)).EndInit();
             this.travelpanel.ResumeLayout(false);
             this.travelpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.travelpictureBox)).EndInit();
             this.putimevaluepanel.ResumeLayout(false);
             this.putimengtpanel.ResumeLayout(false);
             this.putimengtpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.putimengtpictureBox)).EndInit();
             this.putimesrpanel.ResumeLayout(false);
             this.putimesrpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.putimesrpictureBox)).EndInit();
             this.putimeevepanel.ResumeLayout(false);
             this.putimeevepanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.putimeevepictureBox)).EndInit();
             this.putimesspanel.ResumeLayout(false);
             this.putimesspanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.putimesspictureBox)).EndInit();
             this.putimepanel.ResumeLayout(false);
             this.putimepanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.putimepictureBox)).EndInit();
             this.pickupointpanel.ResumeLayout(false);
             this.pickupointpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pupointpictureBox)).EndInit();
             this.singleseatersleeperpanel.ResumeLayout(false);
             this.singleseatersleeperpanel.PerformLayout();
             this.seattypepanel.ResumeLayout(false);
             this.seattypepanel.PerformLayout();
             this.seaterpanel.ResumeLayout(false);
             this.seaterpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.seaterpictureBox)).EndInit();
             this.sleeperpanel.ResumeLayout(false);
             this.sleeperpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sleeperpictureBox)).EndInit();
             this.acfilterpanels.ResumeLayout(false);
             this.acfilterpanels.PerformLayout();
             this.nonacpanel.ResumeLayout(false);
             this.nonacpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nonacpictureBox)).EndInit();
             this.acpanel.ResumeLayout(false);
             this.acpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.acpictureBox)).EndInit();
             this.clearallpanel.ResumeLayout(false);
             this.clearallpanel.PerformLayout();
             this.tabpanel.ResumeLayout(false);
@@ -2095,7 +2112,9 @@
             this.adducpanel.PerformLayout();
             this.nobuspanel.ResumeLayout(false);
             this.nobuspanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.noresultpictureBox)).EndInit();
             this.toppage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.makemytriplogo)).EndInit();
             this.imagespanel.ResumeLayout(false);
             this.forexpanel.ResumeLayout(false);
             this.forexpanel.PerformLayout();
@@ -2118,30 +2137,11 @@
             this.searchpanel.ResumeLayout(false);
             this.departpanel.ResumeLayout(false);
             this.departpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.swappictureBox)).EndInit();
             this.topanel.ResumeLayout(false);
             this.topanel.PerformLayout();
             this.frompanel.ResumeLayout(false);
             this.frompanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.noresultpictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddngtpictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddsrpictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddsspictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddevepictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddtimepictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dppictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelpictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putimengtpictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putimesrpictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putimeevepictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putimesspictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.putimepictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pupointpictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seaterpictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sleeperpictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nonacpictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.acpictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.swappictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.makemytriplogo)).EndInit();
             this.ResumeLayout(false);
 
         }
