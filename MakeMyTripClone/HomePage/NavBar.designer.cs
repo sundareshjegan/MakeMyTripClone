@@ -1087,9 +1087,9 @@
             // logInTab1
             // 
             this.logInTab1.IsLoggedIn = false;
-            this.logInTab1.Location = new System.Drawing.Point(1396, 21);
+            this.logInTab1.Location = new System.Drawing.Point(1425, 25);
             this.logInTab1.Name = "logInTab1";
-            this.logInTab1.Size = new System.Drawing.Size(214, 54);
+            this.logInTab1.Size = new System.Drawing.Size(212, 42);
             this.logInTab1.TabIndex = 15;
             this.logInTab1.UserEmail = null;
             this.logInTab1.UserName = null;

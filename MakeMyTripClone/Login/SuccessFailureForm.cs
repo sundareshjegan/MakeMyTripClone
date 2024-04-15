@@ -56,13 +56,13 @@ namespace MakeMyTripClone
             if (currentFrame >= totalFrames)
             {
                 animationTimer.Stop(); // Stop the timer when all frames have been displayed
-                Dispose();
             }
             else
             {
                 Invalidate();
             }
         }
+
         private void FailureAnimationTimer(object sender, EventArgs e)
         {
             currentFrame++;
@@ -77,6 +77,7 @@ namespace MakeMyTripClone
             }
 
         }
+
         private void SuccessForm_Paint(object sender, PaintEventArgs e)
         {
             if (gifImage != null)
@@ -85,8 +86,10 @@ namespace MakeMyTripClone
                 e.Graphics.DrawImage(gifImage, ClientRectangle);
             }
         }
+
         #endregion
 
+        #region DLL to create curve regions
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -97,6 +100,7 @@ namespace MakeMyTripClone
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
+        #endregion
 
         private void closePB_Click(object sender, EventArgs e)
         {

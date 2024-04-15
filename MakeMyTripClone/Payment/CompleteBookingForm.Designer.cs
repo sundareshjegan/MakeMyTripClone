@@ -36,6 +36,7 @@
             this.closePB = new System.Windows.Forms.PictureBox();
             this.overAllPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.travellerEditPB = new System.Windows.Forms.PictureBox();
             this.secureTipPanel = new MakeMyTripClone.UserControls.CustomPanel();
             this.customPanel4 = new MakeMyTripClone.UserControls.CustomPanel();
@@ -103,7 +104,7 @@
             this.sourceBoardingLabel = new System.Windows.Forms.Label();
             this.sourceCityLabel = new System.Windows.Forms.Label();
             this.rightPanel = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.adPanel = new System.Windows.Forms.Panel();
             this.adPB = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.adClosePB = new System.Windows.Forms.PictureBox();
@@ -130,18 +131,18 @@
             this.label39 = new System.Windows.Forms.Label();
             this.baseFareLabel = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
+            this.rightSepPanel3 = new System.Windows.Forms.Panel();
             this.loginNowPanel = new System.Windows.Forms.Panel();
             this.walletPB = new System.Windows.Forms.PictureBox();
             this.loginClickLabel = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.customPanel6 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.rightSepPanel2 = new System.Windows.Forms.Panel();
+            this.couponCodePanel = new MakeMyTripClone.UserControls.CustomPanel();
             this.label23 = new System.Windows.Forms.Label();
             this.couponCodeApplyLabel = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.couponTB = new System.Windows.Forms.TextBox();
+            this.rightSepPanel1 = new System.Windows.Forms.Panel();
             this.myDealPreAppliedPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -173,7 +174,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.rightPanel.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.adPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adPB)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adClosePB)).BeginInit();
@@ -184,7 +185,7 @@
             this.busFarePanel.SuspendLayout();
             this.loginNowPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.walletPB)).BeginInit();
-            this.customPanel6.SuspendLayout();
+            this.couponCodePanel.SuspendLayout();
             this.panel9.SuspendLayout();
             this.myDealPreAppliedPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -196,7 +197,7 @@
             this.CompleteBookingLabel.AutoSize = true;
             this.CompleteBookingLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompleteBookingLabel.ForeColor = System.Drawing.Color.White;
-            this.CompleteBookingLabel.Location = new System.Drawing.Point(313, 14);
+            this.CompleteBookingLabel.Location = new System.Drawing.Point(307, 14);
             this.CompleteBookingLabel.Name = "CompleteBookingLabel";
             this.CompleteBookingLabel.Size = new System.Drawing.Size(286, 32);
             this.CompleteBookingLabel.TabIndex = 1;
@@ -208,7 +209,7 @@
             this.headerDateTimeLabel.AutoSize = true;
             this.headerDateTimeLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerDateTimeLabel.ForeColor = System.Drawing.Color.White;
-            this.headerDateTimeLabel.Location = new System.Drawing.Point(892, 17);
+            this.headerDateTimeLabel.Location = new System.Drawing.Point(883, 17);
             this.headerDateTimeLabel.Name = "headerDateTimeLabel";
             this.headerDateTimeLabel.Size = new System.Drawing.Size(297, 25);
             this.headerDateTimeLabel.TabIndex = 1;
@@ -221,7 +222,7 @@
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.51773F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.48227F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 649F));
-            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
+            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
             this.headerPanel.Controls.Add(this.headerDateTimeLabel, 2, 0);
             this.headerPanel.Controls.Add(this.logoPB, 0, 0);
             this.headerPanel.Controls.Add(this.CompleteBookingLabel, 1, 0);
@@ -238,7 +239,7 @@
             // 
             this.logoPB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logoPB.Image = global::MakeMyTripClone.Properties.Resources.logoWhite;
-            this.logoPB.Location = new System.Drawing.Point(30, 7);
+            this.logoPB.Location = new System.Drawing.Point(29, 7);
             this.logoPB.Name = "logoPB";
             this.logoPB.Size = new System.Drawing.Size(136, 45);
             this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -250,7 +251,7 @@
             this.closePB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.closePB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closePB.Image = global::MakeMyTripClone.Properties.Resources.close;
-            this.closePB.Location = new System.Drawing.Point(1434, 17);
+            this.closePB.Location = new System.Drawing.Point(1429, 17);
             this.closePB.Name = "closePB";
             this.closePB.Size = new System.Drawing.Size(25, 25);
             this.closePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -272,6 +273,7 @@
             // leftPanel
             // 
             this.leftPanel.BackColor = System.Drawing.Color.White;
+            this.leftPanel.Controls.Add(this.label2);
             this.leftPanel.Controls.Add(this.travellerEditPB);
             this.leftPanel.Controls.Add(this.secureTipPanel);
             this.leftPanel.Controls.Add(this.seperatorPanel5);
@@ -289,6 +291,19 @@
             this.leftPanel.Padding = new System.Windows.Forms.Padding(5, 5, 20, 5);
             this.leftPanel.Size = new System.Drawing.Size(776, 876);
             this.leftPanel.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label2.Location = new System.Drawing.Point(5, 813);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(100, 15, 15, 15);
+            this.label2.Size = new System.Drawing.Size(688, 50);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "For mode information Contact +91 8608791884 or mail @ support@makemytrip.com\r\n";
             // 
             // travellerEditPB
             // 
@@ -1062,13 +1077,13 @@
             // rightPanel
             // 
             this.rightPanel.BackColor = System.Drawing.Color.White;
-            this.rightPanel.Controls.Add(this.panel3);
+            this.rightPanel.Controls.Add(this.adPanel);
             this.rightPanel.Controls.Add(this.customPanel1);
-            this.rightPanel.Controls.Add(this.panel12);
+            this.rightPanel.Controls.Add(this.rightSepPanel3);
             this.rightPanel.Controls.Add(this.loginNowPanel);
-            this.rightPanel.Controls.Add(this.panel10);
-            this.rightPanel.Controls.Add(this.customPanel6);
-            this.rightPanel.Controls.Add(this.panel2);
+            this.rightPanel.Controls.Add(this.rightSepPanel2);
+            this.rightPanel.Controls.Add(this.couponCodePanel);
+            this.rightPanel.Controls.Add(this.rightSepPanel1);
             this.rightPanel.Controls.Add(this.myDealPreAppliedPanel);
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.rightPanel.Location = new System.Drawing.Point(966, 3);
@@ -1076,16 +1091,16 @@
             this.rightPanel.Size = new System.Drawing.Size(412, 876);
             this.rightPanel.TabIndex = 1;
             // 
-            // panel3
+            // adPanel
             // 
-            this.panel3.Controls.Add(this.adPB);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 600);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(50, 50, 50, 20);
-            this.panel3.Size = new System.Drawing.Size(412, 276);
-            this.panel3.TabIndex = 7;
+            this.adPanel.Controls.Add(this.adPB);
+            this.adPanel.Controls.Add(this.panel4);
+            this.adPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.adPanel.Location = new System.Drawing.Point(0, 600);
+            this.adPanel.Name = "adPanel";
+            this.adPanel.Padding = new System.Windows.Forms.Padding(50, 50, 50, 20);
+            this.adPanel.Size = new System.Drawing.Size(412, 276);
+            this.adPanel.TabIndex = 7;
             // 
             // adPB
             // 
@@ -1395,14 +1410,14 @@
             this.label27.TabIndex = 0;
             this.label27.Text = "Price details";
             // 
-            // panel12
+            // rightSepPanel3
             // 
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(0, 280);
-            this.panel12.Name = "panel12";
-            this.panel12.Padding = new System.Windows.Forms.Padding(15);
-            this.panel12.Size = new System.Drawing.Size(412, 23);
-            this.panel12.TabIndex = 5;
+            this.rightSepPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rightSepPanel3.Location = new System.Drawing.Point(0, 280);
+            this.rightSepPanel3.Name = "rightSepPanel3";
+            this.rightSepPanel3.Padding = new System.Windows.Forms.Padding(15);
+            this.rightSepPanel3.Size = new System.Drawing.Size(412, 23);
+            this.rightSepPanel3.TabIndex = 5;
             // 
             // loginNowPanel
             // 
@@ -1451,27 +1466,27 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "Login Now to avail exciting offers";
             // 
-            // panel10
+            // rightSepPanel2
             // 
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 189);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(412, 22);
-            this.panel10.TabIndex = 5;
+            this.rightSepPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rightSepPanel2.Location = new System.Drawing.Point(0, 189);
+            this.rightSepPanel2.Name = "rightSepPanel2";
+            this.rightSepPanel2.Size = new System.Drawing.Size(412, 22);
+            this.rightSepPanel2.TabIndex = 5;
             // 
-            // customPanel6
+            // couponCodePanel
             // 
-            this.customPanel6.BorderColor = System.Drawing.Color.LightGray;
-            this.customPanel6.Controls.Add(this.label23);
-            this.customPanel6.Controls.Add(this.couponCodeApplyLabel);
-            this.customPanel6.Controls.Add(this.panel9);
-            this.customPanel6.CornerRadius = 10;
-            this.customPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.customPanel6.Location = new System.Drawing.Point(0, 96);
-            this.customPanel6.Name = "customPanel6";
-            this.customPanel6.Size = new System.Drawing.Size(412, 93);
-            this.customPanel6.TabIndex = 6;
-            this.customPanel6.Visible = false;
+            this.couponCodePanel.BorderColor = System.Drawing.Color.LightGray;
+            this.couponCodePanel.Controls.Add(this.label23);
+            this.couponCodePanel.Controls.Add(this.couponCodeApplyLabel);
+            this.couponCodePanel.Controls.Add(this.panel9);
+            this.couponCodePanel.CornerRadius = 10;
+            this.couponCodePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.couponCodePanel.Location = new System.Drawing.Point(0, 96);
+            this.couponCodePanel.Name = "couponCodePanel";
+            this.couponCodePanel.Size = new System.Drawing.Size(412, 93);
+            this.couponCodePanel.TabIndex = 6;
+            this.couponCodePanel.Visible = false;
             // 
             // label23
             // 
@@ -1494,38 +1509,40 @@
             this.couponCodeApplyLabel.Size = new System.Drawing.Size(49, 20);
             this.couponCodeApplyLabel.TabIndex = 0;
             this.couponCodeApplyLabel.Text = "Apply";
+            this.couponCodeApplyLabel.Click += new System.EventHandler(this.OncouponCodeApplyLabelClick);
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
             this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel9.Controls.Add(this.textBox1);
+            this.panel9.Controls.Add(this.couponTB);
             this.panel9.Location = new System.Drawing.Point(32, 41);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(2);
             this.panel9.Size = new System.Drawing.Size(285, 34);
             this.panel9.TabIndex = 4;
             // 
-            // textBox1
+            // couponTB
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(281, 30);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Enter += new System.EventHandler(this.OnTextBoxActive);
+            this.couponTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.couponTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.couponTB.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.couponTB.Location = new System.Drawing.Point(2, 2);
+            this.couponTB.Name = "couponTB";
+            this.couponTB.Size = new System.Drawing.Size(281, 30);
+            this.couponTB.TabIndex = 1;
+            this.couponTB.TextChanged += new System.EventHandler(this.OncouponTBTextChanged);
+            this.couponTB.Enter += new System.EventHandler(this.OnTextBoxActive);
             // 
-            // panel2
+            // rightSepPanel1
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 73);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(15);
-            this.panel2.Size = new System.Drawing.Size(412, 23);
-            this.panel2.TabIndex = 5;
-            this.panel2.Visible = false;
+            this.rightSepPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rightSepPanel1.Location = new System.Drawing.Point(0, 73);
+            this.rightSepPanel1.Name = "rightSepPanel1";
+            this.rightSepPanel1.Padding = new System.Windows.Forms.Padding(15);
+            this.rightSepPanel1.Size = new System.Drawing.Size(412, 23);
+            this.rightSepPanel1.TabIndex = 5;
+            this.rightSepPanel1.Visible = false;
             // 
             // myDealPreAppliedPanel
             // 
@@ -1625,7 +1642,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.rightPanel.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.adPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.adPB)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -1643,8 +1660,8 @@
             this.loginNowPanel.ResumeLayout(false);
             this.loginNowPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.walletPB)).EndInit();
-            this.customPanel6.ResumeLayout(false);
-            this.customPanel6.PerformLayout();
+            this.couponCodePanel.ResumeLayout(false);
+            this.couponCodePanel.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.myDealPreAppliedPanel.ResumeLayout(false);
@@ -1691,13 +1708,13 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox couponTB;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label couponCodeApplyLabel;
         private System.Windows.Forms.Panel loginNowPanel;
         private System.Windows.Forms.PictureBox walletPB;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel rightSepPanel2;
         private System.Windows.Forms.Label loginClickLabel;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label27;
@@ -1750,7 +1767,7 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label baseFareLabel;
         private UserControls.CustomPanel customPanel1;
-        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel rightSepPanel3;
         private UserControls.CustomPanel secureTipPanel;
         private UserControls.CustomPanel customPanel2;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -1763,14 +1780,15 @@
         private UserControls.CustomPanel busDetailsPanel;
         private UserControls.CustomPanel travellerDetailsPanel;
         private System.Windows.Forms.Panel panel1;
-        private UserControls.CustomPanel customPanel6;
-        private System.Windows.Forms.Panel panel2;
+        private UserControls.CustomPanel couponCodePanel;
+        private System.Windows.Forms.Panel rightSepPanel1;
         private System.Windows.Forms.PictureBox adPB;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel adPanel;
         private System.Windows.Forms.PictureBox adClosePB;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label closeAdLabel;
         private System.Windows.Forms.Label stateWarningLabel;
         private System.Windows.Forms.PictureBox travellerEditPB;
+        private System.Windows.Forms.Label label2;
     }
 }

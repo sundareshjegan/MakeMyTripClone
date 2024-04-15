@@ -76,6 +76,7 @@ namespace MakeMyTripClone
                 Opacity /= 2;
                 SuccessFailureForm success = new SuccessFailureForm("failed", "Email Verification Failed");
                 success.ShowDialog();
+                validityTimer.Stop();
                 IsVerified = false;
                 Opacity *= 2;
             }
@@ -108,6 +109,10 @@ namespace MakeMyTripClone
 
         public bool SendEmail(string email, string name)
         {
+            //LoaderForm loader = new LoaderForm();
+            //loader.TopMost = true;
+            //loader.Show(this);
+
             ConvertMaskedEmail(email);
             confirmationCode = GenerateConfirmationCode();
 
@@ -236,7 +241,7 @@ namespace MakeMyTripClone
                 })
                 {
                     smtp.Send(message);
-                    MessageBox.Show("Sent Successfully..!");
+                    //MessageBox.Show("Sent Successfully..!");
                     validityTimer.Start();
                     return true;
                 }
@@ -246,6 +251,12 @@ namespace MakeMyTripClone
                 MessageBox.Show(ex.Message);
                 return false;
             }
+            finally
+            {
+                //loader.Hide();
+                //loader.Dispose();
+            }
+
         }
 
         private int GenerateConfirmationCode()

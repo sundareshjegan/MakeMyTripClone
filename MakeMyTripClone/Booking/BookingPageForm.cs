@@ -41,8 +41,6 @@ namespace MakeMyTripClone
          );
         #endregion
 
-        
-
         private Color colour = SystemColors.GradientInactiveCaption;
         private Color gray = Color.DimGray;
         private Color highglight = SystemColors.Highlight;

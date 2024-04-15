@@ -92,7 +92,7 @@ namespace MakeMyTripClone
                 agePanel.BackColor = Color.Red;
                 ageWarningLabel.Text = "Age Required..!"; return;
             }
-            if (int.Parse(ageTB.Text) > 200)
+            if (int.Parse(ageTB.Text) > 200 || int.Parse(ageTB.Text) <= 0)
             {
                 agePanel.BackColor = Color.Red;
                 ageWarningLabel.Text = "Invalid Age..!"; return;
@@ -131,7 +131,7 @@ namespace MakeMyTripClone
             button.FlatAppearance.BorderColor = Color.DodgerBlue;
             button.ForeColor = Color.DodgerBlue;
             button.BackColor = Color.FromArgb(200, 230, 255);
-            selectedGender = button.Text;
+            selectedGender = button.Text.Trim();
             genderWarningLabel.Text = "";
         }
         private void ResetButtonColors()

@@ -16,8 +16,8 @@ namespace MakeMyTripClone
             InitializeComponent();
             CreateCurves();
             Invalidate();
-            BackColor = Color.AliceBlue;
-            TransparencyKey = Color.AliceBlue;
+            //BackColor = Color.AliceBlue;
+            //TransparencyKey = Color.AliceBlue;
             //DBManager.GetConnection();
         }
 
@@ -25,6 +25,8 @@ namespace MakeMyTripClone
         private int previousX = 0;
         private int previousY = 0;
         private char selectedGender;
+
+        LoaderForm loader = new LoaderForm();
 
         #region DLL to Create rounded Regions
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -81,9 +83,12 @@ namespace MakeMyTripClone
 
         private void OnSubmitBtnMouseHover(object sender, EventArgs e)
         {
+            submitBtn.BackColor = Color.DodgerBlue;
+            
             // Move the submit button if Input is not valid
-            if (emailTB.Text == "" || passwordTB.Text == "") // Change this condition based on your validation logic
+            if (DBManager.Verify(emailTB.Text, passwordTB.Text)!="") // Change this condition based on your validation logic
             {
+                submitBtn.BackColor = Color.Red;
                 int newX, newY;
                 do
                 {
@@ -124,8 +129,15 @@ namespace MakeMyTripClone
                 resLabel.Text = DBManager.Verify(emailTB.Text, passwordTB.Text);
             }
         }
+
         private void OnRegisterBtnClicked(object sender, EventArgs e)
         {
+            loader.TopMost = true;
+            loader.Show(this);
+            
+            loader.OnLoaderOpened += Loader_OnLoaderOpened;
+            loader.OnLoaderInvoker();
+
             if (DBManager.IsUserExisted(regEmailTB.Text))
             {
                 regEmailWarningLabel.Text = "Email-Id already Exists";
@@ -133,23 +145,49 @@ namespace MakeMyTripClone
             }
             if (ValidateInputs())
             {
-                Opacity = Opacity / 2;
-                ConfirmForm confirmationForm = new ConfirmForm();
-                confirmationForm.SendEmail(regEmailTB.Text, regNameTB.Text);
-                confirmationForm.ShowDialog();
-                if (confirmationForm.IsVerified)
+               // Opacity = Opacity / 2;
+
+                //ConfirmForm confirmationForm = new ConfirmForm();
+                //confirmationForm.SendEmail(regEmailTB.Text, regNameTB.Text);
+
+                //loader.Hide();
+
+                //confirmationForm.ShowDialog();
+                //if (confirmationForm.IsVerified)
+                //{
+                //    CustomerDetails customer = new CustomerDetails()
+                //    {
+                //        Name = regNameTB.Text,
+                //        Email = regEmailTB.Text,
+                //        Phone = long.Parse(regMobileTB.Text),
+                //        Password = regPasswordTB.Text,
+                //        Gender = selectedGender
+                //    };
+                //    BooleanMsg result = DBManager.AddUser(customer);
+                //}
+                //Opacity = Opacity * 2;
+            }
+        }
+
+        private void Loader_OnLoaderOpened(object sender, EventArgs e)
+        {
+            ConfirmForm confirmationForm = new ConfirmForm();
+            confirmationForm.SendEmail(regEmailTB.Text, regNameTB.Text);
+
+            loader.Hide();
+
+            confirmationForm.ShowDialog();
+            if (confirmationForm.IsVerified)
+            {
+                CustomerDetails customer = new CustomerDetails()
                 {
-                    CustomerDetails customer = new CustomerDetails()
-                    {
-                        Name = regNameTB.Text,
-                        Email = regEmailTB.Text,
-                        Phone = long.Parse(regMobileTB.Text),
-                        Password = regPasswordTB.Text,
-                        Gender = selectedGender
-                    };
-                    BooleanMsg result = DBManager.AddUser(customer);
-                }
-                Opacity = Opacity * 2;
+                    Name = regNameTB.Text,
+                    Email = regEmailTB.Text,
+                    Phone = long.Parse(regMobileTB.Text),
+                    Password = regPasswordTB.Text,
+                    Gender = selectedGender
+                };
+                BooleanMsg result = DBManager.AddUser(customer);
             }
         }
 
@@ -164,11 +202,11 @@ namespace MakeMyTripClone
 
         #region TextBoxEvents
 
-        private void OnNameTBTextChanged(object sender, EventArgs e)
+        private void OnRegNameTBTextChanged(object sender, EventArgs e)
         {
             regNameWarningLabel.Text = regNameTB.Text == "" ? "Name is required..!" : "";
         }
-        private void OnEmailTBTextChanged(object sender, EventArgs e)
+        private void OnRegEmailTBTextChanged(object sender, EventArgs e)
         {
             regEmailWarningLabel.Text = regEmailTB.Text == "" ? "Email is required..!" : "";
             if (IsValidEmail(regEmailTB.Text))
@@ -191,7 +229,7 @@ namespace MakeMyTripClone
             e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != '\b';
         }
 
-        private void OnPasswordTBTextChanged(object sender, EventArgs e)
+        private void OnRegPasswordTBTextChanged(object sender, EventArgs e)
         {
             string password = regPasswordTB.Text;
             string strength = GetPasswordStrength(password).ToString();
@@ -232,6 +270,12 @@ namespace MakeMyTripClone
         }
         private void OnEmailTBClicked(object sender, EventArgs e)
         {
+            submitBtn.Location = new Point(140, 3);
+        }
+
+        private void OnLoginPageTBsTextChanged(object sender, EventArgs e)
+        {
+            submitBtn.Visible = (emailTB.Text != "" && passwordTB.Text != "");
             submitBtn.Location = new Point(140, 3);
         }
         #endregion
@@ -343,6 +387,8 @@ namespace MakeMyTripClone
             }
             return true;
         }
-        #endregion 
+        #endregion
+
+        
     }
 }

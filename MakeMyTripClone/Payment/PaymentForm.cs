@@ -17,11 +17,18 @@ namespace MakeMyTripClone
         {
             InitializeComponent();
             CreateCurves();
+            DBManager.OnUserLoggedIn += DBManagerOnUserLoggedIn;
+        }
+
+        private void DBManagerOnUserLoggedIn(object sender, bool e)
+        {
+            throw new NotImplementedException();
         }
 
         private Panel previousPanel = null;
         private Panel previousBlueBar = null;
         private List<SeatDeatils> seatDetails = new List<SeatDeatils>();
+        private ETicket eticket;
 
         #region DLL to Create rounded Regions
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -34,6 +41,19 @@ namespace MakeMyTripClone
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
+        #endregion
+
+        #region TextBox Events
+        private void CardNumberTBClicked(object sender, EventArgs e)
+        {
+            int length = cardNumberTB.Text.TrimEnd().Length;
+            cardNumberTB.SelectionStart = length;
+        }
+        private void OncvvNumberTBClicked(object sender, EventArgs e)
+        {
+            int length = cvvNumberTB.Text.TrimEnd().Length;
+            cvvNumberTB.SelectionStart = length;
+        }
         #endregion
 
         private void PaymentGatewayPanelClick(object sender, EventArgs e)
@@ -89,10 +109,48 @@ namespace MakeMyTripClone
             }
             SuccessFailureForm success = new SuccessFailureForm("success", "Payment Successful!");
             success.ShowDialog();
+            eticket.PaymentMethod = "UPI";
+            Opacity += 0.1;
+        }
+        private void OnCreditCardPayNowBtnClicked(object sender, EventArgs e)
+        {
+            if(cardNumberTB.Text == "" || cardNumberTB.Text.Length != 19)
+            {
+                creditCardWarningLabel.Text = "Invalid Card Number";
+                return;
+            }
+            if(nameTB.Text == "")
+            {
+                creditCardWarningLabel.Text = "Enter Card Holder Name";
+                return;
+            }
+            if(expiryMonthTB.Text=="" || expiryYearTB.Text == "")
+            {
+                creditCardWarningLabel.Text = "Invalid expiry date && month";
+                return;
+            }
+            if(cvvNumberTB.Text.Length != 3)
+            {
+                creditCardWarningLabel.Text = "Invalid cvv number";
+                return;
+            }
+            creditCardWarningLabel.Text = "Redirecting to Payment Gateway..!";
+            Opacity -= 0.1;
+            foreach (SeatDeatils seat in seatDetails)
+            {
+                DBManager.ChangeSeatBookingState(seat);
+            }
+            SuccessFailureForm success = new SuccessFailureForm("success", "Payment Successful!");
+            success.ShowDialog();
+            eticket.PaymentMethod = "Credit - Card";
+
+            ETicketGenerator eTicketGenerator = new ETicketGenerator();
+            string ticketAsHTML = eTicketGenerator.GenerateETicket(eticket);
+            eTicketGenerator.SendETicket(eticket.EmailToSendTicket, ticketAsHTML);
             Opacity += 0.1;
         }
 
-        public void SetData(BookingDetails bookingDetails, List<TravellerDetails> travellers, int finalAmount)
+        public void SetData(BookingDetails bookingDetails, List<TravellerDetails> travellers, int finalAmount, string emailToSendTicket)
         {
             busNameLabel.Text = bookingDetails.BusName;
             busTypeLabel.Text = bookingDetails.Bustype;
@@ -127,9 +185,21 @@ namespace MakeMyTripClone
             seatDetailsLabel.Text = string.Join(", ", seatStrings);
             seatDetailsPanel.Height = seatDetailsLabel.Height+10;
             
-            foreach(TravellerDetails traveller in travellers)
+            //string[,] passengerDetails = new string
+            //foreach(TravellerDetails traveller in travellers)
+            //{
+            //    travellerDetailsLabel.Text += $"{traveller.TravellerName} ({traveller.Gender} , {traveller.TravellerAge})\n";
+            //}
+            string[,] travellerDetails = new string[travellers.Count, 4];
+
+            for (int i = 0; i < travellers.Count; i++)
             {
-                travellerDetailsLabel.Text += $"{traveller.TravellerName} ({traveller.Gender} , {traveller.TravellerAge})\n";
+                travellerDetailsLabel.Text += $"{travellers[i].TravellerName} ({travellers[i].Gender} , {travellers[i].TravellerAge})\n";
+
+                travellerDetails[i, 0] = travellers[i].TravellerName;
+                travellerDetails[i, 1] = travellers[i].SeatNumber;
+                travellerDetails[i, 2] = travellers[i].Gender;
+                travellerDetails[i, 3] = travellers[i].TravellerAge.ToString();
             }
             travellersPanel.Height = travellerDetailsLabel.Height + 10;
 
@@ -149,10 +219,25 @@ namespace MakeMyTripClone
                 {
                     seat.Price = int.Parse(bookingDetails.seatAmount);
                 }
-                //seat.CId = DBManager.LoggedInUserID;
+                seat.CId = DBManager.CurrentUser.Id;
                 seatDetails.Add(seat);
             }
+
+            eticket = new ETicket()
+            {
+                BookingID = ""+bookingDetails.RootId + bookingDetails.BusId + DBManager.CurrentUser.Id,
+                JourneyDate = pickUpDate,
+                DepartureTime = pickUpTime,
+                SourceCity = bookingDetails.Pickuplocation,
+                DestinationCity = bookingDetails.Droplocation,
+                BusName = bookingDetails.BusName + " " + bookingDetails.Bustype,
+                Contact = "8608791884",
+                PassengerDetails = travellerDetails,
+                TotalFare = totalAmountDueLabel.Text,
+                EmailToSendTicket = emailToSendTicket,
+            };
         }
+
         #region Helper Functions
         private void CreateCurves()
         {
@@ -183,6 +268,7 @@ namespace MakeMyTripClone
             }
             return "ST";
         }
+
         #endregion
     }
 }

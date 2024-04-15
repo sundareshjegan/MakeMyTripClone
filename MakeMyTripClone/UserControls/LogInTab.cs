@@ -15,7 +15,8 @@ namespace MakeMyTripClone
         public LogInTab()
         {
             InitializeComponent();
-            tabControl1.SelectedTab = DBManager.IsUserLoggedIn ? afterLogInTab : beforeLogInTab;
+            beforeLogInPanel.Visible = !isLoggedIn;
+            afterLogInPanel.Visible = isLoggedIn;
         }
         private bool isLoggedIn;
         public bool IsLoggedIn
@@ -27,7 +28,8 @@ namespace MakeMyTripClone
             set
             {
                 isLoggedIn = value;
-                tabControl1.SelectedTab = isLoggedIn ? afterLogInTab : beforeLogInTab;
+                beforeLogInPanel.Visible = !isLoggedIn;
+                afterLogInPanel.Visible = isLoggedIn;
             }
         }
 
@@ -57,7 +59,6 @@ namespace MakeMyTripClone
                 mailLabel.Text = value;
             }
         }
-
         private void OnLogInBtnClicked(object sender, EventArgs e)
         {
             LoginForm login = new LoginForm();

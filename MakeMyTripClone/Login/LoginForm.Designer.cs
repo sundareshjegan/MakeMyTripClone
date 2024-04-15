@@ -119,6 +119,7 @@
             this.emailTB.Size = new System.Drawing.Size(295, 22);
             this.emailTB.TabIndex = 2;
             this.emailTB.Click += new System.EventHandler(this.OnEmailTBClicked);
+            this.emailTB.TextChanged += new System.EventHandler(this.OnLoginPageTBsTextChanged);
             this.emailTB.Enter += new System.EventHandler(this.OnEmailTBClicked);
             // 
             // label1
@@ -156,6 +157,7 @@
             this.passwordTB.TabIndex = 4;
             this.passwordTB.UseSystemPasswordChar = true;
             this.passwordTB.Click += new System.EventHandler(this.OnEmailTBClicked);
+            this.passwordTB.TextChanged += new System.EventHandler(this.OnLoginPageTBsTextChanged);
             this.passwordTB.Enter += new System.EventHandler(this.OnEmailTBClicked);
             // 
             // inputPanel
@@ -259,6 +261,7 @@
             this.submitBtn.TabIndex = 0;
             this.submitBtn.Text = "Login";
             this.submitBtn.UseVisualStyleBackColor = false;
+            this.submitBtn.Visible = false;
             this.submitBtn.Click += new System.EventHandler(this.OnSubmitBtnClicked);
             this.submitBtn.MouseEnter += new System.EventHandler(this.OnSubmitBtnMouseHover);
             this.submitBtn.MouseHover += new System.EventHandler(this.OnSubmitBtnMouseHover);
@@ -280,7 +283,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::MakeMyTripClone.Properties.Resources.logo;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(100, 33);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(231, 67);
@@ -303,7 +306,7 @@
             // 
             // viewHideBtn
             // 
-            this.viewHideBtn.BackgroundImage = global::MakeMyTripClone.Properties.Resources.viewPassword;
+            this.viewHideBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("viewHideBtn.BackgroundImage")));
             this.viewHideBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.viewHideBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.viewHideBtn.FlatAppearance.BorderSize = 0;
@@ -552,7 +555,7 @@
             this.regPasswordTB.Size = new System.Drawing.Size(295, 22);
             this.regPasswordTB.TabIndex = 5;
             this.regPasswordTB.UseSystemPasswordChar = true;
-            this.regPasswordTB.TextChanged += new System.EventHandler(this.OnPasswordTBTextChanged);
+            this.regPasswordTB.TextChanged += new System.EventHandler(this.OnRegPasswordTBTextChanged);
             // 
             // regNameTB
             // 
@@ -564,7 +567,7 @@
             this.regNameTB.Name = "regNameTB";
             this.regNameTB.Size = new System.Drawing.Size(295, 22);
             this.regNameTB.TabIndex = 2;
-            this.regNameTB.TextChanged += new System.EventHandler(this.OnNameTBTextChanged);
+            this.regNameTB.TextChanged += new System.EventHandler(this.OnRegNameTBTextChanged);
             // 
             // regMobileTB
             // 
@@ -591,7 +594,7 @@
             this.regEmailTB.Name = "regEmailTB";
             this.regEmailTB.Size = new System.Drawing.Size(295, 22);
             this.regEmailTB.TabIndex = 3;
-            this.regEmailTB.TextChanged += new System.EventHandler(this.OnEmailTBTextChanged);
+            this.regEmailTB.TextChanged += new System.EventHandler(this.OnRegEmailTBTextChanged);
             // 
             // genderWarningLabel
             // 
@@ -683,7 +686,7 @@
             // 
             // regConPwdViewHideBtn
             // 
-            this.regConPwdViewHideBtn.BackgroundImage = global::MakeMyTripClone.Properties.Resources.viewPassword;
+            this.regConPwdViewHideBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("regConPwdViewHideBtn.BackgroundImage")));
             this.regConPwdViewHideBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.regConPwdViewHideBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.regConPwdViewHideBtn.FlatAppearance.BorderSize = 0;
@@ -782,7 +785,7 @@
             // imagePanel
             // 
             this.imagePanel.BackColor = System.Drawing.Color.White;
-            this.imagePanel.BackgroundImage = global::MakeMyTripClone.Properties.Resources.LoginPageCarousel1;
+            this.imagePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imagePanel.BackgroundImage")));
             this.imagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imagePanel.Controls.Add(this.label10);
             this.imagePanel.Controls.Add(this.closePB);
@@ -812,7 +815,7 @@
             // 
             this.closePB.BackColor = System.Drawing.Color.Transparent;
             this.closePB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closePB.Image = global::MakeMyTripClone.Properties.Resources.close;
+            this.closePB.Image = ((System.Drawing.Image)(resources.GetObject("closePB.Image")));
             this.closePB.Location = new System.Drawing.Point(18, 15);
             this.closePB.Name = "closePB";
             this.closePB.Size = new System.Drawing.Size(29, 28);
@@ -824,7 +827,7 @@
             // carouselPB
             // 
             this.carouselPB.BackColor = System.Drawing.Color.Silver;
-            this.carouselPB.Image = global::MakeMyTripClone.Properties.Resources.LoginPageCarousel1;
+            this.carouselPB.Image = ((System.Drawing.Image)(resources.GetObject("carouselPB.Image")));
             this.carouselPB.Location = new System.Drawing.Point(39, 80);
             this.carouselPB.Name = "carouselPB";
             this.carouselPB.Padding = new System.Windows.Forms.Padding(10);
@@ -861,7 +864,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.TransparencyKey = System.Drawing.Color.White;
             this.Resize += new System.EventHandler(this.OnLoginFormResized);
             this.inputPanel.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
