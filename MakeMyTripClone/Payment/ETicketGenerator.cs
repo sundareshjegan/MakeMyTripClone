@@ -100,8 +100,8 @@ namespace MakeMyTripClone
             htmlBuilder.AppendLine("<tr>");
             htmlBuilder.AppendLine("<th>Passenger Name</th>");
             htmlBuilder.AppendLine("<th>Seat Number</th>");
-            htmlBuilder.AppendLine("<th>Age</th>");
             htmlBuilder.AppendLine("<th>Gender</th>");
+            htmlBuilder.AppendLine("<th>Age</th>");
             htmlBuilder.AppendLine("</tr>");
             htmlBuilder.AppendLine("</thead>");
             htmlBuilder.AppendLine("<tbody>");
@@ -123,7 +123,7 @@ namespace MakeMyTripClone
             htmlBuilder.AppendLine("<div class=\"payment-details\">");
             htmlBuilder.AppendLine("<h3>Payment Details:</h3>");
             htmlBuilder.AppendLine($"<p><strong>Total Fare:</strong> {totalFare}</p>");
-            htmlBuilder.AppendLine($"<p><strong>Payment Method:</strong> {paymentMethod}</p>");
+            htmlBuilder.AppendLine($"<p><strong>Payment Method:</strong> {paymentMethod}</p><br/><br/>");
             htmlBuilder.AppendLine($"<center><p>It's not about the destination, it's about the journey.</p>");
             htmlBuilder.AppendLine($"<center><strong><p>Happy Journey..😊</p></strong>");
             htmlBuilder.AppendLine("</div>");
@@ -174,7 +174,9 @@ namespace MakeMyTripClone
                     message.Attachments.Add(new Attachment(memoryStream, "ETicket.pdf", "application/pdf"));
                     smtp.Send(message);
                     MessageBox.Show("Ticket Sent to your mail. Please keep it with your travel. \n                              Happy Journey..😊");
+                    Application.Exit();
                 }
+
             }
             catch (Exception ex)
             {

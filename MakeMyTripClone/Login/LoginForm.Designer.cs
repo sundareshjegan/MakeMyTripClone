@@ -83,11 +83,25 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.passwordStrengthPanel = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.ForgotPasswordTab = new System.Windows.Forms.TabPage();
+            this.updatePasswordWarningLabel = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.newConfirmPasswordTB = new System.Windows.Forms.TextBox();
+            this.newPasswordTB = new System.Windows.Forms.TextBox();
+            this.updatePasswordEmailTB = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.imagePanel = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.closePB = new System.Windows.Forms.PictureBox();
             this.carouselPB = new System.Windows.Forms.PictureBox();
             this.registerBtn = new MakeMyTripClone.RippleButton();
+            this.updatePasswordBtn = new MakeMyTripClone.RippleButton();
             this.inputPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.loginTabPage.SuspendLayout();
@@ -102,6 +116,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.regEmailValidPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regMobileValidPB)).BeginInit();
+            this.ForgotPasswordTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.imagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closePB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carouselPB)).BeginInit();
@@ -148,7 +164,6 @@
             // 
             this.passwordTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.passwordTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwordTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.passwordTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTB.Location = new System.Drawing.Point(66, 310);
             this.passwordTB.Margin = new System.Windows.Forms.Padding(2);
@@ -175,6 +190,7 @@
             // 
             this.tabControl.Controls.Add(this.loginTabPage);
             this.tabControl.Controls.Add(this.registerTabPage);
+            this.tabControl.Controls.Add(this.ForgotPasswordTab);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.ItemSize = new System.Drawing.Size(10, 10);
             this.tabControl.Location = new System.Drawing.Point(0, 0);
@@ -303,6 +319,7 @@
             this.label3.Size = new System.Drawing.Size(140, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "Forgot Password ?";
+            this.label3.Click += new System.EventHandler(this.OnForgotPasswordLabelClicked);
             // 
             // viewHideBtn
             // 
@@ -782,6 +799,159 @@
             this.panel5.Size = new System.Drawing.Size(295, 1);
             this.panel5.TabIndex = 6;
             // 
+            // ForgotPasswordTab
+            // 
+            this.ForgotPasswordTab.BackColor = System.Drawing.Color.White;
+            this.ForgotPasswordTab.Controls.Add(this.updatePasswordBtn);
+            this.ForgotPasswordTab.Controls.Add(this.updatePasswordWarningLabel);
+            this.ForgotPasswordTab.Controls.Add(this.pictureBox3);
+            this.ForgotPasswordTab.Controls.Add(this.label12);
+            this.ForgotPasswordTab.Controls.Add(this.newConfirmPasswordTB);
+            this.ForgotPasswordTab.Controls.Add(this.newPasswordTB);
+            this.ForgotPasswordTab.Controls.Add(this.updatePasswordEmailTB);
+            this.ForgotPasswordTab.Controls.Add(this.label13);
+            this.ForgotPasswordTab.Controls.Add(this.label14);
+            this.ForgotPasswordTab.Controls.Add(this.button1);
+            this.ForgotPasswordTab.Controls.Add(this.panel8);
+            this.ForgotPasswordTab.Controls.Add(this.panel1);
+            this.ForgotPasswordTab.Controls.Add(this.panel3);
+            this.ForgotPasswordTab.Location = new System.Drawing.Point(4, 14);
+            this.ForgotPasswordTab.Name = "ForgotPasswordTab";
+            this.ForgotPasswordTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ForgotPasswordTab.Size = new System.Drawing.Size(430, 607);
+            this.ForgotPasswordTab.TabIndex = 2;
+            // 
+            // updatePasswordWarningLabel
+            // 
+            this.updatePasswordWarningLabel.AutoSize = true;
+            this.updatePasswordWarningLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatePasswordWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.updatePasswordWarningLabel.Location = new System.Drawing.Point(76, 438);
+            this.updatePasswordWarningLabel.Name = "updatePasswordWarningLabel";
+            this.updatePasswordWarningLabel.Size = new System.Drawing.Size(0, 17);
+            this.updatePasswordWarningLabel.TabIndex = 20;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(99, 36);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(231, 67);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 19;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(61, 176);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 23);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Email - ID";
+            // 
+            // newConfirmPasswordTB
+            // 
+            this.newConfirmPasswordTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.newConfirmPasswordTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.newConfirmPasswordTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newConfirmPasswordTB.Location = new System.Drawing.Point(65, 403);
+            this.newConfirmPasswordTB.Margin = new System.Windows.Forms.Padding(2);
+            this.newConfirmPasswordTB.Name = "newConfirmPasswordTB";
+            this.newConfirmPasswordTB.Size = new System.Drawing.Size(295, 22);
+            this.newConfirmPasswordTB.TabIndex = 14;
+            this.newConfirmPasswordTB.UseSystemPasswordChar = true;
+            // 
+            // newPasswordTB
+            // 
+            this.newPasswordTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.newPasswordTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.newPasswordTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPasswordTB.Location = new System.Drawing.Point(65, 313);
+            this.newPasswordTB.Margin = new System.Windows.Forms.Padding(2);
+            this.newPasswordTB.Name = "newPasswordTB";
+            this.newPasswordTB.Size = new System.Drawing.Size(295, 22);
+            this.newPasswordTB.TabIndex = 14;
+            this.newPasswordTB.UseSystemPasswordChar = true;
+            // 
+            // updatePasswordEmailTB
+            // 
+            this.updatePasswordEmailTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.updatePasswordEmailTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.updatePasswordEmailTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.updatePasswordEmailTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatePasswordEmailTB.Location = new System.Drawing.Point(65, 218);
+            this.updatePasswordEmailTB.Margin = new System.Windows.Forms.Padding(2);
+            this.updatePasswordEmailTB.Name = "updatePasswordEmailTB";
+            this.updatePasswordEmailTB.Size = new System.Drawing.Size(295, 22);
+            this.updatePasswordEmailTB.TabIndex = 12;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(61, 359);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(189, 23);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Confirm New Password";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(61, 269);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(122, 23);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "New Password";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(364, 315);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(20, 20);
+            this.button1.TabIndex = 11;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel8.Location = new System.Drawing.Point(65, 430);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(295, 1);
+            this.panel8.TabIndex = 17;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.Location = new System.Drawing.Point(65, 245);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(295, 1);
+            this.panel1.TabIndex = 16;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel3.Location = new System.Drawing.Point(65, 340);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(295, 1);
+            this.panel3.TabIndex = 17;
+            // 
             // imagePanel
             // 
             this.imagePanel.BackColor = System.Drawing.Color.White;
@@ -851,6 +1021,19 @@
             this.registerBtn.UseVisualStyleBackColor = false;
             this.registerBtn.Click += new System.EventHandler(this.OnRegisterBtnClicked);
             // 
+            // updatePasswordBtn
+            // 
+            this.updatePasswordBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.updatePasswordBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatePasswordBtn.ForeColor = System.Drawing.Color.White;
+            this.updatePasswordBtn.Location = new System.Drawing.Point(39, 487);
+            this.updatePasswordBtn.Name = "updatePasswordBtn";
+            this.updatePasswordBtn.Size = new System.Drawing.Size(355, 50);
+            this.updatePasswordBtn.TabIndex = 21;
+            this.updatePasswordBtn.Text = "UPDATE PASSWORD";
+            this.updatePasswordBtn.UseVisualStyleBackColor = false;
+            this.updatePasswordBtn.Click += new System.EventHandler(this.OnUpdatePasswordBtnClicked);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -883,6 +1066,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.regEmailValidPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regMobileValidPB)).EndInit();
+            this.ForgotPasswordTab.ResumeLayout(false);
+            this.ForgotPasswordTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.imagePanel.ResumeLayout(false);
             this.imagePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closePB)).EndInit();
@@ -953,6 +1139,20 @@
         private RippleButton registerBtn;
         private System.Windows.Forms.Label genderWarningLabel;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabPage ForgotPasswordTab;
+        private RippleButton updatePasswordBtn;
+        private System.Windows.Forms.Label updatePasswordWarningLabel;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox newConfirmPasswordTB;
+        private System.Windows.Forms.TextBox newPasswordTB;
+        private System.Windows.Forms.TextBox updatePasswordEmailTB;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
         //private RippleButton rippleButton1;
     }
 }

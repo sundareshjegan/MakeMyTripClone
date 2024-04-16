@@ -343,6 +343,26 @@ namespace MakeMyTripClone.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap femaleSeater {
+            get {
+                object obj = ResourceManager.GetObject("femaleSeater", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap femaleSleeper {
+            get {
+                object obj = ResourceManager.GetObject("femaleSleeper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flight {
             get {
                 object obj = ResourceManager.GetObject("flight", resourceCulture);
@@ -886,6 +906,16 @@ namespace MakeMyTripClone.Properties {
         internal static System.Drawing.Bitmap SLEEPER {
             get {
                 object obj = ResourceManager.GetObject("SLEEPER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sleeperimage {
+            get {
+                object obj = ResourceManager.GetObject("sleeperimage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -14,9 +14,8 @@ namespace MakeMyTripClone
         public string SeatType { get; set; }
         public string SeatNumber { get; set; }
         public Boolean IsBooked { get; set; }
-        //public Boolean IsWindow { get; set; }
+        public bool IsBookedByfemale { get; set; }
         public int Price { get; set; }
         public int CId { get; set; }
-
     }
 }

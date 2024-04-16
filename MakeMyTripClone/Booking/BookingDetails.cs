@@ -23,5 +23,6 @@ namespace MakeMyTripClone
         public string Durations { get; set; }
         public int Totalamount { get; set; }
         public string seatAmount { get; set; }
+        public List<bool> FemaleSeatList { get; set; }
     }
 }

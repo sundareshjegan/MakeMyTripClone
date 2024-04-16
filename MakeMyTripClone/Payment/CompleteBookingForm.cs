@@ -98,8 +98,17 @@ namespace MakeMyTripClone
         private void OncouponCodeApplyLabelClick(object sender, EventArgs e)
         {
             int couponDiscountAmount = random.Next(1, 7) * 10;
-            myDealAmountLabel.Text = (int.Parse(myDealAmountLabel.Text) + couponDiscountAmount).ToString();
-            couponCodeApplyLabel.Enabled = false;
+            if(couponTB.Text == "MAKEMYTRIP")
+            {
+                myDealAmountLabel.Text = (int.Parse(myDealAmountLabel.Text) + couponDiscountAmount).ToString();
+                couponCodeApplyLabel.Enabled = false;
+                couponTB.Enabled = false;
+                couponWarningLabel.Text = "Coupon Applied";
+            }
+            else
+            {
+                couponWarningLabel.Text = "Invalid Coupon code!";
+            }
         }
         #endregion
 
@@ -163,6 +172,7 @@ namespace MakeMyTripClone
                 travellerDetailsPanel.Height += traveller.Height+10;
 
                 travellerDetailsPanel.Controls.Add(traveller);
+                traveller.FemaleBtnState(busDetails.FemaleSeatList[i]);
                 travellersList.Add(traveller);
             }
             foreach (TravellerDetails traveller in travellersList)
@@ -171,6 +181,8 @@ namespace MakeMyTripClone
             }
             leftPanel.AutoScroll = true;
             #endregion
+
+            #region Set UI data
             seatNoLabel.Text = "Seat No : "+busDetails.Bookedseatnumber;
             busNameLabel.Text = busDetails.BusName;
             busTypeLabel.Text = "Bharat Benz/" + busDetails.Bustype;
@@ -197,6 +209,7 @@ namespace MakeMyTripClone
             baseFareLabel.Text = busDetails.Totalamount.ToString();
 
             emailTB.Text = DBManager.IsUserLoggedIn ? DBManager.CurrentUser.Email : "";
+            #endregion
         }
 
         private void OnContinueBtnClicked(object sender, EventArgs e)
@@ -221,18 +234,21 @@ namespace MakeMyTripClone
         {
             return Regex.IsMatch(email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
         }
+
         private void CreateCurves()
         {
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
             ratingPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, ratingPanel.Width, ratingPanel.Height, 7, 7));
             loginNowPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, loginNowPanel.Width, loginNowPanel.Height, 50, 50));
         }
+
         private bool IsAllDataEnteredAndValid()
         {
             foreach (TravellerDetails traveller in travellersList)
             {
                 traveller.TravellerName = traveller.TravellerName == "" || string.IsNullOrWhiteSpace(traveller.TravellerName) ? "*Name required" : "";
                 traveller.TravellerAge = traveller.TravellerAge == "" ? "*Age Required!" : "";
+                if(traveller.TravellerAge!="")
                 traveller.TravellerAge = (int.Parse(traveller.TravellerAge) >=200 || int.Parse(traveller.TravellerAge) <=0) ? "Invalid Age!" : "";
                 traveller.genderWarningLabel.Text = traveller.Gender == "" ? "Select Gender!" : "";
                 emailWarningLabel.Text = emailTB.Text == "" ? "Email Id Required" : "";
@@ -240,7 +256,8 @@ namespace MakeMyTripClone
 
                 if (traveller.TravellerName == "") return false;
                 if (traveller.TravellerAge == "") return false;
-                if ((int.Parse(traveller.TravellerAge) >= 200) || (int.Parse(traveller.TravellerAge)<=0)) return false;
+                if (traveller.TravellerAge != "")
+                    if ((int.Parse(traveller.TravellerAge) >= 200) || (int.Parse(traveller.TravellerAge)<=0)) return false;
                 if (traveller.Gender == "") return false;
             }
             stateWarningLabel.Text = stateCB.Text == "" ? "Select State" : "";

@@ -80,10 +80,17 @@ namespace MakeMyTripClone
 
         private void SuccessForm_Paint(object sender, PaintEventArgs e)
         {
-            if (gifImage != null)
+            try
             {
-                gifImage.SelectActiveFrame(System.Drawing.Imaging.FrameDimension.Time, currentFrame);
-                e.Graphics.DrawImage(gifImage, ClientRectangle);
+                if (gifImage != null)
+                {
+                    gifImage.SelectActiveFrame(System.Drawing.Imaging.FrameDimension.Time, currentFrame);
+                    e.Graphics.DrawImage(gifImage, ClientRectangle);
+                }
+            }
+            catch(Exception ex)
+            {
+                //do nothing
             }
         }
 

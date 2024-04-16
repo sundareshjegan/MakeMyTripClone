@@ -51,6 +51,11 @@ namespace MakeMyTripClone
         {
             tabControl.SelectedTab = loginTabPage;
         }
+        private void OnForgotPasswordLabelClicked(object sender, EventArgs e)
+        {
+            updatePasswordEmailTB.Text = emailTB.Text;
+            tabControl.SelectedTab = ForgotPasswordTab;
+        }
         #endregion
 
         private void OnClosePBClicked(object sender, EventArgs e)
@@ -131,12 +136,8 @@ namespace MakeMyTripClone
         }
 
         private void OnRegisterBtnClicked(object sender, EventArgs e)
-        {
-            loader.TopMost = true;
-            loader.Show(this);
-            
-            loader.OnLoaderOpened += Loader_OnLoaderOpened;
-            loader.OnLoaderInvoker();
+        {           
+            //loader.OnLoaderOpened += Loader_OnLoaderOpened;
 
             if (DBManager.IsUserExisted(regEmailTB.Text))
             {
@@ -145,36 +146,67 @@ namespace MakeMyTripClone
             }
             if (ValidateInputs())
             {
-               // Opacity = Opacity / 2;
+                Opacity = Opacity / 2;
 
-                //ConfirmForm confirmationForm = new ConfirmForm();
-                //confirmationForm.SendEmail(regEmailTB.Text, regNameTB.Text);
+                ConfirmForm confirmationForm = new ConfirmForm();
+                confirmationForm.SendEmail(regEmailTB.Text, regNameTB.Text);
 
-                //loader.Hide();
+                loader.Hide();
 
-                //confirmationForm.ShowDialog();
-                //if (confirmationForm.IsVerified)
-                //{
-                //    CustomerDetails customer = new CustomerDetails()
-                //    {
-                //        Name = regNameTB.Text,
-                //        Email = regEmailTB.Text,
-                //        Phone = long.Parse(regMobileTB.Text),
-                //        Password = regPasswordTB.Text,
-                //        Gender = selectedGender
-                //    };
-                //    BooleanMsg result = DBManager.AddUser(customer);
-                //}
-                //Opacity = Opacity * 2;
+                confirmationForm.ShowDialog();
+                if (confirmationForm.IsVerified)
+                {
+                    CustomerDetails customer = new CustomerDetails()
+                    {
+                        Name = regNameTB.Text,
+                        Email = regEmailTB.Text,
+                        Phone = long.Parse(regMobileTB.Text),
+                        Password = regPasswordTB.Text,
+                        Gender = selectedGender
+                    };
+                    BooleanMsg result = DBManager.AddUser(customer);
+                }
+                Opacity = Opacity * 2;
+                tabControl.SelectedTab = loginTabPage;
             }
         }
 
+        private void OnUpdatePasswordBtnClicked(object sender, EventArgs e)
+        {
+            if(updatePasswordEmailTB.Text == "")
+            {
+                updatePasswordWarningLabel.Text = "Email id required..!";
+                return;
+            }
+            if (!DBManager.IsUserExisted(updatePasswordEmailTB.Text))
+            {
+                updatePasswordWarningLabel.Text = "Email doesnot exist..!";
+                return;
+                //DBManager.UpdatePassword(updatePasswordEmailTB.Text, newPasswordTB.Text);
+            }
+            if (newPasswordTB.Text == "" || newConfirmPasswordTB.Text == "")
+            {
+                updatePasswordWarningLabel.Text = "Passwords should not be empty..!";
+                return;
+            }
+            if (newPasswordTB.Text != newConfirmPasswordTB.Text && newPasswordTB.Text != "")
+            {
+                updatePasswordWarningLabel.Text = "Passwords did not match..!";
+                return;
+            }
+            DBManager.UpdatePassword(updatePasswordEmailTB.Text, newPasswordTB.Text);
+            new SuccessFailureForm("success", "Password Updated Successfully").ShowDialog();
+            tabControl.SelectedTab = loginTabPage;
+        }
         private void Loader_OnLoaderOpened(object sender, EventArgs e)
         {
+            //loader.TopMost = true;
+            //loader.Show(this);
+
             ConfirmForm confirmationForm = new ConfirmForm();
             confirmationForm.SendEmail(regEmailTB.Text, regNameTB.Text);
 
-            loader.Hide();
+            //loader.Hide();
 
             confirmationForm.ShowDialog();
             if (confirmationForm.IsVerified)
@@ -387,8 +419,8 @@ namespace MakeMyTripClone
             }
             return true;
         }
-        #endregion
 
-        
+
+        #endregion
     }
 }

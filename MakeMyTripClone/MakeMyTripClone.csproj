@@ -303,12 +303,6 @@
     <Compile Include="Booking\Checkbox.Designer.cs">
       <DependentUpon>Checkbox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Booking\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Booking\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Booking\Seaterseats.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -431,9 +425,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Booking\Checkbox.resx">
       <DependentUpon>Checkbox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Booking\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Booking\Seaterseats.resx">
       <DependentUpon>Seaterseats.cs</DependentUpon>
@@ -815,6 +806,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\additionalDiscount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FemaleSeater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Femalesleeper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sleeperimage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

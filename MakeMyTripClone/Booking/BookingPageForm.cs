@@ -19,6 +19,13 @@ namespace MakeMyTripClone
         public BookingPageForm()
         {
             InitializeComponent();
+            DBManager.OnUserLoggedIn += DBManagerOnUserLoggedIn;
+            if (DBManager.IsUserLoggedIn)
+            {
+                logInTab1.IsLoggedIn = DBManager.IsUserLoggedIn;
+                logInTab1.UserName = DBManager.CurrentUser.Name;
+                logInTab1.UserEmail = DBManager.CurrentUser.Email;
+            }
         }
        
         private Color colour = SystemColors.GradientInactiveCaption, gray = Color.DimGray, highglight = SystemColors.Highlight, white = Color.White;
@@ -44,6 +51,16 @@ namespace MakeMyTripClone
             int nHeightEllipse
         );
 
+        private void DBManagerOnUserLoggedIn(object sender, bool isLoggedIn)
+        {
+            logInTab1.IsLoggedIn = DBManager.IsUserLoggedIn;
+            if (sender is CustomerDetails currentUser)
+            {
+                logInTab1.UserName = currentUser.Name;
+                logInTab1.UserEmail = currentUser.Email;
+            }
+        }
+
         private void SrchbuttonClick(object sender, EventArgs e)
         {
             String[] boarding = fromcomboBox.Text.Split(',');
@@ -56,7 +73,7 @@ namespace MakeMyTripClone
             SetData(boarding[0], destination[0], departdateTimePicker.Value.ToString("yyyy-MM-dd"), null, null, null);
         }
 
-        public void SetData(string boarding , string destination , string date,ComboBox from,ComboBox to,DateTimePicker dateTime)
+        public void SetData(string boarding, string destination, string date, ComboBox from, ComboBox to, DateTimePicker dateTime)
         {
             busesList = DBManager.GetBuses(boarding, destination, date);
             fromcomboBox.Text = boarding;
@@ -73,21 +90,19 @@ namespace MakeMyTripClone
                     tocomboBox.Items.Add(items);
                 }
             }
-          
-            boardingpoints=DBManager.GetBoardingPoints(boarding, destination, date);
+
+            boardingpoints = DBManager.GetBoardingPoints(boarding, destination, date);
             droppoints = DBManager.GetDropPoints(boarding, destination, date);
             traveloperatorpoints = DBManager.GetTravel(boarding, destination, date);
-            BusButton.BackgroundImage = Resources.busblue;          
+            BusButton.BackgroundImage = Resources.busblue;
             AddDatas();
-            endofbuslabel.Dock = DockStyle.Bottom; //
+            endofbuslabel.Dock = DockStyle.Top;
             endofbuslabel.BringToFront();
-            adducpanel.Controls.Add(endofbuslabel);
         }
 
         private void AddDatas()
         {
             srchbutton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, srchbutton.Width, srchbutton.Height, 30, 30));
-            LoginButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LoginButton.Width, LoginButton.Height, 30, 30));
             for (int i = 0; i < busesList.Count; i++)
             {
                 bus = new Buses();
@@ -95,8 +110,9 @@ namespace MakeMyTripClone
                 bus.Dock = DockStyle.Top;
                 buses.Add(bus);
                 bus.Setdata(i, fromcomboBox.Text, tocomboBox.Text, departdateTimePicker.Value.ToString("yyyy-MM-dd"));
-            }           
-            busesfoundlabel.Text = busesList.Count + " Buses found";
+            }
+            busesfoundlabel.Text = BusesFound() + " Buses Found";
+            //Checkbuses();
         }
  
         private void CloseSearch()
@@ -349,7 +365,8 @@ namespace MakeMyTripClone
             {
                 Reset();
             }
-            Checkbuses();
+            //Checkbuses();
+            busesfoundlabel.Text = BusesFound() + " Buses Found";
         }
 
         private void Filter(string isAc,string seatType,string picktime,string droptime,string pickpoint,string travel,string droppoint)
@@ -429,22 +446,23 @@ namespace MakeMyTripClone
                     else  bus.Visible = false;
                 }
             }
-            Checkbuses();
+           // Checkbuses();
+            busesfoundlabel.Text = BusesFound() + " Buses Found";
         }
 
-        private void Checkbuses()
-        {
-            bool allControlsNotVisible = true;
-            foreach (Control control in adducpanel.Controls)
-            {
-                if (control.Visible)
-                {
-                    allControlsNotVisible = false;
-                    break;
-                }
-            }
-            if (allControlsNotVisible) nobuspanel.Visible = true;
-        }
+        //private void Checkbuses()
+        //{
+        //    bool allControlsNotVisible = true;
+        //    foreach (Control control in adducpanel.Controls)
+        //    {
+        //        if (control.Visible)
+        //        {
+        //            allControlsNotVisible = false;
+        //            break;
+        //        }
+        //    }
+        //  //  if (allControlsNotVisible) nobuspanel.Visible = true;
+        //}
       
 
         private void LabelsClick(object sender, EventArgs e)
@@ -515,6 +533,7 @@ namespace MakeMyTripClone
                 {
                     if (c.BackColor == colour) c.Colourchange();
                 }
+                busesfoundlabel.Text=BusesFound()+" Buses Found";
             }
         }
 
@@ -654,6 +673,8 @@ namespace MakeMyTripClone
                 bus.Dock = DockStyle.Top;
                 bus.BringToFront();
             }
+            endofbuslabel.Dock = DockStyle.Top;
+            endofbuslabel.BringToFront();
         }
  
         private void LoginButtonClick(object sender, EventArgs e)
@@ -689,6 +710,8 @@ namespace MakeMyTripClone
                 bus.Dock = DockStyle.Top;
                 bus.BringToFront();
             }
+            endofbuslabel.Dock = DockStyle.Top;
+            endofbuslabel.BringToFront();
         }
 
         private void ComboBoxTextChanged(object sender, EventArgs e)
@@ -699,6 +722,26 @@ namespace MakeMyTripClone
             tocomboBox.Text = s[0];
             if(fromcomboBox.Text==tocomboBox.Text) warningLabel.Visible = true;
             else warningLabel.Visible = false;
+        }
+
+        private int BusesFound()
+        {
+            int count = 0;
+            foreach(var bus in buses)
+            {
+                if (bus.Visible == true) count++;
+            }
+            if (count == 0)
+            {
+                endofbuslabel.Visible = false;
+               // nobuspanel.Visible = true;
+            }
+            else
+            {
+                endofbuslabel.Visible = true;
+                nobuspanel.Visible = false;
+            }
+            return count;            
         }
 
         private void DprbuttonClick(object sender, EventArgs e)
@@ -721,6 +764,8 @@ namespace MakeMyTripClone
                 bus.Dock = DockStyle.Top;
                 bus.BringToFront();
             }
+            endofbuslabel.Dock = DockStyle.Top;
+            endofbuslabel.BringToFront();
         }
 
         private void TPictureBoxClick(object sender, EventArgs e)

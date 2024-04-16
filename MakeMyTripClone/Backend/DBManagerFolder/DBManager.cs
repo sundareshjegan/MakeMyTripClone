@@ -93,6 +93,14 @@ namespace MakeMyTripClone
 
         #endregion
 
+        public static void UpdatePassword(string email, string newPassword)
+        {
+            ParameterData[] data = new ParameterData[]
+            {
+                new ParameterData(Customer.Password,newPassword),
+            };
+            var res = manager.UpdateData(Customer.TableName, $"{Customer.Email} = '{email}'", data);
+        }
         public static List<RouteDetails> GetBuses(String boarding , String destination , String date)
         {
             var res = manager.FetchData(Route.TableName, $"{Route.Boarding} = '{boarding}' and {Route.Destination} = '{destination}' and {Route.StartDate} = '{date}'").Value;
@@ -214,7 +222,7 @@ namespace MakeMyTripClone
         public static BooleanMsg ChangeSeatBookingState(SeatDeatils seat)
         {
             int isBooked = seat.IsBooked ? 1 : 0;
-            var res = manager.InsertData(Seat.TableName, 0, seat.RouteId, seat.SeatType, isBooked, seat.Price, seat.CId,seat.SeatNumber.Trim());
+            var res = manager.InsertData(Seat.TableName, 0, seat.RouteId, seat.SeatType, isBooked, seat.Price, seat.CId,seat.SeatNumber.Trim(),seat.IsBookedByfemale);
             return res;
         }
 
@@ -225,6 +233,16 @@ namespace MakeMyTripClone
             if (res.Count > 0 && res.ContainsKey(Seat.IsBooked))
             {
                 seatStatus = (Convert.ToInt32(res[Seat.IsBooked][0]));
+            }
+            return seatStatus == 1;
+        }
+        public static bool IsSeatBookedByFemale(int routeId, string seatNumber)
+        {
+            var res = manager.FetchData(Seat.TableName, $"{Route.Id}= '{routeId}' and {Seat.SeatNumber}= '{seatNumber}' ", -1, -1, "", Seat.IsBookedByFemale).Value;
+            int seatStatus = 0;
+            if (res.Count > 0 && res.ContainsKey(Seat.IsBookedByFemale))
+            {
+                seatStatus = (Convert.ToInt32(res[Seat.IsBookedByFemale][0]));
             }
             return seatStatus == 1;
         }

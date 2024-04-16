@@ -30,13 +30,14 @@
         {
             this.combinationpanel = new System.Windows.Forms.Panel();
             this.sltpdpanel = new System.Windows.Forms.Panel();
+            this.Warninglabelcontinue = new System.Windows.Forms.Label();
             this.droppointpanel = new System.Windows.Forms.Panel();
             this.pickuppointpanel = new System.Windows.Forms.Panel();
             this.nxtpanel = new System.Windows.Forms.Panel();
             this.continuebut = new System.Windows.Forms.Button();
             this.sltseatslabel = new System.Windows.Forms.Label();
-            this.noofseatlabel = new System.Windows.Forms.Label();
             this.totalamtlabel = new System.Windows.Forms.Label();
+            this.noofseatlabel = new System.Windows.Forms.Label();
             this.sltpdlabel = new System.Windows.Forms.Label();
             this.dplabel = new System.Windows.Forms.Label();
             this.pulabel = new System.Windows.Forms.Label();
@@ -85,6 +86,10 @@
             this.wblabel = new System.Windows.Forms.Label();
             this.ecnpictureBox = new System.Windows.Forms.PictureBox();
             this.busamentitlabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.malelabel = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.femalelabel = new System.Windows.Forms.Label();
             this.combinationpanel.SuspendLayout();
             this.sltpdpanel.SuspendLayout();
             this.nxtpanel.SuspendLayout();
@@ -106,6 +111,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.blkpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wbpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ecnpictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // combinationpanel
@@ -123,6 +130,7 @@
             // 
             this.sltpdpanel.BackColor = System.Drawing.Color.White;
             this.sltpdpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sltpdpanel.Controls.Add(this.Warninglabelcontinue);
             this.sltpdpanel.Controls.Add(this.droppointpanel);
             this.sltpdpanel.Controls.Add(this.pickuppointpanel);
             this.sltpdpanel.Controls.Add(this.nxtpanel);
@@ -133,6 +141,16 @@
             this.sltpdpanel.Name = "sltpdpanel";
             this.sltpdpanel.Size = new System.Drawing.Size(495, 618);
             this.sltpdpanel.TabIndex = 1;
+            // 
+            // Warninglabelcontinue
+            // 
+            this.Warninglabelcontinue.AutoSize = true;
+            this.Warninglabelcontinue.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Warninglabelcontinue.ForeColor = System.Drawing.Color.Red;
+            this.Warninglabelcontinue.Location = new System.Drawing.Point(13, 453);
+            this.Warninglabelcontinue.Name = "Warninglabelcontinue";
+            this.Warninglabelcontinue.Size = new System.Drawing.Size(0, 17);
+            this.Warninglabelcontinue.TabIndex = 4;
             // 
             // droppointpanel
             // 
@@ -158,12 +176,12 @@
             this.nxtpanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.nxtpanel.Controls.Add(this.continuebut);
             this.nxtpanel.Controls.Add(this.sltseatslabel);
-            this.nxtpanel.Controls.Add(this.noofseatlabel);
             this.nxtpanel.Controls.Add(this.totalamtlabel);
+            this.nxtpanel.Controls.Add(this.noofseatlabel);
             this.nxtpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.nxtpanel.Location = new System.Drawing.Point(0, 470);
+            this.nxtpanel.Location = new System.Drawing.Point(0, 481);
             this.nxtpanel.Name = "nxtpanel";
-            this.nxtpanel.Size = new System.Drawing.Size(493, 146);
+            this.nxtpanel.Size = new System.Drawing.Size(493, 135);
             this.nxtpanel.TabIndex = 2;
             // 
             // continuebut
@@ -172,7 +190,7 @@
             this.continuebut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.continuebut.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.continuebut.ForeColor = System.Drawing.Color.White;
-            this.continuebut.Location = new System.Drawing.Point(0, 80);
+            this.continuebut.Location = new System.Drawing.Point(0, 69);
             this.continuebut.Name = "continuebut";
             this.continuebut.Size = new System.Drawing.Size(489, 62);
             this.continuebut.TabIndex = 1;
@@ -190,16 +208,6 @@
             this.sltseatslabel.TabIndex = 0;
             this.sltseatslabel.Text = "Selected Seats";
             // 
-            // noofseatlabel
-            // 
-            this.noofseatlabel.AutoSize = true;
-            this.noofseatlabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noofseatlabel.Location = new System.Drawing.Point(17, 41);
-            this.noofseatlabel.Name = "noofseatlabel";
-            this.noofseatlabel.Size = new System.Drawing.Size(192, 25);
-            this.noofseatlabel.TabIndex = 0;
-            this.noofseatlabel.Text = "no seats yet selected";
-            // 
             // totalamtlabel
             // 
             this.totalamtlabel.AutoSize = true;
@@ -209,6 +217,16 @@
             this.totalamtlabel.Size = new System.Drawing.Size(33, 37);
             this.totalamtlabel.TabIndex = 0;
             this.totalamtlabel.Text = "0";
+            // 
+            // noofseatlabel
+            // 
+            this.noofseatlabel.AutoSize = true;
+            this.noofseatlabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noofseatlabel.Location = new System.Drawing.Point(11, 41);
+            this.noofseatlabel.Name = "noofseatlabel";
+            this.noofseatlabel.Size = new System.Drawing.Size(123, 25);
+            this.noofseatlabel.TabIndex = 0;
+            this.noofseatlabel.Text = "seat number";
             // 
             // sltpdlabel
             // 
@@ -737,18 +755,63 @@
             this.busamentitlabel.TabIndex = 0;
             this.busamentitlabel.Text = "Bus Amenties";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(84)))), ((int)(((byte)(172)))));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 776);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
+            // 
+            // malelabel
+            // 
+            this.malelabel.AutoSize = true;
+            this.malelabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.malelabel.Location = new System.Drawing.Point(408, 774);
+            this.malelabel.Name = "malelabel";
+            this.malelabel.Size = new System.Drawing.Size(250, 25);
+            this.malelabel.TabIndex = 0;
+            this.malelabel.Text = "Booked by male passenger";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.DimGray;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(385, 776);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2.TabIndex = 40;
+            this.pictureBox2.TabStop = false;
+            // 
+            // femalelabel
+            // 
+            this.femalelabel.AutoSize = true;
+            this.femalelabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.femalelabel.Location = new System.Drawing.Point(44, 773);
+            this.femalelabel.Name = "femalelabel";
+            this.femalelabel.Size = new System.Drawing.Size(267, 25);
+            this.femalelabel.TabIndex = 0;
+            this.femalelabel.Text = "Booked by female passenger";
+            // 
             // Buses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.photospanel);
+            this.Controls.Add(this.femalelabel);
+            this.Controls.Add(this.malelabel);
             this.Controls.Add(this.amentiespanel);
             this.Controls.Add(this.combinationpanel);
             this.Controls.Add(this.toppanel);
+            this.DoubleBuffered = true;
             this.Name = "Buses";
-            this.Size = new System.Drawing.Size(1278, 152);
+            this.Size = new System.Drawing.Size(1278, 832);
             this.combinationpanel.ResumeLayout(false);
             this.sltpdpanel.ResumeLayout(false);
             this.sltpdpanel.PerformLayout();
@@ -776,7 +839,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.blkpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wbpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ecnpictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -838,5 +904,10 @@
         private System.Windows.Forms.Label ecnlabel;
         private System.Windows.Forms.Panel droppointpanel;
         private System.Windows.Forms.Panel pickuppointpanel;
+        private System.Windows.Forms.Label Warninglabelcontinue;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label malelabel;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label femalelabel;
     }
 }

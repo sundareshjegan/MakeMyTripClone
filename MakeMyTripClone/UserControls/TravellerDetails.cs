@@ -58,6 +58,10 @@ namespace MakeMyTripClone
             get => selectedGender;
         }
 
+        public void FemaleBtnState(bool state)
+        {
+            maleBtn.Enabled = state;
+        }
         private string selectedGender="";
 
         #region DLL to Create rounded Regions

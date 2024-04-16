@@ -134,7 +134,7 @@ namespace MakeMyTripClone
                 creditCardWarningLabel.Text = "Invalid cvv number";
                 return;
             }
-            creditCardWarningLabel.Text = "Redirecting to Payment Gateway..!";
+            creditCardWarningLabel.Text = "Ticket Confirmation in process.. Please wait";
             Opacity -= 0.1;
             foreach (SeatDeatils seat in seatDetails)
             {
@@ -147,6 +147,7 @@ namespace MakeMyTripClone
             ETicketGenerator eTicketGenerator = new ETicketGenerator();
             string ticketAsHTML = eTicketGenerator.GenerateETicket(eticket);
             eTicketGenerator.SendETicket(eticket.EmailToSendTicket, ticketAsHTML);
+            
             Opacity += 0.1;
         }
 
@@ -220,6 +221,7 @@ namespace MakeMyTripClone
                     seat.Price = int.Parse(bookingDetails.seatAmount);
                 }
                 seat.CId = DBManager.CurrentUser.Id;
+                seat.IsBookedByfemale = travellers[i].Gender.ToLower() == "female" ? true : false;
                 seatDetails.Add(seat);
             }
 
