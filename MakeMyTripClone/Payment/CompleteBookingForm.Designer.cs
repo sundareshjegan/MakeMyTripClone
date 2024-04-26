@@ -35,6 +35,33 @@
             this.logoPB = new System.Windows.Forms.PictureBox();
             this.closePB = new System.Windows.Forms.PictureBox();
             this.overAllPanel = new System.Windows.Forms.Panel();
+            this.policypanel = new System.Windows.Forms.Panel();
+            this.label49 = new System.Windows.Forms.Label();
+            this.policytimelabel = new System.Windows.Forms.Label();
+            this.amtlabel = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.firstlabel = new System.Windows.Forms.Label();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.secondlabel = new System.Windows.Forms.Label();
+            this.Thirdlabel = new System.Windows.Forms.Label();
+            this.Fourthlabel = new System.Windows.Forms.Label();
+            this.fifthlabel = new System.Windows.Forms.Label();
+            this.sixlabel = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.travellerEditPB = new System.Windows.Forms.PictureBox();
@@ -153,6 +180,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closePB)).BeginInit();
             this.overAllPanel.SuspendLayout();
+            this.policypanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.leftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.travellerEditPB)).BeginInit();
             this.secureTipPanel.SuspendLayout();
@@ -200,7 +235,7 @@
             this.CompleteBookingLabel.AutoSize = true;
             this.CompleteBookingLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompleteBookingLabel.ForeColor = System.Drawing.Color.White;
-            this.CompleteBookingLabel.Location = new System.Drawing.Point(300, 14);
+            this.CompleteBookingLabel.Location = new System.Drawing.Point(292, 14);
             this.CompleteBookingLabel.Name = "CompleteBookingLabel";
             this.CompleteBookingLabel.Size = new System.Drawing.Size(286, 32);
             this.CompleteBookingLabel.TabIndex = 1;
@@ -212,7 +247,7 @@
             this.headerDateTimeLabel.AutoSize = true;
             this.headerDateTimeLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerDateTimeLabel.ForeColor = System.Drawing.Color.White;
-            this.headerDateTimeLabel.Location = new System.Drawing.Point(871, 17);
+            this.headerDateTimeLabel.Location = new System.Drawing.Point(859, 17);
             this.headerDateTimeLabel.Name = "headerDateTimeLabel";
             this.headerDateTimeLabel.Size = new System.Drawing.Size(297, 25);
             this.headerDateTimeLabel.TabIndex = 1;
@@ -225,7 +260,7 @@
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.51773F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.48227F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 649F));
-            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 183F));
+            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 195F));
             this.headerPanel.Controls.Add(this.headerDateTimeLabel, 2, 0);
             this.headerPanel.Controls.Add(this.logoPB, 0, 0);
             this.headerPanel.Controls.Add(this.CompleteBookingLabel, 1, 0);
@@ -242,7 +277,7 @@
             // 
             this.logoPB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logoPB.Image = global::MakeMyTripClone.Properties.Resources.logoWhite;
-            this.logoPB.Location = new System.Drawing.Point(27, 7);
+            this.logoPB.Location = new System.Drawing.Point(26, 7);
             this.logoPB.Name = "logoPB";
             this.logoPB.Size = new System.Drawing.Size(136, 45);
             this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -254,7 +289,7 @@
             this.closePB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.closePB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closePB.Image = global::MakeMyTripClone.Properties.Resources.close;
-            this.closePB.Location = new System.Drawing.Point(1423, 17);
+            this.closePB.Location = new System.Drawing.Point(1417, 17);
             this.closePB.Name = "closePB";
             this.closePB.Size = new System.Drawing.Size(25, 25);
             this.closePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -264,6 +299,7 @@
             // 
             // overAllPanel
             // 
+            this.overAllPanel.Controls.Add(this.policypanel);
             this.overAllPanel.Controls.Add(this.leftPanel);
             this.overAllPanel.Controls.Add(this.rightPanel);
             this.overAllPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -272,6 +308,301 @@
             this.overAllPanel.Padding = new System.Windows.Forms.Padding(350, 3, 350, 3);
             this.overAllPanel.Size = new System.Drawing.Size(1528, 882);
             this.overAllPanel.TabIndex = 2;
+            // 
+            // policypanel
+            // 
+            this.policypanel.BackColor = System.Drawing.Color.Gray;
+            this.policypanel.Controls.Add(this.label49);
+            this.policypanel.Controls.Add(this.policytimelabel);
+            this.policypanel.Controls.Add(this.amtlabel);
+            this.policypanel.Controls.Add(this.label47);
+            this.policypanel.Controls.Add(this.firstlabel);
+            this.policypanel.Controls.Add(this.pictureBox14);
+            this.policypanel.Controls.Add(this.label31);
+            this.policypanel.Controls.Add(this.label32);
+            this.policypanel.Controls.Add(this.label26);
+            this.policypanel.Controls.Add(this.label24);
+            this.policypanel.Controls.Add(this.secondlabel);
+            this.policypanel.Controls.Add(this.Thirdlabel);
+            this.policypanel.Controls.Add(this.Fourthlabel);
+            this.policypanel.Controls.Add(this.fifthlabel);
+            this.policypanel.Controls.Add(this.sixlabel);
+            this.policypanel.Controls.Add(this.label51);
+            this.policypanel.Controls.Add(this.label14);
+            this.policypanel.Controls.Add(this.label50);
+            this.policypanel.Controls.Add(this.label13);
+            this.policypanel.Controls.Add(this.label8);
+            this.policypanel.Controls.Add(this.pictureBox13);
+            this.policypanel.Controls.Add(this.pictureBox12);
+            this.policypanel.Controls.Add(this.pictureBox11);
+            this.policypanel.Controls.Add(this.pictureBox10);
+            this.policypanel.Controls.Add(this.pictureBox9);
+            this.policypanel.Controls.Add(this.pictureBox8);
+            this.policypanel.Location = new System.Drawing.Point(26, 82);
+            this.policypanel.Name = "policypanel";
+            this.policypanel.Size = new System.Drawing.Size(391, 579);
+            this.policypanel.TabIndex = 5;
+            this.policypanel.Visible = false;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(3, 231);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(387, 20);
+            this.label49.TabIndex = 5;
+            this.label49.Text = "---------------------------------------------------------------";
+            // 
+            // policytimelabel
+            // 
+            this.policytimelabel.AutoSize = true;
+            this.policytimelabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.policytimelabel.Location = new System.Drawing.Point(212, 320);
+            this.policytimelabel.Name = "policytimelabel";
+            this.policytimelabel.Size = new System.Drawing.Size(124, 20);
+            this.policytimelabel.TabIndex = 5;
+            this.policytimelabel.Text = "27-03-2024 19:00";
+            // 
+            // amtlabel
+            // 
+            this.amtlabel.AutoSize = true;
+            this.amtlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amtlabel.Location = new System.Drawing.Point(328, 284);
+            this.amtlabel.Name = "amtlabel";
+            this.amtlabel.Size = new System.Drawing.Size(40, 20);
+            this.amtlabel.TabIndex = 5;
+            this.amtlabel.Text = "4199";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(70, 202);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(162, 20);
+            this.label47.TabIndex = 5;
+            this.label47.Text = "0 to 1 hrs before travel";
+            // 
+            // firstlabel
+            // 
+            this.firstlabel.AutoSize = true;
+            this.firstlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstlabel.Location = new System.Drawing.Point(319, 205);
+            this.firstlabel.Name = "firstlabel";
+            this.firstlabel.Size = new System.Drawing.Size(38, 20);
+            this.firstlabel.TabIndex = 4;
+            this.firstlabel.Text = "4116";
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = global::MakeMyTripClone.Properties.Resources.degree;
+            this.pictureBox14.Location = new System.Drawing.Point(17, 202);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(27, 20);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox14.TabIndex = 3;
+            this.pictureBox14.TabStop = false;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(66, 139);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(179, 20);
+            this.label31.TabIndex = 2;
+            this.label31.Text = "12 to 24 hrs before travel";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(70, 170);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(168, 20);
+            this.label32.TabIndex = 2;
+            this.label32.Text = "1 to 12 hrs before travel";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(66, 111);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(182, 20);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "24 to 48 hrs before travel";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(66, 81);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(181, 20);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "40 to 72 hrs before travel";
+            // 
+            // secondlabel
+            // 
+            this.secondlabel.AutoSize = true;
+            this.secondlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondlabel.Location = new System.Drawing.Point(319, 173);
+            this.secondlabel.Name = "secondlabel";
+            this.secondlabel.Size = new System.Drawing.Size(41, 20);
+            this.secondlabel.TabIndex = 2;
+            this.secondlabel.Text = "3990";
+            // 
+            // Thirdlabel
+            // 
+            this.Thirdlabel.AutoSize = true;
+            this.Thirdlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Thirdlabel.Location = new System.Drawing.Point(321, 139);
+            this.Thirdlabel.Name = "Thirdlabel";
+            this.Thirdlabel.Size = new System.Drawing.Size(39, 20);
+            this.Thirdlabel.TabIndex = 2;
+            this.Thirdlabel.Text = "3150";
+            // 
+            // Fourthlabel
+            // 
+            this.Fourthlabel.AutoSize = true;
+            this.Fourthlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fourthlabel.Location = new System.Drawing.Point(321, 109);
+            this.Fourthlabel.Name = "Fourthlabel";
+            this.Fourthlabel.Size = new System.Drawing.Size(39, 20);
+            this.Fourthlabel.TabIndex = 2;
+            this.Fourthlabel.Text = "2100";
+            // 
+            // fifthlabel
+            // 
+            this.fifthlabel.AutoSize = true;
+            this.fifthlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fifthlabel.Location = new System.Drawing.Point(321, 81);
+            this.fifthlabel.Name = "fifthlabel";
+            this.fifthlabel.Size = new System.Drawing.Size(39, 20);
+            this.fifthlabel.TabIndex = 2;
+            this.fifthlabel.Text = "1260";
+            // 
+            // sixlabel
+            // 
+            this.sixlabel.AutoSize = true;
+            this.sixlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sixlabel.Location = new System.Drawing.Point(321, 49);
+            this.sixlabel.Name = "sixlabel";
+            this.sixlabel.Size = new System.Drawing.Size(42, 20);
+            this.sixlabel.TabIndex = 2;
+            this.sixlabel.Text = "8400";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(12, 286);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(378, 272);
+            this.label51.TabIndex = 2;
+            this.label51.Text = resources.GetString("label51.Text");
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(65, 52);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(217, 20);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "more than 72 hrs before travel";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.Location = new System.Drawing.Point(6, 251);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(164, 25);
+            this.label50.TabIndex = 1;
+            this.label50.Text = "Other Conditions";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(292, 8);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(83, 25);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Charges";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(69, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(193, 25);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Time of Cancellation";
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::MakeMyTripClone.Properties.Resources.degree;
+            this.pictureBox13.Location = new System.Drawing.Point(17, 170);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(27, 20);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox13.TabIndex = 0;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = global::MakeMyTripClone.Properties.Resources.degree;
+            this.pictureBox12.Location = new System.Drawing.Point(17, 139);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(27, 20);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox12.TabIndex = 0;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::MakeMyTripClone.Properties.Resources.degree;
+            this.pictureBox11.Location = new System.Drawing.Point(17, 109);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(27, 20);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 0;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::MakeMyTripClone.Properties.Resources.degree;
+            this.pictureBox10.Location = new System.Drawing.Point(17, 81);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(27, 20);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 0;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::MakeMyTripClone.Properties.Resources.degree;
+            this.pictureBox9.Location = new System.Drawing.Point(17, 52);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(27, 20);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 0;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::MakeMyTripClone.Properties.Resources.traveling;
+            this.pictureBox8.Location = new System.Drawing.Point(14, 11);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 0;
+            this.pictureBox8.TabStop = false;
             // 
             // leftPanel
             // 
@@ -900,6 +1231,8 @@
             this.viewPoliciesLabel.Size = new System.Drawing.Size(96, 20);
             this.viewPoliciesLabel.TabIndex = 0;
             this.viewPoliciesLabel.Text = "View Policies";
+            this.viewPoliciesLabel.MouseEnter += new System.EventHandler(this.ViewPoliciesLabelMouseEnter);
+            this.viewPoliciesLabel.MouseLeave += new System.EventHandler(this.ViewPoliciesLabelMouseLeave);
             // 
             // destinationDepatureLabel
             // 
@@ -1633,6 +1966,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closePB)).EndInit();
             this.overAllPanel.ResumeLayout(false);
+            this.policypanel.ResumeLayout(false);
+            this.policypanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.leftPanel.ResumeLayout(false);
             this.leftPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.travellerEditPB)).EndInit();
@@ -1820,5 +2162,32 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label couponWarningLabel;
         private System.Windows.Forms.PictureBox emailEditPB;
+        private System.Windows.Forms.Panel policypanel;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label firstlabel;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label secondlabel;
+        private System.Windows.Forms.Label Thirdlabel;
+        private System.Windows.Forms.Label Fourthlabel;
+        private System.Windows.Forms.Label fifthlabel;
+        private System.Windows.Forms.Label sixlabel;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label policytimelabel;
+        private System.Windows.Forms.Label amtlabel;
     }
 }
