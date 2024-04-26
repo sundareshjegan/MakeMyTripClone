@@ -76,7 +76,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.LoginButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.warningLabel = new System.Windows.Forms.Label();
@@ -102,6 +101,7 @@
             this.SearchButton = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.logInTab1 = new MakeMyTripClone.LogInTab();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -745,22 +745,6 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Manage your bookings";
             // 
-            // LoginButton
-            // 
-            this.LoginButton.BackColor = System.Drawing.Color.DodgerBlue;
-            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LoginButton.FlatAppearance.BorderSize = 0;
-            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.ForeColor = System.Drawing.Color.White;
-            this.LoginButton.Location = new System.Drawing.Point(1424, 22);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(179, 44);
-            this.LoginButton.TabIndex = 13;
-            this.LoginButton.Text = "Login or Create Account";
-            this.LoginButton.UseVisualStyleBackColor = false;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
-            // 
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.Color.White;
@@ -1084,8 +1068,8 @@
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.Transparent;
+            this.panel16.Controls.Add(this.logInTab1);
             this.panel16.Controls.Add(this.comboBox1);
-            this.panel16.Controls.Add(this.LoginButton);
             this.panel16.Controls.Add(this.label5);
             this.panel16.Controls.Add(this.button2);
             this.panel16.Controls.Add(this.label2);
@@ -1099,6 +1083,16 @@
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(1850, 100);
             this.panel16.TabIndex = 17;
+            // 
+            // logInTab1
+            // 
+            this.logInTab1.IsLoggedIn = false;
+            this.logInTab1.Location = new System.Drawing.Point(1425, 25);
+            this.logInTab1.Name = "logInTab1";
+            this.logInTab1.Size = new System.Drawing.Size(212, 42);
+            this.logInTab1.TabIndex = 15;
+            this.logInTab1.UserEmail = null;
+            this.logInTab1.UserName = null;
             // 
             // NavBar
             // 
@@ -1197,7 +1191,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel13;
@@ -1223,5 +1216,6 @@
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
+        private LogInTab logInTab1;
     }
 }

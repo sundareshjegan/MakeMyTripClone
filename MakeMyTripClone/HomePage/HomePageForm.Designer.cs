@@ -50,6 +50,7 @@
             this.Controls.Add(this.navBar1);
             this.Name = "HomePageForm";
             this.Text = "HomePageForm";
+            this.TransparencyKey = System.Drawing.Color.Maroon;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 

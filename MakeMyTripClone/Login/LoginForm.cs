@@ -1,4 +1,5 @@
-﻿using MakeMyTripClone;
+﻿using GoLibrary;
+using MakeMyTripClone;
 using MakeMyTripClone.Properties;
 using System;
 using System.Drawing;
@@ -15,8 +16,8 @@ namespace MakeMyTripClone
             InitializeComponent();
             CreateCurves();
             Invalidate();
-            BackColor = Color.AliceBlue;
-            TransparencyKey = Color.AliceBlue;
+            //BackColor = Color.AliceBlue;
+            //TransparencyKey = Color.AliceBlue;
             //DBManager.GetConnection();
         }
 
@@ -24,6 +25,8 @@ namespace MakeMyTripClone
         private int previousX = 0;
         private int previousY = 0;
         private char selectedGender;
+
+        LoaderForm loader = new LoaderForm();
 
         #region DLL to Create rounded Regions
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -48,6 +51,15 @@ namespace MakeMyTripClone
         {
             tabControl.SelectedTab = loginTabPage;
         }
+        private void OnForgotPasswordLabelClicked(object sender, EventArgs e)
+        {
+            updatePasswordEmailTB.Text = emailTB.Text;
+            tabControl.SelectedTab = ForgotPasswordTab;
+        }
+        private void OnBackToLoginLabelClicked(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = loginTabPage;
+        }
         #endregion
 
         private void OnClosePBClicked(object sender, EventArgs e)
@@ -63,6 +75,7 @@ namespace MakeMyTripClone
             viewHideBtn.BackgroundImage = passwordTB.UseSystemPasswordChar ?
                                             Resources.viewPassword : Resources.hidePassword;
         }
+
         private void OnRegPwdViewHideBtnClicked(object sender, EventArgs e)
         {
             regPasswordTB.UseSystemPasswordChar = !regPasswordTB.UseSystemPasswordChar;
@@ -76,12 +89,20 @@ namespace MakeMyTripClone
             regConPwdViewHideBtn.BackgroundImage = regConPasswordTB.UseSystemPasswordChar ?
                                             Resources.viewPassword : Resources.hidePassword;
         }
-
+        private void OnForgotPwdViewHideBtnClicked(object sender, EventArgs e)
+        {
+            newPasswordTB.UseSystemPasswordChar = !newPasswordTB.UseSystemPasswordChar;
+            ForgotPwdViewHideBtn.BackgroundImage = newPasswordTB.UseSystemPasswordChar ?
+                                            Resources.viewPassword : Resources.hidePassword;
+        }
         private void OnSubmitBtnMouseHover(object sender, EventArgs e)
         {
+            submitBtn.BackColor = Color.DodgerBlue;
+            
             // Move the submit button if Input is not valid
-            if (emailTB.Text == "" || passwordTB.Text == "") // Change this condition based on your validation logic
+            if (DBManager.Verify(emailTB.Text, passwordTB.Text)!="") // Change this condition based on your validation logic
             {
+                submitBtn.BackColor = Color.Red;
                 int newX, newY;
                 do
                 {
@@ -106,6 +127,7 @@ namespace MakeMyTripClone
                 selectedGender = rb.Text.ToUpper()[0];
             }
         }
+
         private void OnSubmitBtnClicked(object sender, EventArgs e)
         {
             if(emailTB.Text != "" && passwordTB.Text != "")
@@ -113,12 +135,19 @@ namespace MakeMyTripClone
                 if (DBManager.Verify(emailTB.Text, passwordTB.Text) == "")
                 {
                     //open busselection Form
+                    DBManager.IsUserLoggedIn = true;
+                    DBManager.SetCurrentUser(emailTB.Text);
+                    new SuccessFailureForm("success", "Login Success").ShowDialog();
+                    Dispose();
                 }
                 resLabel.Text = DBManager.Verify(emailTB.Text, passwordTB.Text);
             }
         }
+
         private void OnRegisterBtnClicked(object sender, EventArgs e)
-        {
+        {           
+            //loader.OnLoaderOpened += Loader_OnLoaderOpened;
+
             if (DBManager.IsUserExisted(regEmailTB.Text))
             {
                 regEmailWarningLabel.Text = "Email-Id already Exists";
@@ -127,8 +156,12 @@ namespace MakeMyTripClone
             if (ValidateInputs())
             {
                 Opacity = Opacity / 2;
+
                 ConfirmForm confirmationForm = new ConfirmForm();
                 confirmationForm.SendEmail(regEmailTB.Text, regNameTB.Text);
+
+                loader.Hide();
+
                 confirmationForm.ShowDialog();
                 if (confirmationForm.IsVerified)
                 {
@@ -140,8 +173,62 @@ namespace MakeMyTripClone
                         Password = regPasswordTB.Text,
                         Gender = selectedGender
                     };
+                    BooleanMsg result = DBManager.AddUser(customer);
                 }
                 Opacity = Opacity * 2;
+                tabControl.SelectedTab = loginTabPage;
+            }
+        }
+
+        private void OnUpdatePasswordBtnClicked(object sender, EventArgs e)
+        {
+            if(updatePasswordEmailTB.Text == "")
+            {
+                updatePasswordWarningLabel.Text = "Email id required..!";
+                return;
+            }
+            if (!DBManager.IsUserExisted(updatePasswordEmailTB.Text))
+            {
+                updatePasswordWarningLabel.Text = "Email doesnot exist..!";
+                return;
+                //DBManager.UpdatePassword(updatePasswordEmailTB.Text, newPasswordTB.Text);
+            }
+            if (newPasswordTB.Text == "" || newConfirmPasswordTB.Text == "")
+            {
+                updatePasswordWarningLabel.Text = "Passwords should not be empty..!";
+                return;
+            }
+            if (newPasswordTB.Text != newConfirmPasswordTB.Text && newPasswordTB.Text != "")
+            {
+                updatePasswordWarningLabel.Text = "Passwords did not match..!";
+                return;
+            }
+            DBManager.UpdatePassword(updatePasswordEmailTB.Text, newPasswordTB.Text);
+            new SuccessFailureForm("success", "Password Updated Successfully").ShowDialog();
+            tabControl.SelectedTab = loginTabPage;
+        }
+        private void Loader_OnLoaderOpened(object sender, EventArgs e)
+        {
+            //loader.TopMost = true;
+            //loader.Show(this);
+
+            ConfirmForm confirmationForm = new ConfirmForm();
+            confirmationForm.SendEmail(regEmailTB.Text, regNameTB.Text);
+
+            //loader.Hide();
+
+            confirmationForm.ShowDialog();
+            if (confirmationForm.IsVerified)
+            {
+                CustomerDetails customer = new CustomerDetails()
+                {
+                    Name = regNameTB.Text,
+                    Email = regEmailTB.Text,
+                    Phone = long.Parse(regMobileTB.Text),
+                    Password = regPasswordTB.Text,
+                    Gender = selectedGender
+                };
+                BooleanMsg result = DBManager.AddUser(customer);
             }
         }
 
@@ -156,11 +243,11 @@ namespace MakeMyTripClone
 
         #region TextBoxEvents
 
-        private void OnNameTBTextChanged(object sender, EventArgs e)
+        private void OnRegNameTBTextChanged(object sender, EventArgs e)
         {
             regNameWarningLabel.Text = regNameTB.Text == "" ? "Name is required..!" : "";
         }
-        private void OnEmailTBTextChanged(object sender, EventArgs e)
+        private void OnRegEmailTBTextChanged(object sender, EventArgs e)
         {
             regEmailWarningLabel.Text = regEmailTB.Text == "" ? "Email is required..!" : "";
             if (IsValidEmail(regEmailTB.Text))
@@ -183,7 +270,7 @@ namespace MakeMyTripClone
             e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != '\b';
         }
 
-        private void OnPasswordTBTextChanged(object sender, EventArgs e)
+        private void OnRegPasswordTBTextChanged(object sender, EventArgs e)
         {
             string password = regPasswordTB.Text;
             string strength = GetPasswordStrength(password).ToString();
@@ -224,6 +311,12 @@ namespace MakeMyTripClone
         }
         private void OnEmailTBClicked(object sender, EventArgs e)
         {
+            submitBtn.Location = new Point(140, 3);
+        }
+
+        private void OnLoginPageTBsTextChanged(object sender, EventArgs e)
+        {
+            submitBtn.Visible = (emailTB.Text != "" && passwordTB.Text != "");
             submitBtn.Location = new Point(140, 3);
         }
         #endregion
@@ -335,8 +428,9 @@ namespace MakeMyTripClone
             }
             return true;
         }
-        #endregion
 
-        
+
+
+        #endregion
     }
 }

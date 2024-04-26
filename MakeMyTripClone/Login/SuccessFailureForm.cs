@@ -18,25 +18,20 @@ namespace MakeMyTripClone
             {
                 gifImage = Resources.successTick;
                 msgLabel.ForeColor = Color.DodgerBlue;
+                animationTimer.Interval = 60;
+                animationTimer.Tick += SuccessAnimationTimer;
                 msgLabel.Text = message;
             }
             else
             {
                 gifImage = Resources.loaderFailed;
+                animationTimer.Interval = 30;
                 msgLabel.ForeColor = Color.Red;
+                animationTimer.Tick += FailureAnimationTimer;
             }
             #region animation code
             //gifImage = new Bitmap("D:\\Sundareshwaran\\C_Sharp_Projects\\WindowsForms\\ProfileManagement\\greenPurple.gif");
-            animationTimer = new Timer();
-            animationTimer.Interval = 30;
-            if(status == "success")
-            {
-                animationTimer.Tick += SuccessAnimationTimer;
-            }
-            else
-            {
-                animationTimer.Tick += FailureAnimationTimer;
-            }
+           
             totalFrames = gifImage.GetFrameCount(System.Drawing.Imaging.FrameDimension.Time);
             animationTimer.Start();
             #endregion
@@ -44,7 +39,7 @@ namespace MakeMyTripClone
         }
         #region animation varialbles and events
         private Image gifImage;
-        private Timer animationTimer;
+        private Timer animationTimer = new Timer();
         private int currentFrame;
         private int totalFrames;
 
@@ -53,7 +48,7 @@ namespace MakeMyTripClone
         private void SuccessAnimationTimer(object sender, EventArgs e)
         {
             currentFrame++;// = (currentFrame + 1) % totalFrames;
-            if (currentFrame >= totalFrames)
+            if (currentFrame >= totalFrames-3)
             {
                 animationTimer.Stop(); // Stop the timer when all frames have been displayed
             }
@@ -62,6 +57,7 @@ namespace MakeMyTripClone
                 Invalidate();
             }
         }
+
         private void FailureAnimationTimer(object sender, EventArgs e)
         {
             currentFrame++;
@@ -76,16 +72,26 @@ namespace MakeMyTripClone
             }
 
         }
-        private void SuccessForm_Paint(object sender, PaintEventArgs e)
+
+        private void OnFormPaint(object sender, PaintEventArgs e)
         {
-            if (gifImage != null)
+            try
             {
-                gifImage.SelectActiveFrame(System.Drawing.Imaging.FrameDimension.Time, currentFrame);
-                e.Graphics.DrawImage(gifImage, ClientRectangle);
+                if (gifImage != null)
+                {
+                    gifImage.SelectActiveFrame(System.Drawing.Imaging.FrameDimension.Time, currentFrame);
+                    e.Graphics.DrawImage(gifImage, ClientRectangle);
+                }
+            }
+            catch(Exception ex)
+            {
+                //do nothing
             }
         }
+
         #endregion
 
+        #region DLL to create curve regions
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -96,10 +102,16 @@ namespace MakeMyTripClone
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
+        #endregion
 
         private void closePB_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

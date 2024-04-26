@@ -25,5 +25,7 @@ namespace MakeMyTripClone
         public static String CustomerId { get; } = "c_id";
 
         public static string SeatNumber { get; } = "seat_number";
+
+        public static string IsBookedByFemale { get; } = "is_female";
     }
 }

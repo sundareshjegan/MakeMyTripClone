@@ -15,6 +15,7 @@ namespace MakeMyTripClone
     public partial class NavBar : UserControl
     {
 
+        #region DLL for Curved Region
         //Import
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -29,6 +30,9 @@ namespace MakeMyTripClone
             int nHeightEllipse // width of ellipse
         );
 
+        #endregion
+
+        #region DLL for button Click drop down event
         [DllImport("user32.dll")]
 
         private static extern bool PostMessage(
@@ -39,11 +43,13 @@ namespace MakeMyTripClone
             );
 
         const Int32 WM_LBUTTONDOWN = 0x0201;
-   
+        #endregion
+
         public NavBar()
         {
             InitializeComponent();
 
+            #region Images
             FlightBlue = Resources.airplane;
 
             FlightWhite = Resources.flight;
@@ -79,15 +85,11 @@ namespace MakeMyTripClone
             InsuranceBlue = Resources.insuranceblue;
 
             InsuranceWhite = Resources.insurancewhite;
+            #endregion
 
             panel10.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel10.Width, panel10.Height, 30, 30));
-
             panel11.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel11.Width, panel11.Height, 30, 30));
-
             SearchButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SearchButton.Width, SearchButton.Height, 30, 30)); // Search
-
-            //LoginButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, LoginButton.Width, LoginButton.Height, 30, 30));
-
             comboBox1.Text = "IND | ENG | INR";
 
            // DateTime D = DateTime.Now;
@@ -98,15 +100,30 @@ namespace MakeMyTripClone
 
             fromcomboBox.Text = "Coimbatore,Tamil Nadu";
 
-
+            DBManager.OnUserLoggedIn += DBManagerOnUserLoggedIn;
+            if (DBManager.IsUserLoggedIn)
+            {
+                logInTab1.IsLoggedIn = DBManager.IsUserLoggedIn;
+                logInTab1.UserName = DBManager.CurrentUser.Name;
+                logInTab1.UserEmail = DBManager.CurrentUser.Email;
+            }
         }
 
         private Image FlightBlue, FlightWhite, HotelWhite, HotelBlue, HomeWhite, HomeBlue, HolidaysWhite, HolidaysBlue, TrainWhite, TrainBlue, BusWhite, BusBlue, CabWhite, CabBlue, ForexWhite, ForexBlue, InsuranceWhite, InsuranceBlue;
 
         private string ClickedTitle = "";
 
-        //Text Change and Value Change
+        private void DBManagerOnUserLoggedIn(object sender, bool isLoggedIn)
+        {
+            logInTab1.IsLoggedIn = DBManager.IsUserLoggedIn;
+            if (sender is CustomerDetails currentUser)
+            {
+                logInTab1.UserName = currentUser.Name;
+                logInTab1.UserEmail = currentUser.Email;
+            }
+        }
 
+        //Text Change and Value Change
         private void ToComboBoxtextChange(object sender, EventArgs e)
         {
             label11.Text = toComboBox.Text;
@@ -186,17 +203,10 @@ namespace MakeMyTripClone
             monthyearLabel.Text = m + "' " + year.ToString();
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
-        {
-            LoginForm login = new LoginForm();
-            login.ShowDialog();
-        }
-
         private void NavBar_Load(object sender, EventArgs e)
         {
             BusOnClick(this,EventArgs.Empty);
         }
-
 
         private void FromComboBoxTextChange(object sender, EventArgs e)
         {
@@ -259,7 +269,6 @@ namespace MakeMyTripClone
                 page.ShowDialog();
             }
         }
-
 
         private void FlightOnClick(object sender, EventArgs e)
         {

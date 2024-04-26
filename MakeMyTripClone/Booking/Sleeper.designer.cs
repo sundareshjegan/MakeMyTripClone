@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sleeper));
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
@@ -68,88 +69,105 @@
             // 
             // pictureBox16
             // 
-            this.pictureBox16.BackgroundImage = global::MakeMyTripClone.Properties.Resources.SLEEPER;
+            this.pictureBox16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox16.BackgroundImage")));
             this.pictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
             this.pictureBox16.Location = new System.Drawing.Point(29, 430);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox16.TabIndex = 7;
             this.pictureBox16.TabStop = false;
             this.pictureBox16.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // pictureBox17
             // 
-            this.pictureBox17.BackgroundImage = global::MakeMyTripClone.Properties.Resources.SLEEPER;
+            this.pictureBox17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox17.BackgroundImage")));
             this.pictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
             this.pictureBox17.Location = new System.Drawing.Point(123, 430);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox17.TabIndex = 8;
             this.pictureBox17.TabStop = false;
             this.pictureBox17.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // pictureBox18
             // 
-            this.pictureBox18.BackgroundImage = global::MakeMyTripClone.Properties.Resources.SLEEPER;
+            this.pictureBox18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox18.BackgroundImage")));
             this.pictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
             this.pictureBox18.Location = new System.Drawing.Point(185, 430);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox18.TabIndex = 6;
             this.pictureBox18.TabStop = false;
             this.pictureBox18.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // pictureBox13
             // 
-            this.pictureBox13.BackgroundImage = global::MakeMyTripClone.Properties.Resources.SLEEPER;
+            this.pictureBox13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox13.BackgroundImage")));
             this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
             this.pictureBox13.Location = new System.Drawing.Point(29, 355);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 4;
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // pictureBox14
             // 
-            this.pictureBox14.BackgroundImage = global::MakeMyTripClone.Properties.Resources.SLEEPER;
+            this.pictureBox14.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox14.BackgroundImage")));
             this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
             this.pictureBox14.Location = new System.Drawing.Point(123, 355);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 5;
             this.pictureBox14.TabStop = false;
             this.pictureBox14.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // pictureBox15
             // 
-            this.pictureBox15.BackgroundImage = global::MakeMyTripClone.Properties.Resources.SLEEPER;
+            this.pictureBox15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox15.BackgroundImage")));
             this.pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
             this.pictureBox15.Location = new System.Drawing.Point(185, 355);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 3;
             this.pictureBox15.TabStop = false;
             this.pictureBox15.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // pictureBox11
             // 
-            this.pictureBox11.BackgroundImage = global::MakeMyTripClone.Properties.Resources.SLEEPER;
+            this.pictureBox11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.BackgroundImage")));
             this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox11.Location = new System.Drawing.Point(-1788, 271);
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(123, 271);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 1;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // pictureBox12
             // 
-            this.pictureBox12.BackgroundImage = global::MakeMyTripClone.Properties.Resources.SLEEPER;
+            this.pictureBox12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox12.BackgroundImage")));
             this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
             this.pictureBox12.Location = new System.Drawing.Point(182, 271);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 2;
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Click += new System.EventHandler(this.PictureBoxClick);
@@ -161,17 +179,19 @@
             this.pictureBox3.Location = new System.Drawing.Point(182, 14);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // pictureBox6
             // 
-            this.pictureBox6.BackgroundImage = global::MakeMyTripClone.Properties.Resources.SLEEPER;
+            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox6.Location = new System.Drawing.Point(182, 98);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.PictureBoxClick);
@@ -183,6 +203,7 @@
             this.pictureBox5.Location = new System.Drawing.Point(123, 98);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.PictureBoxClick);
@@ -194,17 +215,20 @@
             this.pictureBox2.Location = new System.Drawing.Point(123, 14);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // pictureBox10
             // 
-            this.pictureBox10.BackgroundImage = global::MakeMyTripClone.Properties.Resources.SLEEPER;
+            this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
             this.pictureBox10.Location = new System.Drawing.Point(29, 271);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 0;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Click += new System.EventHandler(this.PictureBoxClick);
@@ -216,6 +240,7 @@
             this.pictureBox9.Location = new System.Drawing.Point(182, 185);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 0;
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Click += new System.EventHandler(this.PictureBoxClick);
@@ -227,17 +252,19 @@
             this.pictureBox8.Location = new System.Drawing.Point(123, 185);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // pictureBox7
             // 
-            this.pictureBox7.BackgroundImage = global::MakeMyTripClone.Properties.Resources.SLEEPER;
+            this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox7.Location = new System.Drawing.Point(29, 185);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 0;
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.PictureBoxClick);
@@ -249,6 +276,7 @@
             this.pictureBox4.Location = new System.Drawing.Point(29, 98);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(37, 69);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.PictureBoxClick);

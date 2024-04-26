@@ -343,6 +343,26 @@ namespace MakeMyTripClone.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap femaleSeater {
+            get {
+                object obj = ResourceManager.GetObject("femaleSeater", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap femaleSleeper {
+            get {
+                object obj = ResourceManager.GetObject("femaleSleeper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flight {
             get {
                 object obj = ResourceManager.GetObject("flight", resourceCulture);
@@ -893,6 +913,16 @@ namespace MakeMyTripClone.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sleeperimage {
+            get {
+                object obj = ResourceManager.GetObject("sleeperimage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap slleeping {
             get {
                 object obj = ResourceManager.GetObject("slleeping", resourceCulture);
@@ -1016,6 +1046,16 @@ namespace MakeMyTripClone.Properties {
         internal static System.Drawing.Bitmap usb_connector {
             get {
                 object obj = ResourceManager.GetObject("usb_connector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user {
+            get {
+                object obj = ResourceManager.GetObject("user", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

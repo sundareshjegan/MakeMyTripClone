@@ -33,7 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.passwordTB = new System.Windows.Forms.TextBox();
-            this.inputPanel = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.loginTabPage = new System.Windows.Forms.TabPage();
             this.loginInputPanel = new System.Windows.Forms.Panel();
@@ -84,11 +83,27 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.passwordStrengthPanel = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.ForgotPasswordTab = new System.Windows.Forms.TabPage();
+            this.backToLoginLabel = new System.Windows.Forms.Label();
+            this.updatePasswordBtn = new MakeMyTripClone.RippleButton();
+            this.updatePasswordWarningLabel = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.newConfirmPasswordTB = new System.Windows.Forms.TextBox();
+            this.newPasswordTB = new System.Windows.Forms.TextBox();
+            this.updatePasswordEmailTB = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.ForgotPwdViewHideBtn = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.imagePanel = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.closePB = new System.Windows.Forms.PictureBox();
             this.carouselPB = new System.Windows.Forms.PictureBox();
-            this.inputPanel.SuspendLayout();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.inputPanel = new System.Windows.Forms.Panel();
             this.tabControl.SuspendLayout();
             this.loginTabPage.SuspendLayout();
             this.loginInputPanel.SuspendLayout();
@@ -102,9 +117,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.regEmailValidPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regMobileValidPB)).BeginInit();
+            this.ForgotPasswordTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.imagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closePB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carouselPB)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.inputPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // emailTB
@@ -113,18 +132,20 @@
             this.emailTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.emailTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.emailTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTB.Location = new System.Drawing.Point(66, 215);
+            this.emailTB.Location = new System.Drawing.Point(66, 210);
             this.emailTB.Margin = new System.Windows.Forms.Padding(2);
             this.emailTB.Name = "emailTB";
             this.emailTB.Size = new System.Drawing.Size(295, 22);
             this.emailTB.TabIndex = 2;
             this.emailTB.Click += new System.EventHandler(this.OnEmailTBClicked);
+            this.emailTB.TextChanged += new System.EventHandler(this.OnLoginPageTBsTextChanged);
             this.emailTB.Enter += new System.EventHandler(this.OnEmailTBClicked);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(73)))), ((int)(((byte)(129)))));
             this.label1.Location = new System.Drawing.Point(62, 173);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -136,7 +157,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(62, 266);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(73)))), ((int)(((byte)(129)))));
+            this.label2.Location = new System.Drawing.Point(62, 257);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 23);
@@ -147,34 +169,24 @@
             // 
             this.passwordTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.passwordTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwordTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.passwordTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTB.Location = new System.Drawing.Point(66, 310);
+            this.passwordTB.Location = new System.Drawing.Point(66, 293);
             this.passwordTB.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTB.Name = "passwordTB";
             this.passwordTB.Size = new System.Drawing.Size(295, 22);
             this.passwordTB.TabIndex = 4;
             this.passwordTB.UseSystemPasswordChar = true;
             this.passwordTB.Click += new System.EventHandler(this.OnEmailTBClicked);
+            this.passwordTB.TextChanged += new System.EventHandler(this.OnLoginPageTBsTextChanged);
             this.passwordTB.Enter += new System.EventHandler(this.OnEmailTBClicked);
-            // 
-            // inputPanel
-            // 
-            this.inputPanel.BackColor = System.Drawing.Color.White;
-            this.inputPanel.Controls.Add(this.tabControl);
-            this.inputPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inputPanel.Location = new System.Drawing.Point(469, 0);
-            this.inputPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.inputPanel.Name = "inputPanel";
-            this.inputPanel.Size = new System.Drawing.Size(438, 625);
-            this.inputPanel.TabIndex = 1;
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.loginTabPage);
             this.tabControl.Controls.Add(this.registerTabPage);
+            this.tabControl.Controls.Add(this.ForgotPasswordTab);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.ItemSize = new System.Drawing.Size(10, 10);
+            this.tabControl.ItemSize = new System.Drawing.Size(0, 1);
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -230,12 +242,12 @@
             this.tableLayoutPanel2.Controls.Add(this.signInRandomPanel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.dontHaveAccountLabel, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 406);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 373);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.17949F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.82051F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(424, 195);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.21154F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.78846F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(424, 228);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // signInRandomPanel
@@ -245,7 +257,7 @@
             this.signInRandomPanel.Location = new System.Drawing.Point(2, 2);
             this.signInRandomPanel.Margin = new System.Windows.Forms.Padding(2);
             this.signInRandomPanel.Name = "signInRandomPanel";
-            this.signInRandomPanel.Size = new System.Drawing.Size(420, 166);
+            this.signInRandomPanel.Size = new System.Drawing.Size(420, 183);
             this.signInRandomPanel.TabIndex = 7;
             // 
             // submitBtn
@@ -259,6 +271,7 @@
             this.submitBtn.TabIndex = 0;
             this.submitBtn.Text = "Login";
             this.submitBtn.UseVisualStyleBackColor = false;
+            this.submitBtn.Visible = false;
             this.submitBtn.Click += new System.EventHandler(this.OnSubmitBtnClicked);
             this.submitBtn.MouseEnter += new System.EventHandler(this.OnSubmitBtnMouseHover);
             this.submitBtn.MouseHover += new System.EventHandler(this.OnSubmitBtnMouseHover);
@@ -270,18 +283,18 @@
             this.dontHaveAccountLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dontHaveAccountLabel.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dontHaveAccountLabel.ForeColor = System.Drawing.Color.Blue;
-            this.dontHaveAccountLabel.Location = new System.Drawing.Point(122, 174);
+            this.dontHaveAccountLabel.Location = new System.Drawing.Point(90, 199);
             this.dontHaveAccountLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dontHaveAccountLabel.Name = "dontHaveAccountLabel";
-            this.dontHaveAccountLabel.Size = new System.Drawing.Size(180, 17);
+            this.dontHaveAccountLabel.Size = new System.Drawing.Size(243, 17);
             this.dontHaveAccountLabel.TabIndex = 8;
-            this.dontHaveAccountLabel.Text = "Don\'t have an account ?";
+            this.dontHaveAccountLabel.Text = "Don\'t have an account ? Register";
             this.dontHaveAccountLabel.Click += new System.EventHandler(this.OnDontHaveAccountLabelClick);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::MakeMyTripClone.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(100, 33);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(102, 56);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(231, 67);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -294,22 +307,23 @@
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(221, 344);
+            this.label3.Location = new System.Drawing.Point(222, 332);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "Forgot Password ?";
+            this.label3.Click += new System.EventHandler(this.OnForgotPasswordLabelClicked);
             // 
             // viewHideBtn
             // 
-            this.viewHideBtn.BackgroundImage = global::MakeMyTripClone.Properties.Resources.viewPassword;
+            this.viewHideBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("viewHideBtn.BackgroundImage")));
             this.viewHideBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.viewHideBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.viewHideBtn.FlatAppearance.BorderSize = 0;
             this.viewHideBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.viewHideBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewHideBtn.Location = new System.Drawing.Point(365, 312);
+            this.viewHideBtn.Location = new System.Drawing.Point(365, 295);
             this.viewHideBtn.Margin = new System.Windows.Forms.Padding(2);
             this.viewHideBtn.Name = "viewHideBtn";
             this.viewHideBtn.Size = new System.Drawing.Size(20, 20);
@@ -320,7 +334,7 @@
             // emailUnderLinePanel
             // 
             this.emailUnderLinePanel.BackColor = System.Drawing.Color.DodgerBlue;
-            this.emailUnderLinePanel.Location = new System.Drawing.Point(66, 242);
+            this.emailUnderLinePanel.Location = new System.Drawing.Point(66, 237);
             this.emailUnderLinePanel.Margin = new System.Windows.Forms.Padding(2);
             this.emailUnderLinePanel.Name = "emailUnderLinePanel";
             this.emailUnderLinePanel.Size = new System.Drawing.Size(295, 1);
@@ -329,7 +343,7 @@
             // passwordUnderLinePanel
             // 
             this.passwordUnderLinePanel.BackColor = System.Drawing.Color.DodgerBlue;
-            this.passwordUnderLinePanel.Location = new System.Drawing.Point(66, 337);
+            this.passwordUnderLinePanel.Location = new System.Drawing.Point(66, 320);
             this.passwordUnderLinePanel.Margin = new System.Windows.Forms.Padding(2);
             this.passwordUnderLinePanel.Name = "passwordUnderLinePanel";
             this.passwordUnderLinePanel.Size = new System.Drawing.Size(295, 1);
@@ -514,6 +528,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(73)))), ((int)(((byte)(129)))));
             this.label8.Location = new System.Drawing.Point(51, 192);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
@@ -525,6 +540,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(73)))), ((int)(((byte)(129)))));
             this.label5.Location = new System.Drawing.Point(51, 38);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
@@ -536,6 +552,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(73)))), ((int)(((byte)(129)))));
             this.label4.Location = new System.Drawing.Point(52, 114);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -567,7 +584,7 @@
             this.regPasswordTB.Size = new System.Drawing.Size(295, 22);
             this.regPasswordTB.TabIndex = 5;
             this.regPasswordTB.UseSystemPasswordChar = true;
-            this.regPasswordTB.TextChanged += new System.EventHandler(this.OnPasswordTBTextChanged);
+            this.regPasswordTB.TextChanged += new System.EventHandler(this.OnRegPasswordTBTextChanged);
             // 
             // regNameTB
             // 
@@ -579,7 +596,7 @@
             this.regNameTB.Name = "regNameTB";
             this.regNameTB.Size = new System.Drawing.Size(295, 22);
             this.regNameTB.TabIndex = 2;
-            this.regNameTB.TextChanged += new System.EventHandler(this.OnNameTBTextChanged);
+            this.regNameTB.TextChanged += new System.EventHandler(this.OnRegNameTBTextChanged);
             // 
             // regMobileTB
             // 
@@ -606,7 +623,7 @@
             this.regEmailTB.Name = "regEmailTB";
             this.regEmailTB.Size = new System.Drawing.Size(295, 22);
             this.regEmailTB.TabIndex = 3;
-            this.regEmailTB.TextChanged += new System.EventHandler(this.OnEmailTBTextChanged);
+            this.regEmailTB.TextChanged += new System.EventHandler(this.OnRegEmailTBTextChanged);
             // 
             // genderWarningLabel
             // 
@@ -678,6 +695,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(73)))), ((int)(((byte)(129)))));
             this.label9.Location = new System.Drawing.Point(51, 444);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
@@ -689,6 +707,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(73)))), ((int)(((byte)(129)))));
             this.label7.Location = new System.Drawing.Point(51, 364);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
@@ -698,7 +717,7 @@
             // 
             // regConPwdViewHideBtn
             // 
-            this.regConPwdViewHideBtn.BackgroundImage = global::MakeMyTripClone.Properties.Resources.viewPassword;
+            this.regConPwdViewHideBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("regConPwdViewHideBtn.BackgroundImage")));
             this.regConPwdViewHideBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.regConPwdViewHideBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.regConPwdViewHideBtn.FlatAppearance.BorderSize = 0;
@@ -717,6 +736,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(73)))), ((int)(((byte)(129)))));
             this.label6.Location = new System.Drawing.Point(51, 272);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
@@ -794,10 +814,197 @@
             this.panel5.Size = new System.Drawing.Size(295, 1);
             this.panel5.TabIndex = 6;
             // 
+            // ForgotPasswordTab
+            // 
+            this.ForgotPasswordTab.BackColor = System.Drawing.Color.White;
+            this.ForgotPasswordTab.Controls.Add(this.tableLayoutPanel3);
+            this.ForgotPasswordTab.Controls.Add(this.backToLoginLabel);
+            this.ForgotPasswordTab.Controls.Add(this.updatePasswordBtn);
+            this.ForgotPasswordTab.Controls.Add(this.pictureBox3);
+            this.ForgotPasswordTab.Controls.Add(this.label12);
+            this.ForgotPasswordTab.Controls.Add(this.newConfirmPasswordTB);
+            this.ForgotPasswordTab.Controls.Add(this.newPasswordTB);
+            this.ForgotPasswordTab.Controls.Add(this.updatePasswordEmailTB);
+            this.ForgotPasswordTab.Controls.Add(this.label13);
+            this.ForgotPasswordTab.Controls.Add(this.label14);
+            this.ForgotPasswordTab.Controls.Add(this.ForgotPwdViewHideBtn);
+            this.ForgotPasswordTab.Controls.Add(this.panel8);
+            this.ForgotPasswordTab.Controls.Add(this.panel1);
+            this.ForgotPasswordTab.Controls.Add(this.panel3);
+            this.ForgotPasswordTab.Location = new System.Drawing.Point(4, 5);
+            this.ForgotPasswordTab.Name = "ForgotPasswordTab";
+            this.ForgotPasswordTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ForgotPasswordTab.Size = new System.Drawing.Size(430, 616);
+            this.ForgotPasswordTab.TabIndex = 2;
+            // 
+            // backToLoginLabel
+            // 
+            this.backToLoginLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.backToLoginLabel.AutoSize = true;
+            this.backToLoginLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backToLoginLabel.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backToLoginLabel.ForeColor = System.Drawing.Color.Blue;
+            this.backToLoginLabel.Location = new System.Drawing.Point(159, 526);
+            this.backToLoginLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.backToLoginLabel.Name = "backToLoginLabel";
+            this.backToLoginLabel.Size = new System.Drawing.Size(104, 17);
+            this.backToLoginLabel.TabIndex = 22;
+            this.backToLoginLabel.Text = "Back to Login";
+            this.backToLoginLabel.Click += new System.EventHandler(this.OnBackToLoginLabelClicked);
+            // 
+            // updatePasswordBtn
+            // 
+            this.updatePasswordBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.updatePasswordBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatePasswordBtn.ForeColor = System.Drawing.Color.White;
+            this.updatePasswordBtn.Location = new System.Drawing.Point(38, 459);
+            this.updatePasswordBtn.Name = "updatePasswordBtn";
+            this.updatePasswordBtn.Size = new System.Drawing.Size(355, 50);
+            this.updatePasswordBtn.TabIndex = 21;
+            this.updatePasswordBtn.Text = "UPDATE PASSWORD";
+            this.updatePasswordBtn.UseVisualStyleBackColor = false;
+            this.updatePasswordBtn.Click += new System.EventHandler(this.OnUpdatePasswordBtnClicked);
+            // 
+            // updatePasswordWarningLabel
+            // 
+            this.updatePasswordWarningLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.updatePasswordWarningLabel.AutoSize = true;
+            this.updatePasswordWarningLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatePasswordWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.updatePasswordWarningLabel.Location = new System.Drawing.Point(177, 3);
+            this.updatePasswordWarningLabel.Name = "updatePasswordWarningLabel";
+            this.updatePasswordWarningLabel.Size = new System.Drawing.Size(0, 17);
+            this.updatePasswordWarningLabel.TabIndex = 20;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(99, 36);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(231, 67);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 19;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(73)))), ((int)(((byte)(129)))));
+            this.label12.Location = new System.Drawing.Point(61, 176);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 23);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Email - ID";
+            // 
+            // newConfirmPasswordTB
+            // 
+            this.newConfirmPasswordTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.newConfirmPasswordTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.newConfirmPasswordTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newConfirmPasswordTB.Location = new System.Drawing.Point(65, 387);
+            this.newConfirmPasswordTB.Margin = new System.Windows.Forms.Padding(2);
+            this.newConfirmPasswordTB.Name = "newConfirmPasswordTB";
+            this.newConfirmPasswordTB.Size = new System.Drawing.Size(295, 22);
+            this.newConfirmPasswordTB.TabIndex = 14;
+            this.newConfirmPasswordTB.UseSystemPasswordChar = true;
+            // 
+            // newPasswordTB
+            // 
+            this.newPasswordTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.newPasswordTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.newPasswordTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPasswordTB.Location = new System.Drawing.Point(65, 297);
+            this.newPasswordTB.Margin = new System.Windows.Forms.Padding(2);
+            this.newPasswordTB.Name = "newPasswordTB";
+            this.newPasswordTB.Size = new System.Drawing.Size(295, 22);
+            this.newPasswordTB.TabIndex = 14;
+            this.newPasswordTB.UseSystemPasswordChar = true;
+            // 
+            // updatePasswordEmailTB
+            // 
+            this.updatePasswordEmailTB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.updatePasswordEmailTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.updatePasswordEmailTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.updatePasswordEmailTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatePasswordEmailTB.Location = new System.Drawing.Point(65, 210);
+            this.updatePasswordEmailTB.Margin = new System.Windows.Forms.Padding(2);
+            this.updatePasswordEmailTB.Name = "updatePasswordEmailTB";
+            this.updatePasswordEmailTB.Size = new System.Drawing.Size(295, 22);
+            this.updatePasswordEmailTB.TabIndex = 12;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(73)))), ((int)(((byte)(129)))));
+            this.label13.Location = new System.Drawing.Point(61, 346);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(189, 23);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Confirm New Password";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(73)))), ((int)(((byte)(129)))));
+            this.label14.Location = new System.Drawing.Point(61, 261);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(122, 23);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "New Password";
+            // 
+            // ForgotPwdViewHideBtn
+            // 
+            this.ForgotPwdViewHideBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ForgotPwdViewHideBtn.BackgroundImage")));
+            this.ForgotPwdViewHideBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ForgotPwdViewHideBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ForgotPwdViewHideBtn.FlatAppearance.BorderSize = 0;
+            this.ForgotPwdViewHideBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.ForgotPwdViewHideBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ForgotPwdViewHideBtn.Location = new System.Drawing.Point(364, 299);
+            this.ForgotPwdViewHideBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.ForgotPwdViewHideBtn.Name = "ForgotPwdViewHideBtn";
+            this.ForgotPwdViewHideBtn.Size = new System.Drawing.Size(20, 20);
+            this.ForgotPwdViewHideBtn.TabIndex = 11;
+            this.ForgotPwdViewHideBtn.UseVisualStyleBackColor = true;
+            this.ForgotPwdViewHideBtn.Click += new System.EventHandler(this.OnForgotPwdViewHideBtnClicked);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel8.Location = new System.Drawing.Point(65, 414);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(295, 1);
+            this.panel8.TabIndex = 17;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.Location = new System.Drawing.Point(65, 237);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(295, 1);
+            this.panel1.TabIndex = 16;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel3.Location = new System.Drawing.Point(65, 324);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(295, 1);
+            this.panel3.TabIndex = 17;
+            // 
             // imagePanel
             // 
             this.imagePanel.BackColor = System.Drawing.Color.White;
-            this.imagePanel.BackgroundImage = global::MakeMyTripClone.Properties.Resources.LoginPageCarousel1;
+            this.imagePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imagePanel.BackgroundImage")));
             this.imagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imagePanel.Controls.Add(this.label10);
             this.imagePanel.Controls.Add(this.closePB);
@@ -827,7 +1034,7 @@
             // 
             this.closePB.BackColor = System.Drawing.Color.Transparent;
             this.closePB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closePB.Image = global::MakeMyTripClone.Properties.Resources.close;
+            this.closePB.Image = ((System.Drawing.Image)(resources.GetObject("closePB.Image")));
             this.closePB.Location = new System.Drawing.Point(18, 15);
             this.closePB.Name = "closePB";
             this.closePB.Size = new System.Drawing.Size(29, 28);
@@ -839,7 +1046,7 @@
             // carouselPB
             // 
             this.carouselPB.BackColor = System.Drawing.Color.Silver;
-            this.carouselPB.Image = global::MakeMyTripClone.Properties.Resources.LoginPageCarousel1;
+            this.carouselPB.Image = ((System.Drawing.Image)(resources.GetObject("carouselPB.Image")));
             this.carouselPB.Location = new System.Drawing.Point(39, 80);
             this.carouselPB.Name = "carouselPB";
             this.carouselPB.Padding = new System.Windows.Forms.Padding(10);
@@ -847,6 +1054,29 @@
             this.carouselPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.carouselPB.TabIndex = 0;
             this.carouselPB.TabStop = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.updatePasswordWarningLabel, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(38, 430);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(355, 23);
+            this.tableLayoutPanel3.TabIndex = 23;
+            // 
+            // inputPanel
+            // 
+            this.inputPanel.BackColor = System.Drawing.Color.White;
+            this.inputPanel.Controls.Add(this.tabControl);
+            this.inputPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inputPanel.Location = new System.Drawing.Point(469, 0);
+            this.inputPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.inputPanel.Name = "inputPanel";
+            this.inputPanel.Size = new System.Drawing.Size(438, 625);
+            this.inputPanel.TabIndex = 1;
             // 
             // LoginForm
             // 
@@ -860,10 +1090,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginForm";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.TransparencyKey = System.Drawing.Color.White;
             this.Resize += new System.EventHandler(this.OnLoginFormResized);
-            this.inputPanel.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.loginTabPage.ResumeLayout(false);
             this.loginInputPanel.ResumeLayout(false);
@@ -881,10 +1111,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.regEmailValidPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regMobileValidPB)).EndInit();
+            this.ForgotPasswordTab.ResumeLayout(false);
+            this.ForgotPasswordTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.imagePanel.ResumeLayout(false);
             this.imagePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closePB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carouselPB)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.inputPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -897,7 +1133,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox passwordTB;
-        private System.Windows.Forms.Panel inputPanel;
         private System.Windows.Forms.Panel emailUnderLinePanel;
         private System.Windows.Forms.Panel passwordUnderLinePanel;
         private System.Windows.Forms.Panel signInRandomPanel;
@@ -951,6 +1186,23 @@
         private RippleButton registerBtn;
         private System.Windows.Forms.Label genderWarningLabel;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabPage ForgotPasswordTab;
+        private RippleButton updatePasswordBtn;
+        private System.Windows.Forms.Label updatePasswordWarningLabel;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox newConfirmPasswordTB;
+        private System.Windows.Forms.TextBox newPasswordTB;
+        private System.Windows.Forms.TextBox updatePasswordEmailTB;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button ForgotPwdViewHideBtn;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label backToLoginLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Panel inputPanel;
         //private RippleButton rippleButton1;
     }
 }

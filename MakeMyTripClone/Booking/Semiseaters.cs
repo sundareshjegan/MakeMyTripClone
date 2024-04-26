@@ -18,42 +18,87 @@ namespace MakeMyTripClone
             InitializeComponent();
         }
         public delegate void DatasHandler(bool b, string s);
-        //public event EventHandler<bool> coloured,notcoloured; 
-        public event DatasHandler coloured,notcoloured;
-        private void PictureBoxSleeperClick(object sender, EventArgs e)
+        public event DatasHandler coloured;
+     
+        private void PictureBoxClick(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
+            string s = pictureBox.Name.Remove(0, 10);
             if (pictureBox.BorderStyle == BorderStyle.FixedSingle)
             {
-                pictureBox.BackgroundImage = Resources.SLEEPER;
-                pictureBox.BorderStyle = BorderStyle.None;
-                notcoloured?.Invoke(true, pictureBox.Name.Remove(0, 10));
+                if (s == "1" || s == "6" || s == "11" || s == "16" || s == "21")
+                {
+                    pictureBox.BackgroundImage = Resources.SLEEPER;
+                    pictureBox.BorderStyle = BorderStyle.None;
+                }
+                else
+                {
+                    pictureBox.BackgroundImage = Resources.Seater;
+                    pictureBox.BorderStyle = BorderStyle.None;
+                }
+                coloured?.Invoke( false, s);
             }
             else
             {
-                pictureBox.BackgroundImage = Resources.Bluesleeper;
-                pictureBox.BorderStyle = BorderStyle.FixedSingle;
-                coloured?.Invoke(true, pictureBox.Name.Remove(0, 10));
+                if (s == "1" || s == "6" || s == "11" || s == "16" || s == "21")
+                {
+                    pictureBox.BackgroundImage = Resources.Bluesleeper;
+                    pictureBox.BorderStyle = BorderStyle.FixedSingle;
+                }
+                else
+                {
+                    pictureBox.BackgroundImage = Resources.Blueseater;
+                    pictureBox.BorderStyle = BorderStyle.FixedSingle;
+                }
+                coloured?.Invoke( true,s);
+                ListAdd(s);
             }
-           
         }
 
-        private void PictureBoxSeaterClick(object sender, EventArgs e)
+        private void ListAdd(string s)
         {
-            PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox.BorderStyle == BorderStyle.FixedSingle)
+            if (s != "1" && s != "6" && s != "11" && s != "16" && s != "21")
             {
-                pictureBox.BackgroundImage = Resources.Seater;
-                pictureBox.BorderStyle = BorderStyle.None;
-                notcoloured?.Invoke( false, pictureBox.Name.Remove(0, 10));
+                if (s == "2" || s == "4" || s == "7" || s == "9" || s == "12" || s == "14" || s == "17" || s == "19" || s == "22" || s == "24")
+                {
+                    int n = int.Parse(s) + 1;
+                    string p = "pictureBox" + n;
+                    PictureBox picture = this.Controls.Find(p, true).FirstOrDefault() as PictureBox;
+                    if (picture != null)
+                    {
+                        if (picture.BackColor == SystemColors.ControlLightLight)
+                        {
+                            Buses.isFemaleseats.Add(true);
+                        }
+                        else
+                        {
+                            Buses.isFemaleseats.Add(false);
+                        }
+                    }
+
+                }
+                else
+                {
+                    int n = int.Parse(s) - 1;
+                    string p = "pictureBox" + n;
+                    PictureBox picture = this.Controls.Find(p, true).FirstOrDefault() as PictureBox;
+                    if (picture != null)
+                    {
+                        if (picture.BackColor == SystemColors.ControlLightLight)
+                        {
+                            Buses.isFemaleseats.Add(true);
+                        }
+                        else
+                        {
+                            Buses.isFemaleseats.Add(false);
+                        }
+                    }
+                }
             }
             else
             {
-                pictureBox.BackgroundImage = Resources.Blueseater;
-                pictureBox.BorderStyle = BorderStyle.FixedSingle;
-                coloured?.Invoke( false, pictureBox.Name.Remove(0, 10));
+                Buses.isFemaleseats.Add(false);
             }
-            
         }
        
     }

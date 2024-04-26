@@ -117,7 +117,7 @@
             this.nobuslabel = new System.Windows.Forms.Label();
             this.noresultpictureBox = new System.Windows.Forms.PictureBox();
             this.toppage = new System.Windows.Forms.Panel();
-            this.LoginButton = new System.Windows.Forms.Button();
+            this.logInTab1 = new MakeMyTripClone.LogInTab();
             this.makemytriplogo = new System.Windows.Forms.PictureBox();
             this.imagespanel = new System.Windows.Forms.Panel();
             this.forexpanel = new System.Windows.Forms.Panel();
@@ -1293,6 +1293,8 @@
             this.busesfoundlabel.Size = new System.Drawing.Size(177, 32);
             this.busesfoundlabel.TabIndex = 0;
             this.busesfoundlabel.Text = "0 buses found";
+            this.busesfoundlabel.Visible = false;
+            this.busesfoundlabel.TextChanged += new System.EventHandler(this.OnBusesfoundlabelTextChanged);
             // 
             // adducpanel
             // 
@@ -1318,7 +1320,6 @@
             this.endofbuslabel.TabIndex = 1;
             this.endofbuslabel.Text = "--------------------------------------------------------------End of buses-------" +
     "-------------------------------------------------\r\n\r\n";
-            this.endofbuslabel.Visible = false;
             // 
             // nobuspanel
             // 
@@ -1388,7 +1389,7 @@
             // toppage
             // 
             this.toppage.BackColor = System.Drawing.Color.White;
-            this.toppage.Controls.Add(this.LoginButton);
+            this.toppage.Controls.Add(this.logInTab1);
             this.toppage.Controls.Add(this.makemytriplogo);
             this.toppage.Controls.Add(this.imagespanel);
             this.toppage.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1397,21 +1398,16 @@
             this.toppage.Size = new System.Drawing.Size(1831, 73);
             this.toppage.TabIndex = 4;
             // 
-            // LoginButton
+            // logInTab1
             // 
-            this.LoginButton.BackColor = System.Drawing.Color.DodgerBlue;
-            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoginButton.FlatAppearance.BorderSize = 0;
-            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.ForeColor = System.Drawing.Color.White;
-            this.LoginButton.Location = new System.Drawing.Point(1610, 12);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(179, 44);
-            this.LoginButton.TabIndex = 20;
-            this.LoginButton.Text = "Login or Create Account";
-            this.LoginButton.UseVisualStyleBackColor = false;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButtonClick);
+            this.logInTab1.IsLoggedIn = false;
+            this.logInTab1.Location = new System.Drawing.Point(1530, 13);
+            this.logInTab1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.logInTab1.Name = "logInTab1";
+            this.logInTab1.Size = new System.Drawing.Size(256, 49);
+            this.logInTab1.TabIndex = 21;
+            this.logInTab1.UserEmail = null;
+            this.logInTab1.UserName = null;
             // 
             // makemytriplogo
             // 
@@ -1478,6 +1474,7 @@
             this.ForexButton.BackColor = System.Drawing.Color.White;
             this.ForexButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.moneywhite;
             this.ForexButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ForexButton.Enabled = false;
             this.ForexButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.ForexButton.FlatAppearance.BorderSize = 0;
             this.ForexButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1527,6 +1524,7 @@
             this.TrainButton.BackColor = System.Drawing.Color.White;
             this.TrainButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.trainwhite;
             this.TrainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TrainButton.Enabled = false;
             this.TrainButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.TrainButton.FlatAppearance.BorderSize = 0;
             this.TrainButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1576,6 +1574,7 @@
             this.CabButton.BackColor = System.Drawing.Color.White;
             this.CabButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.cabwhite;
             this.CabButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CabButton.Enabled = false;
             this.CabButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.CabButton.FlatAppearance.BorderSize = 0;
             this.CabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1625,6 +1624,7 @@
             this.HotelButton.BackColor = System.Drawing.Color.White;
             this.HotelButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.hotels;
             this.HotelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HotelButton.Enabled = false;
             this.HotelButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.HotelButton.FlatAppearance.BorderSize = 0;
             this.HotelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1674,6 +1674,7 @@
             this.InsuranceButton.BackColor = System.Drawing.Color.White;
             this.InsuranceButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.insurancewhite;
             this.InsuranceButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.InsuranceButton.Enabled = false;
             this.InsuranceButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.InsuranceButton.FlatAppearance.BorderSize = 0;
             this.InsuranceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1723,6 +1724,7 @@
             this.HomeButton.BackColor = System.Drawing.Color.White;
             this.HomeButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.homewhite;
             this.HomeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HomeButton.Enabled = false;
             this.HomeButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.HomeButton.FlatAppearance.BorderSize = 0;
             this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1821,6 +1823,7 @@
             this.HolidaysButton.BackColor = System.Drawing.Color.White;
             this.HolidaysButton.BackgroundImage = global::MakeMyTripClone.Properties.Resources.holidayswhite;
             this.HolidaysButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HolidaysButton.Enabled = false;
             this.HolidaysButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.HolidaysButton.FlatAppearance.BorderSize = 0;
             this.HolidaysButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1872,6 +1875,7 @@
             this.FlightButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FlightButton.BackgroundImage")));
             this.FlightButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FlightButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FlightButton.Enabled = false;
             this.FlightButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.FlightButton.FlatAppearance.BorderSize = 0;
             this.FlightButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -2235,8 +2239,6 @@
         private System.Windows.Forms.Button clearalllbutton;
         private System.Windows.Forms.Label endofbuslabel;
         private System.Windows.Forms.Panel toppage;
-        private System.Windows.Forms.Button LoginButton;
-        private System.Windows.Forms.PictureBox makemytriplogo;
         private System.Windows.Forms.Panel imagespanel;
         private System.Windows.Forms.Panel forexpanel;
         private System.Windows.Forms.Label ForexLabel;
@@ -2287,6 +2289,8 @@
         private System.Windows.Forms.Label departlabel;
         private System.Windows.Forms.DateTimePicker departdateTimePicker;
         private System.Windows.Forms.Label warningLabel;
+        private LogInTab logInTab1;
+        private System.Windows.Forms.PictureBox makemytriplogo;
     }
 }
 
