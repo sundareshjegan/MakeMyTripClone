@@ -28,13 +28,14 @@ namespace MakeMyTripClone
         public static MySqlConnection Connection = null;
         public static DatabaseManager manager = new MySqlHandler(server, user, password, database);
 
-
         public static void GetConnection()
         {
             //Connection = new MySqlConnection(connectionString);
             //Connection.Open();
             manager.Connect();
         }
+
+
 
         #region SignUpUser
 
@@ -219,7 +220,7 @@ namespace MakeMyTripClone
             }
         }
 
-        public static BooleanMsg ChangeSeatBookingState(SeatDeatils seat)
+        public static BooleanMsg ChangeSeatBookingState(SeatDetails seat)
         {
             int isBooked = seat.IsBooked ? 1 : 0;
             var res = manager.InsertData(Seat.TableName, 0, seat.RouteId, seat.SeatType, isBooked, seat.Price, seat.CId,seat.SeatNumber.Trim(),seat.IsBookedByfemale);

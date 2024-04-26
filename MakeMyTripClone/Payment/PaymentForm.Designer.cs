@@ -109,7 +109,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.customPanel1 = new MakeMyTripClone.UserControls.CustomPanel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BNPLProceedBtn = new System.Windows.Forms.Button();
             this.customPanel6 = new MakeMyTripClone.UserControls.CustomPanel();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.customPanel5 = new MakeMyTripClone.UserControls.CustomPanel();
@@ -125,9 +125,9 @@
             this.gPayTab = new System.Windows.Forms.TabPage();
             this.customPanel10 = new MakeMyTripClone.UserControls.CustomPanel();
             this.pictureBox36 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.gPayVerifyAndPayBtn = new System.Windows.Forms.Button();
             this.customPanel11 = new MakeMyTripClone.UserControls.CustomPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.gPayUpiTB = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
             this.netBankingTab = new System.Windows.Forms.TabPage();
             this.pictureBox30 = new System.Windows.Forms.PictureBox();
@@ -697,7 +697,7 @@
             this.paymentTabControl.Controls.Add(this.bnplTab);
             this.paymentTabControl.Controls.Add(this.gPayTab);
             this.paymentTabControl.Controls.Add(this.netBankingTab);
-            this.paymentTabControl.ItemSize = new System.Drawing.Size(0, 1);
+            this.paymentTabControl.ItemSize = new System.Drawing.Size(3, 7);
             this.paymentTabControl.Location = new System.Drawing.Point(290, 0);
             this.paymentTabControl.Name = "paymentTabControl";
             this.paymentTabControl.SelectedIndex = 0;
@@ -709,10 +709,10 @@
             // 
             this.creditCardTab.BackColor = System.Drawing.Color.White;
             this.creditCardTab.Controls.Add(this.customPanel12);
-            this.creditCardTab.Location = new System.Drawing.Point(4, 5);
+            this.creditCardTab.Location = new System.Drawing.Point(4, 11);
             this.creditCardTab.Name = "creditCardTab";
             this.creditCardTab.Padding = new System.Windows.Forms.Padding(3);
-            this.creditCardTab.Size = new System.Drawing.Size(592, 347);
+            this.creditCardTab.Size = new System.Drawing.Size(592, 341);
             this.creditCardTab.TabIndex = 3;
             // 
             // customPanel12
@@ -926,10 +926,10 @@
             this.upiTab.Controls.Add(this.customPanel7);
             this.upiTab.Controls.Add(this.label37);
             this.upiTab.Controls.Add(this.pictureBox24);
-            this.upiTab.Location = new System.Drawing.Point(4, 5);
+            this.upiTab.Location = new System.Drawing.Point(4, 11);
             this.upiTab.Name = "upiTab";
             this.upiTab.Padding = new System.Windows.Forms.Padding(3);
-            this.upiTab.Size = new System.Drawing.Size(592, 347);
+            this.upiTab.Size = new System.Drawing.Size(592, 341);
             this.upiTab.TabIndex = 1;
             // 
             // customPanel7
@@ -1054,7 +1054,7 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "VERIFY && PAY";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.OnPayButtonClicked);
+            this.button3.Click += new System.EventHandler(this.OnUPIVerifyAndPayBtnClicked);
             // 
             // customPanel8
             // 
@@ -1158,10 +1158,10 @@
             this.bnplTab.Controls.Add(this.label22);
             this.bnplTab.Controls.Add(this.label19);
             this.bnplTab.Controls.Add(this.customPanel1);
-            this.bnplTab.Location = new System.Drawing.Point(4, 5);
+            this.bnplTab.Location = new System.Drawing.Point(4, 11);
             this.bnplTab.Name = "bnplTab";
             this.bnplTab.Padding = new System.Windows.Forms.Padding(3);
-            this.bnplTab.Size = new System.Drawing.Size(592, 347);
+            this.bnplTab.Size = new System.Drawing.Size(592, 341);
             this.bnplTab.TabIndex = 0;
             // 
             // pictureBox16
@@ -1275,7 +1275,7 @@
             // customPanel1
             // 
             this.customPanel1.BorderColor = System.Drawing.Color.LightGray;
-            this.customPanel1.Controls.Add(this.button2);
+            this.customPanel1.Controls.Add(this.BNPLProceedBtn);
             this.customPanel1.Controls.Add(this.customPanel6);
             this.customPanel1.Controls.Add(this.customPanel5);
             this.customPanel1.Controls.Add(this.customPanel4);
@@ -1289,18 +1289,19 @@
             this.customPanel1.Size = new System.Drawing.Size(451, 151);
             this.customPanel1.TabIndex = 0;
             // 
-            // button2
+            // BNPLProceedBtn
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(307, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 36);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "PROCEED";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BNPLProceedBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BNPLProceedBtn.BackgroundImage")));
+            this.BNPLProceedBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BNPLProceedBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BNPLProceedBtn.ForeColor = System.Drawing.Color.White;
+            this.BNPLProceedBtn.Location = new System.Drawing.Point(307, 21);
+            this.BNPLProceedBtn.Name = "BNPLProceedBtn";
+            this.BNPLProceedBtn.Size = new System.Drawing.Size(123, 36);
+            this.BNPLProceedBtn.TabIndex = 4;
+            this.BNPLProceedBtn.Text = "PROCEED";
+            this.BNPLProceedBtn.UseVisualStyleBackColor = true;
+            this.BNPLProceedBtn.Click += new System.EventHandler(this.OnBNPLProceedBtnClicked);
             // 
             // customPanel6
             // 
@@ -1443,17 +1444,17 @@
             // 
             this.gPayTab.BackColor = System.Drawing.Color.White;
             this.gPayTab.Controls.Add(this.customPanel10);
-            this.gPayTab.Location = new System.Drawing.Point(4, 5);
+            this.gPayTab.Location = new System.Drawing.Point(4, 11);
             this.gPayTab.Name = "gPayTab";
             this.gPayTab.Padding = new System.Windows.Forms.Padding(3);
-            this.gPayTab.Size = new System.Drawing.Size(592, 347);
+            this.gPayTab.Size = new System.Drawing.Size(592, 341);
             this.gPayTab.TabIndex = 2;
             // 
             // customPanel10
             // 
             this.customPanel10.BorderColor = System.Drawing.Color.LightGray;
             this.customPanel10.Controls.Add(this.pictureBox36);
-            this.customPanel10.Controls.Add(this.button4);
+            this.customPanel10.Controls.Add(this.gPayVerifyAndPayBtn);
             this.customPanel10.Controls.Add(this.customPanel11);
             this.customPanel10.Controls.Add(this.label61);
             this.customPanel10.CornerRadius = 10;
@@ -1473,24 +1474,25 @@
             this.pictureBox36.TabIndex = 7;
             this.pictureBox36.TabStop = false;
             // 
-            // button4
+            // gPayVerifyAndPayBtn
             // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(322, 86);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 36);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "VERIFY && PAY";
-            this.button4.UseVisualStyleBackColor = true;
+            this.gPayVerifyAndPayBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gPayVerifyAndPayBtn.BackgroundImage")));
+            this.gPayVerifyAndPayBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gPayVerifyAndPayBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gPayVerifyAndPayBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gPayVerifyAndPayBtn.ForeColor = System.Drawing.Color.White;
+            this.gPayVerifyAndPayBtn.Location = new System.Drawing.Point(322, 86);
+            this.gPayVerifyAndPayBtn.Name = "gPayVerifyAndPayBtn";
+            this.gPayVerifyAndPayBtn.Size = new System.Drawing.Size(136, 36);
+            this.gPayVerifyAndPayBtn.TabIndex = 5;
+            this.gPayVerifyAndPayBtn.Text = "VERIFY && PAY";
+            this.gPayVerifyAndPayBtn.UseVisualStyleBackColor = true;
+            this.gPayVerifyAndPayBtn.Click += new System.EventHandler(this.OnGPayVerifyAndPayBtnClicked);
             // 
             // customPanel11
             // 
             this.customPanel11.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.customPanel11.Controls.Add(this.textBox2);
+            this.customPanel11.Controls.Add(this.gPayUpiTB);
             this.customPanel11.CornerRadius = 6;
             this.customPanel11.Location = new System.Drawing.Point(43, 84);
             this.customPanel11.Name = "customPanel11";
@@ -1498,16 +1500,16 @@
             this.customPanel11.Size = new System.Drawing.Size(265, 39);
             this.customPanel11.TabIndex = 2;
             // 
-            // textBox2
+            // gPayUpiTB
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(5, 8);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(255, 23);
-            this.textBox2.TabIndex = 0;
+            this.gPayUpiTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gPayUpiTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gPayUpiTB.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gPayUpiTB.Location = new System.Drawing.Point(5, 8);
+            this.gPayUpiTB.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.gPayUpiTB.Name = "gPayUpiTB";
+            this.gPayUpiTB.Size = new System.Drawing.Size(255, 23);
+            this.gPayUpiTB.TabIndex = 0;
             // 
             // label61
             // 
@@ -1525,10 +1527,10 @@
             this.netBankingTab.BackColor = System.Drawing.Color.White;
             this.netBankingTab.Controls.Add(this.pictureBox30);
             this.netBankingTab.Controls.Add(this.label63);
-            this.netBankingTab.Location = new System.Drawing.Point(4, 5);
+            this.netBankingTab.Location = new System.Drawing.Point(4, 11);
             this.netBankingTab.Name = "netBankingTab";
             this.netBankingTab.Padding = new System.Windows.Forms.Padding(3);
-            this.netBankingTab.Size = new System.Drawing.Size(592, 347);
+            this.netBankingTab.Size = new System.Drawing.Size(592, 341);
             this.netBankingTab.TabIndex = 4;
             // 
             // pictureBox30
@@ -2598,7 +2600,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BNPLProceedBtn;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox16;
         private UserControls.CustomPanel customPanel7;
@@ -2682,9 +2684,9 @@
         private System.Windows.Forms.Label label75;
         private UserControls.CustomPanel customPanel10;
         private System.Windows.Forms.PictureBox pictureBox36;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button gPayVerifyAndPayBtn;
         private UserControls.CustomPanel customPanel11;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox gPayUpiTB;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.TabPage creditCardTab;
         private UserControls.CustomPanel customPanel12;

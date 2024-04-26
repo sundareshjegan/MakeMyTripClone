@@ -32,6 +32,8 @@ namespace MakeMyTripClone
         public static List<bool> isFemaleseats = new List<bool>();
         private List<string> seatsbooked = new List<string>();
 
+        private static Buses previousClickedBus;
+
         public string BusType
         {
             get { return acnonac; }
@@ -94,7 +96,34 @@ namespace MakeMyTripClone
             tolabel.Text = BookingPageForm.busesList[i].EndTime + " " + to.Day + " " + MonthName(to.Month);
             endtime = BookingPageForm.busesList[i].EndTime;
             noofseatlabel.Text = "";
-            if (busltypeabel.Text =="AC-SL" || busltypeabel.Text=="NON-AC-SL")
+
+            AddSeatTypeUserControls();
+
+            boarding = DBManager.GetBoarding(pickup, drop, date, rid);
+            destination = DBManager.GetDrop(pickup, drop, date, rid);
+            foreach(var n in destination)
+            {
+                address = new Address();
+                string[] ss = n.ToString().Split('&');
+                address.AddAddress(ss[0],ss[1], ss[2]);
+                droppointpanel.Controls.Add(address);
+                address.Dock = DockStyle.Top;
+                address.drops += Addressdrops;
+            }
+            foreach(var n in boarding)
+            {
+                address = new Address();
+                string[] ss = n.ToString().Split('&');
+                address.AddAddress(ss[0], ss[1], ss[2]);
+                pickuppointpanel.Controls.Add(address);
+                address.Dock = DockStyle.Top;
+                address.drops2 += Addressdropss; 
+            }
+        }
+
+        private void AddSeatTypeUserControls()
+        {
+            if (busltypeabel.Text == "AC-SL" || busltypeabel.Text == "NON-AC-SL")
             {
                 lwrlabel.Visible = true;
                 uprlabel.Visible = true;
@@ -102,7 +131,7 @@ namespace MakeMyTripClone
                 ubpanel.Visible = true;
                 seaterpanel.Visible = false;
                 Sleeper lbs = new Sleeper();
-                foreach(PictureBox seatPb in lbs.Controls)
+                foreach (PictureBox seatPb in lbs.Controls)
                 {
                     string ss = seatPb.Name.Remove(0, 10);
                     if (DBManager.IsSeatBooked(rid, ss) && !DBManager.IsSeatBookedByFemale(rid, ss))
@@ -110,7 +139,7 @@ namespace MakeMyTripClone
                         seatPb.Enabled = false;
                         seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
                     }
-                    else if(DBManager.IsSeatBookedByFemale(rid,ss))
+                    else if (DBManager.IsSeatBookedByFemale(rid, ss))
                     {
                         seatPb.Enabled = false;
                         seatPb.BackgroundImage = Properties.Resources.femaleSleeper;
@@ -123,7 +152,7 @@ namespace MakeMyTripClone
                 ubpanel.Controls.Add(ubs);
                 foreach (PictureBox seatPb in ubs.Controls)
                 {
-                    string sss = "u"+seatPb.Name.Remove(0, 10);
+                    string sss = "u" + seatPb.Name.Remove(0, 10);
                     if (DBManager.IsSeatBooked(rid, sss) && !DBManager.IsSeatBookedByFemale(rid, sss))
                     {
                         seatPb.Enabled = false;
@@ -136,17 +165,17 @@ namespace MakeMyTripClone
                         seatPb.BackColor = SystemColors.ControlLightLight;
                     }
                 }
-                ubs.colours += Ubscolours; 
+                ubs.colours += Ubscolours;
             }
             if (busltypeabel.Text == "AC-SL/ST" || busltypeabel.Text == "NON-AC-SL/ST")
             {
-                
+
                 lwrlabel.Visible = true;
                 uprlabel.Visible = true;
                 lbpanel.Visible = true;
                 ubpanel.Visible = true;
                 seaterpanel.Visible = false;
-                Semiseaters lbs = new Semiseaters();               
+                Semiseaters lbs = new Semiseaters();
                 lbpanel.Controls.Add(lbs);
                 foreach (PictureBox seatPb in lbs.Controls)
                 {
@@ -154,7 +183,7 @@ namespace MakeMyTripClone
                     if (DBManager.IsSeatBooked(rid, ss) && !DBManager.IsSeatBookedByFemale(rid, ss))
                     {
                         seatPb.Enabled = false;
-                        if(ss=="1" || ss=="6" || ss=="11" || ss=="16" || ss=="21") seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
+                        if (ss == "1" || ss == "6" || ss == "11" || ss == "16" || ss == "21") seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
                         else seatPb.BackgroundImage = Properties.Resources.bookedSeater;
                     }
                     else if (DBManager.IsSeatBookedByFemale(rid, ss))
@@ -183,7 +212,7 @@ namespace MakeMyTripClone
                         seatPb.Enabled = false;
                         seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
                     }
-                    else if(DBManager.IsSeatBookedByFemale(rid, sss))
+                    else if (DBManager.IsSeatBookedByFemale(rid, sss))
                     {
                         seatPb.Enabled = false;
                         seatPb.BackgroundImage = Properties.Resources.femaleSleeper;
@@ -209,7 +238,7 @@ namespace MakeMyTripClone
                         seatPb.Enabled = false;
                         seatPb.BackgroundImage = Properties.Resources.bookedSeater;
                     }
-                    else if(DBManager.IsSeatBookedByFemale(rid, ss))
+                    else if (DBManager.IsSeatBookedByFemale(rid, ss))
                     {
                         seatPb.Enabled = false;
                         seatPb.BackgroundImage = Properties.Resources.femaleSeater;
@@ -218,29 +247,8 @@ namespace MakeMyTripClone
                 }
                 seats.seatscolours += Seatsseatscolours;
             }
-            boarding = DBManager.GetBoarding(pickup, drop, date, rid);
-            destination = DBManager.GetDrop(pickup, drop, date, rid);
-            foreach(var n in destination)
-            {
-                address = new Address();
-                string[] ss = n.ToString().Split('&');
-                address.AddAddress(ss[0],ss[1], ss[2]);
-                droppointpanel.Controls.Add(address);
-                address.Dock = DockStyle.Top;
-                address.drops += Addressdrops;
-            }
-            foreach(var n in boarding)
-            {
-                address = new Address();
-                string[] ss = n.ToString().Split('&');
-                address.AddAddress(ss[0], ss[1], ss[2]);
-                pickuppointpanel.Controls.Add(address);
-                address.Dock = DockStyle.Top;
-                address.drops2 += Addressdropss; 
-            }
         }
-
-        public void IsRemove(int i)
+        private void IsRemove(int i)
         {
             isFemaleseats.RemoveAt(i);
         }
@@ -449,14 +457,17 @@ namespace MakeMyTripClone
                 photospanel.Visible = false;
                 ptsbutton.BackColor = white;
                 amentbutton.BackColor = colour;
-                combinationpanel.Visible = false;
                 amentiespanel.Visible = true;
-                Height = 400;
+                amentiespanel.BringToFront();
+                combinationpanel.Visible = true;
+                combinationpanel.BringToFront();
+                Height = 1250;
                 isAmenties = true;
-                ssbutton.Text = "Select seats";
-                ssbutton.BackColor = highlight;
-                ssbutton.ForeColor = white;
+                ssbutton.Text = "Hide seats";
+                ssbutton.BackColor = white;
+                ssbutton.ForeColor = highlight;
                 isPhotos = false;
+                toppanel.BackColor = colour;
             }
             else
             {
@@ -464,7 +475,7 @@ namespace MakeMyTripClone
                 ptsbutton.BackColor = white;
                 amentiespanel.Visible = false;
                 isAmenties = false;
-                Height = 200;
+                Height = 1050;
             }
         }
 
@@ -476,13 +487,16 @@ namespace MakeMyTripClone
                 ptsbutton.BackColor = colour;
                 amentbutton.BackColor = white;              
                 photospanel.Visible = true;
-                combinationpanel.Visible = false;
+                photospanel.BringToFront();
+                combinationpanel.Visible = true;
+                combinationpanel.BringToFront();
                 isPhotos = true;
-                Height = 385;
-                ssbutton.Text = "Select seats";
-                ssbutton.BackColor = highlight;
-                ssbutton.ForeColor = white;
+                Height = 1250;
+                ssbutton.Text = "Hide seats";
+                ssbutton.BackColor = white;
+                ssbutton.ForeColor = highlight;
                 isAmenties = false;
+                toppanel.BackColor = colour;
             }
             else
             {
@@ -490,24 +504,36 @@ namespace MakeMyTripClone
                 amentbutton.BackColor = white;
                 photospanel.Visible = false;
                 isPhotos = false;
-                Height = 200;
+                Height = 1050;
             }
         }
 
         private void SelectClick(object sender, EventArgs e)
-        { 
-            if(ssbutton.Text== "Select seats")
+        {
+            if (ssbutton.Text == "Select seats")
             {
                 ssbutton.Text = "Hide seats";
-                ssbutton.BackColor =white;
+                ssbutton.BackColor = white;
                 ssbutton.ForeColor = highlight;
-                Height = 1050;
+                Height = 1250;
                 combinationpanel.Visible = true;
-                toppanel.BackColor =colour ;
+                toppanel.BackColor = colour;
                 photospanel.Visible = false;
                 amentiespanel.Visible = false;
                 amentbutton.BackColor = white;
                 ptsbutton.BackColor = white;
+                if (previousClickedBus != null && previousClickedBus != this)
+                {
+                    previousClickedBus.SelectClick(sender, e);
+                    previousClickedBus.lbpanel.Controls.Clear();
+                    previousClickedBus.ubpanel.Controls.Clear();
+                    previousClickedBus.seaterpanel.Controls.Clear();
+                    previousClickedBus.totalamtlabel.Text = "0";
+                    previousClickedBus.noofseatlabel.Text = "";
+                    isFemaleseats.Clear();
+                    previousClickedBus.AddSeatTypeUserControls();
+                }
+                previousClickedBus = this;
             }
             else
             {
@@ -517,7 +543,7 @@ namespace MakeMyTripClone
                 combinationpanel.Visible = false;
                 Height = 200;
                 toppanel.BackColor = white;
-            }
+            }    
         }
      }
 }

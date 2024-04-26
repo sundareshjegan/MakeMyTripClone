@@ -58,9 +58,9 @@ namespace MakeMyTripClone
             get => selectedGender;
         }
 
-        public void FemaleBtnState(bool state)
+        public void ChangeButtonState(bool state)
         {
-            maleBtn.Enabled = state;
+            maleBtn.Enabled = !state;
         }
         private string selectedGender="";
 

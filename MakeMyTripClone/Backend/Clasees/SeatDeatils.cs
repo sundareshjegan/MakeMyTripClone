@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MakeMyTripClone
 {
-    class SeatDeatils
+    class SeatDetails
     {
 
         public int SeatId { get; set; }

@@ -173,8 +173,8 @@ namespace MakeMyTripClone
                     // Attach PDF to email
                     message.Attachments.Add(new Attachment(memoryStream, "ETicket.pdf", "application/pdf"));
                     smtp.Send(message);
-                    MessageBox.Show("Ticket Sent to your mail. Please keep it with your travel. \n                              Happy Journey..😊");
-                    Application.Exit();
+                    //MessageBox.Show("Ticket Sent to your mail. Please keep it with your travel. \n                              Happy Journey..😊");
+                    //Application.Exit();
                 }
 
             }

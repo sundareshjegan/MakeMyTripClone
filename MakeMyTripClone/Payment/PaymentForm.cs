@@ -19,17 +19,18 @@ namespace MakeMyTripClone
             CreateCurves();
             DBManager.OnUserLoggedIn += DBManagerOnUserLoggedIn;
         }
+ 
+        private Panel previousPanel = null;
+        private Panel previousBlueBar = null;
+        private List<SeatDetails> seatDetails = new List<SeatDetails>();
+        private ETicket eticket;
+
+        public static event EventHandler OnPaymentFormClosed;
 
         private void DBManagerOnUserLoggedIn(object sender, bool e)
         {
             throw new NotImplementedException();
         }
-
-        private Panel previousPanel = null;
-        private Panel previousBlueBar = null;
-        private List<SeatDeatils> seatDetails = new List<SeatDeatils>();
-        private ETicket eticket;
-
         #region DLL to Create rounded Regions
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -100,10 +101,23 @@ namespace MakeMyTripClone
             previousPanel = currentPanel;
         }
 
-        private void OnPayButtonClicked(object sender, EventArgs e)
+        #region PaymentButton Events
+        private void OnBNPLProceedBtnClicked(object sender, EventArgs e)
         {
             Opacity -= 0.1;
-            foreach(SeatDeatils seat in seatDetails)
+            foreach (SeatDetails seat in seatDetails)
+            {
+                DBManager.ChangeSeatBookingState(seat);
+            }
+            SuccessFailureForm success = new SuccessFailureForm("success", "Seat Booked Successfully!");
+            success.ShowDialog();
+            eticket.PaymentMethod = "MakeMyTrip Book Now PayLater";
+            Opacity += 0.1;
+        }
+        private void OnUPIVerifyAndPayBtnClicked(object sender, EventArgs e)
+        {
+            Opacity -= 0.1;
+            foreach(SeatDetails seat in seatDetails)
             {
                 DBManager.ChangeSeatBookingState(seat);
             }
@@ -112,8 +126,21 @@ namespace MakeMyTripClone
             eticket.PaymentMethod = "UPI";
             Opacity += 0.1;
         }
+        private void OnGPayVerifyAndPayBtnClicked(object sender, EventArgs e)
+        {
+            Opacity -= 0.1;
+            foreach (SeatDetails seat in seatDetails)
+            {
+                DBManager.ChangeSeatBookingState(seat);
+            }
+            SuccessFailureForm success = new SuccessFailureForm("success", "Payment Successful!");
+            success.ShowDialog();
+            eticket.PaymentMethod = "Google Pay";
+            Opacity += 0.1;
+        }
         private void OnCreditCardPayNowBtnClicked(object sender, EventArgs e)
         {
+            #region validate credit card inputs
             if(cardNumberTB.Text == "" || cardNumberTB.Text.Length != 19)
             {
                 creditCardWarningLabel.Text = "Invalid Card Number";
@@ -134,22 +161,45 @@ namespace MakeMyTripClone
                 creditCardWarningLabel.Text = "Invalid cvv number";
                 return;
             }
+            #endregion
+
             creditCardWarningLabel.Text = "Ticket Confirmation in process.. Please wait";
             Opacity -= 0.1;
-            foreach (SeatDeatils seat in seatDetails)
+            foreach (SeatDetails seat in seatDetails)
             {
                 DBManager.ChangeSeatBookingState(seat);
             }
-            SuccessFailureForm success = new SuccessFailureForm("success", "Payment Successful!");
-            success.ShowDialog();
             eticket.PaymentMethod = "Credit - Card";
+            LoaderForm loader = new LoaderForm();
+            loader.Show();
+            loader.Refresh(); // Force the form to update immediately
 
-            ETicketGenerator eTicketGenerator = new ETicketGenerator();
-            string ticketAsHTML = eTicketGenerator.GenerateETicket(eticket);
-            eTicketGenerator.SendETicket(eticket.EmailToSendTicket, ticketAsHTML);
-            
-            Opacity += 0.1;
+            // Send the e-ticket asynchronously
+            Task.Run(() =>
+            {
+                ETicketGenerator eTicketGenerator = new ETicketGenerator();
+                string ticketAsHTML = eTicketGenerator.GenerateETicket(eticket);
+                eTicketGenerator.SendETicket(eticket.EmailToSendTicket, ticketAsHTML);
+            })
+            .ContinueWith(task =>
+            {
+                // Close the loader form after sending the e-ticket
+                loader.Close();
+                SuccessFailureForm success = new SuccessFailureForm("success", "Payment Successful! Thank you.Ticket Sent to your mail. Please keep it with your travel. \n Happy Journey..😊");
+                success.ShowDialog();
+               
+                // Check for any errors during e-ticket sending
+                if (task.IsFaulted)
+                {
+                    MessageBox.Show("Failed to send e-ticket: " + task.Exception?.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                // Restore opacity
+                Opacity += 0.1;
+                Dispose();
+                OnPaymentFormClosed?.Invoke(this, EventArgs.Empty);
+            }, TaskScheduler.FromCurrentSynchronizationContext()); // Ensure the continuation runs on the UI thread
         }
+        #endregion
 
         public void SetData(BookingDetails bookingDetails, List<TravellerDetails> travellers, int finalAmount, string emailToSendTicket)
         {
@@ -206,7 +256,7 @@ namespace MakeMyTripClone
 
             for (int i = 0; i < seatNumbers.Length; i++)
             {
-                SeatDeatils seat = new SeatDeatils();
+                SeatDetails seat = new SeatDetails();
                 seat.RouteId = bookingDetails.RootId;
                 seat.SeatType = GetSeatType(seatNumbers[i], bookingDetails.Bustype);
                 seat.SeatNumber = seatNumbers[i];
@@ -271,6 +321,9 @@ namespace MakeMyTripClone
             return "ST";
         }
 
+
+
         #endregion
+
     }
 }

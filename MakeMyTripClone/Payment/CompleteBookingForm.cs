@@ -17,7 +17,14 @@ namespace MakeMyTripClone
             noOfRatingsLabel.Text = noOfRatings + " Ratings";
             double randomRating = Math.Round(random.NextDouble() * (4.9 - 3.5) + 3.5, 1);
             ratingLabel.Text = randomRating.ToString();
+
+            //event triggered when an user log in to the system
             DBManager.OnUserLoggedIn += OnDBManagerOnUserLoggedIn;
+
+            //event triggered when an user completes the payment successfully
+            PaymentForm.OnPaymentFormClosed += OnPaymentFormClosed;
+
+            #region comments
             //CreateCurves();
             //travellerDetailsPanel.Height = 0;
             //List<TravellerDetails> travellersList = new List<TravellerDetails>();
@@ -35,6 +42,7 @@ namespace MakeMyTripClone
             //    traveller.BringToFront();
             //}
             //leftPanel.AutoScroll = true;
+            #endregion
         }
 
         #region DLL to Create rounded Regions
@@ -49,33 +57,26 @@ namespace MakeMyTripClone
             int nHeightEllipse // width of ellipse
         );
         #endregion
-
-        Random random = new Random();
-        List<TravellerDetails> travellersList;
-        BookingDetails busDetails;
-        private Timer adPanelTimer = new Timer();
+        
+        private Random random = new Random();
+        private List<TravellerDetails> travellersList;
+        private BookingDetails busDetails;
 
         private void OnCompleteBookingFormLoad(object sender, EventArgs e)
         {
             rightSepPanel2.Visible = loginNowPanel.Visible = !DBManager.IsUserLoggedIn;
             rightSepPanel1.Visible = couponCodePanel.Visible = DBManager.IsUserLoggedIn;
-
-            adPanel.Height = 0;
-            adPanelTimer.Interval = 1000;
-            adPanelTimer.Tick += OnAdPanelTimerTicked;
-            adPanelTimer.Start();
-        }
-
-        private void OnAdPanelTimerTicked(object sender, EventArgs e)
-        {
-            //if (adPanel.Height > 200) adPanelTimer.Stop();
-            adPanel.Height += 10;
         }
 
         private void OnDBManagerOnUserLoggedIn(object sender, bool e)
         {
             rightSepPanel2.Visible = loginNowPanel.Visible = !DBManager.IsUserLoggedIn;
             rightSepPanel1.Visible = couponCodePanel.Visible = DBManager.IsUserLoggedIn;
+            if(emailTB.Text == "")
+            {
+                emailTB.Text = DBManager.IsUserLoggedIn ? DBManager.CurrentUser.Email : "";
+                emailTB.Enabled = false;
+            }
         }
 
         #region Click events
@@ -94,6 +95,10 @@ namespace MakeMyTripClone
         private void OnloginLabelClick(object sender, EventArgs e)
         {
             new LoginForm().ShowDialog();
+        }
+        private void OnEmailEditPBClicked(object sender, EventArgs e)
+        {
+            emailTB.Enabled = true;
         }
         private void OncouponCodeApplyLabelClick(object sender, EventArgs e)
         {
@@ -169,12 +174,13 @@ namespace MakeMyTripClone
                 TravellerDetails traveller = new TravellerDetails();
                 traveller.SeatNumber = seatNumbers[i];
                 traveller.Dock = DockStyle.Top;
-                travellerDetailsPanel.Height += traveller.Height+10;
+                travellerDetailsPanel.Height += traveller.Height;
 
                 travellerDetailsPanel.Controls.Add(traveller);
-                traveller.FemaleBtnState(busDetails.FemaleSeatList[i]);
+                traveller.ChangeButtonState(busDetails.FemaleSeatList[i]);
                 travellersList.Add(traveller);
             }
+            travellerDetailsPanel.Height += 20;
             foreach (TravellerDetails traveller in travellersList)
             {
                 traveller.BringToFront();
@@ -207,14 +213,14 @@ namespace MakeMyTripClone
             destinationDepatureLabel.Text = busDetails.Droppoint[1] + "\n" + busDetails.Droppoint[2] + "\n(" + busDetails.Droplocation + ")";
 
             baseFareLabel.Text = busDetails.Totalamount.ToString();
-
+            headerDateTimeLabel.Text = sourceCityLabel.Text + " to " + destinationCityLabel.Text + " | " + sourceDateLabel.Text + " | " + sourceTimeLabel.Text;
             emailTB.Text = DBManager.IsUserLoggedIn ? DBManager.CurrentUser.Email : "";
             #endregion
         }
 
         private void OnContinueBtnClicked(object sender, EventArgs e)
         {
-            if(IsAllDataEnteredAndValid())
+            if (IsAllDataEnteredAndValid())
             {
                 if (DBManager.IsUserLoggedIn)
                 {
@@ -227,6 +233,10 @@ namespace MakeMyTripClone
                     new LoginForm().ShowDialog();
                 }
             }
+        }
+        private void OnPaymentFormClosed(object sender, EventArgs e)
+        {
+            Dispose();
         }
 
         #region Helper Functions
@@ -268,5 +278,10 @@ namespace MakeMyTripClone
             return true;
         }
         #endregion
+
+        private void emailEditPB_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

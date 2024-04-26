@@ -26,8 +26,14 @@ namespace MakeMyTripClone
                 logInTab1.UserName = DBManager.CurrentUser.Name;
                 logInTab1.UserEmail = DBManager.CurrentUser.Email;
             }
+            PaymentForm.OnPaymentFormClosed += OnPaymentCompletedAndFormClosed;
         }
-       
+
+        private void OnPaymentCompletedAndFormClosed(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
         private Color colour = SystemColors.GradientInactiveCaption, gray = Color.DimGray, highglight = SystemColors.Highlight, white = Color.White;
         private bool isfalse, isTime, isDtime, isNUll, isTravel, isPick, isDrop, isDrops, isADD, isNot;
         private int no = 0;
@@ -112,7 +118,6 @@ namespace MakeMyTripClone
                 bus.Setdata(i, fromcomboBox.Text, tocomboBox.Text, departdateTimePicker.Value.ToString("yyyy-MM-dd"));
             }
             busesfoundlabel.Text = BusesFound() + " Buses Found";
-            //Checkbuses();
         }
  
         private void CloseSearch()
@@ -278,7 +283,6 @@ namespace MakeMyTripClone
 
         private void FTrue(string isAc, string seatType,string picktime,string droptime,string pickpoint,string travel,string droppoint)
         {
-            nobuspanel.Visible = true;
             if (isAc==null)
             {
                 foreach (var bus in buses)
@@ -365,13 +369,11 @@ namespace MakeMyTripClone
             {
                 Reset();
             }
-            //Checkbuses();
             busesfoundlabel.Text = BusesFound() + " Buses Found";
         }
 
         private void Filter(string isAc,string seatType,string picktime,string droptime,string pickpoint,string travel,string droppoint)
         {
-            nobuspanel.Visible = false;
             if (clearallbutton.ForeColor == gray)
             {
                 Reset();
@@ -446,24 +448,8 @@ namespace MakeMyTripClone
                     else  bus.Visible = false;
                 }
             }
-           // Checkbuses();
             busesfoundlabel.Text = BusesFound() + " Buses Found";
         }
-
-        //private void Checkbuses()
-        //{
-        //    bool allControlsNotVisible = true;
-        //    foreach (Control control in adducpanel.Controls)
-        //    {
-        //        if (control.Visible)
-        //        {
-        //            allControlsNotVisible = false;
-        //            break;
-        //        }
-        //    }
-        //  //  if (allControlsNotVisible) nobuspanel.Visible = true;
-        //}
-      
 
         private void LabelsClick(object sender, EventArgs e)
         {
@@ -473,7 +459,6 @@ namespace MakeMyTripClone
 
         private void Reset()
         {
-            nobuspanel.Visible = false;
             foreach(var bus in buses)
             {
                 bus.Visible = true;
@@ -490,7 +475,6 @@ namespace MakeMyTripClone
         {
             if (clearallbutton.ForeColor == highglight)
             {
-                nobuspanel.Visible = false;
                 isAc = null;
                 seatType = null;
                 Reset();
@@ -554,7 +538,6 @@ namespace MakeMyTripClone
             dropPoint = null;
             FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travel, dropPoint);
             if (no <= 0) clearallbutton.ForeColor = gray;
-            nobuspanel.Visible = false;
         }
 
         private void ClearpickuppointbuttonClick(object sender, EventArgs e)
@@ -574,7 +557,6 @@ namespace MakeMyTripClone
             pickPoint = null;
             FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travel, dropPoint);
             if (no <= 0) clearallbutton.ForeColor = gray;
-            nobuspanel.Visible = false;
         }
 
         private void TravelclrbuttonClick(object sender, EventArgs e)
@@ -594,7 +576,6 @@ namespace MakeMyTripClone
             travel = null;
             FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travel, dropPoint);
             if (no <= 0) clearallbutton.ForeColor = gray;
-            nobuspanel.Visible = false;
         }
 
         private void PutimeclearbuttonClick(object sender, EventArgs e)
@@ -610,7 +591,19 @@ namespace MakeMyTripClone
             FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travel, dropPoint);
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
-            nobuspanel.Visible = false;
+        }
+
+        private void OnBusesfoundlabelTextChanged(object sender, EventArgs e)
+        {
+            adducpanel.Controls.Add(nobuspanel);
+            if (busesfoundlabel.Text[0] == '0')
+            {
+                nobuspanel.Visible = true;
+            }
+            else
+            {
+                nobuspanel.Visible = false;
+            }
         }
 
         private void DdtimeclrbuttonClick(object sender, EventArgs e)
@@ -626,7 +619,6 @@ namespace MakeMyTripClone
             FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travel, dropPoint);
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
-            nobuspanel.Visible = false;
         }
 
         private void SeatersleepercheckBoxCheckedChanged(object sender, EventArgs e)
@@ -666,10 +658,6 @@ namespace MakeMyTripClone
             var fastest = buses.OrderBy(item => TimeSpan.Parse(item.Duration)).ToList();
             foreach (var bus in fastest)
             {
-                bus.Dock = DockStyle.None;
-            }
-            foreach (var bus in fastest)
-            {
                 bus.Dock = DockStyle.Top;
                 bus.BringToFront();
             }
@@ -703,10 +691,6 @@ namespace MakeMyTripClone
             }).ThenBy(bus => bus.StartTime).ToList();
             foreach (var bus in arrival)
             {
-                bus.Dock = DockStyle.None;
-            }
-            foreach (var bus in arrival)
-            {
                 bus.Dock = DockStyle.Top;
                 bus.BringToFront();
             }
@@ -734,12 +718,10 @@ namespace MakeMyTripClone
             if (count == 0)
             {
                 endofbuslabel.Visible = false;
-               // nobuspanel.Visible = true;
             }
             else
             {
                 endofbuslabel.Visible = true;
-                nobuspanel.Visible = false;
             }
             return count;            
         }
@@ -755,10 +737,6 @@ namespace MakeMyTripClone
                 TimeSpan duration = Convert.ToDateTime(bus.EndTime) - targetTime;
                 return duration.TotalMinutes;
             }).ThenBy(bus => bus.EndTime).ToList();
-            foreach (var bus in departure)
-            {
-                bus.Dock = DockStyle.None;
-            }
             foreach (var bus in departure)
             {
                 bus.Dock = DockStyle.Top;

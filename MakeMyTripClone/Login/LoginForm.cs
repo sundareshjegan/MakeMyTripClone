@@ -56,6 +56,10 @@ namespace MakeMyTripClone
             updatePasswordEmailTB.Text = emailTB.Text;
             tabControl.SelectedTab = ForgotPasswordTab;
         }
+        private void OnBackToLoginLabelClicked(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = loginTabPage;
+        }
         #endregion
 
         private void OnClosePBClicked(object sender, EventArgs e)
@@ -85,7 +89,12 @@ namespace MakeMyTripClone
             regConPwdViewHideBtn.BackgroundImage = regConPasswordTB.UseSystemPasswordChar ?
                                             Resources.viewPassword : Resources.hidePassword;
         }
-
+        private void OnForgotPwdViewHideBtnClicked(object sender, EventArgs e)
+        {
+            newPasswordTB.UseSystemPasswordChar = !newPasswordTB.UseSystemPasswordChar;
+            ForgotPwdViewHideBtn.BackgroundImage = newPasswordTB.UseSystemPasswordChar ?
+                                            Resources.viewPassword : Resources.hidePassword;
+        }
         private void OnSubmitBtnMouseHover(object sender, EventArgs e)
         {
             submitBtn.BackColor = Color.DodgerBlue;
@@ -419,6 +428,7 @@ namespace MakeMyTripClone
             }
             return true;
         }
+
 
 
         #endregion

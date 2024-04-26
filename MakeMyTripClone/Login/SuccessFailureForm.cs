@@ -18,25 +18,20 @@ namespace MakeMyTripClone
             {
                 gifImage = Resources.successTick;
                 msgLabel.ForeColor = Color.DodgerBlue;
+                animationTimer.Interval = 60;
+                animationTimer.Tick += SuccessAnimationTimer;
                 msgLabel.Text = message;
             }
             else
             {
                 gifImage = Resources.loaderFailed;
+                animationTimer.Interval = 30;
                 msgLabel.ForeColor = Color.Red;
+                animationTimer.Tick += FailureAnimationTimer;
             }
             #region animation code
             //gifImage = new Bitmap("D:\\Sundareshwaran\\C_Sharp_Projects\\WindowsForms\\ProfileManagement\\greenPurple.gif");
-            animationTimer = new Timer();
-            animationTimer.Interval = 30;
-            if(status == "success")
-            {
-                animationTimer.Tick += SuccessAnimationTimer;
-            }
-            else
-            {
-                animationTimer.Tick += FailureAnimationTimer;
-            }
+           
             totalFrames = gifImage.GetFrameCount(System.Drawing.Imaging.FrameDimension.Time);
             animationTimer.Start();
             #endregion
@@ -44,7 +39,7 @@ namespace MakeMyTripClone
         }
         #region animation varialbles and events
         private Image gifImage;
-        private Timer animationTimer;
+        private Timer animationTimer = new Timer();
         private int currentFrame;
         private int totalFrames;
 
@@ -53,7 +48,7 @@ namespace MakeMyTripClone
         private void SuccessAnimationTimer(object sender, EventArgs e)
         {
             currentFrame++;// = (currentFrame + 1) % totalFrames;
-            if (currentFrame >= totalFrames)
+            if (currentFrame >= totalFrames-3)
             {
                 animationTimer.Stop(); // Stop the timer when all frames have been displayed
             }
@@ -78,7 +73,7 @@ namespace MakeMyTripClone
 
         }
 
-        private void SuccessForm_Paint(object sender, PaintEventArgs e)
+        private void OnFormPaint(object sender, PaintEventArgs e)
         {
             try
             {
@@ -112,6 +107,11 @@ namespace MakeMyTripClone
         private void closePB_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
