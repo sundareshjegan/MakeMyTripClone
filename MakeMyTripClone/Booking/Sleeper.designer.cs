@@ -136,7 +136,7 @@
             // 
             this.pictureBox11.BackgroundImage = global::MakeMyTripClone.Properties.Resources.SLEEPER;
             this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox11.Location = new System.Drawing.Point(123, 271);
+            this.pictureBox11.Location = new System.Drawing.Point(-1788, 271);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(37, 69);
             this.pictureBox11.TabIndex = 1;
