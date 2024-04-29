@@ -525,7 +525,11 @@ namespace MakeMyTripClone
                 amentiespanel.Visible = false;
                 amentbutton.BackColor = white;
                 ptsbutton.BackColor = white;
+<<<<<<< HEAD
+                if (previousClickedBus != null && previousClickedBus != this && previousClickedBus.Height== 1250)
+=======
                 if (previousClickedBus != null && previousClickedBus != this && previousClickedBus.Height==1250)
+>>>>>>> origin/Sharukh
                 {
                     previousClickedBus.SelectClick(sender, e);
                     previousClickedBus.lbpanel.Controls.Clear();
