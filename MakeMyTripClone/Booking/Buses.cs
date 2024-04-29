@@ -534,6 +534,11 @@ namespace MakeMyTripClone
             }
             else
             {
+                //if (seats != null) seats.Dispose();
+                //if (ubs != null) ubs.Dispose();
+                //if (lbs != null) lbs.Dispose();
+                //if (semiubs != null) semiubs.Dispose();
+                //if (semi != null) semi.Dispose();
                 ssbutton.Text = "Select seats";
                 ssbutton.BackColor = highlight;
                 ssbutton.ForeColor = white;
