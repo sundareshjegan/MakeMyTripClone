@@ -819,6 +819,12 @@
   <ItemGroup>
     <None Include="Resources\successTick.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\traveling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\degree.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

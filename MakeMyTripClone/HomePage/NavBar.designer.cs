@@ -773,6 +773,7 @@
             this.panel11.Size = new System.Drawing.Size(965, 245);
             this.panel11.TabIndex = 15;
             this.panel11.Visible = false;
+            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
             // 
             // warningLabel
             // 

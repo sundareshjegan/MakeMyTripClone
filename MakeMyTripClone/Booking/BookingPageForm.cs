@@ -27,6 +27,7 @@ namespace MakeMyTripClone
                 logInTab1.UserEmail = DBManager.CurrentUser.Email;
             }
             PaymentForm.OnPaymentFormClosed += OnPaymentCompletedAndFormClosed;
+            
         }
 
         private void OnPaymentCompletedAndFormClosed(object sender, EventArgs e)
@@ -66,6 +67,8 @@ namespace MakeMyTripClone
                 logInTab1.UserEmail = currentUser.Email;
             }
         }
+
+       
 
         private void SrchbuttonClick(object sender, EventArgs e)
         {
@@ -916,6 +919,28 @@ namespace MakeMyTripClone
                 p.Visible = false;
                 b = false;
             }
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            foreach (Control c in Controls)
+            {
+                DisposeControl(c);
+            }
+        }
+        private void DisposeControl(Control control)
+        {
+            if (control == null) return;
+            foreach (Control child in control.Controls)
+            {
+                DisposeControl(child);
+            }
+            control.Dispose();
+            control.Text = null;
+            control.BackgroundImage?.Dispose(); 
+            control.BackgroundImage = null;
+            if (control is PictureBox && (control as PictureBox).Image != null) (control as PictureBox).Image.Dispose();
         }
     }
 }

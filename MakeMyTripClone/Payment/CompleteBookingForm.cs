@@ -165,7 +165,7 @@ namespace MakeMyTripClone
             this.busDetails = busDetails;
             int noOfTravellers = busDetails.Nooftravellers;
             travellersList = new List<TravellerDetails>();
-
+            policytimelabel.Text = busDetails.Pickuptime;
             #region Adding Traveller Controls
             travellerDetailsPanel.Height = 0;
             string[] seatNumbers = busDetails.Bookedseatnumber.Split(',');
@@ -279,9 +279,22 @@ namespace MakeMyTripClone
         }
         #endregion
 
-        private void emailEditPB_Click(object sender, EventArgs e)
+        private void ViewPoliciesLabelMouseEnter(object sender, EventArgs e)
         {
+            policypanel.Visible = true;
+            amtlabel.Text =baseFareLabel.Text;
+            firstlabel.Text = int.Parse(baseFareLabel.Text) - 50 + "";
+            secondlabel.Text = int.Parse(baseFareLabel.Text) - 100 + "";
+            Thirdlabel.Text = int.Parse(baseFareLabel.Text) - 150 + "";
+            Fourthlabel.Text = int.Parse(baseFareLabel.Text) - 200 + "";
+            fifthlabel.Text = int.Parse(baseFareLabel.Text) - 250 + "";
+            sixlabel.Text = int.Parse(baseFareLabel.Text) - 300 + "";
+            policypanel.Location = new Point(viewPoliciesLabel.Location.X+700, viewPoliciesLabel.Height + 50);
+        }
 
+        private void ViewPoliciesLabelMouseLeave(object sender, EventArgs e)
+        {
+            policypanel.Visible = false;
         }
     }
 }

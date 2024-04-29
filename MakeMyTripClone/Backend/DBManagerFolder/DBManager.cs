@@ -108,7 +108,7 @@ namespace MakeMyTripClone
 
             List<RouteDetails> list = new List<RouteDetails>();
             
-            if (res.Count > 0)
+            if (res.Count > 0 && res!=null)
             {
                 int size = res[Route.Id].Count;
                 for (int i = 0; i < size; i++)
