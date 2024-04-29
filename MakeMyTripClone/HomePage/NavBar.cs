@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MakeMyTripClone.Properties;
 using System.Runtime.InteropServices;
+using System.Drawing.Drawing2D;
 
 namespace MakeMyTripClone
 {
@@ -108,8 +109,28 @@ namespace MakeMyTripClone
                 logInTab1.UserEmail = DBManager.CurrentUser.Email;
             }
         }
+        public static GraphicsPath GetRoundRectangle(Rectangle rectangle, int r)
+        {
+            int l = 2 * r;
+            GraphicsPath gp = new GraphicsPath();
+            gp.StartFigure();
+            gp.AddLine(new Point(rectangle.X + r, rectangle.Y), new Point(rectangle.Right - r, rectangle.Y));
+            gp.AddArc(new Rectangle(rectangle.Right - l, rectangle.Y, l, l), 270F, 90F);
 
-        private Image FlightBlue, FlightWhite, HotelWhite, HotelBlue, HomeWhite, HomeBlue, HolidaysWhite, HolidaysBlue, TrainWhite, TrainBlue, BusWhite, BusBlue, CabWhite, CabBlue, ForexWhite, ForexBlue, InsuranceWhite, InsuranceBlue;
+            gp.AddLine(new Point(rectangle.Right, rectangle.Y + r), new Point(rectangle.Right, rectangle.Bottom - r));
+            gp.AddArc(new Rectangle(rectangle.Right - l, rectangle.Bottom - l, l, l), 0F, 90F);
+
+            gp.AddLine(new Point(rectangle.Right - r, rectangle.Bottom), new Point(rectangle.X + r, rectangle.Bottom));
+            gp.AddArc(new Rectangle(rectangle.X, rectangle.Bottom - l, l, l), 90F, 90F);
+
+            gp.AddLine(new Point(rectangle.X, rectangle.Bottom - r), new Point(rectangle.X, rectangle.Y + r));
+            gp.AddArc(new Rectangle(rectangle.X, rectangle.Y, l, l), 180F, 90F);
+            gp.CloseAllFigures();
+            return gp;
+        
+    }
+
+    private Image FlightBlue, FlightWhite, HotelWhite, HotelBlue, HomeWhite, HomeBlue, HolidaysWhite, HolidaysBlue, TrainWhite, TrainBlue, BusWhite, BusBlue, CabWhite, CabBlue, ForexWhite, ForexBlue, InsuranceWhite, InsuranceBlue;
 
         private string ClickedTitle = "";
 
@@ -206,6 +227,13 @@ namespace MakeMyTripClone
         private void NavBar_Load(object sender, EventArgs e)
         {
             BusOnClick(this,EventArgs.Empty);
+        }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            Pen pen = new Pen(Color.Gray,2);
+            e.Graphics.DrawPath(pen, GetRoundRectangle(new Rectangle(0, 0, panel11.Width - 1, panel11.Height - 1), 15));
         }
 
         private void FromComboBoxTextChange(object sender, EventArgs e)
