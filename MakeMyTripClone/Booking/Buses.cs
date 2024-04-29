@@ -522,7 +522,7 @@ namespace MakeMyTripClone
                 amentiespanel.Visible = false;
                 amentbutton.BackColor = white;
                 ptsbutton.BackColor = white;
-                if (previousClickedBus != null && previousClickedBus != this)
+                if (previousClickedBus != null && previousClickedBus != this && previousClickedBus.Height== 1250)
                 {
                     previousClickedBus.SelectClick(sender, e);
                     previousClickedBus.lbpanel.Controls.Clear();
@@ -533,7 +533,6 @@ namespace MakeMyTripClone
                     isFemaleseats.Clear();
                     previousClickedBus.AddSeatTypeUserControls();
                 }
-                previousClickedBus = this;
             }
             else
             {
@@ -543,7 +542,8 @@ namespace MakeMyTripClone
                 combinationpanel.Visible = false;
                 Height = 200;
                 toppanel.BackColor = white;
-            }    
+            }
+            previousClickedBus = this;
         }
      }
 }
