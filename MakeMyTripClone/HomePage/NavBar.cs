@@ -294,7 +294,7 @@ namespace MakeMyTripClone
                 String[] boarding = fromcomboBox.Text.Split(',');
                 String[] destination = toComboBox.Text.Split(',');
                 page.SetData(boarding[0], destination[0], dateTimePicker.Value.ToString("yyyy-MM-dd"), fromcomboBox, toComboBox, dateTimePicker);
-                page.ShowDialog();
+                page.ShowDialog(ParentForm);
             }
         }
 
