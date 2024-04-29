@@ -525,11 +525,7 @@ namespace MakeMyTripClone
                 amentiespanel.Visible = false;
                 amentbutton.BackColor = white;
                 ptsbutton.BackColor = white;
-<<<<<<< HEAD
-                if (previousClickedBus != null && previousClickedBus != this && previousClickedBus.Height== 1250)
-=======
                 if (previousClickedBus != null && previousClickedBus != this && previousClickedBus.Height==1250)
->>>>>>> origin/Sharukh
                 {
                     previousClickedBus.SelectClick(sender, e);
                     previousClickedBus.lbpanel.Controls.Clear();
@@ -543,11 +539,11 @@ namespace MakeMyTripClone
             }
             else
             {
-                if (seats != null) seats.Dispose();
-                if (ubs != null  ) ubs.Dispose();
-                if (lbs != null) lbs.Dispose();
-                if (semiubs != null) semiubs.Dispose();
-                if (semi != null) semi.Dispose();
+                //if (seats != null) seats.Dispose();
+                //if (ubs != null  ) ubs.Dispose();
+                //if (lbs != null) lbs.Dispose();
+                //if (semiubs != null) semiubs.Dispose();
+                //if (semi != null) semi.Dispose();
                 ssbutton.Text = "Select seats";
                 ssbutton.BackColor = highlight;
                 ssbutton.ForeColor = white;
