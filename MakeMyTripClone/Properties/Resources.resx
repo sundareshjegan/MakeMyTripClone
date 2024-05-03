@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Image1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Image1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="hdfc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hdfc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,9 +157,6 @@
   <data name="mmtlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mmtlogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FLIGHT12_removebg_preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FLIGHT12-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="car_seat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\car-seat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,9 +190,6 @@
   <data name="Hospitalization" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hospitalization.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="insuranceblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\insuranceblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="usb_connector" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usb-connector.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -210,9 +201,6 @@
   </data>
   <data name="bed_sheets" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bed-sheets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="trainblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trainblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LoginPageCarousel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoginPageCarousel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -231,12 +219,6 @@
   </data>
   <data name="swap__2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\swap (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="moneyblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\moneyblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="flight1_removebg_preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flight1-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,9 +268,6 @@
   <data name="sunrise" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sunrise.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="holidaysblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\holidaysblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="security_camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\security-camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -313,9 +292,6 @@
   <data name="snowflake" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\snowflake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sleeperimage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sleeperimage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="upi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -324,12 +300,6 @@
   </data>
   <data name="failed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\failed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bookedSleeper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FillSLEEPER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="flight1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flight1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sunny_day" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sunny-day.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -352,20 +322,11 @@
   <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="flight__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flight (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="female" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\female.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cabblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cabblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="no_results" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\no results.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hotelsblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hotelsblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -382,9 +343,6 @@
   <data name="pillow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pillow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bookedSeater" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fillseater.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="noPaperWork" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\noPaperWork.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -396,9 +354,6 @@
   </data>
   <data name="viewPassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\viewPassword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1711023801388" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1711023801388.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="slleeping" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\slleeping.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -430,13 +385,19 @@
   <data name="creditCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\creditCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="homeblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\homeblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logo_2x__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo@2x (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="degree" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\degree.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bookedSeater" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bookedseater.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bookedSleeper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Booekdsleeper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1711023801388" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1711023801388.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

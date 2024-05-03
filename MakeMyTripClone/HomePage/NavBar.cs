@@ -57,17 +57,10 @@ namespace MakeMyTripClone
 
             HotelWhite = Resources.hotels;
 
-            HotelBlue = Resources.hotelsblue;
-
             HomeWhite = Resources.homewhite;
 
-            HomeBlue = Resources.homeblue;
 
             HolidaysWhite = Resources.holidayswhite;
-
-            HolidaysBlue = Resources.holidaysblue;
-
-            TrainBlue = Resources.trainblue;
 
             TrainWhite = Resources.trainwhite;
 
@@ -77,25 +70,20 @@ namespace MakeMyTripClone
 
             CabWhite = Resources.cabwhite;
 
-            CabBlue = Resources.cabblue;
 
             ForexWhite = Resources.moneywhite;
-
-            ForexBlue = Resources.moneyblue;
-
-            InsuranceBlue = Resources.insuranceblue;
 
             InsuranceWhite = Resources.insurancewhite;
             #endregion
 
             panel10.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel10.Width, panel10.Height, 30, 30));
             panel11.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel11.Width, panel11.Height, 30, 30));
-            SearchButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SearchButton.Width, SearchButton.Height, 30, 30)); // Search
+            SearchButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SearchButton.Width, SearchButton.Height, 30, 30));
             comboBox1.Text = "IND | ENG | INR";
 
-           // DateTime D = DateTime.Now;
+            // DateTime D = DateTime.Now;
 
-           // dateTimePicker.MinDate = D.Date ;
+            // dateTimePicker.MinDate = D.Date ;
 
             toComboBox.Text = "Chennai, Tamil Nadu";
 
@@ -127,10 +115,10 @@ namespace MakeMyTripClone
             gp.AddArc(new Rectangle(rectangle.X, rectangle.Y, l, l), 180F, 90F);
             gp.CloseAllFigures();
             return gp;
-        
-    }
 
-    private Image FlightBlue, FlightWhite, HotelWhite, HotelBlue, HomeWhite, HomeBlue, HolidaysWhite, HolidaysBlue, TrainWhite, TrainBlue, BusWhite, BusBlue, CabWhite, CabBlue, ForexWhite, ForexBlue, InsuranceWhite, InsuranceBlue;
+        }
+
+        private Image FlightBlue, FlightWhite, HotelWhite, HomeWhite, HolidaysWhite, TrainWhite, BusWhite, BusBlue, CabWhite, ForexWhite, InsuranceWhite;
 
         private string ClickedTitle = "";
 
@@ -149,7 +137,7 @@ namespace MakeMyTripClone
         {
             label11.Text = toComboBox.Text;
 
-            if(label11.Text==label8.Text)
+            if (label11.Text == label8.Text)
             {
                 warningLabel.Visible = true;
             }
@@ -226,13 +214,13 @@ namespace MakeMyTripClone
 
         private void NavBar_Load(object sender, EventArgs e)
         {
-            BusOnClick(this,EventArgs.Empty);
+            BusOnClick(this, EventArgs.Empty);
         }
 
         private void panel11_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            Pen pen = new Pen(Color.Gray,2);
+            Pen pen = new Pen(Color.Gray, 2);
             e.Graphics.DrawPath(pen, GetRoundRectangle(new Rectangle(0, 0, panel11.Width - 1, panel11.Height - 1), 15));
         }
 
@@ -298,42 +286,6 @@ namespace MakeMyTripClone
             }
         }
 
-        private void FlightOnClick(object sender, EventArgs e)
-        {
-            WhiteColourAll();
-
-            BlueColourChange(FlightLabel, FlightButton, FlightBlue,FlightUnderLine);
-
-        }
-       
-        private void HotelOnCLick(object sender, EventArgs e)
-        {
-            WhiteColourAll();
-
-            BlueColourChange(HotelLabel, HotelButton, HotelBlue,HotelUnderLine);
-        }
-
-        private void HomeOnClick(object sender, EventArgs e)
-        {
-            WhiteColourAll();
-
-            BlueColourChange(HomeLabel, HomeButton, HomeBlue,HomeUnderLine);
-        }
-
-        private void HolidaysOnClick(object sender, EventArgs e)
-        {
-            WhiteColourAll();
-
-            BlueColourChange(HolidaysLabel, HolidaysButton, HolidaysBlue,HolidaysUnderLine);
-        }
-
-        private void TrainonClick(object sender, EventArgs e)
-        {
-            WhiteColourAll();
-
-            BlueColourChange(TrainLabel, TrainButton, TrainBlue,TrainUnderLine);
-        }
-
         private void BusOnClick(object sender, EventArgs e)
         {
             WhiteColourAll();
@@ -342,40 +294,20 @@ namespace MakeMyTripClone
 
             SearchButton.Visible = true;
 
-            BlueColourChange(BusLabel, BusButton, BusBlue,BusUnderLine);
+            BlueColourChange(BusLabel, BusButton, BusBlue, BusUnderLine);
         }
 
-        private void CabOnClick(object sender, EventArgs e)
-        {
-            WhiteColourAll();
-
-            BlueColourChange(CabLabel, CabButton, CabBlue,CabUnderLine);
-        }
-
-        private void InsuranceOnClick(object sender, EventArgs e)
-        {
-            WhiteColourAll();
-
-            BlueColourChange(InsuranceLabel, InsuranceButton, InsuranceBlue, InsuranceUnderLine);
-        }
-
-        private void ForexOnClick(object sender, EventArgs e)
-        {
-            WhiteColourAll();
-
-            BlueColourChange(ForexLabel, ForexButton, ForexBlue,ForexCurrencyUnderLine);
-        }
 
         // Colour Change
 
-        private void BlueColourChange(Label label,Button Button,Image Image,Label Underline)
+        private void BlueColourChange(Label label, Button Button, Image Image, Label Underline)
         {
             label.ForeColor = Color.DodgerBlue;
 
             Button.BackgroundImage = Image;
 
-           
-            Font boldFont = new Font("Segoe UI", HotelLabel.Font.Size,FontStyle.Bold);
+
+            Font boldFont = new Font("Segoe UI", HotelLabel.Font.Size, FontStyle.Bold);
 
             label.Font = boldFont;
 
@@ -384,7 +316,7 @@ namespace MakeMyTripClone
             ClickedTitle = label.Text;
         }
 
-        private void WhiteColourChange(Label label,Button Button, Image Image,Label Underline)
+        private void WhiteColourChange(Label label, Button Button, Image Image, Label Underline)
         {
             Font Regular = new Font("Segoe UI", HotelLabel.Font.Size);
 
@@ -403,23 +335,7 @@ namespace MakeMyTripClone
 
         private void WhiteColourAll()
         {
-            WhiteColourChange(FlightLabel, FlightButton, FlightWhite,FlightUnderLine);
-
-            WhiteColourChange(HotelLabel, HotelButton, HotelWhite,HotelUnderLine);
-
-            WhiteColourChange(HomeLabel, HomeButton, HomeWhite,HomeUnderLine);
-
-            WhiteColourChange(HolidaysLabel, HolidaysButton, HolidaysWhite,HolidaysUnderLine);
-
-            WhiteColourChange(TrainLabel, TrainButton, TrainWhite,TrainUnderLine);
-
-            WhiteColourChange(BusLabel, BusButton, BusWhite,BusUnderLine);
-
-            WhiteColourChange(CabLabel, CabButton, CabWhite,CabUnderLine);
-
-            WhiteColourChange(InsuranceLabel, InsuranceButton, InsuranceWhite, InsuranceUnderLine);
-
-            WhiteColourChange(ForexLabel, ForexButton, ForexWhite,ForexCurrencyUnderLine);
+            WhiteColourChange(BusLabel, BusButton, BusWhite, BusUnderLine);
         }
 
     }

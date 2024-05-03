@@ -14,7 +14,7 @@ namespace MakeMyTripClone
 {
     public partial class Sleeper : UserControl
     {
-      
+
         public Sleeper()
         {
             InitializeComponent();
@@ -46,13 +46,13 @@ namespace MakeMyTripClone
                 colours?.Invoke(true, s);
                 if (s != "1" && s != "4" && s != "7" && s != "10" && s != "13" && s != "16")
                 {
-                    if (s == "2" || s == "5" || s == "8" || s == "11" || s == "14" || s=="17")
+                    if (s == "2" || s == "5" || s == "8" || s == "11" || s == "14" || s == "17")
                     {
                         int n = int.Parse(s) + 1;
                         string p = "pictureBox" + n;
                         PictureBox picture = this.Controls.Find(p, true).FirstOrDefault() as PictureBox;
                         if (picture != null)
-                        {                          
+                        {
                             if (picture.BackColor == SystemColors.ControlLightLight)
                             {
                                 Buses.isFemaleseats.Add(true);
@@ -62,7 +62,7 @@ namespace MakeMyTripClone
                                 Buses.isFemaleseats.Add(false);
                             }
                         }
-                        
+
                     }
                     else
                     {
@@ -88,6 +88,6 @@ namespace MakeMyTripClone
                 }
             }
         }
-      
+
     }
 }

@@ -67,13 +67,11 @@
             this.CabButton = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -130,7 +128,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(81, 100);
             this.panel1.TabIndex = 0;
-            this.panel1.Click += new System.EventHandler(this.FlightOnClick);
             // 
             // FlightLabel
             // 
@@ -142,7 +139,6 @@
             this.FlightLabel.Size = new System.Drawing.Size(45, 17);
             this.FlightLabel.TabIndex = 1;
             this.FlightLabel.Text = "Flights";
-            this.FlightLabel.Click += new System.EventHandler(this.FlightOnClick);
             // 
             // FlightUnderLine
             // 
@@ -172,7 +168,6 @@
             this.FlightButton.TabIndex = 0;
             this.FlightButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.FlightButton.UseVisualStyleBackColor = false;
-            this.FlightButton.Click += new System.EventHandler(this.FlightOnClick);
             // 
             // panel2
             // 
@@ -185,7 +180,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(81, 100);
             this.panel2.TabIndex = 1;
-            this.panel2.Click += new System.EventHandler(this.TrainonClick);
             // 
             // TrainLabel
             // 
@@ -196,7 +190,6 @@
             this.TrainLabel.Size = new System.Drawing.Size(42, 17);
             this.TrainLabel.TabIndex = 1;
             this.TrainLabel.Text = "Trains";
-            this.TrainLabel.Click += new System.EventHandler(this.TrainonClick);
             // 
             // TrainUnderLine
             // 
@@ -225,7 +218,6 @@
             this.TrainButton.TabIndex = 0;
             this.TrainButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TrainButton.UseVisualStyleBackColor = false;
-            this.TrainButton.Click += new System.EventHandler(this.TrainonClick);
             // 
             // panel3
             // 
@@ -290,7 +282,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(81, 100);
             this.panel4.TabIndex = 2;
-            this.panel4.Click += new System.EventHandler(this.HolidaysOnClick);
             // 
             // HolidaysLabel
             // 
@@ -301,7 +292,6 @@
             this.HolidaysLabel.Size = new System.Drawing.Size(58, 17);
             this.HolidaysLabel.TabIndex = 1;
             this.HolidaysLabel.Text = "Holidays";
-            this.HolidaysLabel.Click += new System.EventHandler(this.HolidaysOnClick);
             // 
             // HolidaysUnderLine
             // 
@@ -330,7 +320,6 @@
             this.HolidaysButton.TabIndex = 0;
             this.HolidaysButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HolidaysButton.UseVisualStyleBackColor = false;
-            this.HolidaysButton.Click += new System.EventHandler(this.HolidaysOnClick);
             // 
             // panel5
             // 
@@ -343,7 +332,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(81, 100);
             this.panel5.TabIndex = 2;
-            this.panel5.Click += new System.EventHandler(this.HomeOnClick);
             // 
             // HomeLabel
             // 
@@ -354,7 +342,6 @@
             this.HomeLabel.Size = new System.Drawing.Size(73, 17);
             this.HomeLabel.TabIndex = 1;
             this.HomeLabel.Text = "HomeStays";
-            this.HomeLabel.Click += new System.EventHandler(this.HomeOnClick);
             // 
             // HomeUnderLine
             // 
@@ -383,7 +370,6 @@
             this.HomeButton.TabIndex = 0;
             this.HomeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HomeButton.UseVisualStyleBackColor = false;
-            this.HomeButton.Click += new System.EventHandler(this.HomeOnClick);
             // 
             // panel6
             // 
@@ -396,7 +382,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(81, 100);
             this.panel6.TabIndex = 2;
-            this.panel6.Click += new System.EventHandler(this.HotelOnCLick);
             // 
             // HotelLabel
             // 
@@ -407,7 +392,6 @@
             this.HotelLabel.Size = new System.Drawing.Size(45, 17);
             this.HotelLabel.TabIndex = 1;
             this.HotelLabel.Text = "Hotels";
-            this.HotelLabel.Click += new System.EventHandler(this.HotelOnCLick);
             // 
             // HotelUnderLine
             // 
@@ -436,7 +420,6 @@
             this.HotelButton.TabIndex = 0;
             this.HotelButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HotelButton.UseVisualStyleBackColor = false;
-            this.HotelButton.Click += new System.EventHandler(this.HotelOnCLick);
             // 
             // panel7
             // 
@@ -449,7 +432,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(81, 100);
             this.panel7.TabIndex = 3;
-            this.panel7.Click += new System.EventHandler(this.InsuranceOnClick);
             // 
             // InsuranceLabel
             // 
@@ -460,7 +442,6 @@
             this.InsuranceLabel.Size = new System.Drawing.Size(63, 17);
             this.InsuranceLabel.TabIndex = 1;
             this.InsuranceLabel.Text = "Insurance";
-            this.InsuranceLabel.Click += new System.EventHandler(this.InsuranceOnClick);
             // 
             // InsuranceUnderLine
             // 
@@ -489,7 +470,6 @@
             this.InsuranceButton.TabIndex = 0;
             this.InsuranceButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.InsuranceButton.UseVisualStyleBackColor = false;
-            this.InsuranceButton.Click += new System.EventHandler(this.InsuranceOnClick);
             // 
             // panel8
             // 
@@ -502,7 +482,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(81, 100);
             this.panel8.TabIndex = 2;
-            this.panel8.Click += new System.EventHandler(this.ForexOnClick);
             // 
             // ForexLabel
             // 
@@ -513,7 +492,6 @@
             this.ForexLabel.Size = new System.Drawing.Size(72, 17);
             this.ForexLabel.TabIndex = 1;
             this.ForexLabel.Text = "Forex Card";
-            this.ForexLabel.Click += new System.EventHandler(this.ForexOnClick);
             // 
             // ForexCurrencyUnderLine
             // 
@@ -542,7 +520,6 @@
             this.ForexButton.TabIndex = 0;
             this.ForexButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ForexButton.UseVisualStyleBackColor = false;
-            this.ForexButton.Click += new System.EventHandler(this.ForexOnClick);
             // 
             // panel9
             // 
@@ -555,7 +532,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(81, 100);
             this.panel9.TabIndex = 2;
-            this.panel9.Click += new System.EventHandler(this.CabOnClick);
             // 
             // CabLabel
             // 
@@ -566,7 +542,6 @@
             this.CabLabel.Size = new System.Drawing.Size(37, 17);
             this.CabLabel.TabIndex = 1;
             this.CabLabel.Text = "Cabs";
-            this.CabLabel.Click += new System.EventHandler(this.CabOnClick);
             // 
             // CabUnderLine
             // 
@@ -595,7 +570,6 @@
             this.CabButton.TabIndex = 0;
             this.CabButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.CabButton.UseVisualStyleBackColor = false;
-            this.CabButton.Click += new System.EventHandler(this.CabOnClick);
             // 
             // panel10
             // 
@@ -619,6 +593,7 @@
             this.button1.BackgroundImage = global::MakeMyTripClone.Properties.Resources.logoWhite;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Enabled = false;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(174, 15);
@@ -626,19 +601,6 @@
             this.button1.Size = new System.Drawing.Size(131, 45);
             this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(708, 34);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 27);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -669,9 +631,10 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::MakeMyTripClone.Properties.Resources._1711023801388;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Enabled = false;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(925, 30);
@@ -705,19 +668,6 @@
             this.label4.Size = new System.Drawing.Size(130, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Business Travel Solution";
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(1163, 32);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(18, 27);
-            this.button4.TabIndex = 10;
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -1072,12 +1022,10 @@
             this.panel16.Controls.Add(this.logInTab1);
             this.panel16.Controls.Add(this.comboBox1);
             this.panel16.Controls.Add(this.label5);
-            this.panel16.Controls.Add(this.button2);
             this.panel16.Controls.Add(this.label2);
             this.panel16.Controls.Add(this.button3);
             this.panel16.Controls.Add(this.label1);
             this.panel16.Controls.Add(this.label4);
-            this.panel16.Controls.Add(this.button4);
             this.panel16.Controls.Add(this.label3);
             this.panel16.Controls.Add(this.label6);
             this.panel16.Location = new System.Drawing.Point(-15, -15);
@@ -1183,13 +1131,11 @@
         private System.Windows.Forms.Label ForexCurrencyUnderLine;
         private System.Windows.Forms.Label CabUnderLine;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
