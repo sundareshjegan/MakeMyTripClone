@@ -920,27 +920,7 @@ namespace MakeMyTripClone
                 b = false;
             }
         }
-        //protected override void OnFormClosing(FormClosingEventArgs e)
-        //{
-        //    base.OnFormClosing(e);
-        //    foreach (Control c in Controls)
-        //    {
-        //        DisposeControl(c);
-        //    }
-        //}
-        //private void DisposeControl(Control control)
-        //{
-        //    if (control == null) return;
-        //    foreach (Control child in control.Controls)
-        //    {
-        //        DisposeControl(child);
-        //    }
-        //    control.Dispose();
-        //    control.Text = null;
-        //    control.BackgroundImage?.Dispose(); 
-        //    control.BackgroundImage = null;
-        //    if (control is PictureBox && (control as PictureBox).Image != null) (control as PictureBox).Image.Dispose();
-        //}
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
