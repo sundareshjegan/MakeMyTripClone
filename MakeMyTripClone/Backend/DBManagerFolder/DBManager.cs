@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using GoLibrary;
 using DatabaseLibrary;
-using Newtonsoft.Json;
+using Newtonsoft.Json;     
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +14,7 @@ namespace MakeMyTripClone
 {
     static class DBManager
     {
-        private static readonly string server = "192.168.3.63";
+        private static readonly string server = "192.168.3.153";
         private static readonly string database = "makemytrip";
         private static readonly string user = "team7";
         private static readonly string password = "team7team7";
@@ -108,7 +108,7 @@ namespace MakeMyTripClone
 
             List<RouteDetails> list = new List<RouteDetails>();
             
-            if (res.Count > 0 && res!=null)
+            if (res.Count > 0 )
             {
                 int size = res[Route.Id].Count;
                 for (int i = 0; i < size; i++)

@@ -26,18 +26,18 @@ namespace MakeMyTripClone
             timer.Interval = 15;
             timer.Tick += PlaceholderMove;
             this.Paint += TextBoxUPaint;
-            Click+= Label1Click;
+            Click += Label1Click;
         }
 
         private Font placeholderTextCenterFont = new Font(FontFamily.GenericSansSerif, 11);
         private Font placeholderTextTopFont = new Font(FontFamily.GenericSansSerif, 9);
         private Color placeholderLabelAtTopColor = Color.FromArgb(65, 125, 225);
         private Color placeholderLabelAtCenterColor = Color.FromArgb(130, 130, 130);
-        private Timer timer=new Timer();
+        private Timer timer = new Timer();
         private bool isCenterPlaceHolder;
         private bool isEnterMouse;
         private int borderRadius = 7;
-       
+
         public Color PlaceholderLabelAtTopColor
         {
             get
@@ -57,7 +57,7 @@ namespace MakeMyTripClone
             get
             {
                 return placeholderLabelAtCenterColor;
-                
+
             }
             set
             {
@@ -89,7 +89,7 @@ namespace MakeMyTripClone
             }
             set
             {
-                 textBox1.Dock=value;
+                textBox1.Dock = value;
             }
         }
 
@@ -99,13 +99,13 @@ namespace MakeMyTripClone
         {
             get
             {
-               return  textBox1.UseSystemPasswordChar;
+                return textBox1.UseSystemPasswordChar;
 
             }
             set
             {
                 textBox1.UseSystemPasswordChar = value;
-                if(value)
+                if (value)
                 {
                     textBox1.Multiline = false;
                     textBox1.Dock = DockStyle.None;
@@ -124,7 +124,7 @@ namespace MakeMyTripClone
         {
             get => textBox1.MaxLength;
             set => textBox1.MaxLength = value;
-        }  
+        }
 
         public char PasswordChar
         {
@@ -143,12 +143,12 @@ namespace MakeMyTripClone
             get
             {
                 return textBox1.Text;
-                
+
             }
             set
             {
                 textBox1.Text = value;
-                
+
             }
         }
 
@@ -173,7 +173,7 @@ namespace MakeMyTripClone
             }
             set
             {
-               
+
                 textBox1.ForeColor = value;
             }
 
@@ -188,13 +188,13 @@ namespace MakeMyTripClone
             }
             set
             {
-                 textBox1.Font= value;
+                textBox1.Font = value;
             }
         }
-        
+
         private GraphicsPath GetGraphicsPath(Rectangle rect)
         {
-           
+
             GraphicsPath path = new GraphicsPath();
             path.StartFigure();
             path.AddArc(rect.X, rect.Y, borderRadius, borderRadius, 180, 90);
@@ -206,17 +206,18 @@ namespace MakeMyTripClone
         }
 
         private void TextBoxUPaint(object sender, PaintEventArgs e)
-        { var g= e.Graphics;
+        {
+            var g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
             Color borderColor;
             if (isCenterPlaceHolder)
-                 borderColor = placeholderLabelAtCenterColor;
+                borderColor = placeholderLabelAtCenterColor;
             else
                 borderColor = placeholderLabelAtTopColor;
-            
-            using (Pen pen=new Pen(borderColor,2))
+
+            using (Pen pen = new Pen(borderColor, 2))
             {
-                g.DrawPath(pen,GetGraphicsPath(new Rectangle(ClientRectangle.Location.X + 3, ClientRectangle.Location.Y + 2, ClientRectangle.Width - 6, ClientRectangle.Height - 4)));
+                g.DrawPath(pen, GetGraphicsPath(new Rectangle(ClientRectangle.Location.X + 3, ClientRectangle.Location.Y + 2, ClientRectangle.Width - 6, ClientRectangle.Height - 4)));
             }
         }
 
@@ -224,8 +225,8 @@ namespace MakeMyTripClone
         {
             if (isCenterPlaceHolder)
             {
-                TextBoxUGotFocus(this,EventArgs.Empty);
-               textBox1.Focus();
+                TextBoxUGotFocus(this, EventArgs.Empty);
+                textBox1.Focus();
             }
         }
 
@@ -237,12 +238,13 @@ namespace MakeMyTripClone
         Point placeholderlocation;
         private void PlaceholderMove(object sender, EventArgs e)
         {
-            if (isCenterPlaceHolder == true&& (label1.Location.X>0&& label1.Location.Y>-3))
+            if (isCenterPlaceHolder == true && (label1.Location.X > 0 && label1.Location.Y > -3))
             {
-                label1.Location=new Point(label1.Location.X-1, label1.Location.Y-2);
+                label1.Location = new Point(label1.Location.X - 1, label1.Location.Y - 2);
             }
-            else if(isCenterPlaceHolder == false&& (label1.Location.X < placeholderlocation.X && label1.Location.Y< placeholderlocation.Y)){
-                label1.Location = new Point(label1.Location.X +1, label1.Location.Y +2);
+            else if (isCenterPlaceHolder == false && (label1.Location.X < placeholderlocation.X && label1.Location.Y < placeholderlocation.Y))
+            {
+                label1.Location = new Point(label1.Location.X + 1, label1.Location.Y + 2);
             }
             else
             {
@@ -255,16 +257,16 @@ namespace MakeMyTripClone
         private void TextBoxULostFocus(object sender, EventArgs e)
         {
             Point temp_Point = PointToClient(Cursor.Position);
-         //   if (2 > temp_Point.X || temp_Point.X >= Width-2|| 2 >temp_Point.Y || temp_Point.Y>= Height-2)
-          //  {
-                if (string.IsNullOrWhiteSpace(textBox1.Text))
-                {
+            //   if (2 > temp_Point.X || temp_Point.X >= Width-2|| 2 >temp_Point.Y || temp_Point.Y>= Height-2)
+            //  {
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
                 label1.ForeColor = placeholderLabelAtCenterColor;
                 label1.Font = placeholderTextCenterFont;
-                    timer.Start();
-                }
-          //  }
-           
+                timer.Start();
+            }
+            //  }
+
         }
 
         private void TextBoxUGotFocus(object sender, EventArgs e)
@@ -275,7 +277,7 @@ namespace MakeMyTripClone
                 label1.Font = placeholderTextTopFont;
                 timer.Start();
             }
-           
+
         }
 
         private void TextBoxUResize(object sender, EventArgs e)
@@ -286,24 +288,24 @@ namespace MakeMyTripClone
                 Padding = new Padding(18, 15, Padding.Right, Padding.Bottom);
 
 
-            textBox1.Width= Width-Padding.Left-Padding.Right;
-            textBox1.Location= new Point(Padding.Left,Height/2-(textBox1.Height/2));
+            textBox1.Width = Width - Padding.Left - Padding.Right;
+            textBox1.Location = new Point(Padding.Left, Height / 2 - (textBox1.Height / 2));
             if (!textBox1.UseSystemPasswordChar)
             {
-                placeholderlocation = new Point(textBox1.Location.X + (textBox1.Location.Y + (textBox1.Height / 2 - label1.Height / 2)) , 1+ Height / 2 - label1.Height / 2);              
+                placeholderlocation = new Point(textBox1.Location.X + (textBox1.Location.Y + (textBox1.Height / 2 - label1.Height / 2)), 1 + Height / 2 - label1.Height / 2);
             }
             else
             {
-                placeholderlocation = new Point(textBox1.Location.X + (textBox1.Location.Y + (textBox1.Height / 2 - label1.Height / 2)) , 1+ Height / 2 - label1.Height / 2);              
+                placeholderlocation = new Point(textBox1.Location.X + (textBox1.Location.Y + (textBox1.Height / 2 - label1.Height / 2)), 1 + Height / 2 - label1.Height / 2);
             }
             label1.Location = placeholderlocation;
         }
 
         private void OnTextBox1KeyPressed(object sender, KeyPressEventArgs e)
         {
-            if(!AllowWhiteSpace)
+            if (!AllowWhiteSpace)
             {
-                if(e.KeyChar == (char)Keys.Space)
+                if (e.KeyChar == (char)Keys.Space)
                 {
                     e.Handled = true;
                 }
