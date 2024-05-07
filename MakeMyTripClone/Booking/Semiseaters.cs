@@ -19,18 +19,18 @@ namespace MakeMyTripClone
         }
         public delegate void DatasHandler(bool b, string s);
         public event DatasHandler coloured;
-        public new void Dispose()
-        {
-            for (int i = 0; i < Controls.Count; i++)
-            {
-                if ((Controls[i] as PictureBox).BackgroundImage != null) (Controls[i] as PictureBox).BackgroundImage.Dispose();
-            }
-        }
+        //public new void Dispose()
+        //{
+        //    for (int i = 0; i < Controls.Count; i++)
+        //    {
+        //        if ((Controls[i] as PictureBox).BackgroundImage != null) (Controls[i] as PictureBox).BackgroundImage.Dispose();
+        //    }
+        //}
         private void PictureBoxClick(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox.BackgroundImage != null) pictureBox.BackgroundImage.Dispose();
             string s = pictureBox.Name.Remove(0, 10);
+           // if (pictureBox.BackgroundImage != null) pictureBox.BackgroundImage.Dispose();
             if (pictureBox.BorderStyle == BorderStyle.FixedSingle)
             {
                 if (s == "1" || s == "6" || s == "11" || s == "16" || s == "21")
@@ -43,7 +43,7 @@ namespace MakeMyTripClone
                     pictureBox.BackgroundImage = Resources.Seater;
                     pictureBox.BorderStyle = BorderStyle.None;
                 }
-                coloured?.Invoke( false, s);
+                coloured?.Invoke(false, s);
             }
             else
             {
@@ -57,7 +57,7 @@ namespace MakeMyTripClone
                     pictureBox.BackgroundImage = Resources.Blueseater;
                     pictureBox.BorderStyle = BorderStyle.FixedSingle;
                 }
-                coloured?.Invoke( true,s);
+                coloured?.Invoke(true, s);
                 ListAdd(s);
             }
         }
@@ -107,6 +107,6 @@ namespace MakeMyTripClone
                 Buses.isFemaleseats.Add(false);
             }
         }
-       
+
     }
 }

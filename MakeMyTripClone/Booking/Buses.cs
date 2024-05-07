@@ -21,7 +21,7 @@ namespace MakeMyTripClone
         }
 
         private Color colour = SystemColors.GradientInactiveCaption, white = Color.White, highlight = SystemColors.Highlight;
-        private bool isPhotos, isAmenties, isOpen;
+        private bool isPhotos, isAmenties;
         private string pickuplocation, droplocation, bustype, duration, starttime, endtime, acnonac, seat, busname;
         private List<object> boarding = new List<object>();
         private List<object> destination = new List<object>();
@@ -31,6 +31,7 @@ namespace MakeMyTripClone
         private BookingDetails details = new BookingDetails();
         public static List<bool> isFemaleseats = new List<bool>();
         private List<string> seatsbooked = new List<string>();
+
         private static Buses previousClickedBus;
 
         public string BusType
@@ -95,9 +96,6 @@ namespace MakeMyTripClone
             tolabel.Text = BookingPageForm.busesList[i].EndTime + " " + to.Day + " " + MonthName(to.Month);
             endtime = BookingPageForm.busesList[i].EndTime;
             noofseatlabel.Text = "";
-
-
-
             boarding = DBManager.GetBoarding(pickup, drop, date, rid);
             destination = DBManager.GetDrop(pickup, drop, date, rid);
             foreach (var n in destination)
@@ -119,137 +117,132 @@ namespace MakeMyTripClone
                 address.drops2 += Addressdropss;
             }
         }
-        private Seaterseats seats;
-        private Sleeper lbs, ubs, semiubs;
-        private Semiseaters semi;
-        private void AddSeatTypeUserControls(bool b)
-        {
-            if (!b)
-            {
-                if (busltypeabel.Text == "AC-SL" || busltypeabel.Text == "NON-AC-SL")
-                {
-                    lwrlabel.Visible = true;
-                    uprlabel.Visible = true;
-                    lbpanel.Visible = true;
-                    ubpanel.Visible = true;
-                    seaterpanel.Visible = false;
-                    lbs = new Sleeper();
-                    foreach (PictureBox seatPb in lbs.Controls)
-                    {
-                        string ss = seatPb.Name.Remove(0, 10);
-                        if (DBManager.IsSeatBooked(rid, ss) && !DBManager.IsSeatBookedByFemale(rid, ss))
-                        {
-                            seatPb.Enabled = false;
-                            seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
-                        }
-                        else if (DBManager.IsSeatBookedByFemale(rid, ss))
-                        {
-                            seatPb.Enabled = false;
-                            seatPb.BackgroundImage = Properties.Resources.femaleSleeper;
-                            seatPb.BackColor = SystemColors.ControlLightLight;
-                        }
-                    }
-                    lbpanel.Controls.Add(lbs);
-                    lbs.colours += Lbscolours;
-                    ubs = new Sleeper();
-                    ubpanel.Controls.Add(ubs);
-                    foreach (PictureBox seatPb in ubs.Controls)
-                    {
-                        string sss = "u" + seatPb.Name.Remove(0, 10);
-                        if (DBManager.IsSeatBooked(rid, sss) && !DBManager.IsSeatBookedByFemale(rid, sss))
-                        {
-                            seatPb.Enabled = false;
-                            seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
-                        }
-                        else if (DBManager.IsSeatBookedByFemale(rid, sss))
-                        {
-                            seatPb.Enabled = false;
-                            seatPb.BackgroundImage = Properties.Resources.femaleSleeper;
-                            seatPb.BackColor = SystemColors.ControlLightLight;
-                        }
-                    }
-                    ubs.colours += Ubscolours;
-                }
-                if (busltypeabel.Text == "AC-SL/ST" || busltypeabel.Text == "NON-AC-SL/ST")
-                {
 
-                    lwrlabel.Visible = true;
-                    uprlabel.Visible = true;
-                    lbpanel.Visible = true;
-                    ubpanel.Visible = true;
-                    seaterpanel.Visible = false;
-                    semi = new Semiseaters();
-                    lbpanel.Controls.Add(semi);
-                    foreach (PictureBox seatPb in semi.Controls)
+        private void AddSeatTypeUserControls()
+        {
+            if (busltypeabel.Text == "AC-SL" || busltypeabel.Text == "NON-AC-SL")
+            {
+                lwrlabel.Visible = true;
+                uprlabel.Visible = true;
+                lbpanel.Visible = true;
+                ubpanel.Visible = true;
+                seaterpanel.Visible = false;
+                Sleeper lbs = new Sleeper();
+                foreach (PictureBox seatPb in lbs.Controls)
+                {
+                    string ss = seatPb.Name.Remove(0, 10);
+                    if (DBManager.IsSeatBooked(rid, ss) && !DBManager.IsSeatBookedByFemale(rid, ss))
                     {
-                        string ss = seatPb.Name.Remove(0, 10);
-                        if (DBManager.IsSeatBooked(rid, ss) && !DBManager.IsSeatBookedByFemale(rid, ss))
-                        {
-                            seatPb.Enabled = false;
-                            if (ss == "1" || ss == "6" || ss == "11" || ss == "16" || ss == "21") seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
-                            else seatPb.BackgroundImage = Properties.Resources.bookedSeater;
-                        }
-                        else if (DBManager.IsSeatBookedByFemale(rid, ss))
-                        {
-                            seatPb.Enabled = false;
-                            if (ss == "1" || ss == "6" || ss == "11" || ss == "16" || ss == "21")
-                            {
-                                seatPb.BackgroundImage = Properties.Resources.femaleSleeper;
-                                seatPb.BackColor = SystemColors.ControlLightLight;
-                            }
-                            else
-                            {
-                                seatPb.BackgroundImage = Properties.Resources.femaleSeater;
-                                seatPb.BackColor = SystemColors.ControlLightLight;
-                            }
-                        }
+                        seatPb.Enabled = false;
+                        seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
                     }
-                    semi.coloured += Coloured;
-                    semiubs = new Sleeper();
-                    ubpanel.Controls.Add(semiubs);
-                    foreach (PictureBox seatPb in semiubs.Controls)
+                    else if (DBManager.IsSeatBookedByFemale(rid, ss))
                     {
-                        string sss = "u" + seatPb.Name.Remove(0, 10);
-                        if (DBManager.IsSeatBooked(rid, sss) && !DBManager.IsSeatBookedByFemale(rid, sss))
+                        seatPb.Enabled = false;
+                        seatPb.BackgroundImage = Properties.Resources.femaleSleeper;
+                        seatPb.BackColor = SystemColors.ControlLightLight;
+                    }
+                }
+                lbpanel.Controls.Add(lbs);
+                lbs.colours += Lbscolours;
+                Sleeper ubs = new Sleeper();
+                ubpanel.Controls.Add(ubs);
+                foreach (PictureBox seatPb in ubs.Controls)
+                {
+                    string sss = "u" + seatPb.Name.Remove(0, 10);
+                    if (DBManager.IsSeatBooked(rid, sss) && !DBManager.IsSeatBookedByFemale(rid, sss))
+                    {
+                        seatPb.Enabled = false;
+                        seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
+                    }
+                    else if (DBManager.IsSeatBookedByFemale(rid, sss))
+                    {
+                        seatPb.Enabled = false;
+                        seatPb.BackgroundImage = Properties.Resources.femaleSleeper;
+                        seatPb.BackColor = SystemColors.ControlLightLight;
+                    }
+                }
+                ubs.colours += Ubscolours;
+            }
+            if (busltypeabel.Text == "AC-SL/ST" || busltypeabel.Text == "NON-AC-SL/ST")
+            {
+
+                lwrlabel.Visible = true;
+                uprlabel.Visible = true;
+                lbpanel.Visible = true;
+                ubpanel.Visible = true;
+                seaterpanel.Visible = false;
+                Semiseaters lbs = new Semiseaters();
+                lbpanel.Controls.Add(lbs);
+                foreach (PictureBox seatPb in lbs.Controls)
+                {
+                    string ss = seatPb.Name.Remove(0, 10);
+                    if (DBManager.IsSeatBooked(rid, ss) && !DBManager.IsSeatBookedByFemale(rid, ss))
+                    {
+                        seatPb.Enabled = false;
+                        if (ss == "1" || ss == "6" || ss == "11" || ss == "16" || ss == "21") seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
+                        else seatPb.BackgroundImage = Properties.Resources.bookedSeater;
+                    }
+                    else if (DBManager.IsSeatBookedByFemale(rid, ss))
+                    {
+                        seatPb.Enabled = false;
+                        if (ss == "1" || ss == "6" || ss == "11" || ss == "16" || ss == "21")
                         {
-                            seatPb.Enabled = false;
-                            seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
-                        }
-                        else if (DBManager.IsSeatBookedByFemale(rid, sss))
-                        {
-                            seatPb.Enabled = false;
                             seatPb.BackgroundImage = Properties.Resources.femaleSleeper;
                             seatPb.BackColor = SystemColors.ControlLightLight;
                         }
-                    }
-                    semiubs.colours += Ubscolourss;
-                }
-                if (busltypeabel.Text == "AC-ST" || busltypeabel.Text == "NON-AC-ST")
-                {
-                    lwrlabel.Visible = false;
-                    uprlabel.Visible = false;
-                    lbpanel.Visible = false;
-                    ubpanel.Visible = false;
-                    seaterpanel.Visible = true;
-                    seats = new Seaterseats();
-                    seaterpanel.Controls.Add(seats);
-                    foreach (PictureBox seatPb in seats.Controls)
-                    {
-                        string ss = seatPb.Name.Remove(0, 10);
-                        if (DBManager.IsSeatBooked(rid, ss) && !DBManager.IsSeatBookedByFemale(rid, ss))
+                        else
                         {
-                            seatPb.Enabled = false;
-                            seatPb.BackgroundImage = Properties.Resources.bookedSeater;
-                        }
-                        else if (DBManager.IsSeatBookedByFemale(rid, ss))
-                        {
-                            seatPb.Enabled = false;
                             seatPb.BackgroundImage = Properties.Resources.femaleSeater;
                             seatPb.BackColor = SystemColors.ControlLightLight;
                         }
                     }
-                    seats.seatscolours += Seatsseatscolours;
                 }
+                lbs.coloured += Coloured;
+                Sleeper ubs = new Sleeper();
+                ubpanel.Controls.Add(ubs);
+                foreach (PictureBox seatPb in ubs.Controls)
+                {
+                    string sss = "u" + seatPb.Name.Remove(0, 10);
+                    if (DBManager.IsSeatBooked(rid, sss) && !DBManager.IsSeatBookedByFemale(rid, sss))
+                    {
+                        seatPb.Enabled = false;
+                        seatPb.BackgroundImage = Properties.Resources.bookedSleeper;
+                    }
+                    else if (DBManager.IsSeatBookedByFemale(rid, sss))
+                    {
+                        seatPb.Enabled = false;
+                        seatPb.BackgroundImage = Properties.Resources.femaleSleeper;
+                        seatPb.BackColor = SystemColors.ControlLightLight;
+                    }
+                }
+                ubs.colours += Ubscolourss;
+            }
+            if (busltypeabel.Text == "AC-ST" || busltypeabel.Text == "NON-AC-ST")
+            {
+                lwrlabel.Visible = false;
+                uprlabel.Visible = false;
+                lbpanel.Visible = false;
+                ubpanel.Visible = false;
+                seaterpanel.Visible = true;
+                Seaterseats seats = new Seaterseats();
+                seaterpanel.Controls.Add(seats);
+                foreach (PictureBox seatPb in seats.Controls)
+                {
+                    string ss = seatPb.Name.Remove(0, 10);
+                    if (DBManager.IsSeatBooked(rid, ss) && !DBManager.IsSeatBookedByFemale(rid, ss))
+                    {
+                        seatPb.Enabled = false;
+                        seatPb.BackgroundImage = Properties.Resources.bookedSeater;
+                    }
+                    else if (DBManager.IsSeatBookedByFemale(rid, ss))
+                    {
+                        seatPb.Enabled = false;
+                        seatPb.BackgroundImage = Properties.Resources.femaleSeater;
+                        seatPb.BackColor = SystemColors.ControlLightLight;
+                    }
+                }
+                seats.seatscolours += Seatsseatscolours;
             }
         }
         private void IsRemove(int i)
@@ -515,8 +508,8 @@ namespace MakeMyTripClone
         private void SelectClick(object sender, EventArgs e)
         {
             if (ssbutton.Text == "Select seats")
-            {
-                AddSeatTypeUserControls(isOpen);
+            {   
+                AddSeatTypeUserControls();
                 ssbutton.Text = "Hide seats";
                 ssbutton.BackColor = white;
                 ssbutton.ForeColor = highlight;
@@ -536,9 +529,8 @@ namespace MakeMyTripClone
                     previousClickedBus.totalamtlabel.Text = "0";
                     previousClickedBus.noofseatlabel.Text = "";
                     isFemaleseats.Clear();
-                    previousClickedBus.AddSeatTypeUserControls(isOpen);
-                }
-                isOpen = true;
+                    previousClickedBus.AddSeatTypeUserControls();
+                }   
             }
             else
             {

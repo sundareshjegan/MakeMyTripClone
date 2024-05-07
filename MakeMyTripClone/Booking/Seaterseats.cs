@@ -19,18 +19,18 @@ namespace MakeMyTripClone
         }
         public delegate void DatasHandler(bool b, string s);
         public event DatasHandler seatscolours;
-        public new void Dispose()
-        {
-            for(int i=0;i<Controls.Count;i++)
-            {
-                if ((Controls[i] as PictureBox).BackgroundImage != null) (Controls[i] as PictureBox).BackgroundImage.Dispose();
-            }
-        }
+        //public new void Dispose()
+        //{
+        //    for (int i = 0; i < Controls.Count; i++)
+        //    {
+        //        if ((Controls[i] as PictureBox).BackgroundImage != null) (Controls[i] as PictureBox).BackgroundImage.Dispose();
+        //    }
+        //}
         private void PictureBoxClick(object sender, EventArgs e)
         {
             PictureBox pictureBox = sender as PictureBox;
-            if (pictureBox.BackgroundImage != null) pictureBox.BackgroundImage.Dispose();
             string s = pictureBox.Name.Remove(0, 10);
+           // if (pictureBox.BackgroundImage != null) pictureBox.BackgroundImage.Dispose();
             if (pictureBox.BorderStyle == BorderStyle.FixedSingle)
             {
                 pictureBox.BackgroundImage = Resources.Seater;
@@ -77,7 +77,7 @@ namespace MakeMyTripClone
                     }
                 }
             }
-        
+
         }
     }
 }
