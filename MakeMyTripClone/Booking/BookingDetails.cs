@@ -22,7 +22,7 @@ namespace MakeMyTripClone
         public string[] Droppoint { get; set; }
         public string Durations { get; set; }
         public int Totalamount { get; set; }
-        public string seatAmount { get; set; }
+        public string SeatAmount { get; set; }
         public List<bool> FemaleSeatList { get; set; }
     }
 }

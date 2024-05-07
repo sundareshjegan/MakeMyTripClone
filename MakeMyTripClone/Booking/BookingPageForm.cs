@@ -36,7 +36,7 @@ namespace MakeMyTripClone
         }
 
         private Color colour = SystemColors.GradientInactiveCaption, gray = Color.DimGray, highglight = SystemColors.Highlight, white = Color.White;
-        private bool isfalse, isTime, isDtime, isNUll, isTravel, isPick, isDrop, isDrops, isADD, isNot;
+        private bool isTime, isDtime, isDropup, isPick, isDrop, isTravel, isPickup;
         private int no = 0;
         private Buses bus;
         public static List<RouteDetails> busesList = new List<RouteDetails>();
@@ -68,8 +68,6 @@ namespace MakeMyTripClone
             }
         }
 
-
-
         private void SrchbuttonClick(object sender, EventArgs e)
         {
             String[] boarding = fromcomboBox.Text.Split(',');
@@ -79,7 +77,14 @@ namespace MakeMyTripClone
             boardingpoints.Clear();
             traveloperatorpoints.Clear();
             adducpanel.Controls.Clear();
+            buses.Clear();
             SetData(boarding[0], destination[0], departdateTimePicker.Value.ToString("yyyy-MM-dd"), null, null, null);
+            isTravel = false;
+            isPickup = false;
+            isDropup = false;
+            PanelChanges(travelvaluepanel);
+            PanelChanges(dpvaluepanel);
+            PanelChanges(puvaluepanel);
         }
 
         public void SetData(string boarding, string destination, string date, ComboBox from, ComboBox to, DateTimePicker dateTime)
@@ -594,19 +599,6 @@ namespace MakeMyTripClone
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
 
-        private void OnBusesfoundlabelTextChanged(object sender, EventArgs e)
-        {
-            adducpanel.Controls.Add(nobuspanel);
-            if (busesfoundlabel.Text[0] == '0')
-            {
-                nobuspanel.Visible = true;
-            }
-            else
-            {
-                nobuspanel.Visible = false;
-            }
-        }
-
         private void DdtimeclrbuttonClick(object sender, EventArgs e)
         {
             CloseSearch();
@@ -639,16 +631,6 @@ namespace MakeMyTripClone
             if (no <= 0) clearallbutton.ForeColor = gray;
             else clearallbutton.ForeColor = highglight;
             Filter(isAc, seatType, pickTime, dropTime, pickPoint, travel, dropPoint);
-        }
-
-        private void DropClick(object sender, EventArgs e)
-        {
-            if (puvaluepanel.Visible == true)
-            {
-                puvaluepanel.Visible = false;
-                pupointpictureBox.Image = Resources.down;
-            }
-            else Locations(ref isfalse, puvaluepanel, pupointpictureBox, boardingpoints, ref isNot);
         }
 
         private void FstbuttonClick(object sender, EventArgs e)
@@ -721,10 +703,19 @@ namespace MakeMyTripClone
 
         private int BusesFound()
         {
+            adducpanel.Controls.Add(nobuspanel);
             int count = 0;
             foreach (var bus in buses)
             {
                 if (bus.Visible == true) count++;
+            }
+            if (count == 0)
+            {
+                nobuspanel.Visible = true;
+            }
+            else
+            {
+                nobuspanel.Visible = false;
             }
             return count;
         }
@@ -754,6 +745,16 @@ namespace MakeMyTripClone
             }
         }
 
+        private void DropClick(object sender, EventArgs e)
+        {
+            if (puvaluepanel.Visible == true)
+            {
+                puvaluepanel.Visible = false;
+                pupointpictureBox.Image = Resources.down;
+            }
+            else Locations(puvaluepanel, pupointpictureBox, boardingpoints, ref isPickup);
+        }
+
         private void TPictureBoxClick(object sender, EventArgs e)
         {
             List<object> listOfObjects = traveloperatorpoints.Select(s => (object)s).ToList();
@@ -762,7 +763,12 @@ namespace MakeMyTripClone
                 travelvaluepanel.Visible = false;
                 travelpictureBox.Image = Resources.down;
             }
-            else Locations(ref isTravel, travelvaluepanel, travelpictureBox, listOfObjects, ref isADD);
+            else Locations(travelvaluepanel, travelpictureBox, listOfObjects, ref isTravel);
+        }
+
+        private void PanelChanges(Panel p)
+        {
+            p.Controls.Clear();
         }
 
         private void DropPointClick(object sender, EventArgs e)
@@ -772,7 +778,7 @@ namespace MakeMyTripClone
                 dpvaluepanel.Visible = false;
                 dppictureBox.Image = Resources.down;
             }
-            Locations(ref isDrops, dpvaluepanel, dppictureBox, droppoints, ref isNUll);
+            else Locations(dpvaluepanel, dppictureBox, droppoints, ref isDropup);
         }
 
         private void DtimeClick(object sender, EventArgs e)
@@ -828,37 +834,28 @@ namespace MakeMyTripClone
             }
         }
 
-        private void Locations(ref bool b, Panel p, PictureBox pict, List<object> li, ref bool bb)
+        private void Locations(Panel p, PictureBox pict, List<object> li, ref bool bb)
         {
-            if (!b)
+            pict.Image = Resources.arrow_up;
+            p.Visible = true;
+            if (!bb)
             {
-                pict.Image = Resources.arrow_up;
-                b = true;
-                p.Visible = true;
-                if (!bb)
+                for (int i = 0; i < li.Count; i++)
                 {
-                    for (int i = 0; i < li.Count; i++)
+                    CustomCheckbox checkBoxes = new CustomCheckbox();
+                    p.Controls.Add(checkBoxes);
+                    checkBoxes.Dock = DockStyle.Top;
+                    string[] ss = li[i].ToString().Split('&');
+                    if (ss.Length == 1)
                     {
-                        CustomCheckbox checkBoxes = new CustomCheckbox();
-                        p.Controls.Add(checkBoxes);
-                        checkBoxes.Dock = DockStyle.Top;
-                        string[] ss = li[i].ToString().Split('&');
-                        if (ss.Length == 1)
-                        {
-                            checkBoxes.SetValuesCheckbox(ss[0]);
-                        }
-                        else checkBoxes.SetValuesCheckbox(ss[1]);
-                        checkBoxes.checks += CheckBoxeschecks;
+                        checkBoxes.SetValuesCheckbox(ss[0]);
                     }
-                    bb = true;
+                    else checkBoxes.SetValuesCheckbox(ss[1]);
+                    checkBoxes.checks += CheckBoxeschecks;
                 }
+                bb = true;
             }
-            else
-            {
-                pict.Image = Resources.down;
-                p.Visible = false;
-                b = false;
-            }
+
         }
 
         private void CheckBoxeschecks(object sender, EventArgs e)

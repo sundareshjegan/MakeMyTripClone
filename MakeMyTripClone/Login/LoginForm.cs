@@ -16,9 +16,6 @@ namespace MakeMyTripClone
             InitializeComponent();
             CreateCurves();
             Invalidate();
-            //BackColor = Color.AliceBlue;
-            //TransparencyKey = Color.AliceBlue;
-            //DBManager.GetConnection();
         }
 
         private Random random = new Random();

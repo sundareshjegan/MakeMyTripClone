@@ -1293,7 +1293,6 @@
             this.busesfoundlabel.TabIndex = 0;
             this.busesfoundlabel.Text = "0 buses found";
             this.busesfoundlabel.Visible = false;
-            this.busesfoundlabel.TextChanged += new System.EventHandler(this.OnBusesfoundlabelTextChanged);
             // 
             // adducpanel
             // 

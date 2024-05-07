@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentForm));
             this.gateWaySelectionPanel = new System.Windows.Forms.Panel();
-            this.giftCardPanel = new System.Windows.Forms.Panel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
             this.creditCardPanel = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -90,7 +85,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.customPanel8 = new MakeMyTripClone.UserControls.CustomPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.upitext = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -124,10 +119,14 @@
             this.label29 = new System.Windows.Forms.Label();
             this.gPayTab = new System.Windows.Forms.TabPage();
             this.customPanel10 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.UpiErrorlabel = new System.Windows.Forms.Label();
             this.pictureBox36 = new System.Windows.Forms.PictureBox();
             this.gPayVerifyAndPayBtn = new System.Windows.Forms.Button();
+            this.customPanel16 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.gupipintext = new System.Windows.Forms.TextBox();
             this.customPanel11 = new MakeMyTripClone.UserControls.CustomPanel();
             this.gPayUpiTB = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.netBankingTab = new System.Windows.Forms.TabPage();
             this.pictureBox30 = new System.Windows.Forms.PictureBox();
@@ -206,9 +205,8 @@
             this.panel17 = new System.Windows.Forms.Panel();
             this.label40 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
+            this.upilabel = new System.Windows.Forms.Label();
             this.gateWaySelectionPanel.SuspendLayout();
-            this.giftCardPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.creditCardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.googlePayPanel.SuspendLayout();
@@ -253,6 +251,7 @@
             this.gPayTab.SuspendLayout();
             this.customPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
+            this.customPanel16.SuspendLayout();
             this.customPanel11.SuspendLayout();
             this.netBankingTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
@@ -287,7 +286,6 @@
             // gateWaySelectionPanel
             // 
             this.gateWaySelectionPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(220)))), ((int)(((byte)(252)))));
-            this.gateWaySelectionPanel.Controls.Add(this.giftCardPanel);
             this.gateWaySelectionPanel.Controls.Add(this.creditCardPanel);
             this.gateWaySelectionPanel.Controls.Add(this.googlePayPanel);
             this.gateWaySelectionPanel.Controls.Add(this.netBankingPanel);
@@ -300,72 +298,9 @@
             this.gateWaySelectionPanel.Size = new System.Drawing.Size(290, 454);
             this.gateWaySelectionPanel.TabIndex = 2;
             // 
-            // giftCardPanel
-            // 
-            this.giftCardPanel.BackColor = System.Drawing.Color.Transparent;
-            this.giftCardPanel.Controls.Add(this.pictureBox9);
-            this.giftCardPanel.Controls.Add(this.label17);
-            this.giftCardPanel.Controls.Add(this.label18);
-            this.giftCardPanel.Controls.Add(this.panel15);
-            this.giftCardPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.giftCardPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.giftCardPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.giftCardPanel.Location = new System.Drawing.Point(0, 394);
-            this.giftCardPanel.Name = "giftCardPanel";
-            this.giftCardPanel.Size = new System.Drawing.Size(290, 59);
-            this.giftCardPanel.TabIndex = 1;
-            this.giftCardPanel.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox9.Image = global::MakeMyTripClone.Properties.Resources.GiftCard;
-            this.pictureBox9.Location = new System.Drawing.Point(24, 9);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 3;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label17.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(61, 30);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(189, 16);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "MMT Gift cards, Mobikwik & More";
-            this.label17.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(252)))));
-            this.label18.Location = new System.Drawing.Point(60, 8);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(166, 21);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Gift Cards && e-wallets";
-            this.label18.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel15.Location = new System.Drawing.Point(0, 0);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(5, 59);
-            this.panel15.TabIndex = 0;
-            this.panel15.Visible = false;
-            // 
             // creditCardPanel
             // 
-            this.creditCardPanel.BackColor = System.Drawing.Color.Transparent;
+            this.creditCardPanel.BackColor = System.Drawing.Color.White;
             this.creditCardPanel.Controls.Add(this.pictureBox8);
             this.creditCardPanel.Controls.Add(this.label15);
             this.creditCardPanel.Controls.Add(this.label16);
@@ -373,9 +308,9 @@
             this.creditCardPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.creditCardPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.creditCardPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.creditCardPanel.Location = new System.Drawing.Point(0, 317);
+            this.creditCardPanel.Location = new System.Drawing.Point(0, 369);
             this.creditCardPanel.Name = "creditCardPanel";
-            this.creditCardPanel.Size = new System.Drawing.Size(290, 77);
+            this.creditCardPanel.Size = new System.Drawing.Size(290, 85);
             this.creditCardPanel.TabIndex = 1;
             this.creditCardPanel.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
             // 
@@ -383,7 +318,7 @@
             // 
             this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox8.Image = global::MakeMyTripClone.Properties.Resources.creditCard;
-            this.pictureBox8.Location = new System.Drawing.Point(24, 9);
+            this.pictureBox8.Location = new System.Drawing.Point(24, 20);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(30, 30);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -396,7 +331,7 @@
             this.label15.AutoSize = true;
             this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label15.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(61, 30);
+            this.label15.Location = new System.Drawing.Point(61, 41);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(207, 32);
             this.label15.TabIndex = 2;
@@ -409,7 +344,7 @@
             this.label16.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(252)))));
-            this.label16.Location = new System.Drawing.Point(60, 8);
+            this.label16.Location = new System.Drawing.Point(60, 19);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(181, 21);
             this.label16.TabIndex = 2;
@@ -422,7 +357,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(5, 77);
+            this.panel13.Size = new System.Drawing.Size(5, 85);
             this.panel13.TabIndex = 0;
             this.panel13.Visible = false;
             // 
@@ -436,9 +371,9 @@
             this.googlePayPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.googlePayPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.googlePayPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.googlePayPanel.Location = new System.Drawing.Point(0, 258);
+            this.googlePayPanel.Location = new System.Drawing.Point(0, 289);
             this.googlePayPanel.Name = "googlePayPanel";
-            this.googlePayPanel.Size = new System.Drawing.Size(290, 59);
+            this.googlePayPanel.Size = new System.Drawing.Size(290, 80);
             this.googlePayPanel.TabIndex = 1;
             this.googlePayPanel.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
             // 
@@ -446,7 +381,7 @@
             // 
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = global::MakeMyTripClone.Properties.Resources.googlePay;
-            this.pictureBox7.Location = new System.Drawing.Point(24, 9);
+            this.pictureBox7.Location = new System.Drawing.Point(24, 16);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(30, 30);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -459,7 +394,7 @@
             this.label13.AutoSize = true;
             this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label13.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(61, 31);
+            this.label13.Location = new System.Drawing.Point(61, 38);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(123, 16);
             this.label13.TabIndex = 2;
@@ -472,7 +407,7 @@
             this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(252)))));
-            this.label14.Location = new System.Drawing.Point(60, 8);
+            this.label14.Location = new System.Drawing.Point(60, 15);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(89, 21);
             this.label14.TabIndex = 2;
@@ -485,7 +420,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(5, 59);
+            this.panel11.Size = new System.Drawing.Size(5, 80);
             this.panel11.TabIndex = 0;
             this.panel11.Visible = false;
             // 
@@ -499,9 +434,9 @@
             this.netBankingPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.netBankingPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.netBankingPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.netBankingPanel.Location = new System.Drawing.Point(0, 199);
+            this.netBankingPanel.Location = new System.Drawing.Point(0, 216);
             this.netBankingPanel.Name = "netBankingPanel";
-            this.netBankingPanel.Size = new System.Drawing.Size(290, 59);
+            this.netBankingPanel.Size = new System.Drawing.Size(290, 73);
             this.netBankingPanel.TabIndex = 1;
             this.netBankingPanel.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
             // 
@@ -509,7 +444,7 @@
             // 
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = global::MakeMyTripClone.Properties.Resources.netbanking;
-            this.pictureBox6.Location = new System.Drawing.Point(24, 9);
+            this.pictureBox6.Location = new System.Drawing.Point(24, 15);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(30, 30);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -522,7 +457,7 @@
             this.label11.AutoSize = true;
             this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label11.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(61, 31);
+            this.label11.Location = new System.Drawing.Point(61, 37);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(156, 16);
             this.label11.TabIndex = 2;
@@ -535,7 +470,7 @@
             this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(252)))));
-            this.label12.Location = new System.Drawing.Point(60, 8);
+            this.label12.Location = new System.Drawing.Point(60, 14);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(99, 21);
             this.label12.TabIndex = 2;
@@ -548,7 +483,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(5, 59);
+            this.panel9.Size = new System.Drawing.Size(5, 73);
             this.panel9.TabIndex = 0;
             this.panel9.Visible = false;
             // 
@@ -562,9 +497,9 @@
             this.upiPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.upiPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.upiPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.upiPanel.Location = new System.Drawing.Point(0, 122);
+            this.upiPanel.Location = new System.Drawing.Point(0, 132);
             this.upiPanel.Name = "upiPanel";
-            this.upiPanel.Size = new System.Drawing.Size(290, 77);
+            this.upiPanel.Size = new System.Drawing.Size(290, 84);
             this.upiPanel.TabIndex = 1;
             this.upiPanel.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
             // 
@@ -572,7 +507,7 @@
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::MakeMyTripClone.Properties.Resources.upi;
-            this.pictureBox5.Location = new System.Drawing.Point(24, 9);
+            this.pictureBox5.Location = new System.Drawing.Point(24, 14);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(30, 30);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -585,7 +520,7 @@
             this.label9.AutoSize = true;
             this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label9.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(61, 29);
+            this.label9.Location = new System.Drawing.Point(61, 34);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(175, 32);
             this.label9.TabIndex = 2;
@@ -598,7 +533,7 @@
             this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(252)))));
-            this.label10.Location = new System.Drawing.Point(60, 8);
+            this.label10.Location = new System.Drawing.Point(60, 13);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 21);
             this.label10.TabIndex = 2;
@@ -611,7 +546,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(5, 77);
+            this.panel7.Size = new System.Drawing.Size(5, 84);
             this.panel7.TabIndex = 0;
             this.panel7.Visible = false;
             // 
@@ -625,9 +560,9 @@
             this.bookNowPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bookNowPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.bookNowPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.bookNowPanel.Location = new System.Drawing.Point(0, 45);
+            this.bookNowPanel.Location = new System.Drawing.Point(0, 50);
             this.bookNowPanel.Name = "bookNowPanel";
-            this.bookNowPanel.Size = new System.Drawing.Size(290, 77);
+            this.bookNowPanel.Size = new System.Drawing.Size(290, 82);
             this.bookNowPanel.TabIndex = 1;
             this.bookNowPanel.Click += new System.EventHandler(this.PaymentGatewayPanelClick);
             // 
@@ -635,7 +570,7 @@
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::MakeMyTripClone.Properties.Resources.myLogo;
-            this.pictureBox4.Location = new System.Drawing.Point(24, 14);
+            this.pictureBox4.Location = new System.Drawing.Point(24, 20);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(30, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -648,7 +583,7 @@
             this.label8.AutoSize = true;
             this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label8.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(61, 30);
+            this.label8.Location = new System.Drawing.Point(61, 36);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(162, 32);
             this.label8.TabIndex = 2;
@@ -661,7 +596,7 @@
             this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(252)))));
-            this.label7.Location = new System.Drawing.Point(60, 8);
+            this.label7.Location = new System.Drawing.Point(60, 14);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(156, 21);
             this.label7.TabIndex = 2;
@@ -674,7 +609,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 77);
+            this.panel5.Size = new System.Drawing.Size(5, 82);
             this.panel5.TabIndex = 0;
             this.panel5.Visible = false;
             // 
@@ -682,11 +617,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(10, 10, 0, 10);
-            this.label6.Size = new System.Drawing.Size(173, 45);
+            this.label6.Size = new System.Drawing.Size(189, 50);
             this.label6.TabIndex = 2;
             this.label6.Text = "Payment options";
             // 
@@ -935,6 +870,7 @@
             // customPanel7
             // 
             this.customPanel7.BorderColor = System.Drawing.Color.LightGray;
+            this.customPanel7.Controls.Add(this.upilabel);
             this.customPanel7.Controls.Add(this.pictureBox23);
             this.customPanel7.Controls.Add(this.pictureBox22);
             this.customPanel7.Controls.Add(this.pictureBox21);
@@ -1059,7 +995,7 @@
             // customPanel8
             // 
             this.customPanel8.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.customPanel8.Controls.Add(this.textBox1);
+            this.customPanel8.Controls.Add(this.upitext);
             this.customPanel8.CornerRadius = 6;
             this.customPanel8.Location = new System.Drawing.Point(34, 54);
             this.customPanel8.Name = "customPanel8";
@@ -1067,16 +1003,18 @@
             this.customPanel8.Size = new System.Drawing.Size(410, 39);
             this.customPanel8.TabIndex = 2;
             // 
-            // textBox1
+            // upitext
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(5, 8);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(400, 23);
-            this.textBox1.TabIndex = 0;
+            this.upitext.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.upitext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.upitext.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upitext.Location = new System.Drawing.Point(5, 8);
+            this.upitext.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.upitext.Name = "upitext";
+            this.upitext.Size = new System.Drawing.Size(400, 23);
+            this.upitext.TabIndex = 0;
+            this.upitext.Text = "mobilenumber@upi";
+            this.upitext.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label32
             // 
@@ -1305,6 +1243,7 @@
             // 
             // customPanel6
             // 
+            this.customPanel6.BackColor = System.Drawing.Color.WhiteSmoke;
             this.customPanel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.customPanel6.BorderColor = System.Drawing.Color.LightGray;
             this.customPanel6.Controls.Add(this.pictureBox14);
@@ -1453,15 +1392,30 @@
             // customPanel10
             // 
             this.customPanel10.BorderColor = System.Drawing.Color.LightGray;
+            this.customPanel10.Controls.Add(this.UpiErrorlabel);
             this.customPanel10.Controls.Add(this.pictureBox36);
             this.customPanel10.Controls.Add(this.gPayVerifyAndPayBtn);
+            this.customPanel10.Controls.Add(this.customPanel16);
             this.customPanel10.Controls.Add(this.customPanel11);
+            this.customPanel10.Controls.Add(this.label17);
             this.customPanel10.Controls.Add(this.label61);
             this.customPanel10.CornerRadius = 10;
-            this.customPanel10.Location = new System.Drawing.Point(56, 94);
+            this.customPanel10.Location = new System.Drawing.Point(56, 45);
             this.customPanel10.Name = "customPanel10";
-            this.customPanel10.Size = new System.Drawing.Size(490, 157);
+            this.customPanel10.Size = new System.Drawing.Size(490, 269);
             this.customPanel10.TabIndex = 1;
+            // 
+            // UpiErrorlabel
+            // 
+            this.UpiErrorlabel.AutoSize = true;
+            this.UpiErrorlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpiErrorlabel.ForeColor = System.Drawing.Color.Red;
+            this.UpiErrorlabel.Location = new System.Drawing.Point(227, 173);
+            this.UpiErrorlabel.Name = "UpiErrorlabel";
+            this.UpiErrorlabel.Size = new System.Drawing.Size(236, 21);
+            this.UpiErrorlabel.TabIndex = 2;
+            this.UpiErrorlabel.Text = "ID and Pin should not be empty";
+            this.UpiErrorlabel.Visible = false;
             // 
             // pictureBox36
             // 
@@ -1481,7 +1435,7 @@
             this.gPayVerifyAndPayBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gPayVerifyAndPayBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gPayVerifyAndPayBtn.ForeColor = System.Drawing.Color.White;
-            this.gPayVerifyAndPayBtn.Location = new System.Drawing.Point(322, 86);
+            this.gPayVerifyAndPayBtn.Location = new System.Drawing.Point(144, 197);
             this.gPayVerifyAndPayBtn.Name = "gPayVerifyAndPayBtn";
             this.gPayVerifyAndPayBtn.Size = new System.Drawing.Size(136, 36);
             this.gPayVerifyAndPayBtn.TabIndex = 5;
@@ -1489,12 +1443,34 @@
             this.gPayVerifyAndPayBtn.UseVisualStyleBackColor = true;
             this.gPayVerifyAndPayBtn.Click += new System.EventHandler(this.OnGPayVerifyAndPayBtnClicked);
             // 
+            // customPanel16
+            // 
+            this.customPanel16.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.customPanel16.Controls.Add(this.gupipintext);
+            this.customPanel16.CornerRadius = 6;
+            this.customPanel16.Location = new System.Drawing.Point(167, 128);
+            this.customPanel16.Name = "customPanel16";
+            this.customPanel16.Padding = new System.Windows.Forms.Padding(5, 8, 5, 5);
+            this.customPanel16.Size = new System.Drawing.Size(265, 39);
+            this.customPanel16.TabIndex = 2;
+            // 
+            // gupipintext
+            // 
+            this.gupipintext.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gupipintext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gupipintext.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gupipintext.Location = new System.Drawing.Point(5, 8);
+            this.gupipintext.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.gupipintext.Name = "gupipintext";
+            this.gupipintext.Size = new System.Drawing.Size(255, 23);
+            this.gupipintext.TabIndex = 0;
+            // 
             // customPanel11
             // 
             this.customPanel11.BorderColor = System.Drawing.Color.DodgerBlue;
             this.customPanel11.Controls.Add(this.gPayUpiTB);
             this.customPanel11.CornerRadius = 6;
-            this.customPanel11.Location = new System.Drawing.Point(43, 84);
+            this.customPanel11.Location = new System.Drawing.Point(167, 56);
             this.customPanel11.Name = "customPanel11";
             this.customPanel11.Padding = new System.Windows.Forms.Padding(5, 8, 5, 5);
             this.customPanel11.Size = new System.Drawing.Size(265, 39);
@@ -1511,12 +1487,23 @@
             this.gPayUpiTB.Size = new System.Drawing.Size(255, 23);
             this.gPayUpiTB.TabIndex = 0;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(72, 140);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(65, 21);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "UPI PIN";
+            // 
             // label61
             // 
             this.label61.AutoSize = true;
             this.label61.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label61.ForeColor = System.Drawing.Color.Black;
-            this.label61.Location = new System.Drawing.Point(39, 56);
+            this.label61.Location = new System.Drawing.Point(40, 67);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(97, 21);
             this.label61.TabIndex = 1;
@@ -2401,6 +2388,18 @@
             this.label50.TabIndex = 1;
             this.label50.Text = "ONE WAY";
             // 
+            // upilabel
+            // 
+            this.upilabel.AutoSize = true;
+            this.upilabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upilabel.ForeColor = System.Drawing.Color.Red;
+            this.upilabel.Location = new System.Drawing.Point(338, 105);
+            this.upilabel.Name = "upilabel";
+            this.upilabel.Size = new System.Drawing.Size(141, 20);
+            this.upilabel.TabIndex = 8;
+            this.upilabel.Text = "enter a valid UPI ID";
+            this.upilabel.Visible = false;
+            // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2416,9 +2415,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.gateWaySelectionPanel.ResumeLayout(false);
             this.gateWaySelectionPanel.PerformLayout();
-            this.giftCardPanel.ResumeLayout(false);
-            this.giftCardPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.creditCardPanel.ResumeLayout(false);
             this.creditCardPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -2478,6 +2474,8 @@
             this.customPanel10.ResumeLayout(false);
             this.customPanel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).EndInit();
+            this.customPanel16.ResumeLayout(false);
+            this.customPanel16.PerformLayout();
             this.customPanel11.ResumeLayout(false);
             this.customPanel11.PerformLayout();
             this.netBankingTab.ResumeLayout(false);
@@ -2565,11 +2563,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel giftCardPanel;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.TabControl paymentTabControl;
         private System.Windows.Forms.TabPage bnplTab;
         private System.Windows.Forms.TabPage upiTab;
@@ -2606,7 +2599,7 @@
         private UserControls.CustomPanel customPanel7;
         private UserControls.CustomPanel customPanel8;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox upitext;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label32;
@@ -2708,5 +2701,10 @@
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label creditCardWarningLabel;
+        private UserControls.CustomPanel customPanel16;
+        private System.Windows.Forms.TextBox gupipintext;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label UpiErrorlabel;
+        private System.Windows.Forms.Label upilabel;
     }
 }

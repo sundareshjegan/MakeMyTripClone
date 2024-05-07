@@ -435,7 +435,7 @@ namespace MakeMyTripClone
                 details.Droppoint = droppoint;
                 details.Durations = durationlabel.Text;
                 details.Totalamount = Convert.ToInt32(totalamtlabel.Text);
-                details.seatAmount = rulabel.Text;
+                details.SeatAmount = rulabel.Text;
                 details.FemaleSeatList = isFemaleseats;
                 CompleteBookingForm completeBooking = new CompleteBookingForm();
                 completeBooking.SetData(details);
@@ -529,22 +529,24 @@ namespace MakeMyTripClone
                     previousClickedBus.totalamtlabel.Text = "0";
                     previousClickedBus.noofseatlabel.Text = "";
                     isFemaleseats.Clear();
-                    previousClickedBus.AddSeatTypeUserControls();
-                }   
+                    seatsbooked.Clear();
+                }
             }
             else
             {
-                //if (seats != null) seats.Dispose();
-                //if (ubs != null  ) ubs.Dispose();
-                //if (lbs != null) lbs.Dispose();
-                //if (semiubs != null) semiubs.Dispose();
-                //if (semi != null) semi.Dispose();
                 ssbutton.Text = "Select seats";
                 ssbutton.BackColor = highlight;
                 ssbutton.ForeColor = white;
                 combinationpanel.Visible = false;
                 Height = 200;
                 toppanel.BackColor = white;
+                lbpanel.Controls.Clear();
+                ubpanel.Controls.Clear();
+                seaterpanel.Controls.Clear();
+                totalamtlabel.Text = "0";
+                noofseatlabel.Text = "";
+                isFemaleseats.Clear();
+                seatsbooked.Clear();
             }
             previousClickedBus = this;
         }
