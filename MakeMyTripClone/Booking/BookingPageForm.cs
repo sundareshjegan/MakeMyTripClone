@@ -655,17 +655,24 @@ namespace MakeMyTripClone
 
         private void FstbuttonClick(object sender, EventArgs e)
         {
-            fstbutton.BackColor = colour;
-            arbutton.BackColor = white;
-            dprbutton.BackColor = white;
-            var fastest = buses.OrderBy(item => TimeSpan.Parse(item.Duration)).ToList();
-            foreach (var bus in fastest)
+            if (fstbutton.BackColor == colour)
             {
-                bus.Dock = DockStyle.Top;
-                bus.BringToFront();
+                fstbutton.BackColor = white;
             }
-            endofbuslabel.Dock = DockStyle.Top;
-            endofbuslabel.BringToFront();
+            else
+            {
+                fstbutton.BackColor = colour;
+                arbutton.BackColor = white;
+                dprbutton.BackColor = white;
+                var fastest = buses.OrderBy(item => TimeSpan.Parse(item.Duration)).ToList();
+                foreach (var bus in fastest)
+                {
+                    bus.Dock = DockStyle.Top;
+                    bus.BringToFront();
+                }
+                endofbuslabel.Dock = DockStyle.Top;
+                endofbuslabel.BringToFront();
+            }
         }
 
         private void LoginButtonClick(object sender, EventArgs e)
