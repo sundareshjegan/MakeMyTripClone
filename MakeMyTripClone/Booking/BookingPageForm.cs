@@ -105,8 +105,6 @@ namespace MakeMyTripClone
             traveloperatorpoints = DBManager.GetTravel(boarding, destination, date);
             BusButton.BackgroundImage = Resources.busblue;
             AddDatas();
-            endofbuslabel.Dock = DockStyle.Top;
-            endofbuslabel.BringToFront();
         }
 
         private void AddDatas()
@@ -670,8 +668,6 @@ namespace MakeMyTripClone
                     bus.Dock = DockStyle.Top;
                     bus.BringToFront();
                 }
-                endofbuslabel.Dock = DockStyle.Top;
-                endofbuslabel.BringToFront();
             }
         }
 
@@ -690,22 +686,27 @@ namespace MakeMyTripClone
 
         private void ArbuttonClick(object sender, EventArgs e)
         {
-            DateTime targetTime = DateTime.Now;
-            fstbutton.BackColor = white;
-            arbutton.BackColor = colour;
-            dprbutton.BackColor = white;
-            var arrival = buses.OrderBy(bus =>
+            if (arbutton.BackColor == colour)
             {
-                TimeSpan duration = Convert.ToDateTime(bus.StartTime) - targetTime;
-                return duration.TotalMinutes;
-            }).ThenBy(bus => bus.StartTime).ToList();
-            foreach (var bus in arrival)
-            {
-                bus.Dock = DockStyle.Top;
-                bus.BringToFront();
+                arbutton.BackColor = white;
             }
-            endofbuslabel.Dock = DockStyle.Top;
-            endofbuslabel.BringToFront();
+            else
+            {
+                DateTime targetTime = DateTime.Now;
+                fstbutton.BackColor = white;
+                arbutton.BackColor = colour;
+                dprbutton.BackColor = white;
+                var arrival = buses.OrderBy(bus =>
+                {
+                    TimeSpan duration = Convert.ToDateTime(bus.StartTime) - targetTime;
+                    return duration.TotalMinutes;
+                }).ThenBy(bus => bus.StartTime).ToList();
+                foreach (var bus in arrival)
+                {
+                    bus.Dock = DockStyle.Top;
+                    bus.BringToFront();
+                }
+            }
         }
 
         private void ComboBoxTextChanged(object sender, EventArgs e)
@@ -725,35 +726,32 @@ namespace MakeMyTripClone
             {
                 if (bus.Visible == true) count++;
             }
-            if (count == 0)
-            {
-                endofbuslabel.Visible = false;
-            }
-            else
-            {
-                endofbuslabel.Visible = true;
-            }
             return count;
         }
 
         private void DprbuttonClick(object sender, EventArgs e)
         {
-            fstbutton.BackColor = white;
-            arbutton.BackColor = white;
-            dprbutton.BackColor = colour;
-            DateTime targetTime = DateTime.Now;
-            var departure = buses.OrderBy(bus =>
+            if (dprbutton.BackColor == colour)
             {
-                TimeSpan duration = Convert.ToDateTime(bus.EndTime) - targetTime;
-                return duration.TotalMinutes;
-            }).ThenBy(bus => bus.EndTime).ToList();
-            foreach (var bus in departure)
-            {
-                bus.Dock = DockStyle.Top;
-                bus.BringToFront();
+                dprbutton.BackColor = white;
             }
-            endofbuslabel.Dock = DockStyle.Top;
-            endofbuslabel.BringToFront();
+            else
+            {
+                fstbutton.BackColor = white;
+                arbutton.BackColor = white;
+                dprbutton.BackColor = colour;
+                DateTime targetTime = DateTime.Now;
+                var departure = buses.OrderBy(bus =>
+                {
+                    TimeSpan duration = Convert.ToDateTime(bus.EndTime) - targetTime;
+                    return duration.TotalMinutes;
+                }).ThenBy(bus => bus.EndTime).ToList();
+                foreach (var bus in departure)
+                {
+                    bus.Dock = DockStyle.Top;
+                    bus.BringToFront();
+                }
+            }
         }
 
         private void TPictureBoxClick(object sender, EventArgs e)

@@ -110,7 +110,6 @@
             this.dprbutton = new System.Windows.Forms.Button();
             this.busesfoundlabel = new System.Windows.Forms.Label();
             this.adducpanel = new System.Windows.Forms.Panel();
-            this.endofbuslabel = new System.Windows.Forms.Label();
             this.nobuspanel = new System.Windows.Forms.Panel();
             this.nofindlabel = new System.Windows.Forms.Label();
             this.clearalllbutton = new System.Windows.Forms.Button();
@@ -1301,25 +1300,12 @@
             this.adducpanel.AutoScroll = true;
             this.adducpanel.BackColor = System.Drawing.Color.Gainsboro;
             this.adducpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.adducpanel.Controls.Add(this.endofbuslabel);
             this.adducpanel.Controls.Add(this.nobuspanel);
             this.adducpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.adducpanel.Location = new System.Drawing.Point(446, 199);
             this.adducpanel.Name = "adducpanel";
             this.adducpanel.Size = new System.Drawing.Size(1385, 619);
             this.adducpanel.TabIndex = 3;
-            // 
-            // endofbuslabel
-            // 
-            this.endofbuslabel.AutoSize = true;
-            this.endofbuslabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endofbuslabel.Location = new System.Drawing.Point(16, 442);
-            this.endofbuslabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.endofbuslabel.Name = "endofbuslabel";
-            this.endofbuslabel.Size = new System.Drawing.Size(1475, 74);
-            this.endofbuslabel.TabIndex = 1;
-            this.endofbuslabel.Text = "--------------------------------------------------------------End of buses-------" +
-    "-------------------------------------------------\r\n\r\n";
             // 
             // nobuspanel
             // 
@@ -2113,7 +2099,6 @@
             this.tabpanel.ResumeLayout(false);
             this.tabpanel.PerformLayout();
             this.adducpanel.ResumeLayout(false);
-            this.adducpanel.PerformLayout();
             this.nobuspanel.ResumeLayout(false);
             this.nobuspanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.noresultpictureBox)).EndInit();
@@ -2237,7 +2222,6 @@
         private System.Windows.Forms.PictureBox noresultpictureBox;
         private System.Windows.Forms.Label nofindlabel;
         private System.Windows.Forms.Button clearalllbutton;
-        private System.Windows.Forms.Label endofbuslabel;
         private System.Windows.Forms.Panel toppage;
         private System.Windows.Forms.Panel imagespanel;
         private System.Windows.Forms.Panel forexpanel;
