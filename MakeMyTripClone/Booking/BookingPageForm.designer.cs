@@ -872,7 +872,7 @@
             this.pickuppointlabel.Size = new System.Drawing.Size(218, 23);
             this.pickuppointlabel.TabIndex = 1;
             this.pickuppointlabel.Text = "Pick up point - Coimbatore";
-            this.pickuppointlabel.Click += new System.EventHandler(this.DropClick);
+            this.pickuppointlabel.Click += new System.EventHandler(this.PickupClick);
             // 
             // pupointpictureBox
             // 
@@ -886,7 +886,7 @@
             this.pupointpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pupointpictureBox.TabIndex = 3;
             this.pupointpictureBox.TabStop = false;
-            this.pupointpictureBox.Click += new System.EventHandler(this.DropClick);
+            this.pupointpictureBox.Click += new System.EventHandler(this.PickupClick);
             // 
             // clearpickuppointbutton
             // 

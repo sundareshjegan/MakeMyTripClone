@@ -337,6 +337,18 @@
     <Compile Include="Booking\User Controls\Sleeper.designer.cs">
       <DependentUpon>Sleeper.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomCheckBox2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomCheckBox2.Designer.cs">
+      <DependentUpon>CustomCheckBox2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCheckbox3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomCheckbox3.Designer.cs">
+      <DependentUpon>CustomCheckbox3.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomePage\HomePageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -450,6 +462,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Booking\User Controls\Sleeper.resx">
       <DependentUpon>Sleeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCheckBox2.resx">
+      <DependentUpon>CustomCheckBox2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCheckbox3.resx">
+      <DependentUpon>CustomCheckbox3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage\HomePageForm.resx">
       <DependentUpon>HomePageForm.cs</DependentUpon>

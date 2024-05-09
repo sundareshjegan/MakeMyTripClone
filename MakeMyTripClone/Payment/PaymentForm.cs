@@ -135,7 +135,7 @@ namespace MakeMyTripClone
         }
         private void OnGPayVerifyAndPayBtnClicked(object sender, EventArgs e)
         {
-            if (gPayUpiTB.Text!="" && gupipintext.Text!="")
+            if (gPayUpiTB.Text!="" && gupipintext.Text!="" && gPayUpiTB.Text.Any(char.IsDigit) && gPayUpiTB.Text.Contains("@") && gPayUpiTB.Text.Any(char.IsLetter))
             {
                 UpiErrorlabel.Visible = false;
                 Opacity -= 0.1;
@@ -253,12 +253,7 @@ namespace MakeMyTripClone
             string[] seatStrings = seatNumbers.Select((number, index) => $"Seat {index + 1} - {number}\n").ToArray();
             seatDetailsLabel.Text = string.Join(", ", seatStrings);
             seatDetailsPanel.Height = seatDetailsLabel.Height+10;
-            
-            //string[,] passengerDetails = new string
-            //foreach(TravellerDetails traveller in travellers)
-            //{
-            //    travellerDetailsLabel.Text += $"{traveller.TravellerName} ({traveller.Gender} , {traveller.TravellerAge})\n";
-            //}
+
             string[,] travellerDetails = new string[travellers.Count, 4];
 
             for (int i = 0; i < travellers.Count; i++)
@@ -343,11 +338,20 @@ namespace MakeMyTripClone
 
         #endregion
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextBox1TextChanged(object sender, EventArgs e)
         {
-           if( upitext.Text.Contains("mobilenumber@upi"))
+           TextBox t = sender as TextBox;
+           if( t.Text.Contains("mobilenumber@upi"))
+           {
+                t.Text=t.Text.Remove(0, 16);
+           }
+        }
+
+        private void UipintextKeyPress(object sender, KeyPressEventArgs e)
+        {
+           if(e.KeyChar!='\b' && !Char.IsDigit(e.KeyChar))
             {
-                upitext.Text = "";
+                e.Handled = true;
             }
         }
     }

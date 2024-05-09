@@ -27,11 +27,18 @@ namespace MakeMyTripClone
                 logInTab1.UserEmail = DBManager.CurrentUser.Email;
             }
             PaymentForm.OnPaymentFormClosed += OnPaymentCompletedAndFormClosed;
-
         }
 
         private void OnPaymentCompletedAndFormClosed(object sender, EventArgs e)
         {
+            DBManager.OnUserLoggedIn -= DBManagerOnUserLoggedIn;
+            PaymentForm.OnPaymentFormClosed -= OnPaymentCompletedAndFormClosed;
+            //busesList.Clear();
+            //droppoints.Clear();
+            //boardingpoints.Clear();
+            //traveloperatorpoints.Clear();
+            //buses.Clear();
+            //filterlist.Clear();
             Dispose();
         }
 
@@ -46,7 +53,9 @@ namespace MakeMyTripClone
         private List<Buses> buses = new List<Buses>();
         private List<Buses> filterlist = new List<Buses>();
         private string isAc = null, seatType = null, pickTime = null, dropTime = null, pickPoint = null, travelpoint = null, dropPoint = null;
-        CustomCheckbox prevcheck = null, travelcheck, dpcheck;
+        CustomCheckBox1 prevcheck = null;
+        CustomCheckBox2 travelcheck = null;
+        CustomCheckBox3 dpcheck = null;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -162,7 +171,7 @@ namespace MakeMyTripClone
                     dropTime = null;
                     isDrop = false;
                 }
-                FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                 Filter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             }
             else
@@ -173,7 +182,7 @@ namespace MakeMyTripClone
                 {
                     nonacpanel.BackColor = Color.White;
                     isAc = "AC";
-                    FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isAc = "NON";
 
                 }
@@ -181,7 +190,7 @@ namespace MakeMyTripClone
                 {
                     acpanel.BackColor = Color.White;
                     isAc = "NON";
-                    FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isAc = "AC";
 
                 }
@@ -189,14 +198,14 @@ namespace MakeMyTripClone
                 {
                     seaterpanel.BackColor = Color.White;
                     seatType = "SL";
-                    FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     seatType = "ST";
                 }
                 else if (panel.Name == "seaterpanel" && sleeperpanel.BackColor == colour)
                 {
                     sleeperpanel.BackColor = Color.White;
                     seatType = "ST";
-                    FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     seatType = "SL";
                 }
                 if (panel.Name == "acpanel") isAc = "AC";
@@ -210,7 +219,7 @@ namespace MakeMyTripClone
                     putimengtpanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
                     pickTime = putimesrlabel.Tag + "";
-                    if (isPick) FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isPick) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isPick = true;
                 }
                 else if (panel.Name == "putimeevepanel")
@@ -220,7 +229,7 @@ namespace MakeMyTripClone
                     putimengtpanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
                     pickTime = putimeevelabel.Tag + "";
-                    if (isPick) FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isPick) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isPick = true;
                 }
                 else if (panel.Name == "putimesspanel")
@@ -230,7 +239,7 @@ namespace MakeMyTripClone
                     putimengtpanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
                     pickTime = putimesslabel.Tag + "";
-                    if (isPick) FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isPick) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isPick = true;
                 }
                 else if (panel.Name == "putimengtpanel")
@@ -240,7 +249,7 @@ namespace MakeMyTripClone
                     putimesspanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
                     pickTime = putimengtlabel.Tag + "";
-                    if (isPick) FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isPick) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isPick = true;
                 }
                 if (panel.Name == "ddsrpanel")
@@ -250,7 +259,7 @@ namespace MakeMyTripClone
                     ddngtpanel.BackColor = Color.White;
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
                     dropTime = ddsrlabel.Tag + "";
-                    if (isDrop) FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isDrop) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isDrop = true;
                 }
                 else if (panel.Name == "ddevepanel")
@@ -260,7 +269,7 @@ namespace MakeMyTripClone
                     ddngtpanel.BackColor = Color.White;
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
                     dropTime = ddevelabel.Tag + "";
-                    if (isDrop) FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isDrop) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isDrop = true;
                 }
                 else if (panel.Name == "ddsspanel")
@@ -270,7 +279,7 @@ namespace MakeMyTripClone
                     ddngtpanel.BackColor = Color.White;
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
                     dropTime = ddsslabel.Tag + "";
-                    if (isDrop) FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isDrop) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isDrop = true;
                 }
                 else if (panel.Name == "ddngtpanel")
@@ -280,7 +289,7 @@ namespace MakeMyTripClone
                     ddsrpanel.BackColor = Color.White;
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
                     dropTime = ddngtlabel.Tag + "";
-                    if (isDrop) FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isDrop) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isDrop = true;
                 }
                 panel.BackColor = colour;
@@ -288,7 +297,7 @@ namespace MakeMyTripClone
             }
         }
 
-        private void FTrue(string isAc, string seatType, string picktime, string droptime, string pickpoint, string travel, string droppoint)
+        private void CustomFilter(string isAc, string seatType, string picktime, string droptime, string pickpoint, string travel, string droppoint)
         {
             if (isAc == null)
             {
@@ -512,15 +521,15 @@ namespace MakeMyTripClone
                 ddtimeclrbutton.ForeColor = gray;
                 seatersleepercheckBox.Checked = false;
                 clearallbutton.ForeColor = gray;
-                foreach (CustomCheckbox c in pickupvaluepanel.Controls)
+                foreach (CustomCheckBox1 c in pickupvaluepanel.Controls)
                 {
                     if (c.BackColor == colour) c.Colourchange();
                 }
-                foreach (CustomCheckbox c in travelvaluepanel.Controls)
+                foreach (CustomCheckBox1 c in travelvaluepanel.Controls)
                 {
                     if (c.BackColor == colour) c.Colourchange();
                 }
-                foreach (CustomCheckbox c in dpvaluepanel.Controls)
+                foreach (CustomCheckBox1 c in dpvaluepanel.Controls)
                 {
                     if (c.BackColor == colour) c.Colourchange();
                 }
@@ -534,7 +543,7 @@ namespace MakeMyTripClone
             PutimeclearbuttonClick(null, EventArgs.Empty);
             DdtimeclrbuttonClick(null, EventArgs.Empty);
             dpclrbutton.ForeColor = gray;
-            foreach (CustomCheckbox c in dpvaluepanel.Controls)
+            foreach (CustomCheckBox1 c in dpvaluepanel.Controls)
             {
                 if (c.BackColor == colour)
                 {
@@ -543,7 +552,7 @@ namespace MakeMyTripClone
                 }
             }
             dropPoint = null;
-            FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
 
@@ -553,7 +562,7 @@ namespace MakeMyTripClone
             PutimeclearbuttonClick(null, EventArgs.Empty);
             DdtimeclrbuttonClick(null, EventArgs.Empty);
             clearpickuppointbutton.ForeColor = gray;
-            foreach (CustomCheckbox c in pickupvaluepanel.Controls)
+            foreach (CustomCheckBox1 c in pickupvaluepanel.Controls)
             {
                 if (c.BackColor == colour)
                 {
@@ -563,7 +572,7 @@ namespace MakeMyTripClone
             }
             pickPoint = null;
             isprevcheck = true;
-            FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
 
@@ -573,7 +582,7 @@ namespace MakeMyTripClone
             PutimeclearbuttonClick(null, EventArgs.Empty);
             DdtimeclrbuttonClick(null, EventArgs.Empty);
             travelclrbutton.ForeColor = gray;
-            foreach (CustomCheckbox c in travelvaluepanel.Controls)
+            foreach (CustomCheckBox1 c in travelvaluepanel.Controls)
             {
                 if (c.BackColor == colour)
                 {
@@ -583,7 +592,7 @@ namespace MakeMyTripClone
             }
             travelpoint = null;
             istravelcheck = true;
-            FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
 
@@ -598,7 +607,7 @@ namespace MakeMyTripClone
             pickTime = null;
             isdpcheck = true;
             isPick = false;
-            FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
@@ -613,7 +622,7 @@ namespace MakeMyTripClone
             ddtimeclrbutton.ForeColor = gray;
             dropTime = null;
             isDrop = false;
-            FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
@@ -630,7 +639,7 @@ namespace MakeMyTripClone
             {
                 seatType = null;
                 no--;
-                FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             }
             if (no <= 0) clearallbutton.ForeColor = gray;
             else clearallbutton.ForeColor = highglight;
@@ -749,14 +758,14 @@ namespace MakeMyTripClone
             }
         }
 
-        private void DropClick(object sender, EventArgs e)
+        private void PickupClick(object sender, EventArgs e)
         {
             if (pickupvaluepanel.Visible == true)
             {
                 pickupvaluepanel.Visible = false;
                 pupointpictureBox.Image = Resources.down;
             }
-            else Locations(pickupvaluepanel, pupointpictureBox, boardingpoints, ref isPickup);
+            else Locations(pickupvaluepanel, pupointpictureBox, boardingpoints, ref isPickup, 1);
         }
 
         private void TPictureBoxClick(object sender, EventArgs e)
@@ -767,7 +776,7 @@ namespace MakeMyTripClone
                 travelvaluepanel.Visible = false;
                 travelpictureBox.Image = Resources.down;
             }
-            else Locations(travelvaluepanel, travelpictureBox, listOfObjects, ref isTravel);
+            else Locations(travelvaluepanel, travelpictureBox, listOfObjects, ref isTravel, 2);
         }
 
         private void PanelChanges(Panel p)
@@ -782,7 +791,7 @@ namespace MakeMyTripClone
                 dpvaluepanel.Visible = false;
                 dppictureBox.Image = Resources.down;
             }
-            else Locations(dpvaluepanel, dppictureBox, droppoints, ref isDropup);
+            else Locations(dpvaluepanel, dppictureBox, droppoints, ref isDropup, 3);
         }
 
         private void DtimeClick(object sender, EventArgs e)
@@ -805,40 +814,7 @@ namespace MakeMyTripClone
             else Time(ref isDtime, ddtimevaluepanel, ddtimepictureBox);
         }
 
-        private void AddLocations(ref bool b, Panel p, PictureBox pict, List<List<object>> li, ref bool bb)
-        {
-            if (!b)
-            {
-                pict.Image = Resources.arrow_up;
-                b = true;
-                p.Visible = true;
-                if (!bb)
-                {
-                    for (int i = 0; i < li.Count; i++)
-                    {
-                        CustomCheckbox checkBoxes = new CustomCheckbox();
-                        p.Controls.Add(checkBoxes);
-                        checkBoxes.Dock = DockStyle.Top;
-                        string[] ss = li[i].ToString().Split('&');
-                        if (ss.Length == 1)
-                        {
-                            checkBoxes.SetValuesCheckbox(ss[0]);
-                        }
-                        else checkBoxes.SetValuesCheckbox(ss[1]);
-                        checkBoxes.checks += CheckBoxeschecks;
-                    }
-                    bb = true;
-                }
-            }
-            else
-            {
-                pict.Image = Resources.down;
-                p.Visible = false;
-                b = false;
-            }
-        }
-
-        private void Locations(Panel p, PictureBox pict, List<object> li, ref bool bb)
+        private void Locations(Panel p, PictureBox pict, List<object> li, ref bool bb, int n)
         {
             pict.Image = Resources.arrow_up;
             p.Visible = true;
@@ -846,28 +822,138 @@ namespace MakeMyTripClone
             {
                 for (int i = 0; i < li.Count; i++)
                 {
-                    CustomCheckbox checkBoxes = new CustomCheckbox();
-                    p.Controls.Add(checkBoxes);
-                    checkBoxes.Dock = DockStyle.Top;
-                    string[] ss = li[i].ToString().Split('&');
-                    if (ss.Length == 1)
+                    Control checkBoxes = null;
+                    if (n == 1)
                     {
-                        checkBoxes.SetValuesCheckbox(ss[0]);
+                        checkBoxes = new CustomCheckBox1();
+                        p.Controls.Add(checkBoxes);
+                        (checkBoxes as CustomCheckBox1).Dock = DockStyle.Top;
+                        string[] ss = li[i].ToString().Split('&');
+                        if (ss.Length == 1)
+                        {
+                            (checkBoxes as CustomCheckBox1).SetValuesCheckbox(ss[0]);
+                        }
+                        else (checkBoxes as CustomCheckBox1).SetValuesCheckbox(ss[1]);
+                        (checkBoxes as CustomCheckBox1).checks1 += CheckBoxeschecks;
                     }
-                    else checkBoxes.SetValuesCheckbox(ss[1]);
-                    checkBoxes.checks += CheckBoxeschecks;
+                    if (n == 2)
+                    {
+                        checkBoxes = new CustomCheckBox2();
+                        p.Controls.Add(checkBoxes);
+                        (checkBoxes as CustomCheckBox2).Dock = DockStyle.Top;
+                        string[] ss = li[i].ToString().Split('&');
+                        if (ss.Length == 1)
+                        {
+                            (checkBoxes as CustomCheckBox2).SetValuesCheckbox(ss[0]);
+                        }
+                        else (checkBoxes as CustomCheckBox2).SetValuesCheckbox(ss[1]);
+                        (checkBoxes as CustomCheckBox2).checks2 += BookingPageForm_checks2; ;
+                    }
+                    if (n == 3)
+                    {
+                        checkBoxes = new CustomCheckBox3();
+                        p.Controls.Add(checkBoxes);
+                        (checkBoxes as CustomCheckBox3).Dock = DockStyle.Top;
+                        string[] ss = li[i].ToString().Split('&');
+                        if (ss.Length == 1)
+                        {
+                            (checkBoxes as CustomCheckBox3).SetValuesCheckbox(ss[0]);
+                        }
+                        else (checkBoxes as CustomCheckBox3).SetValuesCheckbox(ss[1]);
+                        (checkBoxes as CustomCheckBox3).checks3 += BookingPageForm_checks3; ;
+                    }
                 }
+
                 bb = true;
             }
 
         }
+
+        private void BookingPageForm_checks3(object sender, EventArgs e)
+        {
+            CloseSearch();
+            dropPoint = null;
+            foreach (CustomCheckBox3 c in dpvaluepanel.Controls)
+            {
+                if (c.BackColor == colour)
+                {
+                    dropPoint = c.checkBoxs.Text;
+                    dpclrbutton.ForeColor = highglight;
+                    if (dpcheck == c && dpcheck != null && !isdpcheck)
+                    {
+                        c.Colourchange();
+                        dropPoint = null;
+                        dpcheck = null;
+                        isdpcheck = true;
+                        no--;
+                        dpclrbutton.ForeColor = gray;
+                    }
+                    else
+                    {
+                        isdpcheck = false;
+                        dpclrbutton.ForeColor = highglight;
+                        no++;
+                    }
+                    if (dpcheck != c && dpcheck != null) no--;
+                    dpcheck = c;
+                }
+                else
+                {
+                    c.SetCheckedState();
+                }
+            }
+            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            Filter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            if (no <= 0) clearallbutton.ForeColor = gray;
+            else clearallbutton.ForeColor = highglight;
+
+        }
+
+        private void BookingPageForm_checks2(object sender, EventArgs e)
+        {
+            CloseSearch();
+            travelpoint = null;
+            foreach (CustomCheckBox2 c in travelvaluepanel.Controls)
+            {
+                if (c.BackColor == colour)
+                {
+                    travelclrbutton.ForeColor = highglight;
+                    travelpoint = c.checkBoxs.Text;
+                    if (travelcheck == c && travelcheck != null && !istravelcheck)
+                    {
+                        c.Colourchange();
+                        travelpoint = null;
+                        travelcheck = null;
+                        istravelcheck = true;
+                        no--;
+                        travelclrbutton.ForeColor = gray;
+                    }
+                    else
+                    {
+                        istravelcheck = false;
+                        travelclrbutton.ForeColor = highglight;
+                        no++;
+                    }
+                    if (travelcheck != c && travelcheck != null) no--;
+                    travelcheck = c;
+                }
+                else
+                {
+                    c.SetCheckedState();
+                }
+            }
+            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            Filter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            if (no <= 0) clearallbutton.ForeColor = gray;
+            else clearallbutton.ForeColor = highglight;
+
+        }
+
         private void CheckBoxeschecks(object sender, EventArgs e)
         {
             CloseSearch();
             pickPoint = null;
-            dropPoint = null;
-            travelpoint = null;
-            foreach (CustomCheckbox c in pickupvaluepanel.Controls)
+            foreach (CustomCheckBox1 c in pickupvaluepanel.Controls)
             {
                 if (c.BackColor == colour)
                 {
@@ -888,75 +974,20 @@ namespace MakeMyTripClone
                         clearpickuppointbutton.ForeColor = highglight;
                         no++;
                     }
+                    if (prevcheck != c && prevcheck != null) no--;
                     prevcheck = c;
 
                 }
                 else
                 {
                     c.SetCheckedState();
+
                 }
             }
-            foreach (CustomCheckbox c in travelvaluepanel.Controls)
-            {
-                if (c.BackColor == colour)
-                {
-                    no++;
-                    travelclrbutton.ForeColor = highglight;
-                    travelpoint = c.checkBoxs.Text;
-                    if (travelcheck == c && travelcheck != null && !istravelcheck)
-                    {
-                        c.Colourchange();
-                        travelpoint = null;
-                        travelcheck = null;
-                        istravelcheck = true;
-                        no--;
-                        travelclrbutton.ForeColor = gray;
-                    }
-                    else
-                    {
-                        istravelcheck = false;
-                        travelclrbutton.ForeColor = highglight;
-                    }
-                    travelcheck = c;
-                }
-                else
-                {
-                    c.SetCheckedState();
-                }
-            }
-            foreach (CustomCheckbox c in dpvaluepanel.Controls)
-            {
-                if (c.BackColor == colour)
-                {
-                    no++;
-                    dropPoint = c.checkBoxs.Text;
-                    dpclrbutton.ForeColor = highglight;
-                    if (dpcheck == c && dpcheck != null && !isdpcheck)
-                    {
-                        c.Colourchange();
-                        dropPoint = null;
-                        dpcheck = null;
-                        isdpcheck = true;
-                        no--;
-                        dpclrbutton.ForeColor = gray;
-                    }
-                    else
-                    {
-                        isdpcheck = false;
-                        dpclrbutton.ForeColor = highglight;
-                    }
-                    dpcheck = c;
-                }
-                else
-                {
-                    c.SetCheckedState();
-                }
-            }
-            FTrue(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             Filter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             if (no <= 0) clearallbutton.ForeColor = gray;
             else clearallbutton.ForeColor = highglight;
-           
         }
 
         private void Time(ref bool b, Panel p, PictureBox picture)

@@ -1,6 +1,6 @@
 ﻿namespace MakeMyTripClone.Booking
 {
-    partial class CustomCheckbox
+    partial class CustomCheckBox1
     {
         /// <summary> 
         /// Required designer variable.

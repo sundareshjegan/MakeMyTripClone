@@ -75,6 +75,7 @@
             this.label62 = new System.Windows.Forms.Label();
             this.upiTab = new System.Windows.Forms.TabPage();
             this.customPanel7 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.upilabel = new System.Windows.Forms.Label();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
@@ -205,7 +206,6 @@
             this.panel17 = new System.Windows.Forms.Panel();
             this.label40 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
-            this.upilabel = new System.Windows.Forms.Label();
             this.gateWaySelectionPanel.SuspendLayout();
             this.creditCardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -891,6 +891,18 @@
             this.customPanel7.Size = new System.Drawing.Size(490, 256);
             this.customPanel7.TabIndex = 0;
             // 
+            // upilabel
+            // 
+            this.upilabel.AutoSize = true;
+            this.upilabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upilabel.ForeColor = System.Drawing.Color.Red;
+            this.upilabel.Location = new System.Drawing.Point(338, 105);
+            this.upilabel.Name = "upilabel";
+            this.upilabel.Size = new System.Drawing.Size(141, 20);
+            this.upilabel.TabIndex = 8;
+            this.upilabel.Text = "enter a valid UPI ID";
+            this.upilabel.Visible = false;
+            // 
             // pictureBox23
             // 
             this.pictureBox23.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox23.Image")));
@@ -1014,7 +1026,7 @@
             this.upitext.Size = new System.Drawing.Size(400, 23);
             this.upitext.TabIndex = 0;
             this.upitext.Text = "mobilenumber@upi";
-            this.upitext.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.upitext.TextChanged += new System.EventHandler(this.TextBox1TextChanged);
             // 
             // label32
             // 
@@ -1464,6 +1476,7 @@
             this.gupipintext.Name = "gupipintext";
             this.gupipintext.Size = new System.Drawing.Size(255, 23);
             this.gupipintext.TabIndex = 0;
+            this.gupipintext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UipintextKeyPress);
             // 
             // customPanel11
             // 
@@ -1486,6 +1499,8 @@
             this.gPayUpiTB.Name = "gPayUpiTB";
             this.gPayUpiTB.Size = new System.Drawing.Size(255, 23);
             this.gPayUpiTB.TabIndex = 0;
+            this.gPayUpiTB.Text = "mobilenumber@upi";
+            this.gPayUpiTB.TextChanged += new System.EventHandler(this.TextBox1TextChanged);
             // 
             // label17
             // 
@@ -2387,18 +2402,6 @@
             this.label50.Size = new System.Drawing.Size(68, 17);
             this.label50.TabIndex = 1;
             this.label50.Text = "ONE WAY";
-            // 
-            // upilabel
-            // 
-            this.upilabel.AutoSize = true;
-            this.upilabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upilabel.ForeColor = System.Drawing.Color.Red;
-            this.upilabel.Location = new System.Drawing.Point(338, 105);
-            this.upilabel.Name = "upilabel";
-            this.upilabel.Size = new System.Drawing.Size(141, 20);
-            this.upilabel.TabIndex = 8;
-            this.upilabel.Text = "enter a valid UPI ID";
-            this.upilabel.Visible = false;
             // 
             // PaymentForm
             // 

@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace MakeMyTripClone.Booking
 {
-    public partial class CustomCheckbox : UserControl
+    public partial class CustomCheckBox1 : UserControl
     {
-        public CustomCheckbox()
+        public CustomCheckBox1()
         {
             InitializeComponent();
         }
-        public event EventHandler checks;
+        public event EventHandler checks1;
         public void SetValuesCheckbox(string s)
         {
             checkBoxs.Text =s;
@@ -24,7 +24,7 @@ namespace MakeMyTripClone.Booking
        
         private void CustomCheckboxClick(object sender, EventArgs e)
         {
-            foreach (CustomCheckbox c in Parent.Controls.OfType<CustomCheckbox>())
+            foreach (CustomCheckBox1 c in Parent.Controls.OfType<CustomCheckBox1>())
             {
                 if (c != this)
                 {
@@ -36,13 +36,13 @@ namespace MakeMyTripClone.Booking
             checkBoxs.Checked = true;
             BackColor = SystemColors.GradientInactiveCaption;
 
-            checks?.Invoke(this, EventArgs.Empty);
+            checks1?.Invoke(this, EventArgs.Empty);
         }
         public void SetCheckedState()
         {
             if (checkBoxs.Checked)
             {
-                foreach (CustomCheckbox c in Parent.Controls.OfType<CustomCheckbox>())
+                foreach (CustomCheckBox1 c in Parent.Controls.OfType<CustomCheckBox1>())
                 {
                     if (c != this)
                     {
