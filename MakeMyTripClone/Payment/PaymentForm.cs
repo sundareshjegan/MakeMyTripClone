@@ -218,6 +218,7 @@ namespace MakeMyTripClone
                 OnPaymentFormClosed?.Invoke(this, EventArgs.Empty);
             }, TaskScheduler.FromCurrentSynchronizationContext()); // Ensure the continuation runs on the UI thread
         }
+
         public void SetData(BookingDetails bookingDetails, List<TravellerDetails> travellers, int finalAmount, string emailToSendTicket)
         {
             busNameLabel.Text = bookingDetails.BusName;

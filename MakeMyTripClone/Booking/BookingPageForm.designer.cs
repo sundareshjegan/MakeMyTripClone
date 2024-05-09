@@ -74,7 +74,7 @@
             this.putimepictureBox = new System.Windows.Forms.PictureBox();
             this.putimelabel = new System.Windows.Forms.Label();
             this.putimeclearbutton = new System.Windows.Forms.Button();
-            this.puvaluepanel = new System.Windows.Forms.Panel();
+            this.pickupvaluepanel = new System.Windows.Forms.Panel();
             this.pickupointpanel = new System.Windows.Forms.Panel();
             this.pickuppointlabel = new System.Windows.Forms.Label();
             this.pupointpictureBox = new System.Windows.Forms.PictureBox();
@@ -243,7 +243,7 @@
             this.filters.Controls.Add(this.travelpanel);
             this.filters.Controls.Add(this.putimevaluepanel);
             this.filters.Controls.Add(this.putimepanel);
-            this.filters.Controls.Add(this.puvaluepanel);
+            this.filters.Controls.Add(this.pickupvaluepanel);
             this.filters.Controls.Add(this.pickupointpanel);
             this.filters.Controls.Add(this.singleseatersleeperpanel);
             this.filters.Controls.Add(this.seattypepanel);
@@ -836,17 +836,17 @@
             this.putimeclearbutton.UseVisualStyleBackColor = false;
             this.putimeclearbutton.Click += new System.EventHandler(this.PutimeclearbuttonClick);
             // 
-            // puvaluepanel
+            // pickupvaluepanel
             // 
-            this.puvaluepanel.AutoScroll = true;
-            this.puvaluepanel.BackColor = System.Drawing.Color.White;
-            this.puvaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.puvaluepanel.Location = new System.Drawing.Point(0, 440);
-            this.puvaluepanel.Margin = new System.Windows.Forms.Padding(4);
-            this.puvaluepanel.Name = "puvaluepanel";
-            this.puvaluepanel.Size = new System.Drawing.Size(429, 250);
-            this.puvaluepanel.TabIndex = 3;
-            this.puvaluepanel.Visible = false;
+            this.pickupvaluepanel.AutoScroll = true;
+            this.pickupvaluepanel.BackColor = System.Drawing.Color.White;
+            this.pickupvaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pickupvaluepanel.Location = new System.Drawing.Point(0, 440);
+            this.pickupvaluepanel.Margin = new System.Windows.Forms.Padding(4);
+            this.pickupvaluepanel.Name = "pickupvaluepanel";
+            this.pickupvaluepanel.Size = new System.Drawing.Size(429, 250);
+            this.pickupvaluepanel.TabIndex = 3;
+            this.pickupvaluepanel.Visible = false;
             // 
             // pickupointpanel
             // 
@@ -2150,7 +2150,7 @@
         private System.Windows.Forms.Label pickuppointlabel;
         private System.Windows.Forms.Button clearpickuppointbutton;
         private System.Windows.Forms.Panel clearallpanel;
-        private System.Windows.Forms.Panel puvaluepanel;
+        private System.Windows.Forms.Panel pickupvaluepanel;
         private System.Windows.Forms.PictureBox seaterpictureBox;
         private System.Windows.Forms.PictureBox nonacpictureBox;
         private System.Windows.Forms.PictureBox sleeperpictureBox;
