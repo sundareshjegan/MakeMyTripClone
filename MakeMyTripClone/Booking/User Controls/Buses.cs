@@ -446,9 +446,11 @@ namespace MakeMyTripClone
                 Warninglabelcontinue.Text = "Kindly Select Seats, Boarding and Drop Points";
             }
         }
+        bool isClicked;
 
         private void AmentbuttonClick(object sender, EventArgs e)
         {
+            isClicked = true;
             if (!isAmenties)
             {
                 photospanel.Visible = false;
@@ -460,11 +462,9 @@ namespace MakeMyTripClone
                 combinationpanel.BringToFront();
                 Height = 1250;
                 isAmenties = true;
-                ssbutton.Text = "Hide seats";
-                ssbutton.BackColor = white;
-                ssbutton.ForeColor = highlight;
                 isPhotos = false;
                 toppanel.BackColor = colour;
+                SelectClick(sender, EventArgs.Empty);
             }
             else
             {
@@ -473,11 +473,13 @@ namespace MakeMyTripClone
                 amentiespanel.Visible = false;
                 isAmenties = false;
                 Height = 1050;
+                SelectClick(sender, EventArgs.Empty);
             }
         }
 
         private void PtsbuttonClick(object sender, EventArgs e)
         {
+            isClicked = true;
             if (!isPhotos)
             {
                 amentiespanel.Visible = false;
@@ -489,11 +491,9 @@ namespace MakeMyTripClone
                 combinationpanel.BringToFront();
                 isPhotos = true;
                 Height = 1250;
-                ssbutton.Text = "Hide seats";
-                ssbutton.BackColor = white;
-                ssbutton.ForeColor = highlight;
                 isAmenties = false;
                 toppanel.BackColor = colour;
+                SelectClick(sender, EventArgs.Empty);
             }
             else
             {
@@ -502,6 +502,7 @@ namespace MakeMyTripClone
                 photospanel.Visible = false;
                 isPhotos = false;
                 Height = 1050;
+                SelectClick(sender, EventArgs.Empty);
             }
         }
 
@@ -516,39 +517,56 @@ namespace MakeMyTripClone
                 Height = 1250;
                 combinationpanel.Visible = true;
                 toppanel.BackColor = colour;
-                photospanel.Visible = false;
-                amentiespanel.Visible = false;
-                amentbutton.BackColor = white;
-                ptsbutton.BackColor = white;
-                if (previousClickedBus != null && previousClickedBus != this && previousClickedBus.Height == 1250)
+                if (previousClickedBus != null && previousClickedBus != this &&( previousClickedBus.Height == 1250 || previousClickedBus.Height==1050))
                 {
-                    previousClickedBus.SelectClick(sender, e);
                     previousClickedBus.lbpanel.Controls.Clear();
                     previousClickedBus.ubpanel.Controls.Clear();
                     previousClickedBus.seaterpanel.Controls.Clear();
                     previousClickedBus.totalamtlabel.Text = "0";
                     previousClickedBus.noofseatlabel.Text = "";
+                    previousClickedBus.amentbutton.BackColor = white;
+                    previousClickedBus.ptsbutton.BackColor = white;
+                    previousClickedBus.photospanel.Visible = false;
+                    previousClickedBus.amentiespanel.Visible = false;
+                    amentbutton.BackColor = white;
+                    ptsbutton.BackColor = white;
+                    photospanel.Visible = false;
+                    amentiespanel.Visible = false;
                     isFemaleseats.Clear();
                     seatsbooked.Clear();
+                   // isClicked = true;
+                    previousClickedBus.SelectClick(sender, e);
+                    
                 }
             }
             else
             {
-                ssbutton.Text = "Select seats";
-                ssbutton.BackColor = highlight;
-                ssbutton.ForeColor = white;
-                combinationpanel.Visible = false;
-                Height = 200;
-                toppanel.BackColor = white;
-                lbpanel.Controls.Clear();
-                ubpanel.Controls.Clear();
-                seaterpanel.Controls.Clear();
-                totalamtlabel.Text = "0";
-                noofseatlabel.Text = "";
-                isFemaleseats.Clear();
-                seatsbooked.Clear();
+                if(!isClicked)
+                {
+                    ptsbutton.BackColor = white;
+                    amentbutton.BackColor = white;
+                }
+                if ((ptsbutton.BackColor != colour && amentbutton.BackColor != colour) && !isClicked)
+                {
+                    ssbutton.Text = "Select seats";
+                    ssbutton.BackColor = highlight;
+                    ssbutton.ForeColor = white;
+                    combinationpanel.Visible = false;
+                    Height = 200;
+                    toppanel.BackColor = white;
+                    lbpanel.Controls.Clear();
+                    ubpanel.Controls.Clear();
+                    seaterpanel.Controls.Clear();
+                    totalamtlabel.Text = "0";
+                    noofseatlabel.Text = "";
+                    isFemaleseats.Clear();
+                    seatsbooked.Clear();
+                    amentbutton.BackColor = white;
+                    ptsbutton.BackColor = white;
+                }
             }
             previousClickedBus = this;
+            isClicked = false;
         }
     }
 }

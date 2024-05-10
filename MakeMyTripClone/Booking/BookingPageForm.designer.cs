@@ -81,7 +81,6 @@
             this.clearpickuppointbutton = new System.Windows.Forms.Button();
             this.singleseatersleeperpanel = new System.Windows.Forms.Panel();
             this.seatersleepercheckBox = new System.Windows.Forms.CheckBox();
-            this.singleseatslabel = new System.Windows.Forms.Label();
             this.seatersleeperlabel = new System.Windows.Forms.Label();
             this.seattypepanel = new System.Windows.Forms.Panel();
             this.seaterpanel = new System.Windows.Forms.Panel();
@@ -909,7 +908,6 @@
             this.singleseatersleeperpanel.BackColor = System.Drawing.Color.White;
             this.singleseatersleeperpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.singleseatersleeperpanel.Controls.Add(this.seatersleepercheckBox);
-            this.singleseatersleeperpanel.Controls.Add(this.singleseatslabel);
             this.singleseatersleeperpanel.Controls.Add(this.seatersleeperlabel);
             this.singleseatersleeperpanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.singleseatersleeperpanel.Location = new System.Drawing.Point(0, 277);
@@ -929,18 +927,6 @@
             this.seatersleepercheckBox.Text = "seater seats";
             this.seatersleepercheckBox.UseVisualStyleBackColor = true;
             this.seatersleepercheckBox.CheckedChanged += new System.EventHandler(this.SeatersleepercheckBoxCheckedChanged);
-            // 
-            // singleseatslabel
-            // 
-            this.singleseatslabel.AutoSize = true;
-            this.singleseatslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.singleseatslabel.ForeColor = System.Drawing.Color.DimGray;
-            this.singleseatslabel.Location = new System.Drawing.Point(372, 66);
-            this.singleseatslabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.singleseatslabel.Name = "singleseatslabel";
-            this.singleseatslabel.Size = new System.Drawing.Size(46, 24);
-            this.singleseatslabel.TabIndex = 1;
-            this.singleseatslabel.Text = "(31)";
             // 
             // seatersleeperlabel
             // 
@@ -2145,7 +2131,6 @@
         private System.Windows.Forms.Label actoplabel;
         private System.Windows.Forms.Panel singleseatersleeperpanel;
         private System.Windows.Forms.Label seatersleeperlabel;
-        private System.Windows.Forms.Label singleseatslabel;
         private System.Windows.Forms.Panel pickupointpanel;
         private System.Windows.Forms.Label pickuppointlabel;
         private System.Windows.Forms.Button clearpickuppointbutton;

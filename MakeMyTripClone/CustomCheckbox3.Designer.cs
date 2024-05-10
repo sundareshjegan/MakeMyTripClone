@@ -51,6 +51,7 @@
             this.Controls.Add(this.checkBoxs);
             this.Name = "CustomCheckBox3";
             this.Size = new System.Drawing.Size(425, 46);
+            this.Click += new System.EventHandler(this.CustomCheckboxClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 
