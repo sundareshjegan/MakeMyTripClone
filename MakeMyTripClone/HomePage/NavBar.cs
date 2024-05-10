@@ -49,46 +49,14 @@ namespace MakeMyTripClone
         public NavBar()
         {
             InitializeComponent();
-
-            #region Images
-            FlightBlue = Resources.airplane;
-
-            FlightWhite = Resources.flight;
-
-            HotelWhite = Resources.hotels;
-
-            HomeWhite = Resources.homewhite;
-
-
-            HolidaysWhite = Resources.holidayswhite;
-
-            TrainWhite = Resources.trainwhite;
-
-            BusWhite = Resources.buswhite;
-
-            BusBlue = Resources.busblue;
-
-            CabWhite = Resources.cabwhite;
-
-
-            ForexWhite = Resources.moneywhite;
-
-            InsuranceWhite = Resources.insurancewhite;
-            #endregion
-
             panel10.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel10.Width, panel10.Height, 30, 30));
             panel11.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel11.Width, panel11.Height, 30, 30));
             SearchButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SearchButton.Width, SearchButton.Height, 30, 30));
             comboBox1.Text = "IND | ENG | INR";
-
             // DateTime D = DateTime.Now;
-
             // dateTimePicker.MinDate = D.Date ;
-
             toComboBox.Text = "Chennai, Tamil Nadu";
-
             fromcomboBox.Text = "Coimbatore,Tamil Nadu";
-
             DBManager.OnUserLoggedIn += DBManagerOnUserLoggedIn;
             if (DBManager.IsUserLoggedIn)
             {
@@ -104,23 +72,15 @@ namespace MakeMyTripClone
             gp.StartFigure();
             gp.AddLine(new Point(rectangle.X + r, rectangle.Y), new Point(rectangle.Right - r, rectangle.Y));
             gp.AddArc(new Rectangle(rectangle.Right - l, rectangle.Y, l, l), 270F, 90F);
-
             gp.AddLine(new Point(rectangle.Right, rectangle.Y + r), new Point(rectangle.Right, rectangle.Bottom - r));
             gp.AddArc(new Rectangle(rectangle.Right - l, rectangle.Bottom - l, l, l), 0F, 90F);
-
             gp.AddLine(new Point(rectangle.Right - r, rectangle.Bottom), new Point(rectangle.X + r, rectangle.Bottom));
             gp.AddArc(new Rectangle(rectangle.X, rectangle.Bottom - l, l, l), 90F, 90F);
-
             gp.AddLine(new Point(rectangle.X, rectangle.Bottom - r), new Point(rectangle.X, rectangle.Y + r));
             gp.AddArc(new Rectangle(rectangle.X, rectangle.Y, l, l), 180F, 90F);
             gp.CloseAllFigures();
             return gp;
-
         }
-
-        private Image FlightBlue, FlightWhite, HotelWhite, HomeWhite, HolidaysWhite, TrainWhite, BusWhite, BusBlue, CabWhite, ForexWhite, InsuranceWhite;
-
-        private string ClickedTitle = "";
 
         private void DBManagerOnUserLoggedIn(object sender, bool isLoggedIn)
         {
@@ -244,9 +204,11 @@ namespace MakeMyTripClone
         private void BusOnClick(object sender, EventArgs e)
         {
             panel11.Visible = true;
-
+            BusButton.BackgroundImage = Resources.busblue;
             SearchButton.Visible = true;
         }
+
+
 
     }
 }
