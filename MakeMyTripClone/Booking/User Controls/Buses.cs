@@ -25,6 +25,8 @@ namespace MakeMyTripClone
         private string pickuplocation, droplocation, bustype, duration, starttime, endtime, acnonac, seat, busname;
         private List<object> boarding = new List<object>();
         private List<object> destination = new List<object>();
+        private List<string> board = new List<string>();
+        private List<string> dest = new List<string>();
         private int rid, bid;
         private Address address, prev = null, dropvalue = null, prev2 = null;
         private string[] boardingpoint, droppoint, ruppees;
@@ -59,12 +61,12 @@ namespace MakeMyTripClone
 
         public List<string> Boarding
         {
-            get { return boarding.Select(obj => obj.ToString()).ToList(); }
+            get { return board; }
         }
 
         public List<string> Droping
         {
-            get { return destination.Select(obj => obj.ToString()).ToList(); }
+            get { return dest; }
         }
 
         public string EndTime
@@ -103,6 +105,7 @@ namespace MakeMyTripClone
                 address = new Address();
                 string[] ss = n.ToString().Split('&');
                 address.AddAddress(ss[0], ss[1], ss[2]);
+                dest.Add(ss[1]);
                 droppointpanel.Controls.Add(address);
                 address.Dock = DockStyle.Top;
                 address.drops += Addressdrops;
@@ -112,6 +115,7 @@ namespace MakeMyTripClone
                 address = new Address();
                 string[] ss = n.ToString().Split('&');
                 address.AddAddress(ss[0], ss[1], ss[2]);
+                board.Add(ss[1]);
                 pickuppointpanel.Controls.Add(address);
                 address.Dock = DockStyle.Top;
                 address.drops2 += Addressdropss;

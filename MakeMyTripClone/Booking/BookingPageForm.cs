@@ -359,7 +359,7 @@ namespace MakeMyTripClone
                     {
                         if (bus.BusType == isAc || bus.SeatType == seatType) bus.Visible = true;
                         else bus.Visible = false;
-                    }
+                    }                    
                     else Reset();
                 }
             }
@@ -367,7 +367,21 @@ namespace MakeMyTripClone
             {
                 foreach (var bus in buses)
                 {
-                    if (bus.BusType == isAc && bus.SeatType == seatType) bus.Visible = true;
+                    if (isAc != null && seatType != null)
+                    {
+                        if (bus.BusType == isAc && bus.SeatType == seatType) bus.Visible = true;
+                        else bus.Visible = false;
+                    }
+                    else if (isAc != null || seatType != null)
+                    {
+                        if (bus.BusType == isAc || bus.SeatType == seatType) bus.Visible = true;
+                        else bus.Visible = false;
+                    }
+                    else if (pickPoint != null)
+                    {
+                        if (bus.Boarding.Contains(pickPoint)) bus.Visible = true;
+                        else bus.Visible = false;
+                    }
                 }
             }
             else
@@ -378,7 +392,21 @@ namespace MakeMyTripClone
             {
                 foreach (var bus in buses)
                 {
-                    if (bus.BusType == isAc && bus.SeatType == seatType) bus.Visible = true;
+                    if (isAc != null && seatType != null)
+                    {
+                        if (bus.BusType == isAc && bus.SeatType == seatType) bus.Visible = true;
+                        else bus.Visible = false;
+                    }
+                    else if (isAc != null || seatType != null)
+                    {
+                        if (bus.BusType == isAc || bus.SeatType == seatType) bus.Visible = true;
+                        else bus.Visible = false;
+                    }
+                    else if (dropPoint != null)
+                    {
+                        if (bus.Droping.Contains(dropPoint)) bus.Visible = true;
+                        else bus.Visible = false;
+                    }
                 }
             }
             else
@@ -519,7 +547,6 @@ namespace MakeMyTripClone
                 travelclrbutton.ForeColor = gray;
                 dpclrbutton.ForeColor = gray;
                 ddtimeclrbutton.ForeColor = gray;
-                seatersleepercheckBox.Checked = false;
                 clearallbutton.ForeColor = gray;
                 foreach (CustomCheckBox1 c in pickupvaluepanel.Controls)
                 {
@@ -543,7 +570,7 @@ namespace MakeMyTripClone
             PutimeclearbuttonClick(null, EventArgs.Empty);
             DdtimeclrbuttonClick(null, EventArgs.Empty);
             dpclrbutton.ForeColor = gray;
-            foreach (CustomCheckBox1 c in dpvaluepanel.Controls)
+            foreach (CustomCheckBox3 c in dpvaluepanel.Controls)
             {
                 if (c.BackColor == colour)
                 {
@@ -582,7 +609,7 @@ namespace MakeMyTripClone
             PutimeclearbuttonClick(null, EventArgs.Empty);
             DdtimeclrbuttonClick(null, EventArgs.Empty);
             travelclrbutton.ForeColor = gray;
-            foreach (CustomCheckBox1 c in travelvaluepanel.Controls)
+            foreach (CustomCheckBox2 c in travelvaluepanel.Controls)
             {
                 if (c.BackColor == colour)
                 {
@@ -625,25 +652,6 @@ namespace MakeMyTripClone
             CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
-        }
-
-        private void SeatersleepercheckBoxCheckedChanged(object sender, EventArgs e)
-        {
-            CloseSearch();
-            if (seatersleepercheckBox.Checked)
-            {
-                seatType = "ST";
-                no++;
-            }
-            else
-            {
-                seatType = null;
-                no--;
-                CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
-            }
-            if (no <= 0) clearallbutton.ForeColor = gray;
-            else clearallbutton.ForeColor = highlight;
-            Filter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
         }
 
         private void FstbuttonClick(object sender, EventArgs e)
@@ -722,14 +730,8 @@ namespace MakeMyTripClone
             {
                 if (bus.Visible == true) count++;
             }
-            if (count == 0)
-            {
-                nobuspanel.Visible = true;
-            }
-            else
-            {
-                nobuspanel.Visible = false;
-            }
+            if (count == 0) nobuspanel.Visible = true;
+            else nobuspanel.Visible = false;
             return count;
         }
 
@@ -863,7 +865,6 @@ namespace MakeMyTripClone
                         (checkBoxes as CustomCheckBox3).checks3 += BookingPageFormchecks3; ;
                     }
                 }
-
                 bb = true;
             }
 

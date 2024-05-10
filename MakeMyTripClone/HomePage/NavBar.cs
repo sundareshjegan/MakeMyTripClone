@@ -243,54 +243,9 @@ namespace MakeMyTripClone
 
         private void BusOnClick(object sender, EventArgs e)
         {
-            WhiteColourAll();
-
             panel11.Visible = true;
 
             SearchButton.Visible = true;
-
-            BlueColourChange(BusLabel, BusButton, BusBlue, BusUnderLine);
-        }
-
-
-        // Colour Change
-
-        private void BlueColourChange(Label label, Button Button, Image Image, Label Underline)
-        {
-            label.ForeColor = Color.DodgerBlue;
-
-            Button.BackgroundImage = Image;
-
-
-            Font boldFont = new Font("Segoe UI", HotelLabel.Font.Size, FontStyle.Bold);
-
-            label.Font = boldFont;
-
-            Underline.Visible = true;
-
-            ClickedTitle = label.Text;
-        }
-
-        private void WhiteColourChange(Label label, Button Button, Image Image, Label Underline)
-        {
-            Font Regular = new Font("Segoe UI", HotelLabel.Font.Size);
-
-            label.ForeColor = Color.Black;
-
-            Button.BackgroundImage = Image;
-
-            label.Font = Regular;
-
-            Underline.Visible = false;
-
-            panel11.Visible = false;
-
-            SearchButton.Visible = false;
-        }
-
-        private void WhiteColourAll()
-        {
-            WhiteColourChange(BusLabel, BusButton, BusWhite, BusUnderLine);
         }
 
     }
