@@ -8,8 +8,6 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MakeMyTripClone
@@ -33,12 +31,12 @@ namespace MakeMyTripClone
         {
             DBManager.OnUserLoggedIn -= DBManagerOnUserLoggedIn;
             PaymentForm.OnPaymentFormClosed -= OnPaymentCompletedAndFormClosed;
-            //busesList.Clear();
-            //droppoints.Clear();
-            //boardingpoints.Clear();
-            //traveloperatorpoints.Clear();
-            //buses.Clear();
-            //filterlist.Clear();
+            busesList.Clear();
+            droppoints.Clear();
+            boardingpoints.Clear();
+            traveloperatorpoints.Clear();
+            buses.Clear();
+            filterlist.Clear();
             Dispose();
         }
 

@@ -22,8 +22,7 @@ namespace MakeMyTripClone
         private int previousX = 0;
         private int previousY = 0;
         private char selectedGender;
-
-        LoaderForm loader = new LoaderForm();
+        
 
         #region DLL to Create rounded Regions
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -38,13 +37,12 @@ namespace MakeMyTripClone
         );
         #endregion
 
-        #region Label Events
-        private void OnDontHaveAccountLabelClick(object sender, EventArgs e)
+        #region Label Events - To change tab pages
+        private void OnDontHaveAccountLabelClicked(object sender, EventArgs e)
         {
             tabControl.SelectedTab = registerTabPage;
         }
-
-        private void alreadyHaveAccountLabel_Click(object sender, EventArgs e)
+        private void OnAlreadyHaveAccountLabelClicked(object sender, EventArgs e)
         {
             tabControl.SelectedTab = loginTabPage;
         }
@@ -65,7 +63,7 @@ namespace MakeMyTripClone
         }
 
         #region Button Events
-
+        //to toggle view and hide passwords
         private void OnPasswordViewHideBtnClicked(object sender, EventArgs e)
         {
             passwordTB.UseSystemPasswordChar = !passwordTB.UseSystemPasswordChar;
@@ -86,12 +84,14 @@ namespace MakeMyTripClone
             regConPwdViewHideBtn.BackgroundImage = regConPasswordTB.UseSystemPasswordChar ?
                                             Resources.viewPassword : Resources.hidePassword;
         }
+
         private void OnForgotPwdViewHideBtnClicked(object sender, EventArgs e)
         {
             newPasswordTB.UseSystemPasswordChar = !newPasswordTB.UseSystemPasswordChar;
             ForgotPwdViewHideBtn.BackgroundImage = newPasswordTB.UseSystemPasswordChar ?
                                             Resources.viewPassword : Resources.hidePassword;
         }
+
         private void OnSubmitBtnMouseHover(object sender, EventArgs e)
         {
             submitBtn.BackColor = Color.DodgerBlue;
@@ -143,8 +143,6 @@ namespace MakeMyTripClone
 
         private void OnRegisterBtnClicked(object sender, EventArgs e)
         {           
-            //loader.OnLoaderOpened += Loader_OnLoaderOpened;
-
             if (DBManager.IsUserExisted(regEmailTB.Text))
             {
                 regEmailWarningLabel.Text = "Email-Id already Exists";
@@ -156,10 +154,8 @@ namespace MakeMyTripClone
 
                 ConfirmForm confirmationForm = new ConfirmForm();
                 confirmationForm.SendEmail(regEmailTB.Text, regNameTB.Text);
-
-                loader.Hide();
-
                 confirmationForm.ShowDialog();
+
                 if (confirmationForm.IsVerified)
                 {
                     CustomerDetails customer = new CustomerDetails()
@@ -204,30 +200,6 @@ namespace MakeMyTripClone
             new SuccessFailureForm("success", "Password Updated Successfully").ShowDialog();
             tabControl.SelectedTab = loginTabPage;
         }
-        private void Loader_OnLoaderOpened(object sender, EventArgs e)
-        {
-            //loader.TopMost = true;
-            //loader.Show(this);
-
-            ConfirmForm confirmationForm = new ConfirmForm();
-            confirmationForm.SendEmail(regEmailTB.Text, regNameTB.Text);
-
-            //loader.Hide();
-
-            confirmationForm.ShowDialog();
-            if (confirmationForm.IsVerified)
-            {
-                CustomerDetails customer = new CustomerDetails()
-                {
-                    Name = regNameTB.Text,
-                    Email = regEmailTB.Text,
-                    Phone = long.Parse(regMobileTB.Text),
-                    Password = regPasswordTB.Text,
-                    Gender = selectedGender
-                };
-                BooleanMsg result = DBManager.AddUser(customer);
-            }
-        }
 
         #endregion
 
@@ -244,6 +216,7 @@ namespace MakeMyTripClone
         {
             regNameWarningLabel.Text = regNameTB.Text == "" ? "Name is required..!" : "";
         }
+
         private void OnRegEmailTBTextChanged(object sender, EventArgs e)
         {
             regEmailWarningLabel.Text = regEmailTB.Text == "" ? "Email is required..!" : "";
@@ -262,6 +235,7 @@ namespace MakeMyTripClone
             regMobileWarningLabel.Text = regMobileTB.Text == "" ? "Mobile Number is required..!" : "";
             regMobileValidPB.Image = regMobileTB.Text.Length == 10 ? Resources.validTick : Resources.wrong;
         }
+
         private void OnRegMobileTBKeyPressed(object sender, KeyPressEventArgs e)
         {
             e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != '\b';
@@ -295,6 +269,7 @@ namespace MakeMyTripClone
                     break;
             }
         }
+
         private void OnRegConPasswordTBTextChanged(object sender, EventArgs e)
         {
             if(regPasswordTB.Text != regConPasswordTB.Text && regPasswordTB.Text!="")
@@ -306,6 +281,7 @@ namespace MakeMyTripClone
                 passwordCompareLabel.Text = "";
             }
         }
+
         private void OnEmailTBClicked(object sender, EventArgs e)
         {
             submitBtn.Location = new Point(140, 3);
@@ -323,6 +299,7 @@ namespace MakeMyTripClone
         {
             return Regex.IsMatch(email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
         }
+
         public enum PasswordStrength
         {
             VeryWeak,
@@ -330,6 +307,7 @@ namespace MakeMyTripClone
             Medium,
             Strong
         }
+
         private PasswordStrength GetPasswordStrength(string password)
         {
             int score = 0;
@@ -371,16 +349,11 @@ namespace MakeMyTripClone
 
         private void CreateCurves()
         {
+            //to create rounded edge form
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
-            //submitBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, submitBtn.Width, submitBtn.Height, 15, 15));
-            //registerBtnPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, registerBtnPanel.Width, registerBtnPanel.Height, 20, 20));
-            //carouselPB.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, carouselPB.Width, carouselPB.Height, 30, 30));
-            //tabControl.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tabControl.Width, tabControl.Height, 40, 40));
-
-            //typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty, 
-                //null, buttonsPanel, new object[] { true });
         }
 
+        //function to validate the inputs in the new registration page
         private bool ValidateInputs()
         {
             if (regNameTB.Text == "" || string.IsNullOrWhiteSpace(regNameTB.Text))
@@ -425,9 +398,6 @@ namespace MakeMyTripClone
             }
             return true;
         }
-
-
-
         #endregion
     }
 }
