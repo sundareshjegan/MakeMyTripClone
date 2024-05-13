@@ -56,7 +56,7 @@ namespace MakeMyTripClone
             // DateTime D = DateTime.Now;
             // dateTimePicker.MinDate = D.Date ;
             toComboBox.Text = "Chennai, Tamil Nadu";
-            fromcomboBox.Text = "Coimbatore,Tamil Nadu";
+            fromcomboBox.Text = "Coimbatore, Tamil Nadu";
             DBManager.OnUserLoggedIn += DBManagerOnUserLoggedIn;
             if (DBManager.IsUserLoggedIn)
             {
@@ -96,7 +96,6 @@ namespace MakeMyTripClone
         private void ToComboBoxtextChange(object sender, EventArgs e)
         {
             label11.Text = toComboBox.Text;
-
             if (label11.Text == label8.Text)
             {
                 warningLabel.Visible = true;

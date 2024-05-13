@@ -112,6 +112,7 @@
             this.nobuslabel = new System.Windows.Forms.Label();
             this.noresultpictureBox = new System.Windows.Forms.PictureBox();
             this.toppage = new System.Windows.Forms.Panel();
+            this.logInTab1 = new MakeMyTripClone.LogInTab();
             this.makemytriplogo = new System.Windows.Forms.PictureBox();
             this.imagespanel = new System.Windows.Forms.Panel();
             this.forexpanel = new System.Windows.Forms.Panel();
@@ -162,7 +163,6 @@
             this.frompanel = new System.Windows.Forms.Panel();
             this.fromcomboBox = new System.Windows.Forms.ComboBox();
             this.fromlabel = new System.Windows.Forms.Label();
-            this.logInTab1 = new MakeMyTripClone.LogInTab();
             this.filters.SuspendLayout();
             this.ddtimevaluepanel.SuspendLayout();
             this.ddngtpanel.SuspendLayout();
@@ -1328,6 +1328,17 @@
             this.toppage.Size = new System.Drawing.Size(1831, 73);
             this.toppage.TabIndex = 4;
             // 
+            // logInTab1
+            // 
+            this.logInTab1.IsLoggedIn = false;
+            this.logInTab1.Location = new System.Drawing.Point(1530, 13);
+            this.logInTab1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.logInTab1.Name = "logInTab1";
+            this.logInTab1.Size = new System.Drawing.Size(256, 49);
+            this.logInTab1.TabIndex = 21;
+            this.logInTab1.UserEmail = null;
+            this.logInTab1.UserName = null;
+            // 
             // makemytriplogo
             // 
             this.makemytriplogo.Image = global::MakeMyTripClone.Properties.Resources.mmtlogo;
@@ -1948,17 +1959,6 @@
             this.fromlabel.Size = new System.Drawing.Size(57, 25);
             this.fromlabel.TabIndex = 1;
             this.fromlabel.Text = "From";
-            // 
-            // logInTab1
-            // 
-            this.logInTab1.IsLoggedIn = false;
-            this.logInTab1.Location = new System.Drawing.Point(1530, 13);
-            this.logInTab1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.logInTab1.Name = "logInTab1";
-            this.logInTab1.Size = new System.Drawing.Size(256, 49);
-            this.logInTab1.TabIndex = 21;
-            this.logInTab1.UserEmail = null;
-            this.logInTab1.UserName = null;
             // 
             // BookingPageForm
             // 
