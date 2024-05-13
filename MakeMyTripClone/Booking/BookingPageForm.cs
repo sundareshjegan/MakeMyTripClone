@@ -44,10 +44,10 @@ namespace MakeMyTripClone
         private bool isTime, isDtime, isDropup, isPick, isDrop, isTravel, isPickup, isprevcheck, istravelcheck, isdpcheck;
         private int no = 0;
         private Buses bus;
-        public static List<RouteDetails> busesList = new List<RouteDetails>();
-        public static List<object> droppoints = new List<object>();
-        public static List<object> boardingpoints = new List<object>();
-        public static List<string> traveloperatorpoints = new List<string>();
+        private  List<RouteDetails> busesList = new List<RouteDetails>();
+        private  List<object> droppoints = new List<object>();
+        private static List<object> boardingpoints = new List<object>();
+        private static List<string> traveloperatorpoints = new List<string>();
         private List<Buses> buses = new List<Buses>();
         private List<Buses> filterlist = new List<Buses>();
         private string isAc = null, seattype = null, pickTime = null, dropTime = null, pickPoint = null, travelpoint = null, dropPoint = null;
@@ -112,7 +112,6 @@ namespace MakeMyTripClone
                     tocomboBox.Items.Add(items);
                 }
             }
-
             boardingpoints = DBManager.GetBoardingPoints(boarding, destination, date);
             droppoints = DBManager.GetDropPoints(boarding, destination, date);
             traveloperatorpoints = DBManager.GetTravel(boarding, destination, date);
@@ -128,6 +127,7 @@ namespace MakeMyTripClone
                 bus = new Buses();
                 adducpanel.Controls.Add(bus);
                 bus.Dock = DockStyle.Top;
+                bus.BusDetails = busesList;
                 buses.Add(bus);
                 bus.Setdata(i, fromcomboBox.Text, tocomboBox.Text, departdateTimePicker.Value.ToString("yyyy-MM-dd"));
             }
