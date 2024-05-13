@@ -14,7 +14,7 @@ namespace MakeMyTripClone
 {
     static class DBManager
     {
-        private static readonly string server = "192.168.3.153";
+        private static readonly string server = "192.168.3.63";
         private static readonly string database = "makemytrip";
         private static readonly string user = "team7";
         private static readonly string password = "team7team7";

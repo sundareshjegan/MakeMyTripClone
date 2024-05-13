@@ -110,14 +110,12 @@
             this.dprbutton = new System.Windows.Forms.Button();
             this.busesfoundlabel = new System.Windows.Forms.Label();
             this.adducpanel = new System.Windows.Forms.Panel();
-            this.endofbuslabel = new System.Windows.Forms.Label();
             this.nobuspanel = new System.Windows.Forms.Panel();
             this.nofindlabel = new System.Windows.Forms.Label();
             this.clearalllbutton = new System.Windows.Forms.Button();
             this.nobuslabel = new System.Windows.Forms.Label();
             this.noresultpictureBox = new System.Windows.Forms.PictureBox();
             this.toppage = new System.Windows.Forms.Panel();
-            this.logInTab1 = new MakeMyTripClone.LogInTab();
             this.makemytriplogo = new System.Windows.Forms.PictureBox();
             this.imagespanel = new System.Windows.Forms.Panel();
             this.forexpanel = new System.Windows.Forms.Panel();
@@ -168,6 +166,7 @@
             this.frompanel = new System.Windows.Forms.Panel();
             this.fromcomboBox = new System.Windows.Forms.ComboBox();
             this.fromlabel = new System.Windows.Forms.Label();
+            this.logInTab1 = new MakeMyTripClone.LogInTab();
             this.filters.SuspendLayout();
             this.ddtimevaluepanel.SuspendLayout();
             this.ddngtpanel.SuspendLayout();
@@ -1301,25 +1300,12 @@
             this.adducpanel.AutoScroll = true;
             this.adducpanel.BackColor = System.Drawing.Color.Gainsboro;
             this.adducpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.adducpanel.Controls.Add(this.endofbuslabel);
             this.adducpanel.Controls.Add(this.nobuspanel);
             this.adducpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.adducpanel.Location = new System.Drawing.Point(446, 199);
             this.adducpanel.Name = "adducpanel";
             this.adducpanel.Size = new System.Drawing.Size(1385, 619);
             this.adducpanel.TabIndex = 3;
-            // 
-            // endofbuslabel
-            // 
-            this.endofbuslabel.AutoSize = true;
-            this.endofbuslabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endofbuslabel.Location = new System.Drawing.Point(16, 442);
-            this.endofbuslabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.endofbuslabel.Name = "endofbuslabel";
-            this.endofbuslabel.Size = new System.Drawing.Size(1475, 74);
-            this.endofbuslabel.TabIndex = 1;
-            this.endofbuslabel.Text = "--------------------------------------------------------------End of buses-------" +
-    "-------------------------------------------------\r\n\r\n";
             // 
             // nobuspanel
             // 
@@ -1397,17 +1383,6 @@
             this.toppage.Name = "toppage";
             this.toppage.Size = new System.Drawing.Size(1831, 73);
             this.toppage.TabIndex = 4;
-            // 
-            // logInTab1
-            // 
-            this.logInTab1.IsLoggedIn = false;
-            this.logInTab1.Location = new System.Drawing.Point(1530, 13);
-            this.logInTab1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.logInTab1.Name = "logInTab1";
-            this.logInTab1.Size = new System.Drawing.Size(256, 49);
-            this.logInTab1.TabIndex = 21;
-            this.logInTab1.UserEmail = null;
-            this.logInTab1.UserName = null;
             // 
             // makemytriplogo
             // 
@@ -2030,6 +2005,17 @@
             this.fromlabel.TabIndex = 1;
             this.fromlabel.Text = "From";
             // 
+            // logInTab1
+            // 
+            this.logInTab1.IsLoggedIn = false;
+            this.logInTab1.Location = new System.Drawing.Point(1530, 13);
+            this.logInTab1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.logInTab1.Name = "logInTab1";
+            this.logInTab1.Size = new System.Drawing.Size(256, 49);
+            this.logInTab1.TabIndex = 21;
+            this.logInTab1.UserEmail = null;
+            this.logInTab1.UserName = null;
+            // 
             // BookingPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -2113,7 +2099,6 @@
             this.tabpanel.ResumeLayout(false);
             this.tabpanel.PerformLayout();
             this.adducpanel.ResumeLayout(false);
-            this.adducpanel.PerformLayout();
             this.nobuspanel.ResumeLayout(false);
             this.nobuspanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.noresultpictureBox)).EndInit();
@@ -2237,7 +2222,6 @@
         private System.Windows.Forms.PictureBox noresultpictureBox;
         private System.Windows.Forms.Label nofindlabel;
         private System.Windows.Forms.Button clearalllbutton;
-        private System.Windows.Forms.Label endofbuslabel;
         private System.Windows.Forms.Panel toppage;
         private System.Windows.Forms.Panel imagespanel;
         private System.Windows.Forms.Panel forexpanel;

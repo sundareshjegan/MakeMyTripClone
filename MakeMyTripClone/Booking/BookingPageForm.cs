@@ -105,8 +105,6 @@ namespace MakeMyTripClone
             traveloperatorpoints = DBManager.GetTravel(boarding, destination, date);
             BusButton.BackgroundImage = Resources.busblue;
             AddDatas();
-            endofbuslabel.Dock = DockStyle.Top;
-            endofbuslabel.BringToFront();
         }
 
         private void AddDatas()
@@ -655,17 +653,22 @@ namespace MakeMyTripClone
 
         private void FstbuttonClick(object sender, EventArgs e)
         {
-            fstbutton.BackColor = colour;
-            arbutton.BackColor = white;
-            dprbutton.BackColor = white;
-            var fastest = buses.OrderBy(item => TimeSpan.Parse(item.Duration)).ToList();
-            foreach (var bus in fastest)
+            if (fstbutton.BackColor == colour)
             {
-                bus.Dock = DockStyle.Top;
-                bus.BringToFront();
+                fstbutton.BackColor = white;
             }
-            endofbuslabel.Dock = DockStyle.Top;
-            endofbuslabel.BringToFront();
+            else
+            {
+                fstbutton.BackColor = colour;
+                arbutton.BackColor = white;
+                dprbutton.BackColor = white;
+                var fastest = buses.OrderBy(item => TimeSpan.Parse(item.Duration)).ToList();
+                foreach (var bus in fastest)
+                {
+                    bus.Dock = DockStyle.Top;
+                    bus.BringToFront();
+                }
+            }
         }
 
         private void LoginButtonClick(object sender, EventArgs e)
@@ -697,8 +700,6 @@ namespace MakeMyTripClone
                 bus.Dock = DockStyle.Top;
                 bus.BringToFront();
             }
-            endofbuslabel.Dock = DockStyle.Top;
-            endofbuslabel.BringToFront();
         }
 
         private void ComboBoxTextChanged(object sender, EventArgs e)
@@ -717,14 +718,6 @@ namespace MakeMyTripClone
             foreach (var bus in buses)
             {
                 if (bus.Visible == true) count++;
-            }
-            if (count == 0)
-            {
-                endofbuslabel.Visible = false;
-            }
-            else
-            {
-                endofbuslabel.Visible = true;
             }
             return count;
         }
@@ -745,8 +738,6 @@ namespace MakeMyTripClone
                 bus.Dock = DockStyle.Top;
                 bus.BringToFront();
             }
-            endofbuslabel.Dock = DockStyle.Top;
-            endofbuslabel.BringToFront();
         }
 
         private void TPictureBoxClick(object sender, EventArgs e)
