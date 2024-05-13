@@ -289,7 +289,7 @@
             this.dontHaveAccountLabel.Size = new System.Drawing.Size(243, 17);
             this.dontHaveAccountLabel.TabIndex = 8;
             this.dontHaveAccountLabel.Text = "Don\'t have an account ? Register";
-            this.dontHaveAccountLabel.Click += new System.EventHandler(this.OnDontHaveAccountLabelClick);
+            this.dontHaveAccountLabel.Click += new System.EventHandler(this.OnDontHaveAccountLabelClicked);
             // 
             // pictureBox2
             // 
@@ -430,7 +430,7 @@
             this.alreadyHaveAccountLabel.Size = new System.Drawing.Size(193, 17);
             this.alreadyHaveAccountLabel.TabIndex = 9;
             this.alreadyHaveAccountLabel.Text = "Already have an account ?";
-            this.alreadyHaveAccountLabel.Click += new System.EventHandler(this.alreadyHaveAccountLabel_Click);
+            this.alreadyHaveAccountLabel.Click += new System.EventHandler(this.OnAlreadyHaveAccountLabelClicked);
             // 
             // registerBtnPanel
             // 

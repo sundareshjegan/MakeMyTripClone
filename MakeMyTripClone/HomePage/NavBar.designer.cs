@@ -79,7 +79,7 @@
             this.warningLabel = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label16 = new System.Windows.Forms.Label();
+            this.daylabel = new System.Windows.Forms.Label();
             this.monthyearLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -741,7 +741,7 @@
             // panel14
             // 
             this.panel14.Controls.Add(this.dateTimePicker);
-            this.panel14.Controls.Add(this.label16);
+            this.panel14.Controls.Add(this.daylabel);
             this.panel14.Controls.Add(this.monthyearLabel);
             this.panel14.Controls.Add(this.dateLabel);
             this.panel14.Controls.Add(this.label13);
@@ -767,17 +767,17 @@
             this.dateTimePicker.Value = new System.DateTime(2024, 3, 22, 0, 0, 0, 0);
             this.dateTimePicker.ValueChanged += new System.EventHandler(this.DateTimeValueChange);
             // 
-            // label16
+            // daylabel
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.DimGray;
-            this.label16.Location = new System.Drawing.Point(19, 69);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(43, 17);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "Friday";
-            this.label16.Click += new System.EventHandler(this.DateClick);
+            this.daylabel.AutoSize = true;
+            this.daylabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.daylabel.ForeColor = System.Drawing.Color.DimGray;
+            this.daylabel.Location = new System.Drawing.Point(19, 69);
+            this.daylabel.Name = "daylabel";
+            this.daylabel.Size = new System.Drawing.Size(43, 17);
+            this.daylabel.TabIndex = 6;
+            this.daylabel.Text = "Friday";
+            this.daylabel.Click += new System.EventHandler(this.DateClick);
             // 
             // monthyearLabel
             // 
@@ -1149,7 +1149,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label daylabel;
         private System.Windows.Forms.Label monthyearLabel;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label label13;

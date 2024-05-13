@@ -74,15 +74,11 @@
             this.putimepictureBox = new System.Windows.Forms.PictureBox();
             this.putimelabel = new System.Windows.Forms.Label();
             this.putimeclearbutton = new System.Windows.Forms.Button();
-            this.puvaluepanel = new System.Windows.Forms.Panel();
+            this.pickupvaluepanel = new System.Windows.Forms.Panel();
             this.pickupointpanel = new System.Windows.Forms.Panel();
             this.pickuppointlabel = new System.Windows.Forms.Label();
             this.pupointpictureBox = new System.Windows.Forms.PictureBox();
             this.clearpickuppointbutton = new System.Windows.Forms.Button();
-            this.singleseatersleeperpanel = new System.Windows.Forms.Panel();
-            this.seatersleepercheckBox = new System.Windows.Forms.CheckBox();
-            this.singleseatslabel = new System.Windows.Forms.Label();
-            this.seatersleeperlabel = new System.Windows.Forms.Label();
             this.seattypepanel = new System.Windows.Forms.Panel();
             this.seaterpanel = new System.Windows.Forms.Panel();
             this.seaterlabel = new System.Windows.Forms.Label();
@@ -196,7 +192,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.putimepictureBox)).BeginInit();
             this.pickupointpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pupointpictureBox)).BeginInit();
-            this.singleseatersleeperpanel.SuspendLayout();
             this.seattypepanel.SuspendLayout();
             this.seaterpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seaterpictureBox)).BeginInit();
@@ -243,9 +238,8 @@
             this.filters.Controls.Add(this.travelpanel);
             this.filters.Controls.Add(this.putimevaluepanel);
             this.filters.Controls.Add(this.putimepanel);
-            this.filters.Controls.Add(this.puvaluepanel);
+            this.filters.Controls.Add(this.pickupvaluepanel);
             this.filters.Controls.Add(this.pickupointpanel);
-            this.filters.Controls.Add(this.singleseatersleeperpanel);
             this.filters.Controls.Add(this.seattypepanel);
             this.filters.Controls.Add(this.acfilterpanels);
             this.filters.Controls.Add(this.clearallpanel);
@@ -265,7 +259,7 @@
             this.ddtimevaluepanel.Controls.Add(this.ddsspanel);
             this.ddtimevaluepanel.Controls.Add(this.ddevepanel);
             this.ddtimevaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ddtimevaluepanel.Location = new System.Drawing.Point(0, 1717);
+            this.ddtimevaluepanel.Location = new System.Drawing.Point(0, 1610);
             this.ddtimevaluepanel.Margin = new System.Windows.Forms.Padding(4);
             this.ddtimevaluepanel.Name = "ddtimevaluepanel";
             this.ddtimevaluepanel.Size = new System.Drawing.Size(429, 250);
@@ -432,7 +426,7 @@
             this.ddtimepanel.Controls.Add(this.ddtimelabel);
             this.ddtimepanel.Controls.Add(this.ddtimeclrbutton);
             this.ddtimepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ddtimepanel.Location = new System.Drawing.Point(0, 1643);
+            this.ddtimepanel.Location = new System.Drawing.Point(0, 1536);
             this.ddtimepanel.Margin = new System.Windows.Forms.Padding(4);
             this.ddtimepanel.Name = "ddtimepanel";
             this.ddtimepanel.Size = new System.Drawing.Size(429, 74);
@@ -483,7 +477,7 @@
             // 
             this.dpvaluepanel.BackColor = System.Drawing.Color.White;
             this.dpvaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dpvaluepanel.Location = new System.Drawing.Point(0, 1393);
+            this.dpvaluepanel.Location = new System.Drawing.Point(0, 1286);
             this.dpvaluepanel.Margin = new System.Windows.Forms.Padding(4);
             this.dpvaluepanel.Name = "dpvaluepanel";
             this.dpvaluepanel.Size = new System.Drawing.Size(429, 250);
@@ -498,7 +492,7 @@
             this.dppanel.Controls.Add(this.dplabel);
             this.dppanel.Controls.Add(this.dpclrbutton);
             this.dppanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dppanel.Location = new System.Drawing.Point(0, 1326);
+            this.dppanel.Location = new System.Drawing.Point(0, 1219);
             this.dppanel.Margin = new System.Windows.Forms.Padding(4);
             this.dppanel.Name = "dppanel";
             this.dppanel.Size = new System.Drawing.Size(429, 67);
@@ -550,7 +544,7 @@
             this.travelvaluepanel.AutoScroll = true;
             this.travelvaluepanel.BackColor = System.Drawing.Color.White;
             this.travelvaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.travelvaluepanel.Location = new System.Drawing.Point(0, 1076);
+            this.travelvaluepanel.Location = new System.Drawing.Point(0, 969);
             this.travelvaluepanel.Margin = new System.Windows.Forms.Padding(4);
             this.travelvaluepanel.Name = "travelvaluepanel";
             this.travelvaluepanel.Size = new System.Drawing.Size(429, 250);
@@ -565,7 +559,7 @@
             this.travelpanel.Controls.Add(this.travellabel);
             this.travelpanel.Controls.Add(this.travelclrbutton);
             this.travelpanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.travelpanel.Location = new System.Drawing.Point(0, 1014);
+            this.travelpanel.Location = new System.Drawing.Point(0, 907);
             this.travelpanel.Margin = new System.Windows.Forms.Padding(4);
             this.travelpanel.Name = "travelpanel";
             this.travelpanel.Size = new System.Drawing.Size(429, 62);
@@ -621,7 +615,7 @@
             this.putimevaluepanel.Controls.Add(this.putimeevepanel);
             this.putimevaluepanel.Controls.Add(this.putimesspanel);
             this.putimevaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.putimevaluepanel.Location = new System.Drawing.Point(0, 764);
+            this.putimevaluepanel.Location = new System.Drawing.Point(0, 657);
             this.putimevaluepanel.Margin = new System.Windows.Forms.Padding(4);
             this.putimevaluepanel.Name = "putimevaluepanel";
             this.putimevaluepanel.Size = new System.Drawing.Size(429, 250);
@@ -788,7 +782,7 @@
             this.putimepanel.Controls.Add(this.putimelabel);
             this.putimepanel.Controls.Add(this.putimeclearbutton);
             this.putimepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.putimepanel.Location = new System.Drawing.Point(0, 690);
+            this.putimepanel.Location = new System.Drawing.Point(0, 583);
             this.putimepanel.Margin = new System.Windows.Forms.Padding(4);
             this.putimepanel.Name = "putimepanel";
             this.putimepanel.Size = new System.Drawing.Size(429, 74);
@@ -836,17 +830,17 @@
             this.putimeclearbutton.UseVisualStyleBackColor = false;
             this.putimeclearbutton.Click += new System.EventHandler(this.PutimeclearbuttonClick);
             // 
-            // puvaluepanel
+            // pickupvaluepanel
             // 
-            this.puvaluepanel.AutoScroll = true;
-            this.puvaluepanel.BackColor = System.Drawing.Color.White;
-            this.puvaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.puvaluepanel.Location = new System.Drawing.Point(0, 440);
-            this.puvaluepanel.Margin = new System.Windows.Forms.Padding(4);
-            this.puvaluepanel.Name = "puvaluepanel";
-            this.puvaluepanel.Size = new System.Drawing.Size(429, 250);
-            this.puvaluepanel.TabIndex = 3;
-            this.puvaluepanel.Visible = false;
+            this.pickupvaluepanel.AutoScroll = true;
+            this.pickupvaluepanel.BackColor = System.Drawing.Color.White;
+            this.pickupvaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pickupvaluepanel.Location = new System.Drawing.Point(0, 333);
+            this.pickupvaluepanel.Margin = new System.Windows.Forms.Padding(4);
+            this.pickupvaluepanel.Name = "pickupvaluepanel";
+            this.pickupvaluepanel.Size = new System.Drawing.Size(429, 250);
+            this.pickupvaluepanel.TabIndex = 3;
+            this.pickupvaluepanel.Visible = false;
             // 
             // pickupointpanel
             // 
@@ -856,7 +850,7 @@
             this.pickupointpanel.Controls.Add(this.pupointpictureBox);
             this.pickupointpanel.Controls.Add(this.clearpickuppointbutton);
             this.pickupointpanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pickupointpanel.Location = new System.Drawing.Point(0, 384);
+            this.pickupointpanel.Location = new System.Drawing.Point(0, 277);
             this.pickupointpanel.Margin = new System.Windows.Forms.Padding(4);
             this.pickupointpanel.Name = "pickupointpanel";
             this.pickupointpanel.Size = new System.Drawing.Size(429, 56);
@@ -872,7 +866,7 @@
             this.pickuppointlabel.Size = new System.Drawing.Size(218, 23);
             this.pickuppointlabel.TabIndex = 1;
             this.pickuppointlabel.Text = "Pick up point - Coimbatore";
-            this.pickuppointlabel.Click += new System.EventHandler(this.DropClick);
+            this.pickuppointlabel.Click += new System.EventHandler(this.PickupClick);
             // 
             // pupointpictureBox
             // 
@@ -886,7 +880,7 @@
             this.pupointpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pupointpictureBox.TabIndex = 3;
             this.pupointpictureBox.TabStop = false;
-            this.pupointpictureBox.Click += new System.EventHandler(this.DropClick);
+            this.pupointpictureBox.Click += new System.EventHandler(this.PickupClick);
             // 
             // clearpickuppointbutton
             // 
@@ -903,55 +897,6 @@
             this.clearpickuppointbutton.Text = "CLEAR";
             this.clearpickuppointbutton.UseVisualStyleBackColor = false;
             this.clearpickuppointbutton.Click += new System.EventHandler(this.ClearpickuppointbuttonClick);
-            // 
-            // singleseatersleeperpanel
-            // 
-            this.singleseatersleeperpanel.BackColor = System.Drawing.Color.White;
-            this.singleseatersleeperpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.singleseatersleeperpanel.Controls.Add(this.seatersleepercheckBox);
-            this.singleseatersleeperpanel.Controls.Add(this.singleseatslabel);
-            this.singleseatersleeperpanel.Controls.Add(this.seatersleeperlabel);
-            this.singleseatersleeperpanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.singleseatersleeperpanel.Location = new System.Drawing.Point(0, 277);
-            this.singleseatersleeperpanel.Margin = new System.Windows.Forms.Padding(4);
-            this.singleseatersleeperpanel.Name = "singleseatersleeperpanel";
-            this.singleseatersleeperpanel.Size = new System.Drawing.Size(429, 107);
-            this.singleseatersleeperpanel.TabIndex = 3;
-            // 
-            // seatersleepercheckBox
-            // 
-            this.seatersleepercheckBox.AutoSize = true;
-            this.seatersleepercheckBox.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seatersleepercheckBox.Location = new System.Drawing.Point(45, 61);
-            this.seatersleepercheckBox.Name = "seatersleepercheckBox";
-            this.seatersleepercheckBox.Size = new System.Drawing.Size(131, 29);
-            this.seatersleepercheckBox.TabIndex = 2;
-            this.seatersleepercheckBox.Text = "seater seats";
-            this.seatersleepercheckBox.UseVisualStyleBackColor = true;
-            this.seatersleepercheckBox.CheckedChanged += new System.EventHandler(this.SeatersleepercheckBoxCheckedChanged);
-            // 
-            // singleseatslabel
-            // 
-            this.singleseatslabel.AutoSize = true;
-            this.singleseatslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.singleseatslabel.ForeColor = System.Drawing.Color.DimGray;
-            this.singleseatslabel.Location = new System.Drawing.Point(372, 66);
-            this.singleseatslabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.singleseatslabel.Name = "singleseatslabel";
-            this.singleseatslabel.Size = new System.Drawing.Size(46, 24);
-            this.singleseatslabel.TabIndex = 1;
-            this.singleseatslabel.Text = "(31)";
-            // 
-            // seatersleeperlabel
-            // 
-            this.seatersleeperlabel.AutoSize = true;
-            this.seatersleeperlabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seatersleeperlabel.Location = new System.Drawing.Point(10, 16);
-            this.seatersleeperlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.seatersleeperlabel.Name = "seatersleeperlabel";
-            this.seatersleeperlabel.Size = new System.Drawing.Size(194, 25);
-            this.seatersleeperlabel.TabIndex = 1;
-            this.seatersleeperlabel.Text = "Single Seater/Sleeper";
             // 
             // seattypepanel
             // 
@@ -1293,7 +1238,6 @@
             this.busesfoundlabel.TabIndex = 0;
             this.busesfoundlabel.Text = "0 buses found";
             this.busesfoundlabel.Visible = false;
-            this.busesfoundlabel.TextChanged += new System.EventHandler(this.OnBusesfoundlabelTextChanged);
             // 
             // adducpanel
             // 
@@ -2076,8 +2020,6 @@
             this.pickupointpanel.ResumeLayout(false);
             this.pickupointpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pupointpictureBox)).EndInit();
-            this.singleseatersleeperpanel.ResumeLayout(false);
-            this.singleseatersleeperpanel.PerformLayout();
             this.seattypepanel.ResumeLayout(false);
             this.seattypepanel.PerformLayout();
             this.seaterpanel.ResumeLayout(false);
@@ -2144,14 +2086,11 @@
         private System.Windows.Forms.Panel seattypepanel;
         private System.Windows.Forms.Label seattypelabel;
         private System.Windows.Forms.Label actoplabel;
-        private System.Windows.Forms.Panel singleseatersleeperpanel;
-        private System.Windows.Forms.Label seatersleeperlabel;
-        private System.Windows.Forms.Label singleseatslabel;
         private System.Windows.Forms.Panel pickupointpanel;
         private System.Windows.Forms.Label pickuppointlabel;
         private System.Windows.Forms.Button clearpickuppointbutton;
         private System.Windows.Forms.Panel clearallpanel;
-        private System.Windows.Forms.Panel puvaluepanel;
+        private System.Windows.Forms.Panel pickupvaluepanel;
         private System.Windows.Forms.PictureBox seaterpictureBox;
         private System.Windows.Forms.PictureBox nonacpictureBox;
         private System.Windows.Forms.PictureBox sleeperpictureBox;
@@ -2180,7 +2119,6 @@
         private System.Windows.Forms.Label srtbylabel;
         private System.Windows.Forms.Label busesfoundlabel;
         private System.Windows.Forms.Panel adducpanel;
-        private System.Windows.Forms.CheckBox seatersleepercheckBox;
         private System.Windows.Forms.Panel nonacpanel;
         private System.Windows.Forms.Label nonaclabel;
         private System.Windows.Forms.Panel acpanel;

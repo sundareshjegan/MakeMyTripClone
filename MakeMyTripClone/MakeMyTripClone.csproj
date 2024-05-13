@@ -288,19 +288,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backend\Clasees\BusDetails.cs" />
     <Compile Include="Backend\DBManagerFolder\DBManager.cs" />
     <Compile Include="Backend\Clasees\CustomerDetails.cs" />
-    <Compile Include="Backend\Enums\SeatType.cs" />
-    <Compile Include="Backend\Enums\TimePeriod.cs" />
     <Compile Include="Backend\TableConstants\Bus.cs" />
     <Compile Include="Backend\TableConstants\Customer.cs" />
     <Compile Include="Backend\TableConstants\Route.cs" />
     <Compile Include="Backend\TableConstants\Seat.cs" />
-    <Compile Include="Booking\Address.cs">
+    <Compile Include="Booking\User Controls\Address.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Booking\Address.Designer.cs">
+    <Compile Include="Booking\User Controls\Address.Designer.cs">
       <DependentUpon>Address.cs</DependentUpon>
     </Compile>
     <Compile Include="Booking\BookingDetails.cs" />
@@ -310,35 +307,47 @@
     <Compile Include="Booking\BookingPageForm.designer.cs">
       <DependentUpon>BookingPageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Booking\Buses.cs">
+    <Compile Include="Booking\User Controls\Buses.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Booking\Buses.designer.cs">
+    <Compile Include="Booking\User Controls\Buses.designer.cs">
       <DependentUpon>Buses.cs</DependentUpon>
     </Compile>
-    <Compile Include="Booking\Checkbox.cs">
+    <Compile Include="Booking\User Controls\Checkbox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Booking\Checkbox.Designer.cs">
+    <Compile Include="Booking\User Controls\Checkbox.Designer.cs">
       <DependentUpon>Checkbox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Booking\Seaterseats.cs">
+    <Compile Include="Booking\User Controls\Seaterseats.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Booking\Seaterseats.designer.cs">
+    <Compile Include="Booking\User Controls\Seaterseats.designer.cs">
       <DependentUpon>Seaterseats.cs</DependentUpon>
     </Compile>
-    <Compile Include="Booking\Semiseaters.cs">
+    <Compile Include="Booking\User Controls\Semiseaters.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Booking\Semiseaters.designer.cs">
+    <Compile Include="Booking\User Controls\Semiseaters.designer.cs">
       <DependentUpon>Semiseaters.cs</DependentUpon>
     </Compile>
-    <Compile Include="Booking\Sleeper.cs">
+    <Compile Include="Booking\User Controls\Sleeper.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Booking\Sleeper.designer.cs">
+    <Compile Include="Booking\User Controls\Sleeper.designer.cs">
       <DependentUpon>Sleeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCheckBox2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomCheckBox2.Designer.cs">
+      <DependentUpon>CustomCheckBox2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCheckbox3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomCheckbox3.Designer.cs">
+      <DependentUpon>CustomCheckbox3.cs</DependentUpon>
     </Compile>
     <Compile Include="HomePage\HomePageForm.cs">
       <SubType>Form</SubType>
@@ -433,26 +442,32 @@
     <Compile Include="UserControls\TravellerDetails.Designer.cs">
       <DependentUpon>TravellerDetails.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Booking\Address.resx">
+    <EmbeddedResource Include="Booking\User Controls\Address.resx">
       <DependentUpon>Address.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Booking\BookingPageForm.resx">
       <DependentUpon>BookingPageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Booking\Buses.resx">
+    <EmbeddedResource Include="Booking\User Controls\Buses.resx">
       <DependentUpon>Buses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Booking\Checkbox.resx">
+    <EmbeddedResource Include="Booking\User Controls\Checkbox.resx">
       <DependentUpon>Checkbox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Booking\Seaterseats.resx">
+    <EmbeddedResource Include="Booking\User Controls\Seaterseats.resx">
       <DependentUpon>Seaterseats.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Booking\Semiseaters.resx">
+    <EmbeddedResource Include="Booking\User Controls\Semiseaters.resx">
       <DependentUpon>Semiseaters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Booking\Sleeper.resx">
+    <EmbeddedResource Include="Booking\User Controls\Sleeper.resx">
       <DependentUpon>Sleeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCheckBox2.resx">
+      <DependentUpon>CustomCheckBox2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCheckbox3.resx">
+      <DependentUpon>CustomCheckbox3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage\HomePageForm.resx">
       <DependentUpon>HomePageForm.cs</DependentUpon>

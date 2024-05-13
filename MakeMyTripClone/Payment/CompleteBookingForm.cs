@@ -236,6 +236,10 @@ namespace MakeMyTripClone
         }
         private void OnPaymentFormClosed(object sender, EventArgs e)
         {
+            foreach(Control c in Controls)
+            {
+                c.Dispose();
+            }
             Dispose();
         }
 

@@ -15,19 +15,6 @@ namespace MakeMyTripClone
         public LoaderForm()
         {
             InitializeComponent();
-
-            //Timer timer = new Timer();
-            //timer.Interval = 2000;
-            //timer.Tick += OnLoaderTimerTicked;
-            //timer.Start();
-
         }
-
-        private void OnLoaderTimerTicked(object sender, EventArgs e)
-        {
-           // OnLoaderOpened?.Invoke(this, EventArgs.Empty);
-        }
-
-        public event EventHandler OnLoaderOpened;
     }
 }

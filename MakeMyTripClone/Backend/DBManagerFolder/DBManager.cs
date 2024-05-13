@@ -30,8 +30,6 @@ namespace MakeMyTripClone
 
         public static void GetConnection()
         {
-            //Connection = new MySqlConnection(connectionString);
-            //Connection.Open();
             manager.Connect();
         }
 
@@ -127,13 +125,9 @@ namespace MakeMyTripClone
                     rd.Price = manager.FetchColumn(Bus.TableName, Bus.Prices, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
                     rd.NoOfSeats = manager.FetchColumn(Bus.TableName, Bus.NoOfSeats, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
                     rd.Duration = res[Route.Duration][i].ToString();
-
                     DateTime now = DateTime.Now;
                     DateTime bustime = Convert.ToDateTime(rd.StartTime);
-                    //if (bustime > now)
-                    //{
-                        list.Add(rd);
-                    //}
+                    list.Add(rd);
                 }
             }
             return list;

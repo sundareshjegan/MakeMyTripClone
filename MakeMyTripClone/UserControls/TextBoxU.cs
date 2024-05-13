@@ -16,7 +16,6 @@ namespace MakeMyTripClone
         public TextBoxU()
         {
             InitializeComponent();
-            textBox1.MouseEnter += TextBox1MouseEnter;
             this.Resize += TextBoxUResize;
             textBox1.GotFocus += TextBoxUGotFocus;
             textBox1.LostFocus += TextBoxULostFocus;
@@ -35,7 +34,6 @@ namespace MakeMyTripClone
         private Color placeholderLabelAtCenterColor = Color.FromArgb(130, 130, 130);
         private Timer timer = new Timer();
         private bool isCenterPlaceHolder;
-        private bool isEnterMouse;
         private int borderRadius = 7;
 
         public Color PlaceholderLabelAtTopColor
@@ -73,7 +71,6 @@ namespace MakeMyTripClone
             get
             {
                 return textBox1.Multiline;
-                TextBoxUResize(this, EventArgs.Empty);
             }
             set
             {
@@ -165,7 +162,7 @@ namespace MakeMyTripClone
             }
         }
 
-        public Color ForeColor
+        public Color ForeColors
         {
             get
             {
@@ -179,7 +176,7 @@ namespace MakeMyTripClone
 
         }
 
-        public Font Font
+        public Font Fonts
         {
             get
             {
@@ -230,10 +227,6 @@ namespace MakeMyTripClone
             }
         }
 
-        private void TextBox1MouseEnter(object sender, EventArgs e)
-        {
-            isEnterMouse = true;
-        }
 
         Point placeholderlocation;
         private void PlaceholderMove(object sender, EventArgs e)

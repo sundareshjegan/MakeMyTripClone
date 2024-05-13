@@ -48,8 +48,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1364, 596);
             this.Controls.Add(this.navBar1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "HomePageForm";
-            this.Text = "HomePageForm";
             this.TransparencyKey = System.Drawing.Color.Maroon;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);

@@ -88,7 +88,10 @@ namespace MakeMyTripClone
                 previousPanel.BackColor = Color.Transparent;
                 previousBlueBar.Visible = false;
             }
-            
+            else
+            {
+                creditCardPanel.BackColor = Color.Transparent;
+            }
             foreach (Control control in currentPanel.Controls)
             {
                 if (control is Panel blueBar)
@@ -109,34 +112,44 @@ namespace MakeMyTripClone
             {
                 DBManager.ChangeSeatBookingState(seat);
             }
-            SuccessFailureForm success = new SuccessFailureForm("success", "Seat Booked Successfully!");
-            success.ShowDialog();
             eticket.PaymentMethod = "MakeMyTrip Book Now PayLater";
-            Opacity += 0.1;
+            SendMail();
         }
         private void OnUPIVerifyAndPayBtnClicked(object sender, EventArgs e)
         {
-            Opacity -= 0.1;
-            foreach(SeatDetails seat in seatDetails)
+            if (upitext.Text != "" && upitext.Text.Any(char.IsDigit) && upitext.Text.Contains("@") && upitext.Text.Any(char.IsLetter))
             {
-                DBManager.ChangeSeatBookingState(seat);
+                upilabel.Visible = false;
+                Opacity -= 0.1;
+                foreach (SeatDetails seat in seatDetails)
+                {
+                    DBManager.ChangeSeatBookingState(seat);
+                }
+                eticket.PaymentMethod = "UPI";
+                SendMail();
             }
-            SuccessFailureForm success = new SuccessFailureForm("success", "Payment Successful!");
-            success.ShowDialog();
-            eticket.PaymentMethod = "UPI";
-            Opacity += 0.1;
+            else
+            {
+                upilabel.Visible = true;
+            }
         }
         private void OnGPayVerifyAndPayBtnClicked(object sender, EventArgs e)
         {
-            Opacity -= 0.1;
-            foreach (SeatDetails seat in seatDetails)
+            if (gPayUpiTB.Text!="" && gupipintext.Text!="" && gPayUpiTB.Text.Any(char.IsDigit) && gPayUpiTB.Text.Contains("@") && gPayUpiTB.Text.Any(char.IsLetter))
             {
-                DBManager.ChangeSeatBookingState(seat);
+                UpiErrorlabel.Visible = false;
+                Opacity -= 0.1;
+                foreach (SeatDetails seat in seatDetails)
+                {
+                    DBManager.ChangeSeatBookingState(seat);
+                }
+                eticket.PaymentMethod = "Google Pay";
+                SendMail();
             }
-            SuccessFailureForm success = new SuccessFailureForm("success", "Payment Successful!");
-            success.ShowDialog();
-            eticket.PaymentMethod = "Google Pay";
-            Opacity += 0.1;
+            else
+            {
+                UpiErrorlabel.Visible = true;
+            }
         }
         private void OnCreditCardPayNowBtnClicked(object sender, EventArgs e)
         {
@@ -170,6 +183,12 @@ namespace MakeMyTripClone
                 DBManager.ChangeSeatBookingState(seat);
             }
             eticket.PaymentMethod = "Credit - Card";
+            SendMail();
+           
+        }
+        #endregion
+        private void SendMail()
+        {
             LoaderForm loader = new LoaderForm();
             loader.Show();
             loader.Refresh(); // Force the form to update immediately
@@ -187,7 +206,7 @@ namespace MakeMyTripClone
                 loader.Close();
                 SuccessFailureForm success = new SuccessFailureForm("success", "Payment Successful! Thank you.Ticket Sent to your mail. Please keep it with your travel. \n Happy Journey..😊");
                 success.ShowDialog();
-               
+
                 // Check for any errors during e-ticket sending
                 if (task.IsFaulted)
                 {
@@ -199,7 +218,6 @@ namespace MakeMyTripClone
                 OnPaymentFormClosed?.Invoke(this, EventArgs.Empty);
             }, TaskScheduler.FromCurrentSynchronizationContext()); // Ensure the continuation runs on the UI thread
         }
-        #endregion
 
         public void SetData(BookingDetails bookingDetails, List<TravellerDetails> travellers, int finalAmount, string emailToSendTicket)
         {
@@ -235,12 +253,7 @@ namespace MakeMyTripClone
             string[] seatStrings = seatNumbers.Select((number, index) => $"Seat {index + 1} - {number}\n").ToArray();
             seatDetailsLabel.Text = string.Join(", ", seatStrings);
             seatDetailsPanel.Height = seatDetailsLabel.Height+10;
-            
-            //string[,] passengerDetails = new string
-            //foreach(TravellerDetails traveller in travellers)
-            //{
-            //    travellerDetailsLabel.Text += $"{traveller.TravellerName} ({traveller.Gender} , {traveller.TravellerAge})\n";
-            //}
+
             string[,] travellerDetails = new string[travellers.Count, 4];
 
             for (int i = 0; i < travellers.Count; i++)
@@ -263,12 +276,12 @@ namespace MakeMyTripClone
                 seat.IsBooked = true;
                 if (bookingDetails.Bustype.Contains("SL/ST"))
                 {
-                    int[] seatPrices = Array.ConvertAll(bookingDetails.seatAmount.Split('/'), int.Parse);
+                    int[] seatPrices = Array.ConvertAll(bookingDetails.SeatAmount.Split('/'), int.Parse);
                     seat.Price = GetSeatType(seatNumbers[i], bookingDetails.Bustype) == "ST" ? seatPrices[0] : seatPrices[1];
                 }
                 else
                 {
-                    seat.Price = int.Parse(bookingDetails.seatAmount);
+                    seat.Price = int.Parse(bookingDetails.SeatAmount);
                 }
                 seat.CId = DBManager.CurrentUser.Id;
                 seat.IsBookedByfemale = travellers[i].Gender.ToLower() == "female" ? true : false;
@@ -325,5 +338,21 @@ namespace MakeMyTripClone
 
         #endregion
 
+        private void TextBox1TextChanged(object sender, EventArgs e)
+        {
+           TextBox t = sender as TextBox;
+           if( t.Text.Contains("mobilenumber@upi"))
+           {
+                t.Text=t.Text.Remove(0, 16);
+           }
+        }
+
+        private void UipintextKeyPress(object sender, KeyPressEventArgs e)
+        {
+           if(e.KeyChar!='\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -8,8 +8,6 @@ namespace MakeMyTripClone
 {
     public class RouteDetails
     {
-
-      
         public int RouteId { get; set; }
         public int BusId { get; set; }
         public String BusName { get; set; }

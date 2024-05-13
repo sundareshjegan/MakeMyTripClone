@@ -83,7 +83,7 @@ namespace MakeMyTripClone
                     e.Graphics.DrawImage(gifImage, ClientRectangle);
                 }
             }
-            catch(Exception ex)
+            catch
             {
                 //do nothing
             }
