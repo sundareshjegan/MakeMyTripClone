@@ -50,7 +50,7 @@ namespace MakeMyTripClone
         public static List<string> traveloperatorpoints = new List<string>();
         private List<Buses> buses = new List<Buses>();
         private List<Buses> filterlist = new List<Buses>();
-        private string isAc = null, seatType = null, pickTime = null, dropTime = null, pickPoint = null, travelpoint = null, dropPoint = null;
+        private string isAc = null, seattype = null, pickTime = null, dropTime = null, pickPoint = null, travelpoint = null, dropPoint = null;
         CustomCheckBox1 prevcheck = null;
         CustomCheckBox2 travelcheck = null;
         CustomCheckBox3 dpcheck = null;
@@ -158,7 +158,7 @@ namespace MakeMyTripClone
                 putimeclearbutton.ForeColor = gray;
                 ddtimeclrbutton.ForeColor = gray;
                 if (panel.Name == "acpanel" || panel.Name == "nonacpanel") isAc = null;
-                if (panel.Name == "sleeperpanel" || panel.Name == "seaterpanel") seatType = null;
+                if (panel.Name == "sleeperpanel" || panel.Name == "seaterpanel") seattype = null;
                 if (panel.Name == "putimesrpanel" || panel.Name == "putimengtpanel" || panel.Name == "putimesspanel" || panel.Name == "putimeevepanel")
                 {
                     pickTime = null;
@@ -169,8 +169,8 @@ namespace MakeMyTripClone
                     dropTime = null;
                     isDrop = false;
                 }
-                CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
-                Filter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                Filter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             }
             else
             {
@@ -180,7 +180,7 @@ namespace MakeMyTripClone
                 {
                     nonacpanel.BackColor = Color.White;
                     isAc = "AC";
-                    CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isAc = "NON";
 
                 }
@@ -188,28 +188,28 @@ namespace MakeMyTripClone
                 {
                     acpanel.BackColor = Color.White;
                     isAc = "NON";
-                    CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isAc = "AC";
 
                 }
                 if (panel.Name == "sleeperpanel" && seaterpanel.BackColor == colour)
                 {
                     seaterpanel.BackColor = Color.White;
-                    seatType = "SL";
-                    CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
-                    seatType = "ST";
+                    seattype = "SL";
+                    CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    seattype = "ST";
                 }
                 else if (panel.Name == "seaterpanel" && sleeperpanel.BackColor == colour)
                 {
                     sleeperpanel.BackColor = Color.White;
-                    seatType = "ST";
-                    CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
-                    seatType = "SL";
+                    seattype = "ST";
+                    CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    seattype = "SL";
                 }
                 if (panel.Name == "acpanel") isAc = "AC";
                 if (panel.Name == "nonacpanel") isAc = "NON";
-                if (panel.Name == "sleeperpanel") seatType = "SL";
-                if (panel.Name == "seaterpanel") seatType = "ST";
+                if (panel.Name == "sleeperpanel") seattype = "SL";
+                if (panel.Name == "seaterpanel") seattype = "ST";
                 if (panel.Name == "putimesrpanel")
                 {
                     putimeevepanel.BackColor = Color.White;
@@ -217,7 +217,7 @@ namespace MakeMyTripClone
                     putimengtpanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
                     pickTime = putimesrlabel.Tag + "";
-                    if (isPick) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isPick) CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isPick = true;
                 }
                 else if (panel.Name == "putimeevepanel")
@@ -227,7 +227,7 @@ namespace MakeMyTripClone
                     putimengtpanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
                     pickTime = putimeevelabel.Tag + "";
-                    if (isPick) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isPick) CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isPick = true;
                 }
                 else if (panel.Name == "putimesspanel")
@@ -237,7 +237,7 @@ namespace MakeMyTripClone
                     putimengtpanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
                     pickTime = putimesslabel.Tag + "";
-                    if (isPick) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isPick) CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isPick = true;
                 }
                 else if (panel.Name == "putimengtpanel")
@@ -247,7 +247,7 @@ namespace MakeMyTripClone
                     putimesspanel.BackColor = Color.White;
                     putimeclearbutton.ForeColor = SystemColors.Highlight;
                     pickTime = putimengtlabel.Tag + "";
-                    if (isPick) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isPick) CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isPick = true;
                 }
                 if (panel.Name == "ddsrpanel")
@@ -257,7 +257,7 @@ namespace MakeMyTripClone
                     ddngtpanel.BackColor = Color.White;
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
                     dropTime = ddsrlabel.Tag + "";
-                    if (isDrop) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isDrop) CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isDrop = true;
                 }
                 else if (panel.Name == "ddevepanel")
@@ -267,7 +267,7 @@ namespace MakeMyTripClone
                     ddngtpanel.BackColor = Color.White;
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
                     dropTime = ddevelabel.Tag + "";
-                    if (isDrop) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isDrop) CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isDrop = true;
                 }
                 else if (panel.Name == "ddsspanel")
@@ -277,7 +277,7 @@ namespace MakeMyTripClone
                     ddngtpanel.BackColor = Color.White;
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
                     dropTime = ddsslabel.Tag + "";
-                    if (isDrop) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isDrop) CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isDrop = true;
                 }
                 else if (panel.Name == "ddngtpanel")
@@ -287,11 +287,11 @@ namespace MakeMyTripClone
                     ddsrpanel.BackColor = Color.White;
                     ddtimeclrbutton.ForeColor = SystemColors.Highlight;
                     dropTime = ddngtlabel.Tag + "";
-                    if (isDrop) CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                    if (isDrop) CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
                     isDrop = true;
                 }
                 panel.BackColor = colour;
-                Filter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+                Filter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             }
         }
 
@@ -518,7 +518,7 @@ namespace MakeMyTripClone
             if (clearallbutton.ForeColor == highlight)
             {
                 isAc = null;
-                seatType = null;
+                seattype = null;
                 Reset();
                 no = 0;
                 pickTime = null;
@@ -577,7 +577,7 @@ namespace MakeMyTripClone
                 }
             }
             dropPoint = null;
-            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
 
@@ -597,7 +597,7 @@ namespace MakeMyTripClone
             }
             pickPoint = null;
             isprevcheck = true;
-            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
 
@@ -617,7 +617,7 @@ namespace MakeMyTripClone
             }
             travelpoint = null;
             istravelcheck = true;
-            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
 
@@ -632,7 +632,7 @@ namespace MakeMyTripClone
             pickTime = null;
             isdpcheck = true;
             isPick = false;
-            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
@@ -647,7 +647,7 @@ namespace MakeMyTripClone
             ddtimeclrbutton.ForeColor = gray;
             dropTime = null;
             isDrop = false;
-            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             no--;
             if (no <= 0) clearallbutton.ForeColor = gray;
         }
@@ -901,8 +901,8 @@ namespace MakeMyTripClone
                     c.SetCheckedState();
                 }
             }
-            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
-            Filter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            Filter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             if (dpclrbutton.ForeColor == highlight) clearallbutton.ForeColor = highlight;
             else clearallbutton.ForeColor = highlight;
 
@@ -941,8 +941,8 @@ namespace MakeMyTripClone
                     c.SetCheckedState();
                 }
             }
-            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
-            Filter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            Filter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             if (travelclrbutton.ForeColor == highlight) clearallbutton.ForeColor = highlight;
             else clearallbutton.ForeColor = highlight;
 
@@ -983,8 +983,8 @@ namespace MakeMyTripClone
 
                 }
             }
-            CustomFilter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
-            Filter(isAc, seatType, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            CustomFilter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
+            Filter(isAc, seattype, pickTime, dropTime, pickPoint, travelpoint, dropPoint);
             if (clearpickuppointbutton.ForeColor == highlight) clearallbutton.ForeColor = highlight;
             else clearallbutton.ForeColor = highlight;
         }
