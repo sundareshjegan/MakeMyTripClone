@@ -25,6 +25,7 @@ namespace MakeMyTripClone
         private string pickuplocation, droplocation, bustype, duration, starttime, endtime, acnonac, seat, busname;
         private List<object> boarding = new List<object>();
         private List<object> destination = new List<object>();
+        private List<RouteDetails> busdetails = new List<RouteDetails>();
         private List<string> board = new List<string>();
         private List<string> dest = new List<string>();
         private int rid, bid;
@@ -74,29 +75,34 @@ namespace MakeMyTripClone
             get { return endtime; }
         }
 
+        public List<RouteDetails> BusDetails
+        {
+            set { busdetails = value; }
+        }
+
         public void Setdata(int i, string pickup, string drop, string date)
         {
-            rid = BookingPageForm.busesList[i].RouteId;
-            bid = BookingPageForm.busesList[i].BusId;
+            rid = busdetails[i].RouteId;
+            bid = busdetails[i].BusId;
             pickuplocation = pickup;
             droplocation = drop;
-            busnamelabel.Text = BookingPageForm.busesList[i].BusName;
+            busnamelabel.Text = busdetails[i].BusName;
             busname = busnamelabel.Text;
-            busltypeabel.Text = BookingPageForm.busesList[i].BusType;
+            busltypeabel.Text =busdetails[i].BusType;
             string[] s = busltypeabel.Text.Split('-');
             acnonac = s[0];
             seat = s[s.Length - 1];
             bustype = busltypeabel.Text;
-            rulabel.Text = BookingPageForm.busesList[i].Price;
+            rulabel.Text = busdetails[i].Price;
             ruppees = rulabel.Text.Split('/');
-            DateTime from = Convert.ToDateTime(BookingPageForm.busesList[i].StartDate);
-            fromlabel.Text = BookingPageForm.busesList[i].StartTime + " " + from.Day + " " + MonthName(from.Month);
-            starttime = BookingPageForm.busesList[i].StartTime;
-            durationlabel.Text = BookingPageForm.busesList[i].Duration;
+            DateTime from = Convert.ToDateTime(busdetails[i].StartDate);
+            fromlabel.Text = busdetails[i].StartTime + " " + from.Day + " " + MonthName(from.Month);
+            starttime = busdetails[i].StartTime;
+            durationlabel.Text = busdetails[i].Duration;
             duration = durationlabel.Text;
-            DateTime to = Convert.ToDateTime(BookingPageForm.busesList[i].EndDate);
-            tolabel.Text = BookingPageForm.busesList[i].EndTime + " " + to.Day + " " + MonthName(to.Month);
-            endtime = BookingPageForm.busesList[i].EndTime;
+            DateTime to = Convert.ToDateTime(busdetails[i].EndDate);
+            tolabel.Text = busdetails[i].EndTime + " " + to.Day + " " + MonthName(to.Month);
+            endtime = busdetails[i].EndTime;
             noofseatlabel.Text = "";
             boarding = DBManager.GetBoarding(pickup, drop, date, rid);
             destination = DBManager.GetDrop(pickup, drop, date, rid);

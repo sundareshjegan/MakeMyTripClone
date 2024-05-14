@@ -847,9 +847,9 @@
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(19, 30);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(233, 32);
+            this.label11.Size = new System.Drawing.Size(240, 32);
             this.label11.TabIndex = 6;
-            this.label11.Text = "Chennai,Tamil Nadu";
+            this.label11.Text = "Chennai, Tamil Nadu";
             this.label11.Click += new System.EventHandler(this.ToComboBoxClick);
             // 
             // toComboBox
@@ -929,9 +929,9 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(10, 30);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(272, 32);
+            this.label8.Size = new System.Drawing.Size(279, 32);
             this.label8.TabIndex = 5;
-            this.label8.Text = "Coimbatore,Tamil Nadu\r\n";
+            this.label8.Text = "Coimbatore, Tamil Nadu";
             this.label8.Click += new System.EventHandler(this.FromComboBoxClick);
             // 
             // fromcomboBox
@@ -948,9 +948,9 @@
             "Pune, Maharashtra",
             "Hyderabad, Telangana",
             "Kolkata, West Bengal",
-            "Coimbatore,Tamil Nadu",
+            "Coimbatore, Tamil Nadu",
             "Goa, Goa",
-            "Chennai,Tamil Nadu"});
+            "Chennai, Tamil Nadu"});
             this.fromcomboBox.Location = new System.Drawing.Point(3, 28);
             this.fromcomboBox.Name = "fromcomboBox";
             this.fromcomboBox.Size = new System.Drawing.Size(338, 33);

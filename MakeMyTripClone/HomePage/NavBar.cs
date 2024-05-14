@@ -53,10 +53,10 @@ namespace MakeMyTripClone
             panel11.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel11.Width, panel11.Height, 30, 30));
             SearchButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SearchButton.Width, SearchButton.Height, 30, 30));
             comboBox1.Text = "IND | ENG | INR";
-            // DateTime D = DateTime.Now;
-            // dateTimePicker.MinDate = D.Date ;
+            DateTime D = DateTime.Now;
+            dateTimePicker.MinDate = D.Date;
             toComboBox.Text = "Chennai, Tamil Nadu";
-            fromcomboBox.Text = "Coimbatore,Tamil Nadu";
+            fromcomboBox.Text = "Coimbatore, Tamil Nadu";
             DBManager.OnUserLoggedIn += DBManagerOnUserLoggedIn;
             if (DBManager.IsUserLoggedIn)
             {
@@ -96,7 +96,6 @@ namespace MakeMyTripClone
         private void ToComboBoxtextChange(object sender, EventArgs e)
         {
             label11.Text = toComboBox.Text;
-
             if (label11.Text == label8.Text)
             {
                 warningLabel.Visible = true;
