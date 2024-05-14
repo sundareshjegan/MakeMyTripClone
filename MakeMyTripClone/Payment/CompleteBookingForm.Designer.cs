@@ -81,7 +81,7 @@
             this.secureTipCheckPB = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.tcLabel = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.seperatorPanel5 = new System.Windows.Forms.Panel();
             this.contactDetailsPanel = new MakeMyTripClone.UserControls.CustomPanel();
@@ -235,7 +235,7 @@
             this.CompleteBookingLabel.AutoSize = true;
             this.CompleteBookingLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompleteBookingLabel.ForeColor = System.Drawing.Color.White;
-            this.CompleteBookingLabel.Location = new System.Drawing.Point(288, 14);
+            this.CompleteBookingLabel.Location = new System.Drawing.Point(286, 14);
             this.CompleteBookingLabel.Name = "CompleteBookingLabel";
             this.CompleteBookingLabel.Size = new System.Drawing.Size(286, 32);
             this.CompleteBookingLabel.TabIndex = 1;
@@ -247,7 +247,7 @@
             this.headerDateTimeLabel.AutoSize = true;
             this.headerDateTimeLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerDateTimeLabel.ForeColor = System.Drawing.Color.White;
-            this.headerDateTimeLabel.Location = new System.Drawing.Point(853, 17);
+            this.headerDateTimeLabel.Location = new System.Drawing.Point(849, 17);
             this.headerDateTimeLabel.Name = "headerDateTimeLabel";
             this.headerDateTimeLabel.Size = new System.Drawing.Size(297, 25);
             this.headerDateTimeLabel.TabIndex = 1;
@@ -260,7 +260,7 @@
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.51773F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.48227F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 649F));
-            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201F));
+            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
             this.headerPanel.Controls.Add(this.headerDateTimeLabel, 2, 0);
             this.headerPanel.Controls.Add(this.logoPB, 0, 0);
             this.headerPanel.Controls.Add(this.CompleteBookingLabel, 1, 0);
@@ -277,7 +277,7 @@
             // 
             this.logoPB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logoPB.Image = global::MakeMyTripClone.Properties.Resources.logoWhite;
-            this.logoPB.Location = new System.Drawing.Point(25, 7);
+            this.logoPB.Location = new System.Drawing.Point(24, 7);
             this.logoPB.Name = "logoPB";
             this.logoPB.Size = new System.Drawing.Size(136, 45);
             this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -289,7 +289,7 @@
             this.closePB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.closePB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closePB.Image = global::MakeMyTripClone.Properties.Resources.close;
-            this.closePB.Location = new System.Drawing.Point(1414, 17);
+            this.closePB.Location = new System.Drawing.Point(1412, 17);
             this.closePB.Name = "closePB";
             this.closePB.Size = new System.Drawing.Size(25, 25);
             this.closePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -311,7 +311,7 @@
             // 
             // policypanel
             // 
-            this.policypanel.BackColor = System.Drawing.Color.Gray;
+            this.policypanel.BackColor = System.Drawing.Color.Gainsboro;
             this.policypanel.Controls.Add(this.label49);
             this.policypanel.Controls.Add(this.policytimelabel);
             this.policypanel.Controls.Add(this.amtlabel);
@@ -660,7 +660,7 @@
             this.secureTipPanel.Controls.Add(this.secureTipCheckPB);
             this.secureTipPanel.Controls.Add(this.label3);
             this.secureTipPanel.Controls.Add(this.label4);
-            this.secureTipPanel.Controls.Add(this.label6);
+            this.secureTipPanel.Controls.Add(this.tcLabel);
             this.secureTipPanel.Controls.Add(this.pictureBox4);
             this.secureTipPanel.CornerRadius = 10;
             this.secureTipPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -831,17 +831,18 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Powered by";
             // 
-            // label6
+            // tcLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label6.Location = new System.Drawing.Point(68, 67);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(152, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Terms and Conditions";
+            this.tcLabel.AutoSize = true;
+            this.tcLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tcLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tcLabel.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.tcLabel.Location = new System.Drawing.Point(68, 67);
+            this.tcLabel.Name = "tcLabel";
+            this.tcLabel.Size = new System.Drawing.Size(152, 20);
+            this.tcLabel.TabIndex = 0;
+            this.tcLabel.Text = "Terms and Conditions";
+            this.tcLabel.Click += new System.EventHandler(this.OnTermsAndConditionLabelClicked);
             // 
             // pictureBox4
             // 
@@ -2113,7 +2114,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label tcLabel;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
