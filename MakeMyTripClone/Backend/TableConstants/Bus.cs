@@ -20,12 +20,6 @@ namespace MakeMyTripClone
 
         public static String Type { get; } = "bus_type";
 
-        public static String StartTime { get; } = "start_time";
-
-        public static String EndTime { get; } = "end_time";
-
-        public static String Duration { get; } = "duration";
-
         public static String Prices { get; } = "prices";
 
         public static String NoOfSeats { get; } = "no_of_seats";
