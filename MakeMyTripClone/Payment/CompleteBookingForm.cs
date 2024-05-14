@@ -129,6 +129,7 @@ namespace MakeMyTripClone
         {
             Form tc = new Form();
             tc.WindowState = FormWindowState.Maximized;
+            tc.MinimizeBox = tc.MaximizeBox = false;
             browser = new ChromiumWebBrowser("https://promos.makemytrip.com/Bus/index.html");
             tc.Controls.Add(browser);
             browser.Dock = DockStyle.Fill;
