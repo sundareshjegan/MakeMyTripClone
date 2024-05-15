@@ -137,6 +137,18 @@ namespace MakeMyTripClone
             browser.Dispose();
             tc.Dispose();
         }
+        private void OnUserAgreementLabelClicked(object sender, EventArgs e)
+        {
+            Form tc = new Form();
+            tc.WindowState = FormWindowState.Maximized;
+            tc.MinimizeBox = tc.MaximizeBox = false;
+            browser = new ChromiumWebBrowser("https://www.makemytrip.com/legal/user_agreement.html");
+            tc.Controls.Add(browser);
+            browser.Dock = DockStyle.Fill;
+            tc.ShowDialog();
+            browser.Dispose();
+            tc.Dispose();
+        }
         #endregion
 
         #region TextBox Events
