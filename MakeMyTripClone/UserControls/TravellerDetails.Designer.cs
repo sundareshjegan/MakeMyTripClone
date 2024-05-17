@@ -51,7 +51,7 @@
             // 
             this.seatNoLabel.AutoSize = true;
             this.seatNoLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seatNoLabel.Location = new System.Drawing.Point(49, 44);
+            this.seatNoLabel.Location = new System.Drawing.Point(49, 39);
             this.seatNoLabel.Name = "seatNoLabel";
             this.seatNoLabel.Size = new System.Drawing.Size(30, 21);
             this.seatNoLabel.TabIndex = 0;
@@ -196,7 +196,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 44);
+            this.label1.Location = new System.Drawing.Point(11, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 21);
             this.label1.TabIndex = 0;

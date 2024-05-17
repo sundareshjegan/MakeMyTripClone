@@ -112,6 +112,7 @@
             this.nobuslabel = new System.Windows.Forms.Label();
             this.noresultpictureBox = new System.Windows.Forms.PictureBox();
             this.toppage = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.logInTab1 = new MakeMyTripClone.LogInTab();
             this.makemytriplogo = new System.Windows.Forms.PictureBox();
             this.imagespanel = new System.Windows.Forms.Panel();
@@ -1319,6 +1320,7 @@
             // toppage
             // 
             this.toppage.BackColor = System.Drawing.Color.White;
+            this.toppage.Controls.Add(this.button1);
             this.toppage.Controls.Add(this.logInTab1);
             this.toppage.Controls.Add(this.makemytriplogo);
             this.toppage.Controls.Add(this.imagespanel);
@@ -1327,6 +1329,16 @@
             this.toppage.Name = "toppage";
             this.toppage.Size = new System.Drawing.Size(1831, 73);
             this.toppage.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(50, 24);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // logInTab1
             // 
@@ -2213,6 +2225,7 @@
         private System.Windows.Forms.Label warningLabel;
         private LogInTab logInTab1;
         private System.Windows.Forms.PictureBox makemytriplogo;
+        private System.Windows.Forms.Button button1;
     }
 }
 

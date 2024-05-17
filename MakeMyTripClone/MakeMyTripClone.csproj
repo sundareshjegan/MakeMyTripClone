@@ -877,6 +877,21 @@
   <ItemGroup>
     <None Include="Resources\1711023801388.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomePageAD1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomePageAD4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomePageAD3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomePageAD2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomePageAD11.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

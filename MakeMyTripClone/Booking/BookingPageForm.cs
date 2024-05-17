@@ -677,6 +677,14 @@ namespace MakeMyTripClone
             login.ShowDialog();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach(Control control in Controls)
+            {
+                control.BackColor = Color.Black;
+            }
+        }
+
         private void SwappictureBoxClick(object sender, EventArgs e)
         {
             string s = fromcomboBox.Text;
