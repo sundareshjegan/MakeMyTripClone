@@ -114,7 +114,7 @@ namespace MakeMyTripClone
                 dest.Add(ss[1]);
                 droppointpanel.Controls.Add(address);
                 address.Dock = DockStyle.Top;
-                address.drops += Addressdrops;
+                address.Drops += Addressdrops;
             }
             foreach (var n in boarding)
             {
@@ -124,7 +124,7 @@ namespace MakeMyTripClone
                 board.Add(ss[1]);
                 pickuppointpanel.Controls.Add(address);
                 address.Dock = DockStyle.Top;
-                address.drops2 += Addressdropss;
+                address.Drops2 += Addressdropss;
             }
         }
 
@@ -154,7 +154,7 @@ namespace MakeMyTripClone
                     }
                 }
                 lbpanel.Controls.Add(lbs);
-                lbs.colours += Lbscolours;
+                lbs.Colours += Lbscolours;
                 Sleeper ubs = new Sleeper();
                 ubpanel.Controls.Add(ubs);
                 foreach (PictureBox seatPb in ubs.Controls)
@@ -172,7 +172,7 @@ namespace MakeMyTripClone
                         seatPb.BackColor = SystemColors.ControlLightLight;
                     }
                 }
-                ubs.colours += Ubscolours;
+                ubs.Colours += Ubscolours;
             }
             if (busltypeabel.Text == "AC-SL/ST" || busltypeabel.Text == "NON-AC-SL/ST")
             {
@@ -208,7 +208,7 @@ namespace MakeMyTripClone
                         }
                     }
                 }
-                lbs.coloured += Coloured;
+                lbs.Coloured += Coloured;
                 Sleeper ubs = new Sleeper();
                 ubpanel.Controls.Add(ubs);
                 foreach (PictureBox seatPb in ubs.Controls)
@@ -226,7 +226,7 @@ namespace MakeMyTripClone
                         seatPb.BackColor = SystemColors.ControlLightLight;
                     }
                 }
-                ubs.colours += Ubscolourss;
+                ubs.Colours += Ubscolourss;
             }
             if (busltypeabel.Text == "AC-ST" || busltypeabel.Text == "NON-AC-ST")
             {
@@ -252,7 +252,7 @@ namespace MakeMyTripClone
                         seatPb.BackColor = SystemColors.ControlLightLight;
                     }
                 }
-                seats.seatscolours += Seatsseatscolours;
+                seats.Seatscolours += Seatsseatscolours;
             }
         }
         private void IsRemove(int i)
@@ -544,9 +544,8 @@ namespace MakeMyTripClone
                     amentiespanel.Visible = false;
                     isFemaleseats.Clear();
                     seatsbooked.Clear();
-                   // isClicked = true;
+                    address.RechangetoNormal(prev,prev2);
                     previousClickedBus.SelectClick(sender, e);
-                    
                 }
             }
             else
@@ -571,6 +570,7 @@ namespace MakeMyTripClone
                     noofseatlabel.Text = "";
                     isFemaleseats.Clear();
                     seatsbooked.Clear();
+                    address.RechangetoNormal(prev,prev2);
                     amentbutton.BackColor = white;
                     ptsbutton.BackColor = white;
                 }

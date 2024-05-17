@@ -14,7 +14,7 @@ namespace MakeMyTripClone
 {
     static class DBManager
     {
-        private static readonly string server = "192.168.3.165";
+        private static readonly string server = "192.168.3.63";
         private static readonly string database = "makemytrip";
         private static readonly string user = "team7";
         private static readonly string password = "team7team7";
@@ -138,11 +138,26 @@ namespace MakeMyTripClone
            
             var res = manager.FetchColumn(Route.TableName, Route.BoardingPoints, $"{Route.Destination} = '{destination}' and {Route.Boarding} = '{boarding}' and {Route.StartDate} = '{date}'").Value;
             List<object> boardingPoints = new List<object>();
+            HashSet<object> board = new HashSet<object>();
             if (res.Count > 0)
             {
-                dynamic jsonObject = JsonConvert.DeserializeObject(res[0].ToString());
-                // Extracting only values
-                ExtractValues(jsonObject, boardingPoints);
+                for (int i = 0; i < res.Count; i++)
+                {
+                    dynamic jsonObject = JsonConvert.DeserializeObject(res[i].ToString());
+                    // Extracting only values
+                    ExtractValues(jsonObject, boardingPoints);
+                    foreach(var item in boardingPoints)
+                    {
+                        string s = item.ToString() ;
+                        string[] ss = s.Split('&');
+                        board.Add(ss[1]);
+                    }
+                    boardingPoints.Clear();
+                }
+            }
+            foreach(var item in board)
+            {
+                boardingPoints.Add(item);
             }
             return boardingPoints;
         }
@@ -176,10 +191,25 @@ namespace MakeMyTripClone
         {
             var res = manager.FetchColumn(Route.TableName, Route.DropPoints, $"{Route.Destination} = '{destination}' and {Route.Boarding} = '{boarding}' and {Route.StartDate} = '{date}'").Value;
             List<object> dropPoints = new List<object>();
+            HashSet<object> drop = new HashSet<object>();
             if(res.Count > 0)
             {
-                dynamic jsonObject = JsonConvert.DeserializeObject(res[0].ToString());
-                ExtractValues(jsonObject, dropPoints);
+                for (int i = 0; i < res.Count; i++)
+                {
+                    dynamic jsonObject = JsonConvert.DeserializeObject(res[i].ToString());
+                    ExtractValues(jsonObject, dropPoints);
+                    foreach (var item in dropPoints)
+                    {
+                        string s = item.ToString();
+                        string[] ss = s.Split('&');
+                        drop.Add(ss[1]);
+                    }
+                    dropPoints.Clear();
+                }
+                foreach (var item in drop)
+                {
+                    dropPoints.Add(item);
+                }
             }
             return dropPoints;
 

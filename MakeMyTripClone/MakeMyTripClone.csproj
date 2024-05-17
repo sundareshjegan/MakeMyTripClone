@@ -337,16 +337,16 @@
     <Compile Include="Booking\User Controls\Sleeper.designer.cs">
       <DependentUpon>Sleeper.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomCheckBox2.cs">
+    <Compile Include="Booking\User Controls\CustomCheckBox2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomCheckBox2.Designer.cs">
+    <Compile Include="Booking\User Controls\CustomCheckBox2.Designer.cs">
       <DependentUpon>CustomCheckBox2.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomCheckbox3.cs">
+    <Compile Include="Booking\User Controls\CustomCheckbox3.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomCheckbox3.Designer.cs">
+    <Compile Include="Booking\User Controls\CustomCheckbox3.Designer.cs">
       <DependentUpon>CustomCheckbox3.cs</DependentUpon>
     </Compile>
     <Compile Include="HomePage\HomePageForm.cs">
@@ -463,10 +463,10 @@
     <EmbeddedResource Include="Booking\User Controls\Sleeper.resx">
       <DependentUpon>Sleeper.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomCheckBox2.resx">
+    <EmbeddedResource Include="Booking\User Controls\CustomCheckBox2.resx">
       <DependentUpon>CustomCheckBox2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomCheckbox3.resx">
+    <EmbeddedResource Include="Booking\User Controls\CustomCheckbox3.resx">
       <DependentUpon>CustomCheckbox3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage\HomePageForm.resx">
@@ -864,6 +864,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1711023801388.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nobus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

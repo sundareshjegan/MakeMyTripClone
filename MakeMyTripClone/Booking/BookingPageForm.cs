@@ -27,6 +27,31 @@ namespace MakeMyTripClone
             PaymentForm.OnPaymentFormClosed += OnPaymentCompletedAndFormClosed;
         }
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+        );
+        private Color colour = SystemColors.GradientInactiveCaption, gray = Color.DimGray, highlight = SystemColors.Highlight, white = Color.White;
+        private bool isTime, isDtime, isDropup, isPick, isDrop, isTravel, isPickup, isprevcheck, istravelcheck, isdpcheck;
+        private int no = 0;
+        private Buses bus;
+        private List<RouteDetails> busesList = new List<RouteDetails>();
+        private List<object> droppoints = new List<object>();
+        private List<object> boardingpoints = new List<object>();
+        private List<string> traveloperatorpoints = new List<string>();
+        private List<Buses> buses = new List<Buses>();
+        private List<Buses> filterlist = new List<Buses>();
+        private string isAc = null, seattype = null, pickTime = null, dropTime = null, pickPoint = null, travelpoint = null, dropPoint = null;
+        CustomCheckBox1 prevcheck = null;
+        CustomCheckBox2 travelcheck = null;
+        CustomCheckBox3 dpcheck = null;
+
         private void OnPaymentCompletedAndFormClosed(object sender, EventArgs e)
         {
             DBManager.OnUserLoggedIn -= DBManagerOnUserLoggedIn;
@@ -39,32 +64,6 @@ namespace MakeMyTripClone
             filterlist.Clear();
             Dispose();
         }
-
-        private Color colour = SystemColors.GradientInactiveCaption, gray = Color.DimGray, highlight = SystemColors.Highlight, white = Color.White;
-        private bool isTime, isDtime, isDropup, isPick, isDrop, isTravel, isPickup, isprevcheck, istravelcheck, isdpcheck;
-        private int no = 0;
-        private Buses bus;
-        private  List<RouteDetails> busesList = new List<RouteDetails>();
-        private  List<object> droppoints = new List<object>();
-        private static List<object> boardingpoints = new List<object>();
-        private static List<string> traveloperatorpoints = new List<string>();
-        private List<Buses> buses = new List<Buses>();
-        private List<Buses> filterlist = new List<Buses>();
-        private string isAc = null, seattype = null, pickTime = null, dropTime = null, pickPoint = null, travelpoint = null, dropPoint = null;
-        CustomCheckBox1 prevcheck = null;
-        CustomCheckBox2 travelcheck = null;
-        CustomCheckBox3 dpcheck = null;
-
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-        );
 
         private void DBManagerOnUserLoggedIn(object sender, bool isLoggedIn)
         {
@@ -93,6 +92,7 @@ namespace MakeMyTripClone
             PanelChanges(travelvaluepanel);
             PanelChanges(dpvaluepanel);
             PanelChanges(pickupvaluepanel);
+            ClearallbuttonClick(sender, EventArgs.Empty);
         }
 
         public void SetData(string boarding, string destination, string date, ComboBox from, ComboBox to, DateTimePicker dateTime)
@@ -131,7 +131,7 @@ namespace MakeMyTripClone
                 buses.Add(bus);
                 bus.Setdata(i, fromcomboBox.Text, tocomboBox.Text, departdateTimePicker.Value.ToString("yyyy-MM-dd"));
             }
-            busesfoundlabel.Text = BusesFound() + " Buses Found";
+            NoBusesFound();
         }
 
         private void CloseSearch()
@@ -357,7 +357,7 @@ namespace MakeMyTripClone
                     {
                         if (bus.BusType == isAc || bus.SeatType == seatType) bus.Visible = true;
                         else bus.Visible = false;
-                    }                    
+                    }
                     else Reset();
                 }
             }
@@ -411,7 +411,7 @@ namespace MakeMyTripClone
             {
                 Reset();
             }
-            busesfoundlabel.Text = BusesFound() + " Buses Found";
+            BusesFound();
         }
 
         private void Filter(string isAc, string seatType, string picktime, string droptime, string pickpoint, string travel, string droppoint)
@@ -490,7 +490,7 @@ namespace MakeMyTripClone
                     else bus.Visible = false;
                 }
             }
-            busesfoundlabel.Text = BusesFound() + " Buses Found";
+            BusesFound();
         }
 
         private void LabelsClick(object sender, EventArgs e)
@@ -558,7 +558,6 @@ namespace MakeMyTripClone
                 {
                     if (c.BackColor == colour) c.Colourchange();
                 }
-                busesfoundlabel.Text = BusesFound() + " Buses Found";
             }
         }
 
@@ -720,8 +719,24 @@ namespace MakeMyTripClone
             else warningLabel.Visible = false;
         }
 
+        private void NoBusesFound()
+        {
+            adducpanel.Controls.Add(nopanel);
+            int count = 0;
+            foreach (var bus in buses)
+            {
+                if (bus.Visible == true) count++;
+            }
+            if (count == 0)
+            {
+                nobuspanel.Visible = false;
+                nopanel.Visible = true;
+            }
+        }
+
         private int BusesFound()
         {
+            adducpanel.Controls.Remove(nopanel);
             adducpanel.Controls.Add(nobuspanel);
             int count = 0;
             foreach (var bus in buses)

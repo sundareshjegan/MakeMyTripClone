@@ -16,7 +16,7 @@ namespace MakeMyTripClone
         {
             InitializeComponent();
         }
-        public event EventHandler drops,drops2;
+        public event EventHandler Drops,Drops2;
         private bool isClicked;
         public bool IsClicked {get { return isClicked; } set
             {
@@ -56,8 +56,8 @@ namespace MakeMyTripClone
 
         private void AddressClick(object sender, EventArgs e)
         {
-            drops?.Invoke(this, EventArgs.Empty);
-            drops2 ?.Invoke(this, EventArgs.Empty);
+            Drops?.Invoke(this, EventArgs.Empty);
+            Drops2 ?.Invoke(this, EventArgs.Empty);
         }
         public string[] Getdetails(Address address)
         {
@@ -66,6 +66,11 @@ namespace MakeMyTripClone
             s[1] = address.stopnamelabel.Text;
             s[2] = address.addresslabel.Text;
             return s;
+        }
+        public  void RechangetoNormal(Address prev,Address prev2)
+        {
+            if(prev!=null)prev.BackColor = Color.White;
+            if(prev2!=null)prev2.BackColor = Color.White;
         }
     }
 }
