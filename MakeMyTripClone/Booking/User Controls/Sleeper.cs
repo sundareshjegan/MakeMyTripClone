@@ -20,7 +20,7 @@ namespace MakeMyTripClone
             InitializeComponent();
         }
         public delegate void DatasHandler(bool b, string s);
-        public event DatasHandler colours;
+        public event DatasHandler Colours;
         //public new void Dispose()
         //{
         //    for (int i = 0; i < Controls.Count; i++)
@@ -36,14 +36,14 @@ namespace MakeMyTripClone
             {
                 pictureBox.BackgroundImage = Resources.SLEEPER;
                 pictureBox.BorderStyle = BorderStyle.None;
-                colours?.Invoke(false, pictureBox.Name.Remove(0, 10));
+                Colours?.Invoke(false, pictureBox.Name.Remove(0, 10));
             }
             else
             {
                 pictureBox.BackgroundImage = Resources.Bluesleeper;
                 pictureBox.BorderStyle = BorderStyle.FixedSingle;
                 string s = pictureBox.Name.Remove(0, 10);
-                colours?.Invoke(true, s);
+                Colours?.Invoke(true, s);
                 if (s != "1" && s != "4" && s != "7" && s != "10" && s != "13" && s != "16")
                 {
                     if (s == "2" || s == "5" || s == "8" || s == "11" || s == "14" || s == "17")

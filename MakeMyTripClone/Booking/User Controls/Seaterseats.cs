@@ -18,7 +18,7 @@ namespace MakeMyTripClone
             InitializeComponent();
         }
         public delegate void DatasHandler(bool b, string s);
-        public event DatasHandler seatscolours;
+        public event DatasHandler Seatscolours;
         //public new void Dispose()
         //{
         //    for (int i = 0; i < Controls.Count; i++)
@@ -35,13 +35,13 @@ namespace MakeMyTripClone
             {
                 pictureBox.BackgroundImage = Resources.Seater;
                 pictureBox.BorderStyle = BorderStyle.None;
-                seatscolours?.Invoke(false, s);
+                Seatscolours?.Invoke(false, s);
             }
             else
             {
                 pictureBox.BackgroundImage = Resources.Blueseater;
                 pictureBox.BorderStyle = BorderStyle.FixedSingle;
-                seatscolours?.Invoke(true, s);
+                Seatscolours?.Invoke(true, s);
                 if (s == "1" || s == "5" || s == "9" || s == "13" || s == "17" || s == "21" || s == "25" || s == "29" || s == "33" || s == "37" || s == "3" || s == "7" || s == "11" || s == "15" || s == "19" || s == "23" || s == "27" || s == "31" || s == "35" || s == "39")
                 {
                     int n = int.Parse(s) + 1;

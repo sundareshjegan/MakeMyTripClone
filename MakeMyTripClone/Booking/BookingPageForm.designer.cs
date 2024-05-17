@@ -104,15 +104,17 @@
             this.fstbutton = new System.Windows.Forms.Button();
             this.arbutton = new System.Windows.Forms.Button();
             this.dprbutton = new System.Windows.Forms.Button();
-            this.busesfoundlabel = new System.Windows.Forms.Label();
             this.adducpanel = new System.Windows.Forms.Panel();
+            this.nopanel = new System.Windows.Forms.Panel();
+            this.nopictureBox = new System.Windows.Forms.PictureBox();
+            this.noolabel = new System.Windows.Forms.Label();
+            this.nolabel = new System.Windows.Forms.Label();
             this.nobuspanel = new System.Windows.Forms.Panel();
             this.nofindlabel = new System.Windows.Forms.Label();
             this.clearalllbutton = new System.Windows.Forms.Button();
             this.nobuslabel = new System.Windows.Forms.Label();
             this.noresultpictureBox = new System.Windows.Forms.PictureBox();
             this.toppage = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.logInTab1 = new MakeMyTripClone.LogInTab();
             this.makemytriplogo = new System.Windows.Forms.PictureBox();
             this.imagespanel = new System.Windows.Forms.Panel();
@@ -206,6 +208,8 @@
             this.clearallpanel.SuspendLayout();
             this.tabpanel.SuspendLayout();
             this.adducpanel.SuspendLayout();
+            this.nopanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nopictureBox)).BeginInit();
             this.nobuspanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.noresultpictureBox)).BeginInit();
             this.toppage.SuspendLayout();
@@ -476,6 +480,7 @@
             // 
             // dpvaluepanel
             // 
+            this.dpvaluepanel.AutoScroll = true;
             this.dpvaluepanel.BackColor = System.Drawing.Color.White;
             this.dpvaluepanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.dpvaluepanel.Location = new System.Drawing.Point(0, 1286);
@@ -1159,7 +1164,6 @@
             this.tabpanel.Controls.Add(this.fstbutton);
             this.tabpanel.Controls.Add(this.arbutton);
             this.tabpanel.Controls.Add(this.dprbutton);
-            this.tabpanel.Controls.Add(this.busesfoundlabel);
             this.tabpanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabpanel.Location = new System.Drawing.Point(446, 158);
             this.tabpanel.Name = "tabpanel";
@@ -1228,23 +1232,12 @@
             this.dprbutton.UseVisualStyleBackColor = false;
             this.dprbutton.Click += new System.EventHandler(this.DprbuttonClick);
             // 
-            // busesfoundlabel
-            // 
-            this.busesfoundlabel.AutoSize = true;
-            this.busesfoundlabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.busesfoundlabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.busesfoundlabel.Location = new System.Drawing.Point(0, 0);
-            this.busesfoundlabel.Name = "busesfoundlabel";
-            this.busesfoundlabel.Size = new System.Drawing.Size(177, 32);
-            this.busesfoundlabel.TabIndex = 0;
-            this.busesfoundlabel.Text = "0 buses found";
-            this.busesfoundlabel.Visible = false;
-            // 
             // adducpanel
             // 
             this.adducpanel.AutoScroll = true;
             this.adducpanel.BackColor = System.Drawing.Color.Gainsboro;
             this.adducpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.adducpanel.Controls.Add(this.nopanel);
             this.adducpanel.Controls.Add(this.nobuspanel);
             this.adducpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.adducpanel.Location = new System.Drawing.Point(446, 199);
@@ -1252,15 +1245,61 @@
             this.adducpanel.Size = new System.Drawing.Size(1385, 619);
             this.adducpanel.TabIndex = 3;
             // 
+            // nopanel
+            // 
+            this.nopanel.Controls.Add(this.nopictureBox);
+            this.nopanel.Controls.Add(this.noolabel);
+            this.nopanel.Controls.Add(this.nolabel);
+            this.nopanel.Location = new System.Drawing.Point(214, 9);
+            this.nopanel.Name = "nopanel";
+            this.nopanel.Size = new System.Drawing.Size(1051, 209);
+            this.nopanel.TabIndex = 1;
+            // 
+            // nopictureBox
+            // 
+            this.nopictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.nopictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.nopictureBox.Image = global::MakeMyTripClone.Properties.Resources.Nobus;
+            this.nopictureBox.Location = new System.Drawing.Point(22, 15);
+            this.nopictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nopictureBox.Name = "nopictureBox";
+            this.nopictureBox.Size = new System.Drawing.Size(308, 160);
+            this.nopictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.nopictureBox.TabIndex = 4;
+            this.nopictureBox.TabStop = false;
+            // 
+            // noolabel
+            // 
+            this.noolabel.AutoSize = true;
+            this.noolabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noolabel.Location = new System.Drawing.Point(338, 83);
+            this.noolabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.noolabel.Name = "noolabel";
+            this.noolabel.Size = new System.Drawing.Size(698, 64);
+            this.noolabel.TabIndex = 2;
+            this.noolabel.Text = "we couldn\'t find any buses on your selected routes . Please \r\nselect alternate ro" +
+    "utes for your travel";
+            // 
+            // nolabel
+            // 
+            this.nolabel.AutoSize = true;
+            this.nolabel.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nolabel.Location = new System.Drawing.Point(355, 21);
+            this.nolabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nolabel.Name = "nolabel";
+            this.nolabel.Size = new System.Drawing.Size(289, 47);
+            this.nolabel.TabIndex = 2;
+            this.nolabel.Text = "No buses found ";
+            // 
             // nobuspanel
             // 
             this.nobuspanel.Controls.Add(this.nofindlabel);
             this.nobuspanel.Controls.Add(this.clearalllbutton);
             this.nobuspanel.Controls.Add(this.nobuslabel);
             this.nobuspanel.Controls.Add(this.noresultpictureBox);
-            this.nobuspanel.Location = new System.Drawing.Point(16, 12);
+            this.nobuspanel.Location = new System.Drawing.Point(27, 12);
             this.nobuspanel.Name = "nobuspanel";
-            this.nobuspanel.Size = new System.Drawing.Size(1345, 384);
+            this.nobuspanel.Size = new System.Drawing.Size(1334, 384);
             this.nobuspanel.TabIndex = 0;
             this.nobuspanel.Visible = false;
             // 
@@ -1308,10 +1347,10 @@
             this.noresultpictureBox.BackColor = System.Drawing.Color.Transparent;
             this.noresultpictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.noresultpictureBox.Image = global::MakeMyTripClone.Properties.Resources.no_results;
-            this.noresultpictureBox.Location = new System.Drawing.Point(584, 63);
+            this.noresultpictureBox.Location = new System.Drawing.Point(516, 63);
             this.noresultpictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.noresultpictureBox.Name = "noresultpictureBox";
-            this.noresultpictureBox.Size = new System.Drawing.Size(165, 160);
+            this.noresultpictureBox.Size = new System.Drawing.Size(233, 160);
             this.noresultpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.noresultpictureBox.TabIndex = 3;
             this.noresultpictureBox.TabStop = false;
@@ -1320,7 +1359,6 @@
             // toppage
             // 
             this.toppage.BackColor = System.Drawing.Color.White;
-            this.toppage.Controls.Add(this.button1);
             this.toppage.Controls.Add(this.logInTab1);
             this.toppage.Controls.Add(this.makemytriplogo);
             this.toppage.Controls.Add(this.imagespanel);
@@ -1329,16 +1367,6 @@
             this.toppage.Name = "toppage";
             this.toppage.Size = new System.Drawing.Size(1831, 73);
             this.toppage.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(50, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // logInTab1
             // 
@@ -2053,6 +2081,9 @@
             this.tabpanel.ResumeLayout(false);
             this.tabpanel.PerformLayout();
             this.adducpanel.ResumeLayout(false);
+            this.nopanel.ResumeLayout(false);
+            this.nopanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nopictureBox)).EndInit();
             this.nobuspanel.ResumeLayout(false);
             this.nobuspanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.noresultpictureBox)).EndInit();
@@ -2129,7 +2160,6 @@
         private System.Windows.Forms.Button arbutton;
         private System.Windows.Forms.Button fstbutton;
         private System.Windows.Forms.Label srtbylabel;
-        private System.Windows.Forms.Label busesfoundlabel;
         private System.Windows.Forms.Panel adducpanel;
         private System.Windows.Forms.Panel nonacpanel;
         private System.Windows.Forms.Label nonaclabel;
@@ -2225,7 +2255,10 @@
         private System.Windows.Forms.Label warningLabel;
         private LogInTab logInTab1;
         private System.Windows.Forms.PictureBox makemytriplogo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel nopanel;
+        private System.Windows.Forms.PictureBox nopictureBox;
+        private System.Windows.Forms.Label noolabel;
+        private System.Windows.Forms.Label nolabel;
     }
 }
 
