@@ -149,7 +149,7 @@
             this.sourceBoardingLabel = new System.Windows.Forms.Label();
             this.sourceCityLabel = new System.Windows.Forms.Label();
             this.customPanel1 = new MakeMyTripClone.UserControls.CustomPanel();
-            this.label33 = new System.Windows.Forms.Label();
+            this.userAgreementLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.amountPanel = new System.Windows.Forms.Panel();
@@ -235,7 +235,7 @@
             this.CompleteBookingLabel.AutoSize = true;
             this.CompleteBookingLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompleteBookingLabel.ForeColor = System.Drawing.Color.White;
-            this.CompleteBookingLabel.Location = new System.Drawing.Point(288, 14);
+            this.CompleteBookingLabel.Location = new System.Drawing.Point(285, 14);
             this.CompleteBookingLabel.Name = "CompleteBookingLabel";
             this.CompleteBookingLabel.Size = new System.Drawing.Size(286, 32);
             this.CompleteBookingLabel.TabIndex = 1;
@@ -247,7 +247,7 @@
             this.headerDateTimeLabel.AutoSize = true;
             this.headerDateTimeLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerDateTimeLabel.ForeColor = System.Drawing.Color.White;
-            this.headerDateTimeLabel.Location = new System.Drawing.Point(852, 17);
+            this.headerDateTimeLabel.Location = new System.Drawing.Point(848, 17);
             this.headerDateTimeLabel.Name = "headerDateTimeLabel";
             this.headerDateTimeLabel.Size = new System.Drawing.Size(297, 25);
             this.headerDateTimeLabel.TabIndex = 1;
@@ -260,7 +260,7 @@
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.51773F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.48227F));
             this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 649F));
-            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
+            this.headerPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
             this.headerPanel.Controls.Add(this.headerDateTimeLabel, 2, 0);
             this.headerPanel.Controls.Add(this.logoPB, 0, 0);
             this.headerPanel.Controls.Add(this.CompleteBookingLabel, 1, 0);
@@ -277,7 +277,7 @@
             // 
             this.logoPB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logoPB.Image = global::MakeMyTripClone.Properties.Resources.logoWhite;
-            this.logoPB.Location = new System.Drawing.Point(25, 7);
+            this.logoPB.Location = new System.Drawing.Point(24, 7);
             this.logoPB.Name = "logoPB";
             this.logoPB.Size = new System.Drawing.Size(136, 45);
             this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -289,7 +289,7 @@
             this.closePB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.closePB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closePB.Image = global::MakeMyTripClone.Properties.Resources.close;
-            this.closePB.Location = new System.Drawing.Point(1414, 17);
+            this.closePB.Location = new System.Drawing.Point(1412, 17);
             this.closePB.Name = "closePB";
             this.closePB.Size = new System.Drawing.Size(25, 25);
             this.closePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1074,6 +1074,7 @@
             this.label6.Size = new System.Drawing.Size(152, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "Terms and Conditions";
+            this.label6.Click += new System.EventHandler(this.OnTermsAndConditionLabelClicked);
             // 
             // pictureBox4
             // 
@@ -1614,7 +1615,7 @@
             // customPanel1
             // 
             this.customPanel1.BorderColor = System.Drawing.Color.LightGray;
-            this.customPanel1.Controls.Add(this.label33);
+            this.customPanel1.Controls.Add(this.userAgreementLabel);
             this.customPanel1.Controls.Add(this.button1);
             this.customPanel1.Controls.Add(this.label28);
             this.customPanel1.Controls.Add(this.amountPanel);
@@ -1631,17 +1632,19 @@
             this.customPanel1.Size = new System.Drawing.Size(412, 297);
             this.customPanel1.TabIndex = 6;
             // 
-            // label33
+            // userAgreementLabel
             // 
-            this.label33.AutoSize = true;
-            this.label33.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label33.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(15, 237);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(278, 39);
-            this.label33.TabIndex = 0;
-            this.label33.Text = "\r\nBy proceeding, I agree to MakeMyTrip’s User Agreement, \r\nTerms of Service and P" +
+            this.userAgreementLabel.AutoSize = true;
+            this.userAgreementLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userAgreementLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userAgreementLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userAgreementLabel.Location = new System.Drawing.Point(15, 237);
+            this.userAgreementLabel.Name = "userAgreementLabel";
+            this.userAgreementLabel.Size = new System.Drawing.Size(278, 39);
+            this.userAgreementLabel.TabIndex = 0;
+            this.userAgreementLabel.Text = "\r\nBy proceeding, I agree to MakeMyTrip’s User Agreement, \r\nTerms of Service and P" +
     "rivacy Policy";
+            this.userAgreementLabel.Click += new System.EventHandler(this.OnUserAgreementLabelClicked);
             // 
             // button1
             // 
@@ -2091,7 +2094,7 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label userAgreementLabel;
         private System.Windows.Forms.Panel seperatorPanel3;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label37;

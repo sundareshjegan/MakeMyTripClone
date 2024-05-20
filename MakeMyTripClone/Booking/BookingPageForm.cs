@@ -2,7 +2,6 @@
 using MakeMyTripClone.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -675,6 +674,14 @@ namespace MakeMyTripClone
         {
             LoginForm login = new LoginForm();
             login.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach(Control control in Controls)
+            {
+                control.BackColor = Color.Black;
+            }
         }
 
         private void SwappictureBoxClick(object sender, EventArgs e)

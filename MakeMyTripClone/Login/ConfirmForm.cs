@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MakeMyTripClone
@@ -20,7 +14,6 @@ namespace MakeMyTripClone
             InitializeComponent();
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 60, 60));
             confirmBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, confirmBtn.Width, confirmBtn.Height, 10, 10));
-
             validityTimer.Interval = 1000;
             validityTimer.Tick += OnValidityTimerTicked;
         }
@@ -39,11 +32,10 @@ namespace MakeMyTripClone
         #endregion
 
         public bool IsVerified = false;
-
+        private static readonly Random random = new Random();
         private Timer validityTimer = new Timer();
         private TimeSpan remainingTime = TimeSpan.FromMinutes(3);
 
-        private static readonly Random random = new Random();
         private int confirmationCode;
 
         private void OnValidityTimerTicked(object sender, EventArgs e)
@@ -59,6 +51,7 @@ namespace MakeMyTripClone
             }
             timerLabel.Text = $"Code Expires in : {remainingTime:mm\\:ss}";
         }
+
         private void OnConfirmBtnClicked(object sender, EventArgs e)
         {
             int codeByUser = int.Parse(confirmationCodeTB.Text.Replace(" ", ""));
@@ -81,6 +74,7 @@ namespace MakeMyTripClone
                 Opacity *= 2;
             }
         }
+
         private void OnClosePBClicked(object sender, EventArgs e)
         {
             Dispose();
@@ -90,6 +84,7 @@ namespace MakeMyTripClone
         {
             confirmBtn.Enabled = confirmationCodeTB.Text.Length == 11;
         }
+
         #region Helper Functions
         private void ConvertMaskedEmail(string email)
         {
@@ -109,10 +104,6 @@ namespace MakeMyTripClone
 
         public bool SendEmail(string email, string name)
         {
-            //LoaderForm loader = new LoaderForm();
-            //loader.TopMost = true;
-            //loader.Show(this);
-
             ConvertMaskedEmail(email);
             confirmationCode = GenerateConfirmationCode();
 
@@ -241,7 +232,6 @@ namespace MakeMyTripClone
                 })
                 {
                     smtp.Send(message);
-                    //MessageBox.Show("Sent Successfully..!");
                     validityTimer.Start();
                     return true;
                 }
@@ -253,17 +243,14 @@ namespace MakeMyTripClone
             }
             finally
             {
-                //loader.Hide();
-                //loader.Dispose();
+                fromAddress = toAddress = null;
             }
-
         }
 
         private int GenerateConfirmationCode()
         {
             return random.Next(123000, 999999);
         }
-
         #endregion
     }
 }

@@ -1,4 +1,5 @@
 ﻿
+
 using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
@@ -8,7 +9,6 @@ using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 
 namespace MakeMyTripClone
 {
@@ -100,11 +100,12 @@ namespace MakeMyTripClone
             };
             var res = manager.UpdateData(Customer.TableName, $"{Customer.Email} = '{email}'", data);
         }
+        public static List<RouteDetails> list;
         public static List<RouteDetails> GetBuses(String boarding , String destination , String date)
         {
             var res = manager.FetchData(Route.TableName, $"{Route.Boarding} = '{boarding}' and {Route.Destination} = '{destination}' and {Route.StartDate} = '{date}'").Value;
 
-            List<RouteDetails> list = new List<RouteDetails>();
+            list= new List<RouteDetails>();
             
             if (res.Count > 0 )
             {
@@ -131,6 +132,7 @@ namespace MakeMyTripClone
                 }
             }
             return list;
+            
         }
 
         public static List<object> GetBoardingPoints(String boarding, String destination, String date)
@@ -261,6 +263,7 @@ namespace MakeMyTripClone
             }
             return seatStatus == 1;
         }
+
         public static bool IsSeatBookedByFemale(int routeId, string seatNumber)
         {
             var res = manager.FetchData(Seat.TableName, $"{Route.Id}= '{routeId}' and {Seat.SeatNumber}= '{seatNumber}' ", -1, -1, "", Seat.IsBookedByFemale).Value;
@@ -271,5 +274,33 @@ namespace MakeMyTripClone
             }
             return seatStatus == 1;
         }
+
+        public static void DeleteDatasfromDatabase()
+        {
+            for (int i = -10; i < 0; i++)
+            {
+                DateTime date = new DateTime(2024, 05, 30);
+                DateTime previousDate = date.AddDays(i);
+                string previous = previousDate.ToString("yyyy-M-d");
+                var res = manager.FetchData(Route.TableName, $"{Route.StartDate} = '{previous}'").Value;
+                List<int> li = new List<int>();
+                if (res != null)
+                {
+                    for (int j = 0; j < res.Count; j++)
+                    {
+                        li.Add(int.Parse(res[Route.Id][j].ToString()));
+                    }
+                    if (li.Count != 0)
+                    {
+                        for (int k = 0; k < li.Count; k++)
+                        {
+                            manager.DeleteData(Seat.TableName, $"{Seat.RouteId}='{li[k]}'");
+                        }
+                    }
+                    manager.DeleteData(Route.TableName, $"{Route.StartDate} = '{previousDate}'");
+                }
+            }
+        }
+
     }
 }

@@ -5,7 +5,8 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-
+using CefSharp;
+using CefSharp.WinForms;
 namespace MakeMyTripClone
 {
     public partial class CompleteBookingForm : Form
@@ -13,8 +14,12 @@ namespace MakeMyTripClone
         public CompleteBookingForm()
         {
             InitializeComponent();
+
+            //randomly generate number of ratings for buses
             int noOfRatings = random.Next(53, 150);
             noOfRatingsLabel.Text = noOfRatings + " Ratings";
+
+            //randomly generate star rating for buses
             double randomRating = Math.Round(random.NextDouble() * (4.9 - 3.5) + 3.5, 1);
             ratingLabel.Text = randomRating.ToString();
 
@@ -24,6 +29,8 @@ namespace MakeMyTripClone
             //event triggered when an user completes the payment successfully
             PaymentForm.OnPaymentFormClosed += OnPaymentFormClosed;
 
+            //to iniitalize browser
+            Cef.Initialize(new CefSettings());
             #region comments
             //CreateCurves();
             //travellerDetailsPanel.Height = 0;
@@ -61,13 +68,16 @@ namespace MakeMyTripClone
         private Random random = new Random();
         private List<TravellerDetails> travellersList;
         private BookingDetails busDetails;
+        private ChromiumWebBrowser browser;
 
+        //When user already logged in or not
         private void OnCompleteBookingFormLoad(object sender, EventArgs e)
         {
             rightSepPanel2.Visible = loginNowPanel.Visible = !DBManager.IsUserLoggedIn;
             rightSepPanel1.Visible = couponCodePanel.Visible = DBManager.IsUserLoggedIn;
         }
 
+        //if user log in from current page
         private void OnDBManagerOnUserLoggedIn(object sender, bool e)
         {
             rightSepPanel2.Visible = loginNowPanel.Visible = !DBManager.IsUserLoggedIn;
@@ -114,6 +124,30 @@ namespace MakeMyTripClone
             {
                 couponWarningLabel.Text = "Invalid Coupon code!";
             }
+        }
+        private void OnTermsAndConditionLabelClicked(object sender, EventArgs e)
+        {
+            Form tc = new Form();
+            tc.WindowState = FormWindowState.Maximized;
+            tc.MinimizeBox = tc.MaximizeBox = false;
+            browser = new ChromiumWebBrowser("https://promos.makemytrip.com/Bus/index.html");
+            tc.Controls.Add(browser);
+            browser.Dock = DockStyle.Fill;
+            tc.ShowDialog();
+            browser.Dispose();
+            tc.Dispose();
+        }
+        private void OnUserAgreementLabelClicked(object sender, EventArgs e)
+        {
+            Form tc = new Form();
+            tc.WindowState = FormWindowState.Maximized;
+            tc.MinimizeBox = tc.MaximizeBox = false;
+            browser = new ChromiumWebBrowser("https://www.makemytrip.com/legal/user_agreement.html");
+            tc.Controls.Add(browser);
+            browser.Dock = DockStyle.Fill;
+            tc.ShowDialog();
+            browser.Dispose();
+            tc.Dispose();
         }
         #endregion
 
@@ -234,12 +268,14 @@ namespace MakeMyTripClone
                 }
             }
         }
+
         private void OnPaymentFormClosed(object sender, EventArgs e)
         {
             foreach(Control c in Controls)
             {
                 c.Dispose();
             }
+            travellersList.Clear();
             Dispose();
         }
 

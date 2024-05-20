@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.Common.120.1.80\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.120.1.80\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\cef.redist.x86.120.1.8\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.120.1.8\build\cef.redist.x86.props')" />
+  <Import Project="..\packages\cef.redist.x64.120.1.8\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.120.1.8\build\cef.redist.x64.props')" />
   <Import Project="..\packages\Microsoft.Extensions.Configuration.UserSecrets.6.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('..\packages\Microsoft.Extensions.Configuration.UserSecrets.6.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -41,6 +44,15 @@
     </Reference>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp, Version=120.1.80.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.120.1.80\lib\net462\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=120.1.80.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.120.1.80\lib\net462\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms, Version=120.1.80.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.WinForms.120.1.80\lib\net462\CefSharp.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="DatabaseLibrary">
       <HintPath>..\..\..\C_Sharp_Projects\Database_DLL FIles\DatabaseLibrary.dll</HintPath>
@@ -403,6 +415,11 @@
     <Compile Include="Login\SuccessFailureForm.Designer.cs">
       <DependentUpon>SuccessFailureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -492,14 +509,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Login\SuccessFailureForm.resx">
       <DependentUpon>SuccessFailureForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -866,6 +878,16 @@
     <None Include="Resources\1711023801388.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\HomePageAD4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomePageAD3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomePageAD2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomePageAD11.jpg" />
     <None Include="Resources\Nobus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -880,6 +902,10 @@
     <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.Extensions.Configuration.UserSecrets.6.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Configuration.UserSecrets.6.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.Extensions.Configuration.UserSecrets.6.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Configuration.UserSecrets.6.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x64.120.1.8\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.120.1.8\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.120.1.8\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.120.1.8\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.120.1.80\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.120.1.80\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.120.1.80\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.120.1.80\build\CefSharp.Common.targets'))" />
   </Target>
   <Import Project="..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
@@ -887,4 +913,5 @@
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
   <Import Project="..\packages\Microsoft.Extensions.Configuration.UserSecrets.6.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets" Condition="Exists('..\packages\Microsoft.Extensions.Configuration.UserSecrets.6.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.targets')" />
+  <Import Project="..\packages\CefSharp.Common.120.1.80\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.120.1.80\build\CefSharp.Common.targets')" />
 </Project>

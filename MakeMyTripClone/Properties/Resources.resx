@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="HomePageAD1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomePageAD1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="rating" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rating.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -127,8 +130,14 @@
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loaderFailed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loaderFailed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="key" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="b2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\b2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="netbanking" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\netbanking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +151,8 @@
   <data name="googlePay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\googlePay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loaderFailed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loaderFailed.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="traveling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\traveling.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="validTick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\validTick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,6 +181,8 @@
   <data name="trainwhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trainwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="lazypay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lazypay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   <data name="traveling" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\traveling.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -189,6 +200,15 @@
   </data>
   <data name="usb_connector" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usb-connector.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo2_removebg_preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo2-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoginPageCarousel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoginPageCarousel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Makemytrip_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Makemytrip_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Makemytrip_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Makemytrip_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,8 +273,8 @@
   <data name="baggage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\baggage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="liveTracking" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\liveTracking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="more" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\more.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="discount" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\discount.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -279,6 +299,9 @@
   </data>
   <data name="arrow_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="liveTracking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\liveTracking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bus1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -382,6 +405,10 @@
   <data name="upi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="seller" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  </data>
   <data name="homewhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\homewhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -399,6 +426,18 @@
   </data>
   <data name="creditCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\creditCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomePageAD4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomePageAD4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomePageAD3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomePageAD3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomePageAD2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomePageAD2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomePageAD11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomePageAD11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Nobus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Nobus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
