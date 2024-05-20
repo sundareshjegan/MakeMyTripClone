@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePageForm));
+            this.customPanel22 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.label108 = new System.Windows.Forms.Label();
+            this.label107 = new System.Windows.Forms.Label();
+            this.label106 = new System.Windows.Forms.Label();
+            this.label105 = new System.Windows.Forms.Label();
+            this.label104 = new System.Windows.Forms.Label();
+            this.label103 = new System.Windows.Forms.Label();
+            this.label102 = new System.Windows.Forms.Label();
+            this.label101 = new System.Windows.Forms.Label();
             this.offersPanel = new MakeMyTripClone.UserControls.CustomPanel();
             this.customPanel28 = new MakeMyTripClone.UserControls.CustomPanel();
             this.label134 = new System.Windows.Forms.Label();
@@ -74,15 +83,7 @@
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.offerLabel = new System.Windows.Forms.Label();
             this.navBar1 = new MakeMyTripClone.NavBar();
-            this.customPanel22 = new MakeMyTripClone.UserControls.CustomPanel();
-            this.label108 = new System.Windows.Forms.Label();
-            this.label107 = new System.Windows.Forms.Label();
-            this.label106 = new System.Windows.Forms.Label();
-            this.label105 = new System.Windows.Forms.Label();
-            this.label104 = new System.Windows.Forms.Label();
-            this.label103 = new System.Windows.Forms.Label();
-            this.label102 = new System.Windows.Forms.Label();
-            this.label101 = new System.Windows.Forms.Label();
+            this.customPanel22.SuspendLayout();
             this.offersPanel.SuspendLayout();
             this.customPanel28.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
@@ -96,8 +97,114 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             this.customPanel26.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
-            this.customPanel22.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // customPanel22
+            // 
+            this.customPanel22.BackColor = System.Drawing.Color.White;
+            this.customPanel22.BorderColor = System.Drawing.Color.White;
+            this.customPanel22.Controls.Add(this.label108);
+            this.customPanel22.Controls.Add(this.label107);
+            this.customPanel22.Controls.Add(this.label106);
+            this.customPanel22.Controls.Add(this.label105);
+            this.customPanel22.Controls.Add(this.label104);
+            this.customPanel22.Controls.Add(this.label103);
+            this.customPanel22.Controls.Add(this.label102);
+            this.customPanel22.Controls.Add(this.label101);
+            this.customPanel22.CornerRadius = 20;
+            this.customPanel22.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customPanel22.Location = new System.Drawing.Point(354, 944);
+            this.customPanel22.Name = "customPanel22";
+            this.customPanel22.Padding = new System.Windows.Forms.Padding(20);
+            this.customPanel22.Size = new System.Drawing.Size(1178, 370);
+            this.customPanel22.TabIndex = 1;
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label108.ForeColor = System.Drawing.Color.Black;
+            this.label108.Location = new System.Drawing.Point(45, 250);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(124, 17);
+            this.label108.TabIndex = 7;
+            this.label108.Text = "IMPORTANT LINKS";
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label107.Location = new System.Drawing.Point(45, 279);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(1028, 85);
+            this.label107.TabIndex = 6;
+            this.label107.Text = resources.GetString("label107.Text");
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label106.Location = new System.Drawing.Point(45, 211);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(806, 51);
+            this.label106.TabIndex = 5;
+            this.label106.Text = "Customer Support, Payment Security, Privacy Policy, User Agreement, Terms of Serv" +
+    "ice, More Offices, Make A Payment, Work From Home\r\n\r\n\r\n";
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label105.ForeColor = System.Drawing.Color.Black;
+            this.label105.Location = new System.Drawing.Point(45, 184);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(111, 17);
+            this.label105.TabIndex = 4;
+            this.label105.Text = "ABOUT THE SITE";
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label104.Location = new System.Drawing.Point(45, 150);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(1001, 17);
+            this.label104.TabIndex = 3;
+            this.label104.Text = "About Us, Investor Relations, Careers, MMT Foundation, CSR Policy, myPartner - Tr" +
+    "avel Agent Portal, Foreign Exchange, List yourhotel, Partners- Redbus, Partners-" +
+    " Goibibo";
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label103.ForeColor = System.Drawing.Color.Black;
+            this.label103.Location = new System.Drawing.Point(45, 128);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(92, 17);
+            this.label103.TabIndex = 2;
+            this.label103.Text = "MAKEMYTRIP";
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label102.ForeColor = System.Drawing.Color.Black;
+            this.label102.Location = new System.Drawing.Point(45, 26);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(135, 17);
+            this.label102.TabIndex = 1;
+            this.label102.Text = "PRODUCT OFFERING";
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label101.Location = new System.Drawing.Point(45, 57);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(1061, 68);
+            this.label101.TabIndex = 0;
+            this.label101.Text = resources.GetString("label101.Text");
             // 
             // offersPanel
             // 
@@ -591,115 +698,8 @@
             this.navBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.navBar1.Location = new System.Drawing.Point(0, 0);
             this.navBar1.Name = "navBar1";
-            this.navBar1.Size = new System.Drawing.Size(1907, 502);
+            this.navBar1.Size = new System.Drawing.Size(1924, 502);
             this.navBar1.TabIndex = 0;
-            // 
-            // customPanel22
-            // 
-            this.customPanel22.BackColor = System.Drawing.Color.White;
-            this.customPanel22.BorderColor = System.Drawing.Color.White;
-            this.customPanel22.Controls.Add(this.label108);
-            this.customPanel22.Controls.Add(this.label107);
-            this.customPanel22.Controls.Add(this.label106);
-            this.customPanel22.Controls.Add(this.label105);
-            this.customPanel22.Controls.Add(this.label104);
-            this.customPanel22.Controls.Add(this.label103);
-            this.customPanel22.Controls.Add(this.label102);
-            this.customPanel22.Controls.Add(this.label101);
-            this.customPanel22.CornerRadius = 20;
-            this.customPanel22.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customPanel22.Location = new System.Drawing.Point(354, 944);
-            this.customPanel22.Name = "customPanel22";
-            this.customPanel22.Padding = new System.Windows.Forms.Padding(20);
-            this.customPanel22.Size = new System.Drawing.Size(1178, 370);
-            this.customPanel22.TabIndex = 1;
-            // 
-            // label108
-            // 
-            this.label108.AutoSize = true;
-            this.label108.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label108.ForeColor = System.Drawing.Color.Black;
-            this.label108.Location = new System.Drawing.Point(45, 250);
-            this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(124, 17);
-            this.label108.TabIndex = 7;
-            this.label108.Text = "IMPORTANT LINKS";
-            // 
-            // label107
-            // 
-            this.label107.AutoSize = true;
-            this.label107.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label107.Location = new System.Drawing.Point(45, 279);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(1028, 85);
-            this.label107.TabIndex = 6;
-            this.label107.Text = resources.GetString("label107.Text");
-            // 
-            // label106
-            // 
-            this.label106.AutoSize = true;
-            this.label106.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label106.Location = new System.Drawing.Point(45, 211);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(806, 51);
-            this.label106.TabIndex = 5;
-            this.label106.Text = "Customer Support, Payment Security, Privacy Policy, User Agreement, Terms of Serv" +
-    "ice, More Offices, Make A Payment, Work From Home\r\n\r\n\r\n";
-            // 
-            // label105
-            // 
-            this.label105.AutoSize = true;
-            this.label105.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label105.ForeColor = System.Drawing.Color.Black;
-            this.label105.Location = new System.Drawing.Point(45, 184);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(111, 17);
-            this.label105.TabIndex = 4;
-            this.label105.Text = "ABOUT THE SITE";
-            // 
-            // label104
-            // 
-            this.label104.AutoSize = true;
-            this.label104.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label104.Location = new System.Drawing.Point(45, 150);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(1001, 17);
-            this.label104.TabIndex = 3;
-            this.label104.Text = "About Us, Investor Relations, Careers, MMT Foundation, CSR Policy, myPartner - Tr" +
-    "avel Agent Portal, Foreign Exchange, List yourhotel, Partners- Redbus, Partners-" +
-    " Goibibo";
-            // 
-            // label103
-            // 
-            this.label103.AutoSize = true;
-            this.label103.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label103.ForeColor = System.Drawing.Color.Black;
-            this.label103.Location = new System.Drawing.Point(45, 128);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(92, 17);
-            this.label103.TabIndex = 2;
-            this.label103.Text = "MAKEMYTRIP";
-            // 
-            // label102
-            // 
-            this.label102.AutoSize = true;
-            this.label102.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label102.ForeColor = System.Drawing.Color.Black;
-            this.label102.Location = new System.Drawing.Point(45, 26);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(135, 17);
-            this.label102.TabIndex = 1;
-            this.label102.Text = "PRODUCT OFFERING";
-            // 
-            // label101
-            // 
-            this.label101.AutoSize = true;
-            this.label101.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label101.Location = new System.Drawing.Point(45, 57);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(1061, 68);
-            this.label101.TabIndex = 0;
-            this.label101.Text = resources.GetString("label101.Text");
             // 
             // HomePageForm
             // 
@@ -707,7 +707,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.ClientSize = new System.Drawing.Size(1941, 1061);
             this.Controls.Add(this.customPanel22);
             this.Controls.Add(this.offersPanel);
             this.Controls.Add(this.navBar1);
@@ -717,6 +717,8 @@
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 50);
             this.TransparencyKey = System.Drawing.Color.Maroon;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.customPanel22.ResumeLayout(false);
+            this.customPanel22.PerformLayout();
             this.offersPanel.ResumeLayout(false);
             this.offersPanel.PerformLayout();
             this.customPanel28.ResumeLayout(false);
@@ -737,8 +739,6 @@
             this.customPanel26.ResumeLayout(false);
             this.customPanel26.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
-            this.customPanel22.ResumeLayout(false);
-            this.customPanel22.PerformLayout();
             this.ResumeLayout(false);
 
         }

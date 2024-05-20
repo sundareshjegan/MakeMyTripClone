@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label107.Text" xml:space="preserve">
+    <value>Bangalore to Chennai Bus, Chennai to Bangalore Bus, Kolkata to Siliguri Bus, Chandigarh to Manali Bus, Delhi to Jaipur Bus, Delhi to Chandigarh Bus, Mumbai to Goa Bus,
+Delhi to Shimla Bus, Mumbai to Pune Bus, Delhi to Haridwar Bus, Mumbai to Bangalore Bus, Bangalore to Goa Bus, Hyderabad to Bangalore Bus, Bangalore to Hyderabad Bus, 
+Delhi to Dehradun Bus, Lucknow to Delhi Bus, Jaipur to Delhi Bus, Bhopal to Indore Bus, Delhi to Manali Bus, Indore to Bhopal Bus.
+
+
+</value>
+  </data>
+  <data name="label101.Text" xml:space="preserve">
+    <value>Flights, International Flights, Charter Flights, Hotels, International Hotels, Homestays and Villas, Activities, Holidays In India, International Holidays, Book Hotels From UAE, 
+myBiz for Corporate Travel, Book Online Cabs, Book Bus Tickets, Book Train Tickets, Cheap Tickets to India, Book Flights From US, Book Flights From UAE, Trip Planner, Gift Cards, 
+Gift, Wedding Gift, Anniversary Gift, Birthday Gift, Diwali Gift, Valentines Gift, Farewell Gift, Christmas Gift, New Year Gift, Trip Money, Trip Ideas, Travel Blog, PNR Status, One Way Cab.
+
+</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="navBar1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -24574,21 +24589,6 @@
         oEH1zXOxfi4dPCju35f6ObP14w3SZ5U4X0/K5gWp7lmE738uQvc+E8sG0CoaFqp7FmprZpEsUbLaFMtj
         DMP4jw+gzR059+UkI+ma+hlUzXwDqmO+MdUN/2ZIAK0aaFU/mwH0vX9cOfezqp9/hwH0stTubszR7LoW
         4wbQLpfL5XK5XC6X61fhj3/5/wHMqsRb156xuQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="label107.Text" xml:space="preserve">
-    <value>Bangalore to Chennai Bus, Chennai to Bangalore Bus, Kolkata to Siliguri Bus, Chandigarh to Manali Bus, Delhi to Jaipur Bus, Delhi to Chandigarh Bus, Mumbai to Goa Bus,
-Delhi to Shimla Bus, Mumbai to Pune Bus, Delhi to Haridwar Bus, Mumbai to Bangalore Bus, Bangalore to Goa Bus, Hyderabad to Bangalore Bus, Bangalore to Hyderabad Bus, 
-Delhi to Dehradun Bus, Lucknow to Delhi Bus, Jaipur to Delhi Bus, Bhopal to Indore Bus, Delhi to Manali Bus, Indore to Bhopal Bus.
-
-
-</value>
-  </data>
-  <data name="label101.Text" xml:space="preserve">
-    <value>Flights, International Flights, Charter Flights, Hotels, International Hotels, Homestays and Villas, Activities, Holidays In India, International Holidays, Book Hotels From UAE, 
-myBiz for Corporate Travel, Book Online Cabs, Book Bus Tickets, Book Train Tickets, Cheap Tickets to India, Book Flights From US, Book Flights From UAE, Trip Planner, Gift Cards, 
-Gift, Wedding Gift, Anniversary Gift, Birthday Gift, Diwali Gift, Valentines Gift, Farewell Gift, Christmas Gift, New Year Gift, Trip Money, Trip Ideas, Travel Blog, PNR Status, One Way Cab.
-
 </value>
   </data>
 </root>
