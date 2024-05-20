@@ -135,7 +135,6 @@
             // label134
             // 
             this.label134.AutoSize = true;
-            this.label134.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label134.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label134.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label134.Location = new System.Drawing.Point(248, 134);
@@ -212,7 +211,6 @@
             // label109
             // 
             this.label109.AutoSize = true;
-            this.label109.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label109.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label109.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label109.Location = new System.Drawing.Point(248, 134);
@@ -289,7 +287,6 @@
             // label114
             // 
             this.label114.AutoSize = true;
-            this.label114.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label114.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label114.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label114.Location = new System.Drawing.Point(248, 134);
@@ -366,7 +363,6 @@
             // label119
             // 
             this.label119.AutoSize = true;
-            this.label119.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label119.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label119.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label119.Location = new System.Drawing.Point(248, 134);
@@ -443,7 +439,6 @@
             // label129
             // 
             this.label129.AutoSize = true;
-            this.label129.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label129.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label129.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label129.Location = new System.Drawing.Point(248, 134);
@@ -520,7 +515,6 @@
             // label124
             // 
             this.label124.AutoSize = true;
-            this.label124.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label124.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label124.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label124.Location = new System.Drawing.Point(248, 134);
@@ -597,7 +591,7 @@
             this.navBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.navBar1.Location = new System.Drawing.Point(0, 0);
             this.navBar1.Name = "navBar1";
-            this.navBar1.Size = new System.Drawing.Size(1924, 502);
+            this.navBar1.Size = new System.Drawing.Size(1907, 502);
             this.navBar1.TabIndex = 0;
             // 
             // customPanel22
@@ -713,7 +707,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1941, 1061);
+            this.ClientSize = new System.Drawing.Size(1924, 1061);
             this.Controls.Add(this.customPanel22);
             this.Controls.Add(this.offersPanel);
             this.Controls.Add(this.navBar1);
