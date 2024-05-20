@@ -100,7 +100,6 @@
             // logInBtn
             // 
             this.logInBtn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.logInBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logInBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logInBtn.FlatAppearance.BorderSize = 0;
             this.logInBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
