@@ -16,7 +16,7 @@ namespace MakeMyTripClone
         {
             InitializeComponent();
         }
-        public event EventHandler checks3;
+        public event EventHandler Checks3;
         public void SetValuesCheckbox(string s)
         {
             checkBoxs.Text = s;
@@ -36,7 +36,7 @@ namespace MakeMyTripClone
             checkBoxs.Checked = true;
             BackColor = SystemColors.GradientInactiveCaption;
 
-            checks3?.Invoke(this, EventArgs.Empty);
+            Checks3?.Invoke(this, EventArgs.Empty);
         }
         public void SetCheckedState()
         {

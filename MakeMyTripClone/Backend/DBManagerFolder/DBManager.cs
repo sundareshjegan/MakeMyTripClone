@@ -112,20 +112,22 @@ namespace MakeMyTripClone
                 int size = res[Route.Id].Count;
                 for (int i = 0; i < size; i++)
                 {
-                    RouteDetails rd = new RouteDetails();
-                    rd.BusId = Convert.ToInt32(manager.FetchColumn(Bus.TableName, Bus.Id, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0]);
-                    rd.RouteId = int.Parse(res[Route.Id][i].ToString());
-                    rd.BusName = manager.FetchColumn(Bus.TableName, Bus.Name, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
-                    rd.BusType = manager.FetchColumn(Bus.TableName, Bus.Type, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
-                    rd.StartTime = res[Route.StartTime][i].ToString();
-                    rd.StartDate = res[Route.StartDate][i].ToString();
-                    rd.EndTime = res[Route.EndTime][i].ToString();
-                    rd.EndDate = res[Route.EndDate][i].ToString();
-                    rd.Source = res[Route.Boarding][i].ToString();
-                    rd.Destination = res[Route.Destination][i].ToString();
-                    rd.Price = manager.FetchColumn(Bus.TableName, Bus.Prices, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
-                    rd.NoOfSeats = manager.FetchColumn(Bus.TableName, Bus.NoOfSeats, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString();
-                    rd.Duration = res[Route.Duration][i].ToString();
+                    RouteDetails rd = new RouteDetails
+                    {
+                        BusId = Convert.ToInt32(manager.FetchColumn(Bus.TableName, Bus.Id, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0]),
+                        RouteId = int.Parse(res[Route.Id][i].ToString()),
+                        BusName = manager.FetchColumn(Bus.TableName, Bus.Name, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString(),
+                        BusType = manager.FetchColumn(Bus.TableName, Bus.Type, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString(),
+                        StartTime = res[Route.StartTime][i].ToString(),
+                        StartDate = res[Route.StartDate][i].ToString(),
+                        EndTime = res[Route.EndTime][i].ToString(),
+                        EndDate = res[Route.EndDate][i].ToString(),
+                        Source = res[Route.Boarding][i].ToString(),
+                        Destination = res[Route.Destination][i].ToString(),
+                        Price = manager.FetchColumn(Bus.TableName, Bus.Prices, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString(),
+                        NoOfSeats = manager.FetchColumn(Bus.TableName, Bus.NoOfSeats, $"{Bus.Id} = '{res[Route.BusId][i].ToString()}'").Value[0].ToString(),
+                        Duration = res[Route.Duration][i].ToString()
+                    };
                     DateTime now = DateTime.Now;
                     DateTime bustime = Convert.ToDateTime(rd.StartTime);
                     list.Add(rd);

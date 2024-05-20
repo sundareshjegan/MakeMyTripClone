@@ -35,9 +35,5 @@ namespace MakeMyTripClone.HomePage
         );
         #endregion
 
-        private void navBar1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

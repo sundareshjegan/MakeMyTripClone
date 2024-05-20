@@ -882,7 +882,7 @@ namespace MakeMyTripClone
                             (checkBoxes as CustomCheckBox3).SetValuesCheckbox(ss[0]);
                         }
                         else (checkBoxes as CustomCheckBox3).SetValuesCheckbox(ss[1]);
-                        (checkBoxes as CustomCheckBox3).checks3 += BookingPageFormchecks3; ;
+                        (checkBoxes as CustomCheckBox3).Checks3 += BookingPageFormchecks3; ;
                     }
                 }
                 bb = true;
