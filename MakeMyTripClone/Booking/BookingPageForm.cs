@@ -91,7 +91,7 @@ namespace MakeMyTripClone
             PanelChanges(travelvaluepanel);
             PanelChanges(dpvaluepanel);
             PanelChanges(pickupvaluepanel);
-            ClearallbuttonClick(sender, EventArgs.Empty);
+            ClearallbuttonClick(sender, EventArgs.Empty);           
         }
 
         public void SetData(string boarding, string destination, string date, ComboBox from, ComboBox to, DateTimePicker dateTime)
@@ -115,6 +115,7 @@ namespace MakeMyTripClone
             droppoints = DBManager.GetDropPoints(boarding, destination, date);
             traveloperatorpoints = DBManager.GetTravel(boarding, destination, date);
             BusButton.BackgroundImage = Resources.busblue;
+            departdateTimePicker.MinDate = DateTime.Today;
             AddDatas();
         }
 
@@ -658,12 +659,14 @@ namespace MakeMyTripClone
             }
             else
             {
+                
                 fstbutton.BackColor = colour;
                 arbutton.BackColor = white;
                 dprbutton.BackColor = white;
                 var fastest = buses.OrderBy(item => TimeSpan.Parse(item.Duration)).ToList();
                 foreach (var bus in fastest)
                 {
+                    bus.CloseBuses();
                     bus.Dock = DockStyle.Top;
                     bus.BringToFront();
                 }
@@ -674,14 +677,6 @@ namespace MakeMyTripClone
         {
             LoginForm login = new LoginForm();
             login.ShowDialog();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            foreach(Control control in Controls)
-            {
-                control.BackColor = Color.Black;
-            }
         }
 
         private void SwappictureBoxClick(object sender, EventArgs e)
@@ -710,6 +705,7 @@ namespace MakeMyTripClone
                 }).ThenBy(bus => bus.StartTime).ToList();
                 foreach (var bus in arrival)
                 {
+                    bus.CloseBuses();
                     bus.Dock = DockStyle.Top;
                     bus.BringToFront();
                 }
@@ -774,6 +770,7 @@ namespace MakeMyTripClone
                 }).ThenBy(bus => bus.EndTime).ToList();
                 foreach (var bus in departure)
                 {
+                    bus.CloseBuses();
                     bus.Dock = DockStyle.Top;
                     bus.BringToFront();
                 }

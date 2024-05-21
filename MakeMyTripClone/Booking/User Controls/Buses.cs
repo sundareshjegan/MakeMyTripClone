@@ -516,7 +516,27 @@ namespace MakeMyTripClone
             }
         }
 
-        private void SelectClick(object sender, EventArgs e)
+        public void CloseBuses()
+        {
+            ssbutton.Text = "Select seats";
+            ssbutton.BackColor = highlight;
+            ssbutton.ForeColor = white;
+            combinationpanel.Visible = false;
+            Height = 200;
+            toppanel.BackColor = white;
+            lbpanel.Controls.Clear();
+            ubpanel.Controls.Clear();
+            seaterpanel.Controls.Clear();
+            totalamtlabel.Text = "0";
+            noofseatlabel.Text = "";
+            isFemaleseats.Clear();
+            seatsbooked.Clear();
+            address.RechangetoNormal(prev, prev2);
+            amentbutton.BackColor = white;
+            ptsbutton.BackColor = white;
+        }
+
+        public void SelectClick(object sender, EventArgs e)
         {
             if (ssbutton.Text == "Select seats")
             {   
