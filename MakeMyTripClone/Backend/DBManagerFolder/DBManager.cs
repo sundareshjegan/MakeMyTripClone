@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using GoLibrary;
@@ -133,7 +132,7 @@ namespace MakeMyTrip
             destination = "Coimbatore";
             date = "28-03-2024";
             var res = manager.FetchColumn(Route.TableName, Route.BoardingPoints, $"{Route.BusId} = {busId} and {Route.Boarding} = '{boarding}'").Value;
-
+    
 
             dynamic jsonObject = JsonConvert.DeserializeObject(res[0].ToString());
 
@@ -195,9 +194,5 @@ namespace MakeMyTrip
                 }
             }
         }
-
-
-
-
     }
 }
