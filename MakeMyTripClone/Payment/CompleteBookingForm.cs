@@ -30,7 +30,7 @@ namespace MakeMyTripClone
             PaymentForm.OnPaymentFormClosed += OnPaymentFormClosed;
 
             //to iniitalize browser
-            Cef.Initialize(new CefSettings());
+           // Cef.Initialize(new CefSettings());
             #region comments
             //CreateCurves();
             //travellerDetailsPanel.Height = 0;
@@ -68,7 +68,7 @@ namespace MakeMyTripClone
         private Random random = new Random();
         private List<TravellerDetails> travellersList;
         private BookingDetails busDetails;
-        private ChromiumWebBrowser browser;
+        //private ChromiumWebBrowser browser;
 
         //When user already logged in or not
         private void OnCompleteBookingFormLoad(object sender, EventArgs e)
@@ -125,29 +125,29 @@ namespace MakeMyTripClone
                 couponWarningLabel.Text = "Invalid Coupon code!";
             }
         }
-        private void OnTermsAndConditionLabelClicked(object sender, EventArgs e)
-        {
-            Form tc = new Form();
-            tc.WindowState = FormWindowState.Maximized;
-            tc.MinimizeBox = tc.MaximizeBox = false;
-            browser = new ChromiumWebBrowser("https://promos.makemytrip.com/Bus/index.html");
-            tc.Controls.Add(browser);
-            browser.Dock = DockStyle.Fill;
-            tc.ShowDialog();
-            browser.Dispose();
-            tc.Dispose();
-        }
+        //private void OnTermsAndConditionLabelClicked(object sender, EventArgs e)
+        //{
+        //    Form tc = new Form();
+        //    tc.WindowState = FormWindowState.Maximized;
+        //    tc.MinimizeBox = tc.MaximizeBox = false;
+        //    browser = new ChromiumWebBrowser("https://promos.makemytrip.com/Bus/index.html");
+        //    tc.Controls.Add(browser);
+        //    browser.Dock = DockStyle.Fill;
+        //    tc.ShowDialog();
+        //    browser.Dispose();
+        //    tc.Dispose();
+        //}
         private void OnUserAgreementLabelClicked(object sender, EventArgs e)
         {
-            Form tc = new Form();
-            tc.WindowState = FormWindowState.Maximized;
-            tc.MinimizeBox = tc.MaximizeBox = false;
-            browser = new ChromiumWebBrowser("https://www.makemytrip.com/legal/user_agreement.html");
-            tc.Controls.Add(browser);
-            browser.Dock = DockStyle.Fill;
-            tc.ShowDialog();
-            browser.Dispose();
-            tc.Dispose();
+            //Form tc = new Form();
+            //tc.WindowState = FormWindowState.Maximized;
+            //tc.MinimizeBox = tc.MaximizeBox = false;
+            //browser = new ChromiumWebBrowser("https://www.makemytrip.com/legal/user_agreement.html");
+            //tc.Controls.Add(browser);
+            //browser.Dock = DockStyle.Fill;
+            //tc.ShowDialog();
+            //browser.Dispose();
+            //tc.Dispose();
         }
         #endregion
 
