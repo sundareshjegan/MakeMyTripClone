@@ -698,7 +698,7 @@
             this.navBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.navBar1.Location = new System.Drawing.Point(0, 0);
             this.navBar1.Name = "navBar1";
-            this.navBar1.Size = new System.Drawing.Size(1924, 502);
+            this.navBar1.Size = new System.Drawing.Size(1907, 502);
             this.navBar1.TabIndex = 0;
             // 
             // HomePageForm
@@ -707,7 +707,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1941, 1061);
+            this.ClientSize = new System.Drawing.Size(1924, 1061);
             this.Controls.Add(this.customPanel22);
             this.Controls.Add(this.offersPanel);
             this.Controls.Add(this.navBar1);
