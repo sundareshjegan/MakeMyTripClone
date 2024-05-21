@@ -106,6 +106,7 @@ namespace MakeMyTripClone
             noofseatlabel.Text = "";
             boarding = DBManager.GetBoarding(pickup, drop, date, rid);
             destination = DBManager.GetDrop(pickup, drop, date, rid);
+
             foreach (var n in destination)
             {
                 address = new Address();
@@ -116,6 +117,7 @@ namespace MakeMyTripClone
                 address.Dock = DockStyle.Top;
                 address.Drops += Addressdrops;
             }
+
             foreach (var n in boarding)
             {
                 address = new Address();
@@ -126,6 +128,7 @@ namespace MakeMyTripClone
                 address.Dock = DockStyle.Top;
                 address.Drops2 += Addressdropss;
             }
+
         }
 
         private void AddSeatTypeUserControls()

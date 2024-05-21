@@ -94,9 +94,14 @@ namespace MakeMyTripClone
             ClearallbuttonClick(sender, EventArgs.Empty);           
         }
 
-        public void SetData(string boarding, string destination, string date, ComboBox from, ComboBox to, DateTimePicker dateTime)
+        public bool SetData(string boarding, string destination, string date, ComboBox from, ComboBox to, DateTimePicker dateTime)
         {
             busesList = DBManager.GetBuses(boarding, destination, date);
+            if(busesList == null)
+            {
+                MessageBox.Show("Server is not reachable");
+                return false;
+            }
             fromcomboBox.Text = boarding;
             tocomboBox.Text = destination;
             departdateTimePicker.Text = date;
@@ -117,6 +122,8 @@ namespace MakeMyTripClone
             BusButton.BackgroundImage = Resources.busblue;
             departdateTimePicker.MinDate = DateTime.Today;
             AddDatas();
+
+            return true;
         }
 
         private void AddDatas()

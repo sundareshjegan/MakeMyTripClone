@@ -49,8 +49,8 @@ namespace MakeMyTripClone
         public NavBar()
         {
             InitializeComponent();
-            panel10.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel10.Width, panel10.Height, 30, 30));
-            panel11.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel11.Width, panel11.Height, 30, 30));
+            modesPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, modesPanel.Width, modesPanel.Height, 30, 30));
+            detailPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, detailPanel.Width, detailPanel.Height, 30, 30));
             SearchButton.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, SearchButton.Width, SearchButton.Height, 30, 30));
             comboBox1.Text = "IND | ENG | INR";
             DateTime D = DateTime.Now;
@@ -135,7 +135,7 @@ namespace MakeMyTripClone
         {
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             Pen pen = new Pen(Color.Gray, 2);
-            e.Graphics.DrawPath(pen, GetRoundRectangle(new Rectangle(0, 0, panel11.Width - 1, panel11.Height - 1), 15));
+            e.Graphics.DrawPath(pen, GetRoundRectangle(new Rectangle(0, 0, detailPanel.Width - 1, detailPanel.Height - 1), 15));
         }
 
         private void FromComboBoxTextChange(object sender, EventArgs e)
@@ -195,14 +195,16 @@ namespace MakeMyTripClone
                 BookingPageForm page = new BookingPageForm();
                 String[] boarding = fromcomboBox.Text.Split(',');
                 String[] destination = toComboBox.Text.Split(',');
-                page.SetData(boarding[0], destination[0], dateTimePicker.Value.ToString("yyyy-MM-dd"), fromcomboBox, toComboBox, dateTimePicker);
-                page.ShowDialog(ParentForm);
+                if (page.SetData(boarding[0], destination[0], dateTimePicker.Value.ToString("yyyy-MM-dd"), fromcomboBox, toComboBox, dateTimePicker))
+                {
+                    page.ShowDialog(ParentForm);
+                }
             }
         }
 
         private void BusOnClick(object sender, EventArgs e)
         {
-            panel11.Visible = true;
+            detailPanel.Visible = true;
             BusButton.BackgroundImage = Resources.busblue;
             SearchButton.Visible = true;
         }

@@ -25,6 +25,8 @@ namespace MakeMyTripClone
         public static CustomerDetails CurrentUser;
         public static event EventHandler<bool> OnUserLoggedIn;
 
+        public static List<RouteDetails> list;
+
         public static MySqlConnection Connection = null;
         public static DatabaseManager manager = new MySqlHandler(server, user, password, database);
 
@@ -100,13 +102,19 @@ namespace MakeMyTripClone
             };
             var res = manager.UpdateData(Customer.TableName, $"{Customer.Email} = '{email}'", data);
         }
-        public static List<RouteDetails> list;
+        
+
         public static List<RouteDetails> GetBuses(String boarding , String destination , String date)
         {
             var res = manager.FetchData(Route.TableName, $"{Route.Boarding} = '{boarding}' and {Route.Destination} = '{destination}' and {Route.StartDate} = '{date}'").Value;
 
             list= new List<RouteDetails>();
-            
+
+            if(res == null)
+            {
+                return null;
+            }
+
             if (res.Count > 0 )
             {
                 int size = res[Route.Id].Count;
@@ -143,6 +151,8 @@ namespace MakeMyTripClone
             var res = manager.FetchColumn(Route.TableName, Route.BoardingPoints, $"{Route.Destination} = '{destination}' and {Route.Boarding} = '{boarding}' and {Route.StartDate} = '{date}'").Value;
             List<object> boardingPoints = new List<object>();
             HashSet<object> board = new HashSet<object>();
+
+            
             if (res.Count > 0)
             {
                 for (int i = 0; i < res.Count; i++)

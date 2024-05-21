@@ -65,7 +65,7 @@
             this.CabLabel = new System.Windows.Forms.Label();
             this.CabUnderLine = new System.Windows.Forms.Label();
             this.CabButton = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.modesPanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.detailPanel = new System.Windows.Forms.Panel();
             this.warningLabel = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -109,8 +109,8 @@
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
+            this.modesPanel.SuspendLayout();
+            this.detailPanel.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -571,21 +571,21 @@
             this.CabButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.CabButton.UseVisualStyleBackColor = false;
             // 
-            // panel10
+            // modesPanel
             // 
-            this.panel10.Controls.Add(this.panel8);
-            this.panel10.Controls.Add(this.panel2);
-            this.panel10.Controls.Add(this.panel9);
-            this.panel10.Controls.Add(this.panel6);
-            this.panel10.Controls.Add(this.panel7);
-            this.panel10.Controls.Add(this.panel5);
-            this.panel10.Controls.Add(this.panel3);
-            this.panel10.Controls.Add(this.panel4);
-            this.panel10.Controls.Add(this.panel1);
-            this.panel10.Location = new System.Drawing.Point(567, 118);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(754, 106);
-            this.panel10.TabIndex = 2;
+            this.modesPanel.Controls.Add(this.panel8);
+            this.modesPanel.Controls.Add(this.panel2);
+            this.modesPanel.Controls.Add(this.panel9);
+            this.modesPanel.Controls.Add(this.panel6);
+            this.modesPanel.Controls.Add(this.panel7);
+            this.modesPanel.Controls.Add(this.panel5);
+            this.modesPanel.Controls.Add(this.panel3);
+            this.modesPanel.Controls.Add(this.panel4);
+            this.modesPanel.Controls.Add(this.panel1);
+            this.modesPanel.Location = new System.Drawing.Point(567, 118);
+            this.modesPanel.Name = "modesPanel";
+            this.modesPanel.Size = new System.Drawing.Size(754, 106);
+            this.modesPanel.TabIndex = 2;
             // 
             // button1
             // 
@@ -712,18 +712,18 @@
             this.comboBox1.TabIndex = 14;
             this.comboBox1.Visible = false;
             // 
-            // panel11
+            // detailPanel
             // 
-            this.panel11.Controls.Add(this.warningLabel);
-            this.panel11.Controls.Add(this.panel14);
-            this.panel11.Controls.Add(this.panel13);
-            this.panel11.Controls.Add(this.panel12);
-            this.panel11.Location = new System.Drawing.Point(460, 164);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(965, 245);
-            this.panel11.TabIndex = 15;
-            this.panel11.Visible = false;
-            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
+            this.detailPanel.Controls.Add(this.warningLabel);
+            this.detailPanel.Controls.Add(this.panel14);
+            this.detailPanel.Controls.Add(this.panel13);
+            this.detailPanel.Controls.Add(this.panel12);
+            this.detailPanel.Location = new System.Drawing.Point(460, 164);
+            this.detailPanel.Name = "detailPanel";
+            this.detailPanel.Size = new System.Drawing.Size(965, 245);
+            this.detailPanel.TabIndex = 15;
+            this.detailPanel.Visible = false;
+            this.detailPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
             // 
             // warningLabel
             // 
@@ -731,7 +731,7 @@
             this.warningLabel.BackColor = System.Drawing.Color.LightPink;
             this.warningLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.warningLabel.ForeColor = System.Drawing.Color.Red;
-            this.warningLabel.Location = new System.Drawing.Point(381, 188);
+            this.warningLabel.Location = new System.Drawing.Point(353, 188);
             this.warningLabel.Name = "warningLabel";
             this.warningLabel.Size = new System.Drawing.Size(361, 17);
             this.warningLabel.TabIndex = 2;
@@ -1001,7 +1001,7 @@
             this.SearchButton.ForeColor = System.Drawing.Color.White;
             this.SearchButton.Location = new System.Drawing.Point(862, 387);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(179, 44);
+            this.SearchButton.Size = new System.Drawing.Size(179, 51);
             this.SearchButton.TabIndex = 14;
             this.SearchButton.Text = "SEARCH";
             this.SearchButton.UseVisualStyleBackColor = false;
@@ -1050,8 +1050,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::MakeMyTripClone.Properties.Resources.homeBackground;
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.panel10);
-            this.Controls.Add(this.panel11);
+            this.Controls.Add(this.modesPanel);
+            this.Controls.Add(this.detailPanel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel16);
@@ -1076,9 +1076,9 @@
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.modesPanel.ResumeLayout(false);
+            this.detailPanel.ResumeLayout(false);
+            this.detailPanel.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             this.panel13.ResumeLayout(false);
@@ -1120,7 +1120,7 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label CabLabel;
         private System.Windows.Forms.Button CabButton;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel modesPanel;
         private System.Windows.Forms.Label FlightUnderLine;
         private System.Windows.Forms.Label HotelUnderLine;
         private System.Windows.Forms.Label TrainUnderLine;
@@ -1139,7 +1139,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel detailPanel;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel12;
