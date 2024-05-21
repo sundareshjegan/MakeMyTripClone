@@ -67,22 +67,19 @@
             this.CabButton = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.LoginButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.warningLabel = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label16 = new System.Windows.Forms.Label();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.daylabel = new System.Windows.Forms.Label();
             this.monthyearLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -102,6 +99,7 @@
             this.SearchButton = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.logInTab1 = new MakeMyTripClone.LogInTab();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -125,11 +123,11 @@
             this.panel1.Controls.Add(this.FlightUnderLine);
             this.panel1.Controls.Add(this.FlightButton);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel1.Enabled = false;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(81, 100);
             this.panel1.TabIndex = 0;
-            this.panel1.Click += new System.EventHandler(this.FlightOnClick);
             // 
             // FlightLabel
             // 
@@ -141,7 +139,6 @@
             this.FlightLabel.Size = new System.Drawing.Size(45, 17);
             this.FlightLabel.TabIndex = 1;
             this.FlightLabel.Text = "Flights";
-            this.FlightLabel.Click += new System.EventHandler(this.FlightOnClick);
             // 
             // FlightUnderLine
             // 
@@ -171,7 +168,6 @@
             this.FlightButton.TabIndex = 0;
             this.FlightButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.FlightButton.UseVisualStyleBackColor = false;
-            this.FlightButton.Click += new System.EventHandler(this.FlightOnClick);
             // 
             // panel2
             // 
@@ -179,11 +175,11 @@
             this.panel2.Controls.Add(this.TrainUnderLine);
             this.panel2.Controls.Add(this.TrainButton);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel2.Enabled = false;
             this.panel2.Location = new System.Drawing.Point(331, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(81, 100);
             this.panel2.TabIndex = 1;
-            this.panel2.Click += new System.EventHandler(this.TrainonClick);
             // 
             // TrainLabel
             // 
@@ -194,7 +190,6 @@
             this.TrainLabel.Size = new System.Drawing.Size(42, 17);
             this.TrainLabel.TabIndex = 1;
             this.TrainLabel.Text = "Trains";
-            this.TrainLabel.Click += new System.EventHandler(this.TrainonClick);
             // 
             // TrainUnderLine
             // 
@@ -223,7 +218,6 @@
             this.TrainButton.TabIndex = 0;
             this.TrainButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TrainButton.UseVisualStyleBackColor = false;
-            this.TrainButton.Click += new System.EventHandler(this.TrainonClick);
             // 
             // panel3
             // 
@@ -283,11 +277,11 @@
             this.panel4.Controls.Add(this.HolidaysUnderLine);
             this.panel4.Controls.Add(this.HolidaysButton);
             this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel4.Enabled = false;
             this.panel4.Location = new System.Drawing.Point(249, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(81, 100);
             this.panel4.TabIndex = 2;
-            this.panel4.Click += new System.EventHandler(this.HolidaysOnClick);
             // 
             // HolidaysLabel
             // 
@@ -298,7 +292,6 @@
             this.HolidaysLabel.Size = new System.Drawing.Size(58, 17);
             this.HolidaysLabel.TabIndex = 1;
             this.HolidaysLabel.Text = "Holidays";
-            this.HolidaysLabel.Click += new System.EventHandler(this.HolidaysOnClick);
             // 
             // HolidaysUnderLine
             // 
@@ -327,7 +320,6 @@
             this.HolidaysButton.TabIndex = 0;
             this.HolidaysButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HolidaysButton.UseVisualStyleBackColor = false;
-            this.HolidaysButton.Click += new System.EventHandler(this.HolidaysOnClick);
             // 
             // panel5
             // 
@@ -335,11 +327,11 @@
             this.panel5.Controls.Add(this.HomeUnderLine);
             this.panel5.Controls.Add(this.HomeButton);
             this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel5.Enabled = false;
             this.panel5.Location = new System.Drawing.Point(167, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(81, 100);
             this.panel5.TabIndex = 2;
-            this.panel5.Click += new System.EventHandler(this.HomeOnClick);
             // 
             // HomeLabel
             // 
@@ -350,7 +342,6 @@
             this.HomeLabel.Size = new System.Drawing.Size(73, 17);
             this.HomeLabel.TabIndex = 1;
             this.HomeLabel.Text = "HomeStays";
-            this.HomeLabel.Click += new System.EventHandler(this.HomeOnClick);
             // 
             // HomeUnderLine
             // 
@@ -379,7 +370,6 @@
             this.HomeButton.TabIndex = 0;
             this.HomeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HomeButton.UseVisualStyleBackColor = false;
-            this.HomeButton.Click += new System.EventHandler(this.HomeOnClick);
             // 
             // panel6
             // 
@@ -387,11 +377,11 @@
             this.panel6.Controls.Add(this.HotelUnderLine);
             this.panel6.Controls.Add(this.HotelButton);
             this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel6.Enabled = false;
             this.panel6.Location = new System.Drawing.Point(85, 3);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(81, 100);
             this.panel6.TabIndex = 2;
-            this.panel6.Click += new System.EventHandler(this.HotelOnCLick);
             // 
             // HotelLabel
             // 
@@ -402,7 +392,6 @@
             this.HotelLabel.Size = new System.Drawing.Size(45, 17);
             this.HotelLabel.TabIndex = 1;
             this.HotelLabel.Text = "Hotels";
-            this.HotelLabel.Click += new System.EventHandler(this.HotelOnCLick);
             // 
             // HotelUnderLine
             // 
@@ -431,7 +420,6 @@
             this.HotelButton.TabIndex = 0;
             this.HotelButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.HotelButton.UseVisualStyleBackColor = false;
-            this.HotelButton.Click += new System.EventHandler(this.HotelOnCLick);
             // 
             // panel7
             // 
@@ -439,11 +427,11 @@
             this.panel7.Controls.Add(this.InsuranceUnderLine);
             this.panel7.Controls.Add(this.InsuranceButton);
             this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel7.Enabled = false;
             this.panel7.Location = new System.Drawing.Point(659, 2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(81, 100);
             this.panel7.TabIndex = 3;
-            this.panel7.Click += new System.EventHandler(this.InsuranceOnClick);
             // 
             // InsuranceLabel
             // 
@@ -454,7 +442,6 @@
             this.InsuranceLabel.Size = new System.Drawing.Size(63, 17);
             this.InsuranceLabel.TabIndex = 1;
             this.InsuranceLabel.Text = "Insurance";
-            this.InsuranceLabel.Click += new System.EventHandler(this.InsuranceOnClick);
             // 
             // InsuranceUnderLine
             // 
@@ -483,7 +470,6 @@
             this.InsuranceButton.TabIndex = 0;
             this.InsuranceButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.InsuranceButton.UseVisualStyleBackColor = false;
-            this.InsuranceButton.Click += new System.EventHandler(this.InsuranceOnClick);
             // 
             // panel8
             // 
@@ -491,11 +477,11 @@
             this.panel8.Controls.Add(this.ForexCurrencyUnderLine);
             this.panel8.Controls.Add(this.ForexButton);
             this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel8.Enabled = false;
             this.panel8.Location = new System.Drawing.Point(577, 2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(81, 100);
             this.panel8.TabIndex = 2;
-            this.panel8.Click += new System.EventHandler(this.ForexOnClick);
             // 
             // ForexLabel
             // 
@@ -506,7 +492,6 @@
             this.ForexLabel.Size = new System.Drawing.Size(72, 17);
             this.ForexLabel.TabIndex = 1;
             this.ForexLabel.Text = "Forex Card";
-            this.ForexLabel.Click += new System.EventHandler(this.ForexOnClick);
             // 
             // ForexCurrencyUnderLine
             // 
@@ -535,7 +520,6 @@
             this.ForexButton.TabIndex = 0;
             this.ForexButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ForexButton.UseVisualStyleBackColor = false;
-            this.ForexButton.Click += new System.EventHandler(this.ForexOnClick);
             // 
             // panel9
             // 
@@ -543,11 +527,11 @@
             this.panel9.Controls.Add(this.CabUnderLine);
             this.panel9.Controls.Add(this.CabButton);
             this.panel9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel9.Enabled = false;
             this.panel9.Location = new System.Drawing.Point(495, 2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(81, 100);
             this.panel9.TabIndex = 2;
-            this.panel9.Click += new System.EventHandler(this.CabOnClick);
             // 
             // CabLabel
             // 
@@ -558,7 +542,6 @@
             this.CabLabel.Size = new System.Drawing.Size(37, 17);
             this.CabLabel.TabIndex = 1;
             this.CabLabel.Text = "Cabs";
-            this.CabLabel.Click += new System.EventHandler(this.CabOnClick);
             // 
             // CabUnderLine
             // 
@@ -587,7 +570,6 @@
             this.CabButton.TabIndex = 0;
             this.CabButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.CabButton.UseVisualStyleBackColor = false;
-            this.CabButton.Click += new System.EventHandler(this.CabOnClick);
             // 
             // panel10
             // 
@@ -611,6 +593,7 @@
             this.button1.BackgroundImage = global::MakeMyTripClone.Properties.Resources.logoWhite;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Enabled = false;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(174, 15);
@@ -618,19 +601,6 @@
             this.button1.Size = new System.Drawing.Size(131, 45);
             this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(708, 34);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 27);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -661,9 +631,10 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::MakeMyTripClone.Properties.Resources._1711023801388;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Enabled = false;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(925, 30);
@@ -698,19 +669,6 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Business Travel Solution";
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(1163, 32);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(18, 27);
-            this.button4.TabIndex = 10;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -736,22 +694,6 @@
             this.label6.Size = new System.Drawing.Size(127, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Manage your bookings";
-            // 
-            // LoginButton
-            // 
-            this.LoginButton.BackColor = System.Drawing.Color.DodgerBlue;
-            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoginButton.FlatAppearance.BorderSize = 0;
-            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.ForeColor = System.Drawing.Color.White;
-            this.LoginButton.Location = new System.Drawing.Point(1424, 22);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(179, 44);
-            this.LoginButton.TabIndex = 13;
-            this.LoginButton.Text = "Login or Create Account";
-            this.LoginButton.UseVisualStyleBackColor = false;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // comboBox1
             // 
@@ -781,6 +723,7 @@
             this.panel11.Size = new System.Drawing.Size(965, 245);
             this.panel11.TabIndex = 15;
             this.panel11.Visible = false;
+            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
             // 
             // warningLabel
             // 
@@ -797,8 +740,8 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.dateTimePicker1);
-            this.panel14.Controls.Add(this.label16);
+            this.panel14.Controls.Add(this.dateTimePicker);
+            this.panel14.Controls.Add(this.daylabel);
             this.panel14.Controls.Add(this.monthyearLabel);
             this.panel14.Controls.Add(this.dateLabel);
             this.panel14.Controls.Add(this.label13);
@@ -809,32 +752,32 @@
             this.panel14.Size = new System.Drawing.Size(165, 100);
             this.panel14.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.Black;
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Black;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.Black;
-            this.dateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker1.Location = new System.Drawing.Point(94, 7);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 7, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(14, 20);
-            this.dateTimePicker1.TabIndex = 8;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 3, 22, 0, 0, 0, 0);
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimeValueChange);
+            this.dateTimePicker.CalendarForeColor = System.Drawing.Color.Black;
+            this.dateTimePicker.CalendarMonthBackground = System.Drawing.Color.Black;
+            this.dateTimePicker.CalendarTitleForeColor = System.Drawing.Color.Black;
+            this.dateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dateTimePicker.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimePicker.Location = new System.Drawing.Point(94, 7);
+            this.dateTimePicker.MaxDate = new System.DateTime(2024, 7, 31, 0, 0, 0, 0);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(14, 20);
+            this.dateTimePicker.TabIndex = 8;
+            this.dateTimePicker.Value = new System.DateTime(2024, 3, 22, 0, 0, 0, 0);
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.DateTimeValueChange);
             // 
-            // label16
+            // daylabel
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.DimGray;
-            this.label16.Location = new System.Drawing.Point(19, 69);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(43, 17);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "Friday";
-            this.label16.Click += new System.EventHandler(this.DateClick);
+            this.daylabel.AutoSize = true;
+            this.daylabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.daylabel.ForeColor = System.Drawing.Color.DimGray;
+            this.daylabel.Location = new System.Drawing.Point(19, 69);
+            this.daylabel.Name = "daylabel";
+            this.daylabel.Size = new System.Drawing.Size(43, 17);
+            this.daylabel.TabIndex = 6;
+            this.daylabel.Text = "Friday";
+            this.daylabel.Click += new System.EventHandler(this.DateClick);
             // 
             // monthyearLabel
             // 
@@ -904,9 +847,9 @@
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(19, 30);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(257, 32);
+            this.label11.Size = new System.Drawing.Size(240, 32);
             this.label11.TabIndex = 6;
-            this.label11.Text = "Mumbai, Maharashtra";
+            this.label11.Text = "Chennai, Tamil Nadu";
             this.label11.Click += new System.EventHandler(this.ToComboBoxClick);
             // 
             // toComboBox
@@ -924,7 +867,8 @@
             "Hyderabad, Telangana",
             "Kolkata, West Bengal",
             "Chennai, Tamil Nadu",
-            "Goa, Goa"});
+            "Goa, Goa",
+            "Coimbatore, Tamil Nadu"});
             this.toComboBox.Location = new System.Drawing.Point(17, 27);
             this.toComboBox.Name = "toComboBox";
             this.toComboBox.Size = new System.Drawing.Size(340, 33);
@@ -985,9 +929,9 @@
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(10, 30);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(140, 32);
+            this.label8.Size = new System.Drawing.Size(279, 32);
             this.label8.TabIndex = 5;
-            this.label8.Text = "Delhi, Delhi";
+            this.label8.Text = "Coimbatore, Tamil Nadu";
             this.label8.Click += new System.EventHandler(this.FromComboBoxClick);
             // 
             // fromcomboBox
@@ -1004,8 +948,9 @@
             "Pune, Maharashtra",
             "Hyderabad, Telangana",
             "Kolkata, West Bengal",
-            "Chennai, Tamil Nadu",
-            "Goa, Goa"});
+            "Coimbatore, Tamil Nadu",
+            "Goa, Goa",
+            "Chennai, Tamil Nadu"});
             this.fromcomboBox.Location = new System.Drawing.Point(3, 28);
             this.fromcomboBox.Name = "fromcomboBox";
             this.fromcomboBox.Size = new System.Drawing.Size(338, 33);
@@ -1061,7 +1006,7 @@
             this.SearchButton.Text = "SEARCH";
             this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Visible = false;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            this.SearchButton.Click += new System.EventHandler(this.SearchButtonClick);
             // 
             // panel15
             // 
@@ -1074,21 +1019,29 @@
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.Transparent;
+            this.panel16.Controls.Add(this.logInTab1);
             this.panel16.Controls.Add(this.comboBox1);
-            this.panel16.Controls.Add(this.LoginButton);
             this.panel16.Controls.Add(this.label5);
-            this.panel16.Controls.Add(this.button2);
             this.panel16.Controls.Add(this.label2);
             this.panel16.Controls.Add(this.button3);
             this.panel16.Controls.Add(this.label1);
             this.panel16.Controls.Add(this.label4);
-            this.panel16.Controls.Add(this.button4);
             this.panel16.Controls.Add(this.label3);
             this.panel16.Controls.Add(this.label6);
             this.panel16.Location = new System.Drawing.Point(-15, -15);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(1850, 100);
             this.panel16.TabIndex = 17;
+            // 
+            // logInTab1
+            // 
+            this.logInTab1.IsLoggedIn = false;
+            this.logInTab1.Location = new System.Drawing.Point(1425, 25);
+            this.logInTab1.Name = "logInTab1";
+            this.logInTab1.Size = new System.Drawing.Size(212, 42);
+            this.logInTab1.TabIndex = 15;
+            this.logInTab1.UserEmail = null;
+            this.logInTab1.UserName = null;
             // 
             // NavBar
             // 
@@ -1104,6 +1057,7 @@
             this.Controls.Add(this.panel16);
             this.Name = "NavBar";
             this.Size = new System.Drawing.Size(1838, 441);
+            this.Load += new System.EventHandler(this.NavBar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1177,16 +1131,13 @@
         private System.Windows.Forms.Label ForexCurrencyUnderLine;
         private System.Windows.Forms.Label CabUnderLine;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel13;
@@ -1198,12 +1149,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label daylabel;
         private System.Windows.Forms.Label monthyearLabel;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.ComboBox fromcomboBox;
         private System.Windows.Forms.ComboBox toComboBox;
         private System.Windows.Forms.Label label8;
@@ -1212,5 +1163,6 @@
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
+        private LogInTab logInTab1;
     }
 }
