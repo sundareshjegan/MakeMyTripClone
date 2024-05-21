@@ -37,8 +37,10 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.loginTabPage = new System.Windows.Forms.TabPage();
             this.loginInputPanel = new System.Windows.Forms.Panel();
+            this.resLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.signInRandomPanel = new System.Windows.Forms.Panel();
+            this.submitBtn = new System.Windows.Forms.Button();
             this.dontHaveAccountLabel = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,10 +52,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.alreadyHaveAccountLabel = new System.Windows.Forms.Label();
             this.registerBtnPanel = new System.Windows.Forms.Panel();
+            this.registerBtn = new MakeMyTripClone.RippleButton();
             this.regEmailValidPB = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.regMobileValidPB = new System.Windows.Forms.PictureBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.othersRB = new System.Windows.Forms.RadioButton();
             this.femaleRB = new System.Windows.Forms.RadioButton();
             this.maleRB = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -64,11 +67,12 @@
             this.regNameTB = new System.Windows.Forms.TextBox();
             this.regMobileTB = new System.Windows.Forms.TextBox();
             this.regEmailTB = new System.Windows.Forms.TextBox();
+            this.genderWarningLabel = new System.Windows.Forms.Label();
             this.passwordCompareLabel = new System.Windows.Forms.Label();
             this.regNameWarningLabel = new System.Windows.Forms.Label();
             this.regMobileWarningLabel = new System.Windows.Forms.Label();
             this.regEmailWarningLabel = new System.Windows.Forms.Label();
-            this.passwordStrengthLabel = new System.Windows.Forms.Label();
+            this.regPasswordWarningLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.regConPwdViewHideBtn = new System.Windows.Forms.Button();
@@ -83,8 +87,6 @@
             this.imagePanel = new System.Windows.Forms.Panel();
             this.closePB = new System.Windows.Forms.PictureBox();
             this.carouselPB = new System.Windows.Forms.PictureBox();
-            this.submitBtn = new System.Windows.Forms.Button();
-            this.resLabel = new System.Windows.Forms.Label();
             this.inputPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.loginTabPage.SuspendLayout();
@@ -95,6 +97,7 @@
             this.registerTabPage.SuspendLayout();
             this.registerInputPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.registerBtnPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.regEmailValidPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regMobileValidPB)).BeginInit();
@@ -205,6 +208,16 @@
             this.loginInputPanel.Size = new System.Drawing.Size(424, 601);
             this.loginInputPanel.TabIndex = 10;
             // 
+            // resLabel
+            // 
+            this.resLabel.AutoSize = true;
+            this.resLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resLabel.ForeColor = System.Drawing.Color.Red;
+            this.resLabel.Location = new System.Drawing.Point(97, 373);
+            this.resLabel.Name = "resLabel";
+            this.resLabel.Size = new System.Drawing.Size(0, 17);
+            this.resLabel.TabIndex = 10;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
@@ -229,6 +242,21 @@
             this.signInRandomPanel.Name = "signInRandomPanel";
             this.signInRandomPanel.Size = new System.Drawing.Size(420, 166);
             this.signInRandomPanel.TabIndex = 7;
+            // 
+            // submitBtn
+            // 
+            this.submitBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.submitBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitBtn.ForeColor = System.Drawing.Color.White;
+            this.submitBtn.Location = new System.Drawing.Point(140, 3);
+            this.submitBtn.Name = "submitBtn";
+            this.submitBtn.Size = new System.Drawing.Size(123, 37);
+            this.submitBtn.TabIndex = 0;
+            this.submitBtn.Text = "CONTINUE";
+            this.submitBtn.UseVisualStyleBackColor = false;
+            this.submitBtn.Click += new System.EventHandler(this.OnSubmitBtnClicked);
+            this.submitBtn.MouseEnter += new System.EventHandler(this.OnSubmitBtnMouseHover);
+            this.submitBtn.MouseHover += new System.EventHandler(this.OnSubmitBtnMouseHover);
             // 
             // dontHaveAccountLabel
             // 
@@ -319,7 +347,7 @@
             this.registerInputPanel.Controls.Add(this.regEmailValidPB);
             this.registerInputPanel.Controls.Add(this.pictureBox1);
             this.registerInputPanel.Controls.Add(this.regMobileValidPB);
-            this.registerInputPanel.Controls.Add(this.radioButton1);
+            this.registerInputPanel.Controls.Add(this.othersRB);
             this.registerInputPanel.Controls.Add(this.femaleRB);
             this.registerInputPanel.Controls.Add(this.maleRB);
             this.registerInputPanel.Controls.Add(this.label8);
@@ -330,11 +358,12 @@
             this.registerInputPanel.Controls.Add(this.regNameTB);
             this.registerInputPanel.Controls.Add(this.regMobileTB);
             this.registerInputPanel.Controls.Add(this.regEmailTB);
+            this.registerInputPanel.Controls.Add(this.genderWarningLabel);
             this.registerInputPanel.Controls.Add(this.passwordCompareLabel);
             this.registerInputPanel.Controls.Add(this.regNameWarningLabel);
             this.registerInputPanel.Controls.Add(this.regMobileWarningLabel);
             this.registerInputPanel.Controls.Add(this.regEmailWarningLabel);
-            this.registerInputPanel.Controls.Add(this.passwordStrengthLabel);
+            this.registerInputPanel.Controls.Add(this.regPasswordWarningLabel);
             this.registerInputPanel.Controls.Add(this.label9);
             this.registerInputPanel.Controls.Add(this.label7);
             this.registerInputPanel.Controls.Add(this.regConPwdViewHideBtn);
@@ -388,10 +417,26 @@
             // 
             this.registerBtnPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.registerBtnPanel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.registerBtnPanel.Controls.Add(this.registerBtn);
             this.registerBtnPanel.Location = new System.Drawing.Point(37, 11);
             this.registerBtnPanel.Name = "registerBtnPanel";
             this.registerBtnPanel.Size = new System.Drawing.Size(330, 55);
             this.registerBtnPanel.TabIndex = 1;
+            // 
+            // registerBtn
+            // 
+            this.registerBtn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.registerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.registerBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.registerBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerBtn.ForeColor = System.Drawing.Color.White;
+            this.registerBtn.Location = new System.Drawing.Point(0, 0);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(330, 55);
+            this.registerBtn.TabIndex = 0;
+            this.registerBtn.Text = "REGISTER";
+            this.registerBtn.UseVisualStyleBackColor = false;
+            this.registerBtn.Click += new System.EventHandler(this.OnRegisterBtnClicked);
             // 
             // regEmailValidPB
             // 
@@ -421,17 +466,18 @@
             this.regMobileValidPB.TabIndex = 1;
             this.regMobileValidPB.TabStop = false;
             // 
-            // radioButton1
+            // othersRB
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(288, 442);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(75, 25);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Others";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.othersRB.AutoSize = true;
+            this.othersRB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.othersRB.Location = new System.Drawing.Point(288, 442);
+            this.othersRB.Name = "othersRB";
+            this.othersRB.Size = new System.Drawing.Size(75, 25);
+            this.othersRB.TabIndex = 7;
+            this.othersRB.TabStop = true;
+            this.othersRB.Text = "Others";
+            this.othersRB.UseVisualStyleBackColor = true;
+            this.othersRB.CheckedChanged += new System.EventHandler(this.OnGenderRBCheckChanged);
             // 
             // femaleRB
             // 
@@ -444,6 +490,7 @@
             this.femaleRB.TabStop = true;
             this.femaleRB.Text = "Female";
             this.femaleRB.UseVisualStyleBackColor = true;
+            this.femaleRB.CheckedChanged += new System.EventHandler(this.OnGenderRBCheckChanged);
             // 
             // maleRB
             // 
@@ -456,6 +503,7 @@
             this.maleRB.TabStop = true;
             this.maleRB.Text = "Male";
             this.maleRB.UseVisualStyleBackColor = true;
+            this.maleRB.CheckedChanged += new System.EventHandler(this.OnGenderRBCheckChanged);
             // 
             // label8
             // 
@@ -555,6 +603,17 @@
             this.regEmailTB.TabIndex = 3;
             this.regEmailTB.TextChanged += new System.EventHandler(this.OnEmailTBTextChanged);
             // 
+            // genderWarningLabel
+            // 
+            this.genderWarningLabel.AutoSize = true;
+            this.genderWarningLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.genderWarningLabel.Location = new System.Drawing.Point(52, 472);
+            this.genderWarningLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.genderWarningLabel.Name = "genderWarningLabel";
+            this.genderWarningLabel.Size = new System.Drawing.Size(0, 15);
+            this.genderWarningLabel.TabIndex = 5;
+            // 
             // passwordCompareLabel
             // 
             this.passwordCompareLabel.AutoSize = true;
@@ -599,17 +658,16 @@
             this.regEmailWarningLabel.Size = new System.Drawing.Size(0, 15);
             this.regEmailWarningLabel.TabIndex = 5;
             // 
-            // passwordStrengthLabel
+            // regPasswordWarningLabel
             // 
-            this.passwordStrengthLabel.AutoSize = true;
-            this.passwordStrengthLabel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordStrengthLabel.Location = new System.Drawing.Point(58, 336);
-            this.passwordStrengthLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.passwordStrengthLabel.Name = "passwordStrengthLabel";
-            this.passwordStrengthLabel.Size = new System.Drawing.Size(43, 16);
-            this.passwordStrengthLabel.TabIndex = 5;
-            this.passwordStrengthLabel.Text = "Weak";
-            this.passwordStrengthLabel.Visible = false;
+            this.regPasswordWarningLabel.AutoSize = true;
+            this.regPasswordWarningLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.regPasswordWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.regPasswordWarningLabel.Location = new System.Drawing.Point(58, 336);
+            this.regPasswordWarningLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.regPasswordWarningLabel.Name = "regPasswordWarningLabel";
+            this.regPasswordWarningLabel.Size = new System.Drawing.Size(0, 15);
+            this.regPasswordWarningLabel.TabIndex = 5;
             // 
             // label9
             // 
@@ -771,26 +829,6 @@
             this.carouselPB.TabIndex = 0;
             this.carouselPB.TabStop = false;
             // 
-            // submitBtn
-            // 
-            this.submitBtn.Location = new System.Drawing.Point(123, 26);
-            this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(123, 37);
-            this.submitBtn.TabIndex = 0;
-            this.submitBtn.Text = "button1";
-            this.submitBtn.UseVisualStyleBackColor = true;
-            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
-            // 
-            // resLabel
-            // 
-            this.resLabel.AutoSize = true;
-            this.resLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resLabel.ForeColor = System.Drawing.Color.Red;
-            this.resLabel.Location = new System.Drawing.Point(147, 379);
-            this.resLabel.Name = "resLabel";
-            this.resLabel.Size = new System.Drawing.Size(0, 24);
-            this.resLabel.TabIndex = 10;
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -805,7 +843,6 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TransparencyKey = System.Drawing.Color.White;
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.Resize += new System.EventHandler(this.OnLoginFormResized);
             this.inputPanel.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
@@ -821,6 +858,7 @@
             this.registerInputPanel.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.registerBtnPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.regEmailValidPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regMobileValidPB)).EndInit();
@@ -871,7 +909,7 @@
         private System.Windows.Forms.TextBox regNameTB;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel passwordStrengthPanel;
-        private System.Windows.Forms.Label passwordStrengthLabel;
+        private System.Windows.Forms.Label regPasswordWarningLabel;
         private System.Windows.Forms.PictureBox regEmailValidPB;
         private System.Windows.Forms.PictureBox regMobileValidPB;
         private System.Windows.Forms.Label label9;
@@ -887,9 +925,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox closePB;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton othersRB;
         private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.Label resLabel;
+        private RippleButton registerBtn;
+        private System.Windows.Forms.Label genderWarningLabel;
         //private RippleButton rippleButton1;
     }
 }

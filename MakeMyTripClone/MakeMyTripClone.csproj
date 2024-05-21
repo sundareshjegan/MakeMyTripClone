@@ -48,6 +48,9 @@
     <Reference Include="MySQLDatabase">
       <HintPath>..\..\DatabaseDLLFiles\MySQLDatabase.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite">
@@ -70,6 +73,18 @@
     <Compile Include="Backend\Tables\Customer.cs" />
     <Compile Include="Backend\Tables\Route.cs" />
     <Compile Include="Backend\Tables\Seat.cs" />
+    <Compile Include="HomePage\HomePageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomePage\HomePageForm.Designer.cs">
+      <DependentUpon>HomePageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\NavBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomePage\NavBar.designer.cs">
+      <DependentUpon>NavBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\ConfirmForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,12 +119,21 @@
     <Compile Include="Login\SuccessFailureForm.Designer.cs">
       <DependentUpon>SuccessFailureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\RippleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\TravellerDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\TravellerDetails.Designer.cs">
       <DependentUpon>TravellerDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="HomePage\HomePageForm.resx">
+      <DependentUpon>HomePageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomePage\NavBar.resx">
+      <DependentUpon>NavBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\ConfirmForm.resx">
       <DependentUpon>ConfirmForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +159,7 @@
     <EmbeddedResource Include="UserControls\TravellerDetails.resx">
       <DependentUpon>TravellerDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -167,9 +192,6 @@
     <None Include="Resources\makemytrip-logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\backArrow.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\close.png" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +214,117 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logoWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1711023801388.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\airplane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buswhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cabblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cabwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flight %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flight1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flight1-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FLIGHT12-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\holidaysblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\holidayswhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homewhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotels.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotelsblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insuranceblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insurancewhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo%402x %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moneyblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moneywhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\swap %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\swap %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trainblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trainwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeBackground.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -38,11 +38,12 @@ namespace MakeMyTripClone
         );
         #endregion
 
+        public bool IsVerified = false;
+
         private Timer validityTimer = new Timer();
         private TimeSpan remainingTime = TimeSpan.FromMinutes(3);
 
         private static readonly Random random = new Random();
-
         private int confirmationCode;
 
         private void OnValidityTimerTicked(object sender, EventArgs e)
@@ -54,6 +55,7 @@ namespace MakeMyTripClone
                 confirmationCode = GenerateConfirmationCode();
                 remainingTime = TimeSpan.Zero;
                 MessageBox.Show("Time's up!");
+                Dispose();
             }
             timerLabel.Text = $"Code Expires in : {remainingTime:mm\\:ss}";
         }
@@ -65,6 +67,7 @@ namespace MakeMyTripClone
                 Opacity /= 2;
                 SuccessFailureForm success = new SuccessFailureForm("success", "Email Verifed Successfully");
                 success.ShowDialog();
+                IsVerified = true;
                 Opacity *= 2;
             }
             else
@@ -72,6 +75,7 @@ namespace MakeMyTripClone
                 Opacity /= 2;
                 SuccessFailureForm success = new SuccessFailureForm("failed", "Email Verification Failed");
                 success.ShowDialog();
+                IsVerified = false;
                 Opacity *= 2;
             }
         }

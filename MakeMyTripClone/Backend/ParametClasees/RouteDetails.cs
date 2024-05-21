@@ -16,7 +16,7 @@ namespace MakeMyTrip
         public String BusType { get; set; }
         public String StartDate  { get; set; }
         public String EndDate { get; set; }
-        public String Source { get; set; }
+        public String Boarding { get; set; }
         public String Destination { get; set; }
         public String StartTime { get; set; }
         public String EndTime { get; set; }
