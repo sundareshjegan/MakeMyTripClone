@@ -35,8 +35,6 @@ namespace MakeMyTripClone
             manager.Connect();
         }
 
-
-
         #region SignUpUser
 
         public static Boolean IsUserExisted(String email)
