@@ -18,8 +18,6 @@ namespace MakeMyTripClone
 
         public static String IsBooked { get; } = "is_booked";
 
-        public static String IsWindow { get; } = "is_window";
-
         public static String Price { get; } = "price";
 
         public static String CustomerId { get; } = "c_id";
@@ -27,5 +25,7 @@ namespace MakeMyTripClone
         public static string SeatNumber { get; } = "seat_number";
 
         public static string IsBookedByFemale { get; } = "is_female";
+
+
     }
 }

@@ -97,7 +97,7 @@ namespace MakeMyTripClone
         public bool SetData(string boarding, string destination, string date, ComboBox from, ComboBox to, DateTimePicker dateTime)
         {
             busesList = DBManager.GetBuses(boarding, destination, date);
-            if(busesList == null)
+            if (busesList == null)
             {
                 MessageBox.Show("Server is not reachable");
                 return false;

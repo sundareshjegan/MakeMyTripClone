@@ -1260,7 +1260,7 @@
             this.nopictureBox.BackColor = System.Drawing.Color.Transparent;
             this.nopictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.nopictureBox.Image = global::MakeMyTripClone.Properties.Resources.Nobus;
-            this.nopictureBox.Location = new System.Drawing.Point(22, 15);
+            this.nopictureBox.Location = new System.Drawing.Point(13, 7);
             this.nopictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.nopictureBox.Name = "nopictureBox";
             this.nopictureBox.Size = new System.Drawing.Size(308, 160);
@@ -1299,7 +1299,7 @@
             this.nobuspanel.Controls.Add(this.noresultpictureBox);
             this.nobuspanel.Location = new System.Drawing.Point(27, 12);
             this.nobuspanel.Name = "nobuspanel";
-            this.nobuspanel.Size = new System.Drawing.Size(1334, 384);
+            this.nobuspanel.Size = new System.Drawing.Size(1334, 343);
             this.nobuspanel.TabIndex = 0;
             this.nobuspanel.Visible = false;
             // 
@@ -2017,6 +2017,7 @@
             this.MinimizeBox = false;
             this.Name = "BookingPageForm";
             this.ShowIcon = false;
+            this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.filters.ResumeLayout(false);
             this.ddtimevaluepanel.ResumeLayout(false);

@@ -250,8 +250,8 @@ namespace MakeMyTripClone
 
 
             string[] seatNumbers = bookingDetails.Bookedseatnumber.Split(',');
-            string[] seatStrings = seatNumbers.Select((number, index) => $"Seat {index + 1} - {number}\n").ToArray();
-            seatDetailsLabel.Text = string.Join(", ", seatStrings);
+            string[] seatStrings = seatNumbers.Select((number, index) => $"Seat {index + 1} - {number},\n").ToArray();
+            seatDetailsLabel.Text = string.Join("", seatStrings);
             seatDetailsPanel.Height = seatDetailsLabel.Height+10;
 
             string[,] travellerDetails = new string[travellers.Count, 4];

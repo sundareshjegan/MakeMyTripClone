@@ -37,10 +37,10 @@ namespace MakeMyTripClone
         [DllImport("user32.dll")]
 
         private static extern bool PostMessage(
-            IntPtr hWnd, // handle to destination window
-            Int32 msg, // message
+            IntPtr hWnd,  // handle to destination window
+            Int32 msg,    // message
             Int32 wParam, // first message parameter
-            Int32 lParam // second message parameter
+            Int32 lParam  // second message parameter
             );
 
         const Int32 WM_LBUTTONDOWN = 0x0201;
@@ -60,11 +60,13 @@ namespace MakeMyTripClone
             DBManager.OnUserLoggedIn += DBManagerOnUserLoggedIn;
             if (DBManager.IsUserLoggedIn)
             {
-                logInTab1.IsLoggedIn = DBManager.IsUserLoggedIn;
-                logInTab1.UserName = DBManager.CurrentUser.Name;
-                logInTab1.UserEmail = DBManager.CurrentUser.Email;
+                logInTab.IsLoggedIn = DBManager.IsUserLoggedIn;
+                logInTab.UserName = DBManager.CurrentUser.Name;
+                logInTab.UserEmail = DBManager.CurrentUser.Email;
             }
+            BusOnClick(this, EventArgs.Empty);
         }
+
         public static GraphicsPath GetRoundRectangle(Rectangle rectangle, int r)
         {
             int l = 2 * r;
@@ -82,20 +84,38 @@ namespace MakeMyTripClone
             return gp;
         }
 
+
         private void DBManagerOnUserLoggedIn(object sender, bool isLoggedIn)
         {
-            logInTab1.IsLoggedIn = DBManager.IsUserLoggedIn;
+            logInTab.IsLoggedIn = DBManager.IsUserLoggedIn;
             if (sender is CustomerDetails currentUser)
             {
-                logInTab1.UserName = currentUser.Name;
-                logInTab1.UserEmail = currentUser.Email;
+                logInTab.UserName = currentUser.Name;
+                logInTab.UserEmail = currentUser.Email;
             }
         }
 
-        //Text Change and Value Change
+        #region To and From Text box Change
+
         private void ToComboBoxtextChange(object sender, EventArgs e)
         {
             label11.Text = toComboBox.Text;
+
+            if (label11.Text == label8.Text)
+            {
+                warningLabel.Visible = true;
+            }
+            else
+            {
+                warningLabel.Visible = false;
+            }
+
+        }
+
+        private void FromComboBoxTextChange(object sender, EventArgs e)
+        {
+            label8.Text = fromcomboBox.Text;
+
             if (label11.Text == label8.Text)
             {
                 warningLabel.Visible = true;
@@ -105,6 +125,9 @@ namespace MakeMyTripClone
                 warningLabel.Visible = false;
             }
         }
+
+        #endregion
+
 
         private void DateTimeValueChange(object sender, EventArgs e)
         {
@@ -126,10 +149,6 @@ namespace MakeMyTripClone
             daylabel.Text = dateTimePicker.Value.DayOfWeek + "";
         }
 
-        private void NavBar_Load(object sender, EventArgs e)
-        {
-            BusOnClick(this, EventArgs.Empty);
-        }
 
         private void panel11_Paint(object sender, PaintEventArgs e)
         {
@@ -138,19 +157,7 @@ namespace MakeMyTripClone
             e.Graphics.DrawPath(pen, GetRoundRectangle(new Rectangle(0, 0, detailPanel.Width - 1, detailPanel.Height - 1), 15));
         }
 
-        private void FromComboBoxTextChange(object sender, EventArgs e)
-        {
-            label8.Text = fromcomboBox.Text;
-
-            if (label11.Text == label8.Text)
-            {
-                warningLabel.Visible = true;
-            }
-            else
-            {
-                warningLabel.Visible = false;
-            }
-        }
+       
 
         //Button Click (Bus)
 
@@ -192,13 +199,17 @@ namespace MakeMyTripClone
         {
             if (warningLabel.Visible == false)
             {
-                BookingPageForm page = new BookingPageForm();
-                String[] boarding = fromcomboBox.Text.Split(',');
-                String[] destination = toComboBox.Text.Split(',');
-                if (page.SetData(boarding[0], destination[0], dateTimePicker.Value.ToString("yyyy-MM-dd"), fromcomboBox, toComboBox, dateTimePicker))
+                BookingPageForm bookingpageform = new BookingPageForm();       
+
+                String[] boarding = fromcomboBox.Text.Split(',');   // to get city places from string (Chennai,TamilNadu).......
+                String[] destination = toComboBox.Text.Split(','); 
+
+                // to check the server is reacheable or not to avoid null datas......
+                if (bookingpageform.SetData(boarding[0], destination[0], dateTimePicker.Value.ToString("yyyy-MM-dd"), fromcomboBox, toComboBox, dateTimePicker))
                 {
-                    page.ShowDialog(ParentForm);
+                    bookingpageform.ShowDialog(ParentForm);
                 }
+
             }
         }
 

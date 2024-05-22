@@ -35,8 +35,6 @@ namespace MakeMyTripClone
             manager.Connect();
         }
 
-
-
         #region SignUpUser
 
         public static Boolean IsUserExisted(String email)
@@ -110,11 +108,10 @@ namespace MakeMyTripClone
 
             list= new List<RouteDetails>();
 
-            if(res == null)
-            {
+            // to avoid null access and to check server is reachable or not
+            if (res == null)
                 return null;
-            }
-
+           
             if (res.Count > 0 )
             {
                 int size = res[Route.Id].Count;
@@ -169,6 +166,7 @@ namespace MakeMyTripClone
                     boardingPoints.Clear();
                 }
             }
+
             foreach(var item in board)
             {
                 boardingPoints.Add(item);
@@ -274,6 +272,7 @@ namespace MakeMyTripClone
                 seatStatus = (Convert.ToInt32(res[Seat.IsBooked][0]));
             }
             return seatStatus == 1;
+
         }
 
         public static bool IsSeatBookedByFemale(int routeId, string seatNumber)
@@ -293,7 +292,7 @@ namespace MakeMyTripClone
             {
                 DateTime date = new DateTime(2024, 05, 30);
                 DateTime previousDate = date.AddDays(i);
-                string previous = previousDate.ToString("yyyy-M-d");
+                string previous = previousDate.ToString("yyyy-MM-dd");
                 var res = manager.FetchData(Route.TableName, $"{Route.StartDate} = '{previous}'").Value;
                 List<int> li = new List<int>();
                 if (res != null)
@@ -312,7 +311,10 @@ namespace MakeMyTripClone
                     manager.DeleteData(Route.TableName, $"{Route.StartDate} = '{previousDate}'");
                 }
             }
+
         }
+
+
 
     }
 }

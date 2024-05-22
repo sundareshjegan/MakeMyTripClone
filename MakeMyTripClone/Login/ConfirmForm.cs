@@ -46,7 +46,6 @@ namespace MakeMyTripClone
                 validityTimer.Stop();
                 confirmationCode = GenerateConfirmationCode();
                 remainingTime = TimeSpan.Zero;
-                MessageBox.Show("Time's up!");
                 Dispose();
             }
             timerLabel.Text = $"Code Expires in : {remainingTime:mm\\:ss}";
