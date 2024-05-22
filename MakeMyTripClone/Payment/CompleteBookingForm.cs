@@ -129,8 +129,10 @@ namespace MakeMyTripClone
         }
         private void OnTermsAndConditionLabelClicked(object sender, EventArgs e)
         {
-            Form tc = new Form();
-            tc.WindowState = FormWindowState.Maximized;
+            Form tc = new Form
+            {
+                WindowState = FormWindowState.Maximized
+            };
             tc.MinimizeBox = tc.MaximizeBox = false;
             browser = new ChromiumWebBrowser("https://promos.makemytrip.com/Bus/index.html");
             tc.Controls.Add(browser);
@@ -141,8 +143,10 @@ namespace MakeMyTripClone
         }
         private void OnUserAgreementLabelClicked(object sender, EventArgs e)
         {
-            Form tc = new Form();
-            tc.WindowState = FormWindowState.Maximized;
+            Form tc = new Form
+            {
+                WindowState = FormWindowState.Maximized
+            };
             tc.MinimizeBox = tc.MaximizeBox = false;
             browser = new ChromiumWebBrowser("https://www.makemytrip.com/legal/user_agreement.html");
             tc.Controls.Add(browser);
@@ -207,9 +211,11 @@ namespace MakeMyTripClone
             string[] seatNumbers = busDetails.Bookedseatnumber.Split(',');
             for (int i = 0; i < noOfTravellers; i++)
             {
-                TravellerDetails traveller = new TravellerDetails();
-                traveller.SeatNumber = seatNumbers[i];
-                traveller.Dock = DockStyle.Top;
+                TravellerDetails traveller = new TravellerDetails
+                {
+                    SeatNumber = seatNumbers[i],
+                    Dock = DockStyle.Top
+                };
                 travellerDetailsPanel.Height += traveller.Height;
 
                 travellerDetailsPanel.Controls.Add(traveller);

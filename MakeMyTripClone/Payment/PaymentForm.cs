@@ -219,6 +219,7 @@ namespace MakeMyTripClone
             }, TaskScheduler.FromCurrentSynchronizationContext()); // Ensure the continuation runs on the UI thread
         }
 
+        //function to set data to the form components
         public void SetData(BookingDetails bookingDetails, List<TravellerDetails> travellers, int finalAmount, string emailToSendTicket)
         {
             busNameLabel.Text = bookingDetails.BusName;
@@ -269,11 +270,13 @@ namespace MakeMyTripClone
 
             for (int i = 0; i < seatNumbers.Length; i++)
             {
-                SeatDetails seat = new SeatDetails();
-                seat.RouteId = bookingDetails.RootId;
-                seat.SeatType = GetSeatType(seatNumbers[i], bookingDetails.Bustype);
-                seat.SeatNumber = seatNumbers[i];
-                seat.IsBooked = true;
+                SeatDetails seat = new SeatDetails
+                {
+                    RouteId = bookingDetails.RootId,
+                    SeatType = GetSeatType(seatNumbers[i], bookingDetails.Bustype),
+                    SeatNumber = seatNumbers[i],
+                    IsBooked = true
+                };
                 if (bookingDetails.Bustype.Contains("SL/ST"))
                 {
                     int[] seatPrices = Array.ConvertAll(bookingDetails.SeatAmount.Split('/'), int.Parse);
@@ -308,7 +311,6 @@ namespace MakeMyTripClone
         {
             getAdditionalDiscountPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, getAdditionalDiscountPanel.Width, getAdditionalDiscountPanel.Height, 15, 15));
             yourBookingPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, yourBookingPanel.Width, yourBookingPanel.Height, 15, 15));
-            //customPanel10.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, customPanel10.Width, customPanel10.Height, 14, 14));
         }
         private string GetSeatType(string seatNumber,string busType)
         {
@@ -333,19 +335,8 @@ namespace MakeMyTripClone
             }
             return "ST";
         }
-
-
-
         #endregion
 
-        private void TextBox1TextChanged(object sender, EventArgs e)
-        {
-           TextBox t = sender as TextBox;
-           if( t.Text.Contains("mobilenumber@upi"))
-           {
-                t.Text=t.Text.Remove(0, 16);
-           }
-        }
 
         private void UipintextKeyPress(object sender, KeyPressEventArgs e)
         {
