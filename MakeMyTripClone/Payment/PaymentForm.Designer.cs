@@ -90,6 +90,7 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
@@ -120,6 +121,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.gPayTab = new System.Windows.Forms.TabPage();
             this.customPanel10 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.label18 = new System.Windows.Forms.Label();
             this.UpiErrorlabel = new System.Windows.Forms.Label();
             this.pictureBox36 = new System.Windows.Forms.PictureBox();
             this.gPayVerifyAndPayBtn = new System.Windows.Forms.Button();
@@ -204,8 +206,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.gateWaySelectionPanel.SuspendLayout();
             this.creditCardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -1060,6 +1060,17 @@
             this.label28.TabIndex = 1;
             this.label28.Text = "   Enter your\r\nregistered VPA\r\n";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(98, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(131, 17);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "(mobilenumber@upi)";
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -1416,6 +1427,17 @@
             this.customPanel10.Name = "customPanel10";
             this.customPanel10.Size = new System.Drawing.Size(490, 269);
             this.customPanel10.TabIndex = 1;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.DimGray;
+            this.label18.Location = new System.Drawing.Point(26, 90);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(122, 15);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "(mobilenumber@upi)";
             // 
             // UpiErrorlabel
             // 
@@ -2236,7 +2258,7 @@
             this.durationLabel.AutoSize = true;
             this.durationLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.durationLabel.ForeColor = System.Drawing.Color.Gray;
-            this.durationLabel.Location = new System.Drawing.Point(171, 87);
+            this.durationLabel.Location = new System.Drawing.Point(163, 87);
             this.durationLabel.Name = "durationLabel";
             this.durationLabel.Size = new System.Drawing.Size(53, 17);
             this.durationLabel.TabIndex = 1;
@@ -2376,28 +2398,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(98, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 17);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "(mobilenumber@upi)";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.DimGray;
-            this.label18.Location = new System.Drawing.Point(26, 90);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(122, 15);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "(mobilenumber@upi)";
             // 
             // PaymentForm
             // 

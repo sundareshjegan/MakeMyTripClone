@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePageForm));
-            this.customPanel22 = new MakeMyTripClone.UserControls.CustomPanel();
+            this.productOfferPanel = new MakeMyTripClone.UserControls.CustomPanel();
             this.label108 = new System.Windows.Forms.Label();
             this.label107 = new System.Windows.Forms.Label();
             this.label106 = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.offerLabel = new System.Windows.Forms.Label();
             this.navBar1 = new MakeMyTripClone.NavBar();
-            this.customPanel22.SuspendLayout();
+            this.productOfferPanel.SuspendLayout();
             this.offersPanel.SuspendLayout();
             this.customPanel28.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
@@ -99,25 +99,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             this.SuspendLayout();
             // 
-            // customPanel22
+            // productOfferPanel
             // 
-            this.customPanel22.BackColor = System.Drawing.Color.White;
-            this.customPanel22.BorderColor = System.Drawing.Color.White;
-            this.customPanel22.Controls.Add(this.label108);
-            this.customPanel22.Controls.Add(this.label107);
-            this.customPanel22.Controls.Add(this.label106);
-            this.customPanel22.Controls.Add(this.label105);
-            this.customPanel22.Controls.Add(this.label104);
-            this.customPanel22.Controls.Add(this.label103);
-            this.customPanel22.Controls.Add(this.label102);
-            this.customPanel22.Controls.Add(this.label101);
-            this.customPanel22.CornerRadius = 20;
-            this.customPanel22.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customPanel22.Location = new System.Drawing.Point(354, 944);
-            this.customPanel22.Name = "customPanel22";
-            this.customPanel22.Padding = new System.Windows.Forms.Padding(20);
-            this.customPanel22.Size = new System.Drawing.Size(1178, 370);
-            this.customPanel22.TabIndex = 1;
+            this.productOfferPanel.BackColor = System.Drawing.Color.White;
+            this.productOfferPanel.BorderColor = System.Drawing.Color.White;
+            this.productOfferPanel.Controls.Add(this.label108);
+            this.productOfferPanel.Controls.Add(this.label107);
+            this.productOfferPanel.Controls.Add(this.label106);
+            this.productOfferPanel.Controls.Add(this.label105);
+            this.productOfferPanel.Controls.Add(this.label104);
+            this.productOfferPanel.Controls.Add(this.label103);
+            this.productOfferPanel.Controls.Add(this.label102);
+            this.productOfferPanel.Controls.Add(this.label101);
+            this.productOfferPanel.CornerRadius = 20;
+            this.productOfferPanel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productOfferPanel.Location = new System.Drawing.Point(354, 944);
+            this.productOfferPanel.Name = "productOfferPanel";
+            this.productOfferPanel.Padding = new System.Windows.Forms.Padding(20);
+            this.productOfferPanel.Size = new System.Drawing.Size(1178, 370);
+            this.productOfferPanel.TabIndex = 1;
             // 
             // label108
             // 
@@ -708,7 +708,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
-            this.Controls.Add(this.customPanel22);
+            this.Controls.Add(this.productOfferPanel);
             this.Controls.Add(this.offersPanel);
             this.Controls.Add(this.navBar1);
             this.MaximizeBox = false;
@@ -717,8 +717,8 @@
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 50);
             this.TransparencyKey = System.Drawing.Color.Maroon;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.customPanel22.ResumeLayout(false);
-            this.customPanel22.PerformLayout();
+            this.productOfferPanel.ResumeLayout(false);
+            this.productOfferPanel.PerformLayout();
             this.offersPanel.ResumeLayout(false);
             this.offersPanel.PerformLayout();
             this.customPanel28.ResumeLayout(false);
@@ -748,7 +748,7 @@
         private NavBar navBar1;
         private UserControls.CustomPanel offersPanel;
         private System.Windows.Forms.Label offerLabel;
-        private UserControls.CustomPanel customPanel22;
+        private UserControls.CustomPanel productOfferPanel;
         private System.Windows.Forms.Label label108;
         private System.Windows.Forms.Label label107;
         private System.Windows.Forms.Label label106;

@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,7 +15,7 @@ namespace MakeMyTripClone
         {
             InitializeComponent();
             CreateCurves();
-            DBManager.OnUserLoggedIn += DBManagerOnUserLoggedIn;
+            //DBManager.OnUserLoggedIn += DBManagerOnUserLoggedIn;
         }
  
         private Panel previousPanel = null;
@@ -26,11 +24,7 @@ namespace MakeMyTripClone
         private ETicket eticket;
 
         public static event EventHandler OnPaymentFormClosed;
-
-        private void DBManagerOnUserLoggedIn(object sender, bool e)
-        {
-            throw new NotImplementedException();
-        }
+        
         #region DLL to Create rounded Regions
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -105,6 +99,7 @@ namespace MakeMyTripClone
         }
 
         #region PaymentButton Events
+        //book now pay later button click event
         private void OnBNPLProceedBtnClicked(object sender, EventArgs e)
         {
             Opacity -= 0.1;
@@ -115,6 +110,8 @@ namespace MakeMyTripClone
             eticket.PaymentMethod = "MakeMyTrip Book Now PayLater";
             SendMail();
         }
+
+        //UPI pay button click event
         private void OnUPIVerifyAndPayBtnClicked(object sender, EventArgs e)
         {
             if (upitext.Text != "" && upitext.Text.Any(char.IsDigit) && upitext.Text.Contains("@") && upitext.Text.Any(char.IsLetter))
@@ -133,6 +130,8 @@ namespace MakeMyTripClone
                 upilabel.Visible = true;
             }
         }
+
+        //GPay pay Button click event
         private void OnGPayVerifyAndPayBtnClicked(object sender, EventArgs e)
         {
             if (gPayUpiTB.Text!="" && gupipintext.Text!="" && gPayUpiTB.Text.Any(char.IsDigit) && gPayUpiTB.Text.Contains("@") && gPayUpiTB.Text.Any(char.IsLetter))
@@ -151,6 +150,8 @@ namespace MakeMyTripClone
                 UpiErrorlabel.Visible = true;
             }
         }
+
+        //credit card payment button click event
         private void OnCreditCardPayNowBtnClicked(object sender, EventArgs e)
         {
             #region validate credit card inputs
@@ -187,6 +188,7 @@ namespace MakeMyTripClone
            
         }
         #endregion
+
         private void SendMail()
         {
             LoaderForm loader = new LoaderForm();

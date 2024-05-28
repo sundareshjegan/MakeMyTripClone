@@ -30,28 +30,8 @@ namespace MakeMyTripClone
             PaymentForm.OnPaymentFormClosed += OnPaymentFormClosed;
 
             //to iniitalize browser
-           
             if(!Cef.IsInitialized)
                 Cef.Initialize(new CefSettings());
-            #region comments
-            //CreateCurves();
-            //travellerDetailsPanel.Height = 0;
-            //List<TravellerDetails> travellersList = new List<TravellerDetails>();
-            //for (int i = 0; i < 2; i++)
-            //{
-            //    TravellerDetails traveller = new TravellerDetails();
-            //    traveller.Dock = DockStyle.Top;
-            //    travellerDetailsPanel.Height += traveller.Height+10;
-
-            //    travellerDetailsPanel.Controls.Add(traveller);
-            //    travellersList.Add(traveller);
-            //}
-            //foreach (TravellerDetails traveller in travellersList)
-            //{
-            //    traveller.BringToFront();
-            //}
-            //leftPanel.AutoScroll = true;
-            #endregion
         }
 
         #region DLL to Create rounded Regions
@@ -200,6 +180,7 @@ namespace MakeMyTripClone
             totalAmountLabel.Text = insurancePanel.Visible ? int.Parse(totalAmountLabel.Text) + 15 + "" : int.Parse(totalAmountLabel.Text) - 15+"";
         }
 
+        //function to set data from previous bus selection form to current form
         public void SetData(BookingDetails busDetails)
         {
             this.busDetails = busDetails;
@@ -277,6 +258,7 @@ namespace MakeMyTripClone
             }
         }
 
+        //event triggered when payment is success and completed
         private void OnPaymentFormClosed(object sender, EventArgs e)
         {
             foreach(Control c in Controls)

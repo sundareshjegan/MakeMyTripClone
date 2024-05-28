@@ -1,14 +1,11 @@
 ﻿
-
 using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using GoLibrary;
 using DatabaseLibrary;
 using Newtonsoft.Json;     
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MakeMyTripClone
 {
@@ -286,11 +283,31 @@ namespace MakeMyTripClone
             return seatStatus == 1;
         }
 
+        public static string DriverPhno(int busId)
+        {
+            var res = manager.FetchData(Bus.TableName, $"{Bus.Id}='{busId}'").Value;
+            if (res.Count > 0)
+            {
+                int n = (Convert.ToInt32(res["d_id"][0]));
+                var res2 = manager.FetchData(Driver.TableName, $"{Driver.DriverId}='{n}'").Value;
+                if (res2.Count != 0)
+                {
+                    string phno = res2[Driver.DriverPhonenumber][0] + "";
+                    return phno;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            return null;
+        }
+
         public static void DeleteDatasfromDatabase()
         {
             for (int i = -10; i < 0; i++)
             {
-                DateTime date = new DateTime(2024, 05, 30);
+                DateTime date = DateTime.Today;
                 DateTime previousDate = date.AddDays(i);
                 string previous = previousDate.ToString("yyyy-MM-dd");
                 var res = manager.FetchData(Route.TableName, $"{Route.StartDate} = '{previous}'").Value;
@@ -311,10 +328,6 @@ namespace MakeMyTripClone
                     manager.DeleteData(Route.TableName, $"{Route.StartDate} = '{previousDate}'");
                 }
             }
-
         }
-
-
-
     }
 }

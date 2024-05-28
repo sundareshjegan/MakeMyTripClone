@@ -1,15 +1,6 @@
-﻿using Syncfusion.HtmlConverter;
-using Syncfusion.Pdf;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MakeMyTripClone.HomePage
@@ -20,6 +11,7 @@ namespace MakeMyTripClone.HomePage
         {
             InitializeComponent();
             DBManager.GetConnection();
+            CreateCurves();
         }
 
         #region DLL to Create rounded Regions
@@ -34,8 +26,11 @@ namespace MakeMyTripClone.HomePage
             int nHeightEllipse // width of ellipse
         );
         #endregion
-
-       
-
+        
+        private void CreateCurves()
+        {
+            offersPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, offersPanel.Width, offersPanel.Height, 30, 30));
+            productOfferPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, productOfferPanel.Width, productOfferPanel.Height, 30, 30));
+        }
     }
 }

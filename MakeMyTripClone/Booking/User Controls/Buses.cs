@@ -406,11 +406,11 @@ namespace MakeMyTripClone
             {
                 if (s == "1" || s == "6" || s == "11" || s == "16" || s == "21")
                 {
-                    totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) + Convert.ToInt32(ruppees[1]) + "";
+                    totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) - Convert.ToInt32(ruppees[1]) + "";
                 }
                 else
                 {
-                    totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) + Convert.ToInt32(ruppees[0]) + "";
+                    totalamtlabel.Text = Convert.ToInt32(totalamtlabel.Text) - Convert.ToInt32(ruppees[0]) + "";
                 }
                 IsRemove(seatsbooked.IndexOf(s));
                 seatsbooked.Remove(s);

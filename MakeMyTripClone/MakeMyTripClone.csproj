@@ -320,6 +320,7 @@
     <Compile Include="Backend\Clasees\CustomerDetails.cs" />
     <Compile Include="Backend\TableConstants\Bus.cs" />
     <Compile Include="Backend\TableConstants\Customer.cs" />
+    <Compile Include="Backend\TableConstants\Driver.cs" />
     <Compile Include="Backend\TableConstants\Route.cs" />
     <Compile Include="Backend\TableConstants\Seat.cs" />
     <Compile Include="Booking\User Controls\Address.cs">

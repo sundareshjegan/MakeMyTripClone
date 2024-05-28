@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
@@ -16,8 +10,6 @@ namespace MakeMyTripClone
         public TravellerDetails()
         {
             InitializeComponent();
-            //maleBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, maleBtn.Width, maleBtn.Height, 10, 10));
-            //panel1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 20, 20));
         }
         
         public string TravellerName
@@ -31,6 +23,7 @@ namespace MakeMyTripClone
                 nameWarningLabel.Text = nameTB.Text == "" ?  value : "";
             }
         }
+
         public string TravellerAge
         {
             get
@@ -42,6 +35,7 @@ namespace MakeMyTripClone
                 ageWarningLabel.Text = ageTB.Text == "" ? value : "";
             }
         }
+
         public string SeatNumber
         {
             get
@@ -53,6 +47,7 @@ namespace MakeMyTripClone
                 seatNoLabel.Text = value;
             }
         }
+
         public string Gender
         {
             get => selectedGender;
@@ -104,14 +99,17 @@ namespace MakeMyTripClone
             ageWarningLabel.Text = "";
             agePanel.BackColor = Color.Transparent;
         }
+
         private void OnAgeTBKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != '\b';
         }
+
         private void OnNameTBKeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsLetter(e.KeyChar) && e.KeyChar != '\b';
+            e.Handled = !char.IsLetter(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != ' ';
         }
+
         private void OnTextBoxActive(object sender, EventArgs e)
         {
             if (sender is TextBox textBox)
@@ -138,6 +136,7 @@ namespace MakeMyTripClone
             selectedGender = button.Text.Trim();
             genderWarningLabel.Text = "";
         }
+
         private void ResetButtonColors()
         {
             femaleBtn.FlatAppearance.BorderColor = maleBtn.FlatAppearance.BorderColor = Color.DarkGray;

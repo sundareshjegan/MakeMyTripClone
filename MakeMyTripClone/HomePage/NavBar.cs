@@ -207,7 +207,7 @@ namespace MakeMyTripClone
                 // to check the server is reacheable or not to avoid null datas......
                 if (bookingpageform.SetData(boarding[0], destination[0], dateTimePicker.Value.ToString("yyyy-MM-dd"), fromcomboBox, toComboBox, dateTimePicker))
                 {
-                    bookingpageform.ShowDialog(ParentForm);
+                    bookingpageform.ShowDialog();
                 }
 
             }
